@@ -45,11 +45,31 @@ def _article_path(article_id: str, filename: str) -> Path:
     return article_dir(article_id) / filename
 
 
-def _mission_context(article_id: str, article_meta: dict[str, Any], article_body: str, findings_text: str, facts_text: str) -> str:
+def _mission_context(
+    article_id: str,
+    article_meta: dict[str, Any],
+    article_body: str,
+    findings_text: str,
+    facts_text: str,
+    claims_records: list[dict[str, Any]] | None = None,
+    evidence_records: list[dict[str, Any]] | None = None,
+) -> str:
     findings = bullet_lines(findings_text)
     facts = bullet_lines(facts_text)
     findings_block = "\n".join(f"- {row}" for row in findings) if findings else "- none"
     facts_block = "\n".join(f"- fact-{index:03d}: {row}" for index, row in enumerate(facts, start=1)) if facts else "- none"
+    claims = claims_records or []
+    evidence = evidence_records or []
+    claims_block = "\n".join(
+        f"- {row.get('claim_id', 'claim-unknown')}: {_clean(row.get('claim_text'))} (supports={', '.join(str(item).strip() for item in (row.get('supporting_evidence_ids') or []) if str(item).strip()) or 'none'}; mechanism_or_bounds={_clean(row.get('mechanism_or_bounds')) or 'none'}; contradiction_note={_clean(row.get('contradiction_note')) or 'none'})"
+        for row in claims
+        if _clean(row.get('claim_text'))
+    ) if claims else "- none"
+    evidence_block = "\n".join(
+        f"- {row.get('evidence_id', 'evidence-unknown')}: {_clean(row.get('evidence_text'))} (kind={_clean(row.get('evidence_type')) or 'quote'}; mechanism_relevance={_clean(row.get('mechanism_relevance')) or 'none'}; contradiction_relevance={_clean(row.get('contradiction_relevance')) or 'none'}; note={_clean(row.get('note')) or 'none'})"
+        for row in evidence
+        if _clean(row.get('evidence_text'))
+    ) if evidence else "- none"
     return (
         f"Mission Context\n\n"
         f"article_id: {article_id}\n"
@@ -57,19 +77,41 @@ def _mission_context(article_id: str, article_meta: dict[str, Any], article_body
         f"source_url: {_clean(article_meta.get('source_url') or '')}\n\n"
         f"Findings:\n{findings_block}\n\n"
         f"Facts:\n{facts_block}\n\n"
+        f"Claims:\n{claims_block}\n\n"
+        f"Evidence:\n{evidence_block}\n\n"
         f"Article Draft:\n\n{_clean(article_body)}\n"
     )
 
 
-def _run_review(persona: str, job: str, article_id: str, article_meta: dict[str, Any], article_body: str, findings_text: str, facts_text: str, *, timeout: int = 180) -> dict[str, Any]:
+def _run_review(
+    persona: str,
+    job: str,
+    article_id: str,
+    article_meta: dict[str, Any],
+    article_body: str,
+    findings_text: str,
+    facts_text: str,
+    claims_records: list[dict[str, Any]] | None = None,
+    evidence_records: list[dict[str, Any]] | None = None,
+    *,
+    timeout: int = 180,
+) -> dict[str, Any]:
     prompt = compose_persona_job_prompt(persona, job, require_job=True)
-    mission = _mission_context(article_id, article_meta, article_body, findings_text, facts_text)
+    mission = _mission_context(article_id, article_meta, article_body, findings_text, facts_text, claims_records, evidence_records)
     raw = run_loose_agent(persona, f"{prompt}\n\n{mission}", timeout=timeout, thinking="off")
     return _load_yaml_payload(raw)
 
 
-def write_contradiction_review(article_id: str, article_meta: dict[str, Any], article_body: str, findings_text: str, facts_text: str) -> dict[str, Any]:
-    payload = _run_review("synthesist", "article-contradiction", article_id, article_meta, article_body, findings_text, facts_text)
+def write_contradiction_review(
+    article_id: str,
+    article_meta: dict[str, Any],
+    article_body: str,
+    findings_text: str,
+    facts_text: str,
+    claims_records: list[dict[str, Any]] | None = None,
+    evidence_records: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    payload = _run_review("synthesist", "article-contradiction", article_id, article_meta, article_body, findings_text, facts_text, claims_records, evidence_records)
     contradictions = payload.get("contradictions") or []
     if not isinstance(contradictions, list):
         raise ValueError("contradictions_not_list")
@@ -84,6 +126,7 @@ def write_contradiction_review(article_id: str, article_meta: dict[str, Any], ar
                 "contradiction_text": _clean(row.get("contradiction_text")),
                 "related_claim_texts": [str(item).strip() for item in (row.get("related_claim_texts") or []) if str(item).strip()],
                 "related_fact_refs": [str(item).strip() for item in (row.get("related_fact_refs") or []) if str(item).strip()],
+                "related_evidence_ids": [str(item).strip() for item in (row.get("related_evidence_ids") or []) if str(item).strip()],
                 "disposition": _clean(row.get("disposition") or "unresolved") or "unresolved",
                 "disclosure": _clean(row.get("disclosure")),
                 "confidence": _clean(row.get("confidence") or "medium") or "medium",
@@ -104,8 +147,16 @@ def write_contradiction_review(article_id: str, article_meta: dict[str, Any], ar
     return {"review": review, "rows": rows}
 
 
-def write_mechanism_review(article_id: str, article_meta: dict[str, Any], article_body: str, findings_text: str, facts_text: str) -> dict[str, Any]:
-    payload = _run_review("synthesist", "article-mechanism", article_id, article_meta, article_body, findings_text, facts_text)
+def write_mechanism_review(
+    article_id: str,
+    article_meta: dict[str, Any],
+    article_body: str,
+    findings_text: str,
+    facts_text: str,
+    claims_records: list[dict[str, Any]] | None = None,
+    evidence_records: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    payload = _run_review("synthesist", "article-mechanism", article_id, article_meta, article_body, findings_text, facts_text, claims_records, evidence_records)
     mechanisms = payload.get("mechanisms") or []
     bounded_claims = payload.get("bounded_claims") or []
     if not isinstance(mechanisms, list):

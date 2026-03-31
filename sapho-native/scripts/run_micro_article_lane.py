@@ -373,6 +373,8 @@ def main() -> int:
         body,
         findings_text,
         facts_text,
+        claims,
+        evidence_records,
     )
     write_mechanism_review(
         args.article_id,
@@ -380,6 +382,8 @@ def main() -> int:
         body,
         findings_text,
         facts_text,
+        claims,
+        evidence_records,
     )
     bundle_result = materialize_article_structured_bundle(
         article_id=args.article_id,
