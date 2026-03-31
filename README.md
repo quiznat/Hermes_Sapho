@@ -23,8 +23,9 @@ Why this split:
 
 Recommended fallback strategy:
 1. push this repo to a remote origin
-2. periodically snapshot ignored runtime/state directories to encrypted storage
-3. tag known-good milestones before major Hermes or Sapho changes
+2. run `./scripts/backup-hermes-state.sh` to snapshot ignored runtime/state directories to local backup storage
+3. periodically copy those backup archives to encrypted off-machine storage
+4. tag known-good milestones before major Hermes or Sapho changes
 
 Important ignored paths for separate backup if needed:
 - `/home/hermes/.hermes/auth.json`
