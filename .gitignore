@@ -1,0 +1,67 @@
+# Secrets and auth
+.hermes/auth.json
+.hermes/auth.lock
+.hermes/.env
+.env
+.env.*
+*.pem
+*.key
+*.secret
+*.token
+
+# Shell history / machine-local noise
+.bash_history
+.zsh_history
+.cloud-locale-test.skip
+.config/
+
+# Hermes runtime state and private history
+.hermes/.hermes_history
+.hermes/.update_check
+.hermes/channel_directory.json
+.hermes/sessions/
+.hermes/checkpoints/
+.hermes/logs/
+.hermes/audio_cache/
+.hermes/image_cache/
+.hermes/images/
+.hermes/cache/
+.hermes/cron/output/
+.hermes/cron/.tick.lock
+.hermes/sandboxes/
+.hermes/pairing/
+.hermes/whatsapp/
+.hermes/memories/
+.hermes/gateway.pid
+.hermes/gateway_state.json
+.hermes/state.db
+.hermes/state.db-shm
+.hermes/state.db-wal
+
+# Hermes upstream source tree already has its own git history
+.hermes/hermes-agent/
+
+# Local caches and package artifacts
+.cache/
+.local/
+.npm/
+
+# Python / test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Sapho generated/runtime surfaces
+sapho-native/articles/
+sapho-native/daily/
+sapho-native/discovery/
+sapho-native/public/
+sapho-native/queue/
+sapho-native/runtime/
+sapho-native/state/
+
+# Temp files
+tmp/
+*.log
+.DS_Store

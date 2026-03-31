@@ -1,0 +1,31 @@
+{
+  "backend": "hermes_cli",
+  "hermes_command": "hermes",
+  "receipts_dir": "/home/hermes/sapho-native/state/receipts/task-runs",
+  "roles": {
+    "curator": {
+      "persona_file": "curator.md",
+      "identity_name": "Curator",
+      "provider": "openai-codex",
+      "model": "gpt-5.4"
+    },
+    "extractor": {
+      "persona_file": "extractor.md",
+      "identity_name": "Extractor",
+      "provider": "openai-codex",
+      "model": "gpt-5.4"
+    },
+    "synthesist": {
+      "persona_file": "synthesist.md",
+      "identity_name": "Synthesist",
+      "provider": "openai-codex",
+      "model": "gpt-5.4"
+    },
+    "orchestrator": {
+      "persona_file": "conclave.md",
+      "identity_name": "Conclave",
+      "provider": "openai-codex",
+      "model": "gpt-5.4"
+    }
+  }
+}
