@@ -13,6 +13,8 @@
 .bash_history
 .zsh_history
 .cloud-locale-test.skip
+.gitconfig
+.git-credentials
 .config/
 
 # Hermes runtime state and private history

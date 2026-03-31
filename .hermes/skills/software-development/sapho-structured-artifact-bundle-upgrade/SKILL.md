@@ -187,18 +187,34 @@ For discarded packages:
 
 ## Tests to add
 
-Create focused tests for the bundle module, not just end-to-end lane tests.
+Create focused tests for the bundle module, and also add at least one lane-level orchestration test.
 
 Recommended cases:
 1. kept article writes all structured files
 2. kept article produces resolvable claim/evidence/lineage references
 3. discarded article still writes stable structured outputs with empty JSONL files
-4. validation status becomes `warn` rather than `fail` for expected phase-2 gaps
+4. validation status reflects the current gate policy correctly
+5. the full article lane writes `micro-*` compatibility files plus contradiction/mechanism review artifacts and a passing `validation.json` when all required mocked outputs are present
+6. helper path functions respect patched runtime directories during tests
+7. Extractor evidence receipts fail if `mechanism_relevance` or `contradiction_relevance` is missing
+8. Extractor evidence receipts fail if `Source Excerpt` is empty
+9. Extractor evidence receipts fail if `mechanism_relevance: bounded` or `contradiction_relevance: tension` is present without a non-empty `Note`
+10. contradiction/mechanism law-review prompts include structured claim and evidence context, not only loose findings/facts text
 
-Example test file:
+Example test files:
 - `tests/test_structured_artifact_bundle.py`
+- `tests/test_run_micro_article_lane.py`
+- `tests/test_micro_common.py`
 
-Use `tempfile.TemporaryDirectory()` and patch `common.ARTICLES_DIR` so tests do not touch real article packages.
+Use `tempfile.TemporaryDirectory()` and patch `common.ARTICLES_DIR` / `common.DAILY_DIR` so tests do not touch real article packages.
+
+Important seams discovered in practice:
+- do not import `ARTICLES_DIR` or `DAILY_DIR` into helpers like `micro_common.py` and then build paths from the imported aliases if your tests patch `common.ARTICLES_DIR` or `common.DAILY_DIR`
+- that captures the old path too early and makes runtime patching ineffective
+- instead reference `common.ARTICLES_DIR` and `common.DAILY_DIR` at call time inside helpers such as `article_stage_path()` and `daily_stage_path()`
+- similarly, contradiction/mechanism review helpers should not rely only on loose `findings_text` / `facts_text` once structured `claims_records` and `evidence_records` exist
+- pass the structured claim/evidence context directly into law-review mission prompts so contradiction/mechanism judgments remain grounded in Extractor lineage instead of drifting into synthesis-only convenience summaries
+- preserve evidence ids through review artifacts when possible (for example `related_evidence_ids` on contradiction rows) so downstream auditability stays tied to Extractor outputs
 
 ## Real verification steps
 
@@ -291,9 +307,16 @@ Contradiction and mechanism work should be implemented as real persona jobs plus
 
 Charter-aligned split:
 - `Curator`: admission only; do not push mechanism/contradiction review into Curator
-- `Extractor`: owns evidence substrate; contradiction-relevant and mechanism-relevant support should become legible here
+- `Extractor`: owns evidence substrate; contradiction-relevant and mechanism-relevant support must be explicit in each evidence unit, not left implicit or optional
 - `Synthesist`: owns article-level reasoning, including explicit contradiction visibility and mechanism-or-bounds review for article artifacts
 - `Conclave` / validators: enforce publication legality based on whether those review artifacts exist and satisfy contract
+
+Important Extractor contract detail discovered in rollout:
+- do not let Extractor receipts omit `mechanism_relevance` or `contradiction_relevance`
+- require both fields on every `evidence.v1` unit even when the value is `none`
+- require a non-empty `Source Excerpt` for every evidence unit
+- if `mechanism_relevance: bounded` or `contradiction_relevance: tension`, require a non-empty `Note` carrying the caveat/tension forward
+- enforce these in `parse_evidence_receipt_files(...)` with hard contract errors rather than silently defaulting values
 
 A strong implementation pattern is:
 - add bounded Synthesist jobs such as `jobs/synthesist/article-mechanism.md` and `jobs/synthesist/article-contradiction.md`
