@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(ROOT))
 
 import common
-from article_job_runtime import apply_claim_links, evidence_files_to_fact_lines, evidence_files_to_records, parse_evidence_receipt_files
+from article_job_runtime import JobContractError, apply_claim_links, evidence_files_to_fact_lines, evidence_files_to_records, parse_evidence_receipt_files
 from structured_artifact_bundle import materialize_article_structured_bundle
 
 
@@ -76,6 +76,80 @@ The source reports higher reliability but the appendix is not present in the exc
 ## Note
 
 Mechanism remains uncertain and the benchmark details are partial.
+```
+"""
+
+EXTRACTOR_RECEIPT_MISSING_RELEVANCE = """---
+version: extractor-receipt.v1
+role: Extractor
+article_id: art-test-102
+evidence_count: 1
+completed_at_utc: '2026-03-31T00:00:00Z'
+---
+# Extractor Receipt
+
+## Summary
+
+The source contains one evidence statement.
+
+## Evidence Files
+
+### file: evidence-01.md
+```markdown
+---
+version: evidence.v1
+article_id: art-test-102
+evidence_id: evidence-001
+kind: method
+citation: Source method section
+source_url: https://example.com/source
+confidence: high
+---
+The workflow stages retrieval before generation.
+
+## Source Excerpt
+
+The paper says retrieval is performed before generation.
+
+## Note
+
+Direct workflow description.
+```
+"""
+
+EXTRACTOR_RECEIPT_BOUNDED_WITHOUT_NOTE = """---
+version: extractor-receipt.v1
+role: Extractor
+article_id: art-test-103
+evidence_count: 1
+completed_at_utc: '2026-03-31T00:00:00Z'
+---
+# Extractor Receipt
+
+## Summary
+
+The source contains one bounded evidence statement.
+
+## Evidence Files
+
+### file: evidence-01.md
+```markdown
+---
+version: evidence.v1
+article_id: art-test-103
+evidence_id: evidence-001
+kind: result
+citation: Source results section
+source_url: https://example.com/source
+confidence: medium
+mechanism_relevance: bounded
+contradiction_relevance: tension
+---
+The reported reliability gain is bounded because the appendix is absent.
+
+## Source Excerpt
+
+The source reports higher reliability but omits the appendix.
 ```
 """
 
@@ -170,6 +244,16 @@ The benchmark appendix is missing, so the mechanism and effect size remain bound
                 self.assertEqual(saved_evidence[0]["supports_claim_ids"], ["claim-001"])
                 self.assertEqual(validation["checks"]["citation_linkage"]["status"], "pass")
                 self.assertEqual(validation["checks"]["contradiction_baseline"]["status"], "fail")
+
+    def test_parse_extractor_receipt_requires_relevance_fields(self) -> None:
+        with self.assertRaises(JobContractError) as ctx:
+            parse_evidence_receipt_files("art-test-102", EXTRACTOR_RECEIPT_MISSING_RELEVANCE)
+        self.assertEqual(str(ctx.exception), "missing_evidence_relevance_fields")
+
+    def test_parse_extractor_receipt_requires_note_for_bounded_or_tension_evidence(self) -> None:
+        with self.assertRaises(JobContractError) as ctx:
+            parse_evidence_receipt_files("art-test-103", EXTRACTOR_RECEIPT_BOUNDED_WITHOUT_NOTE)
+        self.assertEqual(str(ctx.exception), "bounded_or_tension_evidence_missing_note")
 
 
 if __name__ == "__main__":

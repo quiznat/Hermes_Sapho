@@ -60,10 +60,13 @@ Quote or paraphrase the exact supporting passage.
 ## Note
 
 Any caveat that should remain attached to this evidence unit.
+This note is required when `mechanism_relevance: bounded` or `contradiction_relevance: tension`.
 ```
 
 Only emit evidence files when the source actually supports them.
 If the source contains no atomic evidence, set `evidence_count: 0` and explain why.
+Every evidence file must include both `mechanism_relevance` and `contradiction_relevance`; do not omit them even when the value is `none`.
+Every evidence file must include a non-empty `Source Excerpt` grounded in the captured source markdown.
 Set `mechanism_relevance: direct` only when the evidence itself states or directly supports how the result happens.
 Set `mechanism_relevance: bounded` when the evidence matters to mechanism law mainly by showing the mechanism is unknown, partial, or limited.
 Set `contradiction_relevance: tension` when the evidence introduces a visible tension, caveat, or unresolved conflict that must remain disclosed downstream.

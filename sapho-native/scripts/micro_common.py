@@ -4,12 +4,11 @@ import os
 import re
 from pathlib import Path
 
+import common
 from common import (
-    ARTICLES_DIR,
     CHROME_LINE_PATTERNS,
     CHROME_SEGMENT_PATTERNS,
     CONTENT_STOP_PATTERNS,
-    DAILY_DIR,
     ROOT,
     compact_source_markdown,
     dump_markdown,
@@ -30,11 +29,11 @@ def read_job(name: str) -> str:
 
 
 def article_stage_path(article_id: str, stage: str, suffix: str = ".md") -> Path:
-    return ARTICLES_DIR / article_id / f"micro-{stage}{suffix}"
+    return common.ARTICLES_DIR / article_id / f"micro-{stage}{suffix}"
 
 
 def daily_stage_path(date: str, stage: str, suffix: str = ".md") -> Path:
-    return DAILY_DIR / date / f"micro-{stage}{suffix}"
+    return common.DAILY_DIR / date / f"micro-{stage}{suffix}"
 
 
 def write_text(path: Path, text: str) -> None:

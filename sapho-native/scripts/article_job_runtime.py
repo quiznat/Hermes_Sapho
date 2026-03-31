@@ -96,6 +96,8 @@ def run_extractor_evidence(*, article_id: str, source_title: str, source_url: st
 def parse_evidence_receipt_files(article_id: str, receipt_markdown: str) -> list[dict[str, Any]]:
     _meta, body = parse_markdown(receipt_markdown)
     files: list[dict[str, Any]] = []
+    valid_mechanism_relevance = {"direct", "bounded", "none"}
+    valid_contradiction_relevance = {"supports", "tension", "none"}
     for match in _CODE_BLOCK_RE.finditer(body):
         filename = match.group("filename").strip()
         content = match.group("content").strip()
@@ -105,18 +107,32 @@ def parse_evidence_receipt_files(article_id: str, receipt_markdown: str) -> list
         evidence_id = str(file_meta.get("evidence_id") or "").strip()
         if not evidence_id:
             raise JobContractError("missing_evidence_id")
+        mechanism_relevance = str(file_meta.get("mechanism_relevance") or "").strip()
+        contradiction_relevance = str(file_meta.get("contradiction_relevance") or "").strip()
+        if not mechanism_relevance or not contradiction_relevance:
+            raise JobContractError("missing_evidence_relevance_fields")
+        if mechanism_relevance not in valid_mechanism_relevance:
+            raise JobContractError("invalid_mechanism_relevance")
+        if contradiction_relevance not in valid_contradiction_relevance:
+            raise JobContractError("invalid_contradiction_relevance")
         sections = _markdown_sections(file_body)
         statement = file_body.split("\n## Source Excerpt\n", 1)[0].strip()
         if not statement:
             raise JobContractError("missing_evidence_statement")
+        source_excerpt = sections.get("Source Excerpt", "")
+        if not _clean(source_excerpt):
+            raise JobContractError("missing_evidence_source_excerpt")
+        note = sections.get("Note", "")
+        if (mechanism_relevance == "bounded" or contradiction_relevance == "tension") and not _clean(note):
+            raise JobContractError("bounded_or_tension_evidence_missing_note")
         files.append(
             {
                 "filename": filename,
                 "meta": file_meta,
                 "body": file_body,
                 "statement": statement,
-                "source_excerpt": sections.get("Source Excerpt", ""),
-                "note": sections.get("Note", ""),
+                "source_excerpt": source_excerpt,
+                "note": note,
             }
         )
     return files
