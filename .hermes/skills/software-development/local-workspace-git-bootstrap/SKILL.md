@@ -76,6 +76,8 @@ Include categories like:
 Example patterns that often matter:
 - auth/token files
 - `.env*`
+- `.git-credentials`
+- `.gitconfig` when machine-local credential/helper settings should not be shared
 - session/history directories
 - checkpoint/log/cache/image/audio dirs
 - sqlite/db WAL/SHM files

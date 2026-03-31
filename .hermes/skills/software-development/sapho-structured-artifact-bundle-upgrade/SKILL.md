@@ -326,7 +326,14 @@ A strong implementation pattern is:
   - `mechanism-review.json`
   - `mechanisms.jsonl`
 - wire those reviews into `run_micro_article_lane.py` after article synthesis and before final structured validation
+- pass structured `claims_records` and `evidence_records` into the law-review helper, not just loose findings/facts text
 - make `validation.json` pass only when real review artifacts exist for eligible packages
+
+Important lineage hardening discovered in rollout:
+- contradiction review outputs should carry `related_evidence_ids` when the tension is grounded in explicit Extractor evidence units
+- mechanism review outputs should carry `evidence_ids` for both positive mechanism explanations and bounded claims when evidence anchors are available
+- review runtime should fail closed if a law-review output cites evidence ids that are not present in the provided evidence list
+- this keeps the constitutional chain explicit: Extractor evidence -> evidence ids -> Synthesist law review -> validator/gate
 
 This keeps the law in the right place:
 - persona jobs perform bounded reasoning work

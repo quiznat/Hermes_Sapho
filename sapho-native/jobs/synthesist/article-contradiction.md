@@ -13,6 +13,8 @@ Work only from the mission context:
 - source title/url
 - findings
 - facts
+- claims
+- evidence
 - article draft
 
 Return YAML only.
@@ -30,10 +32,14 @@ contradictions:
       - <claim or finding text>
     related_fact_refs:
       - fact-001
+    related_evidence_ids:
+      - evidence-001
     disposition: unresolved|bounded|resolved
     disclosure: <what must stay visible>
     confidence: low|medium|high
 ```
+
+Use `related_evidence_ids` whenever the tension is grounded in explicit evidence units from mission context. Do not cite evidence ids that are not present in the provided evidence list.
 
 If there are no visible contradictions, return:
 

@@ -12,6 +12,8 @@ Work only from the mission context:
 - source title/url
 - findings
 - facts
+- claims
+- evidence
 - article draft
 
 Return YAML only.
@@ -25,12 +27,18 @@ summary: <one short plain-English summary>
 review_confidence: low|medium|high
 mechanisms:
   - claim_text: <claim text or short claim paraphrase>
+    evidence_ids:
+      - evidence-001
     mechanism_text: <causal explanation>
     bounds: <remaining limit or explicit bound>
     confidence: low|medium|high
 bounded_claims:
   - claim_text: <claim text or short claim paraphrase>
+    evidence_ids:
+      - evidence-001
     bounds: <explicit bound showing mechanism is still uncertain>
 ```
+
+Use `evidence_ids` to anchor every mechanism explanation or bounded claim to the provided evidence list. Do not cite evidence ids that are not present in mission context.
 
 If no explicit mechanism explanations are justified but claims are still properly bounded, `mechanisms` may be empty and `bounded_claims` should carry the relevant bounds.

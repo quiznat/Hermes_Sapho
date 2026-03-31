@@ -15,6 +15,14 @@ CONTRADICTION_REVIEW_FILE = "contradiction-review.json"
 MECHANISM_REVIEW_FILE = "mechanism-review.json"
 
 
+def _known_evidence_ids(evidence_records: list[dict[str, Any]] | None) -> set[str]:
+    return {
+        str(row.get("evidence_id") or "").strip()
+        for row in (evidence_records or [])
+        if str(row.get("evidence_id") or "").strip()
+    }
+
+
 def _clean(text: Any) -> str:
     return clean_loose_text(str(text or "")).strip()
 
@@ -115,10 +123,14 @@ def write_contradiction_review(
     contradictions = payload.get("contradictions") or []
     if not isinstance(contradictions, list):
         raise ValueError("contradictions_not_list")
+    known_evidence_ids = _known_evidence_ids(evidence_records)
     rows: list[dict[str, Any]] = []
     for index, row in enumerate(contradictions, start=1):
         if not isinstance(row, dict):
             continue
+        related_evidence_ids = [str(item).strip() for item in (row.get("related_evidence_ids") or []) if str(item).strip()]
+        if any(item not in known_evidence_ids for item in related_evidence_ids):
+            raise ValueError("unknown_related_evidence_id")
         rows.append(
             {
                 "contradiction_id": f"contradiction-{index:03d}",
@@ -126,7 +138,7 @@ def write_contradiction_review(
                 "contradiction_text": _clean(row.get("contradiction_text")),
                 "related_claim_texts": [str(item).strip() for item in (row.get("related_claim_texts") or []) if str(item).strip()],
                 "related_fact_refs": [str(item).strip() for item in (row.get("related_fact_refs") or []) if str(item).strip()],
-                "related_evidence_ids": [str(item).strip() for item in (row.get("related_evidence_ids") or []) if str(item).strip()],
+                "related_evidence_ids": related_evidence_ids,
                 "disposition": _clean(row.get("disposition") or "unresolved") or "unresolved",
                 "disclosure": _clean(row.get("disclosure")),
                 "confidence": _clean(row.get("confidence") or "medium") or "medium",
@@ -163,15 +175,20 @@ def write_mechanism_review(
         raise ValueError("mechanisms_not_list")
     if not isinstance(bounded_claims, list):
         raise ValueError("bounded_claims_not_list")
+    known_evidence_ids = _known_evidence_ids(evidence_records)
     rows: list[dict[str, Any]] = []
     for index, row in enumerate(mechanisms, start=1):
         if not isinstance(row, dict):
             continue
+        evidence_ids = [str(item).strip() for item in (row.get("evidence_ids") or []) if str(item).strip()]
+        if any(item not in known_evidence_ids for item in evidence_ids):
+            raise ValueError("unknown_mechanism_evidence_id")
         rows.append(
             {
                 "mechanism_id": f"mechanism-{index:03d}",
                 "article_id": article_id,
                 "claim_text": _clean(row.get("claim_text")),
+                "evidence_ids": evidence_ids,
                 "mechanism_text": _clean(row.get("mechanism_text")),
                 "bounds": _clean(row.get("bounds")),
                 "confidence": _clean(row.get("confidence") or "medium") or "medium",
