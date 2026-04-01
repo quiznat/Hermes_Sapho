@@ -86,6 +86,10 @@ class BundleBackfillAndValidationTests(unittest.TestCase):
                 validation = json.loads((article_root / "validation.json").read_text(encoding="utf-8"))
                 self.assertEqual(validation["checks"]["citation_linkage"]["status"], "pass")
 
+                historical_policy = json.loads((article_root / "historical-policy.json").read_text(encoding="utf-8"))
+                self.assertEqual(historical_policy["policy_status"], "not_applicable")
+                self.assertFalse(historical_policy["applies"])
+
 
 if __name__ == "__main__":
     unittest.main()

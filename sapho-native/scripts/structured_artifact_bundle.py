@@ -16,6 +16,7 @@ CLAIMS_FILE = "claims.jsonl"
 EVIDENCE_FILE = "evidence.jsonl"
 LINEAGE_FILE = "lineage.json"
 VALIDATION_FILE = "validation.json"
+HISTORICAL_POLICY_FILE = "historical-policy.json"
 
 LOW = "low"
 MEDIUM = "medium"
@@ -448,6 +449,56 @@ def build_validation(article_id: str, article_meta: dict[str, Any], article_body
     }
 
 
+def build_historical_policy(article_id: str, article_meta: dict[str, Any], validation: dict[str, Any]) -> dict[str, Any]:
+    imported_from_runtime = bool(str(article_meta.get("imported_from_runtime_article_id") or "").strip())
+    publication_status = str(article_meta.get("publication_status") or "")
+    checks = validation.get("checks", {}) if isinstance(validation, dict) else {}
+    missing_law_checks = [
+        name
+        for name in ["contradiction_baseline", "mechanism_baseline"]
+        if isinstance(checks.get(name), dict) and str(checks[name].get("status") or "") == "fail"
+    ]
+    blocked_statuses = {"discarded", "capture-blocked", "duplicate-rejected"}
+    if not imported_from_runtime:
+        policy_status = "not_applicable"
+        applies = False
+        current_law_eligible = validation.get("overall_status") == "pass" and publication_status not in blocked_statuses
+        disposition = "native_package_outside_historical_policy_scope"
+    elif publication_status in blocked_statuses:
+        policy_status = "blocked_not_publishable"
+        applies = True
+        current_law_eligible = False
+        disposition = "blocked_package_not_publication_candidate"
+    elif validation.get("overall_status") == "pass":
+        policy_status = "current_law_compliant"
+        applies = True
+        current_law_eligible = True
+        disposition = "eligible_under_current_law"
+    elif missing_law_checks and publication_status in {"published", "ready-for-daily"}:
+        policy_status = "legacy_quarantined"
+        applies = True
+        current_law_eligible = False
+        disposition = "quarantined_from_current_law_publication"
+    else:
+        policy_status = "needs_remediation"
+        applies = True
+        current_law_eligible = False
+        disposition = "historical_package_requires_remediation"
+    return {
+        "version": "historical-policy.v1",
+        "article_id": article_id,
+        "applies": applies,
+        "source_regime": "runtime-import" if imported_from_runtime else "native",
+        "publication_status": publication_status,
+        "validation_status": str(validation.get("overall_status") or "fail"),
+        "policy_status": policy_status,
+        "current_law_eligible": current_law_eligible,
+        "missing_law_checks": missing_law_checks,
+        "disposition": disposition,
+        "reviewed_at_utc": utc_now(),
+    }
+
+
 def materialize_article_structured_bundle(*, article_id: str, article_meta: dict[str, Any], article_body: str, worthiness_text: str, findings_text: str = "", facts_text: str = "", claims_records: list[dict[str, Any]] | None = None, evidence_records: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     curator = build_curator_record(article_id, worthiness_text, str(article_meta.get("curator_mode") or "agent"))
     findings = build_findings_records(article_id, findings_text) if curator["decision"] == "kept" else []
@@ -459,6 +510,7 @@ def materialize_article_structured_bundle(*, article_id: str, article_meta: dict
         claims = attach_evidence_ids(claims, evidence)
     lineage = build_lineage(article_id, article_body, claims, facts, evidence)
     validation = build_validation(article_id, article_meta, article_body, curator, findings, facts, claims, evidence, lineage)
+    historical_policy = build_historical_policy(article_id, article_meta, validation)
 
     paths = {
         CURATOR_FILE: str(_write_json(structured_path(article_id, CURATOR_FILE), curator)),
@@ -468,6 +520,7 @@ def materialize_article_structured_bundle(*, article_id: str, article_meta: dict
         EVIDENCE_FILE: str(_write_jsonl(structured_path(article_id, EVIDENCE_FILE), evidence)),
         LINEAGE_FILE: str(_write_json(structured_path(article_id, LINEAGE_FILE), lineage)),
         VALIDATION_FILE: str(_write_json(structured_path(article_id, VALIDATION_FILE), validation)),
+        HISTORICAL_POLICY_FILE: str(_write_json(structured_path(article_id, HISTORICAL_POLICY_FILE), historical_policy)),
     }
     return {
         "article_id": article_id,
@@ -477,4 +530,5 @@ def materialize_article_structured_bundle(*, article_id: str, article_meta: dict
         "finding_count": len(findings),
         "fact_count": len(facts),
         "validation_status": validation["overall_status"],
+        "historical_policy_status": historical_policy["policy_status"],
     }

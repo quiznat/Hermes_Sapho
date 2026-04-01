@@ -140,6 +140,27 @@ Limits: The excerpt is partial and should be checked against the full paper.
                 self.assertEqual(validation["checks"]["completeness"]["status"], "pass")
                 self.assertEqual(validation["overall_status"], "pass")
 
+    def test_imported_discarded_package_is_marked_blocked_not_publishable(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            with patch.object(common, "ARTICLES_DIR", Path(tmpdir)):
+                materialize_article_structured_bundle(
+                    article_id="art-test-002b",
+                    article_meta={
+                        "article_id": "art-test-002b",
+                        "publication_status": "discarded",
+                        "curator_mode": "agent-fallback-discard",
+                        "imported_from_runtime_article_id": "art-legacy-002b",
+                    },
+                    article_body="# Discarded Article\n\nThis source was discarded by Curator.\n",
+                    worthiness_text="DISCARD\n\nThe source is not sufficiently novel for the Daily rail.",
+                )
+
+                article_root = Path(tmpdir) / "art-test-002b"
+                historical_policy = self.read_json(article_root / "historical-policy.json")
+                self.assertTrue(historical_policy["applies"])
+                self.assertEqual(historical_policy["policy_status"], "blocked_not_publishable")
+                self.assertFalse(historical_policy["current_law_eligible"])
+
     def test_duplicate_rejected_bundle_records_duplicate_as_resolved_not_failed(self) -> None:
         article_body = """# Duplicate Rejected
 
@@ -224,6 +245,114 @@ Contradictions were reviewed and no material unresolved conflict was found.
                 self.assertEqual(result["validation_status"], "pass")
                 self.assertEqual(validation["checks"]["contradiction_baseline"]["status"], "pass")
                 self.assertEqual(validation["checks"]["mechanism_baseline"]["status"], "pass")
+
+    def test_imported_published_package_without_law_reviews_is_explicitly_quarantined(self) -> None:
+        article_body = """# Imported Historical Article
+
+## Core Thesis
+
+Historical package content exists.
+
+## Why It Matters
+
+It was published before contradiction and mechanism review became mandatory.
+
+## Key Findings
+
+- A historical package can still be made explicit.
+
+## Limits
+
+Law review artifacts were not captured at publication time.
+"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            with patch.object(common, "ARTICLES_DIR", Path(tmpdir)), patch.object(article_law_reviews, "article_dir", lambda article_id: Path(tmpdir) / article_id):
+                result = materialize_article_structured_bundle(
+                    article_id="art-test-006",
+                    article_meta={
+                        "article_id": "art-test-006",
+                        "publication_status": "published",
+                        "curator_mode": "agent",
+                        "imported_from_runtime_article_id": "art-legacy-006",
+                    },
+                    article_body=article_body,
+                    worthiness_text="KEEP\n\nHistorical package remains novel enough to keep.\n",
+                    findings_text="- A historical package can still be made explicit.\n",
+                    facts_text="- A historical package can still be made explicit.\n",
+                )
+
+                article_root = Path(tmpdir) / "art-test-006"
+                validation = self.read_json(article_root / "validation.json")
+                historical_policy = self.read_json(article_root / "historical-policy.json")
+                self.assertEqual(result["validation_status"], "fail")
+                self.assertEqual(validation["checks"]["contradiction_baseline"]["status"], "fail")
+                self.assertEqual(validation["checks"]["mechanism_baseline"]["status"], "fail")
+                self.assertTrue(historical_policy["applies"])
+                self.assertEqual(historical_policy["policy_status"], "legacy_quarantined")
+                self.assertFalse(historical_policy["current_law_eligible"])
+                self.assertEqual(set(historical_policy["missing_law_checks"]), {"contradiction_baseline", "mechanism_baseline"})
+
+    def test_imported_package_with_real_law_reviews_is_marked_current_law_compliant(self) -> None:
+        article_body = """# Imported Historical Article
+
+## Core Thesis
+
+Historical package content exists.
+
+## Why It Matters
+
+Imported packages can become current-law compliant through real review artifacts.
+
+## Key Findings
+
+- Real reviews, not placeholders, determine compliance.
+
+## Limits
+
+Bounds remain explicit.
+"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            def fake_article_dir(article_id: str) -> Path:
+                return Path(tmpdir) / article_id
+
+            with patch.object(common, "ARTICLES_DIR", Path(tmpdir)), patch.object(article_law_reviews, "article_dir", fake_article_dir):
+                article_root = Path(tmpdir) / "art-test-007"
+                article_root.mkdir(parents=True, exist_ok=True)
+                (article_root / "contradiction-review.json").write_text(json.dumps({
+                    "version": "contradiction-review.v1",
+                    "article_id": "art-test-007",
+                    "status": "clean",
+                    "contradiction_count": 0
+                }) + "\n", encoding="utf-8")
+                (article_root / "mechanism-review.json").write_text(json.dumps({
+                    "version": "mechanism-review.v1",
+                    "article_id": "art-test-007",
+                    "status": "explained",
+                    "mechanism_count": 1,
+                    "bounded_claim_count": 0
+                }) + "\n", encoding="utf-8")
+
+                result = materialize_article_structured_bundle(
+                    article_id="art-test-007",
+                    article_meta={
+                        "article_id": "art-test-007",
+                        "publication_status": "published",
+                        "curator_mode": "agent",
+                        "imported_from_runtime_article_id": "art-legacy-007",
+                    },
+                    article_body=article_body,
+                    worthiness_text="KEEP\n\nHistorical package remains valid under current law once the real reviews exist.\n",
+                    findings_text="- Real reviews, not placeholders, determine compliance.\n",
+                    facts_text="- Real reviews, not placeholders, determine compliance.\n",
+                )
+
+                article_root = Path(tmpdir) / "art-test-007"
+                historical_policy = self.read_json(article_root / "historical-policy.json")
+                self.assertEqual(result["validation_status"], "pass")
+                self.assertTrue(historical_policy["applies"])
+                self.assertEqual(historical_policy["policy_status"], "current_law_compliant")
+                self.assertTrue(historical_policy["current_law_eligible"])
+                self.assertEqual(historical_policy["missing_law_checks"], [])
 
 
 if __name__ == "__main__":
