@@ -23,49 +23,52 @@ Key constraints:
 - duplicate-rejected packages are treated as correctly blocked rather than validator failures
 - article package surfaces preserve explicit lineage, evidence, and validation files
 - no placeholder contradiction/mechanism artifacts are used for greenwashing eligibility
+- the active article lane now uses bounded persona job contracts for Curator admission, Extractor evidence, Synthesist claims, and Synthesist article writing
+- bounded Synthesist contradiction and mechanism review jobs are now implemented and materialized into article packages
 
 ## Not yet fully charter-aligned
 
-### 1. Structured claims/evidence are still compatibility-derived
+### 1. Transitional compatibility structure still exists inside the package layer
 
-Current `structured_artifact_bundle.py` derives:
-- `findings.jsonl`
-- `facts.jsonl`
-- `claims.jsonl`
-- `evidence.jsonl`
+Current `structured_artifact_bundle.py` can still derive or normalize some structured surfaces from compatibility markdown outputs and local heuristics.
 
-from legacy-compatible markdown outputs and local heuristics.
+This remains useful for transition and auditability, but it is not the final charter-native end state because the package layer still preserves compatibility with older micro-era surfaces while the newer bounded job lane is coming online.
 
-This is useful for transition and auditability, but it is not the final charter-native form because:
-- Extractor evidence is not yet produced from the bounded `jobs/extractor/evidence.md` contract
-- Synthesist claims are not yet produced from the bounded `jobs/synthesist/article-claims.md` contract
-- article synthesis is still driven by micro compatibility prompts instead of the bounded charter job set
+### 2. Historical packages are not yet all brought up to current law
 
-### 2. Contradiction/mechanism review jobs are not yet implemented
+The strongest current gap is not that the bounded law jobs are absent.
+It is that many older article packages were produced before contradiction/mechanism review became part of the enforced package standard.
 
-The validator is now correct to fail these packages.
-The production jobs that satisfy those laws still need to be added.
+As a result:
+- the validator correctly fails those older packages
+- the corpus is in a mixed state between legacy-published material and current-law package expectations
 
-### 3. Current lane still uses micro prompt surfaces
+### 3. Conclave/publication authority is still only partially formalized
 
-`run_micro_article_lane.py` still runs:
-- `micro/jobs/curator-worthiness.md`
-- `micro/jobs/facts.md`
-- `micro/jobs/article-summary.md`
+Validation is now explicit and fail-closed, which is correct.
+But the full publication-authority layer is still incomplete because:
+- validator success/failure is not yet the complete formal Conclave control surface
+- historical-package policy is not yet fully resolved under the stronger law
+- the broader publication rail still needs clearer authority wiring around shadow proof and cutover
 
-This is operationally useful but remains looser than the charter-first job contracts already present under `jobs/`.
+### 4. Operational governance layers remain ahead
+
+The article lane is much closer to charter shape than before, but the surrounding operational layers are still incomplete:
+- Piter 2.0 control-plane work is still ahead
+- shadow publication infrastructure is still ahead
+- proof-window comparison receipts are still ahead
 
 ## Required next slice
 
-To move toward charter-native execution:
+To continue moving toward charter-native execution:
 
-1. use bounded Extractor evidence job
-2. use bounded Synthesist claim job
-3. use bounded Synthesist article-write job
-4. add bounded Synthesist contradiction review job
-5. add bounded Synthesist mechanism review job
-6. keep Conclave/validators fail-closed until those outputs exist and pass
+1. resolve historical-package policy by either real backfill or explicit legacy quarantine under current law
+2. tighten Conclave/publication authority so validation is part of a formal fail-closed publication gate
+3. keep contradiction/mechanism enforcement fail-closed for all newly produced packages
+4. reduce remaining compatibility-derived bundle logic where bounded-job outputs can become canonical directly
+5. build shadow publication surfaces needed for proof before cutover
+6. start the first bounded, operationally real Piter 2.0 slice
 
 ## Policy
 
-Until those bounded jobs exist, the system should prefer visible failure over false eligibility.
+Where lawful package requirements are still missing, unresolved, or only partially migrated across the corpus, the system should prefer visible failure over false eligibility.
