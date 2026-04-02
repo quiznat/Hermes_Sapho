@@ -1,5 +1,15 @@
 KEEP
 
-This source presents findings from a study investigating how experienced developers use AI agents in software development. It includes qualitative data from field observations and surveys, offering insights into developer motivations, strategies, and sentiments. This constitutes novel findings and a form of novel synthesis by analyzing real-world practices.
+This is a preprint reporting original empirical findings from field observations and surveys of professional developers using AI coding agents.
 
-Limits: The excerpt is from an academic paper and may not contain all experimental details or data visualizations present in the full publication. The methodology section mentions specific constraints for participant recruitment, which may influence the generalizability of the findings.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-021
+ticket_id: ticket-import-art-2026-03-04-021
+decision: kept
+reason: This is a preprint reporting original empirical findings from field observations and surveys of professional developers using AI coding agents.
+scope_class: preprint
+decided_at_utc: 2026-04-03T01:13:00Z
+---
+# Curator Receipt

@@ -1,3 +1,4 @@
-* Professional developers do not "vibe code"; they meticulously control AI agents through planning and supervision.
-* Developers utilize AI agents for a productivity boost while prioritizing fundamental software quality attributes.
-* Experienced developers find agents suitable for well-described, straightforward tasks but not for complex challenges.
+- Experienced developers in this study viewed AI agents as a productivity boost rather than as autonomous substitutes for their own work.
+- Experienced developers retained control over software design and implementation by planning work, supervising agent behavior, and validating outputs against core software quality standards.
+- Developers in this study treated AI agents as suitable for well-described, straightforward tasks and unsuitable for complex tasks.
+- Positive developer sentiment toward AI agents in this study was conditional on the developers' ability to compensate for agent limitations, not on trust in agent autonomy alone.

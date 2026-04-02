@@ -3,14 +3,11 @@
   "article_id": "art-2026-03-04-020",
   "applies": true,
   "source_regime": "runtime-import",
-  "publication_status": "published",
-  "validation_status": "fail",
-  "policy_status": "legacy_quarantined",
-  "current_law_eligible": false,
-  "missing_law_checks": [
-    "contradiction_baseline",
-    "mechanism_baseline"
-  ],
-  "disposition": "quarantined_from_current_law_publication",
-  "reviewed_at_utc": "2026-04-01T19:51:33Z"
+  "publication_status": "ready-for-daily",
+  "validation_status": "pass",
+  "policy_status": "current_law_compliant",
+  "current_law_eligible": true,
+  "missing_law_checks": [],
+  "disposition": "eligible_under_current_law",
+  "reviewed_at_utc": "2026-04-02T21:13:17Z"
 }

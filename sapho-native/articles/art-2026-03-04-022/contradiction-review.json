@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-022",
+  "reviewed_at_utc": "2026-04-02T21:19:13Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article keeps the main methodological tension visible: the taxonomy is informative, but its full-corpus coding pipeline remains reliability-bounded.",
+  "review_confidence": "high",
+  "contradiction_count": 1,
+  "status": "disclosed"
+}

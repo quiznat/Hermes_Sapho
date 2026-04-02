@@ -1,12 +1,12 @@
-- Field observations were conducted with 13 participants.
-- A qualitative survey was distributed to 99 experienced developers.
-- Participants in the field observations had 3 to 25 years of professional experience.
-- Field observation sessions included a 45-minute observation and a 30-minute interview.
-- The field observations took place between August 1 and October 3, 2025.
-- Participants in field observations received a $100 USD gift card.
-- Survey participants could enter a drawing for one of four $100 USD gift cards.
-- Experienced developers were defined as having at least three years of professional development experience.
-- Agentic tools were defined as AI tools integrated into an IDE or terminal that can manipulate code directly.
-- About half of professional software developers use AI tools daily.
-- A randomized trial found experienced open source maintainers were slowed down by 19% when using AI.
-- An agentic system deployed in an issue tracker saw only 8% of its invocations result in complete success.
+- Experienced developers in this study valued AI agents as a productivity boost.
+- Experienced developers retained their own agency in software design and implementation when using AI agents.
+- The source attributes developers' retained control to their insistence on fundamental software quality attributes.
+- Experienced developers employed control strategies for agent behavior by leveraging their own expertise.
+- The paper's most salient finding is that professional developers did not vibe code and instead carefully controlled agents through planning and supervision.
+- Experienced developers reported planning before implementing and validating all agentic outputs.
+- Developers found AI agents suitable for well-described, straightforward tasks.
+- Developers found AI agents not suitable for complex tasks.
+- Experienced developers felt overall positive about using agents when they believed they could complement the agents' limitations.
+- The study combined 13 field observations with a qualitative survey of 99 experienced developers.
+- The paper defined experienced developers as having at least three years of professional development experience.
+- The source cites prior human-study results showing one randomized trial where experienced open source maintainers were slowed by 19% when allowed to use AI, and one issue-tracker deployment where only 8% of invocations resulted in a merged pull request.

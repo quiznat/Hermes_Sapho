@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-022",
+  "reviewed_at_utc": "2026-04-02T21:19:30Z",
+  "reviewer_role": "Synthesist",
+  "summary": "art-2026-03-04-022 supports a bounded descriptive account of how developers structure repository context for coding assistants, but it does not support stronger causal claims about why those patterns occur or how they affect assistant performance.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Developer-provided context was organized into five themes, and Guidelines, Project Information, and Conventions appeared more often than LLM Directives.",
+      "bounds": "The evidence supports the five-theme taxonomy and relative prevalence within this dataset, but it does not justify a causal explanation for why some themes are more common than others."
+    },
+    {
+      "claim_text": "Repositories commonly combined multiple kinds of developer context, but complete five-category coverage was a minority pattern rather than the norm.",
+      "bounds": "The evidence supports co-occurrence patterns across repositories, but not any stronger claim that these combinations improve assistant behavior or project outcomes."
+    }
+  ]
+}

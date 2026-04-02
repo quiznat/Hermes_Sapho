@@ -1,10 +1,15 @@
-- The study analyzed 401 open-source repositories containing cursor rules.
-- The research used Sourcegraph to fetch repositories with cursor rule files (.mdc extension).
-- The study excluded forked and archived repositories from the data collection.
-- A total of 487 repositories initially met the criteria for containing cursor rule files.
-- The research developed a taxonomy of project context organized into five high-level themes.
-- The five themes are Conventions, Guidelines, Project Information, LLM Directives, and Examples.
-- The paper characterizes developer-provided context for AI coding assistants.
-- The study offers implications for the design of context-aware AI developer tools.
-- The research explored variations in context across project types and programming languages.
-- Cursor rules were chosen as a proxy for studying developer-provided context.
+- The study qualitatively analyzed 401 open-source repositories containing cursor rules.
+- The authors organized developer-provided context into five high-level themes: Conventions, Guidelines, Project Information, LLM Directives, and Examples.
+- Initial repository fetching found 487 repositories with at least one .mdc file before cleaning.
+- The final analysis set was reduced to 401 repositories after multiple manual cleaning steps.
+- The 401 repositories contained 1,876 .mdc files, averaging 4.68 .mdc files per repository.
+- 93.27% of repositories placed cursor rule files in the recommended root .cursor directory.
+- The average cursor rule file length was 462.67 lines, with the longest file at 11,076 lines.
+- The initial open coding sample used 30 repositories, selected as 3 repositories from each of 10 popular topics.
+- Independent coding of the initial 30 repositories by two researchers reached Cohen’s Kappa of 0.71.
+- The full-dataset coding used gemini-2.5-flash-preview-09-2025 with temperature 0.0, repeated labeling three times, and majority vote per line.
+- On the initial 30 repositories, LLM-assisted coding reached Cohen’s Kappa values of 0.64 and 0.65 against the two human raters.
+- 2.1% of all lines had three different LLM labels and were marked “No Code,” and the authors say this should be treated as a lower bound.
+- Project context appeared in 85% of repositories, Guideline in 89%, Convention in 84%, and LLM Directives in 50%.
+- 37.16% of repositories provided four content categories, and 24.69% provided all five categories including examples.
+- The dataset contained 19,917 duplicated lines, equal to 28.70% of all lines across repositories.

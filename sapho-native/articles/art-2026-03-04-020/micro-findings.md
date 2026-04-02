@@ -1,3 +1,4 @@
-*   MetaGPT is a meta-programming framework for LLM-based multi-agent collaborations.
-*   It utilizes Standard Operating Procedures (SOPs) for streamlined workflows.
-*   MetaGPT generates more coherent solutions than previous chat-based multi-agent systems on collaborative software engineering benchmarks.
+- MetaGPT reports strong benchmark code-generation performance, with Pass@1 scores of 85.9% on HumanEval and 87.7% on MBPP.
+- The paper attributes MetaGPT's improved code-generation success to structured intermediate outputs, role-specialized coordination, and executable feedback that verifies intermediate results.
+- In the paper's experimental evaluations, MetaGPT is reported to achieve a 100% task completion rate.
+- MetaGPT's reported capabilities do not fully generalize to all software scenarios, because the paper states it cannot yet fully handle some UI and front-end tasks.

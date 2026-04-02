@@ -1,5 +1,15 @@
 KEEP
 
-The source introduces MetaGPT, a meta-programming framework for LLM-based multi-agent collaborations. It details how SOPs are encoded for streamlined workflows, how agents verify results to reduce errors, and an assembly line paradigm for task breakdown. The abstract explicitly states that "On collaborative software engineering benchmarks, MetaGPT generates more coherent solutions than previous chat-based multi-agent systems," indicating a novel finding with empirical grounding, even if presented in an abstract.
+This preprint reports benchmarked experimental results on code-generation tasks.
 
-Limits: The provided excerpt is the abstract of an arXiv paper. It describes the framework and its purported benefits and performance on benchmarks but does not include the benchmark data itself, the experimental setup, or detailed results. Therefore, the substance of the experimental data and its analysis is not present.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-020
+ticket_id: ticket-import-art-2026-03-04-020
+decision: kept
+reason: This preprint reports benchmarked experimental results on code-generation tasks.
+scope_class: preprint
+decided_at_utc: 2026-04-03T01:10:00Z
+---
+# Curator Receipt

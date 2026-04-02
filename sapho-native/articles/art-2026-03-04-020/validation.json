@@ -1,7 +1,7 @@
 {
   "version": "article-validation.v1",
   "article_id": "art-2026-03-04-020",
-  "validated_at_utc": "2026-04-01T19:51:33Z",
+  "validated_at_utc": "2026-04-02T21:13:17Z",
   "checks": {
     "completeness": {
       "status": "pass",
@@ -21,13 +21,18 @@
       "detail": "lineage summary resolves to known claim ids"
     },
     "contradiction_baseline": {
-      "status": "fail",
-      "detail": "contradiction review artifact missing for eligible package"
+      "status": "pass",
+      "detail": "contradiction review artifact present",
+      "contradiction_count": 1,
+      "review_status": "disclosed"
     },
     "mechanism_baseline": {
-      "status": "fail",
-      "detail": "mechanism review artifact missing for eligible package"
+      "status": "pass",
+      "detail": "mechanism review artifact present",
+      "mechanism_count": 2,
+      "bounded_claim_count": 2,
+      "review_status": "explained"
     }
   },
-  "overall_status": "fail"
+  "overall_status": "pass"
 }

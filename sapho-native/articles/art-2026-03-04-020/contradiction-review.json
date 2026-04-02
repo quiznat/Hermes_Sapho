@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-020",
+  "reviewed_at_utc": "2026-04-02T21:12:59Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Reported perfect task completion is visibly narrower than it sounds because the paper also states the system cannot fully handle some UI and front-end scenarios.",
+  "review_confidence": "high",
+  "contradiction_count": 1,
+  "status": "disclosed"
+}

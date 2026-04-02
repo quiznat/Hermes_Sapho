@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-021",
+  "reviewed_at_utc": "2026-04-02T21:15:45Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Developers report AI coding agents as useful under close expert control, but that usefulness is sharply bounded and sits in tension with less favorable prior real-world results.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

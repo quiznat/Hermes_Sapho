@@ -1,4 +1,12 @@
-- Submitted on 1 Aug 2023 (v1)
-- Last revised 1 Nov 2024 (v7)
-- Title: MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework
-- Authors: Sirui Hong, Mingchen Zhuge, Jiaqi Chen, Xiawu Zheng, Yuheng Cheng, Ceyao Zhang, Jinlin Wang, Zili Wang, Steven Ka Shing Yau, Zijuan Lin, Liyang Zhou, Chenyu Ran, Lingfeng Xiao, Chenglin Wu, Jürgen Schmidhuber
+- MetaGPT reports Pass@1 scores of 85.9% and 87.7% on HumanEval and MBPP.
+- The paper claims MetaGPT achieved a 100% task completion rate in its experimental evaluations.
+- The paper attributes MetaGPT's error reduction to encoding standardized operating procedures into prompt sequences and having agents verify intermediate results.
+- The paper claims that requiring structured intermediate outputs significantly increases target code generation success rate.
+- MetaGPT defines five software-company roles: Product Manager, Architect, Project Manager, Engineer, and QA Engineer.
+- MetaGPT uses a shared message pool so agents can publish structured messages and retrieve needed information directly.
+- MetaGPT uses a subscription mechanism so agents select role-relevant information and act only after prerequisite dependencies are received.
+- MetaGPT's executable feedback loop continues iterative testing and debugging until tests pass or three retries are reached.
+- On SoftwareDev, Table 1 reports executability scores of 2.25 for ChatDev, 3.67 for MetaGPT without feedback, and 3.75 for MetaGPT.
+- On SoftwareDev, Table 1 reports running times of 762 seconds for ChatDev, 503 seconds for MetaGPT without feedback, and 541 seconds for MetaGPT.
+- Adding executable feedback is reported to improve Pass@1 by 4.2% on HumanEval and 5.4% on MBPP.
+- The paper states that the current system cannot fully handle some scenarios such as UI and front-end because relevant agents and multimodal tools have not yet been incorporated.

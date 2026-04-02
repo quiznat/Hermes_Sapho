@@ -1,3 +1,4 @@
-*   Developer-provided context for AI coding assistants is crucial for their effectiveness, especially in software engineering.
-*   A study of 401 open-source repositories identified a taxonomy of five essential context themes: Conventions, Guidelines, Project Information, LLM Directives, and Examples.
-*   Developers are adapting traditional documentation practices for AI assistants, creating "rule files" that contain project-specific directives and constraints.
+- The study's analyzed corpus consisted of 401 open-source repositories with cursor rules, reduced from an initial fetch of 487 repositories after manual cleaning.
+- Developer-provided context in the analyzed repositories was organized into five themes, and Guidelines, Project Information, and Conventions appeared more often than LLM Directives.
+- Repositories commonly combined multiple kinds of developer context, but complete five-category coverage was a minority pattern rather than the norm.
+- The paper's thematic results are informative but methodologically bounded because full-dataset coding relied on repeated LLM labeling with only moderate agreement to human raters and some unresolved line-level disagreement.
