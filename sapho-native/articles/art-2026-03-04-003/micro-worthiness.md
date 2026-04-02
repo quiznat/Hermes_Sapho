@@ -1,5 +1,15 @@
 KEEP
 
-This paper presents a preliminary study on the adoption and evolution of AI configuration files (AGENTS.md) in open-source software projects. It offers novel synthesis by analyzing how developers structure and present context for AI agents, providing insights into real-world prompt and context engineering, and identifying variations in context provision.
+This is a research preprint reporting an empirical study of 466 open-source projects.
 
-Limits: The excerpt is from a work-in-progress paper and may represent a preliminary study; the full scope of findings and potential limitations or caveats are not present.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-003
+ticket_id: ticket-import-art-2026-03-04-003
+decision: kept
+reason: This is a research preprint reporting an empirical study of 466 open-source projects.
+scope_class: preprint
+decided_at_utc: 2026-04-02T17:47:00Z
+---
+# Curator Receipt

@@ -414,6 +414,86 @@ Sapho needs to know whether context engineering actually helps in production wor
         self.assertEqual(len(evidence_files), 2)
         self.assertEqual([row["meta"]["evidence_id"] for row in evidence_files], ["evidence-001", "evidence-002"])
 
+    def test_article_write_rejects_weak_tension_and_mechanism_voice(self) -> None:
+        weak_article = """# Weak Article
+
+## Core Thesis
+
+AI agent configuration files are still an early and weakly standardized practice.
+
+## Why It Matters for Sapho
+
+Sapho should avoid overreading immature ecosystem signals.
+
+## Key Findings
+
+- Adoption across 10,000 repositories was about 5%.
+- AGENTS.md files averaged 142 lines with standard deviation 231.
+
+## Evidence and Findings
+
+- The paper's adoption analysis covered 10,000 GitHub repositories and found 466 repositories with the studied formats.
+- The study identified five stylistic modes in AGENTS.md sections.
+- The history analysis of 155 AGENTS.md files showed that 77, or 50%, never changed after creation.
+- The paper reports 36 files, or 23%, changed once.
+
+## Contradictions and Tensions
+
+No direct empirical contradiction is reported against the core findings, but there are meaningful interpretive tensions.
+
+## Mechanism or Bounds
+
+The supported mechanism is limited. The evidence most strongly supports a descriptive account.
+
+## Limits
+
+The paper is preliminary and descriptive rather than causal.
+"""
+        claims = [
+            {
+                "claim_id": "claim-001",
+                "article_id": "art-test-108",
+                "claim_text": "Only 466 of 10,000 scanned repositories used the studied AI configuration formats, about 5% adoption.",
+                "claim_kind": "empirical_claim",
+                "supporting_fact_ids": [],
+                "supporting_evidence_ids": ["evidence-001", "evidence-002"],
+                "source_span_refs": ["articles/art-test-108/source.md#evidence-001"],
+                "caveats": [],
+                "confidence": "high",
+                "mechanism_or_bounds": "Revision behavior suggests selective maintenance, but causal mechanism is bounded.",
+                "contradiction_note": "Attention to agent tooling is high despite low measured adoption.",
+            }
+        ]
+        evidence_records = [
+            {
+                "evidence_id": "evidence-001",
+                "article_id": "art-test-108",
+                "evidence_type": "metric",
+                "evidence_text": "Only 466 of 10,000 scanned repositories used the studied AI configuration formats, about 5% adoption.",
+                "source_span_ref": "articles/art-test-108/source.md#evidence-001",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "high",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "The field signal is visible despite low uptake.",
+            },
+            {
+                "evidence_id": "evidence-002",
+                "article_id": "art-test-108",
+                "evidence_type": "metric",
+                "evidence_text": "Among 155 files examined for history, 77 or 50% never changed after creation.",
+                "source_span_ref": "articles/art-test-108/source.md#evidence-002",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "high",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "Maintenance is uneven rather than uniformly active.",
+            },
+        ]
+        with self.assertRaises(JobContractError) as ctx:
+            article_job_runtime.validate_article_write_body(weak_article, claims=claims, evidence_records=evidence_records)
+        self.assertEqual(str(ctx.exception), "article_write_weak_tension_or_mechanism")
+
     def test_extract_last_article_document_prefers_final_complete_article(self) -> None:
         first = """---
 version: article.v1

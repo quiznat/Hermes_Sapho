@@ -1,5 +1,14 @@
-- The paper was submitted on March 17, 2025.
-- The paper was last revised on October 26, 2025.
-- The paper's arXiv identifier is 2503.13657.
-- The paper is classified under Computer Science > Artificial Intelligence.
-- The authors are Mert Cemri, Melissa Z. Pan, Shuyi Yang, Lakshya A. Agrawal, Bhavya Chopra, Rishabh Tiwari, Kurt Keutzer, Aditya Parameswaran, Dan Klein, Kannan Ramchandran, Matei Zaharia, Joseph E. Gonzalez, and Ion Stoica.
+- Performance gains from multi-agent systems on popular benchmarks remain minimal relative to single-agent frameworks.
+- The study analyzes five popular multi-agent frameworks across more than 150 tasks using six expert human annotators.
+- The study identifies 14 distinct multi-agent failure modes organized into 3 categories.
+- Three expert annotators reached Cohen's Kappa 0.88 while refining the taxonomy.
+- The paper reports ChatDev correctness as low as 25%.
+- The few-shot o1 LLM-as-a-judge annotator achieved 94% accuracy and Cohen's Kappa 0.77.
+- Best-effort prompt and orchestration interventions improved ChatDev by 14% but did not eliminate failures.
+- The paper states that improved multi-agent performance remained too low for real-world deployment.
+- The authors argue MASFT reflects fundamental design flaws in multi-agent systems rather than being only an artifact of current frameworks.
+- The findings indicate many failures arise from inter-agent interaction challenges rather than individual-agent limitations.
+- No single top-level error category disproportionately dominates the observed failures.
+- The paper says inadequate verification was a major contributor to failure, but not all failures can be reduced to verification alone.
+- The taxonomy excludes common LLM failures such as text repetition when they are not specific to multi-agent systems.
+- In the ChatDev case study, baseline ProgramDev accuracy was 25.0, improved-prompt accuracy was 34.4, and new-topology accuracy was 40.6.

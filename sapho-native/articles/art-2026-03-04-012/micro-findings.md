@@ -1,3 +1,4 @@
-* Introduces MAST-Data and MAST taxonomy for multi-agent LLM failures.
-* Provides systematic analysis of failure patterns across models and tasks.
-* Offers insights and a roadmap for future research in multi-agent LLM systems.
+- Performance gains from the evaluated multi-agent LLM systems were minimal relative to single-agent frameworks and remained too weak for real-world deployment.
+- The study finds that multi-agent system failures are distributed across 14 distinct failure modes in 3 categories rather than being dominated by one top-level error class.
+- The paper argues that many observed failures stem from inter-agent interaction design problems, not just weaknesses in individual agents or verification gaps alone.
+- In the ChatDev case study, prompt and topology interventions improved correctness from 25.0 to 34.4 and 40.6, but substantial failure remained after these best-effort changes.

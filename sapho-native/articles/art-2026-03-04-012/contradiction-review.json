@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-012",
+  "reviewed_at_utc": "2026-04-02T17:52:57Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article keeps the main internal tensions visible: interventions improve results without making the system robust, and verification matters strongly without fully explaining failure.",
+  "review_confidence": "high",
+  "contradiction_count": 2,
+  "status": "disclosed"
+}

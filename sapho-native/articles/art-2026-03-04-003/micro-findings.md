@@ -1,3 +1,4 @@
-*   AI agents require contextual information to develop solutions.
-*   This paper studies the adoption and evolution of AI (AGENTS.md) configuration files in open-source software projects.
-*   The study offers insights into how developers structure and present context for AI agents.
+- Only 466 scanned repositories, or 5%, had adopted at least one of the AI configuration file formats examined in the study.
+- Within repositories that had AI configuration files, TypeScript appeared most often in the reported language counts, while Go, Python, and C# formed a second cluster at substantially lower but similar levels.
+- The studied AI configuration formats differed materially in document size characteristics, with Copilot instruction files longest on average and AGENTS.md showing the greatest length variability.
+- AGENTS.md files in the study were often stable after creation, but when change occurred in the detailed high-activity sample it was usually focused on adding or modifying instructions rather than broad multi-category revisions.

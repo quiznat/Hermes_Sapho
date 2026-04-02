@@ -328,14 +328,31 @@ def validate_article_write_body(body: str, *, claims: list[dict[str, Any]], evid
     ]
     if any(section not in body for section in required_sections):
         raise JobContractError("article_write_missing_dense_sections")
-    evidence_and_findings = _markdown_sections(body).get("Evidence and Findings", "")
-    key_findings = _markdown_sections(body).get("Key Findings", "")
+    sections = _markdown_sections(body)
+    evidence_and_findings = sections.get("Evidence and Findings", "")
+    key_findings = sections.get("Key Findings", "")
+    contradiction_section = sections.get("Contradictions and Tensions", "")
+    mechanism_section = sections.get("Mechanism or Bounds", "")
     claims_text = "\n".join(_clean(row.get("claim_text")) for row in claims if _clean(row.get("claim_text")))
     evidence_text = "\n".join(_clean(row.get("evidence_text")) for row in evidence_records if _clean(row.get("evidence_text")))
     numeric_payload_present = _contains_numeric_payload(claims_text) or _contains_numeric_payload(evidence_text)
     numeric_payload_surface = _contains_numeric_payload(evidence_and_findings) or _contains_numeric_payload(key_findings)
     if numeric_payload_present and not numeric_payload_surface:
         raise JobContractError("article_write_missing_empirical_specificity")
+    weak_tension_phrases = [
+        "no direct empirical contradiction is reported",
+        "no direct contradiction is visible",
+    ]
+    weak_mechanism_phrases = [
+        "the supported mechanism is limited",
+        "descriptive account",
+    ]
+    contradiction_low = contradiction_section.lower()
+    mechanism_low = mechanism_section.lower()
+    if any(phrase in contradiction_low for phrase in weak_tension_phrases) and not _contains_numeric_payload(contradiction_section):
+        raise JobContractError("article_write_weak_tension_or_mechanism")
+    if any(phrase in mechanism_low for phrase in weak_mechanism_phrases):
+        raise JobContractError("article_write_weak_tension_or_mechanism")
 
 
 def run_synthesist_article_write(*, article_id: str, source_title: str, source_url: str, queued_at_utc: str, captured_at_utc: str, artifact_minted_at_utc: str, claims: list[dict[str, Any]], evidence_records: list[dict[str, Any]], agent_id: str, timeout: int) -> dict[str, Any]:

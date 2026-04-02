@@ -1,5 +1,12 @@
-- GenAI-based coding assistants have disrupted software development.
-- The next generation of AI coding assistants are agent-based.
-- AI agents require contextual information for developing solutions.
-- Popular AI agents (Claude Code, OpenAI Codex) maintain tool-specific Markdown files for context.
-- AGENTS.md has emerged as a potential standard for consolidating tool-specific formats.
+- Only 466 of the scanned repositories, or 5%, had adopted at least one of the AI configuration file formats the study considered.
+- The adoption analysis covered four commercial tools and did not include other tools such as Cline or OpenCode.
+- Among repositories with AI configuration files, the language counts reported were 135 TypeScript, 58 Go, 58 Python, 56 C#, 36 Java, 34 JavaScript, 32 C++, 29 Rust, 19 PHP, and 9 C.
+- Copilot instruction files were the longest on average at 310 lines, while AGENTS.md files showed the highest length variation with mean 142 lines and standard deviation 231.
+- For the AGENTS.md heading analysis, the authors excluded 15 files created before January 1, 2025 and excluded 5 files with no heading structure.
+- The three most common level-1 or level-2 heading categories in AGENTS.md were conventions/best practices (50), contribution guidelines (48), and architecture/project structure (47).
+- The authors characterized AGENTS.md writing style along five dimensions: descriptive, prescriptive, prohibitive, explanatory, and conditional.
+- The source gives "Never commit directly to the main branch" as an example of a prohibitive instruction in AGENTS.md.
+- Among 155 AGENTS.md files, 77 had no changes after the initial commit, 36 changed once, and 32 changed between two and seven times.
+- The detailed evolution analysis focused on 10 files with at least 10 commits, producing a sample of 169 commits, or 37% of the 453 collected commits.
+- Most annotated commits, 111 out of 169 or 66%, represented only one change category.
+- The most frequent AGENTS.md change categories were add instruction(s) with 78 instances and modify instruction(s) with 59 instances.

@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-003",
+  "reviewed_at_utc": "2026-04-02T17:50:05Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The study supports bounded observations about sparse adoption, language concentration, file-size differences, and mostly light AGENTS.md maintenance, but it does not establish causal explanations for those patterns.",
+  "review_confidence": "high",
+  "mechanism_count": 0,
+  "bounded_claim_count": 4,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "Only 466 scanned repositories, or 5%, had adopted at least one of the AI configuration file formats examined in the study.",
+      "bounds": "This is an observed adoption measurement within the study's defined tool set, not an explanation for why adoption is low; the result is explicitly bounded because the analysis covered four commercial tools and excluded other ecosystems such as Cline and OpenCode."
+    },
+    {
+      "claim_text": "Within repositories that had AI configuration files, TypeScript appeared most often in the reported language counts, while Go, Python, and C# formed a second cluster at substantially lower but similar levels.",
+      "bounds": "The evidence supports only a comparative distribution inside the adopting subset; it does not show why TypeScript leads or whether the pattern would hold against the broader repository population."
+    },
+    {
+      "claim_text": "The studied AI configuration formats differed materially in document size characteristics, with Copilot instruction files longest on average and AGENTS.md showing the greatest length variability.",
+      "bounds": "The evidence supports a size comparison across formats, but not a causal account of why Copilot files are longer on average or why AGENTS.md varies more widely."
+    },
+    {
+      "claim_text": "AGENTS.md files in the study were often stable after creation, but when change occurred in the detailed high-activity sample it was usually focused on adding or modifying instructions rather than broad multi-category revisions.",
+      "bounds": "The evidence shows an observed maintenance pattern rather than a governance mechanism; the stronger evolution detail is bounded to a 10-file high-activity subset, so it should not be generalized to all AGENTS.md files without caution."
+    }
+  ]
+}

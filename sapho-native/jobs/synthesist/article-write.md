@@ -64,12 +64,14 @@ Do not use raw evidence ids or claim ids in this section.
 ## Contradictions and Tensions
 
 State the tensions, mixed results, contradiction disclosures, or places where the evidence cuts against easy interpretation.
-If no direct contradiction is visible, say that plainly while still surfacing meaningful tensions or limits in the evidence.
+Do not satisfy this section with generic language such as "no direct contradiction is visible" unless you also name the concrete tension that matters for interpretation.
+When the source contains benchmark-specific reversals, mixed subgroup results, cost/performance tradeoffs, adoption/attention mismatches, or other decision-relevant tensions, name them explicitly.
 
 ## Mechanism or Bounds
 
 State the supported mechanism when the evidence supports one.
-If mechanism is uncertain, state the best bounded explanation instead of pretending certainty.
+If mechanism is uncertain, state the strongest bounded operational explanation instead of saying only that the paper is descriptive.
+Do not default to generic phrases like "the supported mechanism is limited" or "the evidence is descriptive" when a stronger bounded explanation is available from the evidence.
 If the evidence is only correlational, partial, benchmark-bound, or otherwise constrained, say so explicitly here.
 
 ## Limits
