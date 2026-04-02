@@ -1,0 +1,6 @@
+- The paper arXiv:2308.08155 was first submitted on 16 Aug 2023.
+- The paper arXiv:2308.08155 had its first revision on 3 Oct 2023.
+- The title of the paper is "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation".
+- The authors include Qingyun Wu, Gagan Bansal, Jieyu Zhang, Yiran Wu, Beibin Li, Erkang Zhu, Li Jiang, Xiaoyun Zhang, Shaokun Zhang, Jiale Liu, Ahmed Hassan Awadallah, Ryen W White, Doug Burger, and Chi Wang.
+- The paper is classified under Computer Science > Artificial Intelligence.
+- The arXiv identifier for the paper is 2308.08155.

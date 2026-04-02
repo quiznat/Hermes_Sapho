@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-010",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "sufficient",
+  "reason": "The provided excerpt describes the Model Context Protocol (MCP) and its potential applications, but it lacks concrete experimental data, benchmark results, or production evidence. It functions as a general overview and explanation of what MCP is and what it can enable, rather than presenting novel findings or synthesis grounded in empirical data.\nThe excerpt focuses on the capabilities and benefits of MCP without providing any specific data, measurements, or outcomes from experiments or production use cases. It describes the protocol in a general sense, akin to an architecture README or a product overview, which does not meet the criteria for inclusion based on the provided rules.",
+  "limits": "",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

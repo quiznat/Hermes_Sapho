@@ -1,0 +1,5 @@
+- Moltbot was renamed to OpenClaw as of January 30, 2026.
+- Moltbot is an open-source, self-hosted AI agent designed to act as a personal assistant.
+- Moltworker is a middleware worker that allows running Moltbot on Cloudflare's Sandbox SDK.
+- Cloudflare Workers now has improved Node.js compatibility.
+- Playwright implementation on Cloudflare Workers now uses node:fs natively.

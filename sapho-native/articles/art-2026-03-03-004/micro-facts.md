@@ -1,0 +1,6 @@
+- The paper studies the impact of AGENTS.md files on AI coding agents.
+- The study focuses on runtime and token consumption.
+- The research involves GitHub pull requests.
+- AI coding agents like Codex and Claude Code are increasingly used in software repositories.
+- The date of the paper is January 23, 2026.
+- Authors are from Singapore Management University, Heidelberg University, University of Bamberg, King's College London.

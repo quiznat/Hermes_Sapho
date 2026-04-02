@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-025",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is a README file describing a data agent called \"Dash\". While it outlines the agent's technical approach, layers of context, and self-learning loop, it lacks any concrete experimental data, benchmark results, or production evidence. It explains *how* the system works but not its performance or outcomes.",
+  "limits": "The excerpt focuses on the architecture and setup of the \"Dash\" agent, detailing its components and intended functionality. However, it does not include any metrics, benchmark scores, or examples of real-world performance data, which are required for admission according to the Curator's criteria.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:32Z",
+  "mode": "agent"
+}

@@ -1,0 +1,5 @@
+- Source title: [2508.08322] Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code
+- Authors: Muhammad Haseeb
+- arXiv identifier: 2508.08322
+- Submission date: 9 Aug 2025
+- Subject classification: Computer Science > Software Engineering

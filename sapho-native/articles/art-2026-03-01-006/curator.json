@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-006",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is a README file for a GitHub repository that describes a collection of AI \"skills\" for frontend development. While it details the purpose and capabilities of these skills, it lacks any concrete experimental data, benchmark results, or production evidence. It functions as a descriptive overview and installation guide, not a source of novel findings or empirical data.",
+  "limits": "The excerpt is a README and does not contain benchmark results, experimental data, or production evidence, which are the core criteria for acceptance. It describes a system's potential without demonstrating its outcomes.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:32Z",
+  "mode": "agent"
+}

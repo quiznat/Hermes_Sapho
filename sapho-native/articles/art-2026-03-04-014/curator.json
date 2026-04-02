@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-014",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is the abstract and metadata of an arXiv paper. While it discusses agentic coding tools and manifests, it does not present concrete experimental data, benchmark results, or production incident details. The analysis described is high-level, focusing on structural patterns rather than empirical outcomes.",
+  "limits": "the excerpt lacks the full paper content, which might contain the experimental data. However, based solely on the provided text, there is no evidence of novel findings or real experimental data that would warrant inclusion in the Daily rail.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-02-024",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided excerpt contains only metadata and website navigation elements, lacking any substantive research value, experimental data, or novel synthesis as required by the institute's criteria.",
+  "limits": "The excerpt is a mere fragment of what appears to be a scientific paper or project page, offering no insight into its actual content or findings.",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

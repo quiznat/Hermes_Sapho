@@ -1,0 +1,10 @@
+- SWE-bench is an evaluation framework with 2,294 software engineering problems.
+- SWE-bench problems are drawn from real GitHub issues and pull requests.
+- The problems span 12 popular Python repositories.
+- Resolving SWE-bench issues can require coordinating changes across multiple files.
+- SWE-bench requires models to interact with execution environments.
+- SWE-bench requires processing extremely long contexts.
+- SWE-bench requires complex reasoning beyond traditional code generation.
+- Claude 2 is able to solve 1.96% of the issues in SWE-bench.
+- SWE-bench was published as a conference paper at ICLR 2024.
+- SWE-Llama 13b can process contexts exceeding 100,000 tokens.

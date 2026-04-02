@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-21-013",
+  "decision": "kept",
+  "qualified_by": "experimental_blog",
+  "evidence_basis": "benchmark",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "sufficient",
+  "reason": "The source provides a concrete comparison of AI coding copilots, including their models, benchmarks, and standout capabilities. It relies on first-party data from pages, blogs, and repositories, offering substantive research value for evaluating these tools.\nThe information is limited to a snapshot from 2025 and relies on official data, noting where such data is unavailable. The comparison focuses on specific tools and their cited metrics rather than broader commentary.",
+  "limits": "",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

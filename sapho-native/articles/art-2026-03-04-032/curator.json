@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-032",
+  "decision": "kept",
+  "qualified_by": "novel_findings",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This source presents novel findings by introducing the Confucius Code Agent (CCA) and its associated SDK, detailing their architecture and performance on real-world software engineering tasks. It quantises performance with a specific metric (Resolve@1 of 54.3% on SWE-Bench-Pro), indicating experimental data.",
+  "limits": "The excerpt is from an arXiv paper, and the full findings, including potential limitations or further experimental details, are not fully captured. The provided excerpt omits certain sections indicated by \"[...]\".",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

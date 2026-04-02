@@ -1,0 +1,3 @@
+*   SWE-ContextBench, a new benchmark, evaluates programming agents on experience reuse by creating task sequences with shared context, augmenting SWE-Bench Lite with 99 related tasks from GitHub issues and pull requests.
+*   The benchmark assesses agents on prediction accuracy, time efficiency, and cost efficiency, utilizing various experience reuse settings like oracle-guided and autonomous retrieval of full trajectories or compact summaries.
+*   Results indicate that correctly selected summarized experience significantly improves resolution accuracy and reduces runtime/token costs, while unfiltered or incorrect experience offers limited or negative benefits.

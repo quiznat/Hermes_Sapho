@@ -1,0 +1,34 @@
+{
+  "version": "article-lineage.v1",
+  "article_id": "art-2026-03-03-013",
+  "summary_sections": {
+    "core_thesis": [
+      "claim-001"
+    ],
+    "why_it_matters": [
+      "claim-001"
+    ],
+    "key_findings": [
+      "claim-001",
+      "claim-002",
+      "claim-003"
+    ],
+    "limits": [
+      "claim-003"
+    ]
+  },
+  "claim_ids": [
+    "claim-001",
+    "claim-002",
+    "claim-003"
+  ],
+  "fact_ids": [
+    "fact-001"
+  ],
+  "evidence_ids": [
+    "evidence-001"
+  ],
+  "unresolved_gaps": [
+    "missing_explicit_mechanism_claim"
+  ]
+}

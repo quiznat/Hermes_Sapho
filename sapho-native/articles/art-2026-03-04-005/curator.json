@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-005",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is a README file describing an AI agent workflow tool. It outlines the tool's purpose, features, and development workflow but contains no experimental data, benchmark results, or production incident reports. It explains how the system *would* work rather than providing evidence of its outcomes.",
+  "limits": "The excerpt is a README and lacks any concrete data, experimental results, or production evidence that would justify inclusion in the Daily rail.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

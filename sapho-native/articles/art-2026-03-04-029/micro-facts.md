@@ -1,0 +1,10 @@
+- The study analyzed 328 configuration files from public Claude Code projects.
+- Repositories were filtered to include those with at least 100 stars.
+- 328 Claude.md files were obtained after fetching and processing project files.
+- A median of 7 level-2 headings were found in Claude.md files.
+- 2,492 section titles were extracted from the Claude.md files.
+- The most common concern in configuration files is architecture (72.6%).
+- General development guidelines were found in 44.8% of the files.
+- Project overview was specified in 39% of the configuration files.
+- Testing guidelines were present in 35.4% of the files.
+- Commands were specified in 33.2% of the Claude.md files.

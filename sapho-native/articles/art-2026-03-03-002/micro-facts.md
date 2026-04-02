@@ -1,0 +1,6 @@
+- The study investigated the characteristics of agent context files.
+- The study examined how often developers maintain agent context files.
+- The study analyzed the instructions included in agent context files.
+- The study assessed the extent to which instructions in agent context files can be classified automatically.
+- The study discusses implications for researchers, developers, and coding agent builders.
+- The study covers related work in AI agents in software engineering, software documentation, and context engineering.

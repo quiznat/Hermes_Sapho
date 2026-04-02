@@ -1,0 +1,10 @@
+- In the first half of 2025, coding agents emerged as a category of development tools.
+- Coding agents like Cursor, Claude Code, or Codex operate with high degrees of autonomy, up to generating complete pull requests.
+- A large-scale study of 129,134 GitHub projects found an estimated adoption rate of 15.85%–22.60% for coding agents.
+- At the commit level, commits assisted by coding agents are larger than those authored by human developers only.
+- The first coding assistant offering "agentic" capabilities appeared in 2024.
+- In spring 2025, major AI providers released their coding agent offerings.
+- Studies indicate that the length of tasks AI systems can solve at a fixed success rate doubles every 7 months.
+- At the end of October 2025, 7.89% of 129,134 projects showed file-level traces of coding agent adoption.
+- At the commit level, the proportion of projects showing traces was 8.64%.
+- Commits co-authored by coding agents are concentrated in features and bug fixes.

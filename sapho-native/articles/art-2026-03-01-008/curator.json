@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-008",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt shows installation instructions and a link to a premium offering, but lacks concrete experimental data, novel synthesis, or demonstrable findings. It does not meet any of the criteria for inclusion.",
+  "limits": "The excerpt is purely instructional and promotional, offering no substantive research value for the Daily rail.",
+  "confidence": "high",
+  "generated_at_utc": "2026-04-01T19:51:32Z",
+  "mode": "agent"
+}

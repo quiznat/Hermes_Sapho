@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-02-011",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt describes AI agent orchestration patterns conceptually without presenting any novel findings, experimental data, or real-world production evidence. It outlines architectural patterns and scenarios for using multiple AI agents but lacks concrete benchmark scores, measured speedups, or other substantive research value required by the institute's criteria.",
+  "limits": "The excerpt focuses on a high-level overview and conceptual patterns of AI agent orchestration. It does not contain any specific performance metrics, experimental results, or production incident data, which are the primary criteria for admission to the Daily rail.",
+  "confidence": "high",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-028",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided excerpt is an abstract and metadata for an arXiv paper. It discusses the potential of LLM agents in software engineering and the importance of trust, but it does not present novel synthesis, experimental findings, or concrete data.",
+  "limits": "The excerpt lacks any experimental results, benchmark data, or production evidence, making it impossible to assess its substantive research value according to the institute's criteria.",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

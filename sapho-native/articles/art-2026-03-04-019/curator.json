@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-019",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt offers a high-level abstract and metadata for a research paper on Agentic Software Engineering. It outlines a vision and a research roadmap but does not contain any concrete experimental data, benchmark results, or production incident data.",
+  "limits": "The excerpt is a research paper abstract and does not contain the full body of the paper where experimental findings or detailed analysis might be presented.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

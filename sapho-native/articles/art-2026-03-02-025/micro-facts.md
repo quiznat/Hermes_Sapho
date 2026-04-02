@@ -1,0 +1,5 @@
+- The arXiv identifier is 2512.08296 (cs).
+- The paper was submitted on 9 Dec 2025.
+- The paper was last revised on 17 Dec 2025.
+- The title of the paper is "Towards a Science of Scaling Agent Systems".
+- The authors are Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park, Samuel Schmidgall, A. Ali Heydari, Yao Yan, Zhihan Zhang, Yuchen Zhuang, Mark Malhotra, Paul Pu Liang, Hae Won Park, Yuzhe Yang, Xuhai Xu, Yilun Du, Shwetak Patel, Tim Althoff, Daniel McDuff, and Xin Liu.

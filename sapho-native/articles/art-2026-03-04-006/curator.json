@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-006",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt discusses architecting a context-aware multi-agent framework. While it touches upon technical details of context engineering and scaling challenges, it does not present novel findings, experimental data, production data, or a comparative benchmark roundup. It is primarily a high-level architectural description.",
+  "limits": "The excerpt focuses on the conceptual framework and challenges without providing concrete benchmark results, specific experimental outcomes, or real-world production data to support its claims.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

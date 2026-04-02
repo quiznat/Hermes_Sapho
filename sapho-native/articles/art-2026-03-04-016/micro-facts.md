@@ -1,0 +1,5 @@
+- The paper's arXiv identifier is 2508.00083.
+- The paper was first submitted on 31 Jul 2025.
+- The paper was revised on 30 Sep 2025.
+- The authors are Yihong Dong, Xue Jiang, Jiaru Qian, Tian Wang, Kechi Zhang, Zhi Jin, and Ge Li.
+- The paper is categorized under Computer Science > Software Engineering.

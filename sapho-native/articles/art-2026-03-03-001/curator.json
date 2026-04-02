@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-03-001",
+  "decision": "kept",
+  "qualified_by": "novel_findings",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This paper presents novel findings on the effectiveness of context files for coding agents, evaluating their impact on task completion rates and inference costs with concrete experimental data.",
+  "limits": "The provided excerpt is from an arXiv paper, and full details, limitations, and nuances of the study might be present in the complete paper.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

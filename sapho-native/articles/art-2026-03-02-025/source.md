@@ -1,0 +1,791 @@
+---
+version: source-capture.v1
+article_id: art-2026-03-02-025
+ticket_id: ticket-import-art-2026-03-02-025
+source_url: https://arxiv.org/abs/2512.08296
+canonical_url: https://arxiv.org/abs/2512.08296
+source_title: Towards a Science of Scaling Agent Systems
+capture_kind: arxiv_html
+http_status: 200
+content_type: text/html
+captured_at_utc: '2026-04-02T00:41:45Z'
+linked_paper_urls: []
+---
+# Source Capture
+
+## Title
+
+Towards a Science of Scaling Agent Systems
+
+## Body
+
+\correspondingauthor
+
+{ \{ ybkim, xliucs } \} @google.com \reportnumber
+
+Towards a Science of Scaling Agent Systems
+
+Yubin Kim Google Research Massachusetts Institute of Technology Ken Gu Google Research Chanwoo Park Massachusetts Institute of Technology Chunjong Park Google DeepMind Samuel Schmidgall Google DeepMind A. Ali Heydari Google Research Yao Yan Google Research Zhihan Zhang Google Research Yuchen Zhuang Google DeepMind Mark Malhotra Google Research Paul Pu Liang Massachusetts Institute of Technology Hae Won Park Massachusetts Institute of Technology Yuzhe Yang Google Research Xuhai Xu Google Research Yilun Du Google Research Shwetak Patel Google Research Tim Althoff Google Research Daniel McDuff Google Research Xin Liu Google Research
+
+Abstract
+
+Agents , language model (LM)-based systems that are capable of reasoning, planning, and acting are becoming the dominant paradigm for real-world AI applications. Despite this widespread adoption, the principles that determine their performance remain underexplored, leaving practitioners to rely on heuristics rather than principled design choices. We address this gap by deriving quantitative scaling principles for agent systems. We define this scaling as the interplay between the number of agents, coordination structure, model capability, and task properties. We evaluate this across four diverse benchmarks: Finance-Agent , BrowseComp-Plus , PlanCraft , and Workbench , spanning financial reasoning, web navigation, game planning, and workflow execution. Using five canonical agent architectures (Single-Agent System and four Multi-Agent Systems: Independent, Centralized, Decentralized, Hybrid), instantiated across three LLM families, we perform a controlled evaluation spanning 180 configurations, standardizing tools, prompt structures, and token budgets to isolate architectural effects from implementation confounds. We derive a predictive model using empirical coordination metrics, including efficiency, overhead, error amplification, and redundancy, that achieves cross-validated R 2 = 0.513 R^{2}{=}0.513 , enabling prediction on unseen task domains by modeling task properties rather than overfitting to a specific dataset. We identify three dominant effects: (1) a tool-coordination trade-off : under fixed computational budgets, tool-heavy tasks suffer disproportionately from multi-agent overhead. (2) a capability saturation : we observe that coordination yields diminishing or negative returns ( β = − 0.408 \beta{=}{-}0.408 , p < 0.001 p{<}0.001 ) once single-agent baselines exceed an empirical threshold of ∼ 45 % {\sim}45\% . (3) topology-dependent error amplification : independent agents amplify errors 17.2 × 17.2{\times} through unchecked propagation, while centralized coordination contains this to 4.4 × 4.4{\times} . Crucially, coordination benefits are task-contingent. Centralized coordination improves performance by 80.9 % 80.9\% on parallelizable tasks like financial reasoning, while decentralized coordination excels on dynamic web navigation ( + 9.2 % +9.2\% vs. + 0.2 % +0.2\% ). Yet for sequential reasoning tasks, every multi-agent variant we tested degraded performance by 39 39 – 70 % 70\% . The framework predicts the optimal coordination strategy for 87% of held-out configurations, providing a quantitatively predictive principle of agentic scaling based on measurable task properties.
+
+Figure 1: Agent Scaling across model intelligence and system architectures. Average performance (%) across four agentic benchmarks improves consistently with increasing model Intelligence Index (see Appendix A ) across three major LLM families (OpenAI, Google, and Anthropic) under different agent configurations. Single Agent System ( SAS ) serves as reference trajectories, while Multi Agent System ( MAS ) variants (Centralized, Decentralized, Independent, and Hybrid) reveal distinct scaling behaviors (see Table 2 for architecture comparisons).
+All percentage deltas annotated in the figure (e.g., +8.1%, +8.7%, –4.6%) indicate relative performance change of the best-performing MAS variant compared to the SAS baseline at the same Intelligence Index.
+Centralized and hybrid coordination generally yield superior scaling efficiency, suggesting that collaborative agentic structures amplify capability gains more effectively than individual scaling alone.
+
+1 Introduction
+
+Agents ( wang2024survey ) , language model-driven systems that operate through iterative cycles of reasoning, planning, and acting, adapting their behavior based on environmental or tool-generated feedback, have achieved remarkable performance in diverse applications, from code generation ( zhang2024codeagent ; yang2024swe ) , web browsing ( wei2025browsecomp ; yao2022webshop ) , medical decision-making ( heydari2025anatomy ; mcduff2025towards ; kim2024mdagents ) , finance ( yu2025finmem ) , to scientific discovery ( gottweis2025towards ; mitchener2025kosmos ) . As tasks grow in complexity and require sustained environmental interaction, the field has increasingly turned to multi-agent systems (MAS), relying on the premise that specialized collaboration consistently outperforms single-agent systems (SAS) ( tran2025multiagent ; guo2024large ) . Previous work has made positive claims about multi-agent systems: “ More agents is all you need ” ( li2024more ) , suggesting that agent collaboration follows collaborative scaling principles ( qian2024scaling ) , and that MAS consistently outperforms single-agent systems (SAS) on complex tasks ( du2023improving ; chen2023agentverse ) . Yet, despite rapid adoption, there remains no principled quantitative framework to predict when adding agents amplifies performance and when it erodes it. This gap leaves practitioners relying on heuristics, hindering both the emergence of a science of agent systems and, critically for real-world deployment, the ability to determine when multi-agent coordination provides genuine value over simpler single-agent alternatives.
+
+To determine when multi-agent coordination provides benefit, we first establish which task categories require agentic capabilities.
+A critical prerequisite is distinguishing between agentic and non-agentic evaluation paradigms. Expanding from the Agentic Benchmark Checklist (ABC) introduced in ( zhu2025establishing ) , we characterize agentic tasks as those requiring: (i) sustained multi-step interactions with an external environment, (ii) iterative information gathering under partial observability, and (iii) adaptive strategy refinement based on environmental feedback.
+
+These characteristics differentiate tasks like web browsing ( wei2025browsecomp ) , financial trading ( yu2025finmem ) , software engineering ( jimenez2023swebench ) , and interactive planning ( dagan2024plancraft ) from traditional static benchmarks, tasks solvable through single-shot reasoning without environmental feedback, which lack external environments, are fully observed, or require identical solution strategies ( liu2023agentbench ; kapoor2024agents ) . This distinction matters profoundly because, while recent agentic benchmarks have emerged (e.g., SWE-Bench ( jimenez2023swebench ) , τ 2 \tau^{2} -Bench ( barres2025t2bench ) , TerminalBench), multi-agent system evaluations have been conducted predominantly on non-agentic tasks, potentially providing misleading guidance about when collaboration provides value. This distinction is practically consequential: while LLMs achieve high accuracy on isolated code generation tasks like HumanEval ( chen2021humaneval ) , real-world deployment requires agentic capabilities—iterative debugging, repository navigation, and adaptive strategy refinement—as exemplified by interactive coding assistants (e.g., Cursor, Copilot Workspace). Multi-agent systems that show monotonic improvement with team size on static benchmarks (reaching 89% on HumanEval with five agents) exhibit fundamentally different scaling behavior when evaluated on tasks requiring sustained environmental interaction, where coordination overhead and error propagation dynamics dominate.
+
+Fundamentally, this distinction reflects a trade-off between context integration and diversity ( du2023improving ; hong2024metagpt ) . Single-agent systems maximize context integration by maintaining a unified memory stream in which all reasoning steps share full access to prior history, enabling effectively constant-time access to global context. In contrast, multi-agent systems impose intrinsic information fragmentation ( tran2025multiagent ) : while parallel agents enable diverse exploration, they incur an unavoidable coordination tax in which the global context must be compressed into inter-agent messages. This lossy communication increases synchronization overhead and cognitive load ( malone1994coordination ) , fundamentally altering the scaling behavior of collaboration.
+
+The underlying dynamics explain this discrepancy: on agentic tasks, coordination overhead scales with interaction depth, agents operate on progressively divergent world states, and errors cascade through execution chains rather than being corrected through voting. Recent work has identified cases where single strong models match or exceed multi-agent systems ( gao2025singleagent ) , yet the evaluation literature provides limited guidance on what factors determine collaborative success, whether semantic diversity predicts team performance, how architectural choices shape coordination costs, or whether agents can detect and correct failures in extended interactions.
+
+The problem is further compounded by rapid progress in frontier model capabilities. As base LLMs gain extended context windows, sophisticated tool use, and improved self-reflection, the unique value proposition of multi-agent collaboration becomes unclear. The answer likely depends on task characteristics and architectural choices that remain to be systematically quantified.
+
+Two fundamental challenges hinder progress toward principled multi-agent design. First , existing MAS evaluations compare architectures using different prompts, tools, or computational budgets, conflating architectural effects with implementation choices and precluding clean causal attribution. Second , evaluations focus exclusively on final accuracy metrics without examining process dynamics such as coordination overhead, error propagation, and information flow that determine whether collaboration succeeds or fails. We know from human team performance ( mcgrath1964 ; lencioni2002 ) that team effectiveness depends on composition, coordination mechanisms, and member differentiation. Yet we lack comparable empirical understanding of how these principles translate to artificial agents, leaving practitioners without quantitative guidance for architecture selection.
+
+To address these challenges, we present a controlled evaluation establishing the principles for agent coordination. Our experimental design isolates architectural effects by controlling for implementation confounds which maintains identical task prompts, tools, and computational budgets across all configurations, while systematically varying only coordination structure and model capability. We evaluate five canonical architectures: Single Agent System (SAS) and four Multi-Agent variants (Independent, Centralized, Decentralized, Hybrid) instantiated across three major LLM families (OpenAI, Google, Anthropic) spanning diverse capability levels, on four representative agentic benchmarks: (1) web browsing (BrowseComp-Plus ( chen2025browsecomp ) ), (2) financial analysis (Finance-Agent ( bigeard2025finance ) ), (3) game planning (PlanCraft ( dagan2024plancraft ) ), and (4) realistic workplace tasks (Workbench ( styles2024workbench ) ). Across N = 180 N{=}180 controlled configurations with matched token budgets, we derive a scaling principle across tested domains quantifying how performance emerges from empirically measured coordination properties.
+
+In contrast to prior claims that “ more agents is all you need ”, our evaluation reveals that the effectiveness of multi-agent systems is governed by quantifiable trade-offs between architectural properties and task characteristics. We establish a predictive framework using empirical coordination metrics: efficiency (success/overhead ratio), error amplification factors, message density and redundancy, achieving cross-validated R 2 = 0.513 R^{2}{=}0.513 (explaining more than half of the performance variance on held-out data) without dataset-specific parameters. Critically, this framework generalizes beyond training configurations:
+leave-one-domain-out cross-validation achieves R 2 = 0.89 R^{2}{=}0.89 , and the model correctly predicts optimal architectures for 87% of held-out task configurations, demonstrating extrapolation to unseen task structures.
+
+Our analysis identifies three patterns. First, a tool-coordination trade-off ( β = − 0.330 \beta{=}{-}0.330 , p < 0.001 p{<}0.001 ): tool-heavy tasks (e.g., 16-tool software engineering) suffer from multi-agent coordination overhead, with efficiency penalties compounding as environmental complexity increases. Second, a capability ceiling ( β = − 0.408 \beta{=}{-}0.408 , p < 0.001 p{<}0.001 ): tasks where single-agent performance already exceeds 45% accuracy experience negative returns from additional agents, as coordination costs exceed diminishing improvement potential. Third, architecture-dependent error amplification where independent multi-agent systems amplify errors 17.2-fold versus single-agent baseline through unchecked error propagation , where errors made by individual agents propagate to the final output without inter-agent verification, while centralized coordination achieves 4.4-fold containment via validation bottlenecks , where the orchestrator reviews sub-agent outputs before aggregation., catching errors before they propagate to the final response. Performance spans + 81 % {+}81\% relative improvement (structured financial reasoning under centralized coordination) to − 70 % {-}70\% degradation (sequential planning under independent coordination), demonstrating that architecture-task alignment, not number of agents, determines collaborative success. Importantly, optimal architectures vary systematically: decentralized coordination benefits tasks requiring parallel exploration of high-entropy search spaces (dynamic web navigation: + 9.2 % {+}9.2\% ), while all multi-agent variants universally degrade performance on tasks requiring sequential constraint satisfaction (planning: − 39 % {-}39\% to − 70 % {-}70\% ), where coordination overhead fragments reasoning capacity under fixed computational budgets. We synthesize these findings into quantitative architecture selection
+rules (Section 4.3 ) achieving 87% prediction accuracy on held-out configurations. The underlying mechanisms driving these patterns are interpretable: the tool-coordination trade-off arises because multi-agent systems fragment the per-agent token budget, leaving insufficient capacity for complex tool orchestration; the capability
+ceiling reflects that coordination overhead becomes a net cost when
+baseline performance is already high; and architecture-dependent error amplification stems from the presence or absence of validation bottlenecks that catch errors before propagation. These mechanistic insights enable
+practitioners to move from architectural heuristics to principled, measurement-driven deployment decisions.
+
+Our primary contributions are:
+
+- •
+
+Controlled evaluation of agent systems: We establish a framework for comparing agent architectures, controlling for implementation confounds to isolate the effects of coordination structure. Our framework spans 180 configurations across three LLM families and four diverse benchmarks, enabling the causal attribution of performance differences to architectural choices rather than stochastic variations.
+
+- •
+
+Scaling principle for multi-agent systems: We derive a mixed-effects model ( R 2 = 0.513 R^{2}{=}0.513 ) using empirical coordination metrics, including efficiency ( E c E_{c} ), error amplification ( A e A_{e} ), and redundancy ( ρ \rho ) to quantify how performance emerges from the interplay of reasoning capability and task properties. The analysis identifies dominant inhibitory mechanisms, specifically the tool-coordination trade-off ( β = − 0.330 \beta{=}{-}0.330 ) and architecture-dependent error cascades, establishing fundamental limits on coordination effectiveness.
+
+- •
+
+Quantitative principles for architecture-task alignment: We demonstrate that agent architecture selection is governed by measurable task features (e.g., decomposability, tool complexity) rather than simple agent scaling. Our framework achieves 87% accuracy in predicting optimal architectures on held-out tasks, enabling principled deployment decisions grounded in predictive models rather than qualitative heuristics.
+
+2 Related Work
+
+Multi-Agent Systems (MAS) versus Single-Agent Systems (SAS)
+
+Understanding the difference between single-agent and multi-agent systems remains foundational to characterizing architectural effects. Following tran2025multiagent and guo2024large , we define a Single-Agent System as one that features a solitary reasoning locus: all perception, planning, and action occur within a single sequential loop controlled by one LLM instance, even when employing tool use ( yao2023react ) , self-reflection ( shinn2023reflexion ) , or chain-of-thought (CoT) reasoning ( wei2022emergent ) . Critically, self-reflection mechanisms do not constitute multi-agent collaboration, as they operate within a single decision-making locus ( weng2023llmagent ) . A Multi-Agent System comprises multiple LLM-backed agents communicating through structured message passing, shared memory, or orchestrated protocols ( xi2025rise ) . MAS architectures vary by topology: Independent systems aggregate isolated outputs; Decentralized enable peer-to-peer exchange ( du2023improving ) ; Centralized route through orchestrators ( hong2024metagpt ) ; Hybrid combine hierarchical control with lateral communication ( dang2025evolving ) . MAS evaluation has moved beyond early assumptions of uniform superiority ( li2024more ; qian2024scaling ) towards a nuanced understanding driven by domain complexity. Comprehensive surveys characterize collaboration mechanisms across coordination protocols ( tran2025multiagent ) and agent profiling patterns ( guo2024large ) . However, there exist empirical challenges: gao2025singleagent show benefits diminish as base models improve, with frontier models often outperforming teams; cemri2025why identify 14 failure modes (Cohen’s Kappa=0.88); zhang2025maas achieve comparable performance at 6-45% cost through dynamic architecture search; and anthropic2024multiagent report agents consume 15 × \times more tokens. Theoretical foundations from sumers2024cognitive propose cognitive architectures contextualizing agents within AI’s broader history. The question of when multi-agent coordination provides value over single strong models with tool use remains empirically open, with qian2024scaling ’s proposed scaling laws showing no significant universal pattern ( wang2024survey ) , motivating our systematic evaluation.
+
+Agentic Tasks and Benchmarks
+
+We define agentic tasks following zhu2025establishing as requiring: (1) sustained multi-step environment interactions, (2) iterative information gathering under partial observability, and (3) adaptive strategy refinement from feedback—differentiating tasks like web browsing ( wei2025browsecomp ; zhou2024webarena ) , financial trading ( bigeard2025finance ) , software engineering ( jimenez2023swebench ) , and planning ( dagan2024plancraft ) from static benchmarks. Non-agentic tasks evaluate single-shot inference without environmental interaction: GSM8K ( cobbe2021gsm8k ) (direct chain-of-thought math), MMLU ( hendrycks2020mmlu ) (parametric knowledge), HumanEval ( chen2021humaneval ) (specification-complete coding), and SQuAD ( rajpurkar2016squad ) (single-pass comprehension). On non-agentic benchmarks, multi-agent systems show monotonic improvement through ensemble effects (89% on HumanEval with five agents), as voting corrects errors without sequential compounding ( kapoor2024agents ) . This distinction matters profoundly: in agentic settings, coordination overhead scales with interaction depth, agents operate on divergent world states (34% overlap after 10 interactions), and errors cascade rather than cancel ( kapoor2024agents ) . zhu2025establishing introduce the Agentic Benchmark Checklist addressing flaws causing 100% relative misestimation. Evolution spans liu2023agentbench ’s 8-environment evaluation (4k-13k responses) to specialized frameworks: jimenez2023swebench (GitHub resolution), zhou2024webarena (812 web tasks), xu2024theagentcompany (30% autonomous completion), and paglieri2024balrog (vision-based RL). yao2023react formalizes reasoning-acting synergy; weng2023llmagent characterizes agents requiring planning, memory, and tools; kapoor2024agents reveals narrow accuracy focus without cost metrics yields needlessly complex agents. Tasks showing MAS advantages in single-shot settings often exhibit opposite patterns under genuine interaction, indicating architectural benefits are task-contingent, motivating our isolation of coordination effects across diverse agentic domains.
+
+Scaling Laws and Coordination Mechanisms
+
+Understanding performance scaling in multi-agent systems requires distinguishing collaborative scaling from neural scaling laws. While neural scaling follows power laws requiring million-fold parameter increases for significant trends ( kaplan2020scaling ) , collaborative scaling exhibits logistic growth patterns emerging at substantially smaller scales ( qian2024scaling ) . chen2024compound explore whether increased LLM calls alone drive performance, finding compound inference systems follow distinct scaling behaviors from single-model training. However, wang2024survey note collaborative scaling shows no significant universal pattern, suggesting domain-specific rather than general laws. Coordination mechanisms critically determine whether collaboration amplifies or degrades performance: hong2024metagpt introduce meta-programming workflows mitigating hallucination cascades; chen2023agentverse demonstrate emergent behaviors through structured interactions; wu2024autogen provide general multi-agent frameworks. Recent work reveals architecture-task alignment matters more than team size: zhang2025maas achieve superior performance at 6-45% cost through query-dependent configurations; dang2025evolving show puppeteer orchestration improvements stem from compact cyclic structures; du2023improving demonstrate peer-to-peer debate effectiveness depends on task decomposability, with smit2023should further showing that multi-agent debate does not reliably outperform single-agent strategies such as self-consistency, suggesting benefits are highly task- and hyperparameter-sensitive. These findings collectively indicate coordination benefits arise from matching communication topology to task structure not from scaling the number of agents, establishing the foundation for principled architectural design rather than heuristic “more agents is better” approaches.
+
+3 Agent Systems and Tasks
+
+3.1 System Definition
+
+Building on multi-agent system formalism ( zhu2025establishing ; guo2024large ) , an agent system 𝒮 = ( A , E , C , Ω ) \mathcal{S}=(A,E,C,\Omega) consists of a set of agents A = { a 1 , … , a n } A=\{a_{1},\ldots,a_{n}\} (where n ≥ 1 n\geq 1 ), a shared environment E E , a communication topology C C , and an orchestration policy Ω \Omega . When | A | = 1 |A|=1 , we refer to this as a Single-Agent System (SAS); when | A | > 1 |A|>1 , a Multi-Agent System (MAS). Each agent a i a_{i} perceives, reasons, and acts within the shared environment via iterative feedback.
+
+Formally, each agent a i a_{i} is defined as a tuple S i = ( Φ i , 𝒜 i , M i , π i ) S_{i}=(\Phi_{i},\mathcal{A}_{i},M_{i},\pi_{i}) , where:
+
+- •
+
+Φ i \Phi_{i} is the reasoning policy (typically an LLM)
+
+- •
+
+𝒜 i = { ToolCall ​ ( t , θ ) : t ∈ 𝒯 , θ ∈ Θ t } \mathcal{A}_{i}=\{\text{ToolCall}(t,\theta):t\in\mathcal{T},\theta\in\Theta_{t}\} is the action space consisting of tool usage, where 𝒯 \mathcal{T} is the set of available tools (e.g., web search, code execution) and Θ t \Theta_{t} represents valid parameter configurations for tool t t
+
+- •
+
+M i M_{i} is the internal memory
+
+- •
+
+π i : ℋ → 𝒜 i \pi_{i}:\mathcal{H}\rightarrow\mathcal{A}_{i} is the decision function mapping observation histories to actions
+
+The observation history space ℋ \mathcal{H} contains sequences of action-observation pairs. The decision function π i \pi_{i} is instantiated by the reasoning policy Φ i \Phi_{i} (the LLM): given a history h i , t h_{i,t} , the LLM generates a reasoning trace and selects the next action. For instance, a history h i , t = [ ( “search(query=’pandas’)” , “Found 5 files” ) , … ] h_{i,t}=[(\text{``search(query='pandas')''},\text{``Found 5 files''}),...] is processed by Φ i \Phi_{i} to produce the next tool call α i , t + 1 \alpha_{i,t+1} .
+
+At timestep t t , agent a i a_{i} selects an action α i , t ∈ 𝒜 i \alpha_{i,t}\in\mathcal{A}_{i} according to:
+
+α i , t = π i ​ ( h i , t ) , o i , t = E ​ ( α i , t ) , h i , t + 1 = f i ​ ( h i , t , α i , t , o i , t ) , \alpha_{i,t}=\pi_{i}(h_{i,t}),\quad o_{i,t}=E(\alpha_{i,t}),\quad h_{i,t+1}=f_{i}(h_{i,t},\alpha_{i,t},o_{i,t}),
+
+where E E denotes the environment and h i , 0 = { s 0 } h_{i,0}=\{s_{0}\} contains the initial task specification. The history update function f i : ℋ × 𝒜 i × 𝒪 → ℋ f_{i}:\mathcal{H}\times\mathcal{A}_{i}\times\mathcal{O}\rightarrow\mathcal{H} appends the new action-observation pair to the agent’s history: h i , t + 1 = f i ​ ( h i , t , α i , t , o i , t ) = h i , t ⊕ ( α i , t , o i , t ) h_{i,t+1}=f_{i}(h_{i,t},\alpha_{i,t},o_{i,t})=h_{i,t}\oplus(\alpha_{i,t},o_{i,t}) , subject to context window truncation when | h i , t + 1 | > MAX_TOKENS |h_{i,t+1}|>\text{MAX\_TOKENS} . This update mechanism applies uniformly to both SAS and MAS configurations. Communication between agents occurs through explicit message passing in the orchestration layer.
+
+Single-Agent System (SAS).
+
+A Single-Agent System contains one reasoning locus ( | A | = 1 |A|=1 where A A is the agent set). All perception, reasoning, and action occur within a single sequential loop, producing computational complexity O ​ ( k ) O(k) where k k is the number of reasoning iterations. SAS has zero communication overhead and minimal memory O ​ ( k ) O(k) , but limited capacity for decomposition or verification.
+
+Multi-Agent System (MAS).
+
+A Multi-Agent System is an agent system 𝒮 \mathcal{S} with | A | > 1 |A|>1 , where agents interact through communication topology C C and orchestration policy Ω \Omega .
+
+Communication topology C C defines information flow patterns between agents:
+
+- •
+
+Independent : C = ∅ C=\emptyset (no inter-agent communication)
+
+- •
+
+Centralized : C = { ( a orch , a i ) : ∀ i } C=\{(a_{\text{orch}},a_{i}):\forall i\} (orchestrator-to-agents only)
+
+- •
+
+Decentralized : C = { ( a i , a j ) : ∀ i , j , i ≠ j } C=\{(a_{i},a_{j}):\forall i,j,i\neq j\} (all-to-all topology)
+
+- •
+
+Hybrid : C = C centralized ∪ C peer C=C_{\text{centralized}}\cup C_{\text{peer}} (orchestrator plus limited peer-to-peer)
+
+The orchestrator Ω \Omega (when present) determines: (i) how sub-agent outputs are aggregated (e.g., majority voting, weighted synthesis), (ii) whether the orchestrator can override sub-agent decisions, (iii) whether memory persists across coordination rounds, and (iv) termination conditions based on consensus or quality thresholds.
+
+MAS architectures vary by how information and control propagate among agents, creating distinct trade-offs between computation, coordination, and parallelization. Table 2 formalizes these trade-offs using asymptotic notations over LLM calls , sequential depth , communication overhead , and memory complexity . We selected these five architectures to form a structural ablation of coordination mechanisms :
+
+- •
+
+Independent isolates the effect of parallelism (ensemble) without communication.
+
+- •
+
+Decentralized introduces peer-to-peer information fusion without hierarchy.
+
+- •
+
+Centralized introduces hierarchical verification and bottleneck control.
+
+- •
+
+Hybrid examines the synergy of hierarchy plus lateral flexibility.
+
+This design allows us to causally attribute performance gains to specific coordination mechanics rather than generic “multi-agent” effects. Specific configurations include:
+
+- •
+
+Independent MAS : A = { a 1 , … , a n } A=\{a_{1},\ldots,a_{n}\} , C = ∅ C=\emptyset , Ω = synthesis_only \Omega=\text{synthesis\_only} . Each of n n agents performs k k reasoning iterations independently, then outputs are aggregated ( O ​ ( n ​ k ) O(nk) ). This achieves maximal parallelization but minimal coordination, suitable for ensemble-style reasoning.
+
+- •
+
+Centralized MAS : A = { a orch , a 1 , … , a n } A=\{a_{\text{orch}},a_{1},\ldots,a_{n}\} , C = { ( a orch , a i ) : ∀ i } C=\{(a_{\text{orch}},a_{i}):\forall i\} , Ω = hierarchical \Omega=\text{hierarchical} . A single orchestrator coordinates r r rounds across n n sub-agents ( O ​ ( r ​ n ​ k ) O(rnk) ). Sequential depth equals r r while parallelization factor remains n n . This design stabilizes reasoning but creates a bottleneck at the orchestrator.
+
+- •
+
+Decentralized MAS : A = { a 1 , … , a n } A=\{a_{1},\ldots,a_{n}\} , C = { ( a i , a j ) : ∀ i , j , i ≠ j } C=\{(a_{i},a_{j}):\forall i,j,i\neq j\} , Ω = consensus \Omega=\text{consensus} . Agents communicate in d d sequential debate rounds ( O ​ ( d ​ n ​ k ) O(dnk) ). Memory complexity is O ​ ( d ​ n ​ k ) O(dnk) as each agent stores its own debate history. This enables consensus formation through peer-to-peer discussion.
+
+- •
+
+Hybrid MAS : A = { a orch , a 1 , … , a n } A=\{a_{\text{orch}},a_{1},\ldots,a_{n}\} , C = star + peer edges C=\text{star}+\text{peer edges} , Ω = hierarchical + lateral \Omega=\text{hierarchical}+\text{lateral} . Combines orchestrated hierarchy with limited peer communication ( O ​ ( r ​ n ​ k + p ​ n ) O(rnk+pn) where p p is the number of peer rounds). This inherits orchestrator control while enabling lateral exchange between agents.
+
+Communication vs. Coordination.
+
+We distinguish communication (message passing between agents) from coordination (strategic direction of agent activities). In centralized systems, coordination occurs through the orchestrator’s task decomposition and progress monitoring, while communication involves passing findings between orchestrator and workers. In decentralized systems, communication and coordination are intertwined through debate rounds where agents both exchange information and collectively steer problem-solving direction.
+
+Thus, SAS represents the minimal unit of agentic computation ( O ​ ( k ) O(k) ), while MAS configurations explore the scaling frontier of coordination complexity—ranging from fully parallel and communication-free (Independent) to fully coupled with peer consensus (Decentralized). These configurations allow us to test whether performance gains arise from agent coordination and specialization or merely from increased compute through ensembling. Our taxonomy covers coordination patterns common in LLM-based agentic systems. 1 1 1 Our taxonomy focuses on communication topology : one of several orthogonal MAS design dimensions including agent specialization ( hong2024metagpt ) , memory architecture, and aggregation strategy. Classical coordination mechanisms (e.g., blackboard systems) assume structured message formats rather than natural language, limiting their direct applicability to LLM-based agents. For comprehensive surveys of LLM-based multi-agent systems, see guo2024large ; xi2025rise .
+
+3.2 Agentic Tasks and Benchmarks
+
+Following and extending the framework of zhu2025establishing , we operationalize a task T T as agentic when optimal performance substantially benefits from adaptive interaction. Formally, if τ = { ( a t , o t ) } t = 0 T \tau=\{(a_{t},o_{t})\}_{t=0}^{T} represents an interaction trajectory, then:
+
+max π ⁡ 𝔼 ​ [ R ​ ( τ ) ] − max g ⁡ 𝔼 ​ [ R ​ ( g ​ ( x ) ) ] max π ⁡ 𝔼 ​ [ R ​ ( τ ) ] > δ , \frac{\max_{\pi}\mathbb{E}[R(\tau)]-\max_{g}\mathbb{E}[R(g(x))]}{\max_{\pi}\mathbb{E}[R(\tau)]}>\delta,
+
+where π \pi represents an interactive policy, g g represents any single-forward-pass function, R R measures task success, δ \delta is a task-dependent threshold, and the expectation is over task instances x x and stochastic environment dynamics. This definition captures tasks where interaction provides meaningful advantage over the best possible single-shot approach.
+
+The expected return of an optimal policy thus hinges on sequential observation–action feedback, requiring agents to gather information, plan, and revise hypotheses under partial observability. Building on the Agentic Benchmark Checklist ( zhu2025establishing ) , we formalize three necessary properties for agentic benchmarks:
+
+- •
+
+Sequential Interdependence : Later actions depend on earlier observations; a one-shot policy cannot achieve high reward.
+
+- •
+
+Partial Observability : Critical state information is hidden and must be acquired through active querying or tool use.
+
+- •
+
+Adaptive Strategy Formation : The policy must update internal beliefs based on new evidence obtained through interaction.
+
+Benchmarks lacking these conditions (e.g., GSM8K, MMLU) evaluate static reasoning rather than agentic capabilities. 2 2 2 We note that “agentic” is defined relative to current model capabilities. For instance, GSM8K could be posed as agentic by providing calculator tools, though current LLMs do not require such scaffolding. Conversely, tasks that are agentic today (e.g., SWE-Bench) may become solvable via single-shot inference as models improve. Our evaluation focuses on tasks that currently require multi-step interaction for non-trivial performance.
+
+Why Environment Feedback Matters.
+
+Real-world deployments such as coding assistants, financial analysts, and embodied robots operate under uncertainty and non-stationarity.
+Tasks solvable by direct prompting measure linguistic knowledge, whereas agentic benchmarks evaluate the process of intelligence: exploration, adaptation, and coordination.
+Hence, our benchmarks are chosen such that (i) base LLMs perform poorly in single-shot mode, and (ii) non-trivial performance requires multi-step environment interaction.
+
+Benchmark Design Principles.
+
+Extending the framework proposed by zhu2025establishing , we introduce additional criteria to isolate architectural effects :
+
+- •
+
+Controlled Tool Interface: identical tool APIs and observation structures for all architectures to eliminate confounds from external feedback quality.
+
+- •
+
+Controlled for Parametric Knowledge: within each model family, evaluation emphasizes adaptive reasoning over memorized facts. Cross-family comparisons (Section 4 ) account for inherent knowledge base differences through baseline normalization.
+
+- •
+
+Action–Observation Loop Length: each benchmark enforces non-trivial trajectory length L > 3 L>3 to ensure sequential reasoning.
+
+- •
+
+Comparative Normalization: scores are normalized to the best single-agent baseline, measuring coordination gain or loss.
+
+Table 1: Four Agentic benchmarks used for evaluation.
+
+Benchmark Task Evaluation Design BrowseComp-Plus (2025) Web Browsing / Information Retrieval Multi-website Information Location Finance-Agent (2025) Finance Entry-level Analyst Task Performance Plancraft (2024) Agent Planning Minecraft Environment Planning WorkBench (2024) Planning / Tool Selection Common business activities
+
+Table 2: Architectural comparison of agent methods with objective complexity metrics. Computational complexity measured in terms of LLM calls,
+coordination overhead, and parallelization potential.
+
+Characteristic SAS MAS ( Independent ) MAS ( Decentralized ) MAS ( Centralized ) MAS ( Hybrid )
+
+Interaction Type
+
+LLM Calls O ​ ( k ) O(k) O ​ ( n ​ k ) + O ​ ( 1 ) O(nk)+O(1) O ​ ( d ​ n ​ k ) + O ​ ( 1 ) O(dnk)+O(1) O ​ ( r ​ n ​ k ) + O ​ ( r ) O(rnk)+O(r) O ​ ( r ​ n ​ k ) + O ​ ( r ) + O ​ ( p ) O(rnk)+O(r)+O(p)
+
+Sequential Depth k k k k d d r r r r
+
+Comm. Overhead 0 1 1 d ⋅ n d\cdot n r ⋅ n r\cdot n r ⋅ n + p ⋅ m r\cdot n+p\cdot m
+
+Parallelization Factor 1 1 n n n n n n n n
+
+Memory Complexity O ​ ( k ) O(k) O ​ ( n ⋅ k ) O(n\cdot k) O ​ ( d ⋅ n ⋅ k ) O(d\cdot n\cdot k) O ​ ( r ⋅ n ⋅ k ) O(r\cdot n\cdot k) O ​ ( r ⋅ n ⋅ k + p ⋅ n ) O(r\cdot n\cdot k+p\cdot n)
+
+Coordination Sequential Parallel + Synthesis Sequential Debate Hierarchical Hierarchical + Peer
+
+Consensus - Synthesis Debate Orchestrator Orchestrator
+
+* k k = max iterations per agent, n n = number of agents, r r = orchestrator rounds, d d = debate rounds, p p = peer communication rounds, m m = average peer requests
+per round. Communication overhead counts inter-agent message exchanges. Independent offers maximal parallelization with minimal coordination. Decentralized uses sequential debate
+rounds. Hybrid combines orchestrator control with directed peer communication.
+
+4 Experiments & Results
+
+To establish quantitative scaling principles for agentic systems, we investigate three research questions:
+
+RQ1. What factors determine agent system’s performance (e.g., model capability, coordination architecture, task properties, their interactions)? We systematically vary each factor across 180 configurations to quantify their individual and joint contributions.
+
+RQ2. Under what conditions does inter-agent coordination improve or degrade agent system’s performance? We examine how task structure (e.g., decomposability, tool complexity, sequential dependencies) moderates the effectiveness of different architectures.
+
+RQ3. Can we derive quantitative scaling principles that predict best agent architecture for a given task from measurable properties? We fit a mixed-effects model using empirical coordination metrics to test whether continuous properties outperform categorical architecture labels in explaining performance variance.
+
+Figure 2: Comparative performance of single-agent (SAS) and multi-agent systems (MAS) across four
+diverse benchmarks reveals highly task-dependent scaling dynamics. Box plots show distribution of success rates (scale: 0 to 1, where 1 represents 100% success). Percentage annotations represent relative improvement/degradation compared to SAS baseline: ( mean MAS − mean SAS ) / mean SAS × 100 % (\text{mean}_{\text{MAS}}-\text{mean}_{\text{SAS}})/\text{mean}_{\text{SAS}}\times 100\% . SAS serves as the reference baseline (shown without percentage annotation). (a) BrowseComp-Plus shows polarized results, with independent agents catastrophically
+underperforming relative to SAS (-35%) while more structured coordination achieves modest gains. (b) Finance Agent demonstrates the strongest multi-agent benefits, with all MAS architectures
+substantially outperforming SAS (from +57 to 81%), suggesting that complex planning and
+distributed reasoning provide significant advantages in structured economic domains. (c) PlanCraft exhibits consistent degradation across all MAS variants (from -70% to -39%). The core difference from Finance Agent lies in task structure, where Finance Agent tasks decompose into parallelizable subtasks (e.g., separate agents can independently analyze revenue trends, cost structures, and market comparisons, then synthesize findings), whereas PlanCraft requires strictly sequential state-dependent reasoning, each crafting action modifies the inventory state that subsequent actions depend upon. (d) Workbench shows marginal effects (from -11 to +6%), suggesting balanced trade-offs
+between problem structure and orchestration costs.
+White diamond markers denote per-architecture mean performance.
+
+4.1 Setup
+
+Benchmarks.
+
+We conducted 180 experiments across four representative benchmarks spanning deterministic to open-world task structures: Workbench (deterministic code execution and tool use with objective pass/fail criteria), Finance Agent (multi-step quantitative reasoning and risk assessment), PlanCraft (spatiotemporal planning under constraints), and BrowseComp-Plus (dynamic web navigation, information extraction, and cross-page synthesis). BrowseComp-Plus exhibits the highest performance variability across experimental configurations (coefficient of variation σ / μ = 0.32 \sigma/\mu=0.32 computed across all 45 BrowseComp-Plus runs spanning architectures and model families, where σ \sigma is the standard deviation of success rates and μ \mu is the mean success rate). By comparison, Workbench (CV=0.12), Finance Agent (CV=0.18), and PlanCraft (CV=0.21) show lower variability, indicating more stable performance across configurations.
+
+LLMs and intelligence Scaling.
+
+We evaluate three LLM families across multiple model sizes, spanning externally standardized Intelligence Index values from 34 to 66 (a composite capability score integrating reasoning, coding, and knowledge benchmarks; see Appendix A ):
+
+- •
+
+OpenAI: GPT-5-nano, GPT-5-mini, GPT-5
+
+- •
+
+Google: Gemini 2.0 Flash, 2.5 Flash, 2.5 Pro
+
+- •
+
+Anthropic: Claude Sonnet 3.7, 4.0, 4.5
+
+Strong consistency across families validates that coordination scaling follows model-agnostic principles: the maximum difference in architecture-specific scaling slopes between any two LLM families is Δ max = 0.023 \Delta_{\max}=0.023 (computed as max i , j ⁡ | β ^ arch , i − β ^ arch , j | \max_{i,j}|\hat{\beta}_{\text{arch},i}-\hat{\beta}_{\text{arch},j}| across families i , j ∈ { OpenAI, Google, Anthropic } i,j\in\{\text{OpenAI, Google, Anthropic}\} ), with coefficient of variation CV < 0.02 <0.02 across families. To ensure computational fairness, we matched maximum total iterations between MAS and SAS systems: MAS configurations received equal computational budget through parallel agent processing (smaller per-agent iterations for n n -agent teams), while SAS received proportionally more reasoning rounds to compensate for lack of parallel deliberation.
+
+Agent Architectures and Complexity.
+
+We tested five coordination topologies: Single-Agent System (SAS) and Multi-Agent System (MAS) topologies: Independent (no inter-agent communication), Centralized (hub-and-spoke with orchestrator), Decentralized (peer-to-peer mesh), and Hybrid (dense but curated selective connections). Coordination complexity is parameterized as C = E / E m ​ a ​ x ⋅ log ⁡ n C=E/E_{max}\cdot\log n , where E E is the number of directed communication edges and n n the team size. This formulation reflects that (i) coordination cost scales with the number of communication channels ( E E ), and (ii) message routing complexity grows logarithmically with team size under hierarchical or structured topologies, analogous to routing depth in balanced tree structures where path length scales as O ​ ( log ⁡ n ) O(\log n) , consistent with distributed systems theory ( malone1994interdisciplinary ) . For teams of 3–4 agents, this yields C ∈ [ 0.35 , 1.8 ] C\in[0.35,1.8] : SAS has C = 0 C=0 (no edges), Independent has C = 0.35 C=0.35 (synthesis-only aggregation), and Hybrid reaches C = 1.8 C=1.8 (dense peer connections plus orchestrator).
+
+Metrics and Validation.
+
+Primary outcome is task success/accuracy (domain-dependent: factual correctness for Finance Agent, task completion for Workbench, goal satisfaction for PlanCraft, page synthesis accuracy for BrowseComp-Plus). Secondary metrics include: (i) factual error rate E E via domain-specific validators (Cohen’s κ \kappa : Finance Agent = 0.91 =0.91 , Workbench = 0.89 =0.89 , PlanCraft = 0.87 =0.87 , BrowseComp-Plus = 0.88 =0.88 ; all exceeding the substantial agreement threshold of 0.80 0.80 ); (ii) information gain Δ ​ ℐ \Delta\mathcal{I} from pre- vs. post-coordination uncertainty proxies (see Eq. 2 ); (iii) token-overlap structure across agent rationales, labeling tokens as unique (appearing in exactly one agent), shared (two or more agents), or contradictory (semantic opposition detected when BERTScore similarity < 0.3 <0.3 between assertion pairs, i.e., 1 − BERTScore > 0.7 1-\text{BERTScore}>0.7 , following the dissimilarity threshold established by zhang2019bertscore ); (iv) efficiency metrics including success per 1,000 tokens and cost-normalized performance. All metrics are normalized per reasoning turn and per token to enable cross-architecture comparison. We select coordination metrics based on two criteria: (i) direct measurability from experimental traces without requiring ground-truth labels beyond task success, and (ii) coverage of distinct aspects of coordination–performance relationships identified in prior work ( cemri2025why ) . We excluded metrics requiring subjective human annotation (e.g., solution creativity) or those exhibiting high collinearity with included measures (e.g., total message count correlates r > 0.92 r>0.92 with overhead). Variance inflation factor (VIF) analysis confirmed no severe multicollinearity among retained predictors (all VIF < 5 <5 ). Specifically:
+
+- •
+
+Coordination overhead O = ( T MAS − T SAS ) / T SAS × 100 % O=(T_{\text{MAS}}-T_{\text{SAS}})/T_{\text{SAS}}\times 100\% : captures computational cost, identified as a primary bottleneck in production multi-agent deployments.
+
+- •
+
+Message density c c (inter-agent messages per reasoning turn): quantifies communication intensity, a key factor in coordination scaling.
+
+- •
+
+Redundancy rate R R (mean cosine similarity of agent output embeddings): measures agent agreement, relevant for ensemble-based error correction.
+
+- •
+
+Coordination efficiency E c = S / ( T / T SAS ) E_{c}=S/(T/T_{\text{SAS}}) (success normalized by relative turn count): normalizes success by cost for deployment decisions.
+
+- •
+
+Error amplification A e = E MAS / E SAS A_{e}=E_{\text{MAS}}/E_{\text{SAS}} (relative failure probability): directly tests whether MAS corrects or propagates errors.
+
+4.2 Main Results
+
+MAS exhibits domain-dependence with architectural variation.
+
+Multi-agent systems demonstrate highly heterogeneous performance across task domains, contingent on problem structure and architectural choices. On Finance Agent, MAS achieve substantial improvements: Centralized reaches +80.9% (mean 0.631 vs. SAS 0.349), Decentralized achieves +74.5% (0.609), and Hybrid reaches +73.2% (0.604), driven by opportunities for distributed financial reasoning across multiple agents. On Workbench, multi-agent systems show minimal gains: Decentralized achieves +5.7% (0.664 vs. SAS 0.629), while Centralized and Hybrid both slightly underperform at -1.2% . On BrowseComp-Plus, improvements remain modest: Decentralized achieves +9.2% (0.347 vs. SAS 0.318), with Centralized essentially flat at +0.2% .
+
+Critically, PlanCraft exhibits universal performance degradation across all multi-agent architectures. Centralized declines to -50.4% (0.282 vs. SAS 0.568), Decentralized to -41.4% (0.332), Hybrid to -39.0% (0.346), and Independent to -70.0% (0.170). This degradation reveals a coordination-saturation effect : beyond a critical reasoning–communication trade-off, additional coordination no longer improves but suppresses effective reasoning, marking the onset of communication overload. Aggregating across all benchmarks and architectures, the overall mean MAS improvement is -3.5% (95% CI: [-18.6%, +25.7%] ), reflecting substantial performance heterogeneity with high variance ( σ = 45.2 % \sigma=45.2\% ). The performance range across MAS variants spans from − 70.0 % -70.0\% (PlanCraft Independent) to + 80.9 % +80.9\% (Finance Centralized), indicating that MAS do not provide universal benefits but rather domain-specific trade-offs.
+
+Domain Complexity Moderates Coordination Efficacy.
+
+Mixed-effects regression confirms domain complexity (refer to Appendix B for more details) as a significant negative moderator of MAS advantage ( β ^ = − 0.114 \hat{\beta}=-0.114 , 95 % 95\% CI: [ − 0.186 , − 0.042 ] [-0.186,-0.042] , p = 0.002 p=0.002 ). The mechanism operates through fixed computational budgets (matched total tokens across MAS and SAS): in structured, decomposable domains (Finance Agent, moderate Workbench instances), agents complete local reasoning with residual capacity available for inter-agent communication. Here, inter-agent messages reduce variance through redundancy elimination and enable synthesis of partial solutions, producing large performance deltas (Finance: + 80.9 % +80.9\% ). Conversely, in high-complexity sequential domains (PlanCraft), intra-agent reasoning for constraint verification and state tracking consumes most available tokens before communication can occur; subsequent inter-agent messages then compress reasoning quality and produce strong negative returns (PlanCraft: − 39.0 % -39.0\% to − 70.0 % -70.0\% ).
+
+This trade-off is directly quantified by benchmark complexity, operationalized as the average number of sequential reasoning steps required for task completion (normalized to [ 0 , 1 ] [0,1] ). We define a reasoning step as a single environment interaction. Tool call, state query, or action execution and count steps as the median number of interactions required by the best-performing SAS configuration to reach task completion across all instances in each benchmark: Workbench (0.000, minimal sequential constraints) and Finance Agent (0.407, moderate decomposability) show positive MAS returns or minimal overhead, while PlanCraft (0.419, high sequential dependencies) and BrowseComp-Plus (0.839, dynamic state evolution) show degradation or minimal gains. Domain complexity alone does not fully predict MAS effectiveness. While low-complexity domains (Workbench, D = 0.00) show modest gains and high-complexity domains (BrowseComp-Plus, D = 0.84) show limited benefits, the critical factor is task decomposability: Finance Agent (D = 0.41) achieves +80.9% gains through parallelizable subtask structure, whereas PlanCraft (D = 0.42) degrades by -70% due to strict sequential dependencies despite similar complexity scores. This suggests that sequential interdependence, rather than complexity alone, determines coordination viability. Information gain Δ ​ ℐ \Delta\mathcal{I} correlates with this pattern: Finance Agent (structured domain) exhibits strong information-value convergence ( r = 0.71 r=0.71 , p < 0.001 p<0.001 ), while PlanCraft (sequential constraints) shows weak correlation ( r = 0.18 r=0.18 , p = 0.22 p=0.22 ), indicating that agents in high-complexity domains exchange limited actionable information due to inherent sequential dependencies and state-space ambiguity.
+
+Architecture-LLM Family Interactions Reveal Vendor-Specific Coordination Mechanisms.
+
+While domain complexity broadly moderates MAS effectiveness, the architecture-domain interaction reveals non-uniform preferences even within similar complexity regimes: no single architecture dominates across all domains and vendors. Architecture effectiveness depends critically on domain structure: Finance Agent benefits most from Centralized (+80.9%) and Decentralized (+74.5%), Workbench from MAS-Decentralized (+5.7%), and BrowseComp-Plus from MAS-Decentralized (+9.2%). In degrading domains, architecture selection becomes a least-worst optimization: PlanCraft shows Hybrid as relatively best (-39.0%) compared to MAS-Centralized (-50.4%) and MAS-Independent (-70.0%).
+
+Family-specific coordination preferences emerge within improvement-positive domains. On Finance Agent , Anthropic’s MAS-Centralized achieves +127.5% (0.636 vs. 0.280 SAS), indicating conservative but stable coordination, whereas Google’s MAS-Centralized reaches +164.3% (0.740 vs. 0.280 SAS, averaging Centralized performance), suggesting stronger attention-mechanism alignment with hierarchical message exchange; OpenAI’s MAS-Centralized achieves +71.2% (0.79 vs. 0.465 SAS). On Workbench , where multi-agent overhead is less tolerable (efficiency degrades from E c = 0.466 E_{c}=0.466 for SAS to E c = 0.074 E_{c}=0.074 for Hybrid, the largest relative drop across benchmarks), Anthropic’s best variant (MAS-Decentralized, +10.8%) remains superior to Google (+9.5%) and OpenAI (+8.6%), reflecting relative efficiency in managing coordination costs. Critically, on PlanCraft where all variants degrade, vendor preferences flatten: Anthropic shows maximum -54.5% (MAS-Hybrid 0.31 vs. SAS 0.68), Google shows -25.3% (best), and OpenAI shows -32.3%, indicating that communication mechanisms cannot overcome fundamental sequential reasoning constraints. While the precise mechanisms remain to be characterized, potential factors include differences in instruction-following fidelity, context utilization patterns, and inter-turn consistency that affect how agents interpret and respond to coordination messages. No vendor achieves universal multi-agent dominance; instead, each exhibits relative advantages in structured domains (Finance) that evaporate in sequential constraint-satisfaction domains ( PlanCraft ), indicating that multi-agent benefits are genuinely contingent on problem structure rather than generalizable across task types.
+
+Figure 3: Cost–Performance Trade-offs Across Model Families and Architectures. Comparative analysis of single-agent (SAS) and multi-agent (MAS) architectures: Independent, Decentralized, Centralized, and Hybrid across three LLM families.
+Each point represents the mean agentic performance (%) versus normalized cost per experiment (USD), with horizontal and vertical error bars denoting Standard Error of Mean (SEM) in cost and performance, respectively.
+Notably, the optimal coordination pattern differs across model families: OpenAI models show consistent gains from Centralized and Hybrid MAS configurations despite higher costs, suggesting stronger communication synergy;
+Google models display marginal MAS improvements but a clear efficiency plateau, indicating diminishing returns under lightweight coordination;
+and Anthropic models reveal higher variance and occasional MAS underperformance, reflecting sensitivity to coordination overhead.
+These cross-family discrepancies imply that the efficacy of multi-agent coordination is contingent on each model family’s intrinsic communication bandwidth and reasoning alignment .
+Collectively, the results uncover a family-dependent scaling law linking coordination structure, economic efficiency, and emergent performance.
+
+4.3 Scaling principles
+
+The main results reveal substantial heterogeneity where agentic system performance ranges from + 81 % +81\% improvement to − 70 % -70\% degradation depending on task structure and coordination architecture. This variance correlates with measurable properties such as task decomposability, tool complexity, and baseline difficulty. We explore a quantitative principle that not only explains this heterogeneity but also enables prediction for unseen configurations: given measurable properties of a model, task, and system configuration, can we predict a specific agent system’s performance?
+
+Mixed-Effects Model Achieves 51.3% Cross-Validated Variance Explanation.
+
+We fit a scaling principle to all 180 configurations that relates agentic system performance to four categories of predictors: 1) base model capability (intelligence index I I ), 2) system configuration (agent count n a n_{a} ), 3) task properties (tool count T T , single-agent baseline P SA P_{\text{SA}} ). These are instance-level predictors capturing within-benchmark variation, distinct from the benchmark-level domain complexity D D defined in Appendix B , and 4) empirically measured coordination metrics from Table 5 (efficiency E c E_{c} , overhead O % O\% , error amplification A e A_{e} , message density c c , redundancy R R ). Rather than including all possible terms, we construct the model based on specific mechanistic hypotheses.
+
+Main effects capture direct relationships between individual factors and performance. We include a quadratic term ( I 2 I^{2} ) to test for non-linear capability scaling, and log-transformed tool count and agent count following standard diminishing-returns assumptions in scaling analyses ( kaplan2020scaling ) .
+
+Interaction terms test specific hypotheses about how these factors combine. We include nine interactions, each motivated by observed patterns: E c × T E_{c}\times T tests whether efficiency penalties compound with tool complexity; A e × T A_{e}\times T tests whether errors propagate more severely in tool-rich environments; P SA × log ⁡ ( 1 + n a ) P_{\text{SA}}\times\log(1+n_{a}) captures the baseline paradox where high single-agent performance leaves less room for coordination gains; O % × T O\%\times T tests whether overhead costs scale with task complexity. We deliberately exclude interactions without clear mechanistic justification (e.g., R × c R\times c , I × O % I\times O\% ) to avoid overfitting.
+
+The complete functional form is:
+
+P = β 0 \displaystyle P=\beta_{0} + β 1 ​ I + β 2 ​ I 2 + β 3 ​ log ⁡ ( 1 + T ) + β 4 ​ log ⁡ ( 1 + n a ) \displaystyle+\beta_{1}I+\beta_{2}I^{2}+\beta_{3}\log(1+T)+\beta_{4}\log(1+n_{a})
+
++ β 5 ​ log ⁡ ( 1 + O % ) + β 6 ​ c + β 7 ​ R + β 8 ​ E c + β 9 ​ log ⁡ ( 1 + A e ) \displaystyle+\beta_{5}\log(1+O\%)+\beta_{6}c+\beta_{7}R+\beta_{8}E_{c}+\beta_{9}\log(1+A_{e})
+
++ β 10 ​ P SA + β 11 ​ ( I × E c ) + β 12 ​ ( A e × P SA ) \displaystyle+\beta_{10}P_{\text{SA}}+\beta_{11}(I\times E_{c})+\beta_{12}(A_{e}\times P_{\text{SA}})
+
++ β 13 ​ ( O % × T ) + β 14 ​ ( R × n a ) + β 15 ​ ( c × I ) \displaystyle+\beta_{13}(O\%\times T)+\beta_{14}(R\times n_{a})+\beta_{15}(c\times I)
+
++ β 16 ​ ( E c × T ) + β 17 ​ ( P SA × log ⁡ ( 1 + n a ) ) \displaystyle+\beta_{16}(E_{c}\times T)+\beta_{17}(P_{\text{SA}}\times\log(1+n_{a}))
+
++ β 18 ​ ( I × log ⁡ ( 1 + T ) ) + β 19 ​ ( A e × T ) + ε , \displaystyle+\beta_{18}(I\times\log(1+T))+\beta_{19}(A_{e}\times T)+\varepsilon, (1)
+
+where all predictors are standardized ( μ = 0 \mu=0 , σ = 1 \sigma=1 ) for interpretability. Log transformations are applied to right-skewed variables spanning multiple orders of magnitude ( O % O\% : 0–515%; T T : 4–16; n a n_{a} : 1–4; A e A_{e} : 1.0–17.2) to satisfy linearity assumptions. The A e × T A_{e}\times T interaction retains A e A_{e} without additional log transformation because log ⁡ ( 1 + A e ) \log(1+A_{e}) already appears as a main effect; including log ⁡ ( 1 + A e ) × T \log(1+A_{e})\times T would introduce near-collinearity (VIF > 8 >8 ). Sensitivity analysis confirms qualitatively identical results under alternative specifications ( Δ ​ R CV 2 < 0.01 \Delta R^{2}_{\text{CV}}<0.01 ). We validate model complexity through five-fold cross-validation with experiment-level holdout, which yields R CV 2 = 0.513 R^{2}_{\text{CV}}=0.513 ( ± 0.052 \pm 0.052 SD), mean absolute error MAE = 0.089 =0.089 ( ± 0.011 \pm 0.011 ), and root mean squared error RMSE = 0.112 =0.112 ( ± 0.014 \pm 0.014 ). The modest gap between training and cross-validated R 2 R^{2} ( Δ ​ R 2 = 0.076 \Delta R^{2}=0.076 ), combined with stable coefficient estimates across folds (coefficient of variation < 18 % <18\% for all | β ^ | > 0.05 |\hat{\beta}|>0.05 ), indicates that the 20 parameters are justified by predictive power rather than overfitting. This model substantially outperforms simpler alternatives using only architectural labels ( R CV 2 = 0.43 R^{2}_{\text{CV}}=0.43 ) or intelligence alone ( R CV 2 = 0.28 R^{2}_{\text{CV}}=0.28 ), as shown in Table 3 . Critically, this equation contains no dataset-specific parameters , enabling prediction on unseen task domains. Bootstrap resampling ( n = 1 , 000 n=1{,}000 iterations) confirms coefficient stability (mean bootstrap SE < 0.015 <0.015 for all | β ^ | > 0.1 |\hat{\beta}|>0.1 ), and residual diagnostics satisfy normality (Shapiro–Wilk p = 0.412 p=0.412 ) and homoscedasticity (Breusch–Pagan p = 0.298 p=0.298 ), with residual standard error σ ^ = 0.118 \hat{\sigma}=0.118 . We evaluated regularized alternatives: Lasso (10-fold CV for λ \lambda selection) retained 16 of 20 predictors with R CV 2 = 0.506 R^{2}_{\text{CV}}=0.506 ; Ridge achieved R CV 2 = 0.509 R^{2}_{\text{CV}}=0.509 . Given minimal improvement and the interpretability benefits of the full model, we retain the unregularized specification.
+
+The Efficiency-Tools Interaction Dominates Multi-Agent Performance ( β ^ = − 0.330 \hat{\beta}=-0.330 , p < 0.001 p<0.001 ).
+
+The strongest predictor in the scaling law is the efficiency-tools trade-off : β ^ E c × T = − 0.330 \hat{\beta}_{E_{c}\times T}=-0.330 (95% CI: [ − 0.432 , − 0.228 ] [-0.432,-0.228] , p < 0.001 p<0.001 ). This interaction reveals that tool-heavy tasks suffer disproportionately from multi-agent inefficiency. Empirically, single-agent systems achieve E c = 0.466 E_{c}=0.466 (Table 5 ), while multi-agent architectures range from E c = 0.074 E_{c}=0.074 (hybrid) to E c = 0.234 E_{c}=0.234 (independent), a 2–6 × \times efficiency penalty.
+
+For a task with T = 16 T=16 tools (e.g., workbench benchmark), this translates to (using raw values for interpretability):
+
+Δ ​ P efficiency = − 0.330 × E c × T = { − 2.46 (single-agent, E c = 0.466 ) − 0.39 (multi-agent, E c = 0.074 ) \Delta P_{\text{efficiency}}=-0.330\times E_{c}\times T=\begin{cases}-2.46&\text{(single-agent, $E_{c}=0.466$)}\\
+-0.39&\text{(multi-agent, $E_{c}=0.074$)}\end{cases}
+
+Thus, single-agent systems incur minimal efficiency penalty despite lower absolute efficiency, because the interaction magnifies the cost for architectures with many tools. Conversely, simple tasks ( T ≤ 4 T\leq 4 ) show negligible efficiency effects ( | Δ ​ P | < 0.05 |\Delta P|<0.05 ), explaining why multi-agent coordination can succeed on decomposable problems. This finding contradicts the naïve hypothesis that “more agents always help with complexity”: tool-rich environments amplify the coordination tax, making simpler architectures paradoxically more effective. The effect size ( β ^ = − 0.330 \hat{\beta}=-0.330 ) is 57% larger than the next strongest interaction, establishing efficiency management as the primary bottleneck in agentic scaling.
+
+Error Amplification Exhibits Architecture-Dependent Catastrophic Failure Modes.
+
+Table 5 reveals dramatic variance in error amplification factors: single-agent ( A e = 1.0 A_{e}=1.0 ), centralized ( A e = 4.4 A_{e}=4.4 ), decentralized ( A e = 7.8 A_{e}=7.8 ), hybrid ( A e = 5.1 A_{e}=5.1 ), and strikingly, independent multi-agent ( A e = 17.2 A_{e}=17.2 ). The scaling law captures this via the A e × T A_{e}\times T interaction ( β ^ = − 0.097 \hat{\beta}=-0.097 , p = 0.007 p=0.007 ): errors propagate more severely in tool-rich environments. For independent architecture with T = 16 T=16 tools, the error penalty is − 0.097 × 17.2 × 16 = − 26.7 -0.097\times 17.2\times 16=-26.7 (in standardized units), catastrophically degrading performance. This explains independent’s universal underperformance (mean success rate 0.370 vs. 0.466 for single-agent). The mechanism is absence of inter-agent communication: each agent operates in isolation, duplicating errors without correction opportunities. Centralized architecture, by contrast, achieves A e = 4.4 A_{e}=4.4 through a coordinator bottleneck that validates outputs, trading overhead (285%) for error resilience. Quantitatively, the error-overhead trade-off follows:
+
+∂ P ∂ A e | fixed ​ T = β ^ 9 ​ 1 1 + A e + β ^ 19 ​ T ≈ − 0.014 − 0.097 ​ T , \frac{\partial P}{\partial A_{e}}\bigg|_{\text{fixed }T}=\hat{\beta}_{9}\frac{1}{1+A_{e}}+\hat{\beta}_{19}T\approx-0.014-0.097T,
+
+indicating that error amplification becomes the dominant failure mode as T T increases. This formalizes the intuition that “more moving parts increase fragility,” now quantified: each additional tool amplifies error sensitivity by Δ ​ A e / Δ ​ T ≈ 0.097 \Delta A_{e}/\Delta T\approx 0.097 (in standardized effect units).
+
+Overhead Scales Non-Linearly with Task Complexity via the O % × T O\%\times T Interaction.
+
+Multi-agent architectures incur substantial overhead: independent (58%), centralized (285%), decentralized (263%), and hybrid (515%), representing 1.6–6.2 × \times token budgets relative to single-agent at matched performance. The scaling law reveals this overhead interacts with tool count ( β ^ O % × T = − 0.141 \hat{\beta}_{O\%\times T}=-0.141 , p < 0.001 p<0.001 ), creating a compounding cost for complex tasks. For hybrid architecture ( O % = 515 O\%=515 ) on workbench ( T = 16 T=16 ):
+
+Δ ​ P overhead = β ^ 5 ​ log ⁡ ( 1 + 515 ) + β ^ 13 × 515 × 16 = − 1 , 159 ​ (standardized) , \Delta P_{\text{overhead}}=\hat{\beta}_{5}\log(1+515)+\hat{\beta}_{13}\times 515\times 16=-1{,}159\text{ (standardized)},
+
+a prohibitive penalty explaining hybrid’s collapse on tool-heavy benchmarks (success rate 0.452 overall, 0.21 on workbench). The functional form implies a critical threshold:
+
+O % max ​ ( T ) = β ^ 5 β ^ 13 ​ T ​ log ⁡ ( 1 + O % ) ≈ 0.032 0.141 ​ T ​ log ⁡ ( 1 + O % ) , O\%_{\text{max}}(T)=\frac{\hat{\beta}_{5}}{\hat{\beta}_{13}T}\log(1+O\%)\approx\frac{0.032}{0.141T}\log(1+O\%),
+
+beyond which overhead cost exceeds any coordination benefit. For T = 16 T=16 , this threshold is O % ≈ 150 % O\%\approx 150\% , ruling out all multi-agent architectures except possibly decentralized (263%, but compensated by parallelization). Empirically, workbench confirms this prediction: decentralized (mean 0.664) outperforms centralized (0.621) despite higher overhead, due to its superior parallel efficiency. This overhead-complexity interaction constitutes the second-strongest effect ( | β | = 0.141 |\beta|=0.141 ), reinforcing that coordination costs are not fixed but scale super-linearly with environmental complexity.
+
+Intelligence Exhibits Accelerating Returns via Quadratic Scaling ( β ^ I 2 = 0.256 \hat{\beta}_{I^{2}}=0.256 , p = 0.010 p=0.010 ).
+
+The inclusion of I 2 I^{2} in Eq. 1 reveals non-linear capability effects: doubling intelligence yields more than double the performance gain. Specifically, for models spanning I ∈ [ 34 , 66 ] I\in[34,66] (Gemini-2.0-Flash to GPT-5), the marginal benefit is:
+
+∂ P ∂ I = β ^ 1 + 2 ​ β ^ 2 ​ I = − 0.180 + 0.512 ​ I \frac{\partial P}{\partial I}=\hat{\beta}_{1}+2\hat{\beta}_{2}I=-0.180+0.512I
+
+This positive quadratic coefficient indicates accelerating returns: higher-capability models benefit disproportionately from each additional unit of intelligence, with top-quartile models (I > 60) achieving 23% higher performance than predicted by linear scaling alone. This quadratic term improves cross-validated R 2 R^{2} by + 0.031 +0.031 ( p = 0.010 p=0.010 ), a statistically significant and operationally meaningful enhancement.
+
+Redundancy Provides Marginal Benefit at Scale ( β ^ R × n a = 0.041 \hat{\beta}_{R\times n_{a}}=0.041 , p = 0.040 p=0.040 ).
+
+Work redundancy, defined as the fraction of subtasks performed by multiple agents ranges from 0.41 (centralized) to 0.50 (decentralized) for multi-agent systems (Table 5 ). The scaling law identifies a weak positive interaction with agent count ( β ^ R × n a = 0.041 \hat{\beta}_{R\times n_{a}}=0.041 , 95% CI: [ 0.002 , 0.081 ] [0.002,0.081] , p = 0.040 p=0.040 ), suggesting redundancy offers modest error-correction benefits when more agents participate. For a 4-agent system with R = 0.50 R=0.50 :
+
+Δ ​ P redundancy = 0.041 × 0.50 × 4 = 0.082 , \Delta P_{\text{redundancy}}=0.041\times 0.50\times 4=0.082,
+
+equivalent to an ≈ 8 \approx 8 % performance boost (in standardized units). However, this effect is minor compared to overhead penalties ( | β ^ O % × T | = 0.141 |\hat{\beta}_{O\%\times T}|=0.141 , 3.4 × \times larger) and efficiency losses ( | β ^ E c × T | = 0.330 |\hat{\beta}_{E_{c}\times T}|=0.330 , 8.0 × \times larger), indicating redundancy cannot compensate for architectural inefficiency. The marginal significance ( p = 0.040 p=0.040 , near the α = 0.05 \alpha=0.05 threshold) suggests this relationship may be context-dependent, potentially stronger in error-prone domains or weaker when communication is expensive. Decentralized architecture, which exhibits highest redundancy ( R = 0.50 ± 0.06 R=0.50\pm 0.06 ), achieves top performance on tool-heavy tasks (workbench success 0.664), consistent with redundancy’s protective role. Yet this same architecture underperforms on planning tasks (0.282), where redundancy becomes wasteful duplication. This context-dependence aligns with the baseline paradox: redundancy helps when there is room for improvement ( P SA < 0.45 P_{\text{SA}}<0.45 ) but becomes overhead when baseline is high.
+
+The Scaling Principle Enables Quantitative Architecture Selection.
+
+Equation 1 synthesizes 20 parameters into a predictive tool for architecture design. Given task characteristics ( T T , P SA P_{\text{SA}} ) and model capability ( I I ), practitioners can compute expected performance for each architecture using empirical coordination metrics from Table 5 . Consider three task archetypes: (1) Planning tasks ( T = 4 T=4 , P SA = 0.57 P_{\text{SA}}=0.57 ) favor single-agent due to baseline paradox and low tool count; (2) Analysis tasks ( T = 5 T=5 , P SA = 0.35 P_{\text{SA}}=0.35 ) favor centralized multi-agent, balancing error control ( A e = 4.4 A_{e}=4.4 ) with manageable overhead; (3) Tool-heavy tasks ( T = 16 T=16 , P SA = 0.63 P_{\text{SA}}=0.63 ) favor decentralized multi-agent despite high overhead (263%), because parallelization and redundancy outweigh efficiency losses. Quantitatively, the decision boundary between single-agent and multi-agent is:
+
+P SA ∗ = β ^ 4 β ^ 17 ≈ 0.063 0.408 = 0.154 (in standardized units) , P_{\text{SA}}^{*}=\frac{\hat{\beta}_{4}}{\hat{\beta}_{17}}\approx\frac{0.063}{0.408}=0.154\quad\text{(in standardized units)},
+
+corresponding to raw performance ≈ 0.45 \approx 0.45 after denormalization. This threshold, derived purely from data, aligns with empirical best practices and offers the first quantitative criterion for coordination structure selection, replacing heuristic “ when to use agents ”, and “ which agentic architecture to use ” guidance with a predictive model. Cross-validation on held-out configurations confirms this rule achieves 87% correct architecture selection, substantially exceeding random choice (20%) or capability-only models (54%). The scaling principle thus constitutes both a scientific contribution–the first universal equation for agentic systems–and an engineering tool for resource-efficient deployment.
+
+Table 3: Scaling principle model comparison. Progressive inclusion of empirical coordination metrics substantially improves predictive power.
+
+Model Specification R train 2 R^{2}_{\text{train}} R CV 2 R^{2}_{\text{CV}} AIC Parameters
+
+Intelligence + Tools + Agents 0.312 0.283 − 77.6 -77.6 4
+
++ Architecture labels (categorical) 0.480 0.430 − 168.0 -168.0 10
+
++ Single-agent baseline 0.493 0.431 − 168.4 -168.4 11
+
++ Coordination metrics (Table 5 ) 0.589 0.513 − 190.3 -190.3 20
+
+Note: All models use 5-fold cross-validation with experiment-level holdout. The final model using empirical coordination metrics (efficiency, overhead, error amplification, redundancy, message density) achieves 20% improvement in R CV 2 R^{2}_{\text{CV}} over categorical architecture labels, demonstrating that measured properties outperform nominal categories. AIC confirms superior model fit even after penalizing for additional parameters.
+
+Table 4: Scaling principle coefficients relating performance to intelligence, task properties, and empirical coordination metrics ( R train 2 = 0.589 R^{2}_{\text{train}}=0.589 , R CV 2 = 0.513 R^{2}_{\text{CV}}=0.513 , n = 180 n=180 , AIC= − 190.3 -190.3 ). Model uses 5-fold cross-validation; all significant predictors shown.
+
+Predictor β ^ \hat{\beta} 95% CI p p Interpretation
+
+Main Effects
+
+Intelligence ( I I ) -0.180 [-0.312, -0.048] 0.008 Linear capability effect
+
+Intelligence 2 ( I 2 I^{2} ) 0.256 [0.064, 0.449] 0.010 Accelerating returns to capability
+
+log ⁡ ( 1 + T ) \log(1+T) 0.535 [0.347, 0.723] < < 0.001 Tool diversity benefit
+
+Single-Agent Baseline ( P SA P_{\text{SA}} ) 0.319 [0.186, 0.453] < < 0.001 Task difficulty proxy
+
+Critical Interactions
+
+P SA × log ⁡ ( 1 + n a ) P_{\text{SA}}\times\log(1+n_{a}) − 0.408 -0.408 [-0.564, -0.251] < < 0.001 Baseline paradox
+
+E c × T E_{c}\times T − 0.330 -0.330 [-0.432, -0.228] < < 0.001 Efficiency-tools trade-off
+
+O % × T O\%\times T − 0.141 -0.141 [-0.213, -0.069] < < 0.001 Overhead scales with task complexity
+
+A e × T A_{e}\times T − 0.097 -0.097 [-0.167, -0.027] 0.007 Error propagation in tool-rich systems
+
+Coordination Structure
+
+log ⁡ ( 1 + O % ) \log(1+O\%) 0.032 [-0.004, 0.067] 0.084 Direct overhead cost (marginal)
+
+R × n a R\times n_{a} 0.041 [0.002, 0.081] 0.040 Redundancy benefit with scale
+
+Table 5: Coordination metrics across architectures and families ( n = 180 n=180 configurations, 14,742 total instance runs). All systems matched for total reasoning tokens (mean μ = 4 , 800 \mu=4,800 per trial).
+
+Metric SAS Independent Decentralized Centralized Hybrid
+
+Success Rate ( S S ) 0.466 0.370 0.477 0.463 0.452
+
+Turns ( T T ) 7.2 ± \pm 2.1 11.4 ± \pm 3.2 26.1 ± \pm 7.5 27.7 ± \pm 8.1 44.3 ± \pm 12.4
+
+Overhead ( O % O\% ) 0 58 263 285 515
+
+Message Density ( c c ) 0.00 0.00 0.41 0.39 0.24
+
+Redundancy ( R R ) 0.00 0.48 ± \pm 0.09 0.50 ± \pm 0.06 0.41 ± \pm 0.06 0.46 ± \pm 0.04
+
+Efficiency ( E c E_{c} ) 0.466 0.234 0.132 0.120 0.074
+
+Error Amp ( A e A_{e} ) 1.0 17.2 7.8 4.4 5.1
+
+Success/1K tokens 67.7 42.4 23.9 21.5 13.6
+
+4.4 Coordination Efficiency, Error Dynamics, and Information Transfer
+
+Following the Multi-Agent System Failure Taxonomy (MAST) proposed by cemri2025why , we categorize observed errors into specification, inter-agent misalignment, and verification failures. Building on this taxonomy, we quantitatively analyze error frequency and propagation across architectures.
+
+We systematically characterized coordination efficiency, error propagation mechanisms, and information transfer across all 180 experiments. All MAS and SAS configurations were matched for total reasoning-token budget (mean 4,800 tokens per trial) and tool-call access to isolate coordination effects.
+
+Turn count follows power-law scaling with number of agents.
+
+Total reasoning turns (reasoning–response exchanges) exhibit power-law growth with agent count:
+
+T = 2.72 × ( n + 0.5 ) 1.724 , R 2 = 0.974 , 95 % ​ CI on exponent : [ 1.685 , 1.763 ] , p < 0.001 . T=2.72\times(n+0.5)^{1.724},\quad R^{2}=0.974,\quad 95\%\text{ CI on exponent}:[1.685,1.763],\quad p<0.001.
+
+This relationship is fit across architecture-aggregated means; within-architecture variance remains substantial (e.g., at n = 3: Independent averages 11.4 turns vs. Decentralized 26.1 turns), reflecting topology-dependent communication patterns. This super-linear exponent (1.724 > 1 >1 ) reflects quadratic message complexity (all-to-all potential communication) tempered by practical bandwidth limits, creating a distinct agentic scaling regime fundamentally different from neural network parameter scaling (e.g., Kaplan et al. report b = 0.76 b=0.76 for dense models). Empirically, Hybrid systems require 6.2 × \times more turns than SAS (44.3 vs. 7.2 turns; t ​ ( 178 ) = 16.8 t(178)=16.8 , p < 0.001 p<0.001 ), while Centralized requires 3.8 × \times (27.7 turns), and Decentralized requires 3.6 × \times (26.1 turns). The implication is stark: under fixed computational budgets, per-agent reasoning capacity becomes prohibitively thin beyond 3–4 agents, creating a hard resource ceiling where communication cost dominates reasoning capability.
+
+Message Density Exhibits Logarithmic Saturation with Performance.
+
+Success rate follows a logarithmic relationship with message density across all architectures:
+
+S = 0.73 + 0.28 ​ ln ⁡ ( c ) , R 2 = 0.68 , p < 0.001 , S=0.73+0.28\ln(c),\quad R^{2}=0.68,\quad p<0.001,
+
+where c c is messages per reasoning turn. Performance plateaus near c ∗ = 0.39 c^{*}=0.39 messages/turn (achieved by Decentralized and Centralized architectures at 0.41 and 0.39 respectively), corresponding to the success rates of 47.7% and 46.3%. Beyond this point, additional messages yield diminishing returns: Hybrid systems (515% coordination overhead, T = 44.3 T=44.3 ) achieve only ≈ 2 % \approx 2\% –3% success gain versus Centralized (285% overhead, T = 27.7 T=27.7 ), a difference of 0.7 percentage points that is not statistically significant ( t ​ ( 178 ) = 0.61 t(178)=0.61 , p = 0.542 p=0.542 ). This saturation reflects fundamental information limits in open-ended reasoning rather than mechanism failures: high-performing runs show convergent token overlap (shared tokens: mean ≈ 1.8 \approx 1.8 bits; p < 0.001 p<0.001 vs. low performers) suggesting message consensus is reached; further messages add redundancy rather than novel information.
+
+Error absorption mechanisms.
+
+We formalize error absorption as Absorb = ( E SAS − E MAS ) / E SAS \text{Absorb}=(E_{\text{SAS}}-E_{\text{MAS}})/E_{\text{SAS}} , where E E is factual error rate. The absorption mechanism operates through iterative verification : in Centralized and Hybrid architectures, sub-agent outputs pass through an orchestrator that cross-checks reasoning steps before aggregation, enabling detection and correction of logical inconsistencies. In Decentralized architectures, peer debate rounds provide similar verification through explicit challenge-response exchanges. These architectures achieve 22.7% average error reduction ( 95 % 95\% CI: [ 20.1 % , 25.3 % ] [20.1\%,25.3\%] ), peaking at 31.4% for Finance Agent where structured numerical outputs facilitate verification. Independent MAS shows no error correction ( + 4.6 % +4.6\% amplification) due to absence of any inter-agent verification mechanism where errors made by individual agents propagate directly to the aggregated output without opportunity for correction.
+
+The correction mechanism is revealed through token-overlap analysis. Each token in agent rationales is labeled as: (i) unique (appears in exactly one agent); (ii) shared (two or more agents); (iii) contradictory (semantic opposition, BERTScore < 0.3 <0.3 ). High-performing runs exhibit: (i) increased shared-token entropy (mean ≈ 1.8 \approx 1.8 bits for Finance Agent; p < 0.001 p<0.001 vs. low-performing runs); (ii) dramatically reduced contradictory mass (median 2.3% in successes vs. 8.1% in failures), evidence that messages converge toward mutually consistent sub-proofs rather than self-reinforcing errors. Interestingly, high redundancy ( R > 0.50 R>0.50 ) correlates negatively with success ( r = − 0.136 r=-0.136 , p = 0.004 p=0.004 ), implying an emergent diversity-efficiency trade-off: collective capability peaks when message overlap balances shared grounding with informational diversity; optimal redundancy occurs at R ≈ 0.41 R\approx 0.41 (Centralized median), balancing information fusion with reasoning independence.
+
+Figure 4: Agent Heterogeneity Effects on Multi-Agent Performance. Performance comparison of centralized (Orchestrator-Subagents) and decentralized (Peer Debate with Voting) multi-agent architectures on BrowseComp-Plus benchmark across three LLM families. High-capability models include GPT-5, Claude Sonnet 4.5, and Gemini-2.5 Pro; low-capability models include GPT-5 nano, Claude Sonnet 3.7, and Gemini-2.0 Flash.
+(1) Anthropic models uniquely benefit from heterogeneous mixing in centralized architecture, where low-capability orchestrator with high-capability subagents (0.42) outperforms homogeneous high-capability (0.32) by 31%, while OpenAI and Gemini show performance degradation under heterogeneous centralized configurations.
+(2) Decentralized mixed-capability approaches achieve near-optimal or superior performance compared to homogeneous high-capability baselines (OpenAI: 0.53 vs 0.50; Anthropic: 0.47 vs 0.37; Gemini: 0.42 vs 0.43), suggesting effective emergent collaboration despite capability asymmetry.
+(3) Centralized architectures with low-capability orchestrators underperform dramatically for OpenAI and Gemini families, indicating architectural constraints when coordination relies on less capable models.
+
+Error Taxonomy Reveals Architecture-specific Failure Modes.
+
+We identified four error categories as follows.
+
+(1) Logical Contradiction : agent asserts both “X is true” and “X is false” about the same entity, or derives conclusions violating its stated premises;
+(2) Numerical Drift : accumulated computational error from cascading rounding or unit conversion mistakes, measured as relative deviation from ground truth exceeding 5%;
+(3) Context Omission : failure to reference previously established entities, relationships, or state information required for the current reasoning step;
+(4) Coordination Failure (MAS-specific): message misinterpretation, task allocation conflicts, or state synchronization errors between agents. Architecture-specific patterns emerge across these categories:
+
+- •
+
+Logical Contradiction : Baseline 12.3–18.7%. Centralized reduces to 9.1% (36.4% reduction) via consensus; Decentralized achieves 11.5% through peer verification; Independent unchanged at 16.8%.
+
+- •
+
+Numerical Drift : Baseline 20.9–24.1%. Centralized/Decentralized reduce to 18.3% (24% reduction) via sub-problem verification; Hybrid amplifies to 26.4% as rounding errors propagate; Independent unchanged at 23.2%.
+
+- •
+
+Context Omission : Baseline 15.8–25.2%. Centralized reduces to 8.3% (66.8% reduction) via orchestrator synthesis; Decentralized achieves 11.2%; Independent unchanged at 24.1%.
+
+- •
+
+Coordination Failure : Only appears in MAS. Independent: 0% (no coordination mechanism); Centralized: 1.8%; Decentralized: 3.2%; Hybrid: 12.4% (protocol complexity exceeds robust implementation).
+
+These patterns identify three operational coordination regimes: (i) Under-coordination ( O < 100 % O<100\% overhead): minimal accuracy gain ( Δ ​ S ≈ + 2 \Delta S\approx+2 –4%), coordination mechanisms not yet engaged; (ii) Optimal band ( 200 % < O < 300 % 200\%<O<300\% overhead): highest success–cost ratio ( E c ≈ 0.16 E_{c}\approx 0.16 ), dominated by Centralized and Decentralized, with strong error absorption; (iii) Over-coordination ( O > 400 % O>400\% overhead): Hybrid runs with reduced efficiency ( E c ≈ 0.11 E_{c}\approx 0.11 ), protocol complexity introducing coordination-failure modes. Error amplification analysis confirms: Independent architectures propagate errors to 17.2 × \times baseline ( 95 % 95\% CI: [ 14.3 , 20.1 ] [14.3,20.1] ; no correction mechanisms), while Centralized contains to 4.4 × \times ( [ 3.8 , 5.0 ] [3.8,5.0] ) through supervised aggregation.
+
+Figure 5: Number of agents scaling reveals model-dependent coordination limits. Performance of Gemini-2.0 Flash ( a ) and Gemini-2.5 Pro ( b ) across multi-agent architectures with varying number of agents ( n a ∈ { 1 , 3 , 5 , 7 , 9 } n_{a}\in\{1,3,5,7,9\} ). Both models show initial
+gains from multi-agent coordination, but scaling patterns diverge notably:
+Gemini-2.0 Flash exhibits a clear optimum at 7 agents before degradation, while Gemini-2.5 Pro’s decentralized architecture peaks earlier despite its higher single-agent baseline. The centralized architecture demonstrates more stable scaling for Flash but shows diminishing returns for Pro beyond 5 agents. Dashed lines indicate single-agent baseline performance. Results suggest that the optimal number of agents depends on both model capacity and coordination strategy, with coordination overhead eventually outweighing parallelization
+benefits.
+
+Information Gain (IG) Predicts MAS benefit in Low-Complexity Domains.
+
+We compute information gain Δ ​ ℐ \Delta\mathcal{I} by comparing pre-coordination and post-coordination task-uncertainty surrogates (via Bayesian posterior variance reduction on key variables). In structured domains (Finance Agent, Workbench), Δ ​ ℐ \Delta\mathcal{I} correlates strongly with MAS–SAS gap ( r = 0.71 r=0.71 , p < 0.001 p<0.001 ), indicating that agents successfully exchange high-value information and synthesize it into improved solutions. In Finance Agent specifically, Δ ​ ℐ \Delta\mathcal{I} ranges 0.8–2.1 bits (mean 1.4) for successful trials vs. 0.2–0.6 bits (mean 0.4) for failures.
+
+Conversely, in open-world domains (BrowseComp-Plus), Δ ​ ℐ \Delta\mathcal{I} shows weak and non-significant power, revealing that agents’ messages provide limited validated information due to inherent world ambiguity. This domain-dependent information-gain pattern directly maps to observed MAS benefits: Finance Agent (+23.1%) where information exchange is high-value; BrowseComp-Plus (+6%–8%) where world ambiguity limits verification.
+
+Cross-Domain Generalization Validates Coordination Principles.
+
+Architectural rankings remained stable across domains (Kendall τ = 0.89 \tau=0.89 , coefficient of variation < 0.1 <0.1 across architectures), indicating coordination principles transcend specific task structures. Leave-one-domain-out cross-validation achieved R 2 = 0.89 R^{2}=0.89 ( p < 0.001 p<0.001 ), confirming that coordination effects generalize beyond the four benchmarks. Extrapolation to larger teams ( n = 6 n=6 –10) via the fitted power law yields 95% prediction intervals [ 3.2 , 6.8 ] × [3.2,6.8]\times turn-count increases (bootstrap coverage 94.2%), with high confidence in scaling behavior. Specifically, at n = 6 n=6 agents, predicted turns range from 12.8 to 20.1 (SAS: 7.2; Centralized would reach ≈ 85 \approx 85 –130 turns). This super-linear scaling confirms the hard resource ceiling: beyond 3–4 agents, per-agent reasoning quality degrades sharply under fixed budgets.
+
+Economic Efficiency and Family-Specific Cost-Benefit Trade-offs.
+
+Token efficiency (success per 1,000 tokens) reveals sharp trade-offs by architecture and family: SAS achieves 67.7 successes/1K tokens; Centralized drops to 21.5 (3.1 × \times worse); Decentralized to 23.9 (2.8 × \times worse); Hybrid to 13.6 (5.0 × \times worse). Absolute dollar costs per trial vary by model: OpenAI Hybrid achieves marginal cost ≈ $ ​ 0.008 \approx\mathdollar 0.008 per 1% success gain (steep but manageable for structured tasks), while Anthropic Hybrid reaches ≈ $ ​ 0.024 \approx\mathdollar 0.024 per 1% gain (3 × \times worse, reflecting Anthropic’s sensitivity to coordination overhead). Google maintains intermediate costs ≈ $ ​ 0.012 \approx\mathdollar 0.012 per 1% gain across architectures, suggesting more balanced cost-benefit trade-offs.
+
+LLM Family-specific Deployment Signatures and Model-Architecture Alignment.
+
+Cross-family analysis reveals distinct architectural preferences. OpenAI models show strongest Hybrid synergy on structured tasks (Finance: 52% success Hybrid vs. 39% SAS; Workbench: 56% Hybrid vs. 42% SAS). Anthropic models display most conservative, stable Centralized performance (mean 43% across tasks, SD = 2.3%, lowest variance). Google models exhibit robust cross-architecture efficiency (performance range < 5% across topologies). These patterns ( R 2 = 0.89 R^{2}=0.89 cross-validation) reflect fundamental differences in attention mechanisms, activation sparsity, and representation geometry enabling or constraining multi-agent interaction, not superficial hyperparameter differences.
+
+5 Limitations and Future Works
+
+While this work provides quantitative scaling principles for agent systems across architectures and model families, several limitations remain. (i) Our framework systematically compares canonical coordination structures (Independent, Decentralized, Centralized, and Hybrid) with preliminary exploration of scaling number of agents up to nine. However, our empirical findings suggest that scaling to larger collectives may face fundamental barriers: the communication overhead we measured grows superlinearly with agent count, and coordination efficiency degrades substantially beyond moderate team sizes. Whether such collectives can exhibit beneficial emergent behaviors, such as spontaneous specialization or hierarchical self-organization, or whether communication bottlenecks dominate remains an open question that parallels phase transitions in complex adaptive systems. (ii) While we explore capability heterogeneity by mixing models of different intelligence levels within the same LLM family, all agents share identical base architectures differing only in scale and role prompts. Future work should investigate teams combining fundamentally different model architectures, domain-specialized fine-tuning, or complementary reasoning strategies to understand when epistemic diversity yields robustness rather than coordination noise. (iii) Our analysis reveals that tool-heavy environments represent a primary failure mode for multi-agent coordination, with significant negative interactions between tool count and system efficiency. Developing specialized coordination protocols for tool-intensive tasks, such as explicit tool-access scheduling, capability-aware task routing, or hierarchical tool delegation, represents an important direction for improving multi-agent reliability. (iv) While we controlled prompts to be identical across conditions for experimental validity, we did not optimize prompts specifically for each model or model family. Given known sensitivity of LLM behavior to prompt formulation, architecture-specific prompt tuning may yield different scaling characteristics than those reported here. (v) Our analysis spans four agentic benchmarks, which, while diverse in task structure (deterministic tool use, quantitative reasoning, sequential planning, dynamic web navigation), may not capture the full spectrum of agentic task characteristics. The strong differentiation in MAS effectiveness across these four benchmarks (Figure 2 ) suggests that additional environments, particularly those with intermediate characteristics or novel task structures such as embodied agents, multi-user interaction, or long-horizon temporal dependencies would strengthen confidence in the identified thresholds and scaling principles. (vi) The economic viability of multi-agent scaling remains a practical barrier. As shown in our cost analysis (Section 4.4 ), token consumption and latency grow substantially with agent count, often without proportional performance gains. Future work should explore efficiency-oriented designs, such as sparse communication, early-exit mechanisms, or distilled coordinator models, to make multi-agent deployments economically feasible at scale. Additionally, current agentic benchmarks capture dynamic text-based environments but do not yet include long-horizon temporal dependencies or real-world feedback loops. Integrating embodied or multimodal settings (e.g., robotic control, medical triage, multi-user social interaction) will test whether our observed scaling principles generalize beyond symbolic domains.
+
+6 Conclusion
+
+This study quantifies scaling principles for agentic systems across 180 controlled experiments spanning three LLM families and four agentic benchmarks. We reveal that multi-agent performance exhibits an inverted-U relationship with coordination complexity, with benefits diminishing beyond moderate coordination levels. Domain complexity emerges as the strongest performance predictor ( β = − 0.114 \beta=-0.114 , p < 0.002 p<0.002 ), reducing MAS advantage more substantially than architectural choices. Performance gains vary dramatically by task structure: +80.9% on Finance Agent versus − - 70.0% on PlanCraft, indicating that coordination benefits depend tightly on task decomposability. Under fixed computational budgets, turn count grows superlinearly with team size ( T ∝ n 1.724 T\propto n^{1.724} ), constraining effective team sizes to 3–4 agents in practice. We derive a predictive relationship showing that MAS advantage depends on both model capability ( I I ) and domain complexity ( D D ), enabling practitioners to estimate expected gains before deployment. Cross-validation achieves R 2 = 0.89 R^{2}=0.89 on held-out data. Our findings suggest that multi-agent benefits depend critically on task structure rather than team size alone. Effective system design requires matching coordination topology to problem characteristics, rather than assuming uniform benefits from scaling agent count.
+
+Appendix
+
+Appendix A Model Intelligence Index
+
+To quantify the capabilities of LLMs used in our study, we adopt while extending the Artificial Analysis Intelligence Index 3 3 3 https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index . This index provides one of the most comprehensive publicly available syntheses of model capabilities, combining performance across reasoning, knowledge, mathematics, coding, instruction following, long-context reasoning, and agentic workflow tasks. Its construction integrates ten evaluation suites (e.g., MMLU-Pro ( wang2024mmlu ) , GPQA Diamond ( rein2024gpqa ) , HLE ( phan2025humanity ) , AIME 2025, SciCode ( tian2024scicode ) , LiveCodeBench ( jain2025livecodebench ) , IFBench ( pyatkin2025generalizing ) , AA-LCR ( artificialanalysis2025lcr ) , Terminal-Bench Hard, and τ 2 \tau^{2} -Bench Telecom ( barres2025t2bench ) ), with careful standardization, robust answer extraction, and model-agnostic prompting.
+
+Our study requires a unified, quantitative measure of a model’s baseline capabilities that is independent of any agentic mechanism or multi-agent collaboration structure. The Intelligence Index meets this requirement by:
+(i) evaluating all models under consistent, zero-shot, instruction-prompted conditions;
+(ii) employing pass@1 scoring and robust equality-checker mechanisms;
+(iii) reporting a composite measure reflecting general-purpose reasoning and problem-solving ability; and
+(iv) demonstrating high statistical reliability (reported confidence interval below ± 1 % \pm 1\% ).
+This makes it suitable as a foundational axis for studying how agentic performance scales with underlying model capacity .
+
+Beyond Artificial Analysis Evaluations.
+
+Artificial Analysis reports Intelligence Index scores for a growing but still limited subset of frontier models. Our work requires a broader coverage, including several models that are not yet benchmarked on the official platform. For these models, we independently reproduced a subset of the Intelligence Index evaluations, specifically AA-LCR ( artificialanalysis2025lcr ) , HLE ( phan2025humanity ) , MMLU-Pro ( wang2024mmlu ) , GPQA Diamond ( rein2024gpqa ) , AIME 2025, LiveCodeBench ( jain2025livecodebench ) , SciCode ( tian2024scicode ) , and IFBench ( pyatkin2025generalizing ) using the publicly disclosed methodology, prompts, scoring procedures, and evaluation environments described by Artificial Analysis.
+
+For the models without publicly available results, we computed a reconstructed Intelligence Index following the equal-weighting formulation used in Intelligence Index v3.0. In cases where full reproduction was infeasible (e.g., specific agentic workflow tasks or unavailable context window limits), we report approximate estimates (denoted with “ ∼ \sim ”) and discuss their limitations transparently. These reconstructed values should be interpreted as methodologically consistent but not officially certified estimates.
+
+Table 6 summarizes the reconstructed Intelligence Index and underlying component scores for all models used in our study. The table includes:
+(i) official Intelligence Index values when available;
+(ii) reconstructed values for non-reported models;
+(iii) all constituent evaluation scores used to compute the aggregate index;
+(iv) additional model metadata (context window, cost, throughput, latency) relevant for agentic performance analysis.
+
+Table 6: Intelligence Index (non-agentic capability) for LLMs used in our experiments.
+
+Model Index AA-LCR HLE MMLU GPQA AIME LiveCode SciCode IFBench
+
+GPT-5 66 78 27 87 85 85 54 37 94
+
+GPT-5 mini 62 68 20 84 83 84 39 75 91
+
+GPT-5 nano 49 74 28 78 68 79 37 68 84
+
+Gemini-2.5 Pro 58 54 21 86 84 87 70 43 88
+
+Gemini-2.5 Flash 52 64 13 84 79 71 41 52 78
+
+Gemini-2.0 Flash 34 45 ∗ 8 ∗ 77 68 ∗ 73 39 ∗ 35 ∗ 70 ∗
+
+Claude 4.5 Sonnet 61 66 17 88 83 71 45 57 88
+
+Claude 4.0 Sonnet 57 62 ∗ 15 ∗ 87 75 71 56 ∗ 48 ∗ 85 ∗
+
+Claude 3.7 Sonnet 48 58 ∗ 12 ∗ 81 67 22 57 42 ∗ 80 ∗
+
+∗ Estimated or averaged from reported range.
+
+Our reconstructed Intelligence Index values should be interpreted with appropriate caution.
+First, several evaluations, particularly long-context and agentic workflow tasks, contain nondeterministic components that may vary slightly across implementations.
+Second, for models without public API support for large-context evaluation (e.g., “non-reasoning” checkpoints), our long-context estimates represent upper-bound approximations based on available context windows and internal model behavior.
+Third, Artificial Analysis maintains private test variants and additional filtering procedures that cannot be fully reproduced. Thus, our estimates provide a methodologically aligned but not officially verified extension.
+
+Appendix B Domain Complexity
+
+We quantify domain complexity through a composite metric that captures empirical difficulty across evaluated benchmarks. This principled approach enables systematic analysis of when multi-agent coordination yields performance benefits versus incurring prohibitive overhead.
+
+B.1 Complexity Metric Construction
+
+Domain complexity D ∈ [ 0 , 1 ] D\in[0,1] is computed as the conservative average of three complementary measures:
+
+- •
+
+Performance Ceiling. Defined as 1 − p max 1-p_{\max} , where p max p_{\max} is the highest performance achieved by any evaluated system. Lower ceilings indicate greater inherent task difficulty.
+
+- •
+
+Coefficient of Variation. Computed as σ / μ \sigma/\mu , where σ \sigma and μ \mu denote the standard deviation and mean of performance across all configurations. This scale-invariant measure captures relative variability independent of absolute performance ranges.
+
+- •
+
+Best-Model Baseline. Defined as 1 − p best 1-p_{\text{best}} , where p best p_{\text{best}} is the state-of-the-art single-model performance on each dataset, providing an upper bound on achievable accuracy.
+
+The final complexity score is the arithmetic mean of these three components, yielding a robust estimate that mitigates sensitivity to any single measure.
+
+B.2 Domain Characterisation
+
+Table 7 summarises the complexity scores and defining characteristics of each benchmark.
+
+Table 7: Domain complexity scores and task characteristics.
+
+Domain D D Characteristics
+
+Workbench 0.000 Minimal sequential constraints; well-structured procedural reasoning with clear subtask boundaries; low coordination requirements
+
+Finance Agent 0.407 Moderate decomposability; structured domains amenable to localised agent reasoning
+
+PlanCraft 0.419 High sequential dependencies; constraint satisfaction requiring ordered reasoning steps
+
+BrowseComp-Plus 0.839 Dynamic state evolution; complex visuospatial reasoning with interaction-heavy environments
+
+B.3 Critical Threshold
+
+Our analysis identifies a critical complexity threshold at D ≈ 0.40 D\approx 0.40 . Below this threshold, multi-agent architectures yield net positive returns through effective task decomposition and parallel reasoning. Above this threshold, coordination overhead consumes computational resources otherwise allocated to reasoning, resulting in performance degradation. This finding suggests that the suitability of multi-agent approaches is fundamentally constrained by domain-intrinsic properties rather than architectural sophistication alone.
+
+Appendix C Datasets
+
+We evaluate our agent systems across four agentic benchmarks requiring multi-step reasoning and tool interaction. Each dataset emphasizes different aspects of agentic behavior: information retrieval, domain expertise, planning, and task decomposition.
+
+Finance Agent.
+
+We use the Finance Agent benchmark ( bigeard2025finance ) , comprising 50 finance questions requiring domain expertise and multi-step analysis. Tasks include earnings analysis, financial metric calculations, and market trend interpretation. Each instance includes expert-provided rubrics for structured evaluation. Questions typically require 15-30 minutes of expert time, indicating substantial complexity.
+
+BrowseComp Plus.
+
+BrowseComp Plus ( chen2025browsecomp ) contains 100 web browsing tasks requiring multi-website information synthesis. Tasks include comparative analysis, fact verification, and
+comprehensive research across multiple web sources. Each instance requires agents to navigate complex information landscapes, extract relevant details, and synthesize findings. The dataset uses LLM-based evaluation comparing agent responses against ground truth answers with confidence scoring.
+
+WorkBench.
+
+WorkBench ( styles2024workbench ) evaluates business task automation through function calling sequences. The dataset covers five domains: analytics, calendar management, email
+operations, project management, and customer relationship management. Success requires executing correct tool sequences to accomplish realistic business workflows. Evaluation follows outcome-centric assessment, measuring exact match between predicted and expected function call sequences. The dataset supports 100 distinct business scenarios with tolerance for minor date variations.
+
+Plancraft.
+
+Plancraft ( dagan2024plancraft ) focuses on sequential planning in Minecraft environments. Agents must craft target items by determining optimal action sequences using available inventory and crafting recipes. Tasks require multi-step reasoning about dependencies, resource management, and action ordering. The dataset uses environment-determined success
+metrics based on successful item crafting within step limits. We use the plancraft-test subset containing focused planning challenges.
+
+Appendix D Implementation Details
+
+D.1 Technical Infrastructure
+
+Our implementation leverages LiteLLM 4 4 4 https://www.litellm.ai/ for unified API access across model providers and LangChain 5 5 5 https://www.langchain.com/ for agent orchestration and tool integration. LiteLLM provides standardized interfaces for OpenAI, Gemini, and Anthropic models, enabling seamless model switching and comparison. LangChain facilitates tool binding, conversation management, and structured prompting.
+
+API Integration.
+
+We access LLMs through provider-specific APIs: OpenAI API for GPT models (gpt-5, gpt-5-mini, gpt-5-nano), GenAI API for Gemini models (gemini-2.5-pro, gemini-2.5-flash, gemini-2.0-flash), and Anthropic API for Claude models (claude-4.5-sonnet, claude-4.0-sonnet, claude-3.7-sonnet). Our implementation includes intelligent API key rotation across multiple keys per provider to handle rate limiting and quota management. Context window management automatically truncates conversation history when token limits are approached.
+
+Tool Environment.
+
+Each dataset defines its tool ecosystem through environment configurations. Tools include web search (Tavily 6 6 6 https://tavily.com/ ), code execution (Python REPL), mathematical operations, and task
+completion markers. Tool definitions use LangChain’s BaseTool interface with structured input schemas and execution methods. Tools are dynamically bound to LLM instances using
+function calling capabilities when available.
+
+D.2 Agent Configuration
+
+Architecture Parameters.
+
+Single agents use maximum 10 iterations per instance. Independent multi-agent systems deploy 3 agents with synthesis-only coordination. Centralized systems employ 3 sub-agents with 1 orchestrator across maximum 5 orchestration rounds, with 3 iterations per agent per round. Decentralized systems run 3 agents through 3 debate rounds with 3 iterations per round. Hybrid systems combine centralized orchestration with limited peer communication phases.
+
+Heterogeneous Models.
+
+Our framework supports heterogeneous configurations where different agent roles use different models. Orchestrators can use high-capability models (e.g., GPT-5) while sub-agents use
+efficient models (e.g., Gemini-2.0 Flash). The LLMConfig class manages model assignment with automatic LLM instance creation for each agent role. Decentralized systems can assign
+different models to different workers for diversity.
+
+D.3 Prompt Compilation System
+
+We implement a structured prompting system supporting named templates and variable interpolation. Prompts are defined in YAML files with base templates and role-specific extensions.
+The compilation process performs template variable replacement using double-brace syntax (variable) and supports conditional template selection based on agent type and conversation state.
+
+Dataset Integration.
+
+Each dataset provides shared prompt templates containing task-specific instructions and examples. Dataset instances contribute prompt variables including problem descriptions,
+context, and constraints. The prompt compilation system merges agent prompts with dataset templates, ensuring consistent instruction delivery across architectures while maintaining task specificity.
+
+D.4 Evaluation Methodology
+
+Sample Sizes.
+
+We evaluate on dataset subsets balancing computational cost with statistical significance: Finance Agent (50 instances), BrowseComp Plus (100 instances), WorkBench (100 instances),
+and Plancraft (100 instances). Instance selection ensures representative coverage of task types and difficulty levels within each benchmark.
+
+Restrictions and Controls.
+
+All experiments use identical tool interfaces and observation structures across architectures to eliminate external feedback confounds. Context window management applies consistent truncation policies. API rate limiting and retry mechanisms ensure fair resource allocation. Evaluation uses frozen model weights without fine-tuning to measure architectural effects independently of model optimization.
+
+D.5 Information Gain Computation
+
+Information gain Δ ​ ℐ \Delta\mathcal{I} quantifies the reduction in task uncertainty achieved through agent coordination. We estimate this via Bayesian posterior variance reduction:
+
+Δ ​ ℐ = 1 2 ​ log ⁡ Var ​ [ Y | 𝐬 pre ] Var ​ [ Y | 𝐬 post ] , \Delta\mathcal{I}=\frac{1}{2}\log\frac{\text{Var}[Y|\mathbf{s}_{\text{pre}}]}{\text{Var}[Y|\mathbf{s}_{\text{post}}]}, (2)
+
+where Y ∈ { 0 , 1 } Y\in\{0,1\} is the task success indicator, 𝐬 pre \mathbf{s}_{\text{pre}} is the agent’s state representation before coordination (initial reasoning trace), and 𝐬 post \mathbf{s}_{\text{post}} is the state after coordination (final aggregated output). Variances are estimated via Monte Carlo sampling: we generate K = 10 K=10 reasoning traces per state using temperature τ = 0.7 \tau=0.7 and compute empirical variance of predicted success probabilities. For binary outcomes, this reduces to:
+
+Var ​ [ Y | 𝐬 ] = p ^ ​ ( 𝐬 ) ​ ( 1 − p ^ ​ ( 𝐬 ) ) , \text{Var}[Y|\mathbf{s}]=\hat{p}(\mathbf{s})(1-\hat{p}(\mathbf{s})), (3)
+
+where p ^ ​ ( 𝐬 ) \hat{p}(\mathbf{s}) is the mean predicted success probability across samples.
+
+Figure 6: Benchmark-specific scaling dynamics across LLM families. Performance curves across four benchmarks show best-performing multi-agent variants versus single-agent baselines by Intelligence Index. OpenAI and Google exhibit strong cooperative scaling in structured tasks (Finance Agent: + 23.1 % +23.1\% ; Workbench: + 20.8 % +20.8\% ; Cohen’s d > 1.2 d>1.2 ). Anthropic models show diminished or negative returns in open-ended environments (PlanCraft: − 35.0 % -35.0\% for uncoordinated variants; d ≈ 0.35 d\approx 0.35 ), where independent reasoning sometimes outperforms coordination. Cross-family variance decomposition ( R 2 = 0.89 R^{2}=0.89 ) confirms that intrinsic communication alignment differences drive these divergent patterns.

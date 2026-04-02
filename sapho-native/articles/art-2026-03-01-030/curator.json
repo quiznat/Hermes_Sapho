@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-030",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "sufficient",
+  "reason": "The provided source excerpt is a README file describing how to set up and use a tool called \"Ralph\". It details the tool's functionality, prerequisites, setup instructions, and workflow. However, it does not contain any novel synthesis, novel findings, real experimental data, or production data. The excerpt describes *how* a system works and *how* to use it, but does not present concrete benchmark results, experiment outcomes, or production evidence.\nThe source excerpt is a technical documentation file that explains the setup and usage of an AI agent loop. It lacks any substantive research value, experimental data, or production evidence, which are the core criteria for admission into the Daily rail.",
+  "limits": "",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

@@ -1,0 +1,10 @@
+- ChatDev is a chat-powered software development framework.
+- It integrates LLM agents with various social roles.
+- Agents collaborate autonomously in design, coding, and testing phases.
+- ChatDev uses a chat chain to break down phases into subtasks.
+- Communicative dehallucination is a mechanism to minimize coding hallucinations.
+- The framework segments development into three phases: design, coding, and testing.
+- The coding phase includes subtasks for code writing and completion.
+- The testing phase includes code review (static testing) and system testing (dynamic testing).
+- Natural-language communications contribute to system design.
+- Programming-language communications drive software optimization.

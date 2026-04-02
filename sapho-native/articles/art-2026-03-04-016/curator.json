@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-016",
+  "decision": "kept",
+  "qualified_by": "novel_synthesis",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This paper presents a systematic survey of LLM-based code generation agents, tracing their development, categorizing techniques, detailing applications across the SDLC, summarizing benchmarks and tools, and identifying future research directions. This qualifies as novel synthesis by clarifying the field.",
+  "limits": "The excerpt is an abstract and introduction, so it might omit specific experimental data or detailed findings present in the full paper.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

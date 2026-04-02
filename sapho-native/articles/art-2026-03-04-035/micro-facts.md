@@ -1,0 +1,10 @@
+- ACE (Agentic Context Engineering) is a framework that treats contexts as evolving playbooks.
+- ACE prevents context collapse with structured, incremental updates.
+- ACE scales with long-context models.
+- ACE consistently outperforms strong baselines: +10.6% on agents and +8.6% on finance benchmarks.
+- ACE reduces adaptation latency and rollout cost.
+- ACE adapted effectively without labeled supervision, using natural execution feedback.
+- ACE matches the top-ranked production-level agent on AppWorld leaderboard overall average.
+- ACE surpasses the top-ranked agent on the AppWorld harder test-challenge split.
+- ACE used a smaller open-source model on the AppWorld leaderboard.
+- ACE enables scalable, efficient, and self-improving LLM systems with low overhead.

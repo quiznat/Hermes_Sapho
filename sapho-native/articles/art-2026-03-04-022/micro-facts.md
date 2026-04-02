@@ -1,0 +1,10 @@
+- The study analyzed 401 open-source repositories containing cursor rules.
+- The research used Sourcegraph to fetch repositories with cursor rule files (.mdc extension).
+- The study excluded forked and archived repositories from the data collection.
+- A total of 487 repositories initially met the criteria for containing cursor rule files.
+- The research developed a taxonomy of project context organized into five high-level themes.
+- The five themes are Conventions, Guidelines, Project Information, LLM Directives, and Examples.
+- The paper characterizes developer-provided context for AI coding assistants.
+- The study offers implications for the design of context-aware AI developer tools.
+- The research explored variations in context across project types and programming languages.
+- Cursor rules were chosen as a proxy for studying developer-provided context.

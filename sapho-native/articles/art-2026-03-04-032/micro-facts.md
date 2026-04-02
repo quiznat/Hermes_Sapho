@@ -1,0 +1,10 @@
+- On SWE-Bench-Pro, CCA achieves a state-of-the-art Resolve@1 performance of 54.3%.
+- The Confucius SDK introduces a unified orchestrator with hierarchical working memory.
+- The Confucius SDK includes a persistent note-taking system for cross-session continual learning.
+- The Confucius SDK has a modular extension module for robust tool use.
+- A meta-agent automates the synthesis, evaluation, and refinement of agent configurations.
+- CCA is an open-sourced AI software engineer designed to operate at an industrial scale.
+- The Confucius SDK balances Agent Experience (AX), User Experience (UX), and Developer Experience (DX).
+- CCA's context management uses hierarchical scopes and a planner agent to summarize and compact histories.
+- CCA reuses distilled execution trajectories as a durable knowledge base for learning from past experiences.
+- In the Confucius SDK, tool-use capabilities are modularized into extensions.

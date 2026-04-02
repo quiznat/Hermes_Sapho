@@ -55,7 +55,6 @@ __pycache__/
 .mypy_cache/
 
 # Sapho generated/runtime surfaces
-sapho-native/articles/
 sapho-native/daily/
 sapho-native/discovery/
 sapho-native/public/

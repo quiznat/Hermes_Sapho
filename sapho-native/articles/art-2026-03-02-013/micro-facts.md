@@ -1,0 +1,6 @@
+- Evaluations ("evals") are tests for AI systems.
+- Evals make problems and behavioral changes visible before they affect users.
+- Agents can operate over many turns, calling tools, modifying state, and adapting.
+- Multi-turn evaluations have become increasingly common.
+- A complex multi-turn eval may involve a coding agent, tools, a task, and an environment.
+- Grading for multi-turn evals can use unit tests to verify implementation.

@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-02-001",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "It is a case-study blog post without clear empirical results, benchmark data, or production evidence in the source excerpt.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-02-001\nticket_id: ticket-import-art-2026-03-02-001\ndecision: discarded\nreason: It is a case-study blog post without clear empirical results, benchmark data, or production evidence in the source excerpt.\nscope_class: other\ndecided_at_utc: 2026-04-02T00:41:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-02T00:41:28Z",
+  "mode": "agent"
+}

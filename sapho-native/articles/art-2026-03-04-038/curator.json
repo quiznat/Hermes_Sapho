@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-038",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is a guide to using OpenClaw personal AI assistants. It describes what a Claw is, how it differs from other AI tools, and how to get started. However, it lacks concrete experimental data, production incident reports, or novel synthesis of existing evidence, focusing instead on describing features and usage.",
+  "limits": "The excerpt does not contain deep technical details, benchmark results, or production evidence that would satisfy the institute's criteria for novel findings or real experimental data.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

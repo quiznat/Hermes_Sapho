@@ -1,0 +1,7 @@
+- LLM-driven evolution is an efficient, general method for code and agent optimization.
+- Code evolution was used to more than double a model’s reasoning performance in ARC-AGI tasks.
+- The Darwinian Evolver tool is being open-sourced.
+- Vet, an agent verifier, uses LLMs and agents to verify coding agent work and suggest improvements.
+- Existing prompt optimization frameworks like DSPy’s MIPRO were not suitable for Vet’s use case.
+- Existing techniques relied heavily on few-shot prompting, which was not feasible for Vet due to context length constraints.
+- Existing tools were limited to optimizing a single prompt in isolation.

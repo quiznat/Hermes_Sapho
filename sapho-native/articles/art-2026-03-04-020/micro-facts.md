@@ -1,0 +1,4 @@
+- Submitted on 1 Aug 2023 (v1)
+- Last revised 1 Nov 2024 (v7)
+- Title: MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework
+- Authors: Sirui Hong, Mingchen Zhuge, Jiaqi Chen, Xiawu Zheng, Yuheng Cheng, Ceyao Zhang, Jinlin Wang, Zili Wang, Steven Ka Shing Yau, Zijuan Lin, Liyang Zhou, Chenyu Ran, Lingfeng Xiao, Chenglin Wu, Jürgen Schmidhuber

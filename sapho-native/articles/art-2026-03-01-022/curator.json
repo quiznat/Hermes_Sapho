@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-022",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt describes an autonomous financial research agent but does not contain any actual experimental data, benchmark results, or production incident data. It focuses on capabilities, installation, and usage, which falls under generic product description rather than substantive research value.",
+  "limits": "The excerpt is a README file and does not provide direct access to the agent's performance metrics or any synthesized findings from its research.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:32Z",
+  "mode": "agent"
+}

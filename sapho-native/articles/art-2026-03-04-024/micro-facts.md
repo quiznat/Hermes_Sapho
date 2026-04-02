@@ -1,0 +1,9 @@
+- Multi-agent systems (MASs) are used for automated code generation.
+- This paper presents the first comprehensive study on the robustness of MASs for code generation using fuzzing.
+- Findings reveal robustness flaws in MASs, with failures ranging from 7.9% to 83.3% after semantic-preserving mutations.
+- A common cause of robustness issues is miscommunication between planning and coding agents ("planner-coder gap").
+- This gap accounts for 75.3% of all failures.
+- A repairing method is proposed, involving multi-prompt generation and a monitor agent.
+- The repairing method enhances MAS robustness by solving 40.0%–88.9% of identified failures.
+- Re-execution shows up to an 85.7% decrease in found failures after repairs.
+- The repairing method addresses information loss and semantic drift in MAS code generation.

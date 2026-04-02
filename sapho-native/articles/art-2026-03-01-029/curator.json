@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-029",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt describes an architecture and workflow for an autonomous product improvement system. However, it does not contain any concrete benchmark results, experimental data, or production evidence to support its claims. It outlines how the system would work but does not demonstrate its effectiveness.",
+  "limits": "This decision is based solely on the provided excerpt, which lacks the substantive research value (experimental data, benchmark results, or production evidence) required for admission into the Daily rail.",
+  "confidence": "high",
+  "generated_at_utc": "2026-04-01T19:51:32Z",
+  "mode": "agent"
+}

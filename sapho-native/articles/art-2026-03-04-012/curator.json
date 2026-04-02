@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-012",
+  "decision": "kept",
+  "qualified_by": "novel_findings",
+  "evidence_basis": "none",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This source presents novel findings by introducing a new dataset (MAST-Data) and taxonomy (MAST) for understanding multi-agent LLM system failures. It includes a systematic analysis of failure patterns across different models and tasks, providing concrete insights and a roadmap for future research.",
+  "limits": "The provided excerpt is from an academic paper's abstract and metadata. It may omit detailed experimental setups, specific quantitative results, or nuanced discussions present in the full paper.",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

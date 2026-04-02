@@ -1,0 +1,8 @@
+- A new ETH Zurich study finds that LLM-generated context files reduce task success rates.
+- LLM-generated context files raise inference costs by 20%.
+- OpenAI's monorepo contains 88 AGENTS.md files.
+- The AGENTS.md format has been adopted across more than 60,000 public repositories.
+- A paper was published in February 2026 by researchers at ETH Zurich.
+- AGENTS.md emerged in mid-2025 when OpenAI launched Codex.
+- AGENTS.md was introduced as a machine-readable configuration layer.
+- Developers were frustrated maintaining parallel configuration artifacts.

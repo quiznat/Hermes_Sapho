@@ -1,0 +1,5 @@
+- The paper was submitted on March 17, 2025.
+- The paper was last revised on October 26, 2025.
+- The paper's arXiv identifier is 2503.13657.
+- The paper is classified under Computer Science > Artificial Intelligence.
+- The authors are Mert Cemri, Melissa Z. Pan, Shuyi Yang, Lakshya A. Agrawal, Bhavya Chopra, Rishabh Tiwari, Kurt Keutzer, Aditya Parameswaran, Dan Klein, Kannan Ramchandran, Matei Zaharia, Joseph E. Gonzalez, and Ion Stoica.

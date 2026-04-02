@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-03-004",
+  "decision": "kept",
+  "qualified_by": "novel_findings",
+  "evidence_basis": "experiment",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This research paper presents novel findings on the impact of AGENTS.md files on the efficiency of AI coding agents. It details a study design, experimental conditions, and reports concrete results on runtime and token consumption, satisfying the criteria for novel findings and real experimental data.",
+  "limits": "The provided excerpt is from a larger paper and may be missing nuances or full experimental details, such as specific agent performance metrics beyond runtime and token usage.",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

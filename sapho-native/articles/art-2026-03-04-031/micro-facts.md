@@ -1,0 +1,11 @@
+- The paper investigates capturing and embedding human domain knowledge into AI agent systems through an industrial case study.
+- An AI agent was developed demonstrating autonomous, reactive, proactive, and social behavior.
+- Evaluation across five scenarios with 12 evaluators showed a 206% improvement in output quality.
+- The agent achieved expert-level ratings in all cases compared to the baseline's poor performance.
+- The system maintained superior code quality with lower variance.
+- The contributions include an automated agent-based system for visualization generation and a validated framework for codifying human domain knowledge.
+- The framework enables non-experts to achieve expert-level outcomes in specialized domains.
+- The research was conducted at Siemens, focusing on their Simulation Analysis software.
+- Two domain experts were interviewed: a simulation analysis software expert and a data visualization expert.
+- The framework involves a four-step process: expert interviews, rule implementation, testing, and iteration.
+- The implementation integrated a RAG system, codified expert rules, and enhanced system prompts.

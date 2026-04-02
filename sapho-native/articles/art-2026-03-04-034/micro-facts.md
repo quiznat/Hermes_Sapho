@@ -1,0 +1,6 @@
+- SWE-agent is a system that facilitates LM agents to autonomously use computers to solve software engineering tasks.
+- SWE-agent's custom agent-computer interface (ACI) enhances an agent's ability to create and edit code files, navigate repositories, and execute tests and programs.
+- SWE-agent achieved state-of-the-art performance on SWE-bench with a pass@1 rate of 12.5%.
+- SWE-agent achieved state-of-the-art performance on HumanEvalFix with a pass@1 rate of 87.7%.
+- The performance achieved by SWE-agent exceeds that of previous non-interactive LMs on both benchmarks.
+- The research investigates how interface design affects the performance of language model agents.

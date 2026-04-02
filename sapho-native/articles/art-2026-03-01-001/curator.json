@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-001",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "none",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The excerpt makes performance claims but does not present concrete results, data, or source-attributed evidence.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-01-001\nticket_id: ticket-import-art-2026-03-01-001\ndecision: discarded\nreason: The excerpt makes performance claims but does not present concrete results, data, or source-attributed evidence.\nscope_class: other\ndecided_at_utc: 2026-04-02T00:41:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-02T00:41:12Z",
+  "mode": "agent"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-03-002",
+  "decision": "kept",
+  "qualified_by": "novel_synthesis",
+  "evidence_basis": "synthesis",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This source provides novel synthesis by empirically studying agent context files, characterizing their structure, maintenance, and content with specific percentages for different instruction types. It identifies a gap in non-functional requirements specification, offering insights into current practices and areas for improvement.",
+  "limits": "The excerpt is limited to the abstract and introduction, and does not contain the full experimental data or detailed methodology that would be present in the complete paper.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

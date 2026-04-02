@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-035",
+  "decision": "kept",
+  "qualified_by": "novel_findings",
+  "evidence_basis": "mixed",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "This source presents novel findings in the domain of LLM context adaptation, introducing a framework called ACE that consistently outperforms baselines on agent and domain-specific benchmarks with quantifiable results (+10.6% and +8.6%). It details a modular process of generation, reflection, and curation, and highlights its ability to adapt effectively using natural execution feedback, even surpassing top-ranked production agents on leaderboards.",
+  "limits": "The excerpt is from an abstract and introduction, and while it includes performance metrics, it may not capture the full experimental methodology, limitations, or detailed breakdown of results present in the complete paper.",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

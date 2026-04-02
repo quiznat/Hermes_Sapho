@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-01-007",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is a guide on securing an OpenClaw instance. While it offers practical security steps, it does not present novel synthesis, new findings, or real experimental/production data as required by the institute's criteria. It functions as a procedural how-to rather than a research payload.",
+  "limits": "The excerpt focuses on security procedures and does not contain benchmark results or production incident data. Its value is in its instructive nature for securing a system, not in presenting new research or validated findings.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:32Z",
+  "mode": "agent"
+}

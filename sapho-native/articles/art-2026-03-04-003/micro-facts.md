@@ -1,0 +1,5 @@
+- GenAI-based coding assistants have disrupted software development.
+- The next generation of AI coding assistants are agent-based.
+- AI agents require contextual information for developing solutions.
+- Popular AI agents (Claude Code, OpenAI Codex) maintain tool-specific Markdown files for context.
+- AGENTS.md has emerged as a potential standard for consolidating tool-specific formats.

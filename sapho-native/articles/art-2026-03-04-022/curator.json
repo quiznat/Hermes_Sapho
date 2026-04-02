@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-022",
+  "decision": "kept",
+  "qualified_by": "novel_synthesis",
+  "evidence_basis": "synthesis",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This paper presents a large-scale empirical study characterizing developer-provided context for AI coding assistants. It offers novel synthesis by developing a taxonomy of project context essential for AI and exploring variations across project types and languages, based on a qualitative analysis of 401 open-source repositories.",
+  "limits": "The excerpt is from a research paper and does not contain direct experimental data or production outcomes, but rather the methodology and findings of an empirical study which is a form of novel synthesis.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

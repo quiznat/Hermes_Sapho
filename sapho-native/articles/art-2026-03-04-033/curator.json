@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-033",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided excerpt describes the AutoGen framework and its concepts, but it does not contain any concrete experimental data, benchmark results, or production evidence. It focuses on the architecture and potential applications rather than empirical findings.",
+  "limits": "The excerpt is an abstract and introduction, lacking specific experimental results or performance metrics that would qualify it as a source with a substantive research value.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

@@ -1,0 +1,10 @@
+- The survey analyzes over 1400 research papers on Context Engineering for LLMs.
+- A critical research gap exists between model capabilities in understanding context and generating sophisticated long-form outputs.
+- Context Engineering is a formal discipline for systematic optimization of information payloads for LLMs.
+- The survey categorizes Context Engineering into foundational Components and System Implementations.
+- Foundational Components include Context Retrieval and Generation, Context Processing, and Context Management.
+- System Implementations include Retrieval-Augmented Generation (RAG), Memory Systems, Tool-Integrated Reasoning, and Multi-Agent Systems.
+- The survey aims to establish a technical roadmap for the field.
+- The date of the document is July 17, 2025.
+- The code repository is available at https://github.com/Meirtz/Awesome-Context-Engineering.
+- Contact emails are meilingrui23b@ict.ac.cn and liushenghua@ict.ac.cn.

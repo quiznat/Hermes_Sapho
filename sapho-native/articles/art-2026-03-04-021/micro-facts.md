@@ -1,0 +1,12 @@
+- Field observations were conducted with 13 participants.
+- A qualitative survey was distributed to 99 experienced developers.
+- Participants in the field observations had 3 to 25 years of professional experience.
+- Field observation sessions included a 45-minute observation and a 30-minute interview.
+- The field observations took place between August 1 and October 3, 2025.
+- Participants in field observations received a $100 USD gift card.
+- Survey participants could enter a drawing for one of four $100 USD gift cards.
+- Experienced developers were defined as having at least three years of professional development experience.
+- Agentic tools were defined as AI tools integrated into an IDE or terminal that can manipulate code directly.
+- About half of professional software developers use AI tools daily.
+- A randomized trial found experienced open source maintainers were slowed down by 19% when using AI.
+- An agentic system deployed in an issue tracker saw only 8% of its invocations result in complete success.

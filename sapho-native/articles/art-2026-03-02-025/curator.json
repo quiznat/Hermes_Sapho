@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-02-025",
+  "decision": "kept",
+  "qualified_by": "novel_synthesis",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This source offers novel synthesis by deriving quantitative scaling principles for agent systems, supported by a controlled evaluation across multiple benchmarks and agent architectures. It presents concrete findings on tool-coordination trade-offs, capability saturation, and topology-dependent error amplification.",
+  "limits": "The provided excerpt is from an arXiv pre-print, and while it details experimental results, it may omit nuanced caveats present in the full publication.",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}

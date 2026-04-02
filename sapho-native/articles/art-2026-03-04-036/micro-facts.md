@@ -1,0 +1,17 @@
+- SWE-ContextBench augments 300 base tasks with 99 related tasks derived from dependency and reference relationships.
+- The benchmark evaluates agents on prediction accuracy, time efficiency, and cost efficiency.
+- Correctly selected summarized experience improves resolution accuracy and reduces runtime and token cost.
+- Unfiltered or incorrectly selected experience provides limited or negative benefits.
+- SWE-ContextBench is built on SWE-Bench Lite.
+- The experience pool consists of solution trajectories from 300 experience tasks.
+- For the 99 related tasks, the dataset includes task construction data and test-based evaluation data.
+- Each of the 99 related tasks contains an average of 5.09 FAIL_TO_PASS tests and 128.32 PASS_TO_PASS tests.
+- Oracle Summary Reuse achieved the highest resolution rate at 34.34%.
+- The No-Experience baseline had a resolution rate of 26.26%.
+- Oracle Experience Reuse yielded a modest improvement to 27.27%.
+- Free Summary Reuse underperformed the baseline.
+- Free Experience Reuse matched the baseline performance.
+- Patch application failures ranged from 2 to 7 instances across methods.
+- All approaches maintained high PASS_TO_PASS test pass rates (97–99%).
+- 85–90% of instances remained regression-free at the task level.
+- Test-level FAIL_TO_PASS rates were consistently lower than task-level rates.

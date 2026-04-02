@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-04-011",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The provided source excerpt is a product page describing the features and installation of \"Claude Code.\" It does not contain any novel synthesis, experimental data, production incident data, or comparative benchmarks. It primarily serves as an informational page about a tool's capabilities and how to use it.",
+  "limits": "The excerpt does not contain any limitations to the content presented, as it is a purely descriptive product page.",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "mode": "agent"
+}
