@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-02-025",
+  "reviewed_at_utc": "2026-04-02T04:06:09Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article keeps the central tension visible: multi-agent coordination can help in some benchmarks, but those gains are conditional and can reverse once coordination cost dominates.",
+  "review_confidence": "high",
+  "contradiction_count": 4,
+  "status": "disclosed"
+}

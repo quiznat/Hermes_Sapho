@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(ROOT))
 
 import task_runner
+import common
 from micro_common import run_loose_agent
 
 
@@ -37,6 +38,11 @@ session_id: 20260331_032122_c6700d
         payload = "article_id: art-1\nsummary: repeated once\nclaims:\n  - claim_id: claim-001\n    claim_text: A concrete result.\n"
         raw = f"\n╭─ ⚕ Hermes ──╮\n{payload}{payload}\nsession_id: abc\n"
         self.assertEqual(task_runner.normalize_output(raw), payload.strip())
+
+    def test_load_frontmatter_repairs_bracket_prefixed_scalar(self) -> None:
+        text = "version: article.v1\nsource_title: [2512.08296] Towards a Science of Scaling Agent Systems\n"
+        meta = common.load_frontmatter(text)
+        self.assertEqual(meta["source_title"], "[2512.08296] Towards a Science of Scaling Agent Systems")
 
     def test_build_hermes_command_uses_role_model(self) -> None:
         config = task_runner.load_task_runner_config()

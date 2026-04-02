@@ -15,6 +15,24 @@ import common
 
 
 class ArticleLawReviewsTests(unittest.TestCase):
+    def test_load_yaml_payload_tolerates_unquoted_colons_in_scalar_values(self) -> None:
+        payload = article_law_reviews._load_yaml_payload("""summary: Review keeps the main tensions visible: prediction is useful but uneven.
+review_confidence: high
+contradictions:
+  - contradiction_text: The aggregate result is negative: some narrower cases are positive.
+    related_claim_texts:
+      - A claim
+    related_fact_refs:
+      - fact-001
+    related_evidence_ids:
+      - evidence-001
+    disposition: unresolved
+    disclosure: Keep the conditional upside visible: do not flatten the result.
+    confidence: high
+""")
+        self.assertEqual(payload["review_confidence"], "high")
+        self.assertIn("conditional upside", payload["contradictions"][0]["disclosure"])
+
     def _base_claims(self) -> list[dict]:
         return [
             {

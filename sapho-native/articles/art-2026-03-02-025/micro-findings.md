@@ -1,3 +1,4 @@
-*   Derived quantitative scaling principles for agent systems.
-*   Controlled evaluation across multiple benchmarks and agent architectures.
-*   Concrete findings on tool-coordination trade-offs, capability saturation, and topology-dependent error amplification.
+- The paper's predictive framework has moderate out-of-sample usefulness for coordination choice, achieving cross-validated R² = 0.513 and selecting the optimal strategy in 87% of held-out configurations.
+- Tool-heavy tasks are associated with worse coordination returns in multi-agent systems.
+- When the single-agent baseline is already above about 45%, adding more agents tends to produce diminishing or negative performance returns.
+- Multi-agent performance is strongly architecture- and benchmark-dependent: centralized coordination delivers large gains on Finance Agent, decentralized coordination is better on BrowseComp-Plus, and all tested multi-agent architectures underperform single-agent on PlanCraft.

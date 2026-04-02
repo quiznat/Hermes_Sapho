@@ -1,5 +1,12 @@
-- The arXiv identifier is 2512.08296 (cs).
-- The paper was submitted on 9 Dec 2025.
-- The paper was last revised on 17 Dec 2025.
-- The title of the paper is "Towards a Science of Scaling Agent Systems".
-- The authors are Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park, Samuel Schmidgall, A. Ali Heydari, Yao Yan, Zhihan Zhang, Yuchen Zhuang, Mark Malhotra, Paul Pu Liang, Hae Won Park, Yuzhe Yang, Xuhai Xu, Yilun Du, Shwetak Patel, Tim Althoff, Daniel McDuff, and Xin Liu.
+- The study evaluates 180 controlled agent-system configurations across four benchmarks, five architectures, and three LLM families while standardizing tools, prompts, and token budgets.
+- The predictive framework achieves cross-validated R² = 0.513 and predicts the optimal coordination strategy for 87% of held-out configurations.
+- Tool-heavy tasks show a negative coordination interaction, with β = -0.330 and p < 0.001.
+- When single-agent baseline performance exceeds about 45%, additional agents show diminishing or negative returns, with β = -0.408 and p < 0.001.
+- Independent multi-agent systems amplify errors 17.2× relative to single-agent baseline, while centralized coordination contains error amplification to 4.4×.
+- On Finance Agent, centralized multi-agent coordination improves mean performance by 80.9%, from 0.349 for single-agent to 0.631.
+- On BrowseComp-Plus, decentralized coordination improves performance by 9.2% over single-agent, while centralized coordination is nearly flat at +0.2%.
+- On PlanCraft, every tested multi-agent architecture underperforms the single-agent baseline, with degradations ranging from 39.0% to 70.0%.
+- Total reasoning turns scale with agent count as T = 2.72 × (n + 0.5)^1.724 with R² = 0.974.
+- Average coordination overhead is reported as 58% for Independent, 263% for Decentralized, 285% for Centralized, and 515% for Hybrid, relative to single-agent.
+- Centralized, hybrid, and decentralized architectures achieve an average 22.7% factual-error reduction, while independent multi-agent systems show 4.6% error amplification.
+- The appendix defines a domain-complexity threshold near D ≈ 0.40, below which multi-agent systems tend to yield net positive returns and above which coordination overhead tends to dominate.

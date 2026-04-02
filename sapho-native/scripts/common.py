@@ -284,7 +284,7 @@ def repair_frontmatter_text(text: str) -> str:
         if re.fullmatch(r"[-+]?[0-9]+(?:\.[0-9]+)?", scalar):
             repaired_lines.append(line)
             continue
-        if ":" in scalar:
+        if scalar.startswith(("[", "{", "&", "*", "!", "%", "@", "`")) or ":" in scalar:
             quoted = yaml.safe_dump(scalar, default_style='"').strip()
             repaired_lines.append(f"{indent}{key}: {quoted}")
             continue

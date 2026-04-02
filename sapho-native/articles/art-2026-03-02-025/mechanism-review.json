@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-02-025",
+  "reviewed_at_utc": "2026-04-02T04:06:27Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports coordination cost and verification as bounded mechanisms for multi-agent outcomes, while keeping benchmark-specific architecture effects and prediction accuracy explicitly non-universal.",
+  "review_confidence": "high",
+  "mechanism_count": 3,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The paper's predictive framework has moderate out-of-sample usefulness for coordination choice.",
+      "bounds": "The result supports predictive usefulness within 180 controlled configurations, but it does not provide a demonstrated causal account of why a coordination strategy wins, and its accuracy is bounded by the studied benchmarks, architectures, and model families."
+    },
+    {
+      "claim_text": "Multi-agent performance is strongly architecture- and benchmark-dependent.",
+      "bounds": "The evidence clearly shows heterogeneity across benchmarks, but it does not isolate the full causal features that make centralized coordination win in Finance Agent, decentralized coordination do better in BrowseComp-Plus, and all tested multi-agent setups fail in PlanCraft."
+    }
+  ]
+}

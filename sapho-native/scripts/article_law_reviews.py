@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -42,8 +43,39 @@ def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> Path:
     return path
 
 
+def _quote_yaml_scalar_values(text: str) -> str:
+    rendered: list[str] = []
+    scalar_patterns = [
+        re.compile(r"^(\s*[A-Za-z0-9_]+:\s)(.+)$"),
+        re.compile(r"^(\s*-\s*[A-Za-z0-9_]+:\s)(.+)$"),
+    ]
+    for line in text.splitlines():
+        match = None
+        for pattern in scalar_patterns:
+            match = pattern.match(line)
+            if match:
+                break
+        if not match:
+            rendered.append(line)
+            continue
+        prefix, value = match.groups()
+        stripped = value.strip()
+        if not stripped or stripped.startswith(("-", "[", "{", "|", ">", "'", '"')):
+            rendered.append(line)
+            continue
+        if re.fullmatch(r"(?:true|false|null|[-+]?\d+(?:\.\d+)?)", stripped, re.I):
+            rendered.append(line)
+            continue
+        rendered.append(prefix + json.dumps(stripped, ensure_ascii=False))
+    return "\n".join(rendered)
+
+
 def _load_yaml_payload(text: str) -> dict[str, Any]:
-    payload = yaml.safe_load(_clean(text)) or {}
+    cleaned = _clean(text)
+    try:
+        payload = yaml.safe_load(cleaned) or {}
+    except yaml.YAMLError:
+        payload = yaml.safe_load(_quote_yaml_scalar_values(cleaned)) or {}
     if not isinstance(payload, dict):
         raise ValueError("review_output_not_mapping")
     return payload
