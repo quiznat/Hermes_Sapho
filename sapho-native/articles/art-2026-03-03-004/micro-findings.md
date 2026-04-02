@@ -1,3 +1,4 @@
-*   AGENTS.md files impact AI coding agent efficiency.
-*   The study measured token usage and wall-clock time-to-completion.
-*   The research details a study design including data collection and experimental conditions.
+- In this paired study of 10 repositories and 124 pull requests, adding AGENTS.md was associated with a statistically significant reduction in median wall-clock runtime.
+- Median wall-clock time fell from 98.57 seconds without AGENTS.md to 70.34 seconds with AGENTS.md, a reported reduction of 28.64%.
+- AGENTS.md was also associated with a statistically significant reduction in median output token consumption, from 2,925.00 to 2,440.00 tokens, or 16.58%.
+- These performance findings are bounded by heavy sample filtering and incomplete quality validation, so they support efficiency claims more strongly than correctness claims.

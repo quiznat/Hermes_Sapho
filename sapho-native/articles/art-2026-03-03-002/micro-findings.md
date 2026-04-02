@@ -1,5 +1,4 @@
-The provided text excerpt is a table of contents and introductory curator's notes for a study on agent context files. The actual findings and detailed information are not present in the excerpt. Therefore, I can only extract information based on the structure and stated aims of the study.
-
-*   The study empirically examines agent context files, characterizing their structure, maintenance, and content.
-*   It aims to identify gaps in non-functional requirements specification within agent context files.
-*   The research investigates the classification of instructions within agent context files, potentially automatically.
+- The study examines agent context files at cross-repository scale, analyzing 2,303 files drawn from 1,925 repositories after starting from a larger pool of 8,370 starred AIDev repositories.
+- Context-file format differs across agent ecosystems, with GitHub Copilot files longer on median than Claude Code files and OpenAI Codex files shortest, while OpenAI Codex files are also easier to read by Flesch score than the other two.
+- Agent context files are usually maintained as living documents rather than one-off setup files, because most are modified across multiple commits and update intervals can be as short as roughly a day for Claude Code and OpenAI Codex.
+- The instructional content of agent context files is concentrated in execution-facing categories such as testing, implementation details, architecture, development process, and build/run guidance, while non-functional categories like security, performance, and UI/UX appear much less often.

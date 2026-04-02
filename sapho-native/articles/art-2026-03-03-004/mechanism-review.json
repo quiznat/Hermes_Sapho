@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-03-004",
+  "reviewed_at_utc": "2026-04-02T15:34:35Z",
+  "reviewer_role": "Synthesist",
+  "summary": "AGENTS.md is associated with faster runs and lower output-token use in this paired study, but the paper does not establish a causal mechanism and the result is bounded more strongly as an efficiency finding than a correctness finding.",
+  "review_confidence": "high",
+  "mechanism_count": 0,
+  "bounded_claim_count": 4,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "In this paired study of 10 repositories and 124 pull requests, adding AGENTS.md was associated with a statistically significant reduction in median wall-clock runtime.",
+      "bounds": "The evidence shows a statistically significant association within the study setup, but it does not identify the causal pathway by which AGENTS.md reduced runtime; the result is also bounded to the filtered repository set and small merged PR tasks used in the experiment."
+    },
+    {
+      "claim_text": "Median wall-clock time fell from 98.57 seconds without AGENTS.md to 70.34 seconds with AGENTS.md, a reported reduction of 28.64%.",
+      "bounds": "This is a descriptive measured difference in the reported experiment, not a demonstrated explanation of why the reduction occurred, and it should not be generalized beyond the tested repositories and constrained PR selection."
+    },
+    {
+      "claim_text": "AGENTS.md was also associated with a statistically significant reduction in median output token consumption, from 2,925.00 to 2,440.00 tokens, or 16.58%.",
+      "bounds": "The paper reports lower output-token use but does not isolate which properties of AGENTS.md changed agent behavior, so the mechanism remains uncertain; the study also does not show that lower token use preserved full functional equivalence."
+    },
+    {
+      "claim_text": "These performance findings are bounded by heavy sample filtering and incomplete quality validation, so they support efficiency claims more strongly than correctness claims.",
+      "bounds": "The study was narrowed through root-only AGENTS.md selection, additional content filtering and manual verification, small code-change PR constraints, and some generated task statements, while correctness was not fully evaluated; these design choices limit generalization and leave open whether the efficiency gains reliably preserve output quality."
+    }
+  ]
+}

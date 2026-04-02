@@ -1,5 +1,15 @@
 KEEP
 
-This source provides novel synthesis by empirically studying agent context files, characterizing their structure, maintenance, and content with specific percentages for different instruction types. It identifies a gap in non-functional requirements specification, offering insights into current practices and areas for improvement.
+This is a quantitative empirical preprint reporting large-scale measured findings on agent context files.
 
-Limits: The excerpt is limited to the abstract and introduction, and does not contain the full experimental data or detailed methodology that would be present in the complete paper.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-03-002
+ticket_id: ticket-import-art-2026-03-03-002
+decision: kept
+reason: This is a quantitative empirical preprint reporting large-scale measured findings on agent context files.
+scope_class: preprint
+decided_at_utc: 2026-04-02T15:28:00Z
+---
+# Curator Receipt

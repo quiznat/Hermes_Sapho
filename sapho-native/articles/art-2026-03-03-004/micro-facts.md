@@ -1,6 +1,12 @@
-- The paper studies the impact of AGENTS.md files on AI coding agents.
-- The study focuses on runtime and token consumption.
-- The research involves GitHub pull requests.
-- AI coding agents like Codex and Claude Code are increasingly used in software repositories.
-- The date of the paper is January 23, 2026.
-- Authors are from Singapore Management University, Heidelberg University, University of Bamberg, King's College London.
+- The study analyzes 10 repositories and 124 pull requests under paired conditions with and without AGENTS.md.
+- With AGENTS.md present, median wall-clock runtime is reported as 28.64% lower.
+- Median wall-clock time falls from 98.57 seconds without AGENTS.md to 70.34 seconds with AGENTS.md.
+- The wall-clock time difference is marked as statistically significant by Wilcoxon signed-rank test at p < 0.05.
+- With AGENTS.md present, median output token consumption is reported as 16.58% lower.
+- Median output tokens fall from 2,925.00 without AGENTS.md to 2,440.00 with AGENTS.md.
+- The output-token difference is marked as statistically significant by Wilcoxon signed-rank test at p < 0.05.
+- Applying the root-only AGENTS.md constraint reduced the repository set from 132 repositories to 89.
+- After content-based filtering and manual verification, the study retained 26 repositories with qualifying root AGENTS.md files.
+- Selected pull requests had to be merged code-changing PRs with total additions plus deletions of at most 100 lines, no more than 5 modified files, and creation and merge dates after AGENTS.md was introduced in the repository.
+- For PRs lacking usable descriptions, the task statement was generated with a local gpt-oss-120b model using the PR diff and the pre-merge repository structure.
+- The paper did not perform a full correctness or functional-equivalence evaluation; it instead reports a manual sanity check on 50 randomly sampled PR tasks for non-empty, non-trivial outputs.

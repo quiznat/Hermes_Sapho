@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-03-002",
+  "reviewed_at_utc": "2026-04-02T15:31:24Z",
+  "reviewer_role": "Synthesist",
+  "summary": "art-2026-03-03-002 shows no direct internal contradiction, but it does contain two bounded tensions that should remain visible: maintenance is common across tools despite different update rhythms, and low visibility for non-functional guidance may partly reflect measurement limits rather than pure absence.",
+  "review_confidence": "high",
+  "contradiction_count": 2,
+  "status": "disclosed"
+}

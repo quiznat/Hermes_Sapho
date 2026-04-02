@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-03-004",
+  "reviewed_at_utc": "2026-04-02T15:34:18Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Efficiency gains are visible, but correctness remains insufficiently validated.",
+  "review_confidence": "medium",
+  "contradiction_count": 1,
+  "status": "disclosed"
+}

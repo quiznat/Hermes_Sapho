@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-03-008",
+  "reviewed_at_utc": "2026-04-02T15:37:39Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The evidence supports a bounded view that context files steer agent behavior and add execution burden, but does not justify a single causal account for success-rate changes.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "LLM-generated context files reduced coding-agent task success in most tested settings rather than improving it.",
+      "bounds": "The result is bounded to four coding agents evaluated under three context-file conditions; the evidence shows worse outcomes in 5 of 8 settings, but does not establish a single causal mechanism for the decline."
+    },
+    {
+      "claim_text": "Developer-provided context files improved AGENTbench performance by about 4 percentage points.",
+      "bounds": "The evidence supports the observed gain in this benchmark setting more directly than any precise explanation for why developer-written files performed better."
+    }
+  ]
+}

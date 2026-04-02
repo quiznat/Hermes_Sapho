@@ -1,1 +1,4 @@
-No reply from agent.
+- The ETH Zurich study found that LLM-generated context files reduced coding-agent task success in most tested settings rather than improving it.
+- Developer-provided context files improved AGENTbench performance by about 4 percentage points in the ETH Zurich study.
+- In the ETH Zurich study, adding context files increased execution burden even when performance gains were absent or small.
+- The study supports treating context files mainly as execution constraints whose usefulness depends on how minimally and appropriately they are written.

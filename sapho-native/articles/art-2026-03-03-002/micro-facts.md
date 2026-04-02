@@ -1,6 +1,13 @@
-- The study investigated the characteristics of agent context files.
-- The study examined how often developers maintain agent context files.
-- The study analyzed the instructions included in agent context files.
-- The study assessed the extent to which instructions in agent context files can be classified automatically.
-- The study discusses implications for researchers, developers, and coding agent builders.
-- The study covers related work in AI agents in software engineering, software documentation, and context engineering.
+- The study analyzed 2,303 agent context files from 1,925 repositories.
+- The dataset included 922 Claude Code files, 694 OpenAI Codex files, and 687 GitHub Copilot files.
+- The repository sample started from 8,370 AIDev repositories with at least 5 GitHub stars.
+- GitHub Copilot context files had a median length of 535.0 words, Claude Code 485.0 words, and OpenAI Codex 335.5 words.
+- Median Flesch Reading Ease scores were 16.6 for Claude Code files, 26.6 for GitHub Copilot files, and 39.6 for OpenAI Codex files.
+- Agent context files typically use one H1 heading, around 6 to 7 H2 headings, and deeper headings are rare.
+- The maintenance analysis covered 5,655 Claude Code commits, 2,767 OpenAI Codex commits, and 2,237 GitHub Copilot commits that added, deleted, or modified context files.
+- A majority of context files were modified in multiple commits: 67.4% for Claude Code, 59.7% for GitHub Copilot, and 59.2% for OpenAI Codex.
+- Median intervals between context-file updates were 24.1 hours for Claude Code, 22.0 hours for OpenAI Codex, and 70.7 hours for GitHub Copilot.
+- Context-file evolution is dominated by additions, while deletions remain small; deletions have median values below 15.0 words, and Claude Code commits add a median of 57.0 words.
+- The manual content analysis produced 16 final instruction labels from 332 Claude Code files and 2,069 final label assignments after disagreement resolution.
+- The most prevalent instruction categories were Testing (75.0%), Implementation Details (69.9%), Architecture (67.7%), Development Process (63.3%), and Build and Run (62.3%).
+- Non-functional categories were uncommon in the manual analysis, with Security at 14.5%, Performance at 14.5%, and UI/UX at 8.7%; automatic classification reached a micro-average F1-score of 0.79 and performed worse on abstract categories such as AI Integration (0.48 F1) and Project Management (0.42 F1).

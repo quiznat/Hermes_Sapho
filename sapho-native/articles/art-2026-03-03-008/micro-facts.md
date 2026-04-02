@@ -1,8 +1,14 @@
-- A new ETH Zurich study finds that LLM-generated context files reduce task success rates.
-- LLM-generated context files raise inference costs by 20%.
-- OpenAI's monorepo contains 88 AGENTS.md files.
-- The AGENTS.md format has been adopted across more than 60,000 public repositories.
-- A paper was published in February 2026 by researchers at ETH Zurich.
-- AGENTS.md emerged in mid-2025 when OpenAI launched Codex.
-- AGENTS.md was introduced as a machine-readable configuration layer.
-- Developers were frustrated maintaining parallel configuration artifacts.
+- The ETH Zurich study used AGENTbench with 138 software engineering tasks drawn from real GitHub pull requests across 12 Python repositories that already had developer-written context files.
+- The ETH Zurich study also used SWE-bench Lite with 300 tasks as a comparison baseline.
+- The study tested four coding agents under three conditions: no context file, an LLM-generated context file, and a developer-provided file.
+- LLM-generated context files reduced task success rates in 5 of 8 evaluation settings, with an average performance drop of 0.5 to 2 percentage points.
+- Developer-provided context files showed approximately a 4 percentage point improvement on AGENTbench.
+- All context file types increased inference costs by 20 to 23%.
+- Context files added an average of 2.45 to 3.92 additional steps per task.
+- For GPT-series models, reasoning tokens increased by 14 to 22% when a context file was present.
+- When uv was mentioned in the context file, uv invocations increased by 1.6x.
+- The authors interpret context files primarily as execution constraints rather than navigation aids.
+- The ETH Zurich paper recommends that human-written files describe "only minimal requirements to avoid making tasks unnecessarily difficult."
+- In the JAWs 2026 study, AGENTS.md was associated with a drop in median completion time from 98.57 to 70.34 seconds, a 28.64% reduction.
+- In the JAWs 2026 study, AGENTS.md was associated with a 20% reduction in output tokens.
+- When existing documentation was removed from repositories, LLM-generated context files improved performance by 2.7%.

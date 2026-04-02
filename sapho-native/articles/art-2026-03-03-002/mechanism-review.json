@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-03-002",
+  "reviewed_at_utc": "2026-04-02T15:31:39Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports strong descriptive claims about scale, cross-tool differences, maintenance patterns, and content distribution, but it does not justify unbounded causal explanations.",
+  "review_confidence": "high",
+  "mechanism_count": 0,
+  "bounded_claim_count": 4,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "The study maps agent context files at cross-repository scale within a bounded sampled corpus.",
+      "bounds": "The evidence supports dataset scale and sampling scope only; it does not justify representativeness beyond repositories selected from starred AIDev projects meeting the study criteria."
+    },
+    {
+      "claim_text": "Context-file format differs across agent ecosystems in length and readability.",
+      "bounds": "The evidence shows cross-tool differences in median length and Flesch score, but does not establish why those differences arise or whether they imply better utility, stronger control, or superior downstream performance."
+    },
+    {
+      "claim_text": "Agent context files are usually maintained as living documents rather than written once.",
+      "bounds": "The evidence supports a bounded maintenance interpretation because many files are revised across multiple commits and some update quickly, but it does not identify the causal drivers of edits; the longer GitHub Copilot interval also limits any claim of a single uniform maintenance rhythm."
+    },
+    {
+      "claim_text": "Instructional content is concentrated in execution-facing categories, while non-functional topics appear less often.",
+      "bounds": "The evidence supports a bounded distribution claim in the labeled data, not a universal statement about team priorities; low visibility for non-functional or abstract topics may partly reflect measurement limits because classifier performance was weaker on more abstract categories."
+    }
+  ]
+}

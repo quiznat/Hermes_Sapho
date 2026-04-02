@@ -1,5 +1,15 @@
 KEEP
 
-This blog post reports on a new study by ETH Zurich that empirically evaluates the use of AGENTS.md files for coding agents. It presents data-backed findings on task success rates and inference costs, fulfilling the criteria for a blog post with real experimental data and novel synthesis by scrutinizing a widely adopted practice.
+This source is a secondary synthesis of a named empirical study with concrete benchmark and cost findings plus explicit source attribution.
 
-Limits: The provided excerpt is partial and may not contain the full methodology, detailed results, or all caveats discussed in the original study.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-03-008
+ticket_id: ticket-import-art-2026-03-03-008
+decision: kept
+reason: This source is a secondary synthesis of a named empirical study with concrete benchmark and cost findings plus explicit source attribution.
+scope_class: blog-with-data
+decided_at_utc: 2026-04-02T15:34:00Z
+---
+# Curator Receipt
