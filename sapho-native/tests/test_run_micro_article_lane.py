@@ -25,6 +25,62 @@ class RunMicroArticleLaneTests(unittest.TestCase):
             return []
         return [json.loads(line) for line in text.splitlines() if line.strip()]
 
+    def test_source_title_prefers_descriptive_source_title_over_arxiv_stub(self) -> None:
+        title = run_micro_article_lane.source_title(
+            {
+                "source_title": "arXiv 2510.21413",
+                "source_url": "https://arxiv.org/abs/2510.21413",
+            },
+            {
+                "source_title": "Context Engineering for AI Agents in Open-Source Software",
+                "source_url": "https://arxiv.org/html/2510.21413",
+            },
+        )
+        self.assertEqual(title, "Context Engineering for AI Agents in Open-Source Software")
+
+    def test_source_title_prefers_descriptive_title_from_source_body_when_meta_is_stub(self) -> None:
+        source_body = """# Source Capture
+
+## Title
+
+arXiv 2510.21413
+
+## Body
+
+# arXiv 2510.21413
+
+Source: https://arxiv.org/html/2510.21413v1
+
+Context Engineering for AI Agents in Open-Source Software
+
+## 1 Introduction
+"""
+        title = run_micro_article_lane.source_title(
+            {
+                "source_title": "arXiv 2510.21413",
+                "source_url": "https://arxiv.org/abs/2510.21413",
+            },
+            {
+                "source_title": "arXiv 2510.21413",
+                "source_url": "https://arxiv.org/html/2510.21413",
+            },
+            source_body,
+        )
+        self.assertEqual(title, "Context Engineering for AI Agents in Open-Source Software")
+
+    def test_source_title_prefers_bracketed_arxiv_title_over_stub(self) -> None:
+        title = run_micro_article_lane.source_title(
+            {
+                "source_title": "arXiv 2602.11988",
+                "source_url": "https://arxiv.org/abs/2602.11988",
+            },
+            {
+                "source_title": "[2602.11988] Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?",
+                "source_url": "https://arxiv.org/abs/2602.11988",
+            },
+        )
+        self.assertEqual(title, "[2602.11988] Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?")
+
     def test_full_lane_materializes_charter_artifacts(self) -> None:
         article_id = "art-test-301"
         ticket_id = "ticket-test-301"

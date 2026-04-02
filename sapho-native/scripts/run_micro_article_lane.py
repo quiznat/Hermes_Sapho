@@ -103,8 +103,45 @@ def strip_generated_capture_wrapper(markdown: str) -> str:
     return "\n\n".join(blocks).strip()
 
 
-def source_title(article_meta: dict, source_meta: dict) -> str:
-    return str(article_meta.get("source_title") or source_meta.get("source_title") or article_meta.get("source_url") or "Untitled")
+def _is_generic_arxiv_stub(title: str) -> bool:
+    cleaned = str(title or "").strip()
+    if not cleaned:
+        return False
+    return bool(re.fullmatch(r"arxiv\s+\d{4}\.\d{4,5}(?:v\d+)?", cleaned, re.I))
+
+
+def _descriptive_title_from_source_body(source_body: str) -> str:
+    body = source_body_text(source_body)
+    for raw_line in body.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+        if line.startswith(("#", "Source:", "Generated:", "> Note:")):
+            continue
+        if _is_generic_arxiv_stub(line):
+            continue
+        if re.match(r"^(?:\d+\.?\s+)?Introduction\b", line, re.I):
+            continue
+        if len(line.split()) >= 4:
+            return line
+    return ""
+
+
+def source_title(article_meta: dict, source_meta: dict, source_body: str = "") -> str:
+    article_title = str(article_meta.get("source_title") or "").strip()
+    source_meta_title = str(source_meta.get("source_title") or "").strip()
+    if article_title and not _is_generic_arxiv_stub(article_title):
+        return article_title
+    if source_meta_title and not _is_generic_arxiv_stub(source_meta_title):
+        return source_meta_title
+    body_title = _descriptive_title_from_source_body(source_body)
+    if body_title:
+        return body_title
+    if source_meta_title:
+        return source_meta_title
+    if article_title:
+        return article_title
+    return str(article_meta.get("source_url") or source_meta.get("source_url") or "Untitled")
 
 
 def is_paper_like_source(article_meta: dict, source_meta: dict) -> bool:
@@ -238,7 +275,7 @@ def main() -> int:
         tail_chars=(curator_chars // 3) if curator_chars > 4200 else 1200,
     )
 
-    source_name = source_title(article_meta, source_meta)
+    source_name = source_title(article_meta, source_meta, source_body)
     curator_result = run_curator_admission(
         article_id=args.article_id,
         ticket_id=article_meta["ticket_id"],
