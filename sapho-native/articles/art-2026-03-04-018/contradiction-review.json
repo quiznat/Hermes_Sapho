@@ -1,10 +1,10 @@
 {
   "version": "contradiction-review.v1",
   "article_id": "art-2026-03-04-018",
-  "reviewed_at_utc": "2026-03-31T04:06:43Z",
+  "reviewed_at_utc": "2026-04-02T18:22:57Z",
   "reviewer_role": "Synthesist",
-  "summary": "The draft contains a visible tension between strong performance language and the limited evidence basis disclosed.",
+  "summary": "The paper reports better task success from a context-engineered multi-agent workflow, but the gain is visibly bounded by higher cost, retrieval fragility, and evidence that some success still required corrective iteration.",
   "review_confidence": "high",
-  "contradiction_count": 1,
+  "contradiction_count": 3,
   "status": "disclosed"
 }

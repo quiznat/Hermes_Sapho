@@ -1,5 +1,15 @@
-KEEP
+DISCARD
 
-This paper presents a systematic survey of LLM-based code generation agents, tracing their development, categorizing techniques, detailing applications across the SDLC, summarizing benchmarks and tools, and identifying future research directions. This qualifies as novel synthesis by clarifying the field.
+This is a survey preprint that summarizes the field without presenting a clear primary empirical or operational evidence payload of its own.
 
-Limits: The excerpt is an abstract and introduction, so it might omit specific experimental data or detailed findings present in the full paper.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-016
+ticket_id: ticket-import-art-2026-03-04-016
+decision: discarded
+reason: This is a survey preprint that summarizes the field without presenting a clear primary empirical or operational evidence payload of its own.
+scope_class: preprint
+decided_at_utc: 2026-04-02T18:19:00Z
+---
+# Curator Receipt

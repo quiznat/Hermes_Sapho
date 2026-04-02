@@ -1,5 +1,14 @@
-- Source title: [2508.08322] Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code
-- Authors: Muhammad Haseeb
-- arXiv identifier: 2508.08322
-- Submission date: 9 Aug 2025
-- Subject classification: Computer Science > Software Engineering
+- The proposed workflow combines four named components: GPT-5 for intent translation, Elicit for semantic retrieval, NotebookLM for document synthesis, and a Claude Code multi-agent system for code generation and validation.
+- The paper claims the integrated workflow improves code-assistant accuracy and reliability on real-world repositories relative to baseline single-agent approaches.
+- In qualitative evaluation on a roughly 180K-line RainMakerz Next.js application, the system reportedly implemented complex features and bug fixes in a single generation cycle.
+- Across 5 reported tasks, the multi-agent system succeeded on 4 tasks (80%) without human corrections, while the single-agent baseline succeeded on 2 tasks (40%).
+- The multi-agent workflow reportedly used about 30–40 messages and roughly 100k total tokens per task, compared with about 10k–20k tokens for the initial single-agent approach.
+- The paper reports the multi-agent method used about 3–5× more tokens on successful tasks than the single-agent method.
+- The workflow begins with GPT-5 rewriting an ambiguous user request into a structured task specification with an explicit step-by-step breakdown.
+- External knowledge retrieval uses Elicit to fetch conceptually relevant papers, documentation, or Q&A materials from key terms in the task specification, with top-k results reported as k=3–5.
+- NotebookLM is used to turn retrieved documents into concise summaries, table-of-contents outlines, and answers to specific implementation questions.
+- Repository context retrieval chunks files by function or class using tree-sitter and stores code embeddings in a vector database, with ChromaDB and Zilliz both reported as experimented backends.
+- The system uses a centralized orchestrator-worker design in which a primary Claude instance coordinates specialist sub-agents such as frontend, backend, devops, and reviewer roles.
+- Each sub-agent operates with an isolated context window, while shared project knowledge is supplied through a persistent CLAUDE.md file.
+- In the CustomBlock case study, the first generated version failed tests because the new block type had not been added to a serialization whitelist, and the system then issued a corrective backend update before passing tests on the second run.
+- The paper states that the approach depends heavily on retrieval quality, and an irrelevant Elicit result in one experiment introduced noise that confused the Planner agent.

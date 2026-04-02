@@ -1,3 +1,4 @@
-* Proposes and demonstrates a new context engineering workflow for multi-agent LLM code assistants.
-* Details a system that improves accuracy and reliability on real-world codebases.
-* Compares performance against existing frameworks.
+- The paper reports that its multi-agent workflow succeeded on 4 of 5 coding tasks without human correction, compared with 2 of 5 for the single-agent baseline.
+- The workflow is structured as a multi-stage system that rewrites user intent, retrieves external and repository context, synthesizes that context, and then coordinates specialist coding agents for implementation and validation.
+- In a qualitative evaluation on a roughly 180K-line Next.js repository, the system reportedly implemented complex features and bug fixes within a single generation cycle.
+- The reported gains of the multi-agent workflow were accompanied by materially higher token usage and remained vulnerable to retrieval failures that could mislead planning.

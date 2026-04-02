@@ -1,5 +1,15 @@
-KEEP
+DISCARD
 
-This paper proposes a novel methodology for "promptware engineering" by adapting established Software Engineering principles to the development of prompt-enabled systems. It identifies the "promptware crisis" and outlines a systematic framework addressing requirements, design, implementation, testing, debugging, evolution, deployment, and monitoring. This constitutes a novel synthesis grounded in established SE practices applied to a new domain.
+The source is a conceptual roadmap paper without visible empirical or operational results.
 
-Limits: The provided excerpt is from an academic paper (arXiv) and does not contain experimental data or production outcomes, but rather a proposed methodology and roadmap. The decision to keep is based on the "novel synthesis" criterion.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-015
+ticket_id: ticket-import-art-2026-03-04-015
+decision: discarded
+reason: The source is a conceptual roadmap paper without visible empirical or operational results.
+scope_class: preprint
+decided_at_utc: 2026-04-02T18:19:00Z
+---
+# Curator Receipt
