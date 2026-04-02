@@ -261,6 +261,36 @@ def claim_records_to_findings_lines(claims: list[dict[str, Any]]) -> list[str]:
     return [row["claim_text"] for row in claims if row.get("claim_text")]
 
 
+def _contains_numeric_payload(text: str) -> bool:
+    cleaned = _clean(text)
+    if not cleaned:
+        return False
+    return bool(re.search(r"\b\d+(?:\.\d+)?\s*(?:%|x|k|m|ms|s|sec|seconds?|minutes?|hours?|turns?|instances?|repos?(?:itories)?)\b", cleaned, re.I) or re.search(r"\b(?:over|under|about|around|roughly|nearly|more than|less than)\s+\d", cleaned, re.I))
+
+
+def validate_article_write_body(body: str, *, claims: list[dict[str, Any]], evidence_records: list[dict[str, Any]]) -> None:
+    assert_no_visible_internal_ids(body, label="article-write")
+    required_sections = [
+        "## Core Thesis",
+        "## Why It Matters for Sapho",
+        "## Key Findings",
+        "## Evidence and Findings",
+        "## Contradictions and Tensions",
+        "## Mechanism or Bounds",
+        "## Limits",
+    ]
+    if any(section not in body for section in required_sections):
+        raise JobContractError("article_write_missing_dense_sections")
+    evidence_and_findings = _markdown_sections(body).get("Evidence and Findings", "")
+    key_findings = _markdown_sections(body).get("Key Findings", "")
+    claims_text = "\n".join(_clean(row.get("claim_text")) for row in claims if _clean(row.get("claim_text")))
+    evidence_text = "\n".join(_clean(row.get("evidence_text")) for row in evidence_records if _clean(row.get("evidence_text")))
+    numeric_payload_present = _contains_numeric_payload(claims_text) or _contains_numeric_payload(evidence_text)
+    numeric_payload_surface = _contains_numeric_payload(evidence_and_findings) or _contains_numeric_payload(key_findings)
+    if numeric_payload_present and not numeric_payload_surface:
+        raise JobContractError("article_write_missing_empirical_specificity")
+
+
 def run_synthesist_article_write(*, article_id: str, source_title: str, source_url: str, queued_at_utc: str, captured_at_utc: str, artifact_minted_at_utc: str, claims: list[dict[str, Any]], evidence_records: list[dict[str, Any]], agent_id: str, timeout: int) -> dict[str, Any]:
     prompt = compose_persona_job_prompt("synthesist", "article-write", require_job=True)
     claims_block = "\n".join(
@@ -288,9 +318,7 @@ def run_synthesist_article_write(*, article_id: str, source_title: str, source_u
     meta, body = parse_markdown(raw)
     if str(meta.get("article_id") or "") != article_id:
         raise JobContractError("article_write_article_id_mismatch")
-    assert_no_visible_internal_ids(body, label="article-write")
-    if "## Core Thesis" not in body or "## Why It Matters" not in body or "## Key Findings" not in body or "## Evidence Base" not in body or "## Limits" not in body:
-        raise JobContractError("article_write_missing_sections")
+    validate_article_write_body(body, claims=claims, evidence_records=evidence_records)
     return {"raw": raw, "meta": meta, "body": body}
 
 

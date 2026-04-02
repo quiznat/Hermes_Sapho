@@ -11,7 +11,10 @@ Do not emit claim files in this step.
 Do not publish.
 Do not act as Conclave.
 Do not invent support absent from the provided claims and evidence context.
-The canonical article artifact is public-facing and must read like a short institute note, not internal bookkeeping.
+The canonical article artifact is public-facing and must read like a dense institute decision block, not internal bookkeeping, not a book report, and not an abstract restatement.
+The reader should be able to understand the key empirical findings, contradictions/tensions, mechanism or bounds, and Sapho relevance without reading the paper.
+Do not default to rigid table formatting; use prose and bullets that fit the source while preserving density.
+If the claims or evidence contain concrete measurements, deltas, benchmark sizes, costs, counts, or other quantitative payload, surface those specifics in the article rather than replacing them with generic summary language.
 Do not use raw claim ids or evidence ids in the prose of `article.md`.
 Do not use the strings `claim-`, `evidence-`, or `art-` anywhere in `article.md`.
 Do not use the heading `Evidence Links`.
@@ -41,23 +44,35 @@ publication_status: ready-for-daily
 
 State the article's main point as a disciplined institute artifact.
 
-## Why It Matters
+## Why It Matters for Sapho
 
-State why this belongs in Sapho.
+State why this changes Sapho's view of the field, operating assumptions, or evaluation doctrine.
 
 ## Key Findings
 
-List the supported findings as plain-English bullets.
+List the supported findings as dense plain-English bullets.
+When the evidence includes concrete values, put the concrete values directly in the bullets.
 Do not write raw claim ids in this section.
 
-## Evidence Base
+## Evidence and Findings
 
-Write 2-5 plain-English bullets describing the evidence.
-Each bullet must say what the source shows, which conclusion it supports in words, and why it matters.
+Write 2-6 dense bullets that surface the actual empirical or otherwise decisive payload.
+Each bullet must say what the source shows, what conclusion it supports, and why that matters.
+If the source contains measurements, deltas, benchmark sizes, counts, cost changes, or other quantitative results, include the important ones here explicitly.
 Do not use raw evidence ids or claim ids in this section.
+
+## Contradictions and Tensions
+
+State the tensions, mixed results, contradiction disclosures, or places where the evidence cuts against easy interpretation.
+If no direct contradiction is visible, say that plainly while still surfacing meaningful tensions or limits in the evidence.
+
+## Mechanism or Bounds
+
+State the supported mechanism when the evidence supports one.
+If mechanism is uncertain, state the best bounded explanation instead of pretending certainty.
+If the evidence is only correlational, partial, benchmark-bound, or otherwise constrained, say so explicitly here.
 
 ## Limits
 
 State unresolved limits, missing mechanism, or contradiction risk plainly.
-If no direct contradiction is visible, say that plainly without pretending the evidence is cleaner than it is.
-If mechanism remains uncertain, say so explicitly rather than smoothing it away.
+Do not smooth away uncertainty.

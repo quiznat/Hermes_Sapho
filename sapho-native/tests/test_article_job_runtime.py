@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(ROOT))
 
 import common
+import article_job_runtime
 from article_job_runtime import JobContractError, apply_claim_links, evidence_files_to_fact_lines, evidence_files_to_records, parse_evidence_receipt_files
 from structured_artifact_bundle import materialize_article_structured_bundle
 
@@ -249,6 +250,150 @@ The benchmark appendix is missing, so the mechanism and effect size remain bound
         with self.assertRaises(JobContractError) as ctx:
             parse_evidence_receipt_files("art-test-102", EXTRACTOR_RECEIPT_MISSING_RELEVANCE)
         self.assertEqual(str(ctx.exception), "missing_evidence_relevance_fields")
+
+    def test_article_write_requires_dense_decision_sections(self) -> None:
+        thin_article = """# Thin Article
+
+## Core Thesis
+
+A study evaluates context files.
+
+## Why It Matters
+
+This matters for coding agents.
+
+## Key Findings
+
+- The study looks at success rate and cost.
+
+## Evidence Base
+
+- The source contains experiments.
+
+## Limits
+
+The paper may contain more detail.
+"""
+        claims = [
+            {
+                "claim_id": "claim-001",
+                "article_id": "art-test-104",
+                "claim_text": "Developer-written context files improve performance by about 4% on average while LLM-generated context files reduce it by about 3% on average.",
+                "claim_kind": "empirical_claim",
+                "supporting_fact_ids": [],
+                "supporting_evidence_ids": ["evidence-001", "evidence-002"],
+                "source_span_refs": ["articles/art-test-104/source.md#evidence-001"],
+                "caveats": [],
+                "confidence": "high",
+                "mechanism_or_bounds": "Broader exploration and unnecessary requirements may make tasks harder and more expensive.",
+                "contradiction_note": "No direct contradiction is visible, but benefits differ between developer-written and LLM-generated context files.",
+            }
+        ]
+        evidence_records = [
+            {
+                "evidence_id": "evidence-001",
+                "article_id": "art-test-104",
+                "evidence_type": "result",
+                "evidence_text": "Developer-provided context files improve performance by about 4% on average.",
+                "source_span_ref": "articles/art-test-104/source.md#evidence-001",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "high",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "Benefits are marginal rather than transformative.",
+            },
+            {
+                "evidence_id": "evidence-002",
+                "article_id": "art-test-104",
+                "evidence_type": "result",
+                "evidence_text": "LLM-generated context files reduce performance by about 3% on average and increase inference cost by over 20%.",
+                "source_span_ref": "articles/art-test-104/source.md#evidence-002",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "high",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "Costs rise while performance falls.",
+            },
+        ]
+        with self.assertRaises(JobContractError) as ctx:
+            article_job_runtime.validate_article_write_body(thin_article, claims=claims, evidence_records=evidence_records)
+        self.assertEqual(str(ctx.exception), "article_write_missing_dense_sections")
+
+    def test_article_write_rejects_empirically_thin_article_when_evidence_has_numbers(self) -> None:
+        thin_but_sectioned_article = """# Context Files and Coding Agents
+
+## Core Thesis
+
+Context files may affect coding-agent performance.
+
+## Why It Matters for Sapho
+
+Sapho needs to know whether context engineering actually helps in production workflows.
+
+## Key Findings
+
+- Context files change coding-agent behavior.
+
+## Evidence and Findings
+
+- The source reports experimental comparisons across agents and models.
+
+## Contradictions and Tensions
+
+- Benefits are mixed and may depend on how the context file is produced.
+
+## Mechanism or Bounds
+
+- Extra requirements may change exploration behavior.
+
+## Limits
+
+- The benchmark setting may not transfer to every repository.
+"""
+        claims = [
+            {
+                "claim_id": "claim-001",
+                "article_id": "art-test-105",
+                "claim_text": "Developer-written context files improve performance by about 4% on average while LLM-generated context files reduce it by about 3% on average.",
+                "claim_kind": "empirical_claim",
+                "supporting_fact_ids": [],
+                "supporting_evidence_ids": ["evidence-001", "evidence-002"],
+                "source_span_refs": ["articles/art-test-105/source.md#evidence-001"],
+                "caveats": [],
+                "confidence": "high",
+                "mechanism_or_bounds": "Broader exploration and unnecessary requirements may make tasks harder and more expensive.",
+                "contradiction_note": "No direct contradiction is visible, but benefits differ between developer-written and LLM-generated context files.",
+            }
+        ]
+        evidence_records = [
+            {
+                "evidence_id": "evidence-001",
+                "article_id": "art-test-105",
+                "evidence_type": "result",
+                "evidence_text": "Developer-provided context files improve performance by about 4% on average.",
+                "source_span_ref": "articles/art-test-105/source.md#evidence-001",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "high",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "Benefits are marginal rather than transformative.",
+            },
+            {
+                "evidence_id": "evidence-002",
+                "article_id": "art-test-105",
+                "evidence_type": "result",
+                "evidence_text": "LLM-generated context files reduce performance by about 3% on average and increase inference cost by over 20%.",
+                "source_span_ref": "articles/art-test-105/source.md#evidence-002",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "high",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "Costs rise while performance falls.",
+            },
+        ]
+        with self.assertRaises(JobContractError) as ctx:
+            article_job_runtime.validate_article_write_body(thin_but_sectioned_article, claims=claims, evidence_records=evidence_records)
+        self.assertEqual(str(ctx.exception), "article_write_missing_empirical_specificity")
 
     def test_parse_extractor_receipt_requires_note_for_bounded_or_tension_evidence(self) -> None:
         with self.assertRaises(JobContractError) as ctx:
