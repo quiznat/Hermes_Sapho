@@ -1,0 +1,19 @@
+{
+  "backend": "hermes_cli",
+  "clean_output": "KEEP",
+  "context": {
+    "adapter": "run_loose_agent"
+  },
+  "duration_seconds": 8.258,
+  "error": null,
+  "finished_at_utc": "2026-03-31T03:27:13.162295Z",
+  "model": "gpt-5.4",
+  "prompt_sha256": "01d65098f72278e70689756a323a9785142bba84997c5d42a0c4e7af74ce8a17",
+  "raw_output": "\n\u256d\u2500 \u2695 Hermes \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\nKEEP\n\nsession_id: 20260331_032707_e13de7\n",
+  "receipt_path": "/home/hermes/sapho-native/state/receipts/task-runs/20260331T032704.904121Z-curator-20f8594c34.json",
+  "role": "curator",
+  "started_at_utc": "2026-03-31T03:27:04.904121Z",
+  "status": "ok",
+  "thinking": "off",
+  "timeout": 120
+}

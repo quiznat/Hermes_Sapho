@@ -1,0 +1,37 @@
+{
+  "job": "research-pm-live-synthesis-shift",
+  "generatedAtUtc": "2026-03-29T19:37:13Z",
+  "status": "ok",
+  "command": [
+    "/usr/bin/python3",
+    "/home/openclaw/.openclaw/workspace/parallel-sapho/scripts/run_micro_pm_publish.py",
+    "--public-seed-dir",
+    "/home/openclaw/.openclaw/workspace/website"
+  ],
+  "returncode": 0,
+  "stdout": "/home/openclaw/.openclaw/workspace/parallel-sapho/daily/2026-03-29\n[main f639ee63] Publish 2026-03-29 parallel Sapho site update\n 21 files changed, 309 insertions(+), 134 deletions(-)\n create mode 100644 website/briefs/2026-03-29/executive-brief.html\n create mode 100644 website/briefs/2026-03-29/executive-brief.md\n create mode 100644 website/briefs/2026-03-29/technical-executive-report.html\n create mode 100644 website/briefs/2026-03-29/technical-executive-report.md\n create mode 100644 website/daily/2026-03-29.html\nf639ee63 restore_point=20260329T193709Z-3000ff3d2df0\npublished 2026-03-29\n",
+  "stderr": "To https://github.com/quiznat/Piter-de-VrAIes.git\n   3000ff3d..f639ee63  main -> main\n",
+  "sync": {
+    "checkin": {
+      "returncode": 0,
+      "stdout": "/home/openclaw/.openclaw/workspace/research/factory/checkins/article-checkin-20260329T193713Z.json",
+      "stderr": ""
+    },
+    "mirror": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "localPublicMirror": {
+      "returncode": 0,
+      "copied": [
+        "artifacts/ops/factory-checkin-latest.json",
+        "artifacts/ops/assignment-status.md",
+        "artifacts/ops/heartbeat-latest.md",
+        "artifacts/ops/index.json",
+        "data/ops-latest.json",
+        "data/heartbeat-latest.json"
+      ]
+    }
+  }
+}

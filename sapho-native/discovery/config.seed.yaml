@@ -1,0 +1,117 @@
+run:
+  schedule: daily
+  timezone: America/New_York
+  max_deep_dives_per_run: 5
+  recency_days: 7
+
+article_pipeline:
+  maxPendingNonXBeforePause: 12
+  processablePolicy: non_x_first
+
+discovery:
+  brave:
+    enabled: true
+    per_query_limit: 15
+    recency_filter: week
+    max_per_source_key: 8
+    # Keep breadth, but bias the run toward high-signal agent systems work.
+    queries_per_run: 8
+    queries:
+      - "SWE-bench verified agentic coding results"
+      - "agentic pull request review benchmark"
+      - "AI coding agent incident postmortem"
+      - "tool calling reliability benchmark LLM agents"
+    query_pool:
+      - "failed agentic pull requests empirical study github"
+      - "repository context files AGENTS.md coding agents empirical study"
+      - "context engineering agents repository workflows"
+      - "harness engineering coding agents CI gates"
+      - "agent observability tracing telemetry architecture"
+      - "agentic software factory governance quality gates"
+      - "self-hosted personal AI agent operational architecture"
+      - "multi-agent coding reliability benchmark"
+      - "tool use benchmark software engineering agents"
+      - "coding agent security sandbox permissions policy"
+      - "model context protocol production incident"
+      - "AI coding agents cost latency quality tradeoff"
+      - "long-horizon autonomous coding loop evaluation"
+      - "llm agent memory contamination retrieval failure analysis"
+      - "reproducible agentic experiments github actions"
+      - "codebase context compression for coding agents"
+      - "software factory human in the loop governance"
+      - "natural language workflow SOPs for AI agents"
+      - "autonomous research agent evaluation methodology"
+      - "agent memory benchmark software tasks"
+      - "agentic software engineering benchmark arxiv"
+      - "coding agents reliability evaluation github pull requests"
+      - "first-party technical blog coding agent benchmark"
+      - "AI coding agent incident postmortem"
+      - "tool calling reliability benchmark LLM agents"
+  rss:
+    enabled: true
+    feeds:
+      - "https://github.blog/feed/"
+      - "https://openai.com/blog/rss.xml"
+  sitemap:
+    enabled: true
+    roots:
+      - "https://openai.com/sitemap.xml"
+      - "https://www.anthropic.com/sitemap.xml"
+  arxiv:
+    enabled: true
+    categories: ["cs.AI", "cs.LG", "cs.CL", "cs.SE"]
+    keywords: ["agent", "coding", "software engineering", "benchmark", "memory", "tool use", "reliability", "incident", "pull request"]
+    max_results: 50
+
+filters:
+  allowlist_patterns:
+    - "/research/"
+    - "/blog/"
+    - "/papers/"
+    - "/publications/"
+    - "/posts/"
+  blocklist_domains:
+    - "x.com"
+    - "twitter.com"
+    - "reddit.com"
+    - "letsdatascience.com"
+
+acquisition:
+  http:
+    enabled: true
+    timeout_seconds: 20
+    min_text_chars: 1500
+  firecrawl:
+    enabled: true
+    prefer_markdown: true
+    min_text_chars: 1500
+  browserbase:
+    enabled: true
+    wait_until: networkidle
+    max_render_seconds: 30
+    min_text_chars: 1500
+
+scoring:
+  weights:
+    novelty: 0.40
+    technical_density: 0.30
+    entropy: 0.20
+    credibility: 0.10
+  thresholds:
+    max_embedding_similarity: 0.90
+    min_final_score: 0.35
+
+governance:
+  budgets_daily:
+    http_fetches: 300
+    firecrawl_calls: 120
+    browserbase_sessions: 20
+  retries:
+    acquisition_max_retries: 1
+    extraction_max_retries: 1
+
+storage:
+  docs_db_path: "./data/docs.sqlite"
+  blob_dir: "./data/blobs"
+  vector_index: "./data/vectors"
+  logs_dir: "./data/logs"

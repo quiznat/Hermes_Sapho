@@ -1,0 +1,34 @@
+{
+  "generatedAtUtc": "2026-03-19T05:48:54Z",
+  "status": "PASS",
+  "requiredFoundations": [
+    {
+      "path": "research/contracts/sapho-chapterhouse-institute-charter.md",
+      "exists": true
+    },
+    {
+      "path": "website/charter.html",
+      "exists": true
+    },
+    {
+      "path": "website/charter.md",
+      "exists": true
+    },
+    {
+      "path": "research/contracts/source-quality-policy.v1.json",
+      "exists": true
+    },
+    {
+      "path": "research/contracts/publish-no-go-criteria.v1.json",
+      "exists": true
+    }
+  ],
+  "removedCount": 0,
+  "removedClasses": [
+    "legacy_public_indexes",
+    "legacy_founding_mirrors",
+    "legacy_contract_artifacts",
+    "legacy_superseded_public_tree"
+  ],
+  "legacyRemainingCount": 0
+}

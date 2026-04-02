@@ -1,0 +1,19 @@
+{
+  "generatedAtUtc": "2026-03-02T11:16:10Z",
+  "files": [
+    "01-a_diy_prosumer_agentic_research-agents-md-evaluation.md",
+    "02-a_diy_prosumer_agentic_research-agentic-tool-configuration-study.md",
+    "03-a_diy_prosumer_agentic_research-moltworker-self-hosted-agent.md",
+    "04-a_diy_prosumer_agentic_research-adaptive-memory-structures.md",
+    "05-a_diy_prosumer_agentic_research-rag-noise-robustness.md",
+    "06-b_agentic_software_factory-github-agentic-workflows-blog.md",
+    "07-b_agentic_software_factory-github-agentic-workflows-changelog.md",
+    "08-b_agentic_software_factory-langchain-harness-engineering.md",
+    "09-b_agentic_software_factory-agentic-pr-rejection-study.md",
+    "10-b_agentic_software_factory-pr-communication-study.md",
+    "11-b_agentic_software_factory-planner-coder-gap-study.md",
+    "12-b_agentic_software_factory-agentic-coding-empirical-pr-study.md",
+    "13-b_agentic_software_factory-multi-agent-workflows-failure-patterns.md",
+    "14-b_agentic_software_factory-amazon-agent-evaluation-framework.md"
+  ]
+}

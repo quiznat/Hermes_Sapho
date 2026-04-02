@@ -1,0 +1,544 @@
+{
+  "status": "PASS",
+  "topLineClaims": 6,
+  "traceableClaims": 6,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 47,
+  "contradictionChecks": 47,
+  "disagreementsFound": 1,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-01-030",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-01-026",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-01-023",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-02-013",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-02-011",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-02-001",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-02-011",
+      "label": "unclear",
+      "overlapTerms": [
+        "agent-factory",
+        "analysis",
+        "art-",
+        "com",
+        "core",
+        "design",
+        "guidance",
+        "hint"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-02-008",
+      "label": "unclear",
+      "overlapTerms": [
+        "agent-factory",
+        "analysis",
+        "art-",
+        "core",
+        "hint",
+        "https",
+        "improves",
+        "item"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-02-007",
+      "label": "unclear",
+      "overlapTerms": [
+        "analysis",
+        "art-",
+        "core",
+        "hint",
+        "https",
+        "item",
+        "lane",
+        "need"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-02-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "behavior",
+        "design"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-02-002",
+      "label": "unclear",
+      "overlapTerms": [
+        "depends",
+        "production"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-01-026",
+      "label": "unclear",
+      "overlapTerms": [
+        "depends",
+        "evaluation"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "improves",
+        "less",
+        "more",
+        "reliability"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-01-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "core",
+        "source"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-013",
+      "rightId": "art-2026-03-01-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "depends",
+        "matter",
+        "production",
+        "source"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-02-008",
+      "label": "unclear",
+      "overlapTerms": [
+        "agent-factory",
+        "analysis",
+        "art-",
+        "coordination",
+        "core",
+        "hint",
+        "https",
+        "item"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-02-007",
+      "label": "unclear",
+      "overlapTerms": [
+        "analysis",
+        "art-",
+        "choice",
+        "core",
+        "explicit",
+        "hint",
+        "https",
+        "item"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-02-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "design",
+        "explicit",
+        "rather"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-02-002",
+      "label": "unclear",
+      "overlapTerms": [
+        "orchestration",
+        "pattern",
+        "rather"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-01-023",
+      "label": "unclear",
+      "overlapTerms": [
+        "agentic",
+        "rather"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "patterns",
+        "reliability"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-01-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "core",
+        "explicit",
+        "source"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-011",
+      "rightId": "art-2026-03-01-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "controls",
+        "source"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-008",
+      "rightId": "art-2026-03-02-007",
+      "label": "unclear",
+      "overlapTerms": [
+        "analysis",
+        "art-",
+        "arxiv",
+        "core",
+        "hint",
+        "https",
+        "item",
+        "lane"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-008",
+      "rightId": "art-2026-03-02-002",
+      "label": "unclear",
+      "overlapTerms": [
+        "multi-agent",
+        "reasoning"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-008",
+      "rightId": "art-2026-03-01-029",
+      "label": "unclear",
+      "overlapTerms": [
+        "analysis",
+        "tasks"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-008",
+      "rightId": "art-2026-03-01-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "core",
+        "source"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-02-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "explicit",
+        "rather"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-02-002",
+      "label": "unclear",
+      "overlapTerms": [
+        "loops",
+        "multi-agent",
+        "planning",
+        "rather",
+        "reflection"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-01-030",
+      "label": "unclear",
+      "overlapTerms": [
+        "discipline",
+        "task"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-01-029",
+      "label": "unclear",
+      "overlapTerms": [
+        "analysis",
+        "planning"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-01-023",
+      "label": "unclear",
+      "overlapTerms": [
+        "loops",
+        "rather"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-01-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "core",
+        "explicit",
+        "source"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-007",
+      "rightId": "art-2026-03-01-022",
+      "label": "unclear",
+      "overlapTerms": [
+        "planning",
+        "vertical"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-001",
+      "rightId": "art-2026-03-01-030",
+      "label": "unclear",
+      "overlapTerms": [
+        "autonomous",
+        "coding",
+        "sessions"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-001",
+      "rightId": "art-2026-03-01-023",
+      "label": "disagree",
+      "overlapTerms": [
+        "rather",
+        "review"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-001",
+      "rightId": "art-2026-03-01-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "explicit",
+        "structured"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-002",
+      "rightId": "art-2026-03-01-023",
+      "label": "unclear",
+      "overlapTerms": [
+        "loops",
+        "rather"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-02-002",
+      "rightId": "art-2026-03-01-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "depends",
+        "interfaces",
+        "production"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-030",
+      "rightId": "art-2026-03-01-029",
+      "label": "unclear",
+      "overlapTerms": [
+        "autonomous",
+        "executes",
+        "execution",
+        "loop",
+        "prd"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-030",
+      "rightId": "art-2026-03-01-026",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "memory"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-030",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "loop"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-030",
+      "rightId": "art-2026-03-01-022",
+      "label": "unclear",
+      "overlapTerms": [
+        "autonomous",
+        "execution"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-028",
+      "rightId": "art-2026-03-01-006",
+      "label": "unclear",
+      "overlapTerms": [
+        "code",
+        "skill"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-029",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "loop",
+        "runs"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-029",
+      "rightId": "art-2026-03-01-022",
+      "label": "unclear",
+      "overlapTerms": [
+        "autonomous",
+        "execution",
+        "planning"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-025",
+      "rightId": "art-2026-03-01-026",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "data",
+        "human",
+        "query",
+        "table"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-025",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "knowledge",
+        "patterns",
+        "query",
+        "runtime",
+        "text-to-sql"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-026",
+      "rightId": "art-2026-03-01-023",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "strict"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-026",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "organizational",
+        "query"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-026",
+      "rightId": "art-2026-03-01-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "grounding",
+        "just",
+        "quality"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-026",
+      "rightId": "art-2026-03-01-001",
+      "label": "unclear",
+      "overlapTerms": [
+        "controls",
+        "depends"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-01-023",
+      "rightId": "art-2026-03-01-024",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "execute"
+      ]
+    }
+  ],
+  "generatedAtUtc": "2026-03-03T01:55:07Z",
+  "runId": "20260303T015507Z"
+}

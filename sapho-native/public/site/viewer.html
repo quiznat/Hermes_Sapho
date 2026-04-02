@@ -1,0 +1,454 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document Viewer</title>
+  <link rel="stylesheet" href="assets/style.css?v=scholarly-20260314d" />
+  <link rel="icon" type="image/png" href="/assets/sapho-seal.png?v=seal-20260315" />
+  <link rel="apple-touch-icon" href="/assets/sapho-seal.png?v=seal-20260315" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <main class="portal viewer">
+    <section class="mentat-card scanlines">
+      <h1 id="docTitle">Document Viewer</h1>
+      <p class="doc-meta" id="docMeta">Loading…</p>
+      <div class="doc-toolbar">
+        <a class="mentat-button" href="index.html">Back to Home</a>
+        <a class="mentat-button" id="rawLink" href="#" target="_blank" rel="noopener" style="display:none">Open Raw</a>
+        <a class="mentat-button" id="prevLink" href="#" style="display:none">← Previous</a>
+        <a class="mentat-button" id="nextLink" href="#" style="display:none">Next →</a>
+      </div>
+      <div id="docContent" class="doc-block viewer-render"></div>
+    </section>
+  </main>
+
+  <script>
+    const qs = new URLSearchParams(location.search);
+    const file = (qs.get('file') || '').replace(/^\/+/, '');
+
+    const titleEl = document.getElementById('docTitle');
+    const metaEl = document.getElementById('docMeta');
+    const contentEl = document.getElementById('docContent');
+    const rawEl = document.getElementById('rawLink');
+    const prevEl = document.getElementById('prevLink');
+    const nextEl = document.getElementById('nextLink');
+    let mermaidReady = false;
+
+    function escapeHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function encodeSitePath(path) {
+      return encodeURIComponent(path).replace(/%2F/g, '/');
+    }
+
+    function syntaxHighlightJson(jsonText) {
+      const esc = escapeHtml(jsonText);
+      return esc
+        .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"\s*:)/g, '<span class="tok-key">$1</span>')
+        .replace(/(:\s*)"(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"/g, '$1<span class="tok-string">"$2"</span>')
+        .replace(/\b(-?\d+(?:\.\d+)?(?:[eE][+\-]?\d+)?)\b/g, '<span class="tok-number">$1</span>')
+        .replace(/\b(true|false)\b/g, '<span class="tok-bool">$1</span>')
+        .replace(/\bnull\b/g, '<span class="tok-null">null</span>');
+    }
+
+    function prettifyArtifactTitle(path) {
+      const clean = (path || '').split('?')[0];
+      const filename = (clean.split('/').pop() || clean || 'artifact').trim();
+      let stem = filename.replace(/\.[^.]+$/, '');
+
+      stem = stem
+        .replace(/^queue-art-\d{4}-\d{2}-\d{2}-\d{3}-/, '')
+        .replace(/^queue-art-/, '')
+        .replace(/^art-\d{4}-\d{2}-\d{2}-\d{3}-/, '')
+        .replace(/^art-/, '');
+
+      const words = stem.split(/[-_]+/).filter(Boolean);
+      if (!words.length) return filename;
+
+      const acronyms = {
+        ai: 'AI', llm: 'LLM', llms: 'LLMs', mcp: 'MCP', api: 'API', apis: 'APIs',
+        ui: 'UI', ux: 'UX', qa: 'QA', swe: 'SWE', rag: 'RAG', rss: 'RSS', json: 'JSON'
+      };
+
+      return words
+        .map((w) => {
+          const k = w.toLowerCase();
+          if (acronyms[k]) return acronyms[k];
+          return w.charAt(0).toUpperCase() + w.slice(1);
+        })
+        .join(' ');
+    }
+
+    function splitFrontMatter(text) {
+      if (!text.startsWith('---\n')) {
+        return { meta: {}, body: text };
+      }
+
+      const end = text.indexOf('\n---\n', 4);
+      if (end === -1) {
+        return { meta: {}, body: text };
+      }
+
+      const meta = {};
+      for (const line of text.slice(4, end).split(/\r?\n/)) {
+        const idx = line.indexOf(':');
+        if (idx === -1) continue;
+        const key = line.slice(0, idx).trim();
+        const value = line.slice(idx + 1).trim();
+        if (key) meta[key] = value;
+      }
+
+      return {
+        meta,
+        body: text.slice(end + 5).replace(/^\s+/, ''),
+      };
+    }
+
+    function extractDocumentTitle(text, fallback) {
+      const { meta, body } = splitFrontMatter(text);
+      if (meta.title) return meta.title;
+      const heading = body.match(/^#\s+(.+)$/m);
+      if (heading) return heading[1].trim();
+      return fallback;
+    }
+
+    function normalizeTitleText(value) {
+      return String(value || '')
+        .toLowerCase()
+        .replace(/[—–-]/g, ' ')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function isArtifactQueuePath(path) {
+      return String(path || '').startsWith('artifacts/kb/queue/');
+    }
+
+    async function lookupArtifactDisplayTitle(path, fallback) {
+      if (!isArtifactQueuePath(path)) return fallback;
+      try {
+        const resp = await fetch('data/kept-links.json', { cache: 'no-store' });
+        if (!resp.ok) return fallback;
+        const payload = await resp.json();
+        const items = Array.isArray(payload?.items) ? payload.items : [];
+        const match = items.find((item) => item && item.artifactWebPath === path);
+        return String(match?.displayTitle || match?.title || fallback || '').trim() || fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function resolveSitePath(target, sourceFile) {
+      if (!target || target.startsWith('#') || /^[a-z]+:/i.test(target)) {
+        return '';
+      }
+
+      try {
+        const base = new URL(sourceFile, 'https://research.quiznat.com/');
+        const resolved = new URL(target, base);
+        return decodeURIComponent(resolved.pathname.replace(/^\/+/, ''));
+      } catch {
+        return '';
+      }
+    }
+
+    function rewriteRenderedLinks(container, sourceFile) {
+      for (const anchor of container.querySelectorAll('a[href]')) {
+        const href = anchor.getAttribute('href') || '';
+        if (!href) continue;
+
+        if (/^https?:\/\//i.test(href)) {
+          anchor.setAttribute('target', '_blank');
+          anchor.setAttribute('rel', 'noopener');
+          continue;
+        }
+
+        const resolved = resolveSitePath(href, sourceFile);
+        if (!resolved) continue;
+        if (/\.(md|markdown)$/i.test(resolved)) {
+          anchor.setAttribute('href', `/viewer.html?file=${encodeSitePath(resolved)}`);
+        }
+      }
+    }
+
+    function renderMarkdown(text) {
+      const { body } = splitFrontMatter(text);
+      const rendered = window.marked.parse(body, {
+        gfm: true,
+        breaks: false,
+      });
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = window.DOMPurify.sanitize(rendered, {
+        USE_PROFILES: { html: true },
+      });
+
+      for (const table of wrapper.querySelectorAll('table')) {
+        table.classList.add('doc-table');
+      }
+
+      for (const pre of wrapper.querySelectorAll('pre')) {
+        pre.classList.add('doc-block', 'doc-code');
+      }
+
+      for (const code of wrapper.querySelectorAll('pre > code')) {
+        const className = code.className || '';
+        if (/\b(language|lang)-mermaid\b/i.test(className)) {
+          const diagram = document.createElement('div');
+          diagram.className = 'mermaid';
+          diagram.textContent = code.textContent || '';
+          code.parentElement.replaceWith(diagram);
+        }
+      }
+
+      return wrapper;
+    }
+
+    function isLikelyLeadMetaParagraph(node) {
+      if (!node || node.tagName !== 'P') return false;
+      const text = (node.textContent || '').trim();
+      if (!text || text.length > 180) return false;
+      return /:\s|`/.test(text);
+    }
+
+    function isLikelyLeadMetaList(node) {
+      if (!node || !['UL', 'OL'].includes(node.tagName)) return false;
+      const items = [...node.querySelectorAll(':scope > li')];
+      if (!items.length || items.length > 6) return false;
+      return items.every((li) => {
+        const text = (li.textContent || '').trim();
+        return text && text.length <= 180 && /:\s|`|\d/.test(text);
+      });
+    }
+
+    function extractLeadMeta(wrapper) {
+      const parts = [];
+      let cursor = wrapper.firstElementChild;
+      while (cursor) {
+        if (isLikelyLeadMetaParagraph(cursor)) {
+          parts.push((cursor.textContent || '').trim().replace(/\s+/g, ' '));
+          const next = cursor.nextElementSibling;
+          cursor.remove();
+          cursor = next;
+          continue;
+        }
+        if (isLikelyLeadMetaList(cursor)) {
+          parts.push(...[...cursor.querySelectorAll(':scope > li')].map((li) => (li.textContent || '').trim().replace(/\s+/g, ' ')));
+          const next = cursor.nextElementSibling;
+          cursor.remove();
+          cursor = next;
+          continue;
+        }
+        break;
+      }
+      return parts;
+    }
+
+    function compactArtifactChrome(wrapper, sourceFile) {
+      if (!isArtifactQueuePath(sourceFile)) {
+        document.body.classList.remove('artifact-view');
+        return [];
+      }
+
+      document.body.classList.add('artifact-view');
+
+      const firstH1 = wrapper.querySelector('h1');
+      if (firstH1 && /queue item processing/i.test(firstH1.textContent || '')) {
+        firstH1.remove();
+      }
+
+      const sectionHeads = [...wrapper.querySelectorAll('h2')].filter((node) => {
+        const label = (node.textContent || '').trim().toLowerCase();
+        return label === 'source metadata' || label === 'source custody';
+      });
+      if (!sectionHeads.length) return [];
+
+      const panel = document.createElement('details');
+      panel.className = 'traceability-panel';
+      const summary = document.createElement('summary');
+      summary.textContent = 'Traceability';
+      panel.appendChild(summary);
+      const body = document.createElement('div');
+      body.className = 'traceability-body';
+      panel.appendChild(body);
+
+      for (const heading of sectionHeads) {
+        const subhead = document.createElement('h3');
+        subhead.className = 'traceability-subhead';
+        subhead.textContent = heading.textContent || '';
+        body.appendChild(subhead);
+
+        let cursor = heading.nextElementSibling;
+        heading.remove();
+        while (cursor && cursor.tagName !== 'H2') {
+          const next = cursor.nextElementSibling;
+          body.appendChild(cursor);
+          cursor = next;
+        }
+      }
+
+      wrapper.prepend(panel);
+      return [];
+    }
+
+    function dedupeRenderedChrome(wrapper, sourceFile, viewerTitle) {
+      document.body.classList.toggle('artifact-view', isArtifactQueuePath(sourceFile));
+
+      const firstH1 = wrapper.querySelector('h1');
+      if (firstH1 && normalizeTitleText(firstH1.textContent) === normalizeTitleText(viewerTitle)) {
+        firstH1.remove();
+      }
+
+      const metaParts = extractLeadMeta(wrapper);
+      const artifactMeta = compactArtifactChrome(wrapper, sourceFile);
+      return [...metaParts, ...artifactMeta].filter(Boolean);
+    }
+
+    async function renderMermaid(container) {
+      const nodes = [...container.querySelectorAll('.mermaid')];
+      if (!nodes.length || !window.mermaid) return;
+
+      if (!mermaidReady) {
+        window.mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'strict',
+          theme: 'base',
+          themeVariables: {
+            background: '#fffdfa',
+            primaryColor: '#f6f1e8',
+            primaryTextColor: '#1d2430',
+            primaryBorderColor: '#244b7a',
+            lineColor: '#244b7a',
+            secondaryColor: '#fbf7f1',
+            tertiaryColor: '#f0eadf',
+            fontFamily: 'Inter',
+          },
+        });
+        mermaidReady = true;
+      }
+
+      try {
+        await window.mermaid.run({ nodes });
+      } catch (err) {
+        for (const node of nodes) {
+          const fallback = document.createElement('pre');
+          fallback.className = 'doc-block doc-code';
+          fallback.textContent = node.textContent || '';
+          node.replaceWith(fallback);
+        }
+      }
+    }
+
+    function configureArtifactNav() {
+      prevEl.style.display = 'none';
+      nextEl.style.display = 'none';
+
+      const slash = file.lastIndexOf('/');
+      if (slash <= 0) return;
+
+      const dir = file.slice(0, slash + 1);
+      const currentFile = file.slice(slash + 1);
+      if (!currentFile) return;
+
+      const navBase = '/viewer.html';
+
+      fetch(`${dir}index.json`, { cache: 'no-store' })
+        .then((resp) => {
+          if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+          return resp.json();
+        })
+        .then((payload) => {
+          const files = Array.isArray(payload?.files) ? payload.files : [];
+          const idx = files.indexOf(currentFile);
+          if (idx === -1) return;
+
+          if (idx > 0) {
+            const prevFile = `${dir}${files[idx - 1]}`;
+            prevEl.href = `${navBase}?file=${encodeURIComponent(prevFile)}`;
+            prevEl.style.display = 'inline-block';
+          }
+
+          if (idx < files.length - 1) {
+            const nextFile = `${dir}${files[idx + 1]}`;
+            nextEl.href = `${navBase}?file=${encodeURIComponent(nextFile)}`;
+            nextEl.style.display = 'inline-block';
+          }
+        })
+        .catch(() => {
+          // Navigation is optional; fail silently.
+        });
+    }
+
+    function fail(msg) {
+      titleEl.textContent = 'Document Viewer Error';
+      metaEl.textContent = msg;
+      contentEl.innerHTML = '<p>Unable to load requested artifact.</p>';
+    }
+
+    async function run() {
+      if (!file) return fail('Missing ?file= parameter.');
+      if (file.includes('..') || /^https?:\/\//i.test(file)) {
+        return fail('Rejected unsafe file path.');
+      }
+
+      const fallbackTitle = prettifyArtifactTitle(file);
+      const prettyTitle = await lookupArtifactDisplayTitle(file, fallbackTitle);
+      titleEl.textContent = prettyTitle;
+      document.title = prettyTitle;
+      metaEl.textContent = '';
+      metaEl.style.display = 'none';
+      rawEl.href = `/${encodeSitePath(file)}`;
+      rawEl.style.display = 'inline-block';
+      configureArtifactNav();
+
+      try {
+        const resp = await fetch(file, { cache: 'no-store' });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const text = await resp.text();
+        const ext = (file.split('?')[0].split('.').pop() || '').toLowerCase();
+
+        if (ext === 'json') {
+          document.body.classList.remove('artifact-view');
+          metaEl.style.display = '';
+          metaEl.textContent = `Rendered from /${file} · type=${ext || 'text'}`;
+          let pretty = text;
+          try { pretty = JSON.stringify(JSON.parse(text), null, 2); } catch {}
+          contentEl.innerHTML = `<pre class="doc-block">${syntaxHighlightJson(pretty)}</pre>`;
+        } else if (ext === 'md' || ext === 'markdown') {
+          const extractedTitle = extractDocumentTitle(text, prettyTitle);
+          const finalTitle = (isArtifactQueuePath(file) && /^queue item processing/i.test(extractedTitle)) ? prettyTitle : extractedTitle;
+          titleEl.textContent = finalTitle;
+          document.title = finalTitle;
+          contentEl.replaceChildren();
+          const rendered = renderMarkdown(text);
+          rewriteRenderedLinks(rendered, file);
+          const metaParts = dedupeRenderedChrome(rendered, file, finalTitle);
+          contentEl.appendChild(rendered);
+          await renderMermaid(contentEl);
+          if (metaParts.length) {
+            metaEl.textContent = metaParts.join(' · ');
+            metaEl.style.display = '';
+          } else {
+            metaEl.textContent = '';
+            metaEl.style.display = 'none';
+          }
+        } else {
+          document.body.classList.remove('artifact-view');
+          metaEl.style.display = '';
+          metaEl.textContent = `Rendered from /${file} · type=${ext || 'text'}`;
+          contentEl.innerHTML = `<pre class="doc-block">${escapeHtml(text)}</pre>`;
+        }
+      } catch (err) {
+        fail(`Load failed: ${err.message}`);
+      }
+    }
+
+    run();
+  </script>
+</body>
+</html>

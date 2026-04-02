@@ -1,0 +1,112 @@
+{
+  "generated_at_utc": "2026-04-02T00:44:18Z",
+  "replay_date": "2026-04-01",
+  "article_count": 5,
+  "articles": [
+    {
+      "article_id": "art-2026-03-01-001",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-01-001",
+        "--replay-date",
+        "2026-04-01"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-01-001/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "discarded",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-02-001",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-02-001",
+        "--replay-date",
+        "2026-04-01"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-02-001/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "discarded",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-02-013",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-02-013",
+        "--replay-date",
+        "2026-04-01"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-02-013/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "discarded",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-02-025",
+      "status": "error",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-02-025",
+        "--replay-date",
+        "2026-04-01"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/hermes/sapho-native/scripts/run_micro_article_lane.py\", line 407, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/home/hermes/sapho-native/scripts/run_micro_article_lane.py\", line 311, in main\n    extractor_result = run_extractor_evidence(\n                       ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hermes/sapho-native/scripts/article_job_runtime.py\", line 92, in run_extractor_evidence\n    raise JobContractError(\"extractor_evidence_count_mismatch\")\narticle_job_runtime.JobContractError: extractor_evidence_count_mismatch\n",
+      "before_publication_status": "published",
+      "after_publication_status": "published",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "legacy_quarantined",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-03-001",
+      "status": "error",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-03-001",
+        "--replay-date",
+        "2026-04-01"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/hermes/sapho-native/scripts/run_micro_article_lane.py\", line 407, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/home/hermes/sapho-native/scripts/run_micro_article_lane.py\", line 311, in main\n    extractor_result = run_extractor_evidence(\n                       ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hermes/sapho-native/scripts/article_job_runtime.py\", line 92, in run_extractor_evidence\n    raise JobContractError(\"extractor_evidence_count_mismatch\")\narticle_job_runtime.JobContractError: extractor_evidence_count_mismatch\n",
+      "before_publication_status": "published",
+      "after_publication_status": "published",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "legacy_quarantined",
+      "published_artifact": false
+    }
+  ],
+  "status_counts": {
+    "ok": 3,
+    "error": 2
+  },
+  "report_path": "/home/hermes/sapho-native/state/reports/historical-remediation-20260402T004418Z.json"
+}

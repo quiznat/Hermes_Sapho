@@ -1,0 +1,32 @@
+{
+  "generatedAtUtc": "2026-03-02T03:56:22Z",
+  "itemsTotal": 36,
+  "statusCounts": {
+    "processed": 15,
+    "discarded": 1,
+    "processing": 2,
+    "queued": 18
+  },
+  "nodeCount": 124,
+  "edgeCount": 232,
+  "themeTotals": {
+    "harness_first": 11,
+    "artifact_memory": 25,
+    "eval_governance": 17,
+    "multi_agent_orchestration": 28,
+    "planning_loops": 20,
+    "source_quality": 9,
+    "security_envelope": 10,
+    "portability": 8
+  },
+  "themeRetainedTotals": {
+    "harness_first": 11,
+    "artifact_memory": 24,
+    "eval_governance": 17,
+    "multi_agent_orchestration": 26,
+    "planning_loops": 20,
+    "source_quality": 4,
+    "security_envelope": 10,
+    "portability": 8
+  }
+}

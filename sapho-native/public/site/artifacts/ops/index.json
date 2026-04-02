@@ -1,0 +1,16 @@
+{
+  "generatedAtUtc": "2026-03-31T03:20:03Z",
+  "files": [
+    "assignment-status.md",
+    "factory-checkin-latest.json",
+    "heartbeat-latest.md",
+    "index.json",
+    "weekly-reflection-latest.json",
+    "weekly-reflection-latest.md"
+  ],
+  "latest": {
+    "assignmentStatus": "assignment-status.md",
+    "factoryCheckin": "factory-checkin-latest.json",
+    "latestShift": "research/reports/shifts/heartbeat-20260329T172903Z.json"
+  }
+}

@@ -1,0 +1,52 @@
+# Trace Paths
+
+```json
+{
+  "runId": "pm-live-20260306T003008Z",
+  "generatedAtUtc": "2026-03-06T00:32:37Z",
+  "paths": [
+    {
+      "queueId": "art-2026-03-04-074",
+      "source": "https://addyosmani.com/blog/factory-model/",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-074-factory-model-agentic-software-engineering.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-06/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-06/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-04-060",
+      "source": "https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents/",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-060-strands-sops-natural-language-workflows.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-06/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-06/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-04-050",
+      "source": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-050-cloudflare-moltworker-self-hosted-agent.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-06/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-06/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-04-038",
+      "source": "https://every.to/guides/claw-school?source=post_button",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-06/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-06/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-04-037",
+      "source": "https://github.com/msitarzewski/agency-agents",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-037-agency-agents.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-06/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-06/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-04-036",
+      "source": "https://arxiv.org/abs/2602.08316",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-036-swe-contextbench-experience-reuse.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-06/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-06/technical-executive-report.md"
+    }
+  ]
+}
+```

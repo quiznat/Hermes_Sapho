@@ -1,0 +1,9 @@
+{
+  "generatedAtUtc": "2026-03-30T18:30:02Z",
+  "channelTitle": "Sapho Chapterhouse Institute Research Artifacts",
+  "feedPath": "/artifacts.xml",
+  "mirrorPath": "/rss.xml",
+  "itemCount": 121,
+  "sourceDataset": "website/rss.xml",
+  "filter": "published_artifacts_only"
+}

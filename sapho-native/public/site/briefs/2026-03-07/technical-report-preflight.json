@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "topLineClaims": 6,
+  "traceableClaims": 6,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 4,
+  "contradictionChecks": 4,
+  "disagreementsFound": 0,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-07-040",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-07-035",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-07-033",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-06-021",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-06-015",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-04-074",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-07-035",
+      "rightId": "art-2026-03-07-033",
+      "label": "unclear",
+      "overlapTerms": [
+        "response",
+        "state"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-07-035",
+      "rightId": "art-2026-03-04-074",
+      "label": "unclear",
+      "overlapTerms": [
+        "autonomous",
+        "coding",
+        "verification"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-06-021",
+      "rightId": "art-2026-03-06-015",
+      "label": "unclear",
+      "overlapTerms": [
+        "prs",
+        "work"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-06-021",
+      "rightId": "art-2026-03-04-074",
+      "label": "unclear",
+      "overlapTerms": [
+        "agentic",
+        "coding",
+        "work"
+      ]
+    }
+  ],
+  "evidenceIssues": [],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-07T19:30:34Z"
+}

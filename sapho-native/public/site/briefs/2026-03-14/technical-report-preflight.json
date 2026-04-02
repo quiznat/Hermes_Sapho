@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "topLineClaims": 4,
+  "traceableClaims": 4,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 4,
+  "contradictionChecks": 4,
+  "disagreementsFound": 0,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-13-038",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-13-042",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-13-021",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-13-056",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-13-038",
+      "rightId": "art-2026-03-13-042",
+      "label": "unclear",
+      "overlapTerms": [
+        "benchmark",
+        "capability",
+        "checks",
+        "evaluation",
+        "measured",
+        "open-source",
+        "setup",
+        "synthesizes"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-13-038",
+      "rightId": "art-2026-03-13-021",
+      "label": "unclear",
+      "overlapTerms": [
+        "external",
+        "only",
+        "runtime",
+        "setup",
+        "through",
+        "which"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-13-038",
+      "rightId": "art-2026-03-13-056",
+      "label": "unclear",
+      "overlapTerms": [
+        "open-source",
+        "repository",
+        "service"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-13-021",
+      "rightId": "art-2026-03-13-056",
+      "label": "unclear",
+      "overlapTerms": [
+        "files",
+        "readme"
+      ]
+    }
+  ],
+  "evidenceIssues": [],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-14T03:21:42Z"
+}

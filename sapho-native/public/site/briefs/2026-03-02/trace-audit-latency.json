@@ -1,0 +1,234 @@
+{
+  "date": "2026-03-02",
+  "generatedAtUtc": "2026-03-02T13:17:50Z",
+  "status": "PASS",
+  "method": "deterministic_step_budget_v1",
+  "thresholdSeconds": 120.0,
+  "traceCount": 6,
+  "worstCaseSeconds": 91.0,
+  "averageSeconds": 91.0,
+  "claims": [
+    {
+      "queueId": "art-2026-03-01-030",
+      "estimatedSeconds": 91.0,
+      "steps": [
+        {
+          "step": "open technical report",
+          "seconds": 12
+        },
+        {
+          "step": "open trace-path row by queueId",
+          "seconds": 10
+        },
+        {
+          "step": "open source URL",
+          "seconds": 15
+        },
+        {
+          "step": "open queue output artifact",
+          "seconds": 18
+        },
+        {
+          "step": "open graph claim node context",
+          "seconds": 16
+        },
+        {
+          "step": "verify judgment anchors in report",
+          "seconds": 20
+        }
+      ],
+      "artifacts": {
+        "tracePath": "research/briefs/daily/2026-03-02/trace-paths.json",
+        "technicalReport": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "artifact": "research/kb/queue/queue-art-2026-03-01-030-ralph.md",
+        "graphNode": "claim:art-2026-03-01-030:thesis",
+        "sourceUrl": "https://github.com/snarktank/ralph"
+      }
+    },
+    {
+      "queueId": "art-2026-03-01-026",
+      "estimatedSeconds": 91.0,
+      "steps": [
+        {
+          "step": "open technical report",
+          "seconds": 12
+        },
+        {
+          "step": "open trace-path row by queueId",
+          "seconds": 10
+        },
+        {
+          "step": "open source URL",
+          "seconds": 15
+        },
+        {
+          "step": "open queue output artifact",
+          "seconds": 18
+        },
+        {
+          "step": "open graph claim node context",
+          "seconds": 16
+        },
+        {
+          "step": "verify judgment anchors in report",
+          "seconds": 20
+        }
+      ],
+      "artifacts": {
+        "tracePath": "research/briefs/daily/2026-03-02/trace-paths.json",
+        "technicalReport": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "artifact": "research/kb/queue/queue-art-2026-03-01-026-openai-inhouse-data-agent.md",
+        "graphNode": "claim:art-2026-03-01-026:thesis",
+        "sourceUrl": "https://openai.com/index/inside-our-in-house-data-agent/"
+      }
+    },
+    {
+      "queueId": "art-2026-03-01-023",
+      "estimatedSeconds": 91.0,
+      "steps": [
+        {
+          "step": "open technical report",
+          "seconds": 12
+        },
+        {
+          "step": "open trace-path row by queueId",
+          "seconds": 10
+        },
+        {
+          "step": "open source URL",
+          "seconds": 15
+        },
+        {
+          "step": "open queue output artifact",
+          "seconds": 18
+        },
+        {
+          "step": "open graph claim node context",
+          "seconds": 16
+        },
+        {
+          "step": "verify judgment anchors in report",
+          "seconds": 20
+        }
+      ],
+      "artifacts": {
+        "tracePath": "research/briefs/daily/2026-03-02/trace-paths.json",
+        "technicalReport": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "artifact": "research/kb/queue/queue-art-2026-03-01-023-harness-engineering.md",
+        "graphNode": "claim:art-2026-03-01-023:thesis",
+        "sourceUrl": "https://openai.com/index/harness-engineering/"
+      }
+    },
+    {
+      "queueId": "art-2026-03-02-001",
+      "estimatedSeconds": 91.0,
+      "steps": [
+        {
+          "step": "open technical report",
+          "seconds": 12
+        },
+        {
+          "step": "open trace-path row by queueId",
+          "seconds": 10
+        },
+        {
+          "step": "open source URL",
+          "seconds": 15
+        },
+        {
+          "step": "open queue output artifact",
+          "seconds": 18
+        },
+        {
+          "step": "open graph claim node context",
+          "seconds": 16
+        },
+        {
+          "step": "verify judgment anchors in report",
+          "seconds": 20
+        }
+      ],
+      "artifacts": {
+        "tracePath": "research/briefs/daily/2026-03-02/trace-paths.json",
+        "technicalReport": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "artifact": "research/kb/queue/queue-art-2026-03-02-001-agentic-software-factory-case-study.md",
+        "graphNode": "claim:art-2026-03-02-001:thesis",
+        "sourceUrl": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh"
+      }
+    },
+    {
+      "queueId": "art-2026-03-02-002",
+      "estimatedSeconds": 91.0,
+      "steps": [
+        {
+          "step": "open technical report",
+          "seconds": 12
+        },
+        {
+          "step": "open trace-path row by queueId",
+          "seconds": 10
+        },
+        {
+          "step": "open source URL",
+          "seconds": 15
+        },
+        {
+          "step": "open queue output artifact",
+          "seconds": 18
+        },
+        {
+          "step": "open graph claim node context",
+          "seconds": 16
+        },
+        {
+          "step": "verify judgment anchors in report",
+          "seconds": 20
+        }
+      ],
+      "artifacts": {
+        "tracePath": "research/briefs/daily/2026-03-02/trace-paths.json",
+        "technicalReport": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "artifact": "research/kb/queue/queue-art-2026-03-02-002-azure-agent-factory-patterns.md",
+        "graphNode": "claim:art-2026-03-02-002:thesis",
+        "sourceUrl": "https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns/"
+      }
+    },
+    {
+      "queueId": "art-2026-03-01-029",
+      "estimatedSeconds": 91.0,
+      "steps": [
+        {
+          "step": "open technical report",
+          "seconds": 12
+        },
+        {
+          "step": "open trace-path row by queueId",
+          "seconds": 10
+        },
+        {
+          "step": "open source URL",
+          "seconds": 15
+        },
+        {
+          "step": "open queue output artifact",
+          "seconds": 18
+        },
+        {
+          "step": "open graph claim node context",
+          "seconds": 16
+        },
+        {
+          "step": "verify judgment anchors in report",
+          "seconds": 20
+        }
+      ],
+      "artifacts": {
+        "tracePath": "research/briefs/daily/2026-03-02/trace-paths.json",
+        "technicalReport": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "artifact": "research/kb/queue/queue-art-2026-03-01-029-compound-product.md",
+        "graphNode": "claim:art-2026-03-01-029:thesis",
+        "sourceUrl": "https://github.com/snarktank/compound-product"
+      }
+    }
+  ]
+}

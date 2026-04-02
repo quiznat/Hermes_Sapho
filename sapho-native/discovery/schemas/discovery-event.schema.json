@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quiznat.local/schemas/discovery-event.schema.json",
+  "title": "DiscoveryEvent",
+  "type": "object",
+  "required": [
+    "runId",
+    "channel",
+    "queryOrFeed",
+    "url",
+    "decision",
+    "decisionReason",
+    "retrievedAtUtc"
+  ],
+  "properties": {
+    "runId": { "type": "string", "minLength": 1 },
+    "channel": {
+      "type": "string",
+      "enum": ["brave", "rss", "sitemap", "arxiv"]
+    },
+    "queryOrFeed": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "title": { "type": ["string", "null"] },
+    "snippet": { "type": ["string", "null"] },
+    "rank": { "type": ["integer", "null"], "minimum": 1 },
+    "decision": { "type": "string", "enum": ["kept", "dropped"] },
+    "decisionReason": { "type": "string", "minLength": 1 },
+    "retrievedAtUtc": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+    },
+    "canonicalUrl": { "type": ["string", "null"], "format": "uri" },
+    "urlHash": { "type": ["string", "null"] },
+    "canonicalUrlHash": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false
+}

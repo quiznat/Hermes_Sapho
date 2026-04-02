@@ -1,0 +1,13 @@
+{
+  "band": "high",
+  "score": 0.8,
+  "confidenceDrivers": [
+    "traceabilityCoverage=1.00",
+    "highConvictionRatio=1.00",
+    "laneDiversity=0.00"
+  ],
+  "uncertaintyDrivers": [
+    "laneConcentrationHigh=1.00"
+  ],
+  "guardrail": "Maintain fail-closed publish behavior; if confidence falls below medium or uncertainty drivers worsen, require additional contrarian evidence before strategic recommendation updates."
+}

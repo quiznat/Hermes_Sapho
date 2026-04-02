@@ -1,0 +1,125 @@
+{
+  "version": "executive-brief-v2.0.0",
+  "last_updated": "2026-03-06T00:32:37Z",
+  "date": "2026-03-06",
+  "summary": {
+    "status": "PASS",
+    "runId": "pm-live-20260306T003008Z",
+    "inserted": "n/a",
+    "candidates": "n/a",
+    "dropped": "n/a",
+    "logPath": "",
+    "executiveSummary": "The evidence supports a conditional factory-model thesis with medium confidence: agentic software leverage increases when orchestration is paired with strong verification, constrained intent-to-action translation, disciplined operations, and high-quality memory/retrieval controls. The evidence does not support autonomy-alone claims. With discarded items far exceeding processed items, conclusions should be treated as boundary-aware and stress-tested rather than universal."
+  },
+  "gateTelemetry": {
+    "status": "PASS",
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "contradictionChecks": 6,
+    "disagreementsFound": 2,
+    "sourcePath": "research/briefs/daily/2026-03-06/technical-report-preflight.json",
+    "sourcePathWeb": "briefs/2026-03-06/technical-report-preflight.json"
+  },
+  "metrics": {
+    "processedCount": 6,
+    "laneCounts": {
+      "agent-factory": 3,
+      "agent-memory": 2,
+      "agent-research": 1
+    },
+    "decisionCounts": {
+      "retain": 6
+    },
+    "confidenceCounts": {
+      "medium": 6
+    },
+    "exclusionCounts": {},
+    "qualifiedFindings": 6
+  },
+  "findings": [
+    {
+      "queueId": "art-2026-03-04-074",
+      "lane": "agent-factory",
+      "source": "https://addyosmani.com/blog/factory-model/",
+      "thesis": "Agentic coding is shifting leverage toward factory-style orchestration, where specification quality, architecture clarity, and verification discipline determine output quality.",
+      "mechanism": "The model progresses from autocomplete to copilots to autonomous multi-step agents; as generation scales, verification becomes the bottleneck, making tight specs and reliable red/green workflows core control surfaces.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-074-factory-model-agentic-software-engineering.md"
+    },
+    {
+      "queueId": "art-2026-03-04-060",
+      "lane": "agent-memory",
+      "source": "https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents/",
+      "thesis": "Natural-language workflow control becomes materially more usable when tied to reproducible operations and policy boundaries.",
+      "mechanism": "Intent is translated into constrained workflow actions so human-readable control is preserved while execution remains deterministic and guardrailed.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-060-strands-sops-natural-language-workflows.md"
+    },
+    {
+      "queueId": "art-2026-03-04-050",
+      "lane": "agent-factory",
+      "source": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/",
+      "thesis": "Self-hosted personal agents can move to cloud infrastructure when isolation, automation, persistence, and model mediation are composed as a coherent stack.",
+      "mechanism": "A decomposed architecture separates control plane, isolated runtime, browser automation, persistent storage, and model gateway routing, improving governability while adding service-interface dependencies.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-050-cloudflare-moltworker-self-hosted-agent.md"
+    },
+    {
+      "queueId": "art-2026-03-04-038",
+      "lane": "agent-research",
+      "source": "https://every.to/guides/claw-school?source=post_button",
+      "thesis": "OpenClaw outcomes are driven more by ongoing operating discipline than by one-time setup.",
+      "mechanism": "A loop of delegation, recurring automation, staged permissioning, safety boundaries, and iterative feedback compounds reliability and governance quality.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md"
+    },
+    {
+      "queueId": "art-2026-03-04-037",
+      "lane": "agent-factory",
+      "source": "https://github.com/msitarzewski/agency-agents",
+      "thesis": "Role-specialized agent catalogs are a practical control-plane pattern for multi-agent decomposition.",
+      "mechanism": "Persona-explicit templates with defined missions, process framing, and deliverables improve routing and auditability, but depend on consistent handoff and escalation schemas.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-037-agency-agents.md"
+    },
+    {
+      "queueId": "art-2026-03-04-036",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/abs/2602.08316",
+      "thesis": "Programming-agent evaluation should measure cross-task experience reuse, not only per-task correctness.",
+      "mechanism": "Linked-task benchmarking shows that relevant summarized prior experience can improve resolution and lower runtime/token cost, while weakly selected memory can degrade performance via negative transfer.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-036-swe-contextbench-experience-reuse.md"
+    }
+  ],
+  "actions": [
+    "Publish conclusions with explicit boundary conditions, medium-confidence labeling, and documented failure modes.",
+    "Run adversarial intent-to-action compilation tests to detect ambiguity collapse and policy-bypass paths before execution.",
+    "Measure verification bottlenecks directly (defect escape, review load, rework rate, test stability) before claiming factory productivity gains.",
+    "Benchmark decomposed versus monolithic stacks on matched workloads with injected boundary faults.",
+    "Standardize specialist-agent handoffs with required input/output schema, ownership assignment, and escalation triggers.",
+    "Apply retrieval-quality gates: relevance thresholds, provenance requirements, freshness checks, and suppression of low-confidence memory reuse."
+  ],
+  "risks": [
+    "High discard ratio (105 discarded vs 61 processed) may introduce selection effects in narrative weighting.",
+    "Evidence remains medium-confidence and partly practitioner-derived, limiting strong causal generalization.",
+    "Natural-language orchestration can create false confidence if compiler constraints fail under adversarial or ambiguous prompts.",
+    "Decomposed architectures can shift failures to service boundaries and increase coordination overhead.",
+    "Specialist-agent proliferation can fragment accountability without mandatory handoff/arbitration contracts.",
+    "Memory reuse pipelines can propagate stale or low-fidelity summaries across repeated tasks."
+  ],
+  "artifacts": [
+    "research/kb/queue/queue-art-2026-03-04-074-factory-model-agentic-software-engineering.md",
+    "research/kb/queue/queue-art-2026-03-04-060-strands-sops-natural-language-workflows.md",
+    "research/kb/queue/queue-art-2026-03-04-050-cloudflare-moltworker-self-hosted-agent.md",
+    "research/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md",
+    "research/kb/queue/queue-art-2026-03-04-037-agency-agents.md",
+    "research/kb/queue/queue-art-2026-03-04-036-swe-contextbench-experience-reuse.md"
+  ],
+  "qualityGate": {
+    "minQualifiedRequired": 2,
+    "qualifiedFound": 6,
+    "passed": true
+  }
+}

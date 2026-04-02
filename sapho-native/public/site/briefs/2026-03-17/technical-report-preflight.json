@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "topLineClaims": 3,
+  "traceableClaims": 3,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 3,
+  "contradictionChecks": 3,
+  "disagreementsFound": 0,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-17-021",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-17-022",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-17-020",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-17-021",
+      "rightId": "art-2026-03-17-022",
+      "label": "unclear",
+      "overlapTerms": [
+        "benchmarked",
+        "context",
+        "deepseek-r",
+        "glass-box",
+        "hardware",
+        "including",
+        "multi-agent",
+        "nvidia"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-17-021",
+      "rightId": "art-2026-03-17-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "complex",
+        "llm",
+        "tasks"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-17-022",
+      "rightId": "art-2026-03-17-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "evaluation",
+        "patterns"
+      ]
+    }
+  ],
+  "evidenceIssues": [],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-18T02:35:07Z"
+}

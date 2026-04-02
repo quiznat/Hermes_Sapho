@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "topLineClaims": 6,
+  "traceableClaims": 6,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 7,
+  "contradictionChecks": 7,
+  "disagreementsFound": 0,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-08-016",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-08-011",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-08-006",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-08-002",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-07-048",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-07-035",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-08-016",
+      "rightId": "art-2026-03-08-011",
+      "label": "unclear",
+      "overlapTerms": [
+        "coding",
+        "implementation",
+        "long-horizon",
+        "test"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-08-016",
+      "rightId": "art-2026-03-08-006",
+      "label": "unclear",
+      "overlapTerms": [
+        "concrete",
+        "implementation"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-08-016",
+      "rightId": "art-2026-03-07-035",
+      "label": "unclear",
+      "overlapTerms": [
+        "coding",
+        "outputs",
+        "reported"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-08-011",
+      "rightId": "art-2026-03-08-006",
+      "label": "unclear",
+      "overlapTerms": [
+        "implementation",
+        "repository"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-08-011",
+      "rightId": "art-2026-03-08-002",
+      "label": "unclear",
+      "overlapTerms": [
+        "current",
+        "failure"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-08-011",
+      "rightId": "art-2026-03-07-035",
+      "label": "unclear",
+      "overlapTerms": [
+        "autonomous",
+        "coding"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-08-006",
+      "rightId": "art-2026-03-08-002",
+      "label": "unclear",
+      "overlapTerms": [
+        "memory",
+        "strategies"
+      ]
+    }
+  ],
+  "evidenceIssues": [],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-09T23:37:19Z"
+}

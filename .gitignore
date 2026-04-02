@@ -54,13 +54,7 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
-# Sapho generated/runtime surfaces
-sapho-native/daily/
-sapho-native/discovery/
-sapho-native/public/
-sapho-native/queue/
-sapho-native/runtime/
-sapho-native/state/
+# Sapho content is tracked; keep only true temp files/secrets ignored
 
 # Temp files
 tmp/

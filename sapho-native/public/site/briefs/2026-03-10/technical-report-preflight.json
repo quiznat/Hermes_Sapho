@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "topLineClaims": 6,
+  "traceableClaims": 6,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 10,
+  "contradictionChecks": 10,
+  "disagreementsFound": 1,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-10-077",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-069",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-065",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-061",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-034",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-015",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-10-077",
+      "rightId": "art-2026-03-10-069",
+      "label": "unclear",
+      "overlapTerms": [
+        "agentic",
+        "human",
+        "prs",
+        "pull",
+        "requests",
+        "stronger"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-077",
+      "rightId": "art-2026-03-10-065",
+      "label": "unclear",
+      "overlapTerms": [
+        "code",
+        "prs",
+        "pull",
+        "requests"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-077",
+      "rightId": "art-2026-03-10-061",
+      "label": "unclear",
+      "overlapTerms": [
+        "agentic",
+        "human",
+        "prs"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-069",
+      "rightId": "art-2026-03-10-065",
+      "label": "unclear",
+      "overlapTerms": [
+        "agent-authored",
+        "outcomes",
+        "prs",
+        "pull",
+        "requests",
+        "review"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-069",
+      "rightId": "art-2026-03-10-061",
+      "label": "unclear",
+      "overlapTerms": [
+        "agentic",
+        "analysis",
+        "human",
+        "merge",
+        "outcomes",
+        "prs",
+        "review",
+        "shows"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-069",
+      "rightId": "art-2026-03-10-015",
+      "label": "disagree",
+      "overlapTerms": [
+        "agentic",
+        "real"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-065",
+      "rightId": "art-2026-03-10-061",
+      "label": "unclear",
+      "overlapTerms": [
+        "across",
+        "dynamics",
+        "outcomes",
+        "prs",
+        "review"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-065",
+      "rightId": "art-2026-03-10-015",
+      "label": "unclear",
+      "overlapTerms": [
+        "across",
+        "coding"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-061",
+      "rightId": "art-2026-03-10-015",
+      "label": "unclear",
+      "overlapTerms": [
+        "across",
+        "agentic",
+        "software"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-034",
+      "rightId": "art-2026-03-10-015",
+      "label": "unclear",
+      "overlapTerms": [
+        "coding",
+        "long-horizon",
+        "rather",
+        "tasks"
+      ]
+    }
+  ],
+  "evidenceIssues": [
+    {
+      "index": 4,
+      "queueId": "art-2026-03-10-034",
+      "issue": "confidence_normalized_to_evidence",
+      "agentConfidence": "medium",
+      "evidenceConfidence": "high"
+    }
+  ],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-10T23:33:36Z"
+}

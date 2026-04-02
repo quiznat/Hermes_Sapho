@@ -1,0 +1,1095 @@
+{
+  "version": "rss-registry.v1",
+  "updatedAtUtc": "2026-03-29T03:17:40Z",
+  "items": [
+    {
+      "source_url": "https://arxiv.org/abs/2308.00352",
+      "title": "MetaGPT: Structured Collaboration for LLM Multi-Agent Systems",
+      "link": "https://research.quiznat.com/a/20260304020.html",
+      "guid": "https://research.quiznat.com/a/20260304020.html",
+      "alias": "20260304020",
+      "pubDate": "Sat, 28 Mar 2026 18:15:20 +0000",
+      "description": "MetaGPT introduces a meta-programming framework that orchestrates LLM-based multi-agent collaboration through encoded Standard Operating Procedures (SOPs), replacing free-form chat with structured workflows and verification steps that yield more coherent software engineering sol\u2026\n\nArtifact: https://research.quiznat.com/a/20260304020.html \u00b7 Source: https://arxiv.org/abs/2308.00352"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2508.08322",
+      "title": "A New Context Engineering Workflow for Multi-Agent LLM Code Assistants",
+      "link": "https://research.quiznat.com/a/20260304018.html",
+      "guid": "https://research.quiznat.com/a/20260304018.html",
+      "alias": "20260304018",
+      "pubDate": "Sat, 28 Mar 2026 18:11:48 +0000",
+      "description": "Muhammad Haseeb's recent work proposes and demonstrates a novel context engineering workflow designed specifically for multi-agent LLM code assistants. The system leverages a coordinated ensemble of tools\u2014including Elicit, NotebookLM, ChatGPT, and Claude Code\u2014to improve both acc\u2026\n\nArtifact: https://research.quiznat.com/a/20260304018.html \u00b7 Source: https://arxiv.org/abs/2508.08322"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2508.00083",
+      "title": "A Survey on Code Generation with LLM-based Agents",
+      "link": "https://research.quiznat.com/a/20260304016.html",
+      "guid": "https://research.quiznat.com/a/20260304016.html",
+      "alias": "20260304016",
+      "pubDate": "Sat, 28 Mar 2026 18:08:14 +0000",
+      "description": "Dong et al. deliver a systematic survey mapping the evolution of LLM-based code generation agents, taxonomizing their architectures and techniques, cataloging applications across the software development lifecycle, and consolidating benchmarks and open problems into a single ref\u2026\n\nArtifact: https://research.quiznat.com/a/20260304016.html \u00b7 Source: https://arxiv.org/abs/2508.00083"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2503.02400",
+      "title": "Promptware Engineering: A Systematic Framework for Building Prompt-Enabled Systems",
+      "link": "https://research.quiznat.com/a/20260304015.html",
+      "guid": "https://research.quiznat.com/a/20260304015.html",
+      "alias": "20260304015",
+      "pubDate": "Sat, 28 Mar 2026 18:04:31 +0000",
+      "description": "This paper introduces \"promptware engineering,\" a disciplined methodology that adapts established Software Engineering principles to the development of prompt-enabled systems. By identifying the emerging \"promptware crisis\"\u2014the gap between ad-hoc prompt development and productio\u2026\n\nArtifact: https://research.quiznat.com/a/20260304015.html \u00b7 Source: https://arxiv.org/abs/2503.02400"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2503.13657",
+      "title": "Mapping the Failure Modes of Multi-Agent LLM Systems",
+      "link": "https://research.quiznat.com/a/20260304012.html",
+      "guid": "https://research.quiznat.com/a/20260304012.html",
+      "alias": "20260304012",
+      "pubDate": "Sat, 28 Mar 2026 18:00:53 +0000",
+      "description": "A team of researchers from UC Berkeley and collaborating institutions has developed MAST, a comprehensive taxonomy, and MAST-Data, a dedicated dataset, to systematically categorize and analyze why multi-agent LLM systems fail. This framework provides the first structured approac\u2026\n\nArtifact: https://research.quiznat.com/a/20260304012.html \u00b7 Source: https://arxiv.org/abs/2503.13657"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2510.21413",
+      "title": "AGENTS.md: An Emerging Standard for AI Context in Open Source",
+      "link": "https://research.quiznat.com/a/20260304003.html",
+      "guid": "https://research.quiznat.com/a/20260304003.html",
+      "alias": "20260304003",
+      "pubDate": "Sat, 28 Mar 2026 17:54:20 +0000",
+      "description": "As agent-based AI coding assistants replace earlier GenAI tools, developers are converging on AGENTS.md as a de facto standard for consolidating agent context\u2014replacing fragmented, tool-specific Markdown files with a single, structured format.\n\nArtifact: https://research.quiznat.com/a/20260304003.html \u00b7 Source: https://arxiv.org/abs/2510.21413"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2602.20478",
+      "title": "Codified Context: A New Infrastructure for AI Agents in Complex Codebases",
+      "link": "https://research.quiznat.com/a/20260303013.html",
+      "guid": "https://research.quiznat.com/a/20260303013.html",
+      "alias": "20260303013",
+      "pubDate": "Sat, 28 Mar 2026 17:51:16 +0000",
+      "description": "This paper introduces Codified Context, a novel three-component infrastructure designed to enable AI agents to operate effectively within complex codebases. By structuring how contextual information is captured and utilized, the system aims to bridge the gap between general agen\u2026\n\nArtifact: https://research.quiznat.com/a/20260303013.html \u00b7 Source: https://arxiv.org/abs/2602.20478"
+    },
+    {
+      "source_url": "https://notchrisgroves.com/when-agents-md-backfires",
+      "title": "When AGENTS.md Backfires: What a New Study Says About Context Files and Coding Agents",
+      "link": "https://research.quiznat.com/a/20260303008.html",
+      "guid": "https://research.quiznat.com/a/20260303008.html",
+      "alias": "20260303008",
+      "pubDate": "Sat, 28 Mar 2026 17:48:24 +0000",
+      "description": "A February 2026 study by ETH Zurich researchers delivers an unexpected verdict on AGENTS.md: LLM-generated context files harm task success rates while driving up inference costs by 20%, challenging the rationale behind a format that has proliferated to over 60,000 public reposit\u2026\n\nArtifact: https://research.quiznat.com/a/20260303008.html \u00b7 Source: https://notchrisgroves.com/when-agents-md-backfires"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2601.20404",
+      "title": "AGENTS.md Boosts AI Coding Agent Efficiency",
+      "link": "https://research.quiznat.com/a/20260303004.html",
+      "guid": "https://research.quiznat.com/a/20260303004.html",
+      "alias": "20260303004",
+      "pubDate": "Fri, 27 Mar 2026 17:43:54 +0000",
+      "description": "Researchers from Singapore Management University, Heidelberg University, University of Bamberg, and King's College London have quantified how AGENTS.md files affect AI coding agent performance, demonstrating measurable impacts on both runtime efficiency and token consumption whe\u2026\n\nArtifact: https://research.quiznat.com/a/20260303004.html \u00b7 Source: https://arxiv.org/abs/2601.20404"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2511.12884v1",
+      "title": "Agent READMEs: How Developers Keep AI Coders on Track",
+      "link": "https://research.quiznat.com/a/20260303002.html",
+      "guid": "https://research.quiznat.com/a/20260303002.html",
+      "alias": "20260303002",
+      "pubDate": "Fri, 27 Mar 2026 17:40:46 +0000",
+      "description": "A new empirical study examines how developers craft context files to guide AI coding agents, revealing patterns in structure, maintenance practices, and instruction types\u2014while exposing a notable gap in non-functional requirements specification.\n\nArtifact: https://research.quiznat.com/a/20260303002.html \u00b7 Source: https://arxiv.org/html/2511.12884v1"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2602.11988",
+      "title": "Evaluating AGENTS.md: Do Repository-Level Context Files Help Coding Agents?",
+      "link": "https://research.quiznat.com/a/20260303001.html",
+      "guid": "https://research.quiznat.com/a/20260303001.html",
+      "alias": "20260303001",
+      "pubDate": "Fri, 27 Mar 2026 17:37:36 +0000",
+      "description": "This paper presents a systematic empirical evaluation of repository-level context files (AGENTS.md) for coding agents, measuring their impact on task completion rates and inference costs through controlled experiments.\n\nArtifact: https://research.quiznat.com/a/20260303001.html \u00b7 Source: https://arxiv.org/abs/2602.11988"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2512.08296",
+      "title": "Towards a Science of Scaling Agent Systems",
+      "link": "https://research.quiznat.com/a/20260302025.html",
+      "guid": "https://research.quiznat.com/a/20260302025.html",
+      "alias": "20260302025",
+      "pubDate": "Fri, 27 Mar 2026 17:34:43 +0000",
+      "description": "Researchers have established quantitative scaling principles for agent systems, deriving measurable laws that govern how multi-agent architectures perform as complexity increases. Through controlled evaluation across multiple benchmarks and agent designs, the work moves beyond e\u2026\n\nArtifact: https://research.quiznat.com/a/20260302025.html \u00b7 Source: https://arxiv.org/abs/2512.08296"
+    },
+    {
+      "source_url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "title": "Demystifying Evals for AI Agents",
+      "link": "https://research.quiznat.com/a/20260302013.html",
+      "guid": "https://research.quiznat.com/a/20260302013.html",
+      "alias": "20260302013",
+      "pubDate": "Fri, 27 Mar 2026 17:29:37 +0000",
+      "description": "AI agents operate differently from traditional software: they work autonomously across multiple turns, calling tools, modifying state, and adapting as they go. Evaluating these systems requires moving beyond simple input-output tests to sophisticated multi-turn evaluations that\u2026\n\nArtifact: https://research.quiznat.com/a/20260302013.html \u00b7 Source: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+    },
+    {
+      "source_url": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
+      "title": "The Agentic Software Factory: How AI Teams Debate, Code, and Secure Enterprise Infrastructure",
+      "link": "https://research.quiznat.com/a/20260302001.html",
+      "guid": "https://research.quiznat.com/a/20260302001.html",
+      "alias": "20260302001",
+      "pubDate": "Fri, 27 Mar 2026 17:14:29 +0000",
+      "description": "A coordinated multi-agent AI system can execute structured debate, autonomous implementation, and parallel validation to deliver production-ready code in real enterprise repositories. The approach was demonstrated by Ugo Enyioha in a technical case study that produced a working\u2026\n\nArtifact: https://research.quiznat.com/a/20260302001.html \u00b7 Source: https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh"
+    },
+    {
+      "source_url": "https://imbue.com/research/2026-02-27-darwinian-evolver",
+      "title": "LLM-based Evolution as a Universal Optimizer",
+      "link": "https://research.quiznat.com/a/20260301001.html",
+      "guid": "https://research.quiznat.com/a/20260301001.html",
+      "alias": "20260301001",
+      "pubDate": "Fri, 27 Mar 2026 17:04:41 +0000",
+      "description": "Imbue has developed LLM-driven evolution as a general-purpose optimization method that sidesteps the manual, tedious work typically required to refine LLM-based systems. By treating code and agent behavior as evolvable populations rather than fixed prompts, the approach achieved\u2026\n\nArtifact: https://research.quiznat.com/a/20260301001.html \u00b7 Source: https://imbue.com/research/2026-02-27-darwinian-evolver"
+    },
+    {
+      "source_url": "https://blog.nilenso.com/blog/2025/09/25/swe-benchmarks",
+      "title": "What AI Coding Benchmarks Actually Measure (And What They Miss)",
+      "link": "https://research.quiznat.com/a/20260324005.html",
+      "guid": "https://research.quiznat.com/a/20260324005.html",
+      "alias": "20260324005",
+      "pubDate": "Tue, 24 Mar 2026 01:49:26 +0000",
+      "description": "Popular AI coding benchmarks like SWE-bench measure something far narrower than their names imply. While they claim to test \"real-world\" software engineering capabilities, they actually assess a very specific skill: submitting patches that pass unit tests for pre-selected GitHub\u2026\n\nArtifact: https://research.quiznat.com/a/20260324005.html \u00b7 Source: https://blog.nilenso.com/blog/2025/09/25/swe-benchmarks"
+    },
+    {
+      "source_url": "https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1",
+      "title": "Augment Code Hits #1 on SWE-Bench by Combining Claude 3.7 and O1",
+      "link": "https://research.quiznat.com/a/20260324004.html",
+      "guid": "https://research.quiznat.com/a/20260324004.html",
+      "alias": "20260324004",
+      "pubDate": "Tue, 24 Mar 2026 01:48:11 +0000",
+      "description": "Augment Code has claimed the top spot on the SWE-bench Verified leaderboard with a 65.4% success rate, demonstrating that strategic model ensembling can outperform single-model approaches on complex software engineering benchmarks.\n\nArtifact: https://research.quiznat.com/a/20260324004.html \u00b7 Source: https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1"
+    },
+    {
+      "source_url": "https://render.com/blog/ai-coding-agents-benchmark",
+      "title": "Testing AI Coding Agents (2025): A Practitioner's Field Test",
+      "link": "https://research.quiznat.com/a/20260324003.html",
+      "guid": "https://research.quiznat.com/a/20260324003.html",
+      "alias": "20260324003",
+      "pubDate": "Tue, 24 Mar 2026 01:46:59 +0000",
+      "description": "After a year of skepticism borne from cleaning up messy AI-generated code, a software engineer conducted a hands-on benchmark of four leading AI coding agents\u2014Cursor, Claude Code, Gemini CLI, and OpenAI Codex\u2014to evaluate their practical utility across real-world engineering task\u2026\n\nArtifact: https://research.quiznat.com/a/20260324003.html \u00b7 Source: https://render.com/blog/ai-coding-agents-benchmark"
+    },
+    {
+      "source_url": "https://benched.ai/guides/top-coding-agents-2025",
+      "title": "The State of AI Coding Agents in 2025",
+      "link": "https://research.quiznat.com/a/20260324002.html",
+      "guid": "https://research.quiznat.com/a/20260324002.html",
+      "alias": "20260324002",
+      "pubDate": "Tue, 24 Mar 2026 01:45:44 +0000",
+      "description": "The AI coding assistant landscape has matured into distinct architectural philosophies: lightweight CLI tools that augment local development workflows, cloud-based agents that spin up isolated environments, and comprehensive dashboards that position AI as a full software enginee\u2026\n\nArtifact: https://research.quiznat.com/a/20260324002.html \u00b7 Source: https://benched.ai/guides/top-coding-agents-2025"
+    },
+    {
+      "source_url": "https://github.com/handrew/agentic_gpt",
+      "title": "AgenticGPT: Toward Modular, Reproducible LLM Agents",
+      "link": "https://research.quiznat.com/a/20260324001.html",
+      "guid": "https://research.quiznat.com/a/20260324001.html",
+      "alias": "20260324001",
+      "pubDate": "Tue, 24 Mar 2026 01:44:18 +0000",
+      "description": "AgenticGPT is an experimental framework that structures LLM agents around modularity and reproducibility, demonstrating how language models can act upon curated information corpora to automate browser-based tasks.\n\nArtifact: https://research.quiznat.com/a/20260324001.html \u00b7 Source: https://github.com/handrew/agentic_gpt"
+    },
+    {
+      "source_url": "https://galileo.ai/blog/benchmarks-multi-agent-ai",
+      "title": "Benchmarking Multi-Agent AI: Insights & Practical Use | Galileo",
+      "link": "https://research.quiznat.com/a/20260318005.html",
+      "guid": "https://research.quiznat.com/a/20260318005.html",
+      "alias": "20260318005",
+      "pubDate": "Thu, 19 Mar 2026 05:42:06 +0000",
+      "description": "Multi-agent AI evaluation is shifting from single-run accuracy metrics to multi-dimensional frameworks like CLEAR (Cost, Latency, Efficiency, Assurance, Reliability) that better predict production success, revealing severe reliability gaps where performance drops from 60%...\n\nArtifact: https://research.quiznat.com/a/20260318005.html \u00b7 Source: https://galileo.ai/blog/benchmarks-multi-agent-ai"
+    },
+    {
+      "source_url": "https://www.tbench.ai",
+      "title": "Terminal-Bench",
+      "link": "https://research.quiznat.com/a/20260318004.html",
+      "guid": "https://research.quiznat.com/a/20260318004.html",
+      "alias": "20260318004",
+      "pubDate": "Thu, 19 Mar 2026 05:41:42 +0000",
+      "description": "Terminal-Bench provides a standardized and quantifiable method for evaluating and comparing the proficiency of AI agents in executing complex tasks within terminal environments across software engineering, machine learning, security, and data science domains.\n\nArtifact: https://research.quiznat.com/a/20260318004.html \u00b7 Source: https://www.tbench.ai"
+    },
+    {
+      "source_url": "https://github.com/modelcontextprotocol/servers",
+      "title": "servers",
+      "link": "https://research.quiznat.com/a/20260318003.html",
+      "guid": "https://research.quiznat.com/a/20260318003.html",
+      "alias": "20260318003",
+      "pubDate": "Thu, 19 Mar 2026 05:41:18 +0000",
+      "description": "The Model Context Protocol (MCP) enables secure, controlled access for LLMs to external tools and data sources through a standardized protocol, demonstrated through reference implementations and extensive third-party integrations across cloud platforms, data tools, and...\n\nArtifact: https://research.quiznat.com/a/20260318003.html \u00b7 Source: https://github.com/modelcontextprotocol/servers"
+    },
+    {
+      "source_url": "https://www.superannotate.com/blog/human-in-the-loop-hitl",
+      "title": "What is Human-in-the-Loop (HITL) in AI? | SuperAnnotate",
+      "link": "https://research.quiznat.com/a/20260317051.html",
+      "guid": "https://research.quiznat.com/a/20260317051.html",
+      "alias": "20260317051",
+      "pubDate": "Thu, 19 Mar 2026 04:30:08 +0000",
+      "description": "Human-in-the-Loop is essential for building reliable AI systems because models underperform in production environments\u2014exemplified by Gemini 2.5 Pro's 70% failure rate on real-world office tasks\u2014and synthetic-only training risks model collapse, necessitating continuous human...\n\nArtifact: https://research.quiznat.com/a/20260317051.html \u00b7 Source: https://www.superannotate.com/blog/human-in-the-loop-hitl"
+    },
+    {
+      "source_url": "https://huggingface.co/papers/2509.14745",
+      "title": "On The Use Of Agentic Coding An Empirical Study Of Pull Requests On Github",
+      "link": "https://research.quiznat.com/a/20260317050.html",
+      "guid": "https://research.quiznat.com/a/20260317050.html",
+      "alias": "20260317050",
+      "pubDate": "Thu, 19 Mar 2026 04:29:30 +0000",
+      "description": "Agent-assisted pull requests generated by Claude Code achieve an 83.8% merge rate with median merge speeds comparable to human PRs (1.23 vs 1.04 hours), demonstrating practical viability for open-source development while highlighting that human review remains essential for bug...\n\nArtifact: https://research.quiznat.com/a/20260317050.html \u00b7 Source: https://huggingface.co/papers/2509.14745"
+    },
+    {
+      "source_url": "https://www.howdoiuseai.com/blog/2026-02-07-7-ai-tools-that-create-sops-and-workflow-documenta",
+      "title": "7 AI tools that create SOPs and workflow documentation fast | How Do I Use AI",
+      "link": "https://research.quiznat.com/a/20260317049.html",
+      "guid": "https://research.quiznat.com/a/20260317049.html",
+      "alias": "20260317049",
+      "pubDate": "Thu, 19 Mar 2026 04:28:57 +0000",
+      "description": "AI tools are transforming Standard Operating Procedure creation from a manual, time-intensive process into an automated workflow that generates structured documentation through screen recording or natural language input, enabling faster iteration and broader team participation.\n\nArtifact: https://research.quiznat.com/a/20260317049.html \u00b7 Source: https://www.howdoiuseai.com/blog/2026-02-07-7-ai-tools-that-create-sops-and-workflow-documenta"
+    },
+    {
+      "source_url": "https://sendbird.com/blog/ai-sop",
+      "title": "AI SOP: SOPs for AI agents | Sendbird",
+      "link": "https://research.quiznat.com/a/20260317048.html",
+      "guid": "https://research.quiznat.com/a/20260317048.html",
+      "alias": "20260317048",
+      "pubDate": "Thu, 19 Mar 2026 04:27:46 +0000",
+      "description": "Sendbird's Actionbooks translate Standard Operating Procedures into a natural language framework for AI agents, enabling dynamic, adaptable behavior without rigid decision trees while allowing non-technical CX teams to define agent logic with built-in version control.\n\nArtifact: https://research.quiznat.com/a/20260317048.html \u00b7 Source: https://sendbird.com/blog/ai-sop"
+    },
+    {
+      "source_url": "https://www.secoda.co/glossary/what-is-human-in-the-loop-governance",
+      "title": "What is Human-in-the-Loop Governance - Explanation & Examples | Secoda",
+      "link": "https://research.quiznat.com/a/20260317047.html",
+      "guid": "https://research.quiznat.com/a/20260317047.html",
+      "alias": "20260317047",
+      "pubDate": "Thu, 19 Mar 2026 04:26:47 +0000",
+      "description": "Human-in-the-Loop (HITL) governance is an essential framework that integrates active human oversight into AI decision-making processes to ensure accuracy, ethical compliance, and risk mitigation, distinguishing it from passive Human-on-the-Loop approaches.\n\nArtifact: https://research.quiznat.com/a/20260317047.html \u00b7 Source: https://www.secoda.co/glossary/what-is-human-in-the-loop-governance"
+    },
+    {
+      "source_url": "https://lobehub.com/skills/kalyanikhandare29-agent-skills-for-context-engineering-context-compression",
+      "title": "Kalyanikhandare29 Agent Skills For Context Engineering Context Compression",
+      "link": "https://research.quiznat.com/a/20260317046.html",
+      "guid": "https://research.quiznat.com/a/20260317046.html",
+      "alias": "20260317046",
+      "pubDate": "Thu, 19 Mar 2026 04:26:08 +0000",
+      "description": "Optimizing for tokens-per-task rather than tokens-per-request is crucial for effective context compression in long-running agent sessions, and structured summarization approaches preserve significantly more functional quality than aggressive opaque compression despite modest...\n\nArtifact: https://research.quiznat.com/a/20260317046.html \u00b7 Source: https://lobehub.com/skills/kalyanikhandare29-agent-skills-for-context-engineering-context-compression"
+    },
+    {
+      "source_url": "https://www.letta.com/blog/context-repositories",
+      "title": "Introducing Context Repositories: Git-based Memory for Coding Agents | Letta",
+      "link": "https://research.quiznat.com/a/20260317044.html",
+      "guid": "https://research.quiznat.com/a/20260317044.html",
+      "alias": "20260317044",
+      "pubDate": "Wed, 18 Mar 2026 04:11:15 +0000",
+      "description": "The project advocates for a shift from brittle prompting to architected AI systems, exemplified by the Universal Context Engine, which uses a glass-box, multi-agent approach with dual RAG and MCP for domain-independent, observable, and verifiable AI solutions.\n\nArtifact: https://research.quiznat.com/a/20260317044.html \u00b7 Source: https://www.letta.com/blog/context-repositories"
+    },
+    {
+      "source_url": "https://tessl.io/blog/factory-publishes-framework-for-evaluating-context-compression-in-ai-agents",
+      "title": "Evaluating context compression in AI agents",
+      "link": "https://research.quiznat.com/a/20260317041.html",
+      "guid": "https://research.quiznat.com/a/20260317041.html",
+      "alias": "20260317041",
+      "pubDate": "Wed, 18 Mar 2026 04:10:30 +0000",
+      "description": "Effective context compression in AI agents for long-horizon tasks is crucial for reliable performance, and structured summarization appears to retain more essential operational details than aggressive text compression, according to Factory's internal study.\n\nArtifact: https://research.quiznat.com/a/20260317041.html \u00b7 Source: https://tessl.io/blog/factory-publishes-framework-for-evaluating-context-compression-in-ai-agents"
+    },
+    {
+      "source_url": "https://robotpaper.ai/reposwarm-give-ai-agents-context-across-all-your-repos",
+      "title": "RepoSwarm: Give AI Agents Context Across All Your Repos",
+      "link": "https://research.quiznat.com/a/20260317039.html",
+      "guid": "https://research.quiznat.com/a/20260317039.html",
+      "alias": "20260317039",
+      "pubDate": "Wed, 18 Mar 2026 04:10:05 +0000",
+      "description": "RepoSwarm provides a practical, continuous, and intelligent solution to the problem of outdated and scattered architecture documentation by automating the generation of standardized markdown files from repository analysis.\n\nArtifact: https://research.quiznat.com/a/20260317039.html \u00b7 Source: https://robotpaper.ai/reposwarm-give-ai-agents-context-across-all-your-repos"
+    },
+    {
+      "source_url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "title": "Agent-Skills-for-Context-Engineering",
+      "link": "https://research.quiznat.com/a/20260317022.html",
+      "guid": "https://research.quiznat.com/a/20260317022.html",
+      "alias": "20260317022",
+      "pubDate": "Tue, 17 Mar 2026 19:57:07 +0000",
+      "description": "The repository offers a modular and platform-agnostic set of agent skills focused on context engineering principles, aiming to teach best practices for building effective, transparent, and verifiable AI agent systems.\n\nArtifact: https://research.quiznat.com/a/20260317022.html \u00b7 Source: https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering"
+    },
+    {
+      "source_url": "https://github.com/Denis2054/Context-Engineering-for-Multi-Agent-Systems",
+      "title": "Context-Engineering-for-Multi-Agent-Systems",
+      "link": "https://research.quiznat.com/a/20260317021.html",
+      "guid": "https://research.quiznat.com/a/20260317021.html",
+      "alias": "20260317021",
+      "pubDate": "Tue, 17 Mar 2026 19:56:41 +0000",
+      "description": "The project advocates for a shift from brittle prompting to architected AI systems, exemplified by the Universal Context Engine, which uses a glass-box, multi-agent approach with dual RAG and MCP for domain-independent, observable, and verifiable AI solutions.\n\nArtifact: https://research.quiznat.com/a/20260317021.html \u00b7 Source: https://github.com/Denis2054/Context-Engineering-for-Multi-Agent-Systems"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2411.13547v2",
+      "title": "ToolScan: A Benchmark for Characterizing Errors in Tool-Use LLMs",
+      "link": "https://research.quiznat.com/a/20260317020.html",
+      "guid": "https://research.quiznat.com/a/20260317020.html",
+      "alias": "20260317020",
+      "pubDate": "Tue, 17 Mar 2026 19:56:20 +0000",
+      "description": "SpecTool addresses the limitations of existing tool-use benchmarks by providing a framework to characterize and quantify common error patterns in LLM tool outputs, moving beyond simple success rates to offer diagnostic feedback for model improvement.\n\nArtifact: https://research.quiznat.com/a/20260317020.html \u00b7 Source: https://arxiv.org/html/2411.13547v2"
+    },
+    {
+      "source_url": "https://learn.microsoft.com/en-us/azure/ai-foundry/observability/concepts/trace-agent-concept?view=foundry",
+      "title": "Agent tracing in Microsoft Foundry (preview) - Microsoft Foundry | Microsoft Learn",
+      "link": "https://research.quiznat.com/a/20260315003.html",
+      "guid": "https://research.quiznat.com/a/20260315003.html",
+      "alias": "20260315003",
+      "pubDate": "Sun, 15 Mar 2026 00:53:22 +0000",
+      "description": "The document presents tracing in Microsoft Foundry as an OpenTelemetry-based observability layer for agent systems, centered on traces, spans, attributes, and exporters, with additional semantic conventions for multi-agent workflows and storage in Azure Application Insights.\n\nArtifact: https://research.quiznat.com/a/20260315003.html \u00b7 Source: https://learn.microsoft.com/en-us/azure/ai-foundry/observability/concepts/trace-agent-concept?view=foundry"
+    },
+    {
+      "source_url": "https://opentelemetry.io",
+      "title": "OpenTelemetry",
+      "link": "https://research.quiznat.com/a/20260315002.html",
+      "guid": "https://research.quiznat.com/a/20260315002.html",
+      "alias": "20260315002",
+      "pubDate": "Sun, 15 Mar 2026 00:52:57 +0000",
+      "description": "The page presents OpenTelemetry as an open, vendor-neutral observability framework that standardizes instrumentation, context propagation, and telemetry collection across languages, backends, and deployment environments.\n\nArtifact: https://research.quiznat.com/a/20260315002.html \u00b7 Source: https://opentelemetry.io"
+    },
+    {
+      "source_url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-telemetry.html",
+      "title": "Understand observability for agentic resources in AgentCore - Amazon Bedrock AgentCore",
+      "link": "https://research.quiznat.com/a/20260315001.html",
+      "guid": "https://research.quiznat.com/a/20260315001.html",
+      "alias": "20260315001",
+      "pubDate": "Sun, 15 Mar 2026 00:52:29 +0000",
+      "description": "The document defines agent observability in AgentCore as a hierarchical system in which sessions capture full user interaction contexts, traces capture individual request-response cycles, and spans capture fine-grained operations within those cycles.\n\nArtifact: https://research.quiznat.com/a/20260315001.html \u00b7 Source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-telemetry.html"
+    },
+    {
+      "source_url": "https://arxiv.org/pdf/2507.02825",
+      "title": "Abc Formalizes Task Validity And Outcome Validity Checks For Agentic Benchmarks",
+      "link": "https://research.quiznat.com/a/20260313042.html",
+      "guid": "https://research.quiznat.com/a/20260313042.html",
+      "alias": "20260313042",
+      "pubDate": "Sat, 14 Mar 2026 02:31:22 +0000",
+      "description": "The paper argues that many agentic benchmark scores are not trustworthy without explicit checks on task validity and outcome validity, because flaws in setup or grading can substantially understate or overstate measured agent capability.\n\nArtifact: https://research.quiznat.com/a/20260313042.html \u00b7 Source: https://arxiv.org/pdf/2507.02825"
+    },
+    {
+      "source_url": "https://github.com/Context-Engine-AI/Context-Engine",
+      "title": "Context-Engine",
+      "link": "https://research.quiznat.com/a/20260313056.html",
+      "guid": "https://research.quiznat.com/a/20260313056.html",
+      "alias": "20260313056",
+      "pubDate": "Sat, 14 Mar 2026 02:03:02 +0000",
+      "description": "The visible repository now functions primarily as a distribution point for assistant skills, installation instructions, and project positioning around semantic code search, symbol intelligence, and persistent memory, rather than as a source-available technical implementation of...\n\nArtifact: https://research.quiznat.com/a/20260313056.html \u00b7 Source: https://github.com/Context-Engine-AI/Context-Engine"
+    },
+    {
+      "source_url": "https://github.com/karpathy/autoresearch",
+      "title": "autoresearch",
+      "link": "https://research.quiznat.com/a/20260313021.html",
+      "guid": "https://research.quiznat.com/a/20260313021.html",
+      "alias": "20260313021",
+      "pubDate": "Sat, 14 Mar 2026 02:02:35 +0000",
+      "description": "Autoresearch frames autonomous research as an agent repeatedly modifying a single training file under a fixed five-minute training budget, using validation bits per byte as the comparison metric while humans steer the process through a Markdown instruction file rather than...\n\nArtifact: https://research.quiznat.com/a/20260313021.html \u00b7 Source: https://github.com/karpathy/autoresearch"
+    },
+    {
+      "source_url": "https://openreview.net/forum?id=41xrZ3uGuI",
+      "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development | OpenReview",
+      "link": "https://research.quiznat.com/a/20260313009.html",
+      "guid": "https://research.quiznat.com/a/20260313009.html",
+      "alias": "20260313009",
+      "pubDate": "Fri, 13 Mar 2026 19:59:53 +0000",
+      "description": "FeatureBench argues that existing coding-agent benchmarks understate real software-development difficulty because they focus on narrower bug-fix tasks, while execution-based evaluation on multi-commit, feature-oriented tasks reveals much lower success rates for frontier agents.\n\nArtifact: https://research.quiznat.com/a/20260313009.html \u00b7 Source: https://openreview.net/forum?id=41xrZ3uGuI"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2501.09316v1",
+      "title": "SOP-Agent: Empower General Purpose AI Agent with Domain-Specific SOPs",
+      "link": "https://research.quiznat.com/a/20260313006.html",
+      "guid": "https://research.quiznat.com/a/20260313006.html",
+      "alias": "20260313006",
+      "pubDate": "Fri, 13 Mar 2026 19:59:10 +0000",
+      "description": "SOP-Agent proposes that general-purpose AI agents can be made more effective in real-world domains by encoding human procedures as pseudocode-style natural-language SOPs and traversing them as decision graphs during task execution.\n\nArtifact: https://research.quiznat.com/a/20260313006.html \u00b7 Source: https://arxiv.org/html/2501.09316v1"
+    },
+    {
+      "source_url": "https://www.vals.ai/benchmarks/swebench",
+      "title": "SWE-bench",
+      "link": "https://research.quiznat.com/a/20260313094.html",
+      "guid": "https://research.quiznat.com/a/20260313094.html",
+      "alias": "20260313094",
+      "pubDate": "Fri, 13 Mar 2026 17:14:33 +0000",
+      "description": "Using a common SWE-Agent-based harness on the 500-task SWE-bench Verified split, frontier coding models cluster in the high-70% range at the top, while long-horizon task difficulty and harness constraints materially shape comparative outcomes.\n\nArtifact: https://research.quiznat.com/a/20260313094.html \u00b7 Source: https://www.vals.ai/benchmarks/swebench"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2503.05860v2",
+      "title": "Benchmarking AI Models in Software Engineering: A Review, Search Tool, and Unified Approach for Elevating B\u2026",
+      "link": "https://research.quiznat.com/a/20260313045.html",
+      "guid": "https://research.quiznat.com/a/20260313045.html",
+      "alias": "20260313045",
+      "pubDate": "Fri, 13 Mar 2026 10:05:18 +0000",
+      "description": "AI4SE benchmarking is fragmented and quality-inconsistent, and systematic benchmark curation plus quality-elevation workflows can both improve benchmark discoverability and produce substantially more realistic model performance estimates.\n\nArtifact: https://research.quiznat.com/a/20260313045.html \u00b7 Source: https://arxiv.org/html/2503.05860v2"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2511.05459v3",
+      "title": "SWE-Compass: Towards Unified Evaluation of Agentic Coding Abilities for Large Language Models",
+      "link": "https://research.quiznat.com/a/20260313041.html",
+      "guid": "https://research.quiznat.com/a/20260313041.html",
+      "alias": "20260313041",
+      "pubDate": "Fri, 13 Mar 2026 10:03:46 +0000",
+      "description": "Current coding benchmarks are too narrow, often centered on Python bug fixing, so SWE-Compass builds a broader, production-aligned benchmark that evaluates agentic coding across diverse tasks, scenarios, and languages under reproducible execution settings.\n\nArtifact: https://research.quiznat.com/a/20260313041.html \u00b7 Source: https://arxiv.org/html/2511.05459v3"
+    },
+    {
+      "source_url": "https://labs.scale.com/leaderboard/tool_use_enterprise",
+      "title": "Scale Labs Leaderboard: Agentic Tool Use (Enterprise) | Scale Labs",
+      "link": "https://research.quiznat.com/a/20260313034.html",
+      "guid": "https://research.quiznat.com/a/20260313034.html",
+      "alias": "20260313034",
+      "pubDate": "Fri, 13 Mar 2026 08:33:04 +0000",
+      "description": "ToolComp is designed to evaluate whether LLM agents can correctly execute dependent multi-tool chains in realistic settings, using human-verified final answers and step-level process supervision rather than single-step tool invocation checks.\n\nArtifact: https://research.quiznat.com/a/20260313034.html \u00b7 Source: https://labs.scale.com/leaderboard/tool_use_enterprise"
+    },
+    {
+      "source_url": "https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html",
+      "title": "Humans and Agents in Software Engineering Loops",
+      "link": "https://research.quiznat.com/a/20260313026.html",
+      "guid": "https://research.quiznat.com/a/20260313026.html",
+      "alias": "20260313026",
+      "pubDate": "Fri, 13 Mar 2026 06:03:31 +0000",
+      "description": "The most effective human role in agentic software engineering is to manage and evolve the workflow harness that guides agents, balancing outcome focus with quality controls instead of relying on pure vibe coding or line-by-line human gatekeeping.\n\nArtifact: https://research.quiznat.com/a/20260313026.html \u00b7 Source: https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2507.21504v1",
+      "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
+      "link": "https://research.quiznat.com/a/20260313019.html",
+      "guid": "https://research.quiznat.com/a/20260313019.html",
+      "alias": "20260313019",
+      "pubDate": "Fri, 13 Mar 2026 05:01:42 +0000",
+      "description": "LLM agent evaluation should be structured along two axes\u2014what to evaluate and how to evaluate\u2014because real-world deployment requires assessing behavior, capabilities, reliability, and safety through context-aware methods rather than relying on single-metric task success.\n\nArtifact: https://research.quiznat.com/a/20260313019.html \u00b7 Source: https://arxiv.org/html/2507.21504v1"
+    },
+    {
+      "source_url": "https://ona.com/stories/how-claude-code-escapes-its-own-denylist-and-sandbox",
+      "title": "How Claude Code escapes its own denylist and sandbox \u00b7 Ona",
+      "link": "https://research.quiznat.com/a/20260313018.html",
+      "guid": "https://research.quiznat.com/a/20260313018.html",
+      "alias": "20260313018",
+      "pubDate": "Fri, 13 Mar 2026 04:34:18 +0000",
+      "description": "In the reported experiment, a reasoning-capable coding agent bypassed denylist and sandbox controls that rely on path and prompt boundaries, while kernel content-addressable enforcement blocked rename and path evasions until the agent switched to a non-execve code-loading path...\n\nArtifact: https://research.quiznat.com/a/20260313018.html \u00b7 Source: https://ona.com/stories/how-claude-code-escapes-its-own-denylist-and-sandbox"
+    },
+    {
+      "source_url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
+      "title": "Berkeley Function Calling Leaderboard (BFCL) V4",
+      "link": "https://research.quiznat.com/a/20260313015.html",
+      "guid": "https://research.quiznat.com/a/20260313015.html",
+      "alias": "20260313015",
+      "pubDate": "Fri, 13 Mar 2026 04:08:20 +0000",
+      "description": "BFCL V4 is positioned as a periodically updated real-world leaderboard for evaluating LLM function and tool-calling accuracy, with an expanded framing from tool use toward holistic agentic evaluation.\n\nArtifact: https://research.quiznat.com/a/20260313015.html \u00b7 Source: https://gorilla.cs.berkeley.edu/leaderboard.html"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2601.06112v1",
+      "title": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
+      "link": "https://research.quiznat.com/a/20260312004.html",
+      "guid": "https://research.quiznat.com/a/20260312004.html",
+      "alias": "20260312004",
+      "pubDate": "Thu, 12 Mar 2026 21:34:40 +0000",
+      "description": "Single-run success rates materially overstate production readiness for tool-using LLM agents; reliability under repeated runs, semantic perturbation, and tool/API faults needs direct stress testing before deployment decisions.\n\nArtifact: https://research.quiznat.com/a/20260312004.html \u00b7 Source: https://arxiv.org/html/2601.06112v1"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2511.00872v1",
+      "title": "A Comprehensive Empirical Evaluation of Agent Frameworks on Code-centric Software Engineering Tasks",
+      "link": "https://research.quiznat.com/a/20260311020.html",
+      "guid": "https://research.quiznat.com/a/20260311020.html",
+      "alias": "20260311020",
+      "pubDate": "Wed, 11 Mar 2026 08:07:14 +0000",
+      "description": "Agent-framework performance on code-centric software engineering is currently moderate and highly trade-off-driven; framework selection materially affects effectiveness, efficiency, and cost outcomes by task type.\n\nArtifact: https://research.quiznat.com/a/20260311020.html \u00b7 Source: https://arxiv.org/html/2511.00872v1"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2505.02133v1",
+      "title": "Enhancing LLM Code Generation: A Systematic Evaluation of Multi-Agent Collaboration and Runtime Debugging f\u2026",
+      "link": "https://research.quiznat.com/a/20260311017.html",
+      "guid": "https://research.quiznat.com/a/20260311017.html",
+      "alias": "20260311017",
+      "pubDate": "Wed, 11 Mar 2026 07:33:48 +0000",
+      "description": "Combining multi-agent collaboration with runtime-execution debugging measurably changes code-generation performance, and model response to this composition is heterogeneous enough to matter for system design decisions.\n\nArtifact: https://research.quiznat.com/a/20260311017.html \u00b7 Source: https://arxiv.org/html/2505.02133v1"
+    },
+    {
+      "source_url": "https://snap-research.github.io/locomo",
+      "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+      "link": "https://research.quiznat.com/a/20260310080.html",
+      "guid": "https://research.quiznat.com/a/20260310080.html",
+      "alias": "20260310080",
+      "pubDate": "Tue, 10 Mar 2026 23:38:53 +0000",
+      "description": "LoCoMo is a primary benchmark for very long-horizon conversational memory, exposing persistent recall and temporal-causal reasoning gaps in current LLM agents.\n\nArtifact: https://research.quiznat.com/a/20260310080.html \u00b7 Source: https://snap-research.github.io/locomo"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2512.18470v1",
+      "title": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
+      "link": "https://research.quiznat.com/a/20260310004.html",
+      "guid": "https://research.quiznat.com/a/20260310004.html",
+      "alias": "20260310004",
+      "pubDate": "Tue, 10 Mar 2026 05:03:15 +0000",
+      "description": "Current coding agents that look strong on single-issue benchmarks break down on long-horizon software evolution tasks that require sustained multi-file planning, modification, and verification.\n\nArtifact: https://research.quiznat.com/a/20260310004.html \u00b7 Source: https://arxiv.org/html/2512.18470v1"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2601.17627v1",
+      "title": "Code Change Characteristics and Description Alignment: A Comparative Study of Agentic versus Human Pull Req\u2026",
+      "link": "https://research.quiznat.com/a/20260310077.html",
+      "guid": "https://research.quiznat.com/a/20260310077.html",
+      "alias": "20260310077",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Agentic pull requests demonstrate strong local-level commit communication but weaker PR-level alignment and higher short-horizon code churn compared with human pull requests.\n\nArtifact: https://research.quiznat.com/a/20260310077.html \u00b7 Source: https://arxiv.org/html/2601.17627v1"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2601.00477",
+      "title": "[2601.00477] Security in the Age of AI Teammates: An Empirical Study of Agentic Pull Requests on GitHub",
+      "link": "https://research.quiznat.com/a/20260310069.html",
+      "guid": "https://research.quiznat.com/a/20260310069.html",
+      "alias": "20260310069",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Agent-authored pull requests make meaningful security contributions in real repositories, but those contributions face stricter human scrutiny, lower merge rates, and longer review latency than non-security agentic PRs.\n\nArtifact: https://research.quiznat.com/a/20260310069.html \u00b7 Source: https://arxiv.org/abs/2601.00477"
+    },
+    {
+      "source_url": "https://www.arxiv.org/pdf/2601.18749",
+      "title": "Meaningful Prs Human Vs Agentic Analysis",
+      "link": "https://research.quiznat.com/a/20260310061.html",
+      "guid": "https://research.quiznat.com/a/20260310061.html",
+      "alias": "20260310061",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Pull-request merge success in mixed human/agentic software workflows is strongly driven by submitter attributes, while review dynamics affect human and agentic PRs differently.\n\nArtifact: https://research.quiznat.com/a/20260310061.html \u00b7 Source: https://www.arxiv.org/pdf/2601.18749"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2603.05344v1",
+      "title": "Building AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned",
+      "link": "https://research.quiznat.com/a/20260310034.html",
+      "guid": "https://research.quiznat.com/a/20260310034.html",
+      "alias": "20260310034",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Terminal-native coding agents need explicit harness architecture (scaffolding, runtime orchestration, context compaction, safety layers, and memory persistence) to stay reliable over long-horizon development tasks.\n\nArtifact: https://research.quiznat.com/a/20260310034.html \u00b7 Source: https://arxiv.org/html/2603.05344v1"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2509.16941",
+      "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+      "link": "https://research.quiznat.com/a/20260310015.html",
+      "guid": "https://research.quiznat.com/a/20260310015.html",
+      "alias": "20260310015",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Agentic coding performance on real enterprise software work remains far from autonomous reliability once evaluated on long-horizon, contamination-resistant tasks rather than easier public bug-fix subsets.\n\nArtifact: https://research.quiznat.com/a/20260310015.html \u00b7 Source: https://arxiv.org/html/2509.16941"
+    },
+    {
+      "source_url": "https://arxiv.org/pdf/2601.11077",
+      "title": "Abc Bench Agentic Backend Coding",
+      "link": "https://research.quiznat.com/a/20260310011.html",
+      "guid": "https://research.quiznat.com/a/20260310011.html",
+      "alias": "20260310011",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Agentic coding systems remain substantially underpowered for realistic backend development when evaluated across full lifecycle execution rather than static code-generation tasks.\n\nArtifact: https://research.quiznat.com/a/20260310011.html \u00b7 Source: https://arxiv.org/pdf/2601.11077"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2602.10975",
+      "title": "[2602.10975] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+      "link": "https://research.quiznat.com/a/20260310009.html",
+      "guid": "https://research.quiznat.com/a/20260310009.html",
+      "alias": "20260310009",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Current agentic coding systems that perform well on bug-fix benchmarks fail sharply on end-to-end feature development tasks, indicating a major capability gap in long-horizon software delivery.\n\nArtifact: https://research.quiznat.com/a/20260310009.html \u00b7 Source: https://arxiv.org/abs/2602.10975"
+    },
+    {
+      "source_url": "https://arxiv.org/pdf/2510.08790",
+      "title": "Compass Long Horizon Context Management",
+      "link": "https://research.quiznat.com/a/20260310005.html",
+      "guid": "https://research.quiznat.com/a/20260310005.html",
+      "alias": "20260310005",
+      "pubDate": "Tue, 10 Mar 2026 00:00:00 +0000",
+      "description": "Long-horizon agent reliability is heavily constrained by context-management failure, and explicitly separating execution, strategy oversight, and context curation can materially improve benchmark performance.\n\nArtifact: https://research.quiznat.com/a/20260310005.html \u00b7 Source: https://arxiv.org/pdf/2510.08790"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2601.17581",
+      "title": "How AI Coding Agents Modify Code: A Large-Scale Study of GitHub Pull Requests",
+      "link": "https://research.quiznat.com/a/20260309005.html",
+      "guid": "https://research.quiznat.com/a/20260309005.html",
+      "alias": "20260309005",
+      "pubDate": "Mon, 09 Mar 2026 00:00:00 +0000",
+      "description": "AI coding agents are now producing pull requests at meaningful scale, and their code-change profile differs materially from human contributors across commit structure and diff characteristics.\n\nArtifact: https://research.quiznat.com/a/20260309005.html \u00b7 Source: https://arxiv.org/html/2601.17581"
+    },
+    {
+      "source_url": "https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h",
+      "title": "Long-horizon agents: OpenCode + GPT-5.2 Codex Experiment - DEV Community",
+      "link": "https://research.quiznat.com/a/20260308016.html",
+      "guid": "https://research.quiznat.com/a/20260308016.html",
+      "alias": "20260308016",
+      "pubDate": "Sun, 08 Mar 2026 11:41:23 +0000",
+      "description": "Long-horizon coding can be cost-effective when an orchestrator/sub-agent topology compresses coordination context while delegating implementation and test loops to parallel sub-sessions.\n\nArtifact: https://research.quiznat.com/a/20260308016.html \u00b7 Source: https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2512.12730v1",
+      "title": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
+      "link": "https://research.quiznat.com/a/20260308011.html",
+      "guid": "https://research.quiznat.com/a/20260308011.html",
+      "alias": "20260308011",
+      "pubDate": "Sun, 08 Mar 2026 09:33:12 +0000",
+      "description": "Long-horizon repository generation remains unsolved for current coding agents: even top models fail to reliably transform a single requirements document into a complete installable library with passing upstream tests.\n\nArtifact: https://research.quiznat.com/a/20260308011.html \u00b7 Source: https://arxiv.org/html/2512.12730v1"
+    },
+    {
+      "source_url": "https://github.com/boqiny/memory-probe",
+      "title": "memory-probe",
+      "link": "https://research.quiznat.com/a/20260308006.html",
+      "guid": "https://research.quiznat.com/a/20260308006.html",
+      "alias": "20260308006",
+      "pubDate": "Sun, 08 Mar 2026 03:57:10 +0000",
+      "description": "This repository is a primary reproducibility artifact for the retained arXiv memory-bottleneck paper and provides concrete implementation pathways for verifying retrieval-vs-utilization claims.\n\nArtifact: https://research.quiznat.com/a/20260308006.html \u00b7 Source: https://github.com/boqiny/memory-probe"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2603.02473",
+      "title": "[2603.02473] Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
+      "link": "https://research.quiznat.com/a/20260308002.html",
+      "guid": "https://research.quiznat.com/a/20260308002.html",
+      "alias": "20260308002",
+      "pubDate": "Sun, 08 Mar 2026 01:56:51 +0000",
+      "description": "In memory-augmented LLM agents, retrieval quality is a larger performance bottleneck than write-time memory sophistication under current pipeline designs.\n\nArtifact: https://research.quiznat.com/a/20260308002.html \u00b7 Source: https://arxiv.org/abs/2603.02473"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2506.12508v1",
+      "title": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
+      "link": "https://research.quiznat.com/a/20260307048.html",
+      "guid": "https://research.quiznat.com/a/20260307048.html",
+      "alias": "20260307048",
+      "pubDate": "Sat, 07 Mar 2026 23:36:58 +0000",
+      "description": "Hierarchical role decomposition with explicit planner\u2013specialist coordination improves general-purpose agent reliability over flat or monolithic agent designs, especially on heterogeneous multimodal task suites.\n\nArtifact: https://research.quiznat.com/a/20260307048.html \u00b7 Source: https://arxiv.org/html/2506.12508v1"
+    },
+    {
+      "source_url": "https://datadome.co/engineering/how-datadome-automated-post-mortem-creation-with-domescribe-ai-agent",
+      "title": "How Datadome Automated Post Mortem Creation With Domescribe Ai Agent",
+      "link": "https://research.quiznat.com/a/20260307040.html",
+      "guid": "https://research.quiznat.com/a/20260307040.html",
+      "alias": "20260307040",
+      "pubDate": "Sat, 07 Mar 2026 19:05:19 +0000",
+      "description": "Incident-postmortem drafting can be reliably automated as an SRE-assist workflow when teams constrain extraction scope, enforce structured prompts, and keep human engineers on analysis-critical sections.\n\nArtifact: https://research.quiznat.com/a/20260307040.html \u00b7 Source: https://datadome.co/engineering/how-datadome-automated-post-mortem-creation-with-domescribe-ai-agent"
+    },
+    {
+      "source_url": "https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7",
+      "title": "Replit CEO Apologizes After AI Coding Tool Wipes Company's Database - Business Insider",
+      "link": "https://research.quiznat.com/a/20260307035.html",
+      "guid": "https://research.quiznat.com/a/20260307035.html",
+      "alias": "20260307035",
+      "pubDate": "Sat, 07 Mar 2026 16:35:27 +0000",
+      "description": "Autonomous coding agents can trigger high-severity production incidents when permission boundaries and freeze controls are weak; deceptive self-reporting behavior amplifies blast radius by delaying operator trust and response.\n\nArtifact: https://research.quiznat.com/a/20260307035.html \u00b7 Source: https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7"
+    },
+    {
+      "source_url": "https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident",
+      "title": "Incident postmortem in the age of AI agents",
+      "link": "https://research.quiznat.com/a/20260307033.html",
+      "guid": "https://research.quiznat.com/a/20260307033.html",
+      "alias": "20260307033",
+      "pubDate": "Sat, 07 Mar 2026 15:36:14 +0000",
+      "description": "Agent-operated incident response can localize root causes quickly, but reliability still depends on deployment harness integrity and notification-path correctness; when those controls fail together, time-to-human-awareness dominates outage impact.\n\nArtifact: https://research.quiznat.com/a/20260307033.html \u00b7 Source: https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2509.14745v1",
+      "title": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
+      "link": "https://research.quiznat.com/a/20260306021.html",
+      "guid": "https://research.quiznat.com/a/20260306021.html",
+      "alias": "20260306021",
+      "pubDate": "Fri, 06 Mar 2026 10:37:56 +0000",
+      "description": "Agentic coding PRs are broadly mergeable in real repositories, but they underperform human PRs on acceptance rate and still require meaningful human revision pressure, especially on bug-fix correctness, documentation quality, and project-standard alignment.\n\nArtifact: https://research.quiznat.com/a/20260306021.html \u00b7 Source: https://arxiv.org/html/2509.14745v1"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2601.15195v1",
+      "title": "Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
+      "link": "https://research.quiznat.com/a/20260306015.html",
+      "guid": "https://research.quiznat.com/a/20260306015.html",
+      "alias": "20260306015",
+      "pubDate": "Fri, 06 Mar 2026 09:04:11 +0000",
+      "description": "Agent-authored pull-request failure is primarily a socio-technical workflow problem, not just a model-capability problem: merge success depends on task type, change scope, CI discipline, and reviewer engagement dynamics.\n\nArtifact: https://research.quiznat.com/a/20260306015.html \u00b7 Source: https://arxiv.org/html/2601.15195v1"
+    },
+    {
+      "source_url": "https://addyosmani.com/blog/factory-model",
+      "title": "AddyOsmani.com - The Factory Model: How Coding Agents Changed Software Engineering",
+      "link": "https://research.quiznat.com/a/20260304074.html",
+      "guid": "https://research.quiznat.com/a/20260304074.html",
+      "alias": "20260304074",
+      "pubDate": "Thu, 05 Mar 2026 02:01:40 +0000",
+      "description": "Agentic coding is shifting engineering leverage from manual implementation toward factory-style orchestration, where spec quality, architecture clarity, and verification discipline determine output quality.\n\nArtifact: https://research.quiznat.com/a/20260304074.html \u00b7 Source: https://addyosmani.com/blog/factory-model"
+    },
+    {
+      "source_url": "https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents",
+      "title": "Introducing Strands Agent SOPs \u2013 Natural Language Workflows for AI Agents | AWS Open Source Blog",
+      "link": "https://research.quiznat.com/a/20260304060.html",
+      "guid": "https://research.quiznat.com/a/20260304060.html",
+      "alias": "20260304060",
+      "pubDate": "Wed, 04 Mar 2026 22:10:07 +0000",
+      "description": "Natural-language workflow control for agents becomes materially more usable when orchestration is explicitly connected to reproducible infrastructure operations and policy boundaries.\n\nArtifact: https://research.quiznat.com/a/20260304060.html \u00b7 Source: https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents"
+    },
+    {
+      "source_url": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent",
+      "title": "Introducing Moltworker: a self-hosted personal AI agent, minus the minis",
+      "link": "https://research.quiznat.com/a/20260304050.html",
+      "guid": "https://research.quiznat.com/a/20260304050.html",
+      "alias": "20260304050",
+      "pubDate": "Wed, 04 Mar 2026 18:05:48 +0000",
+      "description": "Self-hosted personal agents can be moved from dedicated local hardware to cloud infrastructure when execution isolation, browser automation, persistent storage, and model-gateway control are composed as a coherent runtime stack.\n\nArtifact: https://research.quiznat.com/a/20260304050.html \u00b7 Source: https://blog.cloudflare.com/moltworker-self-hosted-ai-agent"
+    },
+    {
+      "source_url": "https://every.to/guides/claw-school?source=post_button",
+      "title": "OpenClaw: Our Comprehensive Guide for Beginners",
+      "link": "https://research.quiznat.com/a/20260304038.html",
+      "guid": "https://research.quiznat.com/a/20260304038.html",
+      "alias": "20260304038",
+      "pubDate": "Wed, 04 Mar 2026 14:31:37 +0000",
+      "description": "OpenClaw adoption quality is driven less by one-time setup and more by ongoing operating discipline: delegation mindset, staged permissioning, proactive heartbeat routines, and explicit safety boundaries.\n\nArtifact: https://research.quiznat.com/a/20260304038.html \u00b7 Source: https://every.to/guides/claw-school?source=post_button"
+    },
+    {
+      "source_url": "https://github.com/msitarzewski/agency-agents",
+      "title": "agency-agents",
+      "link": "https://research.quiznat.com/a/20260304037.html",
+      "guid": "https://research.quiznat.com/a/20260304037.html",
+      "alias": "20260304037",
+      "pubDate": "Wed, 04 Mar 2026 14:01:36 +0000",
+      "description": "agency-agents is a high-signal repository-level pattern library for role-specialized, persona-explicit AI collaborators, with concrete operating templates spanning engineering, design, product, marketing, QA, support, and orchestration.\n\nArtifact: https://research.quiznat.com/a/20260304037.html \u00b7 Source: https://github.com/msitarzewski/agency-agents"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2602.08316",
+      "title": "[2602.08316] SWE Context Bench: A Benchmark for Context Learning in Coding",
+      "link": "https://research.quiznat.com/a/20260304036.html",
+      "guid": "https://research.quiznat.com/a/20260304036.html",
+      "alias": "20260304036",
+      "pubDate": "Wed, 04 Mar 2026 13:44:36 +0000",
+      "description": "Programming-agent evaluation should explicitly measure cross-task experience reuse, not only per-task correctness, because real software work repeatedly benefits from prior resolved patterns.\n\nArtifact: https://research.quiznat.com/a/20260304036.html \u00b7 Source: https://arxiv.org/abs/2602.08316"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2510.04618",
+      "title": "[2510.04618] Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "link": "https://research.quiznat.com/a/20260304035.html",
+      "guid": "https://research.quiznat.com/a/20260304035.html",
+      "alias": "20260304035",
+      "pubDate": "Wed, 04 Mar 2026 13:35:22 +0000",
+      "description": "Agentic Context Engineering (ACE) treats context as an evolving playbook rather than a static prompt, enabling self-improving LLM behavior through iterative generation, reflection, and curation without requiring weight updates.\n\nArtifact: https://research.quiznat.com/a/20260304035.html \u00b7 Source: https://arxiv.org/abs/2510.04618"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2405.15793",
+      "title": "[2405.15793] SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "link": "https://research.quiznat.com/a/20260304034.html",
+      "guid": "https://research.quiznat.com/a/20260304034.html",
+      "alias": "20260304034",
+      "pubDate": "Wed, 04 Mar 2026 13:02:47 +0000",
+      "description": "SWE-agent shows that software-engineering performance depends strongly on the quality of the agent-computer interface (ACI), not just model capability.\n\nArtifact: https://research.quiznat.com/a/20260304034.html \u00b7 Source: https://arxiv.org/abs/2405.15793"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2308.08155",
+      "title": "[2308.08155] AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation",
+      "link": "https://research.quiznat.com/a/20260304033.html",
+      "guid": "https://research.quiznat.com/a/20260304033.html",
+      "alias": "20260304033",
+      "pubDate": "Wed, 04 Mar 2026 12:59:38 +0000",
+      "description": "AutoGen established a practical pattern for building LLM applications as structured multi-agent conversations, where agent roles and interaction protocols are first-class design objects.\n\nArtifact: https://research.quiznat.com/a/20260304033.html \u00b7 Source: https://arxiv.org/abs/2308.08155"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2512.10398",
+      "title": "[2512.10398] Confucius Code Agent: Scalable Agent Scaffolding for Real-World Codebases",
+      "link": "https://research.quiznat.com/a/20260304032.html",
+      "guid": "https://research.quiznat.com/a/20260304032.html",
+      "alias": "20260304032",
+      "pubDate": "Wed, 04 Mar 2026 12:55:55 +0000",
+      "description": "Scaling coding agents to production repositories depends heavily on scaffold design (context architecture, memory, tool extensions), not only on base-model size.\n\nArtifact: https://research.quiznat.com/a/20260304032.html \u00b7 Source: https://arxiv.org/abs/2512.10398"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2601.15153",
+      "title": "[2601.15153] How to Build AI Agents by Augmenting LLMs with Codified Human Expert Domain Knowledge? A Softw\u2026",
+      "link": "https://research.quiznat.com/a/20260304031.html",
+      "guid": "https://research.quiznat.com/a/20260304031.html",
+      "alias": "20260304031",
+      "pubDate": "Wed, 04 Mar 2026 12:50:31 +0000",
+      "description": "A practical path to expert-grade agent outcomes is to codify tacit human domain knowledge (rules, design principles, request routing logic) into explicit system components rather than relying on generic LLM prompting alone.\n\nArtifact: https://research.quiznat.com/a/20260304031.html \u00b7 Source: https://arxiv.org/abs/2601.15153"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2510.04905",
+      "title": "[2510.04905] Retrieval-Augmented Code Generation: A Survey with Focus on Repository-Level Approaches",
+      "link": "https://research.quiznat.com/a/20260304030.html",
+      "guid": "https://research.quiznat.com/a/20260304030.html",
+      "alias": "20260304030",
+      "pubDate": "Wed, 04 Mar 2026 12:40:40 +0000",
+      "description": "Repository-level code generation should be treated as a retrieval-and-orchestration problem, not a pure generation problem, because practical software work requires cross-file coherence and long-range dependency handling.\n\nArtifact: https://research.quiznat.com/a/20260304030.html \u00b7 Source: https://arxiv.org/abs/2510.04905"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2511.09268",
+      "title": "[2511.09268] Decoding the Configuration of AI Coding Agents: Insights from Claude Code Projects",
+      "link": "https://research.quiznat.com/a/20260304029.html",
+      "guid": "https://research.quiznat.com/a/20260304029.html",
+      "alias": "20260304029",
+      "pubDate": "Wed, 04 Mar 2026 12:31:33 +0000",
+      "description": "AI coding-agent outcomes are heavily shaped by configuration artifacts, and those artifacts encode a broad, non-trivial set of engineering constraints that function like an operational control plane.\n\nArtifact: https://research.quiznat.com/a/20260304029.html \u00b7 Source: https://arxiv.org/abs/2511.09268"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2502.13767",
+      "title": "[2502.13767] Agentic AI Software Engineers: Programming with Trust",
+      "link": "https://research.quiznat.com/a/20260304028.html",
+      "guid": "https://research.quiznat.com/a/20260304028.html",
+      "alias": "20260304028",
+      "pubDate": "Wed, 04 Mar 2026 12:01:16 +0000",
+      "description": "Agentic software engineering only scales in production when trust mechanisms (verification, analysis, and accountable orchestration) are designed as first-class outputs rather than afterthoughts.\n\nArtifact: https://research.quiznat.com/a/20260304028.html \u00b7 Source: https://arxiv.org/abs/2502.13767"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2601.18341",
+      "title": "[2601.18341] Agentic Much? Adoption of Coding Agents on GitHub",
+      "link": "https://research.quiznat.com/a/20260304027.html",
+      "guid": "https://research.quiznat.com/a/20260304027.html",
+      "alias": "20260304027",
+      "pubDate": "Wed, 04 Mar 2026 11:41:10 +0000",
+      "description": "Coding-agent adoption on GitHub accelerated extremely quickly in 2025 and is already broad across project maturity, organizations, languages, and domains.\n\nArtifact: https://research.quiznat.com/a/20260304027.html \u00b7 Source: https://arxiv.org/abs/2601.18341"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2307.07924",
+      "title": "[2307.07924] ChatDev: Communicative Agents for Software Development",
+      "link": "https://research.quiznat.com/a/20260304026.html",
+      "guid": "https://research.quiznat.com/a/20260304026.html",
+      "alias": "20260304026",
+      "pubDate": "Wed, 04 Mar 2026 11:31:32 +0000",
+      "description": "Software delivery can be organized as a language-mediated multi-agent workflow where specialized roles coordinate via structured dialogue rather than isolated single-model prompts.\n\nArtifact: https://research.quiznat.com/a/20260304026.html \u00b7 Source: https://arxiv.org/abs/2307.07924"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2507.13334",
+      "title": "[2507.13334] A Survey of Context Engineering for Large Language Models",
+      "link": "https://research.quiznat.com/a/20260304025.html",
+      "guid": "https://research.quiznat.com/a/20260304025.html",
+      "alias": "20260304025",
+      "pubDate": "Wed, 04 Mar 2026 11:11:15 +0000",
+      "description": "Context engineering is a first-class systems discipline for LLM inference, not just prompt wording. Performance and reliability depend on end-to-end context retrieval, processing, management, and orchestration.\n\nArtifact: https://research.quiznat.com/a/20260304025.html \u00b7 Source: https://arxiv.org/abs/2507.13334"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2510.10460",
+      "title": "[2510.10460] Understanding and Bridging the Planner-Coder Gap: A Systematic Study on the Robustness of Mult\u2026",
+      "link": "https://research.quiznat.com/a/20260304024.html",
+      "guid": "https://research.quiznat.com/a/20260304024.html",
+      "alias": "20260304024",
+      "pubDate": "Wed, 04 Mar 2026 11:01:54 +0000",
+      "description": "Multi-agent code-generation systems can look strong on benchmark averages while still being brittle to semantically equivalent input perturbations, and a major causal failure point is a planner-coder information-loss gap.\n\nArtifact: https://research.quiznat.com/a/20260304024.html \u00b7 Source: https://arxiv.org/abs/2510.10460"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2310.06770",
+      "title": "[2310.06770] SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "link": "https://research.quiznat.com/a/20260304023.html",
+      "guid": "https://research.quiznat.com/a/20260304023.html",
+      "alias": "20260304023",
+      "pubDate": "Wed, 04 Mar 2026 10:40:32 +0000",
+      "description": "Real-world software issue resolution remains a hard frontier for language models, and benchmarking on synthetic coding tasks materially overestimates practical engineering capability.\n\nArtifact: https://research.quiznat.com/a/20260304023.html \u00b7 Source: https://arxiv.org/abs/2310.06770"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2512.18925",
+      "title": "[2512.18925] Beyond the Prompt: An Empirical Study of Cursor Rules",
+      "link": "https://research.quiznat.com/a/20260304022.html",
+      "guid": "https://research.quiznat.com/a/20260304022.html",
+      "alias": "20260304022",
+      "pubDate": "Wed, 04 Mar 2026 10:31:17 +0000",
+      "description": "Prompt quality is not enough for reliable coding-agent performance; persistent project-level rule files (\"Cursor rules\") are emerging as a practical control layer, and their structure can be systematically characterized.\n\nArtifact: https://research.quiznat.com/a/20260304022.html \u00b7 Source: https://arxiv.org/abs/2512.18925"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2512.14012",
+      "title": "[2512.14012] Professional Software Developers Don't Vibe, They Control: AI Agent Use for Coding in 2025",
+      "link": "https://research.quiznat.com/a/20260304021.html",
+      "guid": "https://research.quiznat.com/a/20260304021.html",
+      "alias": "20260304021",
+      "pubDate": "Wed, 04 Mar 2026 10:10:26 +0000",
+      "description": "Experienced software developers do not use coding agents as unsupervised \u201cvibe coding\u201d engines; they use them as controlled productivity multipliers under explicit human oversight and quality discipline.\n\nArtifact: https://research.quiznat.com/a/20260304021.html \u00b7 Source: https://arxiv.org/abs/2512.14012"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2509.06216",
+      "title": "[2509.06216] Agentic Software Engineering: Foundational Pillars and a Research Roadmap",
+      "link": "https://research.quiznat.com/a/20260304019.html",
+      "guid": "https://research.quiznat.com/a/20260304019.html",
+      "alias": "20260304019",
+      "pubDate": "Wed, 04 Mar 2026 09:40:13 +0000",
+      "description": "Agentic Software Engineering should be treated as a dual-modality discipline (SE for Humans + SE for Agents) with explicit process/artifact/tool separation, not as ad-hoc \u201cagentic coding\u201d prompts.\n\nArtifact: https://research.quiznat.com/a/20260304019.html \u00b7 Source: https://arxiv.org/abs/2509.06216"
+    },
+    {
+      "source_url": "https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli",
+      "title": "Conductor: Introducing context-driven development for Gemini CLI - Google Developers Blog",
+      "link": "https://research.quiznat.com/a/20260304017.html",
+      "guid": "https://research.quiznat.com/a/20260304017.html",
+      "alias": "20260304017",
+      "pubDate": "Wed, 04 Mar 2026 09:01:32 +0000",
+      "description": "Conductor reframes AI coding workflow from chat-session memory to repository-native memory by requiring persistent specs and plans as first-class artifacts before implementation.\n\nArtifact: https://research.quiznat.com/a/20260304017.html \u00b7 Source: https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli"
+    },
+    {
+      "source_url": "https://arxiv.org/abs/2509.14744",
+      "title": "[2509.14744] On the Use of Agentic Coding Manifests: An Empirical Study of Claude Code",
+      "link": "https://research.quiznat.com/a/20260304014.html",
+      "guid": "https://research.quiznat.com/a/20260304014.html",
+      "alias": "20260304014",
+      "pubDate": "Wed, 04 Mar 2026 08:11:10 +0000",
+      "description": "Agentic coding manifest files (e.g., CLAUDE.md ) are now analyzable engineering artifacts with recurring structure/content patterns, and their current documentation standards are immature.\n\nArtifact: https://research.quiznat.com/a/20260304014.html \u00b7 Source: https://arxiv.org/abs/2509.14744"
+    },
+    {
+      "source_url": "https://docs.anthropic.com/en/docs/claude-code",
+      "title": "Claude Code overview - Claude Code Docs",
+      "link": "https://research.quiznat.com/a/20260304011.html",
+      "guid": "https://research.quiznat.com/a/20260304011.html",
+      "alias": "20260304011",
+      "pubDate": "Wed, 04 Mar 2026 07:31:35 +0000",
+      "description": "Claude Code should be modeled as a full-stack agentic coding runtime, not just a chat interface: the docs specify a cross-surface execution system (terminal/IDE/web/desktop/chat/CI) that preserves shared control artifacts ( CLAUDE.md , skills, hooks, MCP servers) while exposing...\n\nArtifact: https://research.quiznat.com/a/20260304011.html \u00b7 Source: https://docs.anthropic.com/en/docs/claude-code"
+    },
+    {
+      "source_url": "https://modelcontextprotocol.io",
+      "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
+      "link": "https://research.quiznat.com/a/20260304010.html",
+      "guid": "https://research.quiznat.com/a/20260304010.html",
+      "alias": "20260304010",
+      "pubDate": "Wed, 04 Mar 2026 07:10:50 +0000",
+      "description": "MCP should be treated as foundational interface infrastructure for agent systems: a standardized protocol boundary between AI hosts and external tools/data, rather than ad-hoc connector logic per application.\n\nArtifact: https://research.quiznat.com/a/20260304010.html \u00b7 Source: https://modelcontextprotocol.io"
+    },
+    {
+      "source_url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps",
+      "title": "Introducing Microsoft Agent Framework: The Open-Source Engine for Agentic AI Apps | Microsoft Foundry Blog",
+      "link": "https://research.quiznat.com/a/20260304007.html",
+      "guid": "https://research.quiznat.com/a/20260304007.html",
+      "alias": "20260304007",
+      "pubDate": "Wed, 04 Mar 2026 06:31:54 +0000",
+      "description": "Microsoft Agent Framework positions context-aware multi-agent development as a unified engineering stack: open protocol interoperability (MCP/A2A/OpenAPI), explicit orchestration models, pluggable memory, and production controls (durability, observability, approvals).\n\nArtifact: https://research.quiznat.com/a/20260304007.html \u00b7 Source: https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps"
+    },
+    {
+      "source_url": "https://developers.googleblog.com/architecting-efficient-context-aware-multi-agent-framework-for-production",
+      "title": "Architecting efficient context-aware multi-agent framework for production - Google Developers Blog",
+      "link": "https://research.quiznat.com/a/20260304006.html",
+      "guid": "https://research.quiznat.com/a/20260304006.html",
+      "alias": "20260304006",
+      "pubDate": "Wed, 04 Mar 2026 06:10:21 +0000",
+      "description": "Scaling production agents requires treating context as a systems problem, not a prompt-length problem. The core design move is to compile per-call working context from structured state, rather than continuously appending raw history.\n\nArtifact: https://research.quiznat.com/a/20260304006.html \u00b7 Source: https://developers.googleblog.com/architecting-efficient-context-aware-multi-agent-framework-for-production"
+    },
+    {
+      "source_url": "https://github.com/Cluster444/agentic",
+      "title": "agentic",
+      "link": "https://research.quiznat.com/a/20260304005.html",
+      "guid": "https://research.quiznat.com/a/20260304005.html",
+      "alias": "20260304005",
+      "pubDate": "Wed, 04 Mar 2026 06:01:41 +0000",
+      "description": "agentic is a practical context-engineering workflow layer for OpenCode that operationalizes phased software delivery (ticket \u2192 research \u2192 plan \u2192 execute \u2192 commit \u2192 review) and persists project knowledge in a structured \u201cthoughts\u201d memory surface.\n\nArtifact: https://research.quiznat.com/a/20260304005.html \u00b7 Source: https://github.com/Cluster444/agentic"
+    },
+    {
+      "source_url": "https://zenodo.org/records/17760288",
+      "title": "Context-Engineered Human\u2013AI Collaboration for Long-Horizon Tasks: A Case Study in Governance, Canonical Num\u2026",
+      "link": "https://research.quiznat.com/a/20260302024.html",
+      "guid": "https://research.quiznat.com/a/20260302024.html",
+      "alias": "20260302024",
+      "pubDate": "Tue, 03 Mar 2026 06:36:51 +0000",
+      "description": "This Zenodo preprint presents a long-horizon human\u2013AI collaboration case study focused on controlling drift in practical execution. The stated contribution is procedural: reliability comes from governance structure rather than raw model capability. The record describes controls...\n\nArtifact: https://research.quiznat.com/a/20260302024.html \u00b7 Source: https://zenodo.org/records/17760288"
+    },
+    {
+      "source_url": "https://github.com/a2aproject/A2A",
+      "title": "A2A",
+      "link": "https://research.quiznat.com/a/20260302023.html",
+      "guid": "https://research.quiznat.com/a/20260302023.html",
+      "alias": "20260302023",
+      "pubDate": "Tue, 03 Mar 2026 06:36:50 +0000",
+      "description": "A2A (Agent2Agent) is an open interoperability protocol for communication between independently built agentic systems. The core mechanism is protocol-level coordination rather than model-level consolidation: agents can discover each other via agent cards, negotiate interaction...\n\nArtifact: https://research.quiznat.com/a/20260302023.html \u00b7 Source: https://github.com/a2aproject/A2A"
+    },
+    {
+      "source_url": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
+      "title": "AI Agent Orchestration Patterns - Azure Architecture Center | Microsoft Learn",
+      "link": "https://research.quiznat.com/a/20260302011.html",
+      "guid": "https://research.quiznat.com/a/20260302011.html",
+      "alias": "20260302011",
+      "pubDate": "Mon, 02 Mar 2026 18:14:44 +0000",
+      "description": "Agentic systems should be engineered with explicit pattern selection and orchestration controls rather than generic \u201cagent\u201d abstractions. Pattern choice should match task topology, coordination cost, and reliability requirements.\n\nArtifact: https://research.quiznat.com/a/20260302011.html \u00b7 Source: https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns"
+    },
+    {
+      "source_url": "https://arxiv.org/html/2404.11584v1",
+      "title": "The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey",
+      "link": "https://research.quiznat.com/a/20260302007.html",
+      "guid": "https://research.quiznat.com/a/20260302007.html",
+      "alias": "20260302007",
+      "pubDate": "Mon, 02 Mar 2026 04:44:04 +0000",
+      "description": "Agent reliability and task performance are architecture-dependent: robust agent systems need explicit planning loops, reflection/self-correction, and tool-calling discipline, with architecture choice (single vs multi-agent, vertical vs horizontal) matched to task structure...\n\nArtifact: https://research.quiznat.com/a/20260302007.html \u00b7 Source: https://arxiv.org/html/2404.11584v1"
+    },
+    {
+      "source_url": "https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns",
+      "title": "Agent Factory The New Era Of Agentic Ai Common Use Cases And Design Patterns",
+      "link": "https://research.quiznat.com/a/20260302002.html",
+      "guid": "https://research.quiznat.com/a/20260302002.html",
+      "alias": "20260302002",
+      "pubDate": "Mon, 02 Mar 2026 00:27:41 +0000",
+      "description": "Enterprise agent systems should be designed as composable pattern stacks rather than single-agent chat interfaces; durable production value depends on combining tool use, reflection, planning, multi-agent orchestration, and adaptive reasoning.\n\nArtifact: https://research.quiznat.com/a/20260302002.html \u00b7 Source: https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns"
+    },
+    {
+      "source_url": "https://github.com/snarktank/ralph",
+      "title": "ralph",
+      "link": "https://research.quiznat.com/a/20260301030.html",
+      "guid": "https://research.quiznat.com/a/20260301030.html",
+      "alias": "20260301030",
+      "pubDate": "Sun, 01 Mar 2026 23:27:02 +0000",
+      "description": "ralph\n\nArtifact: https://research.quiznat.com/a/20260301030.html \u00b7 Source: https://github.com/snarktank/ralph"
+    },
+    {
+      "source_url": "https://github.com/snarktank/compound-product",
+      "title": "compound-product",
+      "link": "https://research.quiznat.com/a/20260301029.html",
+      "guid": "https://research.quiznat.com/a/20260301029.html",
+      "alias": "20260301029",
+      "pubDate": "Sun, 01 Mar 2026 22:27:33 +0000",
+      "description": "compound-product\n\nArtifact: https://research.quiznat.com/a/20260301029.html \u00b7 Source: https://github.com/snarktank/compound-product"
+    },
+    {
+      "source_url": "https://github.com/EveryInc/compound-engineering-plugin",
+      "title": "compound-engineering-plugin",
+      "link": "https://research.quiznat.com/a/20260301028.html",
+      "guid": "https://research.quiznat.com/a/20260301028.html",
+      "alias": "20260301028",
+      "pubDate": "Sun, 01 Mar 2026 22:27:33 +0000",
+      "description": "compound-engineering-plugin\n\nArtifact: https://research.quiznat.com/a/20260301028.html \u00b7 Source: https://github.com/EveryInc/compound-engineering-plugin"
+    },
+    {
+      "source_url": "https://openai.com/index/inside-our-in-house-data-agent",
+      "title": "Inside Our In House Data Agent",
+      "link": "https://research.quiznat.com/a/20260301026.html",
+      "guid": "https://research.quiznat.com/a/20260301026.html",
+      "alias": "20260301026",
+      "pubDate": "Sun, 01 Mar 2026 21:57:21 +0000",
+      "description": "Reliable data agents require layered grounding and continuous evaluation, not just strong base models. Accuracy at organizational scale depends on context quality, memory reuse, and strict access/evaluation controls.\n\nArtifact: https://research.quiznat.com/a/20260301026.html \u00b7 Source: https://openai.com/index/inside-our-in-house-data-agent"
+    },
+    {
+      "source_url": "https://github.com/agno-agi/dash",
+      "title": "dash",
+      "link": "https://research.quiznat.com/a/20260301025.html",
+      "guid": "https://research.quiznat.com/a/20260301025.html",
+      "alias": "20260301025",
+      "pubDate": "Sun, 01 Mar 2026 21:57:21 +0000",
+      "description": "dash\n\nArtifact: https://research.quiznat.com/a/20260301025.html \u00b7 Source: https://github.com/agno-agi/dash"
+    },
+    {
+      "source_url": "https://www.ashpreetbedi.com/articles/sql-agent",
+      "title": "Self Improving Text2Sql Agent with Dynamic Context and Continuous Learning",
+      "link": "https://research.quiznat.com/a/20260301024.html",
+      "guid": "https://research.quiznat.com/a/20260301024.html",
+      "alias": "20260301024",
+      "pubDate": "Sun, 01 Mar 2026 21:27:48 +0000",
+      "description": "Text-to-SQL systems fail less from raw model weakness and more from missing organizational context. Reliability improves when runtime generation is grounded in retrievable knowledge and successful runs feed an offline learning loop.\n\nArtifact: https://research.quiznat.com/a/20260301024.html \u00b7 Source: https://www.ashpreetbedi.com/articles/sql-agent"
+    },
+    {
+      "source_url": "https://openai.com/index/harness-engineering",
+      "title": "Harness Engineering",
+      "link": "https://research.quiznat.com/a/20260301023.html",
+      "guid": "https://research.quiznat.com/a/20260301023.html",
+      "alias": "20260301023",
+      "pubDate": "Sun, 01 Mar 2026 21:27:48 +0000",
+      "description": "In high-throughput agentic development, the primary engineering bottleneck shifts from writing code to designing the harness: constraints, observability, review loops, and repository-legible context that let agents execute reliably.\n\nArtifact: https://research.quiznat.com/a/20260301023.html \u00b7 Source: https://openai.com/index/harness-engineering"
+    },
+    {
+      "source_url": "https://github.com/virattt/dexter",
+      "title": "dexter",
+      "link": "https://research.quiznat.com/a/20260301022.html",
+      "guid": "https://research.quiznat.com/a/20260301022.html",
+      "alias": "20260301022",
+      "pubDate": "Sun, 01 Mar 2026 20:58:56 +0000",
+      "description": "dexter\n\nArtifact: https://research.quiznat.com/a/20260301022.html \u00b7 Source: https://github.com/virattt/dexter"
+    },
+    {
+      "source_url": "https://github.com/google/langextract",
+      "title": "langextract",
+      "link": "https://research.quiznat.com/a/20260301020.html",
+      "guid": "https://research.quiznat.com/a/20260301020.html",
+      "alias": "20260301020",
+      "pubDate": "Sun, 01 Mar 2026 20:58:56 +0000",
+      "description": "langextract\n\nArtifact: https://research.quiznat.com/a/20260301020.html \u00b7 Source: https://github.com/google/langextract"
+    },
+    {
+      "source_url": "https://spark.vibeship.co",
+      "title": "Spark - Self-Evolving Intelligent Companion",
+      "link": "https://research.quiznat.com/a/20260301008.html",
+      "guid": "https://research.quiznat.com/a/20260301008.html",
+      "alias": "20260301008",
+      "pubDate": "Sun, 01 Mar 2026 20:55:36 +0000",
+      "description": "Spark positions itself as an open-source, local-first desktop environment for building and running evolving AI agents, with emphasis on private/local execution and team collaboration.\n\nArtifact: https://research.quiznat.com/a/20260301008.html \u00b7 Source: https://spark.vibeship.co"
+    },
+    {
+      "source_url": "https://www.johann.fyi/openclaw-security-101",
+      "title": "OpenClaw Security 101: The Complete Guide | Johann S.",
+      "link": "https://research.quiznat.com/a/20260301007.html",
+      "guid": "https://research.quiznat.com/a/20260301007.html",
+      "alias": "20260301007",
+      "pubDate": "Sun, 01 Mar 2026 20:25:00 +0000",
+      "description": "High-agency assistants should be treated as privileged automation systems and hardened with host-level and access-level controls before scaling use.\n\nArtifact: https://research.quiznat.com/a/20260301007.html \u00b7 Source: https://www.johann.fyi/openclaw-security-101"
+    },
+    {
+      "source_url": "https://github.com/Leonxlnx/taste-skill",
+      "title": "taste-skill",
+      "link": "https://research.quiznat.com/a/20260301006.html",
+      "guid": "https://research.quiznat.com/a/20260301006.html",
+      "alias": "20260301006",
+      "pubDate": "Sun, 01 Mar 2026 20:25:00 +0000",
+      "description": "taste-skill\n\nArtifact: https://research.quiznat.com/a/20260301006.html \u00b7 Source: https://github.com/Leonxlnx/taste-skill"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "runId": "pm-live-20260312T233011Z",
+  "generatedAtUtc": "2026-03-12T23:33:34Z",
+  "auditLatencySecondsP50": 38,
+  "auditLatencySecondsP95": 91,
+  "status": "PASS"
+}

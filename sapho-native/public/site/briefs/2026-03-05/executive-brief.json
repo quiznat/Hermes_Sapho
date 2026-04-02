@@ -1,0 +1,125 @@
+{
+  "version": "executive-brief-v2.0.0",
+  "last_updated": "2026-03-05T00:32:17Z",
+  "date": "2026-03-05",
+  "summary": {
+    "status": "PASS",
+    "runId": "pm-live-20260305T003007Z",
+    "inserted": "n/a",
+    "candidates": "n/a",
+    "dropped": "n/a",
+    "logPath": "",
+    "executiveSummary": "The current evidence supports a structure-first reliability thesis with medium confidence and explicit boundary conditions: agent performance improves when intent compilation, runtime decomposition, memory reuse, and operating discipline are all well-governed, but none of these levers is universally positive in isolation. The defensible conclusion is conditional uplift, not guaranteed uplift. Remaining queue volume is lower than prior runs, but residual uncertainty remains until the final queued items are processed."
+  },
+  "gateTelemetry": {
+    "status": "PASS",
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "contradictionChecks": 6,
+    "disagreementsFound": 2,
+    "sourcePath": "research/briefs/daily/2026-03-05/technical-report-preflight.json",
+    "sourcePathWeb": "briefs/2026-03-05/technical-report-preflight.json"
+  },
+  "metrics": {
+    "processedCount": 6,
+    "laneCounts": {
+      "agent-memory": 3,
+      "agent-factory": 2,
+      "agent-research": 1
+    },
+    "decisionCounts": {
+      "retain": 6
+    },
+    "confidenceCounts": {
+      "medium": 6
+    },
+    "exclusionCounts": {},
+    "qualifiedFindings": 6
+  },
+  "findings": [
+    {
+      "queueId": "art-2026-03-04-060",
+      "lane": "agent-memory",
+      "source": "https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents/",
+      "thesis": "Natural-language workflow control for agents becomes materially more usable when orchestration is explicitly connected to reproducible infrastructure operations and policy boundaries.",
+      "mechanism": "Intent is translated into constrained workflow actions: human-readable control surfaces are preserved while execution remains tied to structured automation steps and guardrails.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-060-strands-sops-natural-language-workflows.md"
+    },
+    {
+      "queueId": "art-2026-03-04-050",
+      "lane": "agent-factory",
+      "source": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/",
+      "thesis": "Self-hosted personal agents can shift from dedicated local hardware to cloud infrastructure when isolation, browser automation, persistent storage, and model-gateway control are composed into a coherent runtime stack.",
+      "mechanism": "Platform decomposition separates control plane, isolated runtime, browsing, storage, and model mediation, improving governability while introducing interface dependencies.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-050-cloudflare-moltworker-self-hosted-agent.md"
+    },
+    {
+      "queueId": "art-2026-03-04-038",
+      "lane": "agent-research",
+      "source": "https://every.to/guides/claw-school?source=post_button",
+      "thesis": "OpenClaw adoption quality is driven more by ongoing operating discipline than one-time setup.",
+      "mechanism": "A repeated loop of delegation, recurring automation, iterative feedback, and explicit safety controls compounds reliability and governance quality over time.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md"
+    },
+    {
+      "queueId": "art-2026-03-04-037",
+      "lane": "agent-factory",
+      "source": "https://github.com/msitarzewski/agency-agents",
+      "thesis": "Role-specialized, persona-explicit agent catalogs provide a reusable control plane for multi-agent task decomposition.",
+      "mechanism": "Specialized templates with explicit mission/process/output expectations improve routing clarity and auditability when paired with consistent handoff and arbitration rules.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-037-agency-agents.md"
+    },
+    {
+      "queueId": "art-2026-03-04-036",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/abs/2602.08316",
+      "thesis": "Programming-agent evaluation should measure cross-task experience reuse in addition to per-task correctness.",
+      "mechanism": "Linked-task benchmarking shows that relevant summarized prior experience can improve resolution speed and cost, while weakly matched memory can degrade outcomes.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-036-swe-contextbench-experience-reuse.md"
+    },
+    {
+      "queueId": "art-2026-03-04-035",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/abs/2510.04618",
+      "thesis": "Agentic Context Engineering treats context as an evolving playbook that can improve behavior without model weight updates.",
+      "mechanism": "Structured generation-reflection-curation mitigates brevity bias and context collapse, but requires sustained curation discipline to prevent cumulative drift.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-035-agentic-context-engineering-evolving-contexts.md"
+    }
+  ],
+  "actions": [
+    "Run adversarial intent-compilation tests to ensure unsafe or ambiguous language is blocked before execution.",
+    "Benchmark monolithic versus decomposed agent stacks on matched workloads to quantify reliability gains against coordination cost.",
+    "Stratify outcomes by operator-discipline maturity to test process quality as a primary explanatory variable.",
+    "Enforce mandatory inter-agent handoff contracts with ownership, validation, and escalation fields; measure coordination failure rates.",
+    "Add retrieval-quality gates including relevance thresholds, freshness scoring, contradiction checks, and suppression of low-confidence memory reuse.",
+    "Instrument evolving-context pipelines with versioned provenance and drift alarms across iterative updates."
+  ],
+  "risks": [
+    "Medium-confidence evidence does not justify universal causal claims across teams and stacks.",
+    "Natural-language control layers can hide unsafe execution if guardrail compilation is incomplete.",
+    "Service decomposition can increase latency, boundary fragility, and operational burden.",
+    "Specialist-agent proliferation can fragment accountability when shared schemas are weak.",
+    "Memory-reuse pipelines can propagate stale or incorrect patterns through repeated retrieval.",
+    "Remaining queued items (10) may still shift mechanism weighting and boundary conditions."
+  ],
+  "artifacts": [
+    "research/kb/queue/queue-art-2026-03-04-060-strands-sops-natural-language-workflows.md",
+    "research/kb/queue/queue-art-2026-03-04-050-cloudflare-moltworker-self-hosted-agent.md",
+    "research/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md",
+    "research/kb/queue/queue-art-2026-03-04-037-agency-agents.md",
+    "research/kb/queue/queue-art-2026-03-04-036-swe-contextbench-experience-reuse.md",
+    "research/kb/queue/queue-art-2026-03-04-035-agentic-context-engineering-evolving-contexts.md"
+  ],
+  "qualityGate": {
+    "minQualifiedRequired": 2,
+    "qualifiedFound": 6,
+    "passed": true
+  }
+}

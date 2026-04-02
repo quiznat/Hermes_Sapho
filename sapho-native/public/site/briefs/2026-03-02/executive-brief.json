@@ -1,0 +1,123 @@
+{
+  "version": "executive-brief-v1.1.0",
+  "last_updated": "2026-03-03T01:55:12Z",
+  "date": "2026-03-02",
+  "summary": {
+    "status": "PASS",
+    "runId": "20260302T055032Z",
+    "inserted": 0,
+    "candidates": "n/a",
+    "dropped": "n/a",
+    "logPath": "research/firehose/logs/firehose-daily-20260302T055032Z.json",
+    "executiveSummary": "Core read: Agent reliability depends less on anecdotal demos and more on disciplined eval design. Teams need task-grounded, failure-oriented, continuously run evaluation suites that track whether agent behavior improves in the dimensions that matter for production. Current qualified evidence spans 5 items across lanes (UI-design=2, agent-factory=2, agent-memory=1)."
+  },
+  "gateTelemetry": {
+    "status": "PASS",
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "contradictionChecks": 47,
+    "disagreementsFound": 1,
+    "sourcePath": "research/briefs/daily/2026-03-02/technical-report-preflight.json",
+    "sourcePathWeb": "briefs/2026-03-02/technical-report-preflight.json"
+  },
+  "metrics": {
+    "processedCount": 19,
+    "laneCounts": {
+      "agent-factory": 2,
+      "agent-memory": 1,
+      "UI-design": 2
+    },
+    "decisionCounts": {
+      "retain": 5
+    },
+    "confidenceCounts": {
+      "high": 2,
+      "medium": 3
+    },
+    "exclusionCounts": {},
+    "qualifiedFindings": 5
+  },
+  "findings": [
+    {
+      "queueId": "art-2026-03-02-013",
+      "lane": "agent-factory",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "source": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "thesis": "Agent reliability depends less on anecdotal demos and more on disciplined eval design. Teams need task-grounded, failure-oriented, continuously run evaluation suites that track whether agent behavior improves in the dimensions that matter for production.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-013 ## Source - URL: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents - Type: engineering methodology guidance (Anthropic) - Lane hint: agent-factory ## Core thesis Agent reliability depends less on anecdotal demos and more on disciplined eval design.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-02-013-anthropic-demystifying-evals.md"
+    },
+    {
+      "queueId": "art-2026-03-02-011",
+      "lane": "agent-memory",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
+      "source": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
+      "thesis": "Agentic systems should be engineered with explicit pattern selection and orchestration controls rather than generic “agent” abstractions. Pattern choice should match task topology, coordination cost, and reliability requirements.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-011 ## Source - URL: https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns - Type: Microsoft architecture guidance (implementation-oriented design patterns) - Lane hint: agent-factory ## Core thesis Agentic systems should be engineered with explicit pattern selection",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-02-011-azure-agent-design-patterns.md"
+    },
+    {
+      "queueId": "art-2026-03-02-008",
+      "lane": "agent-factory",
+      "url": "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/",
+      "source": "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/",
+      "thesis": "Agent performance does not scale monotonically with agent count. Architecture-task alignment governs outcomes: multi-agent coordination improves parallelizable tasks but can degrade sequential reasoning workloads due to coordination overhead.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-008 ## Source - URL: https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ - Type: Google Research summary of controlled empirical study (links to arXiv paper) - Lane hint: agent-factory ## Core thesis Agent performance does not scale monotonically wit",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-02-008-google-scaling-agent-systems.md"
+    },
+    {
+      "queueId": "art-2026-03-02-007",
+      "lane": "UI-design",
+      "url": "https://arxiv.org/html/2404.11584v1",
+      "source": "https://arxiv.org/html/2404.11584v1",
+      "thesis": "Agent reliability and task performance are architecture-dependent: robust agent systems need explicit planning loops, reflection/self-correction, and tool-calling discipline, with architecture choice (single vs multi-agent, vertical vs horizontal) matched to task structure rather than ideology.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-007 ## Source - URL: https://arxiv.org/html/2404.11584v1 - Type: arXiv survey (2024) - Lane hint: UI-design ## Core thesis Agent reliability and task performance are architecture-dependent: robust agent systems need explicit planning loops, reflection/self-correction, and tool-calling discipline, with ",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-02-007-agent-architectures-survey.md"
+    },
+    {
+      "queueId": "art-2026-03-02-001",
+      "lane": "UI-design",
+      "url": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
+      "source": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
+      "thesis": "Treat AI software delivery as an orchestrated factory with explicit multi-lane roles, structured design debate, autonomous implementation, and synthesis-based review—rather than single-model coding sessions.",
+      "mechanism": "Structured multi-round debate protocol before coding, with explicit challenge/concession behavior to force tradeoff surfacing.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-02-001-agentic-software-factory-case-study.md"
+    }
+  ],
+  "actions": [
+    "Dispatch the next highest-conviction non-X queue item and finalize with telemetry evidence.",
+    "Apply weekly query retire/promote output to suppress low-yield discovery channels.",
+    "Continue with current quality gate; maintain strict retain+confidence inclusion policy."
+  ],
+  "risks": [
+    "No immediate critical reporting-quality risk observed under current gate settings."
+  ],
+  "artifacts": [
+    "research/firehose/logs/firehose-daily-20260302T055032Z.json",
+    "research/queue/article-intake-queue.jsonl",
+    "research/kb/queue/queue-art-2026-03-02-013-anthropic-demystifying-evals.md",
+    "research/kb/queue/queue-art-2026-03-02-011-azure-agent-design-patterns.md",
+    "research/kb/queue/queue-art-2026-03-02-008-google-scaling-agent-systems.md"
+  ],
+  "qualityGate": {
+    "minQualifiedRequired": 2,
+    "qualifiedFound": 5,
+    "passed": true
+  }
+}

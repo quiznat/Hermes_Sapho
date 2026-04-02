@@ -1,0 +1,125 @@
+{
+  "version": "executive-brief-v2.0.0",
+  "last_updated": "2026-03-12T23:33:34Z",
+  "date": "2026-03-12",
+  "summary": {
+    "status": "PASS",
+    "runId": "pm-live-20260312T233011Z",
+    "inserted": "n/a",
+    "candidates": "n/a",
+    "dropped": "n/a",
+    "logPath": "",
+    "executiveSummary": "The evidence supports a stress-first readiness model: single-pass correctness is insufficient for deployment decisions because reliability degrades under repetition, semantic perturbation, and tool/API faults. Production fitness is conditional on task-routed framework selection, model-aware collaboration-plus-debugging composition, long-horizon memory mitigation, and PR governance controls, with security-sensitive lanes requiring stricter throughput planning."
+  },
+  "gateTelemetry": {
+    "status": "PASS",
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "contradictionChecks": 2,
+    "disagreementsFound": 0,
+    "sourcePath": "research/briefs/daily/2026-03-12/technical-report-preflight.json",
+    "sourcePathWeb": "briefs/2026-03-12/technical-report-preflight.json"
+  },
+  "metrics": {
+    "processedCount": 6,
+    "laneCounts": {
+      "agent-factory": 4,
+      "UI-design": 1,
+      "agent-memory": 1
+    },
+    "decisionCounts": {
+      "retain": 6
+    },
+    "confidenceCounts": {
+      "high": 6
+    },
+    "exclusionCounts": {},
+    "qualifiedFindings": 6
+  },
+  "findings": [
+    {
+      "queueId": "art-2026-03-12-004",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/html/2601.06112v1",
+      "thesis": "Single-run success rates materially overstate production readiness for tool-using LLM agents; reliability under repeated runs, semantic perturbation, and tool/API faults needs direct stress testing before deployment decisions.",
+      "mechanism": "ReliabilityBench defines a joint reliability surface over repeat consistency, perturbation robustness, and injected tool/API fault tolerance, and evaluates ReAct/Reflexion across operational domains to expose failures that single-pass metrics miss.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-12-004-reliabilitybench-production-stress-llm-agents.md"
+    },
+    {
+      "queueId": "art-2026-03-11-020",
+      "lane": "UI-design",
+      "source": "https://arxiv.org/html/2511.00872v1",
+      "thesis": "Agent-framework performance on code-centric software engineering is currently moderate and highly trade-off-driven; framework selection materially affects effectiveness, efficiency, and cost outcomes by task type.",
+      "mechanism": "Comparative evaluation of seven agent frameworks across software development, vulnerability detection, and program repair shows task-dependent shifts in correctness, runtime efficiency, and token/cost overhead.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-11-020-agent-frameworks-code-centric-se-eval.md"
+    },
+    {
+      "queueId": "art-2026-03-11-017",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/html/2505.02133v1",
+      "thesis": "Combining multi-agent collaboration with runtime-execution debugging measurably changes code-generation performance, and model response to this composition is heterogeneous enough to matter for system design decisions.",
+      "mechanism": "A chained analyst/coder/tester-style decomposition followed by runtime-feedback debugging is benchmarked against standalone strategies, showing model-dependent net effects rather than uniform uplift.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-11-017-multi-agent-runtime-debugging-codegen-eval.md"
+    },
+    {
+      "queueId": "art-2026-03-10-080",
+      "lane": "agent-memory",
+      "source": "https://snap-research.github.io/locomo/",
+      "thesis": "LoCoMo is a primary benchmark for very long-horizon conversational memory, exposing persistent recall and temporal-causal reasoning gaps in current LLM agents.",
+      "mechanism": "Grounded long-conversation generation with persona and temporal event-graph structure is evaluated via QA, event-graph summarization, and multimodal dialogue generation, revealing durable long-horizon memory weaknesses.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-080-locomo-very-long-term-conversational-memory-benchmark.md"
+    },
+    {
+      "queueId": "art-2026-03-10-077",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/html/2601.17627v1",
+      "thesis": "Agentic pull requests demonstrate strong local-level commit communication but weaker PR-level alignment and higher short-horizon code churn compared with human pull requests.",
+      "mechanism": "At large scale, agent PRs show higher commit-level semantic similarity but weaker PR-summary alignment, faster symbol removal, and higher short-horizon churn, indicating local coherence does not guarantee stable integration intent.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-077-change-characteristics-description-alignment.md"
+    },
+    {
+      "queueId": "art-2026-03-10-069",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/abs/2601.00477",
+      "thesis": "Agent-authored pull requests make meaningful security contributions in real repositories, but those contributions face stricter human scrutiny, lower merge rates, and longer review latency than non-security agentic PRs.",
+      "mechanism": "Large-scale AIDev analysis with manual validation of security-related PRs shows governance and review burden are stronger constraints in security lanes than in non-security agent PR lanes.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-069-security-age-of-ai-teammates-agentic-prs.md"
+    }
+  ],
+  "actions": [
+    "Adopt stress-gated evaluation requiring thresholds for repeated-run consistency, perturbation robustness, and injected tool/API fault tolerance.",
+    "Replace global framework defaults with task-routed policies jointly optimized for correctness, runtime, and token/cost.",
+    "Build model-family interaction maps for collaboration-plus-debugging chains and enforce explicit composition allow/deny rules.",
+    "Instrument long-horizon memory failure indicators and map LoCoMo-style breakdowns to coding-session continuity risks.",
+    "Add PR gates for PR-level alignment and churn-risk alongside commit-level quality checks.",
+    "Create dedicated security-PR lanes with stronger pre-merge validation, reviewer-capacity planning, and explicit latency budgets."
+  ],
+  "risks": [
+    "Readiness decisions based on single-pass metrics can miss instability under repetition, perturbation, and tool/API faults.",
+    "One-size-fits-all framework defaults can degrade net utility under changing task mixes.",
+    "Unmanaged collaboration-plus-debugging chains can add orchestration overhead and propagate errors.",
+    "Long-horizon memory weakness can degrade planning continuity and PR-level intent coherence.",
+    "High local commit coherence can mask PR-level misalignment and churn-driven rework.",
+    "Security lanes can accumulate latency and rejection bottlenecks without dedicated governance and capacity controls."
+  ],
+  "artifacts": [
+    "research/kb/queue/queue-art-2026-03-12-004-reliabilitybench-production-stress-llm-agents.md",
+    "research/kb/queue/queue-art-2026-03-11-020-agent-frameworks-code-centric-se-eval.md",
+    "research/kb/queue/queue-art-2026-03-11-017-multi-agent-runtime-debugging-codegen-eval.md",
+    "research/kb/queue/queue-art-2026-03-10-080-locomo-very-long-term-conversational-memory-benchmark.md",
+    "research/kb/queue/queue-art-2026-03-10-077-change-characteristics-description-alignment.md",
+    "research/kb/queue/queue-art-2026-03-10-069-security-age-of-ai-teammates-agentic-prs.md"
+  ],
+  "qualityGate": {
+    "minQualifiedRequired": 2,
+    "qualifiedFound": 6,
+    "passed": true
+  }
+}

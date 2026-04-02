@@ -1,0 +1,13 @@
+{
+  "runId": "20260304T201051Z",
+  "domain": "research.quiznat.com",
+  "intervalSeconds": 180,
+  "startedAtUtc": "2026-03-04T20:10:51Z",
+  "updatedAtUtc": "2026-03-04T23:08:31Z",
+  "emittedCount": 60,
+  "totalCount": 60,
+  "nextIndex": 60,
+  "active": false,
+  "latestItemId": "art-2026-03-01-001",
+  "status": "complete"
+}

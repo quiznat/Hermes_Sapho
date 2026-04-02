@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "topLineClaims": 6,
+  "traceableClaims": 6,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 2,
+  "contradictionChecks": 2,
+  "disagreementsFound": 0,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-12-004",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-11-020",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-11-017",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-080",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-077",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-10-069",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-12-004",
+      "rightId": "art-2026-03-11-020",
+      "label": "unclear",
+      "overlapTerms": [
+        "across",
+        "materially"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-10-077",
+      "rightId": "art-2026-03-10-069",
+      "label": "unclear",
+      "overlapTerms": [
+        "agentic",
+        "human",
+        "prs",
+        "pull",
+        "requests"
+      ]
+    }
+  ],
+  "evidenceIssues": [
+    {
+      "index": 0,
+      "queueId": "art-2026-03-12-004",
+      "issue": "confidence_normalized_to_evidence",
+      "agentConfidence": "medium",
+      "evidenceConfidence": "high"
+    }
+  ],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-12T23:33:34Z"
+}

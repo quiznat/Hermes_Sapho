@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "topLineClaims": 3,
+  "traceableClaims": 3,
+  "traceabilityCoverage": 1.0,
+  "unsupportedClaims": 0,
+  "citationFailures": 0,
+  "conflictCandidates": 3,
+  "contradictionChecks": 3,
+  "disagreementsFound": 0,
+  "traceabilityRows": [
+    {
+      "claimId": "art-2026-03-17-039",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-17-041",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    },
+    {
+      "claimId": "art-2026-03-17-044",
+      "traceable": true,
+      "hasRecord": true,
+      "hasMechanism": true,
+      "hasSource": true
+    }
+  ],
+  "contradictionAudit": [
+    {
+      "leftId": "art-2026-03-17-039",
+      "rightId": "art-2026-03-17-041",
+      "label": "unclear",
+      "overlapTerms": [
+        "changes",
+        "context"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-17-039",
+      "rightId": "art-2026-03-17-044",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "llm",
+        "orchestration"
+      ]
+    },
+    {
+      "leftId": "art-2026-03-17-041",
+      "rightId": "art-2026-03-17-044",
+      "label": "unclear",
+      "overlapTerms": [
+        "context",
+        "features"
+      ]
+    }
+  ],
+  "evidenceIssues": [],
+  "fatalEvidenceIssues": [],
+  "generatedAtUtc": "2026-03-18T23:32:05Z"
+}

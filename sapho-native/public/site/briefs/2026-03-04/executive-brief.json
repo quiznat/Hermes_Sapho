@@ -1,0 +1,121 @@
+{
+  "version": "executive-brief-v2.0.0",
+  "last_updated": "2026-03-04T05:52:08Z",
+  "date": "2026-03-04",
+  "summary": {
+    "status": "PASS",
+    "runId": "pm-live-20260304T055013Z",
+    "inserted": "n/a",
+    "candidates": "n/a",
+    "dropped": "n/a",
+    "logPath": "",
+    "executiveSummary": "The evidence supports a conditional-effects conclusion with moderate confidence: AGENTS.md-style repository context files are neither uniformly beneficial nor uniformly harmful. Outcome direction depends on context governance quality, scope discipline, and evaluation framing. Efficiency gains are credible in some studies, but can coincide with flat or negative task-success outcomes when instruction regimes are over-broad or misaligned."
+  },
+  "gateTelemetry": {
+    "status": "PASS",
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "contradictionChecks": 6,
+    "disagreementsFound": 2,
+    "sourcePath": "research/briefs/daily/2026-03-04/technical-report-preflight.json",
+    "sourcePathWeb": "briefs/2026-03-04/technical-report-preflight.json"
+  },
+  "metrics": {
+    "processedCount": 6,
+    "laneCounts": {
+      "agent-memory": 6
+    },
+    "decisionCounts": {
+      "retain": 6
+    },
+    "confidenceCounts": {
+      "medium": 6
+    },
+    "exclusionCounts": {},
+    "qualifiedFindings": 6
+  },
+  "findings": [
+    {
+      "queueId": "art-2026-03-04-003",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/html/2510.21413",
+      "thesis": "AI context files are now a measurable OSS phenomenon, but usage patterns remain heterogeneous and structurally immature.",
+      "mechanism": "A large OSS sampling frame (10,000 sampled repositories; detailed analysis on 466 projects) shows mixed instruction modes without canonical structure, increasing interpretation and behavior variance.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-003-context-engineering-oss-adoption.md"
+    },
+    {
+      "queueId": "art-2026-03-03-013",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/html/2602.20478v1",
+      "thesis": "Single-file agent manifests do not reliably scale for complex codebases; tiered codified context is proposed as a scaling pattern.",
+      "mechanism": "The reported three-tier model (always-loaded core conventions, task-invoked specialists, on-demand deep specs) targets the overload-amnesia tradeoff through scoped context loading.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-03-013-codified-context-infrastructure.md"
+    },
+    {
+      "queueId": "art-2026-03-03-008",
+      "lane": "agent-memory",
+      "source": "https://notchrisgroves.com/when-agents-md-backfires/",
+      "thesis": "The practical failure mode is over-broad context design, not context files themselves.",
+      "mechanism": "Broad files can increase exploration and compliance overhead, raising cost and harming correctness on many tasks; the recommended pattern is minimal, operationally relevant context with explicit boundaries.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-03-008-agents-md-backfires-practitioner-synthesis.md"
+    },
+    {
+      "queueId": "art-2026-03-03-004",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/pdf/2601.20404",
+      "thesis": "AGENTS.md can improve operational efficiency in paired evaluations.",
+      "mechanism": "Repository-level instruction compression appears to reduce exploratory overhead, with reported lower median runtime and output tokens in a 10-repository, 124-PR setup.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-03-004-agents-md-efficiency-impact.md"
+    },
+    {
+      "queueId": "art-2026-03-03-002",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/html/2511.12884v1",
+      "thesis": "Context files function as operational control artifacts but are often complex and unevenly scoped.",
+      "mechanism": "Empirical analysis (2,303 files across 1,925 repositories) shows content skew toward build/run and implementation guidance, with weaker security/performance coverage and resulting governance gaps.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-03-002-agent-readmes-empirical-study.md"
+    },
+    {
+      "queueId": "art-2026-03-03-001",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/abs/2602.11988",
+      "thesis": "Repository-level context files are not automatically performance-improving and can reduce task success while increasing cost.",
+      "mechanism": "Behavioral over-constraint can induce broader traversal and stricter low-value compliance, consuming budget and lowering completion; LLM-generated files trend more negative than developer-authored files.",
+      "confidence": "medium",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-03-001-agents-md-evaluation.md"
+    }
+  ],
+  "actions": [
+    "Publish boundary-conditioned conclusions with explicit moderate-confidence labeling.",
+    "Require four-metric scorecards for promotion decisions: task success, runtime, token cost, and failure taxonomy.",
+    "Run matched minimal-versus-broad context ablations on identical tasks, agents, and repositories.",
+    "Add explicit non-functional clauses (security and performance) to context governance and evaluate deltas.",
+    "Treat tiered codified context as a testable hypothesis until replicated across multiple repositories and task regimes."
+  ],
+  "risks": [
+    "Overstating conditional findings as universal guidance.",
+    "Declaring efficiency wins that mask correctness or robustness regressions.",
+    "Cross-study confounding from heterogeneous agents, repositories, tasks, and metrics.",
+    "Configuration drift that degrades context quality over time.",
+    "Evidence weighting shifts as remaining queued backlog (32) is processed."
+  ],
+  "artifacts": [
+    "research/kb/queue/queue-art-2026-03-04-003-context-engineering-oss-adoption.md",
+    "research/kb/queue/queue-art-2026-03-03-013-codified-context-infrastructure.md",
+    "research/kb/queue/queue-art-2026-03-03-008-agents-md-backfires-practitioner-synthesis.md",
+    "research/kb/queue/queue-art-2026-03-03-004-agents-md-efficiency-impact.md",
+    "research/kb/queue/queue-art-2026-03-03-002-agent-readmes-empirical-study.md",
+    "research/kb/queue/queue-art-2026-03-03-001-agents-md-evaluation.md"
+  ],
+  "qualityGate": {
+    "minQualifiedRequired": 2,
+    "qualifiedFound": 6,
+    "passed": true
+  }
+}

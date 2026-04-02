@@ -1,0 +1,262 @@
+{
+  "version": "technical-report-v2.0.0",
+  "last_updated": "2026-03-11T00:06:06Z",
+  "date": "2026-03-11",
+  "runId": "pm-live-20260311T000251Z",
+  "preflight": {
+    "status": "PASS",
+    "topLineClaims": 6,
+    "traceableClaims": 6,
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "conflictCandidates": 7,
+    "contradictionChecks": 7,
+    "disagreementsFound": 0,
+    "traceabilityRows": [
+      {
+        "claimId": "art-2026-03-10-080",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-10-077",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-10-069",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-10-065",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-10-061",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-10-034",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      }
+    ],
+    "contradictionAudit": [
+      {
+        "leftId": "art-2026-03-10-080",
+        "rightId": "art-2026-03-10-034",
+        "label": "unclear",
+        "overlapTerms": [
+          "long-horizon",
+          "memory"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-10-077",
+        "rightId": "art-2026-03-10-069",
+        "label": "unclear",
+        "overlapTerms": [
+          "agentic",
+          "human",
+          "prs",
+          "pull",
+          "requests"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-10-077",
+        "rightId": "art-2026-03-10-065",
+        "label": "unclear",
+        "overlapTerms": [
+          "code",
+          "prs",
+          "pull",
+          "requests"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-10-077",
+        "rightId": "art-2026-03-10-061",
+        "label": "unclear",
+        "overlapTerms": [
+          "agentic",
+          "human",
+          "prs"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-10-069",
+        "rightId": "art-2026-03-10-065",
+        "label": "unclear",
+        "overlapTerms": [
+          "agent-authored",
+          "analysis",
+          "prs",
+          "pull",
+          "requests",
+          "review"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-10-069",
+        "rightId": "art-2026-03-10-061",
+        "label": "unclear",
+        "overlapTerms": [
+          "agentic",
+          "human",
+          "merge",
+          "prs",
+          "review",
+          "shows"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-10-065",
+        "rightId": "art-2026-03-10-061",
+        "label": "unclear",
+        "overlapTerms": [
+          "dynamics",
+          "outcomes",
+          "prs",
+          "review"
+        ]
+      }
+    ],
+    "evidenceIssues": [
+      {
+        "index": 5,
+        "queueId": "art-2026-03-10-034",
+        "issue": "confidence_normalized_to_evidence",
+        "agentConfidence": "medium",
+        "evidenceConfidence": "high"
+      }
+    ],
+    "fatalEvidenceIssues": [],
+    "generatedAtUtc": "2026-03-11T00:06:06Z"
+  },
+  "technicalNarrative": "The six findings are directionally consistent around governance and continuity limits. LoCoMo shows persistent long-horizon recall and temporal-causal reasoning gaps that can degrade multi-step software continuity. Large-scale PR evidence indicates a local-global split: stronger commit-level semantic coherence can coexist with weaker PR-level alignment and faster short-horizon churn. Security-relevant agent PRs contribute value but pass through a stricter acceptance funnel with longer latency. Additional PR studies show non-merge outcomes are largely socio-technical (task type, scope, CI behavior, reviewer dynamics) and are materially confounded by submitter/process attributes, limiting naive capability inference from merge rates alone. OpenDev contributes a high-detail harness design for long-horizon reliability, but as architectural guidance it should be treated separately from empirical causal outcome claims.",
+  "findings": [
+    {
+      "queueId": "art-2026-03-10-080",
+      "lane": "agent-memory",
+      "source": "https://snap-research.github.io/locomo/",
+      "thesis": "LoCoMo is a primary benchmark for very long-horizon conversational memory, exposing persistent recall and temporal-causal reasoning gaps in current LLM agents.",
+      "mechanism": "The benchmark uses grounded personas plus temporal event graphs to produce long conversations, then evaluates memory competence via question answering, event-graph summarization, and multimodal dialogue generation, revealing long-horizon degradation.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-080-locomo-very-long-term-conversational-memory-benchmark.md"
+    },
+    {
+      "queueId": "art-2026-03-10-077",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/html/2601.17627v1",
+      "thesis": "Agentic pull requests demonstrate strong local-level commit communication but weaker PR-level alignment and higher short-horizon code churn compared with human pull requests.",
+      "mechanism": "Across 33,596 agent PRs and 6,618 human PRs, the study reports stronger commit-message similarity but weaker PR-level summarization alignment, along with faster symbol removal and higher symbol churn for agent changes.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-077-change-characteristics-description-alignment.md"
+    },
+    {
+      "queueId": "art-2026-03-10-069",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/abs/2601.00477",
+      "thesis": "Agent-authored pull requests make meaningful security contributions in real repositories, but those contributions face stricter human scrutiny, lower merge rates, and longer review latency than non-security agentic PRs.",
+      "mechanism": "Large-scale AIDev analysis with manual validation of 1,293 security-related PRs shows security lanes are governed by tighter acceptance and longer review pathways than non-security lanes.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-069-security-age-of-ai-teammates-agentic-prs.md"
+    },
+    {
+      "queueId": "art-2026-03-10-065",
+      "lane": "agent-factory",
+      "source": "https://arxiv.org/abs/2601.15195v1",
+      "thesis": "Agent-authored pull requests fail for systematic socio-technical reasons, not just code quality issues.",
+      "mechanism": "Empirical analysis of 33k agent PRs plus qualitative coding of 600 failures links merged versus non-merged outcomes to task class, change scope, CI results, and review interaction dynamics.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-065-where-ai-coding-agents-fail-failed-agentic-prs.md"
+    },
+    {
+      "queueId": "art-2026-03-10-061",
+      "lane": "agent-factory",
+      "source": "https://www.arxiv.org/pdf/2601.18749",
+      "thesis": "Pull-request merge success in mixed human/agentic software workflows is strongly driven by submitter attributes, while review dynamics affect human and agentic PRs differently.",
+      "mechanism": "Regression over 40,214 PRs with 64 engineered features shows author/process variables materially influence merge outcomes and modulate review effects by submitter type.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-061-meaningful-prs-human-vs-agentic-analysis.md"
+    },
+    {
+      "queueId": "art-2026-03-10-034",
+      "lane": "agent-memory",
+      "source": "https://arxiv.org/html/2603.05344v1",
+      "thesis": "Terminal-native coding agents need explicit harness architecture (scaffolding, runtime orchestration, context compaction, safety layers, and memory persistence) to stay reliable over long-horizon development tasks.",
+      "mechanism": "OpenDev specifies a compound system with specialized routing, planning/execution separation, event-driven reminders, adaptive context compaction, and defense-in-depth execution controls; this functions as architectural prescription rather than direct large-sample causal validation.",
+      "confidence": "high",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-034-opendev-terminal-agent-harness-architecture.md"
+    }
+  ],
+  "laneProtocol": {
+    "agreement": [
+      "LoCoMo is a primary benchmark for very long-horizon conversational memory, exposing persistent recall and temporal-causal reasoning gaps in current LLM agents.",
+      "Agentic pull requests demonstrate strong local-level commit communication but weaker PR-level alignment and higher short-horizon code churn compared with human pull requests.",
+      "Agent-authored pull requests make meaningful security contributions in real repositories, but those contributions face stricter human scrutiny, lower merge rates, and longer review latency than non-security agentic PRs."
+    ],
+    "disagreement": [
+      "Agent-authored pull requests fail for systematic socio-technical reasons, not just code quality issues.",
+      "Pull-request merge success in mixed human/agentic software workflows is strongly driven by submitter attributes, while review dynamics affect human and agentic PRs differently."
+    ],
+    "recommendation": [
+      "Create a normalized metric layer that jointly tracks PR-level alignment, churn, merge probability, and review latency.",
+      "Segment deployment policy by PR risk class (security sensitivity, task type, scope) with differentiated acceptance gates.",
+      "Prioritize socio-technical controls: tighter scope caps, stronger CI requirements, standardized reviewer protocol, and handoff-quality checks."
+    ],
+    "downside": [
+      "High PR throughput can mask instability when churn and rapid symbol reversion remain elevated.",
+      "Security-focused PR lanes can become persistent bottlenecks because of stricter scrutiny and longer review latency.",
+      "Socio-technical failure modes may persist even if model-level code generation quality improves."
+    ]
+  },
+  "confidenceCalibration": {
+    "band": "high",
+    "score": 0.8667,
+    "confidenceDrivers": [
+      "traceabilityCoverage=1.00",
+      "highConvictionRatio=1.00",
+      "laneDiversity=0.33"
+    ],
+    "uncertaintyDrivers": [
+      "laneConcentrationHigh=0.67"
+    ],
+    "guardrail": "Maintain fail-closed publish behavior; if confidence falls below medium or uncertainty drivers worsen, require additional contrarian evidence before strategic recommendation updates."
+  },
+  "derivationAudit": {
+    "evidenceIssues": [
+      {
+        "index": 5,
+        "queueId": "art-2026-03-10-034",
+        "issue": "confidence_normalized_to_evidence",
+        "agentConfidence": "medium",
+        "evidenceConfidence": "high"
+      }
+    ],
+    "agentGateCorrections": [
+      {
+        "field": "contradictionChecks",
+        "agentValue": 15,
+        "runtimeValue": 7
+      }
+    ]
+  }
+}

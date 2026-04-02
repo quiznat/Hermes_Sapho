@@ -1,0 +1,44 @@
+{
+  "job": "research-artifact-publish-poller",
+  "generatedAtUtc": "2026-03-29T17:10:11Z",
+  "status": "ok",
+  "command": [
+    "/usr/bin/python3",
+    "/home/openclaw/.openclaw/workspace/parallel-sapho/scripts/run_micro_artifact_watch.py",
+    "--max-items",
+    "1",
+    "--public-seed-dir",
+    "/home/openclaw/.openclaw/workspace/website"
+  ],
+  "returncode": 0,
+  "stdout": "[main 5ec3e37b] Publish 2026-03-28 parallel Sapho site update\n 14 files changed, 266 insertions(+), 230 deletions(-)\n create mode 100644 website/artifacts/kb/queue/queue-20260304026-chatdev-communicative-agents-for-software-development.md\n5ec3e37b restore_point=20260329T171007Z-c02526ce741a\npublished_artifact art-2026-03-04-026\nprocessed=1 pending=3\n",
+  "stderr": "To https://github.com/quiznat/Piter-de-VrAIes.git\n   c02526ce..5ec3e37b  main -> main\n",
+  "summary": {
+    "restore_point": "20260329T171007Z-c02526ce741a",
+    "processed": "1",
+    "pending": "3"
+  },
+  "sync": {
+    "checkin": {
+      "returncode": 0,
+      "stdout": "/home/openclaw/.openclaw/workspace/research/factory/checkins/article-checkin-20260329T171011Z.json",
+      "stderr": ""
+    },
+    "mirror": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "localPublicMirror": {
+      "returncode": 0,
+      "copied": [
+        "artifacts/ops/factory-checkin-latest.json",
+        "artifacts/ops/assignment-status.md",
+        "artifacts/ops/heartbeat-latest.md",
+        "artifacts/ops/index.json",
+        "data/ops-latest.json",
+        "data/heartbeat-latest.json"
+      ]
+    }
+  }
+}

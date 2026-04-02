@@ -1,0 +1,48 @@
+{
+  "runId": "pm-live-20260312T233011Z",
+  "generatedAtUtc": "2026-03-12T23:33:34Z",
+  "paths": [
+    {
+      "queueId": "art-2026-03-12-004",
+      "source": "https://arxiv.org/html/2601.06112v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-12-004-reliabilitybench-production-stress-llm-agents.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-12/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-12/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-11-020",
+      "source": "https://arxiv.org/html/2511.00872v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-11-020-agent-frameworks-code-centric-se-eval.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-12/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-12/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-11-017",
+      "source": "https://arxiv.org/html/2505.02133v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-11-017-multi-agent-runtime-debugging-codegen-eval.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-12/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-12/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-10-080",
+      "source": "https://snap-research.github.io/locomo/",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-080-locomo-very-long-term-conversational-memory-benchmark.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-12/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-12/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-10-077",
+      "source": "https://arxiv.org/html/2601.17627v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-077-change-characteristics-description-alignment.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-12/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-12/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-10-069",
+      "source": "https://arxiv.org/abs/2601.00477",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-10-069-security-age-of-ai-teammates-agentic-prs.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-12/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-12/technical-executive-report.md"
+    }
+  ]
+}

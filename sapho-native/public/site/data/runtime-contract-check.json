@@ -1,0 +1,126 @@
+{
+  "generatedAtUtc": "2026-03-29T17:29:54Z",
+  "status": "PASS",
+  "issues": [],
+  "agents": {
+    "ok": true,
+    "configured": [
+      "adversary",
+      "curator",
+      "extractor",
+      "main",
+      "mechanist",
+      "orchestrator",
+      "pocketcuratora88260897e",
+      "pocketsynthesist62cb63b20a",
+      "synthesist",
+      "synthesist-stitch"
+    ],
+    "required": [
+      "curator",
+      "extractor",
+      "synthesist"
+    ],
+    "missing": []
+  },
+  "directCron": {
+    "ok": true,
+    "installedPath": "crontab:openclaw",
+    "templatePath": "/home/openclaw/.openclaw/workspace/parallel-sapho/runtime/openclaw-parallel-sapho-daily.cron",
+    "templateMatchesInstalled": true,
+    "rules": {
+      "am_ingest": {
+        "token": "python3 /home/openclaw/.openclaw/workspace/parallel-sapho/scripts/run_runtime_am_job.py",
+        "installed": true
+      },
+      "artifact_poller": {
+        "token": "python3 /home/openclaw/.openclaw/workspace/parallel-sapho/scripts/run_runtime_artifact_job.py --max-items 1",
+        "installed": true
+      },
+      "pm_publish": {
+        "token": "python3 /home/openclaw/.openclaw/workspace/parallel-sapho/scripts/run_runtime_pm_job.py",
+        "installed": true
+      }
+    },
+    "missingRules": []
+  },
+  "retiredGatewayJobs": {
+    "ok": true,
+    "jobs": {
+      "research-am-ingest-shift": {
+        "present": true,
+        "enabled": false
+      },
+      "research-artifact-publish-poller": {
+        "present": true,
+        "enabled": false
+      },
+      "research-pm-live-synthesis-shift": {
+        "present": true,
+        "enabled": false
+      }
+    },
+    "gaps": []
+  },
+  "heartbeat": {
+    "ok": true,
+    "timestampUtc": "2026-03-29T17:29:13Z",
+    "fields": {
+      "shift": "heartbeat",
+      "status": "PASS",
+      "step": "runtime_monitor_green",
+      "next": "continue_monitoring",
+      "artifact": "research/operations/validation/runtime-contract-check-latest.json"
+    },
+    "rawLine": "HEARTBEAT_UPDATE 2026-03-29T17:29:13Z | shift=heartbeat | status=PASS | step=runtime_monitor_green | next=continue_monitoring | artifact=research/operations/validation/runtime-contract-check-latest.json"
+  },
+  "websiteTruth": {
+    "ok": true,
+    "maxAgeHours": 36,
+    "ages": {
+      "latestDailyMeta": 13.99,
+      "keptLinksPayload": 0.16,
+      "rssFeed": 0.16,
+      "artifactsFeedMeta": 0.16,
+      "dailyFeed": 13.99,
+      "opsLatest": 0.01,
+      "heartbeatJson": 0.01,
+      "publicCheckin": 0.08
+    },
+    "stale": [],
+    "opsLatest": {
+      "generatedAtUtc": "2026-03-29T17:29:13Z",
+      "assignmentStatusPath": "artifacts/ops/assignment-status.md",
+      "heartbeatPath": "artifacts/ops/heartbeat-latest.md",
+      "factoryCheckinLatestPath": "artifacts/ops/factory-checkin-latest.json",
+      "latestShiftPath": "research/reports/shifts/heartbeat-20260329T172903Z.json",
+      "heartbeat": {
+        "generatedAtUtc": "2026-03-29T17:29:13Z",
+        "timestampUtc": "2026-03-29T17:29:13Z",
+        "shift": "heartbeat",
+        "status": "PASS",
+        "step": "runtime_monitor_green",
+        "next": "continue_monitoring",
+        "reportAction": "continue_monitoring",
+        "artifact": "research/operations/validation/runtime-contract-check-latest.json",
+        "authorityStatus": "",
+        "rawLine": "HEARTBEAT_UPDATE 2026-03-29T17:29:13Z | shift=heartbeat | status=PASS | step=runtime_monitor_green | next=continue_monitoring | artifact=research/operations/validation/runtime-contract-check-latest.json"
+      }
+    }
+  },
+  "canonicalRuntime": {
+    "ok": true,
+    "articleCount": 212,
+    "dailyBundleCount": 6,
+    "missingRoots": []
+  },
+  "workspaceOwnership": {
+    "ok": true,
+    "requiredOwner": "openclaw",
+    "requiredGroup": "openclaw",
+    "ownerMismatchCount": 0,
+    "groupMismatchCount": 0,
+    "ownerMismatchSample": [],
+    "groupMismatchSample": []
+  }
+}

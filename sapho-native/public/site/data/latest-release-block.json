@@ -1,0 +1,72 @@
+{
+  "generatedAtUtc": "2026-03-04T02:45:51Z",
+  "policyId": "publish-no-go-criteria-v1",
+  "mode": "fail-closed",
+  "status": "PASS",
+  "metrics": {
+    "unsupportedClaimRatePct": 0.0,
+    "citationFailureRatePct": 0.0,
+    "topLineClaimTraceabilityPct": 100.0,
+    "headlineClaimLinkageCoveragePct": 100.0,
+    "conflictContradictionCheckCoveragePct": 100.0,
+    "conflictCandidates": 109.0,
+    "contradictionChecks": 109.0,
+    "topLineClaims": 6.0
+  },
+  "triggeredNoGo": [],
+  "evaluation": [
+    {
+      "name": "unsupported_claim_rate_nonzero",
+      "metric": "unsupportedClaimRatePct",
+      "operator": ">",
+      "threshold": 0.0,
+      "actual": 0.0,
+      "applicable": true,
+      "triggered": false,
+      "pass": true
+    },
+    {
+      "name": "citation_failure_rate_nonzero",
+      "metric": "citationFailureRatePct",
+      "operator": ">",
+      "threshold": 0.0,
+      "actual": 0.0,
+      "applicable": true,
+      "triggered": false,
+      "pass": true
+    },
+    {
+      "name": "topline_traceability_not_full",
+      "metric": "topLineClaimTraceabilityPct",
+      "operator": "<",
+      "threshold": 100.0,
+      "actual": 100.0,
+      "applicable": true,
+      "triggered": false,
+      "pass": true
+    },
+    {
+      "name": "missing_contradiction_check_when_conflict_exists",
+      "metric": "conflictContradictionCheckCoveragePct",
+      "operator": "<",
+      "threshold": 100.0,
+      "actual": 100.0,
+      "applicable": true,
+      "triggered": false,
+      "pass": true
+    },
+    {
+      "name": "required_claim_linkage_missing",
+      "metric": "headlineClaimLinkageCoveragePct",
+      "operator": "<",
+      "threshold": 100.0,
+      "actual": 100.0,
+      "applicable": true,
+      "triggered": false,
+      "pass": true
+    }
+  ],
+  "preflightStatus": "PASS",
+  "preflightPath": "/home/openclaw/.openclaw/workspace/research/briefs/daily/2026-03-04/technical-report-preflight.json",
+  "policyPath": "/home/openclaw/.openclaw/workspace/research/contracts/publish-no-go-criteria.v1.json"
+}

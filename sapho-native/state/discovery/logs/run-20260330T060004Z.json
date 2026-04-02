@@ -1,0 +1,10 @@
+{
+  "runId": "20260330T060004Z",
+  "generatedAtUtc": "2026-03-30T06:00:04Z",
+  "paused": true,
+  "pauseReason": "pending_articles_above_threshold",
+  "pendingArticles": 108,
+  "maxPendingBeforePause": 12,
+  "inserted": 0,
+  "eventsPath": "/home/openclaw/.openclaw/workspace/parallel-sapho/state/discovery/logs/discovery-events-20260330T060004Z.jsonl"
+}

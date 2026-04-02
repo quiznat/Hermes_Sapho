@@ -1,0 +1,52 @@
+# Trace Paths
+
+```json
+{
+  "runId": "pm-live-20260308T013640Z",
+  "generatedAtUtc": "2026-03-08T01:39:25Z",
+  "paths": [
+    {
+      "queueId": "art-2026-03-07-048",
+      "source": "https://arxiv.org/html/2506.12508v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-07-048-agentorchestra-hierarchical-multi-agent-framework.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-08/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-08/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-07-035",
+      "source": "https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-07-035-replit-agent-database-wipe-incident.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-08/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-08/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-07-033",
+      "source": "https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-07-033-firetiger-ingest-incident-postmortem.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-08/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-08/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-06-021",
+      "source": "https://arxiv.org/html/2509.14745v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-06-021-agentic-coding-prs-empirical-study.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-08/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-08/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-06-015",
+      "source": "https://arxiv.org/html/2601.15195v1",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-06-015-agentic-pr-failure-taxonomy.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-08/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-08/technical-executive-report.md"
+    },
+    {
+      "queueId": "art-2026-03-04-074",
+      "source": "https://addyosmani.com/blog/factory-model/",
+      "artifactPath": "research/kb/queue/queue-art-2026-03-04-074-factory-model-agentic-software-engineering.md",
+      "executiveBriefPath": "research/briefs/daily/2026-03-08/executive-brief.md",
+      "technicalReportPath": "research/briefs/daily/2026-03-08/technical-executive-report.md"
+    }
+  ]
+}
+```

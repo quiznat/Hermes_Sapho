@@ -1,0 +1,1806 @@
+{
+  "version": "technical-report-v1.1.0",
+  "last_updated": "2026-03-04T03:49:08Z",
+  "date": "2026-03-03",
+  "runId": "20260304T034908Z",
+  "preflight": {
+    "status": "PASS",
+    "topLineClaims": 6,
+    "traceableClaims": 6,
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 0,
+    "citationFailures": 0,
+    "conflictCandidates": 124,
+    "contradictionChecks": 124,
+    "disagreementsFound": 1,
+    "traceabilityRows": [
+      {
+        "claimId": "art-2026-03-01-030",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-01-026",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-01-023",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-03-013",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-03-008",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      },
+      {
+        "claimId": "art-2026-03-03-002",
+        "traceable": true,
+        "hasRecord": true,
+        "hasMechanism": true,
+        "hasSource": true
+      }
+    ],
+    "contradictionAudit": [
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-03-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "failure",
+          "mechanism",
+          "reduce",
+          "scoped"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-03-004",
+        "label": "unclear",
+        "overlapTerms": [
+          "mechanism",
+          "paper",
+          "persistent",
+          "reduce",
+          "reports"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-03-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "complex",
+          "context",
+          "guardrails",
+          "keep",
+          "paper",
+          "reports",
+          "scoped"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-03-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "mechanism",
+          "only",
+          "paper"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-02-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "reports",
+          "universal"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-02-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "mechanism",
+          "memory",
+          "patterns"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "patterns"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "paper",
+          "scale"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "memory"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-01-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "knowledge",
+          "patterns",
+          "reduce"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-01-026",
+        "label": "unclear",
+        "overlapTerms": [
+          "base",
+          "context",
+          "memory",
+          "scale"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "reliably"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-013",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "knowledge",
+          "patterns"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-03-004",
+        "label": "unclear",
+        "overlapTerms": [
+          "efficiency",
+          "improve",
+          "mechanism",
+          "overhead",
+          "reduce",
+          "token"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-03-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "files",
+          "governance",
+          "scoped"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-03-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "broad",
+          "context",
+          "cost",
+          "exploration",
+          "files",
+          "instruction-following",
+          "mechanism",
+          "overhead"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-02-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "configurations",
+          "study",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-02-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "explicit",
+          "governance"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "cost",
+          "explicit",
+          "pattern",
+          "requirements",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "overhead",
+          "study",
+          "tasks"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "explicit",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "explicit",
+          "tradeoff"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-01-028",
+        "label": "unclear",
+        "overlapTerms": [
+          "commands",
+          "multiple"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-01-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "reduce"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-008",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "then"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-03-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "across",
+          "behavior",
+          "configuration",
+          "guidance",
+          "instruction",
+          "operational",
+          "paper",
+          "reports"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-03-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "completion",
+          "file",
+          "mechanism",
+          "overhead",
+          "paper",
+          "reported",
+          "repository-level"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-02-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "across",
+          "operational",
+          "reports"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-02-013",
+        "label": "unclear",
+        "overlapTerms": [
+          "behavior",
+          "guidance"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "overhead",
+          "paper"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-01-029",
+        "label": "unclear",
+        "overlapTerms": [
+          "reports",
+          "runs"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-01-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "data",
+          "reduce",
+          "runtime",
+          "usage",
+          "workflows"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "runs",
+          "runtime"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-004",
+        "rightId": "art-2026-03-01-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "runtime",
+          "setup"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-03-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "files",
+          "make",
+          "more",
+          "often",
+          "paper"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-02-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "across",
+          "operational",
+          "reports"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-02-013",
+        "label": "unclear",
+        "overlapTerms": [
+          "behavior",
+          "guidance",
+          "less",
+          "more",
+          "run",
+          "teams"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "empirical",
+          "outcomes",
+          "paper",
+          "performance"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "behavior",
+          "implementation"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "drift",
+          "execution"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-01-029",
+        "label": "unclear",
+        "overlapTerms": [
+          "execution",
+          "reports",
+          "work"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-01-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "implementation"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "less",
+          "more"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-002",
+        "rightId": "art-2026-03-01-006",
+        "label": "unclear",
+        "overlapTerms": [
+          "control",
+          "files",
+          "instructions"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-001",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "cost",
+          "requirements",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-001",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "overhead",
+          "paper"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-001",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "coding",
+          "completion",
+          "context",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-001",
+        "rightId": "art-2026-03-01-026",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "inference"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-03-001",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "more"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-025",
+        "rightId": "art-2026-03-02-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "capability",
+          "structure"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-025",
+        "rightId": "art-2026-03-02-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "between",
+          "coordination",
+          "interaction"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-025",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "coordination",
+          "task",
+          "type"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-025",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "coordination",
+          "multi-agent",
+          "study",
+          "type"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-025",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "multi-agent",
+          "structure",
+          "task",
+          "type"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-025",
+        "rightId": "art-2026-03-02-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "multi-agent",
+          "single-agent"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-024",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "controls",
+          "explicit",
+          "rather",
+          "reliability"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-024",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "discipline",
+          "explicit",
+          "rather",
+          "reliability",
+          "single",
+          "structure"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-024",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "challenge",
+          "explicit",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-024",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "capability",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-024",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "raw",
+          "reliability"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-024",
+        "rightId": "art-2026-03-01-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "contribution",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-02-013",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "design"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "coordination",
+          "core",
+          "design",
+          "orchestration",
+          "patterns",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "coordination",
+          "core"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "design",
+          "implementation",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-02-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "orchestration",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "each",
+          "memory"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-01-025",
+        "label": "unclear",
+        "overlapTerms": [
+          "implementation",
+          "patterns"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "execute",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "execute",
+          "patterns"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-023",
+        "rightId": "art-2026-03-01-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "collaboration",
+          "orchestration",
+          "private",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-02-011",
+        "label": "unclear",
+        "overlapTerms": [
+          "agent-factory",
+          "analysis",
+          "art-",
+          "com",
+          "core",
+          "design",
+          "guidance",
+          "hint"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "agent-factory",
+          "analysis",
+          "art-",
+          "core",
+          "hint",
+          "https",
+          "improves",
+          "item"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "analysis",
+          "art-",
+          "core",
+          "hint",
+          "https",
+          "item",
+          "lane",
+          "need"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "behavior",
+          "design"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-02-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "depends",
+          "production"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-01-026",
+        "label": "unclear",
+        "overlapTerms": [
+          "depends",
+          "evaluation"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "improves",
+          "less",
+          "more",
+          "reliability"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-01-020",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "source"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-013",
+        "rightId": "art-2026-03-01-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "depends",
+          "matter",
+          "production",
+          "source"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-02-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "agent-factory",
+          "analysis",
+          "art-",
+          "coordination",
+          "core",
+          "hint",
+          "https",
+          "item"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "analysis",
+          "art-",
+          "choice",
+          "core",
+          "explicit",
+          "hint",
+          "https",
+          "item"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "design",
+          "explicit",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-02-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "orchestration",
+          "pattern",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "agentic",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "patterns",
+          "reliability"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-01-020",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "explicit",
+          "source"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-01-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "orchestration",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-011",
+        "rightId": "art-2026-03-01-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "controls",
+          "source"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-008",
+        "rightId": "art-2026-03-02-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "analysis",
+          "art-",
+          "arxiv",
+          "core",
+          "hint",
+          "https",
+          "item",
+          "lane"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-008",
+        "rightId": "art-2026-03-02-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "multi-agent",
+          "reasoning"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-008",
+        "rightId": "art-2026-03-01-029",
+        "label": "unclear",
+        "overlapTerms": [
+          "analysis",
+          "tasks"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-008",
+        "rightId": "art-2026-03-01-020",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "source"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-02-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "explicit",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-02-002",
+        "label": "unclear",
+        "overlapTerms": [
+          "loops",
+          "multi-agent",
+          "planning",
+          "rather",
+          "reflection"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "discipline",
+          "task"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-01-029",
+        "label": "unclear",
+        "overlapTerms": [
+          "analysis",
+          "planning"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "loops",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-01-020",
+        "label": "unclear",
+        "overlapTerms": [
+          "core",
+          "explicit",
+          "source"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-007",
+        "rightId": "art-2026-03-01-022",
+        "label": "unclear",
+        "overlapTerms": [
+          "planning",
+          "vertical"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-001",
+        "rightId": "art-2026-03-01-030",
+        "label": "unclear",
+        "overlapTerms": [
+          "autonomous",
+          "coding",
+          "sessions"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-001",
+        "rightId": "art-2026-03-01-023",
+        "label": "disagree",
+        "overlapTerms": [
+          "rather",
+          "review"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-001",
+        "rightId": "art-2026-03-01-020",
+        "label": "unclear",
+        "overlapTerms": [
+          "explicit",
+          "structured"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-002",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "loops",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-002",
+        "rightId": "art-2026-03-01-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "orchestration",
+          "rather"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-02-002",
+        "rightId": "art-2026-03-01-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "depends",
+          "interfaces",
+          "production"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-030",
+        "rightId": "art-2026-03-01-029",
+        "label": "unclear",
+        "overlapTerms": [
+          "autonomous",
+          "executes",
+          "execution",
+          "loop",
+          "prd"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-030",
+        "rightId": "art-2026-03-01-026",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "memory"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-030",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "loop"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-030",
+        "rightId": "art-2026-03-01-022",
+        "label": "unclear",
+        "overlapTerms": [
+          "autonomous",
+          "execution"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-028",
+        "rightId": "art-2026-03-01-006",
+        "label": "unclear",
+        "overlapTerms": [
+          "code",
+          "skill"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-029",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "loop",
+          "runs"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-029",
+        "rightId": "art-2026-03-01-022",
+        "label": "unclear",
+        "overlapTerms": [
+          "autonomous",
+          "execution",
+          "planning"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-025",
+        "rightId": "art-2026-03-01-026",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "data",
+          "human",
+          "query",
+          "table"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-025",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "knowledge",
+          "patterns",
+          "query",
+          "runtime",
+          "text-to-sql"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-025",
+        "rightId": "art-2026-03-01-008",
+        "label": "unclear",
+        "overlapTerms": [
+          "runtime",
+          "stack"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-026",
+        "rightId": "art-2026-03-01-023",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "strict"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-026",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "organizational",
+          "query"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-026",
+        "rightId": "art-2026-03-01-020",
+        "label": "unclear",
+        "overlapTerms": [
+          "grounding",
+          "just",
+          "quality"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-026",
+        "rightId": "art-2026-03-01-001",
+        "label": "unclear",
+        "overlapTerms": [
+          "controls",
+          "depends"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-023",
+        "rightId": "art-2026-03-01-024",
+        "label": "unclear",
+        "overlapTerms": [
+          "context",
+          "execute"
+        ]
+      },
+      {
+        "leftId": "art-2026-03-01-008",
+        "rightId": "art-2026-03-01-007",
+        "label": "unclear",
+        "overlapTerms": [
+          "practical",
+          "stack"
+        ]
+      }
+    ],
+    "generatedAtUtc": "2026-03-04T03:49:08Z",
+    "runId": "20260304T034908Z"
+  },
+  "laneProtocol": {
+    "agreement": [
+      "`art-2026-03-01-030` (agent-factory) supports: Ralph is an autonomous coding loop runner that repeatedly executes fresh AI coding sessions against a PRD task list (passes: false -> true) until completion, with memory persisted outside the active context window.",
+      "`art-2026-03-01-026` (agent-factory) supports: Reliable data agents require layered grounding and continuous evaluation, not just strong base models. Accuracy at organizational scale depends on context quality, memory reuse, and strict access/evaluation controls."
+    ],
+    "disagreement": [
+      "`art-2026-03-02-001` vs `art-2026-03-01-023` disagree on operating posture (UI-design vs agent-factory); overlap=rather, review"
+    ],
+    "recommendation": "Adopt lane-balanced final judgment: require at least two independent lane perspectives before publishing strategic direction. Current lane mix: agent-factory=14, agent-memory=6, UI-design=4, agent-research=2, agent-memory-systems=1.",
+    "downside": "If synthesis remains lane-skewed, strategy can overfit one viewpoint and hide downside risk. Current dominant lane is agent-factory (14)."
+  },
+  "whatChangedMyMind": {
+    "items": [
+      "Contradiction audit evidence forced a shift from single-story confidence to explicit multi-hypothesis framing before recommendation.",
+      "This run includes disagreement checks=124 with disagreements=1."
+    ],
+    "evidenceIds": [
+      "art-2026-03-01-030",
+      "art-2026-03-01-026",
+      "art-2026-03-01-023"
+    ]
+  },
+  "contrarianReview": {
+    "highStakes": true,
+    "items": [
+      {
+        "challenge": "Primary recommendation may overfit one operating style: `art-2026-03-02-001` and `art-2026-03-01-023` suggest divergent execution patterns.",
+        "counterEvidence": "Counter-evidence keeps both options live: `art-2026-03-02-001` (UI-design) vs `art-2026-03-01-023` (agent-factory).",
+        "evidenceIds": [
+          "art-2026-03-02-001",
+          "art-2026-03-01-023"
+        ]
+      }
+    ]
+  },
+  "phase4TemplateConformance": {
+    "status": "PASS",
+    "reason": "ok"
+  },
+  "confidenceCalibration": {
+    "band": "high",
+    "score": 0.8574,
+    "confidenceDrivers": [
+      "traceabilityCoverage=1.00",
+      "highConvictionRatio=0.89",
+      "laneDiversity=0.48"
+    ],
+    "uncertaintyDrivers": [
+      "disagreementsFound=1"
+    ],
+    "highStakes": true,
+    "guardrail": "Maintain fail-closed publish behavior; if confidence falls below medium or uncertainty drivers worsen, require additional contrarian evidence before strategic recommendation updates."
+  },
+  "phase6CalibrationConformance": {
+    "status": "PASS",
+    "reason": "ok"
+  },
+  "totalProcessed": 27,
+  "totalRetained": 27,
+  "highConviction": 24,
+  "laneCounts": {
+    "agent-memory": 6,
+    "agent-factory": 14,
+    "agent-memory-systems": 1,
+    "UI-design": 4,
+    "agent-research": 2
+  },
+  "decisionCounts": {
+    "retain": 27
+  },
+  "confidenceCounts": {
+    "medium": 16,
+    "unknown": 3,
+    "high": 8
+  },
+  "themes": [
+    {
+      "lane": "agent-factory",
+      "thesis": "Ralph is an autonomous coding loop runner that repeatedly executes fresh AI coding sessions against a PRD task list (passes: false -> true) until completion, with memory persisted outside the active context window.",
+      "mechanism": "Fresh-instance execution discipline: each iteration starts with clean context, reducing drift from long conversational histories.",
+      "source": "https://github.com/snarktank/ralph",
+      "id": "art-2026-03-01-030"
+    },
+    {
+      "lane": "agent-factory",
+      "thesis": "Reliable data agents require layered grounding and continuous evaluation, not just strong base models. Accuracy at organizational scale depends on context quality, memory reuse, and strict access/evaluation controls.",
+      "mechanism": "Multi-layer context grounding: metadata, query inference, curated human descriptions, code-level table derivations, company docs, learned memory, and live warehouse checks.",
+      "source": "https://openai.com/index/inside-our-in-house-data-agent/",
+      "id": "art-2026-03-01-026"
+    },
+    {
+      "lane": "agent-factory",
+      "thesis": "In high-throughput agentic development, the primary engineering bottleneck shifts from writing code to designing the harness: constraints, observability, review loops, and repository-legible context that let agents execute reliably.",
+      "mechanism": "A strict no-manual-code operating constraint forced all capability improvements to be encoded in reusable scaffolding rather than ad hoc heroics.",
+      "source": "https://openai.com/index/harness-engineering/",
+      "id": "art-2026-03-01-023"
+    },
+    {
+      "lane": "agent-memory",
+      "thesis": "Single-file agent manifests do not scale reliably for complex codebases; a tiered “codified context infrastructure” (hot-memory constitution + specialist agents + cold-memory knowledge base) can preserve cross-session coherence and reduce repeated failure patterns.",
+      "mechanism": "The paper reports a large-project case (108k-line distributed system) and proposes a three-tier memory architecture: always-loaded core conventions, task-invoked domain specialists, and on-demand deep specs. The claimed mechanism is scoped context loading: keep universal guardrails persistent while routing detailed domain knowledge only when needed, avoiding both context amnesia and context overload.",
+      "source": "https://arxiv.org/html/2602.20478v1",
+      "id": "art-2026-03-03-013"
+    },
+    {
+      "lane": "agent-memory",
+      "thesis": "The practical failure mode is not “context files bad,” but “over-broad context files backfire.” This synthesis argues for minimal, operationally relevant agent context with explicit boundaries and commands.",
+      "mechanism": "The post integrates multiple studies and highlights a recurring mechanism: broad context files increase agent exploration and instruction-following overhead, which can raise cost and reduce correctness on many tasks. It also surfaces an important tradeoff from another study: some context configurations improve speed/token efficiency while not necessarily improving correctness. The actionable pattern is conditional governance: optimize for task success first, then efficiency, using tightly scoped context requirements.",
+      "source": "https://notchrisgroves.com/when-agents-md-backfires/",
+      "id": "art-2026-03-03-008"
+    },
+    {
+      "lane": "agent-memory",
+      "thesis": "Agent context files (AGENTS.md/CLAUDE.md/copilot-instructions style files) have become operational control artifacts, but in practice they are often complex, hard to read, and unevenly scoped: teams emphasize functional execution guidance while under-specifying non-functional guardrails.",
+      "mechanism": "The paper reports a large empirical sample (2,303 context files across 1,925 repositories). It finds that maintenance behavior looks like configuration drift management (frequent small additions), and that instruction content is skewed toward build/run, implementation details, and architecture. Security and performance instructions appear far less frequently, creating a governance gap where agents are guided on how to make things work more than how to keep outcomes safe and efficient.",
+      "source": "https://arxiv.org/html/2511.12884v1",
+      "id": "art-2026-03-03-002"
+    }
+  ],
+  "records": [
+    {
+      "id": "art-2026-03-03-013",
+      "lane": "agent-memory",
+      "url": "https://arxiv.org/html/2602.20478v1",
+      "processedAtUtc": "2026-03-04T01:40:19Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-03-013-codified-context-infrastructure.md",
+      "source": "https://arxiv.org/html/2602.20478v1",
+      "thesis": "Single-file agent manifests do not scale reliably for complex codebases; a tiered “codified context infrastructure” (hot-memory constitution + specialist agents + cold-memory knowledge base) can preserve cross-session coherence and reduce repeated failure patterns.",
+      "mechanism": "The paper reports a large-project case (108k-line distributed system) and proposes a three-tier memory architecture: always-loaded core conventions, task-invoked domain specialists, and on-demand deep specs. The claimed mechanism is scoped context loading: keep universal guardrails persistent while routing detailed domain knowledge only when needed, avoiding both context amnesia and context overload.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-03-008",
+      "lane": "agent-memory",
+      "url": "https://notchrisgroves.com/when-agents-md-backfires/",
+      "processedAtUtc": "2026-03-03T17:06:36Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-03-008-agents-md-backfires-practitioner-synthesis.md",
+      "source": "https://notchrisgroves.com/when-agents-md-backfires/",
+      "thesis": "The practical failure mode is not “context files bad,” but “over-broad context files backfire.” This synthesis argues for minimal, operationally relevant agent context with explicit boundaries and commands.",
+      "mechanism": "The post integrates multiple studies and highlights a recurring mechanism: broad context files increase agent exploration and instruction-following overhead, which can raise cost and reduce correctness on many tasks. It also surfaces an important tradeoff from another study: some context configurations improve speed/token efficiency while not necessarily improving correctness. The actionable pattern is conditional governance: optimize for task success first, then efficiency, using tightly scoped context requirements.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-03-004",
+      "lane": "agent-memory",
+      "url": "https://arxiv.org/pdf/2601.20404",
+      "processedAtUtc": "2026-03-03T13:36:36Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-03-004-agents-md-efficiency-impact.md",
+      "source": "https://arxiv.org/pdf/2601.20404",
+      "thesis": "This paper reports that AGENTS.md can improve operational efficiency for coding-agent runs, with lower median runtime and lower output-token usage in a paired with/without-file setup across sampled pull requests.",
+      "mechanism": "The mechanism claim is configuration compression and guidance efficiency: a repository-level instruction file can reduce exploratory overhead by providing persistent project constraints and workflows up front. In the reported data (10 repositories, 124 PRs), this is associated with faster completion and lower token spend while maintaining comparable completion behavior.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-03-002",
+      "lane": "agent-memory",
+      "url": "https://arxiv.org/html/2511.12884v1",
+      "processedAtUtc": "2026-03-03T12:36:19Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-03-002-agent-readmes-empirical-study.md",
+      "source": "https://arxiv.org/html/2511.12884v1",
+      "thesis": "Agent context files (AGENTS.md/CLAUDE.md/copilot-instructions style files) have become operational control artifacts, but in practice they are often complex, hard to read, and unevenly scoped: teams emphasize functional execution guidance while under-specifying non-functional guardrails.",
+      "mechanism": "The paper reports a large empirical sample (2,303 context files across 1,925 repositories). It finds that maintenance behavior looks like configuration drift management (frequent small additions), and that instruction content is skewed toward build/run, implementation details, and architecture. Security and performance instructions appear far less frequently, creating a governance gap where agents are guided on how to make things work more than how to keep outcomes safe and efficient.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-03-001",
+      "lane": "agent-memory",
+      "url": "https://arxiv.org/abs/2602.11988",
+      "processedAtUtc": "2026-03-03T12:06:59Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-03-001-agents-md-evaluation.md",
+      "source": "https://arxiv.org/abs/2602.11988",
+      "thesis": "Repository-level context files (for example AGENTS.md) are not automatically performance-improving for coding agents. In the paper’s evaluations, context files often reduced task success while increasing inference cost.",
+      "mechanism": "The reported mechanism is behavioral over-constraint: context files induce broader exploration and instruction-following (more file traversal/testing and stricter requirement adherence), but this added process overhead can make task completion harder when requirements are unnecessary or overly broad. The authors observe that LLM-generated context files trend negative on success, while developer-authored files provide only marginal benefit.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-025",
+      "lane": "agent-factory",
+      "url": "https://arxiv.org/abs/2512.08296",
+      "processedAtUtc": "2026-03-03T07:06:20Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-025-scaling-agent-systems-paper.md",
+      "source": "https://arxiv.org/abs/2512.08296",
+      "thesis": "The study evaluates 180 configurations across five architecture families (single-agent plus four multi-agent topologies) and reports measurable interaction effects between model capability, coordination structure, task type, and compute budget.",
+      "mechanism": "The key operational signal is conditionality: multi-agent structure is not a universal upgrade.",
+      "decision": "retain",
+      "confidence": "unknown",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-024",
+      "lane": "agent-memory-systems",
+      "url": "https://zenodo.org/records/17760288",
+      "processedAtUtc": "2026-03-03T06:36:51Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-024-zenodo-context-engineered-collaboration.md",
+      "source": "https://zenodo.org/records/17760288",
+      "thesis": "The stated contribution is procedural: reliability comes from governance structure rather than raw model capability.",
+      "mechanism": "The record describes controls such as canonical separation of numerics and narrative, a single strategy master, canonical numbers discipline, and explicit stabilization/challenge protocols.",
+      "decision": "retain",
+      "confidence": "unknown",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-023",
+      "lane": "agent-factory",
+      "url": "https://github.com/a2aproject/A2A",
+      "processedAtUtc": "2026-03-03T06:36:50Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-023-a2a-protocol.md",
+      "source": "https://github.com/a2aproject/A2A",
+      "thesis": "The core mechanism is protocol-level coordination rather than model-level consolidation: agents can discover each other via agent cards, negotiate interaction modalities, execute long-running collaboration patterns, and exchange rich payloads while preserving internal opacity (no mandatory exposure of private memory/tools).",
+      "mechanism": "For software-factory design, this matters because it formalizes a boundary between orchestration and implementation internals.",
+      "decision": "retain",
+      "confidence": "unknown",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-013",
+      "lane": "agent-factory",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "processedAtUtc": "2026-03-02T19:14:47Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-013-anthropic-demystifying-evals.md",
+      "source": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "thesis": "Agent reliability depends less on anecdotal demos and more on disciplined eval design. Teams need task-grounded, failure-oriented, continuously run evaluation suites that track whether agent behavior improves in the dimensions that matter for production.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-013 ## Source - URL: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents - Type: engineering methodology guidance (Anthropic) - Lane hint: agent-factory ## Core thesis Agent reliability depends less on anecdotal demos and more on disciplined eval design.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-02-011",
+      "lane": "agent-memory",
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
+      "processedAtUtc": "2026-03-02T18:14:44Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-011-azure-agent-design-patterns.md",
+      "source": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
+      "thesis": "Agentic systems should be engineered with explicit pattern selection and orchestration controls rather than generic “agent” abstractions. Pattern choice should match task topology, coordination cost, and reliability requirements.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-011 ## Source - URL: https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns - Type: Microsoft architecture guidance (implementation-oriented design patterns) - Lane hint: agent-factory ## Core thesis Agentic systems should be engineered with explicit pattern selection and orchestration controls rather than generic “agent” abstractions.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-008",
+      "lane": "agent-factory",
+      "url": "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/",
+      "processedAtUtc": "2026-03-02T16:14:45Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-008-google-scaling-agent-systems.md",
+      "source": "https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/",
+      "thesis": "Agent performance does not scale monotonically with agent count. Architecture-task alignment governs outcomes: multi-agent coordination improves parallelizable tasks but can degrade sequential reasoning workloads due to coordination overhead.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-008 ## Source - URL: https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work/ - Type: Google Research summary of controlled empirical study (links to arXiv paper) - Lane hint: agent-factory ## Core thesis Agent performance does not scale monotonically with agent count.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-02-007",
+      "lane": "UI-design",
+      "url": "https://arxiv.org/html/2404.11584v1",
+      "processedAtUtc": "2026-03-02T04:44:04Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-007-agent-architectures-survey.md",
+      "source": "https://arxiv.org/html/2404.11584v1",
+      "thesis": "Agent reliability and task performance are architecture-dependent: robust agent systems need explicit planning loops, reflection/self-correction, and tool-calling discipline, with architecture choice (single vs multi-agent, vertical vs horizontal) matched to task structure rather than ideology.",
+      "mechanism": "Queue Item Analysis — art-2026-03-02-007 ## Source - URL: https://arxiv.org/html/2404.11584v1 - Type: arXiv survey (2024) - Lane hint: UI-design ## Core thesis Agent reliability and task performance are architecture-dependent: robust agent systems need explicit planning loops, reflection/self-correction, and tool-calling discipline, with architecture choice (single vs multi-agent, vertical vs horizontal) matched to t",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-001",
+      "lane": "UI-design",
+      "url": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
+      "processedAtUtc": "2026-03-02T00:27:41Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-001-agentic-software-factory-case-study.md",
+      "source": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
+      "thesis": "Treat AI software delivery as an orchestrated factory with explicit multi-lane roles, structured design debate, autonomous implementation, and synthesis-based review—rather than single-model coding sessions.",
+      "mechanism": "Structured multi-round debate protocol before coding, with explicit challenge/concession behavior to force tradeoff surfacing.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-02-002",
+      "lane": "UI-design",
+      "url": "https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns/",
+      "processedAtUtc": "2026-03-02T00:27:41Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-02-002-azure-agent-factory-patterns.md",
+      "source": "https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns/",
+      "thesis": "Enterprise agent systems should be designed as composable pattern stacks rather than single-agent chat interfaces; durable production value depends on combining tool use, reflection, planning, multi-agent orchestration, and adaptive reasoning.",
+      "mechanism": "Five-pattern taxonomy: tool use, reflection, planning, multi-agent orchestration, and ReAct loops.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-030",
+      "lane": "agent-factory",
+      "url": "https://github.com/snarktank/ralph",
+      "processedAtUtc": "2026-03-01T23:27:02Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-030-ralph.md",
+      "source": "https://github.com/snarktank/ralph",
+      "thesis": "Ralph is an autonomous coding loop runner that repeatedly executes fresh AI coding sessions against a PRD task list (passes: false -> true) until completion, with memory persisted outside the active context window.",
+      "mechanism": "Fresh-instance execution discipline: each iteration starts with clean context, reducing drift from long conversational histories.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-01-028",
+      "lane": "agent-factory",
+      "url": "https://github.com/EveryInc/compound-engineering-plugin",
+      "processedAtUtc": "2026-03-01T22:27:33Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-028-compound-engineering-plugin.md",
+      "source": "https://github.com/EveryInc/compound-engineering-plugin",
+      "thesis": "A compound-engineering plugin system plus conversion CLI that ports Claude Code plugin assets (commands/skills/agents/MCP settings) into multiple agent-tool ecosystems (OpenCode, Codex, Droid, Pi, Gemini CLI, Copilot, Kiro).",
+      "mechanism": "Cross-tool portability layer for command/skill ecosystems, reducing lock-in to a single agent runtime.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-029",
+      "lane": "agent-factory",
+      "url": "https://github.com/snarktank/compound-product",
+      "processedAtUtc": "2026-03-01T22:27:33Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-029-compound-product.md",
+      "source": "https://github.com/snarktank/compound-product",
+      "thesis": "A report-driven autonomous product-improvement loop that analyzes daily reports, picks a top priority, generates PRD/tasks, executes in iterative fresh-context runs, and produces PR-ready output.",
+      "mechanism": "Phase-structured automation (analysis -> planning -> execution loop -> PR output) for deterministic autonomous work cycles.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-01-025",
+      "lane": "agent-factory",
+      "url": "https://github.com/agno-agi/dash",
+      "processedAtUtc": "2026-03-01T21:57:21Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-025-dash.md",
+      "source": "https://github.com/agno-agi/dash",
+      "thesis": "Dash is a self-learning data agent implementation that operationalizes a six-layer context stack for Text-to-SQL and data interpretation workflows.",
+      "mechanism": "Six-layer context model (table usage, human annotations, query patterns, institutional knowledge, learnings, runtime context) to reduce SQL hallucination and schema misuse.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-026",
+      "lane": "agent-factory",
+      "url": "https://openai.com/index/inside-our-in-house-data-agent/",
+      "processedAtUtc": "2026-03-01T21:57:21Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-026-openai-inhouse-data-agent.md",
+      "source": "https://openai.com/index/inside-our-in-house-data-agent/",
+      "thesis": "Reliable data agents require layered grounding and continuous evaluation, not just strong base models. Accuracy at organizational scale depends on context quality, memory reuse, and strict access/evaluation controls.",
+      "mechanism": "Multi-layer context grounding: metadata, query inference, curated human descriptions, code-level table derivations, company docs, learned memory, and live warehouse checks.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-01-023",
+      "lane": "agent-factory",
+      "url": "https://openai.com/index/harness-engineering/",
+      "processedAtUtc": "2026-03-01T21:27:48Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-023-harness-engineering.md",
+      "source": "https://openai.com/index/harness-engineering/",
+      "thesis": "In high-throughput agentic development, the primary engineering bottleneck shifts from writing code to designing the harness: constraints, observability, review loops, and repository-legible context that let agents execute reliably.",
+      "mechanism": "A strict no-manual-code operating constraint forced all capability improvements to be encoded in reusable scaffolding rather than ad hoc heroics.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-01-024",
+      "lane": "agent-factory",
+      "url": "https://www.ashpreetbedi.com/articles/sql-agent",
+      "processedAtUtc": "2026-03-01T21:27:48Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-024-sql-agent-dynamic-context.md",
+      "source": "https://www.ashpreetbedi.com/articles/sql-agent",
+      "thesis": "Text-to-SQL systems fail less from raw model weakness and more from missing organizational context. Reliability improves when runtime generation is grounded in retrievable knowledge and successful runs feed an offline learning loop.",
+      "mechanism": "The online path remains stable: retrieve dynamic context (schemas, join patterns, business semantics, query exemplars), then generate/validate/execute.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-020",
+      "lane": "agent-research",
+      "url": "https://github.com/google/langextract",
+      "processedAtUtc": "2026-03-01T20:58:56Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-020-langextract.md",
+      "source": "https://github.com/google/langextract",
+      "thesis": "LangExtract is a Python extraction library for turning unstructured text into structured entities with explicit source grounding. The core claim is not just extraction quality but extraction traceability.",
+      "mechanism": "The core claim is not just extraction quality but extraction traceability.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    },
+    {
+      "id": "art-2026-03-01-022",
+      "lane": "agent-factory",
+      "url": "https://github.com/virattt/dexter",
+      "processedAtUtc": "2026-03-01T20:58:56Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-022-dexter.md",
+      "source": "https://github.com/virattt/dexter",
+      "thesis": "Dexter is a domain-specialized autonomous research agent for finance with planning, self-validation, and tool-using execution over real-time financial data APIs.",
+      "mechanism": "Vertical specialization: positioned as an agent tuned for one domain (financial research) instead of a generic assistant.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-008",
+      "lane": "agent-factory",
+      "url": "https://spark.vibeship.co/",
+      "processedAtUtc": "2026-03-01T20:55:36Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-008.md",
+      "source": "",
+      "thesis": "Spark positions itself as an open-source, local-first desktop environment for building and running evolving AI agents, with emphasis on private/local execution and team collaboration.",
+      "mechanism": "The product framing combines: local desktop runtime, agent workflow/orchestration primitives, and repo-backed extensibility (vibeforge1111/vibeship-spark-intelligence). The linked onboarding/docs flow presents install-first setup and contribution paths, suggesting a practical builder stack rather than a pure conceptual essay.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-006",
+      "lane": "UI-design",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "processedAtUtc": "2026-03-01T20:25:00Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-006-taste-skill.md",
+      "source": "https://github.com/Leonxlnx/taste-skill",
+      "thesis": "A packaged set of prompt/skill instructions for frontend code generation quality control. The repository separates responsibilities into three skill files: a design-taste skill, a redesign skill, and an output-discipline skill.",
+      "mechanism": "The repository separates responsibilities into three skill files: a design-taste skill, a redesign skill, and an output-discipline skill.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-007",
+      "lane": "agent-research",
+      "url": "https://www.johann.fyi/openclaw-security-101",
+      "processedAtUtc": "2026-03-01T20:25:00Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md",
+      "source": "https://www.johann.fyi/openclaw-security-101",
+      "thesis": "High-agency assistants should be treated as privileged automation systems and hardened with host-level and access-level controls before scaling use.",
+      "mechanism": "Practical control stack extracted The article’s practical baseline can be summarized as: 1.",
+      "decision": "retain",
+      "confidence": "medium",
+      "evidenceQuality": "medium"
+    },
+    {
+      "id": "art-2026-03-01-001",
+      "lane": "agent-factory",
+      "url": "https://imbue.com/research/2026-02-27-darwinian-evolver/",
+      "processedAtUtc": "2026-03-01T19:55:40Z",
+      "artifact": "research/kb/queue/queue-art-2026-03-01-001-darwinian-evolver.md",
+      "source": "https://imbue.com/research/2026-02-27-darwinian-evolver/",
+      "thesis": "The system depends on three interfaces: initial organism, evaluator, and mutator.",
+      "mechanism": "Notable optimization controls The source emphasizes several concrete levers that matter for production factory workflows: 1.",
+      "decision": "retain",
+      "confidence": "high",
+      "evidenceQuality": "high"
+    }
+  ]
+}

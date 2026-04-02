@@ -1,0 +1,107 @@
+{
+  "generatedAtUtc": "2026-03-02T07:46:39Z",
+  "runId": "20260302T074300Z-sim",
+  "status": "BLOCKED",
+  "reason": "release_block_policy_triggered",
+  "preflight": {
+    "status": "PASS",
+    "topLineClaims": 6,
+    "traceabilityCoverage": 1.0,
+    "unsupportedClaims": 1,
+    "citationFailures": 0,
+    "conflictCandidates": 4,
+    "contradictionChecks": 4,
+    "disagreementsFound": 1
+  },
+  "releaseBlock": {
+    "generatedAtUtc": "2026-03-02T06:51:24Z",
+    "policyId": "publish-no-go-criteria-v1",
+    "mode": "fail-closed",
+    "status": "BLOCK",
+    "metrics": {
+      "unsupportedClaimRatePct": 16.666666666666664,
+      "citationFailureRatePct": 0.0,
+      "topLineClaimTraceabilityPct": 100.0,
+      "headlineClaimLinkageCoveragePct": 100.0,
+      "conflictContradictionCheckCoveragePct": 100.0,
+      "conflictCandidates": 26.0,
+      "contradictionChecks": 26.0,
+      "topLineClaims": 6.0
+    },
+    "triggeredNoGo": [
+      {
+        "name": "unsupported_claim_rate_nonzero",
+        "metric": "unsupportedClaimRatePct",
+        "operator": ">",
+        "threshold": 0.0,
+        "actual": 16.666666666666664,
+        "applicable": true,
+        "triggered": true,
+        "pass": false
+      }
+    ],
+    "evaluation": [
+      {
+        "name": "unsupported_claim_rate_nonzero",
+        "metric": "unsupportedClaimRatePct",
+        "operator": ">",
+        "threshold": 0.0,
+        "actual": 16.666666666666664,
+        "applicable": true,
+        "triggered": true,
+        "pass": false
+      },
+      {
+        "name": "citation_failure_rate_nonzero",
+        "metric": "citationFailureRatePct",
+        "operator": ">",
+        "threshold": 0.0,
+        "actual": 0.0,
+        "applicable": true,
+        "triggered": false,
+        "pass": true
+      },
+      {
+        "name": "topline_traceability_not_full",
+        "metric": "topLineClaimTraceabilityPct",
+        "operator": "<",
+        "threshold": 100.0,
+        "actual": 100.0,
+        "applicable": true,
+        "triggered": false,
+        "pass": true
+      },
+      {
+        "name": "missing_contradiction_check_when_conflict_exists",
+        "metric": "conflictContradictionCheckCoveragePct",
+        "operator": "<",
+        "threshold": 100.0,
+        "actual": 100.0,
+        "applicable": true,
+        "triggered": false,
+        "pass": true
+      },
+      {
+        "name": "required_claim_linkage_missing",
+        "metric": "headlineClaimLinkageCoveragePct",
+        "operator": "<",
+        "threshold": 100.0,
+        "actual": 100.0,
+        "applicable": true,
+        "triggered": false,
+        "pass": true
+      }
+    ],
+    "preflightStatus": "PASS",
+    "preflightPath": "/tmp/tmpykj2luit.json",
+    "policyPath": "/home/openclaw/.openclaw/workspace/research/contracts/publish-no-go-criteria.v1.json"
+  },
+  "summary": {
+    "status": "FAIL",
+    "technicalReportCode": 0,
+    "releaseBlockCode": "BLOCK",
+    "briefCode": 5,
+    "digestCode": 5,
+    "pagesCode": 5
+  }
+}

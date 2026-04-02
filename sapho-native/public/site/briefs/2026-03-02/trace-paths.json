@@ -1,0 +1,201 @@
+{
+  "date": "2026-03-02",
+  "runId": "20260302T131750Z",
+  "generatedAtUtc": "2026-03-02T13:17:50Z",
+  "status": "PASS",
+  "traceRows": [
+    {
+      "claimIndex": 1,
+      "queueId": "art-2026-03-01-030",
+      "thesis": "Ralph is an autonomous coding loop runner that repeatedly executes fresh AI coding sessions against a PRD task list (passes: false -> true) until completion, with memory persisted outside the active context window.",
+      "lane": "agent-factory",
+      "source": {
+        "url": "https://github.com/snarktank/ralph",
+        "queueLineRef": "research/queue/article-intake-queue.jsonl#art-2026-03-01-030"
+      },
+      "queue": {
+        "status": "processed",
+        "addedAtUtc": "2026-03-01T19:48:53Z",
+        "processedAtUtc": "2026-03-01T23:27:02Z",
+        "outputs": [
+          "research/kb/queue/queue-art-2026-03-01-030-ralph.md"
+        ]
+      },
+      "artifact": {
+        "path": "research/kb/queue/queue-art-2026-03-01-030-ralph.md"
+      },
+      "graph": {
+        "claimNodeId": "claim:art-2026-03-01-030:thesis",
+        "nodesPath": "research/kg/nodes.jsonl",
+        "edgesPath": "research/kg/edges.jsonl"
+      },
+      "judgment": {
+        "technicalReportPath": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "insightSection": "Insight 1",
+        "laneProtocolSection": "Lane protocol synthesis",
+        "whatChangedMyMindSection": "What changed my mind"
+      }
+    },
+    {
+      "claimIndex": 2,
+      "queueId": "art-2026-03-01-026",
+      "thesis": "Reliable data agents require layered grounding and continuous evaluation, not just strong base models. Accuracy at organizational scale depends on context quality, memory reuse, and strict access/evaluation controls.",
+      "lane": "agent-factory",
+      "source": {
+        "url": "https://openai.com/index/inside-our-in-house-data-agent/",
+        "queueLineRef": "research/queue/article-intake-queue.jsonl#art-2026-03-01-026"
+      },
+      "queue": {
+        "status": "processed",
+        "addedAtUtc": "2026-03-01T19:46:50Z",
+        "processedAtUtc": "2026-03-01T21:57:21Z",
+        "outputs": [
+          "research/kb/queue/queue-art-2026-03-01-026-openai-inhouse-data-agent.md"
+        ]
+      },
+      "artifact": {
+        "path": "research/kb/queue/queue-art-2026-03-01-026-openai-inhouse-data-agent.md"
+      },
+      "graph": {
+        "claimNodeId": "claim:art-2026-03-01-026:thesis",
+        "nodesPath": "research/kg/nodes.jsonl",
+        "edgesPath": "research/kg/edges.jsonl"
+      },
+      "judgment": {
+        "technicalReportPath": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "insightSection": "Insight 2",
+        "laneProtocolSection": "Lane protocol synthesis",
+        "whatChangedMyMindSection": "What changed my mind"
+      }
+    },
+    {
+      "claimIndex": 3,
+      "queueId": "art-2026-03-01-023",
+      "thesis": "In high-throughput agentic development, the primary engineering bottleneck shifts from writing code to designing the harness: constraints, observability, review loops, and repository-legible context that let agents execute reliably.",
+      "lane": "agent-factory",
+      "source": {
+        "url": "https://openai.com/index/harness-engineering/",
+        "queueLineRef": "research/queue/article-intake-queue.jsonl#art-2026-03-01-023"
+      },
+      "queue": {
+        "status": "processed",
+        "addedAtUtc": "2026-03-01T19:45:55Z",
+        "processedAtUtc": "2026-03-01T21:27:48Z",
+        "outputs": [
+          "research/kb/queue/queue-art-2026-03-01-023-harness-engineering.md"
+        ]
+      },
+      "artifact": {
+        "path": "research/kb/queue/queue-art-2026-03-01-023-harness-engineering.md"
+      },
+      "graph": {
+        "claimNodeId": "claim:art-2026-03-01-023:thesis",
+        "nodesPath": "research/kg/nodes.jsonl",
+        "edgesPath": "research/kg/edges.jsonl"
+      },
+      "judgment": {
+        "technicalReportPath": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "insightSection": "Insight 3",
+        "laneProtocolSection": "Lane protocol synthesis",
+        "whatChangedMyMindSection": "What changed my mind"
+      }
+    },
+    {
+      "claimIndex": 4,
+      "queueId": "art-2026-03-02-001",
+      "thesis": "Treat AI software delivery as an orchestrated factory with explicit multi-lane roles, structured design debate, autonomous implementation, and synthesis-based review—rather than single-model coding sessions.",
+      "lane": "UI-design",
+      "source": {
+        "url": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
+        "queueLineRef": "research/queue/article-intake-queue.jsonl#art-2026-03-02-001"
+      },
+      "queue": {
+        "status": "processed",
+        "addedAtUtc": "2026-03-02T00:10:12Z",
+        "processedAtUtc": "2026-03-02T00:27:41Z",
+        "outputs": [
+          "research/kb/queue/queue-art-2026-03-02-001-agentic-software-factory-case-study.md"
+        ]
+      },
+      "artifact": {
+        "path": "research/kb/queue/queue-art-2026-03-02-001-agentic-software-factory-case-study.md"
+      },
+      "graph": {
+        "claimNodeId": "claim:art-2026-03-02-001:thesis",
+        "nodesPath": "research/kg/nodes.jsonl",
+        "edgesPath": "research/kg/edges.jsonl"
+      },
+      "judgment": {
+        "technicalReportPath": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "insightSection": "Insight 4",
+        "laneProtocolSection": "Lane protocol synthesis",
+        "whatChangedMyMindSection": "What changed my mind"
+      }
+    },
+    {
+      "claimIndex": 5,
+      "queueId": "art-2026-03-02-002",
+      "thesis": "Enterprise agent systems should be designed as composable pattern stacks rather than single-agent chat interfaces; durable production value depends on combining tool use, reflection, planning, multi-agent orchestration, and adaptive reasoning.",
+      "lane": "UI-design",
+      "source": {
+        "url": "https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns/",
+        "queueLineRef": "research/queue/article-intake-queue.jsonl#art-2026-03-02-002"
+      },
+      "queue": {
+        "status": "processed",
+        "addedAtUtc": "2026-03-02T00:10:12Z",
+        "processedAtUtc": "2026-03-02T00:27:41Z",
+        "outputs": [
+          "research/kb/queue/queue-art-2026-03-02-002-azure-agent-factory-patterns.md"
+        ]
+      },
+      "artifact": {
+        "path": "research/kb/queue/queue-art-2026-03-02-002-azure-agent-factory-patterns.md"
+      },
+      "graph": {
+        "claimNodeId": "claim:art-2026-03-02-002:thesis",
+        "nodesPath": "research/kg/nodes.jsonl",
+        "edgesPath": "research/kg/edges.jsonl"
+      },
+      "judgment": {
+        "technicalReportPath": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "insightSection": "Insight 5",
+        "laneProtocolSection": "Lane protocol synthesis",
+        "whatChangedMyMindSection": "What changed my mind"
+      }
+    },
+    {
+      "claimIndex": 6,
+      "queueId": "art-2026-03-01-029",
+      "thesis": "A report-driven autonomous product-improvement loop that analyzes daily reports, picks a top priority, generates PRD/tasks, executes in iterative fresh-context runs, and produces PR-ready output.",
+      "lane": "agent-factory",
+      "source": {
+        "url": "https://github.com/snarktank/compound-product",
+        "queueLineRef": "research/queue/article-intake-queue.jsonl#art-2026-03-01-029"
+      },
+      "queue": {
+        "status": "processed",
+        "addedAtUtc": "2026-03-01T19:48:53Z",
+        "processedAtUtc": "2026-03-01T22:27:33Z",
+        "outputs": [
+          "research/kb/queue/queue-art-2026-03-01-029-compound-product.md"
+        ]
+      },
+      "artifact": {
+        "path": "research/kb/queue/queue-art-2026-03-01-029-compound-product.md"
+      },
+      "graph": {
+        "claimNodeId": "claim:art-2026-03-01-029:thesis",
+        "nodesPath": "research/kg/nodes.jsonl",
+        "edgesPath": "research/kg/edges.jsonl"
+      },
+      "judgment": {
+        "technicalReportPath": "research/briefs/daily/2026-03-02/technical-executive-report.md",
+        "insightSection": "Insight 6",
+        "laneProtocolSection": "Lane protocol synthesis",
+        "whatChangedMyMindSection": "What changed my mind"
+      }
+    }
+  ],
+  "traceCount": 6
+}

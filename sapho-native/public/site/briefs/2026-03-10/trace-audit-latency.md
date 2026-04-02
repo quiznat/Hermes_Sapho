@@ -1,0 +1,11 @@
+# Trace Audit Latency
+
+```json
+{
+  "runId": "pm-live-20260310T233009Z",
+  "generatedAtUtc": "2026-03-10T23:33:36Z",
+  "auditLatencySecondsP50": 38,
+  "auditLatencySecondsP95": 91,
+  "status": "PASS"
+}
+```

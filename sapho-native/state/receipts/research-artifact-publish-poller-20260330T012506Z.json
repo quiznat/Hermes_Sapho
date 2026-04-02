@@ -1,0 +1,41 @@
+{
+  "job": "research-artifact-publish-poller",
+  "generatedAtUtc": "2026-03-30T01:25:06Z",
+  "status": "ok",
+  "command": [
+    "/usr/bin/python3",
+    "/home/openclaw/.openclaw/workspace/parallel-sapho/scripts/run_micro_artifact_watch.py",
+    "--max-items",
+    "1"
+  ],
+  "returncode": 0,
+  "stdout": "processed=0 pending=0\n",
+  "stderr": "",
+  "summary": {
+    "processed": "0",
+    "pending": "0"
+  },
+  "sync": {
+    "checkin": {
+      "returncode": 0,
+      "stdout": "/home/openclaw/.openclaw/workspace/research/factory/checkins/article-checkin-20260330T012506Z.json",
+      "stderr": ""
+    },
+    "mirror": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "localPublicMirror": {
+      "returncode": 0,
+      "copied": [
+        "artifacts/ops/factory-checkin-latest.json",
+        "artifacts/ops/assignment-status.md",
+        "artifacts/ops/heartbeat-latest.md",
+        "artifacts/ops/index.json",
+        "data/ops-latest.json",
+        "data/heartbeat-latest.json"
+      ]
+    }
+  }
+}
