@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-03-001",
+  "reviewed_at_utc": "2026-04-02T03:21:41Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports a bounded overhead mechanism for why context files raise cost, while most performance claims remain comparative and explicitly limited rather than mechanistically explained.",
+  "review_confidence": "high",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Adding repository-level context files generally reduced task success relative to no repository context while increasing inference cost by more than 20%.",
+      "bounds": "The evidence establishes the empirical tradeoff, but not a full causal explanation for why success declines; it supports only the bounded claim that added context can impose overhead."
+    },
+    {
+      "claim_text": "Developer-provided context files performed better than LLM-generated context files and produced only a modest average gain over no context.",
+      "bounds": "The evidence supports the comparative outcome, but mechanism remains uncertain; it does not show which properties of developer-written files caused the small advantage, and the gain was not universal because Claude Code did not improve over no context."
+    },
+    {
+      "claim_text": "LLM-generated context files slightly hurt agent performance on average and increased cost, though they became helpful when other repository documentation was removed.",
+      "bounds": "The evidence supports a context-dependent result rather than a general rule; these files underperformed in the main setting but improved outcomes when other documentation was absent, so mechanism is unresolved and usefulness is conditional on the surrounding documentation regime."
+    }
+  ]
+}

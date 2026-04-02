@@ -33,6 +33,11 @@ session_id: 20260331_032122_c6700d
             "KEEP\n\nBecause this source contains benchmark evidence.",
         )
 
+    def test_normalize_output_collapses_duplicated_payload(self) -> None:
+        payload = "article_id: art-1\nsummary: repeated once\nclaims:\n  - claim_id: claim-001\n    claim_text: A concrete result.\n"
+        raw = f"\n╭─ ⚕ Hermes ──╮\n{payload}{payload}\nsession_id: abc\n"
+        self.assertEqual(task_runner.normalize_output(raw), payload.strip())
+
     def test_build_hermes_command_uses_role_model(self) -> None:
         config = task_runner.load_task_runner_config()
         role_cfg = task_runner.role_config("curator", config)

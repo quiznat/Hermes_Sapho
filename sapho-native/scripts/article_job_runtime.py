@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from typing import Any
 
@@ -23,8 +24,32 @@ def _clean(text: Any) -> str:
     return clean_loose_text(str(text or "")).strip()
 
 
+def _quote_yaml_scalar_values(text: str) -> str:
+    rendered: list[str] = []
+    scalar_pattern = re.compile(r"^(\s*[A-Za-z0-9_]+:\s)(.+)$")
+    for line in text.splitlines():
+        match = scalar_pattern.match(line)
+        if not match:
+            rendered.append(line)
+            continue
+        prefix, value = match.groups()
+        stripped = value.strip()
+        if not stripped or stripped.startswith(("-", "[", "{", "|", ">", "'", '"')):
+            rendered.append(line)
+            continue
+        if re.fullmatch(r"(?:true|false|null|[-+]?\d+(?:\.\d+)?)", stripped, re.I):
+            rendered.append(line)
+            continue
+        rendered.append(prefix + json.dumps(stripped, ensure_ascii=False))
+    return "\n".join(rendered)
+
+
 def _yaml_mapping(text: str) -> dict[str, Any]:
-    payload = yaml.safe_load(_clean(text)) or {}
+    cleaned = _clean(text)
+    try:
+        payload = yaml.safe_load(cleaned) or {}
+    except yaml.YAMLError:
+        payload = yaml.safe_load(_quote_yaml_scalar_values(cleaned)) or {}
     if not isinstance(payload, dict):
         raise JobContractError("yaml_output_not_mapping")
     return payload
@@ -96,6 +121,7 @@ def run_extractor_evidence(*, article_id: str, source_title: str, source_url: st
 def parse_evidence_receipt_files(article_id: str, receipt_markdown: str) -> list[dict[str, Any]]:
     _meta, body = parse_markdown(receipt_markdown)
     files: list[dict[str, Any]] = []
+    seen_evidence_ids: set[str] = set()
     valid_mechanism_relevance = {"direct", "bounded", "none"}
     valid_contradiction_relevance = {"supports", "tension", "none"}
     for match in _CODE_BLOCK_RE.finditer(body):
@@ -107,6 +133,8 @@ def parse_evidence_receipt_files(article_id: str, receipt_markdown: str) -> list
         evidence_id = str(file_meta.get("evidence_id") or "").strip()
         if not evidence_id:
             raise JobContractError("missing_evidence_id")
+        if evidence_id in seen_evidence_ids:
+            continue
         mechanism_relevance = str(file_meta.get("mechanism_relevance") or "").strip()
         contradiction_relevance = str(file_meta.get("contradiction_relevance") or "").strip()
         if not mechanism_relevance or not contradiction_relevance:
@@ -125,6 +153,7 @@ def parse_evidence_receipt_files(article_id: str, receipt_markdown: str) -> list
         note = sections.get("Note", "")
         if (mechanism_relevance == "bounded" or contradiction_relevance == "tension") and not _clean(note):
             raise JobContractError("bounded_or_tension_evidence_missing_note")
+        seen_evidence_ids.add(evidence_id)
         files.append(
             {
                 "filename": filename,
@@ -261,6 +290,24 @@ def claim_records_to_findings_lines(claims: list[dict[str, Any]]) -> list[str]:
     return [row["claim_text"] for row in claims if row.get("claim_text")]
 
 
+def extract_last_article_document(text: str) -> str:
+    cleaned = _clean(text)
+    marker = "---\nversion: article.v1"
+    starts: list[int] = []
+    if cleaned.startswith(marker):
+        starts.append(0)
+    start = 0
+    while True:
+        idx = cleaned.find(f"\n{marker}", start)
+        if idx == -1:
+            break
+        starts.append(idx + 1)
+        start = idx + 1
+    if not starts:
+        return cleaned
+    return cleaned[starts[-1]:].strip()
+
+
 def _contains_numeric_payload(text: str) -> bool:
     cleaned = _clean(text)
     if not cleaned:
@@ -315,7 +362,8 @@ def run_synthesist_article_write(*, article_id: str, source_title: str, source_u
         f"Evidence Context:\n{evidence_block}\n"
     )
     raw = run_loose_agent(agent_id, f"{prompt}\n\n{mission}", timeout=timeout, thinking="off")
-    meta, body = parse_markdown(raw)
+    article_output = extract_last_article_document(raw)
+    meta, body = parse_markdown(article_output)
     if str(meta.get("article_id") or "") != article_id:
         raise JobContractError("article_write_article_id_mismatch")
     validate_article_write_body(body, claims=claims, evidence_records=evidence_records)

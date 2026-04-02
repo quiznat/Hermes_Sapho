@@ -129,6 +129,24 @@ def classify_status(raw_output: str, clean_output: str, error: str | None) -> st
     return "ok"
 
 
+def _collapse_exact_duplicate_payload(text: str) -> str:
+    cleaned = text.strip()
+    if not cleaned:
+        return cleaned
+    first_line = cleaned.splitlines()[0].strip() if cleaned.splitlines() else ""
+    if first_line:
+        duplicate_start = cleaned.find(f"\n{first_line}", 1)
+        if duplicate_start != -1:
+            head = cleaned[:duplicate_start].strip()
+            tail = cleaned[duplicate_start + 1 :].strip()
+            if head == tail:
+                return head
+    midpoint = len(cleaned) // 2
+    if len(cleaned) % 2 == 0 and cleaned[:midpoint] == cleaned[midpoint:]:
+        return cleaned[:midpoint].strip()
+    return cleaned
+
+
 def normalize_output(text: str) -> str:
     cleaned = ANSI_PATTERN.sub("", text or "").replace("\r", "\n")
     kept: list[str] = []
@@ -150,6 +168,7 @@ def normalize_output(text: str) -> str:
     cleaned = "\n".join(kept).strip()
     cleaned = strip_outer_code_fence(cleaned).strip()
     cleaned = WHITESPACE_RUNS.sub("\n\n", cleaned)
+    cleaned = _collapse_exact_duplicate_payload(cleaned)
     return cleaned
 
 

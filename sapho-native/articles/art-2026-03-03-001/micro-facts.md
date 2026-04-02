@@ -1,1 +1,15 @@
-No reply from agent.
+- Across multiple coding agents and LLMs, context files tended to reduce task success rates versus providing no repository context, while increasing inference cost by over 20%.
+- Developer-provided context files improved performance only marginally versus omitting context files, with an average increase of 4%.
+- LLM-generated context files had a small negative effect on agent performance, with an average decrease of 3%.
+- AGENTbench contains 138 unique Python software-engineering instances from 12 recent niche repositories that all include developer-written context files.
+- To keep a pull request for AGENTbench construction, the PR had to reference at least one issue, modify at least one Python file, and be assessed as introducing deterministic, testable behavior.
+- The dataset kept only PRs whose setup script produced a machine-readable test-results dictionary containing at least one passing test, which held for 87% of filtered instances.
+- The authors used an LLM agent to generate standardized task descriptions with six sections and reported that a random inspection of 10% of instances found no solution leakage.
+- Generated tests were required to fail on the base repository state and pass on the patched state, and the resulting tests covered 75% of modified code on average.
+- LLM-generated context files reduced average resolution rate by 0.5% on SWE-bench Lite and 2% on AGENTbench, while increasing average cost by 20% and 23% respectively.
+- Developer-provided context files outperformed LLM-generated ones for all four agents, improved performance over no context for all agents except Claude Code, and still increased average steps and cost.
+- Context files did not meaningfully reduce the number of steps before agents first interacted with files modified in the original PR patch.
+- Manual trace inspection found that GPT-5.1 mini sometimes issued multiple commands to find context files and read them multiple times even though they were already included in context.
+- When all other documentation was removed after context-file generation, LLM-generated context files improved performance by 2.7% on average and outperformed developer-written documentation.
+- With context files present, agents ran more tests, searched more files, read more files, wrote more files, and used more repository-specific tooling.
+- Agents used tools much more often when those tools were named in context files, and GPT-5.2 and GPT-5.1 mini used more reasoning tokens when context files were present.

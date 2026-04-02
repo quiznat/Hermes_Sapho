@@ -154,6 +154,19 @@ The source reports higher reliability but omits the appendix.
 ```
 """
 
+MALFORMED_CLAIMS_YAML = """article_id: art-test-106
+summary: Context files changed behavior more than outcomes.
+claims:
+  - claim_id: claim-001
+    claim_text: Developer-written context files improved performance by about 4% on average.
+    claim_kind: empirical_claim
+    evidence_ids:
+      - evidence-001
+    mechanism_or_bounds: A bounded mechanism is supported: context files increased exploration but did not guarantee better outcomes.
+    contradiction_note: No direct contradiction is visible: the main tension is weak payoff despite higher overhead.
+    confidence: high
+"""
+
 
 class ArticleJobRuntimeTests(unittest.TestCase):
     def read_json(self, path: Path) -> dict:
@@ -394,6 +407,61 @@ Sapho needs to know whether context engineering actually helps in production wor
         with self.assertRaises(JobContractError) as ctx:
             article_job_runtime.validate_article_write_body(thin_but_sectioned_article, claims=claims, evidence_records=evidence_records)
         self.assertEqual(str(ctx.exception), "article_write_missing_empirical_specificity")
+
+    def test_parse_extractor_receipt_deduplicates_repeated_receipt_output(self) -> None:
+        duplicated = EXTRACTOR_RECEIPT + "\n\n" + EXTRACTOR_RECEIPT
+        evidence_files = parse_evidence_receipt_files("art-test-101", duplicated)
+        self.assertEqual(len(evidence_files), 2)
+        self.assertEqual([row["meta"]["evidence_id"] for row in evidence_files], ["evidence-001", "evidence-002"])
+
+    def test_extract_last_article_document_prefers_final_complete_article(self) -> None:
+        first = """---
+version: article.v1
+article_id: art-test-107
+source_url: https://example.com/a
+source_title: First Draft
+queued_at_utc: 2026-04-02T00:00:00Z
+captured_at_utc: 2026-04-02T00:00:00Z
+curator_decision: kept
+artifact_minted_at_utc: 2026-04-02T00:00:00Z
+evidence_count: 1
+claim_count: 1
+publication_status: ready-for-daily
+---
+# First Draft
+
+## Core Thesis
+
+Thin.
+"""
+        second = """---
+version: article.v1
+article_id: art-test-107
+source_url: https://example.com/a
+source_title: Final Draft
+queued_at_utc: 2026-04-02T00:00:00Z
+captured_at_utc: 2026-04-02T00:00:00Z
+curator_decision: kept
+artifact_minted_at_utc: 2026-04-02T00:00:00Z
+evidence_count: 2
+claim_count: 2
+publication_status: ready-for-daily
+---
+# Final Draft
+
+## Core Thesis
+
+Dense final output.
+"""
+        extracted = article_job_runtime.extract_last_article_document(first + "\n\n" + second)
+        self.assertIn("# Final Draft", extracted)
+        self.assertNotIn("# First Draft", extracted)
+
+    def test_yaml_mapping_tolerates_unquoted_colons_in_scalar_values(self) -> None:
+        payload = article_job_runtime._yaml_mapping(MALFORMED_CLAIMS_YAML)
+        self.assertEqual(payload["article_id"], "art-test-106")
+        self.assertEqual(payload["claims"][0]["claim_id"], "claim-001")
+        self.assertIn("bounded mechanism is supported", payload["claims"][0]["mechanism_or_bounds"])
 
     def test_parse_extractor_receipt_requires_note_for_bounded_or_tension_evidence(self) -> None:
         with self.assertRaises(JobContractError) as ctx:

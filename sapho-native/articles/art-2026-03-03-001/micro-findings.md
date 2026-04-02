@@ -1,3 +1,4 @@
-* Evaluates the effectiveness of repository-level context files for coding agents.
-* Focuses on experimental data for task completion rates and inference costs.
-* Authors: Thibaud Gloaguen, Niels Mündler, Mark Müller, Veselin Raychev, Martin Vechev.
+- Across the evaluated coding agents and LLMs, adding repository-level context files generally reduced task success relative to giving no repository context while increasing inference cost by more than 20%.
+- Developer-provided context files performed better than LLM-generated context files and produced only a modest average gain over no context, about 4%.
+- LLM-generated context files slightly hurt agent performance on average and increased cost, though they became helpful when other repository documentation was removed.
+- The added cost of context files likely came from inducing more agent activity rather than helping agents reach the relevant files faster.
