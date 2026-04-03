@@ -1,3 +1,4 @@
-* ChatDev is a chat-powered software development framework using specialized LLM agents for design, coding, and testing phases.
-* It utilizes a "chat chain" to break down phases into subtasks and "communicative dehallucination" to minimize coding errors.
-* Natural language communication is found to be advantageous for system design, while programming language communication is helpful for debugging.
+- ChatDev organizes software development as a sequential multi-agent workflow across design, coding, and testing, with paired instructor-assistant dialogues and phase-specific memory handling.
+- In the paper's reported evaluation, communicative dehallucination is associated with higher completeness, executability, consistency, and overall quality than the version without it.
+- ChatDev reports stronger software-generation outcomes than GPT-Engineer and MetaGPT on the paper's quality metric and pairwise preference evaluations.
+- Despite its reported gains, ChatDev still exhibits recurring code-generation and dependency failures, and the paper bounds the system as more suitable for prototypes than complex real-world applications.

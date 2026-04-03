@@ -1,5 +1,15 @@
 KEEP
 
-This source introduces ChatDev, a novel framework for software development using communicative LLM agents. It details their approach to agent communication, phases of development, and mechanisms to mitigate coding hallucinations, presenting it as a paradigm shift in multi-agent collaboration. The abstract and introduction suggest experimental analysis and results, fulfilling the criteria for novel findings and potentially real experimental data.
+This preprint reports a concrete software-development framework with dataset-backed experimental results.
 
-Limits: The provided excerpt is the abstract and introduction of a paper. While it strongly suggests experimental data and findings, the concrete results, benchmarks, or production data are not explicitly detailed within this specific excerpt. The full paper would need to be consulted to confirm the depth of experimental evidence.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-026
+ticket_id: ticket-import-art-2026-03-04-026
+decision: kept
+reason: This preprint reports a concrete software-development framework with dataset-backed experimental results.
+scope_class: preprint
+decided_at_utc: 2026-04-04T01:57:00Z
+---
+# Curator Receipt

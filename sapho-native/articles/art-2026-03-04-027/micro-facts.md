@@ -1,10 +1,12 @@
-- In the first half of 2025, coding agents emerged as a category of development tools.
-- Coding agents like Cursor, Claude Code, or Codex operate with high degrees of autonomy, up to generating complete pull requests.
-- A large-scale study of 129,134 GitHub projects found an estimated adoption rate of 15.85%–22.60% for coding agents.
-- At the commit level, commits assisted by coding agents are larger than those authored by human developers only.
-- The first coding assistant offering "agentic" capabilities appeared in 2024.
-- In spring 2025, major AI providers released their coding agent offerings.
-- Studies indicate that the length of tasks AI systems can solve at a fixed success rate doubles every 7 months.
-- At the end of October 2025, 7.89% of 129,134 projects showed file-level traces of coding agent adoption.
-- At the commit level, the proportion of projects showing traces was 8.64%.
-- Commits co-authored by coding agents are concentrated in features and bug fixes.
+- The study reports an estimated coding-agent adoption rate on GitHub of 15.85% to 22.60% across 129,134 projects.
+- File-level heuristics identified 10,191 of 129,134 projects as referencing coding-agent files or ignored coding-agent files, corresponding to 7.89%.
+- Among a sample of 15,783 projects with no file-level adoption signal, 1,364 projects showed commit-level adoption, or 8.64%.
+- The detection pipeline used four heuristic categories: file-based, author-based, branch-based, and label-based heuristics.
+- The authors excluded `CONVENTIONS.md` and treated `AGENTS.md` as insufficient for agent-specific identification because these files were too ambiguous for reliable attribution.
+- File-level adoption was much higher in the youngest projects: 21.17% in the youngest age decile versus 4.69% in the oldest age decile.
+- Among repositories from the top twenty organizations examined, file-level adoption was 10.18%, above the overall file-level adoption rate of 7.89%.
+- The cumulative adoption curve showed a faster take-off at the end of February 2025, a further acceleration around mid-May 2025, and a slight slowdown by the end of August 2025.
+- The top five coding agents accounted for more than 80% of observed tool adoption, and Claude plus Copilot alone accounted for more than half.
+- AI-assisted commits were larger than human-authored commits by median added lines: 34 lines for AI-assisted commits versus 10 for human commits.
+- In a random sample of 790 Claude Code commits, feature commits were 35.7% and fix commits were 29.9%, together making up about two thirds of the sample.
+- The paper argues that coding-agent use is more likely undercounted than overcounted because traces can be hidden, omitted, or left outside repositories.

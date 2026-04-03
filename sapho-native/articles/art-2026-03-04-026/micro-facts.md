@@ -1,10 +1,16 @@
-- ChatDev is a chat-powered software development framework.
-- It integrates LLM agents with various social roles.
-- Agents collaborate autonomously in design, coding, and testing phases.
-- ChatDev uses a chat chain to break down phases into subtasks.
-- Communicative dehallucination is a mechanism to minimize coding hallucinations.
-- The framework segments development into three phases: design, coding, and testing.
-- The coding phase includes subtasks for code writing and completion.
-- The testing phase includes code review (static testing) and system testing (dynamic testing).
-- Natural-language communications contribute to system design.
-- Programming-language communications drive software optimization.
+- ChatDev is presented as a chat-powered software-development framework with specialized LLM agents active in design, coding, and testing, guided by a chat chain and communicative dehallucination.
+- ChatDev structures work into three sequential phases—design, coding, and testing—with coding split into code writing and completion, and testing split into code review and system testing.
+- Each subtask is handled by two specialized agents, one instructor and one assistant, who communicate in multi-turn dialogue until consensus is reached.
+- ChatDev uses short-term memory for dialogue continuity within a phase and long-term memory for carrying prior-phase solutions across phases.
+- The system passes only subtask solutions, not full dialogue history, between phases to reduce information overload and preserve cross-phase continuity.
+- Communicative dehallucination makes the assistant ask for more specific information before giving a final response, using a temporary role reversal.
+- The evaluation defines Quality as the product of completeness, executability, and consistency.
+- The implementation used 5 subtasks across 3 phases, assigned roles including CEO, CTO, programmer, reviewer, and tester, and ran on ChatGPT-3.5 at temperature 0.2 with Python 3.11.4 feedback.
+- A subtask ended after either two unchanged code modifications or 10 rounds of communication, and communicative dehallucination was activated during code completion, review, and testing.
+- In Table 1, ChatDev scores 0.5600 completeness, 0.8800 executability, 0.8021 consistency, and 0.3953 quality.
+- In Table 1, ChatDev’s quality score of 0.3953 exceeds GPT-Engineer’s 0.1419 and MetaGPT’s 0.1523.
+- In pairwise evaluation against GPT-Engineer, ChatDev wins 77.08% of GPT-4 judgments and 90.16% of human judgments.
+- In pairwise evaluation against MetaGPT, ChatDev wins 57.08% of GPT-4 judgments and 88.00% of human judgments.
+- Removing communicative dehallucination lowers reported performance from 0.5600/0.8800/0.8021/0.3953 to 0.4700/0.8400/0.7983/0.3094 on completeness, executability, consistency, and quality.
+- The communication breakdown reported in Figure 3 assigns 57.20% of agent communication to natural language.
+- The paper reports recurring code-generation failures such as “Method Not Implemented” in review (34.85% of discussions) and “ModuleNotFound” in testing (45.76% of errors), and states the system is currently more suitable for prototype systems than complex real-world applications.

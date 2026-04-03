@@ -1,0 +1,17 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-026",
+  "reviewed_at_utc": "2026-04-03T22:00:12Z",
+  "reviewer_role": "Synthesist",
+  "summary": "ChatDev’s strongest supported mechanism is disciplined coordination and clarification inside a staged multi-agent workflow, but its reported gains remain bounded by prototype-grade reliability and paper-specific evaluation.",
+  "review_confidence": "high",
+  "mechanism_count": 3,
+  "bounded_claim_count": 1,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "ChatDev reports stronger software-generation outcomes than GPT-Engineer and MetaGPT on the paper’s quality and pairwise evaluations.",
+      "bounds": "The evidence supports the comparative result within the paper’s benchmark and evaluation procedure, but it does not provide a clear mechanism for why ChatDev outperforms the baselines or prove that the ranking will generalize beyond this setup."
+    }
+  ]
+}

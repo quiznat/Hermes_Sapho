@@ -1,5 +1,15 @@
 KEEP
 
-This source presents novel findings on the adoption of coding agents, analyzing a large dataset of GitHub projects to quantify adoption rates and characteristics. It provides concrete data on adoption trends, project maturity, and agent usage, which can be considered a form of novel synthesis grounded in real-world evidence.
+This is a serious empirical preprint reporting large-scale measured adoption and commit-level findings from GitHub data.
 
-Limits: The excerpt is a section of a larger work, and the full context, methodology details, and statistical caveats of the study might be omitted.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-027
+ticket_id: ticket-import-art-2026-03-04-027
+decision: kept
+reason: This is a serious empirical preprint reporting large-scale measured adoption and commit-level findings from GitHub data.
+scope_class: preprint
+decided_at_utc: 2026-04-04T03:00:00Z
+---
+# Curator Receipt

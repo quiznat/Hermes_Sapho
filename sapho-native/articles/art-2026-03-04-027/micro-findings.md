@@ -1,3 +1,4 @@
-- Coding agents have seen very rapid adoption, with an estimated rate of 15.85%–22.60% on GitHub projects, a significant figure for a new technology.
-- Adoption of coding agents is broad, spanning all project maturities, including established organizations and diverse programming languages and topics.
-- Commits assisted by coding agents are larger than human-authored commits and predominantly involve features and bug fixes.
+- The study estimates coding-agent adoption on GitHub at 15.85% to 22.60% across 129,134 projects.
+- File-level traces alone understate coding-agent adoption, because 8.64% of a sampled set of projects with no file-level signal still showed commit-level adoption.
+- The study's adoption measure is built from four heuristic categories and is more likely to undercount than overcount coding-agent use.
+- Coding-agent adoption was higher in newer projects and somewhat higher in large organizations than in the overall file-level baseline.

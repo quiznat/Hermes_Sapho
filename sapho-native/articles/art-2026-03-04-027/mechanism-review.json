@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-027",
+  "reviewed_at_utc": "2026-04-03T22:03:16Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports measurement-related mechanism claims about why visible repository traces miss some coding-agent use, while prevalence and group-difference claims remain bounded rather than causally explained.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The study estimates coding-agent adoption on GitHub at 15.85% to 22.60% across 129,134 projects.",
+      "bounds": "This is a heuristic prevalence estimate rather than a causal explanation, and it is bounded by the study's detectable trace design rather than direct observation of all coding-agent use."
+    },
+    {
+      "claim_text": "Coding-agent adoption was higher in newer projects and somewhat higher in large organizations than in the overall file-level baseline.",
+      "bounds": "The evidence shows descriptive distributional differences only; it does not establish why younger repositories or large organizations show higher adoption, and the comparisons remain bounded by file-level measurement."
+    }
+  ]
+}

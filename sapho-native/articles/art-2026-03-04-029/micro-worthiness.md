@@ -1,5 +1,15 @@
 KEEP
 
-This paper presents an empirical study of Claude Code configuration files, analyzing their structure and content to identify common software engineering concerns and practices. This falls under "novel synthesis" as it provides disciplined analysis of an emerging area in AI development.
+This is an empirical arXiv preprint analyzing 328 real Claude Code configuration files and reporting concrete observed results.
 
-Limits: The excerpt is from a research paper and focuses on methodology and initial findings. It does not contain raw experimental data or detailed benchmark results, but rather an analysis of configurations.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-029
+ticket_id: ticket-import-art-2026-03-04-029
+decision: kept
+reason: This is an empirical arXiv preprint analyzing 328 real Claude Code configuration files and reporting concrete observed results.
+scope_class: preprint
+decided_at_utc: 2026-04-04T02:03:00Z
+---
+# Curator Receipt
