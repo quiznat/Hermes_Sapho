@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-035",
+  "reviewed_at_utc": "2026-04-03T23:41:53Z",
+  "reviewer_role": "Synthesist",
+  "summary": "ACE shows strong reported gains, but the evidence supports its mechanism only in a bounded way: structured context updates help when feedback is informative and memory is not damaged by bad rewrites.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "ACE outperforms strong baselines across the paper's benchmark set, with aggregate gains on agent and finance tasks.",
+      "bounds": "This is descriptive benchmark evidence only. It does not identify one validated causal mechanism explaining all gains across both domains."
+    },
+    {
+      "claim_text": "ACE reaches production-level competitiveness on AppWorld, matching the top-ranked production agent overall and beating IBM CUGA on the harder test-challenge split.",
+      "bounds": "The evidence supports a benchmark-bounded outcome claim, not a full explanation of why the smaller open-source system matched or exceeded those production systems, and not a guarantee outside the reported AppWorld evaluations."
+    }
+  ]
+}

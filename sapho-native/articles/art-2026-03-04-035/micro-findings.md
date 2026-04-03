@@ -1,3 +1,4 @@
-* ACE (Agentic Context Engineering) framework introduced for LLM context adaptation.
-* ACE outperforms baselines by +10.6% on agents and +8.6% on finance benchmarks.
-* ACE framework utilizes a modular process of generation, reflection, and curation to prevent context collapse.
+- ACE is reported to outperform strong baselines across the paper's benchmark set, with aggregate gains of +10.6% on agent tasks and +8.6% on finance tasks.
+- ACE is reported to adapt effectively without labeled supervision by using natural execution feedback, including gains over the ReAct baseline in AppWorld settings without ground-truth labels.
+- On AppWorld, ACE is reported to reach production-level competitiveness, matching the top-ranked production agent on overall leaderboard average while using a smaller open-source model and surpassing IBM CUGA on the harder test-challenge split.
+- ACE's improvements appear bounded by context-management quality and feedback reliability, because the paper reports both degradation without reliable feedback and a case where an extreme context rewrite coincided with accuracy dropping below the non-adaptive baseline.

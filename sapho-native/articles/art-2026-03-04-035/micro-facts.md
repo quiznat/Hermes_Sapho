@@ -1,10 +1,16 @@
-- ACE (Agentic Context Engineering) is a framework that treats contexts as evolving playbooks.
-- ACE prevents context collapse with structured, incremental updates.
-- ACE scales with long-context models.
-- ACE consistently outperforms strong baselines: +10.6% on agents and +8.6% on finance benchmarks.
-- ACE reduces adaptation latency and rollout cost.
-- ACE adapted effectively without labeled supervision, using natural execution feedback.
-- ACE matches the top-ranked production-level agent on AppWorld leaderboard overall average.
-- ACE surpasses the top-ranked agent on the AppWorld harder test-challenge split.
-- ACE used a smaller open-source model on the AppWorld leaderboard.
-- ACE enables scalable, efficient, and self-improving LLM systems with low overhead.
+- Across the reported benchmarks, ACE is described as outperforming strong baselines by +10.6% on agents and +8.6% on finance.
+- ACE is reported to adapt effectively without labeled supervision by using natural execution feedback.
+- On the AppWorld leaderboard, ACE is reported to match the top-ranked production-level agent on overall average while using a smaller open-source model.
+- On the harder AppWorld test-challenge split, online ReAct + ACE is reported to surpass IBM CUGA by 8.4% in TGC and 0.7% in SGC.
+- In the AppWorld case study, a rewritten context dropped from 18,282 tokens at step 60 to 122 tokens at the next step, while accuracy fell from 66.7 to 57.1, below the 63.7 baseline without adaptation.
+- ACE divides work across three roles: Generator, Reflector, and Curator.
+- ACE represents context as itemized bullets that contain metadata and content rather than as one monolithic prompt.
+- ACE merges compact delta entries into existing context with lightweight non-LLM logic, and multiple deltas can be merged in parallel.
+- On AppWorld offline adaptation with ground-truth labels, ReAct + ACE reached 59.4 average accuracy versus 46.4 for ReAct + GEPA, 46.0 for ReAct + ICL, and 42.4 for ReAct baseline.
+- On AppWorld offline adaptation without ground-truth labels, ReAct + ACE reached 57.2 average accuracy, which the table reports as +14.8 over the 42.4 ReAct baseline.
+- On AppWorld online adaptation without ground-truth labels, ReAct + ACE reached 59.5 average accuracy versus 51.9 for Dynamic Cheatsheet cumulative mode and 42.4 for the ReAct baseline.
+- On the financial benchmarks with ground-truth labels in offline adaptation, ACE reached 78.3 on FiNER and 85.5 on Formula, for an 81.9 average.
+- In the same offline financial setting with ground-truth labels, ACE's 81.9 average exceeded GEPA's 72.5, MIPROv2's 70.9, ICL's 69.6, and the base LLM's 69.1.
+- The paper reports that when reliable feedback signals are absent, adaptive methods can degrade; in Table 2, online ACE without GT labels scored 72.9 average versus 76.6 with GT labels, and DC without GT labels scored 65.4 versus 71.8 with GT labels.
+- For offline AppWorld adaptation, ACE is reported at 9,517 seconds latency and 357 rollouts versus GEPA at 53,898 seconds latency and 1,434 rollouts.
+- For online FiNER adaptation, ACE is reported at 5,503 seconds latency and $2.9 token cost versus Dynamic Cheatsheet at 65,104 seconds latency and $17.7 token cost.

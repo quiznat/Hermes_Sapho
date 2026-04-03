@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-035",
+  "reviewed_at_utc": "2026-04-03T23:41:31Z",
+  "reviewer_role": "Synthesist",
+  "summary": "ACE shows strong benchmark gains, but its adaptation story is visibly conditional because weak feedback or destructive context rewrites can erase those gains.",
+  "review_confidence": "high",
+  "contradiction_count": 2,
+  "status": "disclosed"
+}

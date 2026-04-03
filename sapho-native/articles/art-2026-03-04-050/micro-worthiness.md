@@ -1,5 +1,15 @@
-KEEP
+DISCARD
 
-This blog post describes an experiment where Cloudflare ran 1,000 popular NPM packages in their Workers environment, reporting that only 1.5% failed to work. This provides concrete experimental data on the platform's Node.js compatibility, which is a criterion for keeping.
+This is primarily a product announcement with only thin incidental experimental detail.
 
-Limits: The excerpt is partial and the full results of the experiment, including specific package names or detailed failure analyses, may be omitted. The focus is on the platform's capabilities rather than a deep dive into AI agent findings.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-050
+ticket_id: ticket-import-art-2026-03-04-050
+decision: discarded
+reason: This is primarily a product announcement with only thin incidental experimental detail.
+scope_class: blog-with-data
+decided_at_utc: 2026-04-03T23:44:00Z
+---
+# Curator Receipt

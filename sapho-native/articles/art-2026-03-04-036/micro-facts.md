@@ -1,17 +1,15 @@
-- SWE-ContextBench augments 300 base tasks with 99 related tasks derived from dependency and reference relationships.
-- The benchmark evaluates agents on prediction accuracy, time efficiency, and cost efficiency.
-- Correctly selected summarized experience improves resolution accuracy and reduces runtime and token cost.
-- Unfiltered or incorrectly selected experience provides limited or negative benefits.
-- SWE-ContextBench is built on SWE-Bench Lite.
-- The experience pool consists of solution trajectories from 300 experience tasks.
-- For the 99 related tasks, the dataset includes task construction data and test-based evaluation data.
-- Each of the 99 related tasks contains an average of 5.09 FAIL_TO_PASS tests and 128.32 PASS_TO_PASS tests.
-- Oracle Summary Reuse achieved the highest resolution rate at 34.34%.
-- The No-Experience baseline had a resolution rate of 26.26%.
-- Oracle Experience Reuse yielded a modest improvement to 27.27%.
-- Free Summary Reuse underperformed the baseline.
-- Free Experience Reuse matched the baseline performance.
-- Patch application failures ranged from 2 to 7 instances across methods.
-- All approaches maintained high PASS_TO_PASS test pass rates (97–99%).
-- 85–90% of instances remained regression-free at the task level.
-- Test-level FAIL_TO_PASS rates were consistently lower than task-level rates.
+- SWE-ContextBench augments 300 base tasks with 99 related tasks derived from real issue and pull-request relationships.
+- The benchmark is designed to evaluate agents on accuracy, time efficiency, and cost efficiency.
+- The benchmark is built on SWE-Bench Lite, which contributes 300 real-world GitHub instances.
+- For each SWE-Bench Lite instance, the authors run a base programming agent and store its full reasoning and interaction trajectory as retrievable past experience.
+- The first pass of related-task identification found 89 interdependent task instances, and each candidate was manually verified.
+- Recursive context expansion added 10 more interdependent task instances beyond the initial 89.
+- The final benchmark contains 300 experience tasks and 99 related tasks across 12 repositories.
+- Each related task instance includes a pre-fix base_commit, a problem statement, and ground-truth code changes split into test_patch and solution_patch.
+- Evaluation uses FAIL_TO_PASS tests to check whether the fix addresses the target issue and PASS_TO_PASS tests to check for regressions.
+- Across the 99 related tasks, the average task has 5.09 FAIL_TO_PASS tests and 128.32 PASS_TO_PASS tests.
+- Summary experiences average 204.5 words, while full experience trajectories average 24,765 words.
+- Oracle Summary Reuse achieved the highest reported resolution rate at 34.34%, versus 26.26% for the No-Experience baseline.
+- Oracle Experience Reuse improved the resolution rate only modestly to 27.27%, much less than Oracle Summary Reuse.
+- Free Summary Reuse underperformed the baseline at 22.22% resolved and had the most patch application failures at 7 instances.
+- Oracle Summary Reuse had the lowest average runtime at 356.95 seconds per task and the lowest average cost at $0.77 per instance.
