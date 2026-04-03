@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-034",
+  "reviewed_at_utc": "2026-04-03T23:25:39Z",
+  "reviewer_role": "Synthesist",
+  "summary": "SWE-agent’s tailored interface appears to improve software-engineering performance in a bounded way by structuring search and editing, but the gains remain limited by frequent edit failures and low absolute success on full SWE-bench.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "SWE-agent with GPT-4 Turbo achieved a substantially higher resolve rate on SWE-bench than the prior reported non-interactive retrieval-augmented baseline.",
+      "bounds": "The evidence supports the performance comparison, but it does not isolate which specific interface elements caused the improvement, and the absolute solve rate remains low."
+    },
+    {
+      "claim_text": "On SWE-bench Lite, the LM-tailored agent-computer interface outperformed both a shell-only agent and a retrieval-augmented setup with GPT-4 Turbo.",
+      "bounds": "The result supports a bounded interface advantage on this benchmark slice, but it does not fully isolate the causal contribution of each interface feature."
+    }
+  ]
+}

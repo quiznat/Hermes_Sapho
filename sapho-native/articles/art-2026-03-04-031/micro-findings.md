@@ -1,3 +1,4 @@
-*   A software engineering framework systematically codifies human domain knowledge into AI agents by combining explicit procedural rules (executable code) with tacit design principles (LLM augmentation) for simulation data visualization.
-*   An industrial evaluation demonstrated a 206% improvement in output quality and expert-level performance for non-experts using the developed AI agent, which integrated a request classifier, RAG for code generation, codified expert rules, and visualization design principles.
-*   The framework addresses organizational bottlenecks by enabling non-experts to generate expert-level visualizations through simple prompts, thereby democratizing domain knowledge and allowing experts to focus on specialized tasks.
+- The paper reports that its expert-augmented agent achieved higher output-quality ratings than the baseline, with a mean score of 2.60 versus 0.85 on a 0-3 scale.
+- The framework combines an LLM with a request classifier, RAG-based code generation, codified expert rules, and expert-derived visualization principles in a single agent architecture.
+- The paper reports that the proposed system produced more consistently high-rated outputs than the baseline, including expert-level modal ratings in all evaluated cases and lower code-quality variance.
+- The paper's validation is bounded because it covered five scenarios with 12 evaluators inside simulation-based optimization contexts and did not test effectiveness in non-simulation domains.

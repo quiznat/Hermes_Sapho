@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-031",
+  "reviewed_at_utc": "2026-04-03T23:18:37Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Strong reported gains are visible, but the main contradiction that must remain visible is between those results and the narrow, simulation-specific validation setup.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

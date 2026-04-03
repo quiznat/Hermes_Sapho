@@ -1,6 +1,12 @@
-- SWE-agent is a system that facilitates LM agents to autonomously use computers to solve software engineering tasks.
-- SWE-agent's custom agent-computer interface (ACI) enhances an agent's ability to create and edit code files, navigate repositories, and execute tests and programs.
-- SWE-agent achieved state-of-the-art performance on SWE-bench with a pass@1 rate of 12.5%.
-- SWE-agent achieved state-of-the-art performance on HumanEvalFix with a pass@1 rate of 87.7%.
-- The performance achieved by SWE-agent exceeds that of previous non-interactive LMs on both benchmarks.
-- The research investigates how interface design affects the performance of language model agents.
+- SWE-agent reports pass@1 of 12.5% on SWE-bench and 87.7% on HumanEvalFix.
+- With GPT-4 Turbo, SWE-agent solved 12.47% of 2,294 SWE-bench test tasks, compared with a previous best resolve rate of 3.8% from a non-interactive retrieval-augmented system.
+- On SWE-bench Lite, GPT-4 Turbo scored 18.00% with SWE-agent, 11.00% with the Shell-only agent, and 2.67% with RAG.
+- The ACI transferred to Claude 3 Opus, where SWE-agent solved 10.46% of full SWE-bench tasks and 13.00% of SWE-bench Lite tasks.
+- The paper claims LM-tailored ACIs improve software-engineering performance by providing a small action set, guardrails, and concise command feedback instead of relying only on the default Linux shell.
+- SWE-agent adds find_file, search_file, and search_dir commands, and each search returns at most 50 results; if a query exceeds that limit, the agent is told to use a more specific query.
+- The file viewer shows at most 100 lines at a time, and the edit command replaces a specified line range and then automatically shows the updated file content.
+- The edit function runs a linter, shows selected error feedback if a syntax problem is introduced, discards the invalid edit, and asks the agent to try again.
+- On SWE-bench Lite, summarized search scored 18.0%, iterative search scored 12.0%, and no-search scored 15.7%.
+- On SWE-bench Lite, editing with linting scored 18.0%, editing without linting scored 15.0%, and the no-edit setting scored 10.3%.
+- Editing remained a persistent failure point: 1,185 of 2,294 GPT-4 Turbo trajectories (51.7%) had at least one failed edit, and the probability of eventual success dropped from 90.5% for any edit attempt to 57.2% after one failed edit.
+- Resolved runs tended to finish earlier and cheaper: successful GPT-4 runs had a median cost of $1.21 and 12 steps, while unsuccessful ones had a mean cost of $2.52 and 21 steps.

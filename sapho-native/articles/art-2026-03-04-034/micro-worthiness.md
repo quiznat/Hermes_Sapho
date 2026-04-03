@@ -1,5 +1,15 @@
 KEEP
 
-This source presents novel findings on agent-computer interfaces and their impact on LM agent performance in software engineering tasks. It introduces SWE-agent and reports state-of-the-art performance on established benchmarks, providing concrete data on a new approach.
+This formal research paper reports concrete benchmark results and ablation evidence for an automated software engineering agent.
 
-Limits: The provided excerpt is only a portion of the full paper and may not include all experimental details, nuances, or limitations discussed in the complete work.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-034
+ticket_id: ticket-import-art-2026-03-04-034
+decision: kept
+reason: This formal research paper reports concrete benchmark results and ablation evidence for an automated software engineering agent.
+scope_class: paper
+decided_at_utc: 2026-04-04T03:22:00Z
+---
+# Curator Receipt

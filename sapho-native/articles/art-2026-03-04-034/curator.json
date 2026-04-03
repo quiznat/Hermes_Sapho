@@ -2,13 +2,13 @@
   "version": "curator-decision.v1",
   "article_id": "art-2026-03-04-034",
   "decision": "kept",
-  "qualified_by": "novel_findings",
+  "qualified_by": "experimental_blog",
   "evidence_basis": "mixed",
   "novelty_strength": "medium",
   "excerpt_sufficiency": "partial",
-  "reason": "This source presents novel findings on agent-computer interfaces and their impact on LM agent performance in software engineering tasks. It introduces SWE-agent and reports state-of-the-art performance on established benchmarks, providing concrete data on a new approach.",
-  "limits": "The provided excerpt is only a portion of the full paper and may not include all experimental details, nuances, or limitations discussed in the complete work.",
-  "confidence": "low",
-  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "reason": "This formal research paper reports concrete benchmark results and ablation evidence for an automated software engineering agent.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-04-034\nticket_id: ticket-import-art-2026-03-04-034\ndecision: kept\nreason: This formal research paper reports concrete benchmark results and ablation evidence for an automated software engineering agent.\nscope_class: paper\ndecided_at_utc: 2026-04-04T03:22:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-03T23:25:39Z",
   "mode": "agent"
 }

@@ -1,0 +1,17 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-032",
+  "reviewed_at_utc": "2026-04-03T23:22:16Z",
+  "reviewer_role": "Synthesist",
+  "summary": "CCA is presented as a structured coding-agent stack with plausible context and memory mechanisms, but the strongest performance claims remain benchmark-bounded rather than fully component-isolated.",
+  "review_confidence": "medium",
+  "mechanism_count": 3,
+  "bounded_claim_count": 1,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "CCA outperforms the named comparison agents on SWE-Bench-Pro across the three reported model settings.",
+      "bounds": "The evidence supports a bounded benchmark comparison on the public SWE-Bench-Pro split with mean Resolve@1 across three runs, but it does not identify which SDK component caused the advantage or establish general superiority beyond the reported settings."
+    }
+  ]
+}

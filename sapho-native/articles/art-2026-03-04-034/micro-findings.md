@@ -1,3 +1,4 @@
-* SWE-agent facilitates LM agents autonomously using computers for software engineering tasks.
-* SWE-agent's custom Agent-Computer Interface (ACI) enhances code file manipulation, repository navigation, and program execution.
-* SWE-agent achieves state-of-the-art performance on SWE-bench (12.5% pass@1) and HumanEvalFix (87.7% pass@1), outperforming non-interactive LMs.
+- SWE-agent with GPT-4 Turbo achieved a substantially higher resolve rate on SWE-bench than the prior reported non-interactive retrieval-augmented baseline.
+- On SWE-bench Lite, the LM-tailored agent-computer interface outperformed both a shell-only agent and a retrieval-augmented setup with GPT-4 Turbo.
+- The paper’s evidence supports a bounded mechanism claim that SWE-agent’s interface design helps performance by structuring search and editing with constrained feedback and lint-guarded edits.
+- SWE-agent’s gains are materially limited by editing instability, with failed edits common and strongly associated with lower eventual task success.

@@ -1,3 +1,4 @@
-*   The Confucius Code Agent (CCA) and its associated SDK are presented as an open-source solution for industrial-scale AI software engineering, addressing limitations of existing open-source and proprietary agents.
-*   CCA achieves a state-of-the-art Resolve@1 performance of 54.3% on SWE-Bench-Pro, demonstrating strong real-world software engineering task capabilities.
-*   The Confucius SDK is designed with a three-axis philosophy (Agent Experience, User Experience, Developer Experience) to provide a transparent, extensible, and reproducible foundation for AI agents, balancing reasoning, user interaction, and development needs.
+- The paper presents CCA as an open-sourced AI software engineer designed to operate at industrial scale through a unified SDK that combines orchestration, hierarchical memory, persistent notes, and modular tool extensions.
+- CCA is reported to outperform the named comparison agents on SWE-Bench-Pro across the three model settings listed in the paper.
+- The paper reports that advanced context management improves CCA performance on a 100-example SWE-Bench-Pro subset while also reducing prompt length in manual inspection.
+- Reusing persistent notes across runs is reported to lower token cost and slightly improve resolve rate, consistent with the SDK’s claim that cross-session memory can make repeated work more efficient.

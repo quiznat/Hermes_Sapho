@@ -1,10 +1,16 @@
-- On SWE-Bench-Pro, CCA achieves a state-of-the-art Resolve@1 performance of 54.3%.
-- The Confucius SDK introduces a unified orchestrator with hierarchical working memory.
-- The Confucius SDK includes a persistent note-taking system for cross-session continual learning.
-- The Confucius SDK has a modular extension module for robust tool use.
-- A meta-agent automates the synthesis, evaluation, and refinement of agent configurations.
-- CCA is an open-sourced AI software engineer designed to operate at an industrial scale.
-- The Confucius SDK balances Agent Experience (AX), User Experience (UX), and Developer Experience (DX).
-- CCA's context management uses hierarchical scopes and a planner agent to summarize and compact histories.
-- CCA reuses distilled execution trajectories as a durable knowledge base for learning from past experiences.
-- In the Confucius SDK, tool-use capabilities are modularized into extensions.
+- The paper presents CCA as an open-sourced AI software engineer intended to operate at industrial scale.
+- The Confucius SDK is described as combining a unified orchestrator, hierarchical working memory, persistent note-taking across sessions, and a modular extension module for tool use.
+- The SDK is framed around three design perspectives: Agent Experience, User Experience, and Developer Experience.
+- The SDK uses hierarchical working memory with adaptive context compression for large-repository agent runs.
+- The note-taking agent stores persistent notes as Markdown files in a file-system-like tree.
+- The note-taking layer is described as recording failure cases alongside successful solutions.
+- The SDK factors most agent behaviors into extensions that register typed callbacks on the orchestrator loop.
+- The Meta-agent is described as building and refining agents through an explicit build-test-improve loop.
+- The main SWE-Bench-Pro evaluation uses the public split with 731 tasks and reports mean Resolve@1 across three runs.
+- On SWE-Bench-Pro with Claude 4 Sonnet, CCA is reported at 45.5% Resolve Rate versus 42.7% for SWE-Agent.
+- On SWE-Bench-Pro with Claude 4.5 Sonnet, CCA is reported at 52.7% Resolve Rate versus 45.8% for Live-SWE-Agent.
+- On SWE-Bench-Pro with Claude 4.5 Opus, CCA is reported at 54.3% Resolve Rate versus 52.0% for Anthropic’s proprietary scaffold.
+- On a 100-example SWE-Bench-Pro subset with Claude 4 Sonnet, advanced context management is reported to improve Resolve@1 from 42.0 to 48.6.
+- Manual inspection is reported to show the planner agent often reducing prompt length by over 40%.
+- In the repeated-run memory study, average token cost is reported to drop from 104k to 93k when notes are reused.
+- In the repeated-run memory study, Resolve Rate is reported to increase from 53.0% to 54.4% when notes from the first run are provided in the second run.

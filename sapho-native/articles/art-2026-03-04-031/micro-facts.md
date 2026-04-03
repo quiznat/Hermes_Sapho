@@ -1,11 +1,14 @@
-- The paper investigates capturing and embedding human domain knowledge into AI agent systems through an industrial case study.
-- An AI agent was developed demonstrating autonomous, reactive, proactive, and social behavior.
-- Evaluation across five scenarios with 12 evaluators showed a 206% improvement in output quality.
-- The agent achieved expert-level ratings in all cases compared to the baseline's poor performance.
-- The system maintained superior code quality with lower variance.
-- The contributions include an automated agent-based system for visualization generation and a validated framework for codifying human domain knowledge.
-- The framework enables non-experts to achieve expert-level outcomes in specialized domains.
-- The research was conducted at Siemens, focusing on their Simulation Analysis software.
-- Two domain experts were interviewed: a simulation analysis software expert and a data visualization expert.
-- The framework involves a four-step process: expert interviews, rule implementation, testing, and iteration.
-- The implementation integrated a RAG system, codified expert rules, and enhanced system prompts.
+- The paper states that critical domain knowledge often resides with few experts, creating organizational bottlenecks in scalability and decision-making.
+- The proposed framework augments an LLM with a request classifier, a RAG system for code generation, codified expert rules, and visualization design principles in one agent.
+- The evaluation covered five scenarios across multiple engineering domains and used 12 evaluators.
+- The proposed agent is reported to improve output quality by 206% relative to baseline.
+- The paper reports mean output-quality scores of 2.60 for the proposed system and 0.85 for the baseline on a 0-3 scale.
+- The proposed system achieved expert-level ratings with Mode=3 in all cases, while the baseline had Mode=0 in 4 of 5 scenarios.
+- The proposed system is reported to have lower code-quality variance than baseline, with human-evaluation standard deviations of 0.29-0.58 versus 0.39-1.11.
+- The knowledge-extraction step used semi-structured interviews with two experts, each lasting about 60-90 minutes, recorded and transcribed.
+- The experts provided explicit rules that were codified into Python functions and integrated into the system architecture.
+- The framework separates implementation into executable code for explicit procedural rules and LLM augmentation for tacit design principles.
+- For history plots, the visualization expert specified dashed lines for non-converged variables, solid lines for converged variables, and no more than two variables, objectives, or responses per display.
+- The practical-effectiveness test used one non-expert mechanical engineer with 1 year of simulation experience, given a 30-minute orientation and no visualization training, while a visualization expert with 20 years of experience evaluated the generated plots.
+- Initial testing found that standalone LLMs generated matplotlib and seaborn solutions incompatible with the Simulation Analysis software environment.
+- The paper states that external validity is limited because validation remained within simulation-based optimization contexts, and effectiveness in non-simulation domains was not tested.

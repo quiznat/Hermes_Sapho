@@ -1,5 +1,15 @@
 KEEP
 
-This paper presents a novel software engineering framework for capturing and codifying human domain knowledge into AI agents for simulation data visualization. It details a systematic approach using expert interviews, complementary implementation strategies (code and LLM augmentation), and validation through an industrial case study. The results, demonstrating a significant improvement in output quality and expert-level performance for non-experts, constitute novel findings and a valuable synthesis of AI and domain expertise.
+This preprint reports a concrete evaluated framework with measured results from an industrial case study.
 
-Limits: The provided excerpt is from a research paper and may not represent the full scope or complete conclusions of the study. Specific details on implementation and broader applicability might be elaborated in the full context.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-031
+ticket_id: ticket-import-art-2026-03-04-031
+decision: kept
+reason: This preprint reports a concrete evaluated framework with measured results from an industrial case study.
+scope_class: preprint
+decided_at_utc: 2026-04-04T03:16:00Z
+---
+# Curator Receipt

@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-031",
+  "reviewed_at_utc": "2026-04-03T23:18:56Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The paper supports a structured expertise-decomposition mechanism in a narrow simulation setting, while broader performance claims remain bounded by limited validation and unisolated component effects.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The expert-augmented agent achieved higher output-quality ratings than the baseline, with a mean score of 2.60 versus 0.85.",
+      "bounds": "The improvement is reported for the combined system, but the evidence does not isolate which component caused the gain or how the gain was produced."
+    },
+    {
+      "claim_text": "The proposed system produced more consistently high-rated outputs than the baseline, including expert-level modal ratings in all evaluated cases and lower variance.",
+      "bounds": "The metrics support a consistency claim within the tested scenarios, but any causal link from that consistency to codified rules or structured augmentation remains unseparated rather than directly demonstrated."
+    },
+    {
+      "claim_text": "The paper's validation is bounded because it covered five scenarios with 12 evaluators inside simulation-based optimization contexts and did not test effectiveness in non-simulation domains.",
+      "bounds": "External validity is explicitly limited to the studied simulation-centered setting, and the practical-effectiveness setup is too narrow to support broader generalization."
+    }
+  ]
+}
