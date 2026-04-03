@@ -1,5 +1,15 @@
 KEEP
 
-This source introduces SWE-bench, a novel evaluation framework for language models in real-world software engineering tasks. It provides concrete details on the benchmark's construction, including data sources, filtering stages, and evaluation methodology, which can be considered a novel finding and a detailed experimental setup.
+This is a formal research paper introducing a benchmark with concrete evaluation results.
 
-Limits: The provided excerpt is from an abstract and introduction, and while it describes the methodology and initial findings, it may not contain the full experimental results or a comprehensive analysis.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-023
+ticket_id: ticket-import-art-2026-03-04-023
+decision: kept
+reason: This is a formal research paper introducing a benchmark with concrete evaluation results.
+scope_class: paper
+decided_at_utc: 2026-04-04T01:10:00Z
+---
+# Curator Receipt

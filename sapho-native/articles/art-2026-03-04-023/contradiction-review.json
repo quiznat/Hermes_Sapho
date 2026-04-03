@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-04-023",
+  "reviewed_at_utc": "2026-04-03T21:13:11Z",
+  "reviewer_role": "Synthesist",
+  "summary": "art-2026-03-04-023 shows real tension around retrieval: better file recall can coexist with worse end-task performance, and oracle gains do not remove the benchmark’s setup bounds.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

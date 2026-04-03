@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-024",
+  "reviewed_at_utc": "2026-04-03T13:37:12Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The paper supports a bounded handoff mechanism for many robustness failures and a pathway-specific repair, but not a general causal account of all failures.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Popular code-generation multi-agent systems were not robust to semantic-preserving input mutations, failing on 7.9% to 83.3% of previously solved problems.",
+      "bounds": "This is a descriptive robustness result under the tested mutation operators, systems, models, datasets, and Pass@10 setup; it establishes loss of robustness but not a single causal explanation for all observed failures."
+    },
+    {
+      "claim_text": "The repair method appears much better at addressing planner-coder-gap failures than invalid cases, indicating a bounded rather than general fix.",
+      "bounds": "The strongest subtype evidence comes from a specific reported setting, so the claim is best read as a bounded pathway match between the intervention and planner-coder-gap failures, not as a universal cross-setting rule."
+    }
+  ]
+}

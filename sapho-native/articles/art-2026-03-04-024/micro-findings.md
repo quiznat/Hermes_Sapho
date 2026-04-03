@@ -1,3 +1,4 @@
-*   Multi-agent systems (MASs) for code generation exhibit substantial robustness flaws, failing to solve between 7.9% and 83.3% of initially resolved problems after semantic-preserving mutations.
-*   A primary cause of MAS robustness issues, accounting for 75.3% of failures, is the "planner-coder gap," stemming from insufficient detail in plans and misinterpretations by coding agents.
-*   A proposed repairing method, incorporating multi-prompt generation and a monitor agent, effectively enhances MAS robustness, solving 40.0%–88.9% of identified failures and reducing new failures by up to 85.7%.
+- Popular code-generation multi-agent systems were not robust to semantic-preserving input mutations, failing on 7.9% to 83.3% of problems they had previously solved.
+- In the paper's sampled failure analysis, planner-coder gap was the dominant failure mode, accounting for 75.3% of failures and exceeding plan logic errors and invalid cases.
+- A repair method combining multi-prompt generation with a monitor agent recovered a substantial share of fuzzing-identified failures, solving 40.0% to 88.9% across evaluated settings.
+- The repair method appears much better at addressing planner-coder-gap failures than invalid cases, indicating a bounded rather than general fix.

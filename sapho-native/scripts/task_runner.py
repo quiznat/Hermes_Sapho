@@ -5,6 +5,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from hashlib import sha256
@@ -114,6 +115,30 @@ def build_hermes_command(assignment: str, role_cfg: dict[str, Any], config: dict
     return command
 
 
+def build_python_file_prompt_command(prompt_path: Path, role_cfg: dict[str, Any]) -> list[str]:
+    runner = (
+        "import os, sys; "
+        "from cli import main as cli_main; "
+        "query = open(sys.argv[1], 'r', encoding='utf-8').read(); "
+        "kwargs = {'query': query, 'quiet': True}; "
+        "model = sys.argv[2]; "
+        "provider = sys.argv[3]; "
+        "kwargs.update({'model': model} if model else {}); "
+        "kwargs.update({'provider': provider} if provider else {}); "
+        "os.environ['HERMES_SESSION_SOURCE'] = 'tool'; "
+        "cli_main(**kwargs)"
+    )
+    model = str(role_cfg.get("model") or "")
+    provider = str(role_cfg.get("provider") or "")
+    if provider == "auto":
+        provider = ""
+    return [sys.executable, "-c", runner, str(prompt_path), model, provider]
+
+
+def should_use_file_prompt_transport(assignment: str, *, soft_limit: int = 24000) -> bool:
+    return len(assignment.encode("utf-8")) >= soft_limit
+
+
 def looks_like_backend_failure(text: str) -> bool:
     stripped = text.strip()
     if not stripped:
@@ -202,19 +227,42 @@ def run_task(role: str, prompt: str, timeout: int, thinking: str, context: dict[
     started = utc_now()
     raw_output = ""
     error: str | None = None
+    prompt_path: Path | None = None
     try:
         if runner_backend != "hermes_cli":
             raise TaskRunnerError(f"unsupported_task_backend:{runner_backend}")
-        command = build_hermes_command(assignment, cfg, config)
-        completed = subprocess.run(
-            command,
-            cwd=str(ROOT),
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            timeout=timeout,
-            check=False,
-        )
+        if should_use_file_prompt_transport(assignment):
+            with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".prompt.txt", delete=False) as handle:
+                handle.write(assignment)
+                prompt_path = Path(handle.name)
+            command = build_python_file_prompt_command(prompt_path, cfg)
+        else:
+            command = build_hermes_command(assignment, cfg, config)
+        try:
+            completed = subprocess.run(
+                command,
+                cwd=str(ROOT),
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=timeout,
+                check=False,
+            )
+        except OSError as exc:
+            if getattr(exc, "errno", None) != 7 or prompt_path is not None:
+                raise
+            with tempfile.NamedTemporaryFile("w", encoding="utf-8", suffix=".prompt.txt", delete=False) as handle:
+                handle.write(assignment)
+                prompt_path = Path(handle.name)
+            completed = subprocess.run(
+                build_python_file_prompt_command(prompt_path, cfg),
+                cwd=str(ROOT),
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=timeout,
+                check=False,
+            )
         raw_output = completed.stdout or ""
         if completed.returncode != 0:
             details = (completed.stderr or completed.stdout or "").strip()
@@ -237,6 +285,12 @@ def run_task(role: str, prompt: str, timeout: int, thinking: str, context: dict[
         return result
     except Exception as exc:
         error = str(exc)
+    finally:
+        if prompt_path is not None:
+            try:
+                prompt_path.unlink(missing_ok=True)
+            except Exception:
+                pass
     finished = utc_now()
     clean_output = normalize_output(raw_output)
     status = classify_status(raw_output, clean_output, error)

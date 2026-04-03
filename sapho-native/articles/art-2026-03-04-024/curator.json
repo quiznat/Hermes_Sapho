@@ -2,13 +2,13 @@
   "version": "curator-decision.v1",
   "article_id": "art-2026-03-04-024",
   "decision": "kept",
-  "qualified_by": "novel_synthesis",
+  "qualified_by": "experimental_blog",
   "evidence_basis": "mixed",
   "novelty_strength": "medium",
   "excerpt_sufficiency": "partial",
-  "reason": "This paper presents a novel study on the robustness of multi-agent systems for code generation using a fuzzing-based approach. It identifies a critical \"planner-coder gap\" as a major cause of failures and proposes a repairing method to enhance robustness, which provides novel synthesis and findings based on experimental data.",
-  "limits": "The excerpt is from an academic paper and details may be more extensive in the full source.",
-  "confidence": "low",
-  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "reason": "This preprint reports concrete robustness experiments and repair evaluations for multi-agent code generation systems.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-04-024\nticket_id: ticket-import-art-2026-03-04-024\ndecision: kept\nreason: This preprint reports concrete robustness experiments and repair evaluations for multi-agent code generation systems.\nscope_class: preprint\ndecided_at_utc: 2026-04-03T13:33:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-03T13:37:12Z",
   "mode": "agent"
 }

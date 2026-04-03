@@ -1,5 +1,15 @@
-KEEP
+DISCARD
 
-This survey offers a novel synthesis by providing a formal discipline and comprehensive taxonomy for Context Engineering in LLMs, identifying a critical research gap and establishing a technical roadmap.
+This is a survey preprint without visible concrete results or source-attributed benchmark payload in the provided excerpt.
 
-Limits: The provided excerpt is the abstract and table of contents, which may not fully represent the depth or experimental rigor of the full paper.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-025
+ticket_id: ticket-import-art-2026-03-04-025
+decision: discarded
+reason: This is a survey preprint without visible concrete results or source-attributed benchmark payload in the provided excerpt.
+scope_class: preprint
+decided_at_utc: 2026-04-03T13:37:00Z
+---
+# Curator Receipt

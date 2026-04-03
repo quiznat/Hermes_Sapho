@@ -1,10 +1,14 @@
-- SWE-bench is an evaluation framework with 2,294 software engineering problems.
-- SWE-bench problems are drawn from real GitHub issues and pull requests.
-- The problems span 12 popular Python repositories.
-- Resolving SWE-bench issues can require coordinating changes across multiple files.
-- SWE-bench requires models to interact with execution environments.
-- SWE-bench requires processing extremely long contexts.
-- SWE-bench requires complex reasoning beyond traditional code generation.
-- Claude 2 is able to solve 1.96% of the issues in SWE-bench.
-- SWE-bench was published as a conference paper at ICLR 2024.
-- SWE-Llama 13b can process contexts exceeding 100,000 tokens.
+- SWE-bench contains 2,294 software engineering task instances drawn from real GitHub issues and corresponding pull requests across 12 popular Python repositories.
+- SWE-bench task construction uses a 3-stage pipeline: repo selection and PR scraping, attribute-based filtering, and execution-based filtering.
+- The authors initially collected about 90,000 pull requests from 12 popular open-source Python repositories before filtering.
+- Candidate tasks were limited to merged pull requests that resolve a GitHub issue, modify test files, include at least one fail-to-pass test, and do not produce installation or runtime errors.
+- The filtering pipeline reduced roughly 90,000 pull requests to 2,294 task instances.
+- A model solution is counted as successful only if the generated patch applies successfully and all associated unit and system tests pass.
+- SWE-bench issue descriptions average 195 words, non-test codebases average 3,010 files and 438K lines, and reference solutions average edits to 1.7 files, 3.0 functions, and 32.8 lines.
+- Each task instance has at least one fail-to-pass test, 40% of instances have at least two fail-to-pass tests, and the median instance runs 51 additional tests to check preserved functionality.
+- Under BM25 retrieval on the full SWE-bench benchmark, Claude 2 resolved 1.97% of tasks, GPT-4-turbo 1.31%, ChatGPT-3.5 0.17%, SWE-Llama 7b 0.70%, and SWE-Llama 13b 0.70%.
+- The paper states that current evaluated models struggle broadly on SWE-bench, with the best-performing model solving only about 2% of issues under the main BM25 setting.
+- With a 27,000-token context limit, BM25 retrieved a superset of oracle files in about 40% of instances, but in nearly half of instances it retrieved none of the oracle files.
+- Claude 2 resolved 4.8% of issues with oracle retrieval and 5.9% with oracle-collapsed retrieval, both higher than its roughly 2% result under BM25 retrieval.
+- Increasing context size improved BM25 recall relative to oracle files but reduced model performance, and the authors report that models often struggled to localize the relevant code within larger contexts.
+- The SWE-Llama training set was built from 19,000 issue-PR pairs from 37 additional Python repositories, and LoRA fine-tuning excluded training sequences longer than 30,000 tokens, reducing the effective training corpus to 10,000 instances.

@@ -1,9 +1,14 @@
-- Multi-agent systems (MASs) are used for automated code generation.
-- This paper presents the first comprehensive study on the robustness of MASs for code generation using fuzzing.
-- Findings reveal robustness flaws in MASs, with failures ranging from 7.9% to 83.3% after semantic-preserving mutations.
-- A common cause of robustness issues is miscommunication between planning and coding agents ("planner-coder gap").
-- This gap accounts for 75.3% of all failures.
-- A repairing method is proposed, involving multi-prompt generation and a monitor agent.
-- The repairing method enhances MAS robustness by solving 40.0%–88.9% of identified failures.
-- Re-execution shows up to an 85.7% decrease in found failures after repairs.
-- The repairing method addresses information loss and semantic drift in MAS code generation.
+- Popular code-generation MASs failed on 7.9% to 83.3% of problems they had originally solved after semantic-preserving input mutations were applied.
+- The fuzzing pipeline used four semantic-preserving mutation operators: Rephrase, Insert, Expand, and Condense.
+- The fuzzing fitness function combined a code reward based on pass-rate differences and a plan reward based on Sentence-BERT plan similarity.
+- The evaluation covered three MASs, three backend LLMs, and four datasets.
+- The study used Pass@10 as the primary robustness metric and ran each system 10 times per question.
+- The largest reported post-fuzzing drop in Table 2 was 83.3% for MetaGPT with Deepseek on CodeContest.
+- The smallest reported post-fuzzing drop in Table 2 was 7.9% for PairCoder with GPT-4o on MBPP ET.
+- In the sampled failure analysis, planner-coder gap accounted for 75.3% of failures, exceeding plan logic errors at 15.3% and invalid cases at 9.3%.
+- The failure-reason analysis examined a random 20% sample of more than 700 fuzzing failures and reported inter-rater agreement of Cohen's kappa = 0.88.
+- The paper attributes planner-coder gap mainly to plans being logically correct but too brief or abstract, and to coders misinterpreting expressions or complex logic without detailed explanation.
+- The proposed repair method has two main components: multi-prompt generation and insertion of a monitor agent that performs plan interpretation and code check.
+- Across MAS, backend, and dataset settings, the repair method solved 40.0% to 88.9% of failures identified during fuzzing.
+- For SCCG with GPT-3.5, the repair method solved 83.9% of planner-coder-gap failures and 0.0% of invalid cases.
+- After repair, re-running fuzzing showed failure-count reductions of up to 85.7%.

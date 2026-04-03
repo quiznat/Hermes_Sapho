@@ -1,3 +1,4 @@
-* SWE-bench is a new evaluation framework for language models in software engineering, using 2,294 real GitHub issues from 12 Python repositories.
-* Resolving SWE-bench issues requires understanding code across multiple files, interacting with execution environments, and processing long contexts.
-* State-of-the-art models, including Claude 2, can solve only the simplest issues in SWE-bench, with Claude 2 solving 1.96% of them.
+- SWE-bench is built from real software maintenance episodes but narrows a much larger pull-request pool into 2,294 executable benchmark tasks across 12 Python repositories.
+- SWE-bench task admission is intentionally strict, requiring merged issue-resolving pull requests with test-file changes, at least one fail-to-pass test, and no installation or runtime errors.
+- Under the benchmark's main BM25 retrieval setting, the evaluated models performed very poorly, with the best reported result solving only about 2% of tasks.
+- Retrieval quality appears to be a major bottleneck in SWE-bench, because oracle-based retrieval improves Claude 2 performance over BM25 even though larger retrieved contexts can still hurt performance.

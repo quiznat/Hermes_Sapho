@@ -1,5 +1,15 @@
 KEEP
 
-This paper presents a novel study on the robustness of multi-agent systems for code generation using a fuzzing-based approach. It identifies a critical "planner-coder gap" as a major cause of failures and proposes a repairing method to enhance robustness, which provides novel synthesis and findings based on experimental data.
+This preprint reports concrete robustness experiments and repair evaluations for multi-agent code generation systems.
 
-Limits: The excerpt is from an academic paper and details may be more extensive in the full source.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-04-024
+ticket_id: ticket-import-art-2026-03-04-024
+decision: kept
+reason: This preprint reports concrete robustness experiments and repair evaluations for multi-agent code generation systems.
+scope_class: preprint
+decided_at_utc: 2026-04-03T13:33:00Z
+---
+# Curator Receipt

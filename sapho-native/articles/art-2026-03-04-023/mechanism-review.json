@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-023",
+  "reviewed_at_utc": "2026-04-03T21:13:31Z",
+  "reviewer_role": "Synthesist",
+  "summary": "SWE-bench is a tightly filtered executable benchmark from real repository history, and the strongest supported mechanism claim is that retrieval and localization bottlenecks help drive very low performance.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "SWE-bench is built from real software maintenance episodes but narrows a much larger pull-request pool into 2,294 executable benchmark tasks across 12 Python repositories",
+      "bounds": "The evidence supports dataset composition and scale only: the benchmark is grounded in real issue-PR history but represents a heavily filtered slice of software maintenance rather than general software engineering."
+    },
+    {
+      "claim_text": "Under the benchmark's main BM25 retrieval setting, the evaluated models performed very poorly, with the best reported result solving only about 2% of tasks",
+      "bounds": "The evidence supports the low observed success rates under this specific setup, but it does not isolate whether failure is driven mainly by retrieval, localization, patch generation, or test satisfaction, and it does not prove that all stronger tooling configurations would fail similarly."
+    }
+  ]
+}

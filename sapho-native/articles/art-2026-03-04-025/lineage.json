@@ -2,51 +2,19 @@
   "version": "article-lineage.v1",
   "article_id": "art-2026-03-04-025",
   "summary_sections": {
-    "core_thesis": [
-      "claim-001"
-    ],
-    "why_it_matters": [
-      "claim-001"
-    ],
-    "key_findings": [
-      "claim-001",
-      "claim-002",
-      "claim-003"
-    ],
-    "limits": [
-      "claim-003"
-    ]
+    "core_thesis": [],
+    "why_it_matters": [],
+    "key_findings": [],
+    "limits": []
   },
-  "claim_ids": [
-    "claim-001",
-    "claim-002",
-    "claim-003"
-  ],
-  "fact_ids": [
-    "fact-001",
-    "fact-002",
-    "fact-003",
-    "fact-004",
-    "fact-005",
-    "fact-006",
-    "fact-007",
-    "fact-008",
-    "fact-009",
-    "fact-010"
-  ],
-  "evidence_ids": [
-    "evidence-001",
-    "evidence-002",
-    "evidence-003",
-    "evidence-004",
-    "evidence-005",
-    "evidence-006",
-    "evidence-007",
-    "evidence-008",
-    "evidence-009",
-    "evidence-010"
-  ],
+  "claim_ids": [],
+  "fact_ids": [],
+  "evidence_ids": [],
   "unresolved_gaps": [
+    "missing_core_thesis_section",
+    "missing_why_it_matters_section",
+    "missing_key_findings_section",
+    "missing_limits_section",
     "missing_explicit_mechanism_claim"
   ]
 }

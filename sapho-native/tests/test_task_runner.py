@@ -94,6 +94,50 @@ session_id: 20260331_032122_c6700d
             self.assertEqual(receipt["role"], "curator")
             self.assertEqual(receipt["model"], "demo-model")
 
+    def test_run_task_uses_file_prompt_transport_for_large_assignment(self) -> None:
+        completed = subprocess.CompletedProcess(
+            args=[sys.executable],
+            returncode=0,
+            stdout="\n╭─ ⚕ Hermes ──╮\nOK\n\nsession_id: abc\n",
+            stderr="",
+        )
+        captured: list[list[str]] = []
+
+        def fake_run(command, **kwargs):
+            captured.append(command)
+            self.assertEqual(command[0], sys.executable)
+            self.assertEqual(command[1], "-c")
+            prompt_path = Path(command[3])
+            self.assertTrue(prompt_path.exists())
+            self.assertGreater(prompt_path.stat().st_size, 24000)
+            self.assertNotIn("x" * 1000, " ".join(command))
+            return completed
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            config_path = Path(tmpdir) / "task_runner.json"
+            receipts_dir = Path(tmpdir) / "receipts"
+            config = {
+                "backend": "hermes_cli",
+                "hermes_command": "hermes",
+                "receipts_dir": str(receipts_dir),
+                "roles": {
+                    "curator": {
+                        "persona_file": "curator.md",
+                        "identity_name": "Curator",
+                        "provider": "auto",
+                        "model": "demo-model"
+                    }
+                }
+            }
+            config_path.write_text(json.dumps(config), encoding="utf-8")
+            prompt = "x" * 26000
+            with patch.dict(os.environ, {"SAPHO_TASK_RUNNER_CONFIG": str(config_path)}, clear=False):
+                with patch("task_runner.subprocess.run", side_effect=fake_run):
+                    result = task_runner.run_task("curator", prompt, timeout=30, thinking="off")
+        self.assertEqual(result.status, "ok")
+        self.assertEqual(result.clean_output, "OK")
+        self.assertEqual(len(captured), 1)
+
     def test_run_loose_agent_uses_new_runner_by_default(self) -> None:
         fake_result = task_runner.TaskResult(
             status="ok",
