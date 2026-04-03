@@ -1,3 +1,4 @@
-*   72.6% of analyzed Claude Code configuration files specify software architecture.
-*   General development guidelines are specified in 44.8% of the files.
-*   Project overview is included in 39% of the configuration files.
+- The study analyzed 328 Claude Code configuration files drawn from a final sample of 100 popular public repositories filtered for English-language real-world projects.
+- The sampled repositories show Claude Code configuration use across a wide technical range, spanning 23 programming languages, with JavaScript or TypeScript most common, followed by Python and Go.
+- Architecture was the dominant concern in the analyzed configuration files, appearing in 72.6% of the dataset, while development guidelines, project overview, testing, and commands appeared less often.
+- The most common reported configuration pattern was Architecture plus Dependencies plus Project Overview, present in 21.6% of files, but this pattern claim is methodologically weaker than the headline frequency counts because the underlying classification was initially performed by one author.

@@ -65,6 +65,9 @@ This note is required when `mechanism_relevance: bounded` or `contradiction_rele
 
 Only emit evidence files when the source actually supports them.
 If the source contains no atomic evidence, set `evidence_count: 0` and explain why.
+Draft the evidence file blocks first; set `evidence_count` only after the final evidence list is complete.
+Your last verification step before returning must be: count the final `### file:` evidence blocks in the receipt and copy that exact integer into `evidence_count`.
+If you add or remove any evidence file while drafting, update `evidence_count` last so the header exactly matches the emitted evidence block count.
 Every evidence file must include both `mechanism_relevance` and `contradiction_relevance`; do not omit them even when the value is `none`.
 Every evidence file must include a non-empty `Source Excerpt` grounded in the captured source markdown.
 Set `mechanism_relevance: direct` only when the evidence itself states or directly supports how the result happens.

@@ -1,10 +1,14 @@
-- The study analyzed 328 configuration files from public Claude Code projects.
-- Repositories were filtered to include those with at least 100 stars.
-- 328 Claude.md files were obtained after fetching and processing project files.
-- A median of 7 level-2 headings were found in Claude.md files.
-- 2,492 section titles were extracted from the Claude.md files.
-- The most common concern in configuration files is architecture (72.6%).
-- General development guidelines were found in 44.8% of the files.
-- Project overview was specified in 39% of the configuration files.
-- Testing guidelines were present in 35.4% of the files.
-- Commands were specified in 33.2% of the Claude.md files.
+- The study collected and analyzed 328 Claude Code configuration files from public projects.
+- The initial GitHub Search API query found 4,724 repositories containing a Claude.md file between August 28 and August 30, 2025.
+- The final repository sample was the top 100 most popular repositories remaining after filtering for popularity, English language, and real-world applications.
+- The selected projects span 23 programming languages, with JavaScript/TypeScript in 35 projects, Python in 16, and Go in 9.
+- The selected projects had a median of 950 stars, 488 commits, and 58 months of age since first commit.
+- During file fetching, the authors found 45 CLAUDE.md files that acted as memory banks pointing to other markdown files, and they retrieved the referenced files instead.
+- The manual analysis focused on level-2 markdown headings, except for 36 files with no level-2 sections, where level-1 headings were analyzed instead.
+- The configuration files had a median of 7 level-2 headings, with a maximum of 213 and 36 files with zero level-2 headings.
+- The authors extracted 2,492 section titles and manually grouped them into semantically related categories, with one author performing the initial grouping and two others confirming it.
+- The co-occurrence analysis used the FP-Max algorithm from MLxtend with minimum support set to 0.15.
+- Architecture was the most common concern category, appearing in 238 Claude.md files, or 72.6% of the dataset.
+- Development guidelines appeared in 147 files (44.8%), project overview in 128 (39%), testing in 116 (35.4%), and commands in 109 (33.2%).
+- Code examples were most common in Development Guidelines sections at 17.68%, while links were most common in Architecture sections at 1.83%; the authors found only two Mermaid UML diagram instances.
+- The most common configuration pattern was Architecture + Dependencies + Project Overview at 21.6% of files, but the classification underlying these results was initially performed by one author.

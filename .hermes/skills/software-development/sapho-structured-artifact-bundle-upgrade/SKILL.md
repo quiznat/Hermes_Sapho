@@ -339,10 +339,573 @@ This keeps the law in the right place:
 - persona jobs perform bounded reasoning work
 - validators / gates enforce eligibility
 
+## Historical imported-package policy discovered in rollout
+
+Once structured backfill and fail-closed validation are active across a mixed corpus, a new ambiguity appears:
+- older imported runtime packages may still be present in the corpus
+- some are already blocked/discarded and should not be treated as publication candidates
+- some are historically published but missing contradiction/mechanism law reviews
+- a small number may already satisfy the stronger law
+
+A reusable pattern that worked well is to materialize an explicit per-package policy artifact:
+- `historical-policy.json`
+
+Recommended classification:
+- `not_applicable` — native package outside the historical-import policy scope
+- `blocked_not_publishable` — imported package is already `discarded`, `capture-blocked`, or `duplicate-rejected`; it is not a current publication candidate
+- `legacy_quarantined` — imported package is `published` or `ready-for-daily` but still fails contradiction/mechanism law checks, so it must remain explicitly ineligible under current law
+- `current_law_compliant` — imported package is backed by real lawful artifacts and now passes current law
+- `needs_remediation` — imported package is neither blocked nor lawful and still needs repair work beyond the standard quarantine case
+
+Important rule discovered in practice:
+- do not label imported blocked packages as `current_law_compliant` just because their validator status is `pass`
+- blocked packages are non-candidates, not compliant publication packages
+- classify them separately as `blocked_not_publishable`
+
+A strong `historical-policy.json` shape includes:
+- `version`
+- `article_id`
+- `applies`
+- `source_regime` (`runtime-import` vs `native`)
+- `publication_status`
+- `validation_status`
+- `policy_status`
+- `current_law_eligible`
+- `missing_law_checks`
+- `disposition`
+- `reviewed_at_utc`
+
+Recommended implementation point:
+- generate this artifact inside `structured_artifact_bundle.py` right after `validation.json` is built, so every backfill and every future lane materialization emits a stable policy surface
+
+Recommended tests to add:
+1. native package writes `historical-policy.json` with `not_applicable`
+2. imported published package missing contradiction/mechanism review becomes `legacy_quarantined`
+3. imported package with real contradiction/mechanism artifacts becomes `current_law_compliant`
+4. imported discarded package becomes `blocked_not_publishable`
+
+Recommended operational step after implementation:
+- run `python scripts/backfill_structured_bundles.py` across the real corpus so every historical package gets an explicit policy artifact
+- summarize resulting counts in a short persisted report under `spec/` so the new historical status is documented, not only visible in terminal output
+
+## Historical remediation replay runner discovered in rollout
+
+Once `historical-policy.json` exists, a second reusable need appears:
+- systematically rerun imported historical packages through the new bounded article lane
+- let the current system decide whether each package should now be `ready-for-daily`, `discarded`, `duplicate-rejected`, or `capture-blocked`
+- do this without auto-publishing artifacts during replay
+
+A strong pattern is to add a dedicated wrapper script rather than overloading backfill:
+- `scripts/remediate_historical_imports.py`
+
+Recommended behavior:
+- select only imported runtime packages where `historical-policy.json` currently reports:
+  - `legacy_quarantined`
+  - `current_law_compliant`
+- exclude `blocked_not_publishable` packages from replay by default
+- rerun each candidate through:
+  - `python scripts/run_micro_article_lane.py --article-id <id> [--replay-date YYYY-MM-DD]`
+- never call `run_micro_artifact_publish.py` from the remediation runner
+- record before/after values for:
+  - `publication_status`
+  - `policy_status`
+  - return code
+  - stdout/stderr
+- write a JSON report under `state/reports/`
+
+Important implementation finding:
+- keep remediation and publication separate
+- even if replay yields `ready-for-daily`, do not auto-publish during remediation
+- this preserves fail-closed operator review and keeps replay from silently mutating live public surfaces
+
+Recommended tests:
+1. candidate selection returns only imported packages with replay-eligible policy states
+2. remediation runner shells out to `run_micro_article_lane.py`, not the artifact publisher
+3. remediation summary includes before/after publication and policy states
+4. remediation runner writes a persisted report file
+
+A useful real-world operating pattern is:
+- first run `python scripts/remediate_historical_imports.py --dry-run`
+- then remediate a small batch with `--limit 5`
+- inspect the report before widening the replay set
+
+## Artifact article quality bar discovered in rollout
+
+A major user correction changed what “good enough” means for public Sapho artifact articles.
+
+The article artifact itself must be a dense, actionable decision block.
+It is not enough for `article.md` to:
+- restate the abstract
+- summarize the topic in generic prose
+- merely point at `source.md` for the real substance
+
+The reader should be able to read the artifact article and extract the key paper result without opening the source.
+
+Required outcome:
+- the artifact itself should carry the meaningful empirical findings when they exist
+- it should surface contradiction/tension explicitly
+- it should surface mechanism when supported, or explicit bounds when mechanism is not established
+- it should explain why the result matters for Sapho’s goals, not only for the paper’s own framing
+
+Important anti-pattern discovered in practice:
+- do not make the artifact table-first by default
+- tables can be useful occasionally, but they are not the right canonical shape because they force content into inappropriate cells and can limit dense synthesis
+- the real target is a compressed high-signal information block, not a rigid template or book report
+
+A better artifact article typically needs expressive sections such as:
+- thesis
+- dense findings block with concrete measured results when available
+- contradiction / tension
+- mechanism or bounds
+- limits
+- why it matters for Sapho
+- confidence / evidence posture
+
+Practical writing rule:
+- if the source/evidence bundle contains concrete numbers, benchmark counts, measurable deltas, or hard operational distinctions, the article should surface them directly
+- if the article only says “the paper studies X” while omitting those decisive specifics, treat that as inadequate synthesis even if structure/law checks pass
+
+Important historical-package diagnostic discovered in rollout:
+- some imported packages have strong `source.md` captures but weak legacy `article.md` artifacts
+- when replay fails before article rewrite completes, do not mistake the weak carried-forward `article.md` for the intended end-state quality bar
+- first fix the replay blocker, then judge the rewritten article against the denser Sapho artifact standard
+
+## Git tracking policy discovered in rollout
+
+A user correction changed repo policy for Sapho content:
+- track Sapho content broadly in git
+- do not exclude generated content by default
+- exclude mainly secrets, credentials, caches, and true temporary files
+
+Practical implication for the top-level disaster-recovery repo:
+- `sapho-native/articles/` should be tracked
+- `sapho-native/daily/` should be tracked
+- `sapho-native/discovery/` should be tracked
+- `sapho-native/public/` should be tracked
+- `sapho-native/queue/` should be tracked
+- `sapho-native/state/` should be tracked when it contains durable content worth review/history
+
+Still ignore:
+- secrets and auth material
+- `.env` files and credential files
+- caches
+- temporary files
+- upstream nested repos with their own git history
+
+This matters because human review of article artifacts and replay outcomes is much easier when those artifacts are directly visible on GitHub rather than only on local disk.
+
+## Historical replay operating rule discovered in rollout
+
+When first enabling `scripts/remediate_historical_imports.py`, do not widen immediately to the full corpus.
+Use a sanity-check batch first.
+
+Recommended operating pattern:
+1. `--dry-run`
+2. replay `--limit 5`
+3. inspect before/after report and resulting article artifacts
+4. only widen after understanding error classes
+
+Important finding from the first real batch:
+- some historically published packages may now be discarded by the stronger bounded Curator lane, which is a legitimate outcome
+- some packages may fail replay due to contract errors like `extractor_evidence_count_mismatch`
+- this means historical remediation is both a quality upgrade and a debugging surface; treat it as such, not as a guaranteed auto-upgrade path
+
+## Replay/debugging findings from a successful regenerated sample
+
+A real replay of `art-2026-03-03-001` exposed three reusable failure classes that are worth checking immediately whenever a historical replay stalls:
+
+### 1. Repeated task-runner payloads can break downstream parsers
+
+Observed failure mode:
+- the Hermes CLI output for Extractor and Synthesist sometimes repeated the same payload twice in one response
+- downstream code then counted duplicate evidence blocks or saw duplicate YAML/article documents
+
+Practical fixes that worked:
+- in `task_runner.normalize_output()`, collapse exact duplicated payloads after stripping CLI chrome and session ids
+- in `parse_evidence_receipt_files(...)`, deduplicate evidence units by `evidence_id` so repeated receipt blocks do not inflate counts
+- in article-write handling, extract the final complete article document rather than assuming the whole raw response is one article
+
+Verification to add:
+- a task-runner test where the same YAML/article payload is repeated twice and normalization returns one copy
+- an article-runtime test where an Extractor receipt body is duplicated and `parse_evidence_receipt_files(...)` still returns the unique evidence units once
+- an article-runtime test where two article documents are concatenated and the helper chooses the final complete one
+
+### 2. Synthesist YAML may be structurally right but syntactically fragile
+
+Observed failure mode:
+- Synthesist claim output used colon-containing scalar text without quoting, causing `yaml.safe_load(...)` to raise `ScannerError`
+
+Practical fix that worked:
+- keep normal YAML parsing first
+- on YAML parse failure, run a conservative scalar-quoting fallback for plain `key: value` lines before retrying `yaml.safe_load(...)`
+- do not try to rewrite list markers or structured YAML blocks indiscriminately; only quote obvious plain scalar values
+
+Verification to add:
+- a regression test using malformed claim YAML where `mechanism_or_bounds` or `contradiction_note` contains an unquoted colon
+- assert that `_yaml_mapping(...)` still recovers the expected mapping
+
+### 3. Article-write output can pass content review but still leak internal structure if duplicated
+
+Observed failure mode:
+- article-write produced a strong dense artifact, but duplicated the full article document
+- the second frontmatter block leaked into the first body, triggering `visible_internal_id_leak:article-write`
+
+Practical fix that worked:
+- add a helper like `extract_last_article_document(...)`
+- parse only the final full `article.v1` document from the raw article-write output before validating sections and internal-id leakage
+
+Verification to add:
+- a regression test with two concatenated `article.v1` documents where the helper returns the final one only
+
+### 4. Article frontmatter can fail on bracket-prefixed titles even when content is otherwise valid
+
+Observed failure mode:
+- article-write output for arXiv-derived titles sometimes emits frontmatter like:
+  - `source_title: [2512.08296] Towards a Science of Scaling Agent Systems`
+- YAML interprets the leading `[` as a flow-sequence start, so `parse_markdown()` / `load_frontmatter()` can fail before the article body is even reviewed
+
+Practical fix that worked:
+- broaden `repair_frontmatter_text(...)` in `common.py`
+- do not only quote scalar values containing `:`
+- also quote scalar values starting with YAML-special prefixes such as:
+  - `[`
+  - `{`
+  - `&`
+  - `*`
+  - `!`
+  - `%`
+  - `@`
+  - `` ` ``
+- keep numbers, booleans, nulls, and already-quoted scalars untouched
+
+Verification to add:
+- a regression test where `load_frontmatter(...)` receives a bracket-prefixed article title and still returns the expected string value
+
+### 5. Law-review YAML can fail on unquoted colon-bearing list-item mappings
+
+Observed failure mode:
+- contradiction/mechanism review outputs sometimes emit list-item mappings like:
+  - `- contradiction_text: The aggregate result is negative: some narrower cases are positive.`
+- the initial tolerant YAML fallback handled plain `key: value` lines but not `- key: value` list-item mapping lines
+- this caused `article_law_reviews._load_yaml_payload(...)` to fail even after claims parsing had already been hardened
+
+Practical fix that worked:
+- add the same tolerant scalar-quoting fallback to `article_law_reviews.py`
+- handle both forms:
+  - `key: value`
+  - `- key: value`
+- on YAML parse failure, quote only obvious scalar tails and retry `yaml.safe_load(...)`
+
+Verification to add:
+- a regression test where contradiction review YAML contains unquoted colon-bearing scalar values on list items and still loads into a mapping correctly
+
+### 6. A successful regenerated sample is a better stopping point than a fixed runner alone
+
+Operational lesson:
+- do not stop after fixing the replay infrastructure in the abstract
+- keep working until at least one historically quarantined kept article is actually rerun into:
+  - a dense public artifact
+  - passing `validation.json`
+  - lawful contradiction/mechanism review artifacts
+  - `historical-policy.json` changing to `current_law_compliant`
+
+A good review checkpoint is a concrete GitHub-visible artifact package, not only passing tests.
+
+### 7. Two regenerated kept samples provide a much stronger replay confidence bar than one
+
+A valuable experiential finding from this rollout:
+- one successful regenerated article proves the path can work
+- a second successful regenerated article after additional parser/frontmatter fixes proves the fixes generalize better than a one-off patch
+
+Concrete examples that were fully rerun into dense, lawful, reviewable artifacts:
+- `art-2026-03-03-001`
+- `art-2026-03-02-025`
+
+Both ended with:
+- `publication_status: ready-for-daily`
+- passing `validation.json`
+- contradiction/mechanism review artifacts present
+- `historical-policy.json` set to `current_law_compliant`
+
+Use this as the practical confidence bar before widening remediation batches further.
+
+### 8. When the legacy/OpenClaw rail is dead, change posture from replacement project to live-transition execution
+
+A major strategic change discovered in rollout:
+- if the old OpenClaw rail is no longer functioning, the new Sapho-native rail is no longer just a replacement build
+- it becomes the production succession path and should be treated as the path to go live
+- do not rush quality gates, but do stop acting as though the old rail remains a usable fallback
+
+Recommended execution posture:
+- maintain fail-closed publication law
+- keep frequent commits and pushes as operational fallback points
+- stop re-deciding priorities ad hoc
+- execute against a formal roadmap with ordered slices
+
+A useful roadmap order that worked well was:
+1. continue historical remediation in small batches using the stabilized replay path
+2. build the formal publication-authority gate so `ready-for-daily` really means lawful promotion candidate
+3. build an operator-facing live-operations control surface/report
+4. continue broader remediation under that stronger operating model
+5. wire the complete new-primary publication flow
+6. only then expand post-stabilization work like richer control-plane features
+
+### 9. Batch-remediation operating rule after replay hardening
+
+Once replay is stable enough to produce good reference artifacts, continue in small explicit batches rather than widening to the full corpus.
+
+Recommended pattern:
+- choose 3–5 explicit article ids, not an open-ended limit, once the queue contains mixed already-remediated and still-quarantined items
+- rerun them with `scripts/remediate_historical_imports.py --article-id ... --replay-date YYYY-MM-DD`
+- inspect the generated report under `state/reports/`
+- spot-check at least one regenerated `article.md` plus `validation.json` and `historical-policy.json`
+- commit and push each successful batch before moving on
+
+Good outcomes to expect in healthy batches:
+- historical `published` / `legacy_quarantined` packages become `ready-for-daily` / `current_law_compliant`
+- regenerated article artifacts meet the dense empirical quality bar
+- contradiction/mechanism reviews and validation pass cleanly
+
+This turns historical remediation into a reliable execution slice rather than a one-off cleanup task.
+
+### 10. Guard against descriptive backslide in regenerated artifacts
+
+A later remediation batch exposed an important failure mode:
+- some regenerated artifacts technically passed structure/law checks but slid back toward descriptive survey voice
+- the weak pattern looked like:
+  - generic contradiction language such as `No direct empirical contradiction is reported ...`
+  - generic mechanism language such as `The supported mechanism is limited` or `the evidence most strongly supports a descriptive account`
+  - evidence sections that were numerically grounded but still too close to literature-summary tone instead of decision-grade synthesis
+
+Operational lesson:
+- do not assume passing structure + numeric payload checks are sufficient
+- use accepted regenerated artifacts as positive controls and weaker regenerated artifacts as negative controls
+
+Useful positive controls:
+- `art-2026-03-03-001`
+- `art-2026-03-02-025`
+
+Useful negative-control pattern:
+- regenerated articles like the earlier versions of `art-2026-03-04-003` and `art-2026-03-04-012` that felt too descriptive and under-emphasized concrete tension/mechanism framing
+
+Validation hardening that worked:
+- reject contradiction sections that rely on phrases like:
+  - `no direct empirical contradiction is reported`
+  - `no direct contradiction is visible`
+  unless the section also names a concrete operational or empirical tension
+- reject mechanism sections that rely on generic phrases like:
+  - `the supported mechanism is limited`
+  - `descriptive account`
+  when a stronger bounded explanation is available from the evidence
+- keep these checks inside article-write validation so weak style cannot slip through just because headings exist
+
+Prompt/contract hardening that worked:
+- explicitly tell the writer not to satisfy contradiction/tension with generic disclaimer language
+- explicitly tell the writer not to satisfy mechanism/bounds with generic “descriptive account” fallback when bounded operational explanation is possible
+- require concrete benchmark reversals, subgroup differences, cost/performance tradeoffs, adoption/attention mismatches, or similar decision-relevant tensions to be named when they exist
+
+Recommended test pattern:
+- keep one negative-control article fixture in tests that contains adequate sections and some numeric payload but still uses the weak generic contradiction/mechanism voice
+- assert `validate_article_write_body(...)` fails with a dedicated error such as `article_write_weak_tension_or_mechanism`
+
+### 11. Verify identity before overreacting to regenerated wording changes
+
+Another important operational lesson from remediation:
+- regenerated artifacts can look very different from the old historical summaries even when they are the correct underlying item
+- this often happens because the old article was weak and the replay is performing a real re-extraction and rewrite from the same source package
+
+Before assuming the wrong paper was used, verify identity directly from package metadata:
+- `article_id`
+- `ticket_id`
+- `source_url`
+- `canonical_url`
+- `imported_from_runtime_article_id`
+- `source.md` title/body
+
+A good verification pattern is:
+- compare `article.md` frontmatter with `source.md`
+- confirm the source capture still matches the intended paper/work
+- then judge whether the regenerated article is a justified rewrite or a true mismatch
+
+Practical nuance discovered in rollout:
+- identity can be correct even when the old artifact and new artifact feel radically different
+- that usually means the legacy summary underfit the source, not that replay selected the wrong work
+- however, title normalization can still be imperfect (for example, `arXiv 2510.21413` as an article title when the source body clearly carries a fuller title), so treat title-surface cleanup as a separate packaging bug class rather than an identity failure
+
+### 12. Title normalization for replayed papers needs a source-body fallback
+
+A later remediation slice showed that replayed papers can still surface weak titles even after identity is correct.
+
+Observed failure mode:
+- `article.md` frontmatter and the rendered article title may keep a generic stub like `arXiv 2510.21413`
+- meanwhile `source.md` clearly contains the descriptive paper title in the body text
+- this makes the package look wrong even when the source identity is actually correct
+
+Fix that worked:
+- keep a helper like `_is_generic_arxiv_stub(title)` to detect titles such as:
+  - `arXiv 2510.21413`
+  - `arXiv 2602.11988`
+  - versioned forms like `arXiv 2510.21413v1`
+- in `source_title(...)`, do not automatically trust `article_meta["source_title"]` if it is only an arXiv stub
+- prefer, in order:
+  1. a non-stub `article_meta["source_title"]`
+  2. a non-stub `source_meta["source_title"]`
+  3. a descriptive title extracted from `source.md` body text
+  4. only then fall back to the stub or URL
+- when extracting from `source.md` body, skip lines like:
+  - markdown headings
+  - `Source:`
+  - `Generated:`
+  - `> Note:`
+  - generic arXiv stub lines
+  - bare `Introduction` headings
+- choose the first plausible descriptive title line with enough words to be a real paper title
+
+Practical verification that should be added:
+- a test where `article_meta["source_title"]` is `arXiv 2510.21413` but `source_meta["source_title"]` is descriptive; the descriptive title must win
+- a test where both metadata titles are arXiv stubs but `source.md` body contains the real title; the body-derived title must win
+- rerun at least one affected real package after the fix and confirm both:
+  - frontmatter `source_title` is corrected
+  - the rendered article heading uses the descriptive paper title
+
+Operational rule:
+- if a replayed article feels like the wrong paper but ids/source URLs match, check title normalization before suspecting an identity mismatch
+- weak title surfacing is often a packaging bug, not a replay-selection bug
+
+### 13. Large historical replays can fail at the Hermes CLI boundary with `Argument list too long`
+
+A later remediation batch exposed a new infrastructure-class replay failure on large imported packages.
+
+Observed failure mode:
+- `scripts/remediate_historical_imports.py` invokes `scripts/run_micro_article_lane.py`
+- the lane eventually calls `run_loose_agent(...)` through `article_job_runtime.py`
+- for some articles with very large source bodies or mission payloads, the underlying Hermes CLI invocation fails before the agent runs with:
+  - `RuntimeError: [Errno 7] Argument list too long: 'hermes'`
+
+Why this matters:
+- this is not a content-quality rejection
+- the package can remain stuck in `published` + `legacy_quarantined` simply because the replay transport is using an oversized command-line argument payload
+- once one article hits this, nearby large-source historical packages may hit it too
+
+Operational rule:
+- when a remediation report shows `Argument list too long`, treat it as a replay/runtime transport bug first, not as evidence that the article should be discarded or remain quarantined
+- do not move on casually; patch the transport so large missions are passed safely, then rerun the affected article id
+
+Recommended implementation direction:
+- inspect `scripts/micro_common.py` and the task-runner / Hermes CLI seam used by `run_loose_agent(...)`
+- stop passing the full prompt/mission as a giant command-line argument when payloads can exceed OS argv limits
+- keep the small-assignment fast path if desired, but add a large-payload fallback in `scripts/task_runner.py`
+- the fix that worked in practice was:
+  1. detect oversized assignments with a conservative byte threshold helper such as `should_use_file_prompt_transport(...)`
+  2. write the full built assignment to a temp file
+  3. invoke `sys.executable -c ...` with a tiny bootstrap that imports `cli.main`, reads the query from that temp file, sets `HERMES_SESSION_SOURCE='tool'`, and calls `cli_main(query=..., quiet=True, model=..., provider=...)`
+  4. keep an additional retry fallback on `OSError errno == 7` so an unexpectedly large assignment still retries through the file-backed path
+  5. delete the temp file in a `finally` block
+- preserve the same bounded-task semantics and receipt behavior after changing transport
+
+Why this implementation is good:
+- it avoids changing Hermes CLI contracts
+- it keeps receipts and output normalization in the current runner
+- it removes argv size as the bottleneck while preserving one-shot isolation
+
+Verification to add:
+1. a regression test for the task-runner seam where a very large prompt body is submitted without using oversized argv payloads
+2. an integration-style remediation test or seam test showing a large historical source can still reach Extractor without `Argument list too long`
+3. rerun the previously failing article and confirm it transitions out of `legacy_quarantined` only based on actual lane outcome, not transport failure
+
+Practical batch-handling guidance:
+- if one article in a 3-item remediation batch fails this way while others succeed, keep the successful outputs
+- record the failed article id explicitly as a replay transport blocker
+- fix the transport bug before widening to the next set of similarly large historical packages
+
+### 13. Historical replay can hit OS argv limits on large one-shot assignments
+
+A later remediation batch exposed another replay-path failure class:
+- historical packages with large captured sources can build very large one-shot assignments for Curator / Extractor / Synthesist
+- when the task runner shells out as `hermes chat -q <very large assignment>`, the process can fail before model execution with:
+  - `[Errno 7] Argument list too long: 'hermes'`
+
+This is not a content judgment failure.
+It is an invocation-transport failure caused by putting too much prompt text into argv.
+
+Fix that worked:
+- keep the normal direct `hermes chat -q ...` path for small assignments
+- add a size threshold or OSError fallback in `scripts/task_runner.py`
+- when the assignment is too large, write the full prompt to a temporary file
+- invoke Python directly and call Hermes CLI entrypoints from code, reading the prompt from that file instead of passing it on the command line
+- clean up the temp file after the subprocess completes
+
+A robust implementation pattern is:
+- keep `build_hermes_command(...)` for the normal path
+- add helpers like:
+  - `should_use_file_prompt_transport(...)`
+  - `build_python_file_prompt_command(...)`
+- in `run_task(...)`, either:
+  - proactively switch to file transport above a soft byte limit, or
+  - catch `OSError(errno=7)` and retry once through file transport
+
+Important nuance discovered in rollout:
+- piping to `stdin` is not necessarily safe if the Hermes CLI command path assumes TTY-ish behavior or only officially supports `-q`
+- calling the CLI entrypoint from Python with `cli.main(query=...)` while loading the large prompt from a temp file avoids argv overflow without depending on unsupported shell piping semantics
+
+Recommended verification to add:
+1. a regression test where a very large assignment routes through file transport instead of argv
+2. assert the subprocess command is Python-based, points at a temp prompt path, and does not contain the giant prompt text inline
+3. rerun the previously failing historical article after the fix and confirm replay succeeds end-to-end
+
+Operational lesson:
+- if a replay fails with `Argument list too long`, do not treat it as article-specific quality failure
+- fix the prompt transport once, rerun the blocked article, then continue the remediation batch
+
+### 14. Batch remediation reporting should include direct GitHub review links
+
+A user workflow correction changed the preferred reporting format for historical remediation batches:
+- do not only report statuses and local paths
+- include direct clickable GitHub links so the user can immediately inspect regenerated packages in the repo UI
+
+Useful links per article are:
+- commit link for the remediation slice
+- article package tree
+- `article.md`
+- `validation.json`
+- `historical-policy.json`
+- when relevant for blocked/discarded cases, `micro-worthiness.md`
+- report JSON under `state/reports/`
+
+Recommended response pattern after each committed batch:
+- start with the pushed commit SHA and GitHub commit URL
+- list each article outcome (`current_law_compliant`, `blocked_not_publishable`, or still quarantined/failing)
+- attach the clickable GitHub links under each article so the user can browse immediately
+
+This is not just presentation polish; it materially improves operator review speed for GitHub-visible artifact packages.
+
+### 13. When replay surfaces a clear contract bug, fix it proactively before continuing the batch
+
+A later user correction clarified the expected Piter/operator behavior during remediation:
+- if a batch failure clearly points to a prompt/contract bug in the current replay path, do not stop at reporting the error
+- patch the contract promptly, rerun the affected article, and only then continue the historical batch campaign
+
+Concrete example that should now be treated as routine:
+- Extractor emitted a receipt for `art-2026-03-04-029` with `evidence_count: 14`
+- but the receipt body actually contained 18 evidence file blocks
+- the lane correctly failed closed with `extractor_evidence_count_mismatch`
+
+Preferred fix pattern:
+- strengthen `jobs/extractor/evidence.md` so Extractor drafts evidence blocks first and sets `evidence_count` last
+- explicitly instruct: count the final `### file:` blocks and copy that exact integer into `evidence_count`
+- rerun the failed article immediately after the prompt patch
+- if the rerun succeeds, commit the prompt fix and regenerated package in the same slice so the fix is tied to a real recovered artifact
+
+Operational rule:
+- treat obvious contract drift like this as a system bug to repair, not just an article outcome to log
+- preserve fail-closed runtime checks, but also close the loop by hardening the prompt/contract that produced the bad receipt
+
 ## Good next steps after this skill
 
 With real Synthesist contradiction/mechanism review steps now present, the next likely step is:
 - keep `validation.json` as the canonical package-level result surface
 - backfill structured internals across existing imported article packages
+- materialize `historical-policy.json` so imported legacy packages are explicitly classified as quarantined, blocked, or current-law compliant
 - migrate the live article lane from micro compatibility prompts onto bounded Curator admission, Extractor evidence, Synthesist article-claims, and Synthesist article-write jobs
+- tighten the article artifact contract so public `article.md` surfaces dense empirical findings, contradiction/tension, mechanism-or-bounds, and Sapho-relevance directly
 - let fail counts shrink only when those charter-native outputs actually exist on each eligible package

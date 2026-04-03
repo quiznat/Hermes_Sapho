@@ -2,19 +2,45 @@
 
 ## Core Thesis
 
-A study of 328 Claude.md configuration files from popular open-source repositories reveals how practitioners currently structure guidance for AI coding assistants, with software architecture concerns dominating developer attention.
+Public Claude Code project configurations are not lightweight prompt scraps; in the sampled repositories they function mainly as structured project orientation layers. The dominant pattern is to tell the coding agent how the system is organized, what it depends on, and what the project is, with architecture information appearing far more often than testing, command, or workflow guidance.
 
-## Why It Matters
+## Why It Matters for Sapho
 
-As AI coding agents become standard tooling in software engineering, understanding how teams configure these systems offers insight into which engineering practices practitioners prioritize—and where shared conventions may be emerging.
+This matters because it sharpens how Sapho should interpret agent-facing project scaffolding. The practical bottleneck in coding-agent deployment is not only task prompting but durable environment description: system shape, dependency boundaries, and project context. It also argues for caution. Apparent best practice in agent configuration is being inferred from a bounded, popularity-skewed sample and from manual category coding, so Sapho should treat these findings as evidence of current public practice, not as settled doctrine about what universally works.
 
 ## Key Findings
 
-- Architecture is the most common configuration concern, appearing in 72.6% of files analyzed.
-- General development guidelines are specified in 44.8% of configurations.
-- Project overviews appear in 39% of files.
-- Configuration files show disciplined structure, with a median of 7 level-2 headings across 2,492 extracted section titles.
+- The study began from 4,724 repositories containing a Claude.md file and narrowed to a final sample of 100 popular, English-language, real-world public repositories, from which the authors analyzed 328 configuration files.
+- The sampled repositories covered 23 programming languages, with JavaScript or TypeScript most common in 35 projects, followed by Python in 16 and Go in 9, indicating use across a broad technical range rather than a single ecosystem niche.
+- Architecture was the most common configuration concern, appearing in 238 files, or 72.6% of the 328-file dataset.
+- Other common sections were materially less frequent: development guidelines appeared in 147 files (44.8%), project overview in 128 (39.0%), testing in 116 (35.4%), and commands in 109 (33.2%).
+- The files were often structurally substantial rather than minimal, with a median of 7 level-2 headings, a maximum of 213, and 36 files requiring level-1 analysis because they had no level-2 headings.
+- The most common reported section pattern was Architecture plus Dependencies plus Project Overview, present in 21.6% of files, but that pattern depends on a manual grouping process initially performed by one author and only then confirmed by two others.
+
+## Evidence and Findings
+
+- The paper does not study a handful of anecdotes. It starts from 4,724 repositories discovered through GitHub search and then filters down to the top 100 popular, English-language, real-world repositories, yielding 328 analyzed files. That supports a credible map of visible public practice while also making clear that the findings describe a selective slice of the ecosystem rather than all coding-agent projects.
+- The sampled repositories span 23 programming languages, with 35 JavaScript or TypeScript projects, 16 Python projects, and 9 Go projects. That supports the conclusion that Claude Code configuration is used across a wide technical range, which matters because it weakens any claim that these files are only a pattern of one community or toolchain.
+- Architecture appears in 238 files, or 72.6% of the dataset, while development guidelines appear in 147 files, project overview in 128, testing in 116, and commands in 109. This supports the central conclusion that public Claude Code configurations are used first to orient the agent to project structure, with execution guidance and quality checks present but less dominant.
+- The files are not uniformly simple templates. The dataset contains 2,492 section titles, the median file has 7 level-2 headings, the maximum reaches 213, and 45 Claude.md files acted as memory banks that pointed to other markdown files that the authors then retrieved. That matters because it suggests configuration in practice can be distributed, extensive, and closer to a maintained project knowledge surface than a single short instruction sheet.
+- The co-occurrence analysis identifies Architecture plus Dependencies plus Project Overview as the most common pattern at 21.6% of files, using FP-Max with minimum support 0.15. This supports the narrower conclusion that a recurring public configuration template exists: explain the system, list what it relies on, and state what the project is. For Sapho, that is evidence that persistent agent competence may depend more on contextual grounding than on isolated task recipes.
+- The study also reports that code examples were most common within development-guideline sections at 17.68%, while links were most common within architecture sections at 1.83%, and only two Mermaid UML diagram instances were found. That matters because it implies most public projects are not heavily relying on formal diagrammatic notation; they are transmitting structure mostly through text, examples, and links.
+
+## Contradictions and Tensions
+
+- The paper presents concrete dominant patterns, but those patterns rest on manual semantic grouping of 2,492 section titles, with one author doing the initial classification before two others confirmed it. That means the headline frequencies are stronger than the finer-grained pattern claims: architecture clearly dominates, but exact category boundaries and combination counts remain somewhat judgment-sensitive.
+- The sample is broad across languages but narrow in selection logic. It is drawn from popular, English-language, real-world public repositories, with a median repository size of 950 stars, 488 commits, and 58 months since first commit. That improves signal quality for mature public practice but creates a tension between “what successful public projects do” and “what the full coding-agent population does,” especially for private, early-stage, or non-English projects.
+- The files look structurally rich, but richness is uneven. Thirty-six files had no level-2 headings and required a different parsing rule, while one file reached 213 level-2 headings. That spread suggests “Claude Code configuration” is not one stable artifact type; some projects use compact guidance, others use large knowledge bases, which complicates simple claims about a standard format.
+- Architecture dominates frequency counts, but the paper does not directly test whether architecture-heavy configurations actually improve agent performance. The evidence shows what maintainers emphasize, not whether their emphasis is causally optimal.
+
+## Mechanism or Bounds
+
+The strongest supported operational explanation is that Claude Code configurations are serving as project-orientation infrastructure. Public repository maintainers appear to use these files to reduce agent uncertainty about system layout, dependencies, and project purpose before or alongside task execution. The evidence for that explanation is indirect but meaningful: architecture appears in 72.6% of files, project overview and dependencies recur in common patterns, and some repositories use memory-bank structures that fan out into multiple markdown files. The bounds are important. This is not a performance study, not a causal test of which sections improve outcomes, and not a representative census of all coding-agent deployments. It shows how a filtered public sample structures agent context, not what configuration design universally works best.
 
 ## Limits
 
-The sample includes only repositories with at least 100 stars, and the analysis maps configuration patterns rather than measuring their effectiveness. These are initial descriptive findings, not benchmarked outcomes or experimental results.
+The study is bounded to popular, English-language, public repositories and therefore cannot establish representativeness for private repos, smaller teams, or non-English ecosystems.
+The strongest pattern claims depend on manual semantic grouping, which introduces category-boundary judgment into the results.
+The paper measures configuration content and co-occurrence, not downstream coding quality, task success, or defect reduction, so practical efficacy remains unproven.
+Because some files acted as pointers to external markdown knowledge and file structure varied widely, the dataset mixes several forms of project memory under one analytic frame.
+The evidence supports disciplined inference about visible public practice, but not a universal template for how Sapho or any other system should configure coding agents.

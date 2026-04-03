@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-04-029",
+  "reviewed_at_utc": "2026-04-03T22:27:54Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports bounded descriptive claims about how a filtered public sample structures Claude Code configuration, but it does not justify strong causal mechanism claims about why those patterns improve agent performance.",
+  "review_confidence": "medium",
+  "mechanism_count": 0,
+  "bounded_claim_count": 4,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "The study analyzed 328 Claude Code configuration files drawn from a final sample of 100 popular public repositories filtered for English-language real-world projects.",
+      "bounds": "This is a dataset-construction claim, not a causal explanation; the evidence supports only a bounded description of a filtered public sample and does not establish representativeness beyond popular, English-language, real-world repositories."
+    },
+    {
+      "claim_text": "The sampled repositories show Claude Code configuration use across a wide technical range, spanning 23 programming languages, with JavaScript or TypeScript most common, followed by Python and Go.",
+      "bounds": "The evidence supports observed language breadth within the sample, but it does not explain why those languages are most represented; the distribution may reflect the sample's popularity and public-repository filters rather than a general mechanism of adoption."
+    },
+    {
+      "claim_text": "Architecture was the dominant concern in the analyzed configuration files, appearing in 72.6% of the dataset, while development guidelines, project overview, testing, and commands appeared less often.",
+      "bounds": "The evidence supports frequency differences in coded sections, but not a tested mechanism for why architecture dominates or whether that emphasis improves agent performance; the result also depends on the study's manual category grouping."
+    },
+    {
+      "claim_text": "The most common reported configuration pattern was Architecture plus Dependencies plus Project Overview, present in 21.6% of files.",
+      "bounds": "The evidence supports a recurring reported section combination, but the claim is methodologically weaker than the headline frequency counts because the underlying semantic classification was initially performed by one author, making exact pattern boundaries judgment-sensitive rather than purely objective."
+    }
+  ]
+}
