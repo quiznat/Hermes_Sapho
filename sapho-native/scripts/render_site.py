@@ -27,10 +27,45 @@ from common import (
     slugify,
 )
 
-BASE_URL = "https://research.quiznat.com"
+DEFAULT_BASE_URL = "https://research.quiznat.com"
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PUBLIC_SEED_DIR = Path("/home/openclaw/.openclaw/workspace/website")
 PUBLIC_SEED_ENV_VAR = "SAPHO_PUBLIC_SEED_DIR"
+SITE_MODE_ENV_VAR = "SAPHO_SITE_MODE"
+SITE_BASE_URL_ENV_VAR = "SAPHO_SITE_BASE_URL"
+SITE_CUSTOM_DOMAIN_ENV_VAR = "SAPHO_SITE_CUSTOM_DOMAIN"
+SITE_FEEDS_ENV_VAR = "SAPHO_SITE_ENABLE_FEEDS"
+
+
+def site_mode() -> str:
+    value = os.environ.get(SITE_MODE_ENV_VAR, "").strip().lower()
+    if value in {"github-pages", "github_pages", "pages", "website2"}:
+        return "github-pages"
+    return "legacy"
+
+
+def site_base_url() -> str:
+    configured = os.environ.get(SITE_BASE_URL_ENV_VAR, "").strip()
+    return configured.rstrip("/") if configured else DEFAULT_BASE_URL
+
+
+BASE_URL = site_base_url()
+
+
+def site_custom_domain() -> str:
+    configured = os.environ.get(SITE_CUSTOM_DOMAIN_ENV_VAR, "").strip()
+    if configured:
+        return configured
+    base = site_base_url()
+    match = re.fullmatch(r"https?://([^/]+)", base)
+    return match.group(1) if match else ""
+
+
+def site_feeds_enabled() -> bool:
+    value = os.environ.get(SITE_FEEDS_ENV_VAR, "").strip().lower()
+    if value:
+        return value in {"1", "true", "yes", "on"}
+    return site_mode() == "legacy"
 
 COMPAT_ALIAS_REDIRECTS = {
     "20260327001": {
@@ -75,6 +110,37 @@ def public_seed_dir() -> Path:
     return candidate
 
 
+def ensure_custom_domain_file() -> None:
+    domain = site_custom_domain()
+    if not domain:
+        return
+    write_text(PUBLIC_DIR / "CNAME", domain.rstrip() + "\n")
+
+
+def apply_website2_surface_overrides() -> None:
+    if site_mode() != "github-pages":
+        return
+    index_path = PUBLIC_DIR / "index.html"
+    if index_path.exists():
+        homepage = read_text(index_path)
+        homepage = re.sub(
+            r'\n\s*<link rel="alternate" type="application/rss\+xml"[^>]+>\n?',
+            "\n",
+            homepage,
+            count=1,
+        )
+        homepage = re.sub(
+            r'\n\s*<article class="mentat-card report-card">\s*<h3><a href="artifacts\.xml">Artifacts RSS</a></h3>.*?</article>',
+            "",
+            homepage,
+            flags=re.S,
+            count=1,
+        )
+        homepage = homepage.replace("<h2>Machine Entry</h2>", "<h2>Machine Entry and Operations</h2>")
+        write_text(index_path, homepage)
+    ensure_custom_domain_file()
+
+
 def prune_overlay_dir(path: Path, allowed_names: set[str]) -> None:
     if not path.exists():
         return
@@ -84,6 +150,19 @@ def prune_overlay_dir(path: Path, allowed_names: set[str]) -> None:
 
 
 def reset_public_dir() -> None:
+    if site_mode() == "github-pages":
+        ensure_dir(PUBLIC_DIR)
+        baseline_required = [
+            PUBLIC_DIR / "index.html",
+            PUBLIC_DIR / "viewer.html",
+            PUBLIC_DIR / "charter.html",
+            PUBLIC_DIR / "assets" / "style.css",
+            PUBLIC_DIR / "assets" / "sapho-seal.png",
+        ]
+        missing = [str(path.relative_to(PUBLIC_DIR)) for path in baseline_required if not path.exists()]
+        if missing:
+            raise RuntimeError(f"website2_seed_missing:{','.join(missing)}")
+        return
     seed_dir = public_seed_dir()
     if not seed_dir.is_dir():
         raise RuntimeError(f"public_seed_dir_missing:{seed_dir}")
@@ -1251,12 +1330,16 @@ def refresh_agents_page() -> None:
 def validate_public_ops_surfaces() -> None:
     runtime_checkin = LIVE_FACTORY_CHECKIN_LATEST
     public_checkin = PUBLIC_DIR / 'artifacts' / 'ops' / 'factory-checkin-latest.json'
-    if not runtime_checkin.exists():
-        raise RuntimeError('runtime_checkin_missing')
-    if not public_checkin.exists():
-        raise RuntimeError('public_ops_checkin_missing')
-    if read_text(public_checkin) != read_text(runtime_checkin):
-        raise RuntimeError('public_ops_checkin_stale')
+    if site_mode() == "legacy":
+        if not runtime_checkin.exists():
+            raise RuntimeError('runtime_checkin_missing')
+        if not public_checkin.exists():
+            raise RuntimeError('public_ops_checkin_missing')
+        if read_text(public_checkin) != read_text(runtime_checkin):
+            raise RuntimeError('public_ops_checkin_stale')
+    else:
+        if not public_checkin.exists():
+            raise RuntimeError('public_ops_checkin_missing')
 
     ops_latest_path = PUBLIC_DIR / 'data' / 'ops-latest.json'
     if not ops_latest_path.exists():
@@ -1309,12 +1392,32 @@ def validate_render(current_items: list[dict], current_brief: dict[str, str]) ->
         if not path.exists():
             raise RuntimeError(f"missing_required_surface:{path.relative_to(PUBLIC_DIR)}")
 
-    if read_text(PUBLIC_DIR / "index.html") != read_text(seed_dir / "index.html"):
-        raise RuntimeError("homepage_not_exact_seed")
-    if read_text(PUBLIC_DIR / "viewer.html") != read_text(seed_dir / "viewer.html"):
-        raise RuntimeError("viewer_not_exact_seed")
-    if read_text(PUBLIC_DIR / "charter.html") != read_text(seed_dir / "charter.html"):
-        raise RuntimeError("charter_wrapper_not_exact_seed")
+    if site_mode() == "legacy":
+        if read_text(PUBLIC_DIR / "index.html") != read_text(seed_dir / "index.html"):
+            raise RuntimeError("homepage_not_exact_seed")
+        if read_text(PUBLIC_DIR / "viewer.html") != read_text(seed_dir / "viewer.html"):
+            raise RuntimeError("viewer_not_exact_seed")
+        if read_text(PUBLIC_DIR / "charter.html") != read_text(seed_dir / "charter.html"):
+            raise RuntimeError("charter_wrapper_not_exact_seed")
+    else:
+        homepage = read_text(PUBLIC_DIR / "index.html")
+        viewer = read_text(PUBLIC_DIR / "viewer.html")
+        charter_wrapper = read_text(PUBLIC_DIR / "charter.html")
+        if "Sapho Chapterhouse Institute" not in homepage:
+            raise RuntimeError("homepage_missing_institute_heading")
+        if "Primary Surfaces" not in homepage:
+            raise RuntimeError("homepage_missing_primary_surfaces")
+        if "viewer.html?file=charter.md" not in homepage:
+            raise RuntimeError("homepage_missing_charter_link")
+        if 'href="assets/style.css' not in homepage:
+            raise RuntimeError("homepage_missing_style_link")
+        if "Document Viewer" not in viewer or "marked.min.js" not in viewer:
+            raise RuntimeError("viewer_missing_required_shell")
+        if "/viewer.html?file=charter.md" not in charter_wrapper:
+            raise RuntimeError("charter_wrapper_missing_viewer_redirect")
+        cname = site_custom_domain()
+        if cname and read_text(PUBLIC_DIR / "CNAME").strip() != cname:
+            raise RuntimeError("cname_mismatch")
 
     validate_public_ops_surfaces()
 
@@ -1349,17 +1452,21 @@ def validate_artifact_render(current_items: list[dict]) -> None:
     required = [
         PUBLIC_DIR / "viewer.html",
         PUBLIC_DIR / "kept-links.html",
-        PUBLIC_DIR / "rss.xml",
-        PUBLIC_DIR / "artifacts.xml",
     ]
+    if site_feeds_enabled():
+        required.extend([
+            PUBLIC_DIR / "rss.xml",
+            PUBLIC_DIR / "artifacts.xml",
+        ])
     for path in required:
         if not path.exists():
             raise RuntimeError(f"missing_required_surface:{path.relative_to(PUBLIC_DIR)}")
 
-    if read_text(PUBLIC_DIR / "index.html") != read_text(seed_dir / "index.html"):
-        raise RuntimeError("homepage_not_exact_seed")
-    if read_text(PUBLIC_DIR / "viewer.html") != read_text(seed_dir / "viewer.html"):
-        raise RuntimeError("viewer_not_exact_seed")
+    if site_mode() == "legacy":
+        if read_text(PUBLIC_DIR / "index.html") != read_text(seed_dir / "index.html"):
+            raise RuntimeError("homepage_not_exact_seed")
+        if read_text(PUBLIC_DIR / "viewer.html") != read_text(seed_dir / "viewer.html"):
+            raise RuntimeError("viewer_not_exact_seed")
 
     validate_public_ops_surfaces()
 
@@ -1367,9 +1474,10 @@ def validate_artifact_render(current_items: list[dict]) -> None:
     validate_kept_links_surface(kept_links)
     if current_items and f"viewer.html?file={current_items[0]['artifact_rel']}" not in kept_links:
         raise RuntimeError("new_artifact_missing_from_kept_links")
-    rss_text = read_text(PUBLIC_DIR / "rss.xml")
-    if current_items and str(current_items[0]["link"]) not in rss_text:
-        raise RuntimeError("new_artifact_missing_from_rss")
+    if site_feeds_enabled():
+        rss_text = read_text(PUBLIC_DIR / "rss.xml")
+        if current_items and str(current_items[0]["link"]) not in rss_text:
+            raise RuntimeError("new_artifact_missing_from_rss")
 
 
 def validate_daily_briefing_render(current_brief: dict[str, str], seed_dir: Path) -> None:
@@ -1380,21 +1488,26 @@ def validate_daily_briefing_render(current_brief: dict[str, str], seed_dir: Path
         PUBLIC_DIR / "daily" / f"{current_brief['date']}.html",
         PUBLIC_DIR / "briefs" / "latest" / "technical-executive-report.md",
         PUBLIC_DIR / "briefs" / "latest" / "executive-brief.md",
-        PUBLIC_DIR / "daily.xml",
     ]
+    if site_feeds_enabled():
+        required.append(PUBLIC_DIR / "daily.xml")
     for path in required:
         if not path.exists():
             raise RuntimeError(f"missing_required_surface:{path.relative_to(PUBLIC_DIR)}")
 
     validate_public_ops_surfaces()
 
-    for rel in [
+    rels = [
         "kept-links.html",
         "data/kept-links.json",
-        "rss.xml",
-        "artifacts.xml",
-        "data/artifacts-feed.json",
-    ]:
+    ]
+    if site_feeds_enabled():
+        rels.extend([
+            "rss.xml",
+            "artifacts.xml",
+            "data/artifacts-feed.json",
+        ])
+    for rel in rels:
         public_path = PUBLIC_DIR / rel
         seed_path = seed_dir / rel
         if seed_path.exists():
@@ -1431,33 +1544,35 @@ def render_artifact_site(include_ready_ids: set[str] | None = None) -> list[dict
     if not current_items:
         raise RuntimeError("no_artifact_items_to_publish")
     kept_items = overlay_kept_links(current_items)
-    reconciled_registry = reconcile_rss_registry(registry, current_items)
-    feed = build_rss_items(reconciled_registry)
-    rss_validation = validate_rss_candidate(feed, previous_feed_text)
-    if rss_validation.get("ok"):
-        save_rss_registry(reconciled_registry)
-        write_text(PUBLIC_DIR / "rss.xml", feed)
-        write_text(PUBLIC_DIR / "artifacts.xml", feed)
-    elif previous_feed_text:
-        write_text(PUBLIC_DIR / "rss.xml", previous_feed_text)
-        write_text(PUBLIC_DIR / "artifacts.xml", previous_feed_text)
-    else:
-        raise RuntimeError("rss_candidate_invalid_without_previous_feed")
-    artifacts_feed_meta = {
-        "generatedAtUtc": now_utc(),
-        "channelTitle": "Sapho Chapterhouse Institute Research Artifacts",
-        "feedPath": "/artifacts.xml",
-        "mirrorPath": "/rss.xml",
-        "itemCount": len((reconciled_registry.get("items") or []) if rss_validation.get("ok") else parse_existing_rss(previous_feed_text)),
-        "sourceDataset": "state/rss-registry.json",
-        "filter": "published_artifacts_only",
-        "validationPath": str(RSS_VALIDATION_PATH.relative_to(ROOT)),
-    }
-    write_text(PUBLIC_DIR / "data" / "artifacts-feed.json", json.dumps(artifacts_feed_meta, indent=2) + "\n")
+    if site_feeds_enabled():
+        reconciled_registry = reconcile_rss_registry(registry, current_items)
+        feed = build_rss_items(reconciled_registry)
+        rss_validation = validate_rss_candidate(feed, previous_feed_text)
+        if rss_validation.get("ok"):
+            save_rss_registry(reconciled_registry)
+            write_text(PUBLIC_DIR / "rss.xml", feed)
+            write_text(PUBLIC_DIR / "artifacts.xml", feed)
+        elif previous_feed_text:
+            write_text(PUBLIC_DIR / "rss.xml", previous_feed_text)
+            write_text(PUBLIC_DIR / "artifacts.xml", previous_feed_text)
+        else:
+            raise RuntimeError("rss_candidate_invalid_without_previous_feed")
+        artifacts_feed_meta = {
+            "generatedAtUtc": now_utc(),
+            "channelTitle": "Sapho Chapterhouse Institute Research Artifacts",
+            "feedPath": "/artifacts.xml",
+            "mirrorPath": "/rss.xml",
+            "itemCount": len((reconciled_registry.get("items") or []) if rss_validation.get("ok") else parse_existing_rss(previous_feed_text)),
+            "sourceDataset": "state/rss-registry.json",
+            "filter": "published_artifacts_only",
+            "validationPath": str(RSS_VALIDATION_PATH.relative_to(ROOT)),
+        }
+        write_text(PUBLIC_DIR / "data" / "artifacts-feed.json", json.dumps(artifacts_feed_meta, indent=2) + "\n")
     write_compat_alias_redirects()
     validate_public_alias_surfaces(current_items)
     render_site_inventory()
     refresh_agents_page()
+    apply_website2_surface_overrides()
     validate_artifact_render(current_items)
     return current_items
 
@@ -1468,9 +1583,11 @@ def render_daily_briefing_site() -> dict[str, str]:
     current_brief = overlay_current_briefs(latest_daily_date())
     overlay_daily_archive(current_brief)
     brief_rows = collect_public_brief_rows(current_brief)
-    write_text(PUBLIC_DIR / "daily.xml", build_daily_feed(brief_rows))
+    if site_feeds_enabled():
+        write_text(PUBLIC_DIR / "daily.xml", build_daily_feed(brief_rows))
     render_site_inventory()
     refresh_agents_page()
+    apply_website2_surface_overrides()
     validate_daily_briefing_render(current_brief, seed_dir)
     return current_brief
 
@@ -1484,34 +1601,36 @@ def render_site() -> None:
     kept_items = overlay_kept_links(current_items)
     overlay_daily_archive(current_brief)
     brief_rows = collect_public_brief_rows(current_brief)
-    reconciled_registry = reconcile_rss_registry(registry, current_items)
-    feed = build_rss_items(reconciled_registry)
-    rss_validation = validate_rss_candidate(feed, previous_feed_text)
-    if rss_validation.get("ok"):
-        save_rss_registry(reconciled_registry)
-        write_text(PUBLIC_DIR / "rss.xml", feed)
-        write_text(PUBLIC_DIR / "artifacts.xml", feed)
-    elif previous_feed_text:
-        write_text(PUBLIC_DIR / "rss.xml", previous_feed_text)
-        write_text(PUBLIC_DIR / "artifacts.xml", previous_feed_text)
-    else:
-        raise RuntimeError("rss_candidate_invalid_without_previous_feed")
-    write_text(PUBLIC_DIR / "daily.xml", build_daily_feed(brief_rows))
-    artifacts_feed_meta = {
-        "generatedAtUtc": now_utc(),
-        "channelTitle": "Sapho Chapterhouse Institute Research Artifacts",
-        "feedPath": "/artifacts.xml",
-        "mirrorPath": "/rss.xml",
-        "itemCount": len((reconciled_registry.get("items") or []) if rss_validation.get("ok") else parse_existing_rss(previous_feed_text)),
-        "sourceDataset": "state/rss-registry.json",
-        "filter": "published_artifacts_only",
-        "validationPath": str(RSS_VALIDATION_PATH.relative_to(ROOT)),
-    }
-    write_text(PUBLIC_DIR / "data" / "artifacts-feed.json", json.dumps(artifacts_feed_meta, indent=2) + "\n")
+    if site_feeds_enabled():
+        reconciled_registry = reconcile_rss_registry(registry, current_items)
+        feed = build_rss_items(reconciled_registry)
+        rss_validation = validate_rss_candidate(feed, previous_feed_text)
+        if rss_validation.get("ok"):
+            save_rss_registry(reconciled_registry)
+            write_text(PUBLIC_DIR / "rss.xml", feed)
+            write_text(PUBLIC_DIR / "artifacts.xml", feed)
+        elif previous_feed_text:
+            write_text(PUBLIC_DIR / "rss.xml", previous_feed_text)
+            write_text(PUBLIC_DIR / "artifacts.xml", previous_feed_text)
+        else:
+            raise RuntimeError("rss_candidate_invalid_without_previous_feed")
+        write_text(PUBLIC_DIR / "daily.xml", build_daily_feed(brief_rows))
+        artifacts_feed_meta = {
+            "generatedAtUtc": now_utc(),
+            "channelTitle": "Sapho Chapterhouse Institute Research Artifacts",
+            "feedPath": "/artifacts.xml",
+            "mirrorPath": "/rss.xml",
+            "itemCount": len((reconciled_registry.get("items") or []) if rss_validation.get("ok") else parse_existing_rss(previous_feed_text)),
+            "sourceDataset": "state/rss-registry.json",
+            "filter": "published_artifacts_only",
+            "validationPath": str(RSS_VALIDATION_PATH.relative_to(ROOT)),
+        }
+        write_text(PUBLIC_DIR / "data" / "artifacts-feed.json", json.dumps(artifacts_feed_meta, indent=2) + "\n")
     write_compat_alias_redirects()
     validate_public_alias_surfaces(current_items)
     render_site_inventory()
     refresh_agents_page()
+    apply_website2_surface_overrides()
     validate_render(current_items, current_brief)
 
 
