@@ -901,7 +901,44 @@ Operational lesson:
 - if a replay fails with `Argument list too long`, do not treat it as article-specific quality failure
 - fix the prompt transport once, rerun the blocked article, then continue the remediation batch
 
-### 14. Batch remediation reporting should include direct GitHub review links
+### 14. Percent-style empirical metrics can be falsely rejected if validators only detect `\b...%\b`
+
+A later historical remediation slice exposed a subtle validator bug in the article-write quality gate.
+
+Observed failure mode:
+- a regenerated article could surface concrete metrics like:
+  - `72.5%`
+  - `49%`
+  - `43.2%`
+- the article still failed with:
+  - `article_write_missing_empirical_specificity`
+- root cause was the numeric-payload detector using a regex shape like `\b\d+(?:\.\d+)?\s*%\b`
+- `%` is not a word character, so the trailing `\b` after `%` can prevent otherwise valid percent metrics from matching
+
+Why this matters:
+- this is a false fail-closed rejection, not a real article-quality miss
+- coding/evaluation benchmark articles often carry their decisive evidence as percentages
+- if the detector misses percent forms, lawful dense articles can remain quarantined for the wrong reason
+
+Fix that worked:
+- replace the percent/unit matcher with a pattern that does not rely on a trailing word boundary after `%`
+- a robust pattern is to separate `%` from word-unit cases, for example:
+  - `\b\d+(?:\.\d+)?(?:\s*%(?!\w)|\s*(?:x|k|m|ms|s|sec|seconds?|minutes?|hours?|turns?|instances?|repos?(?:itories)?)\b)`
+- keep the qualitative numeric fallback too, such as:
+  - `about 4`
+  - `over 20`
+  - `more than 10`
+
+Verification to add:
+1. a regression test where claims/evidence contain percent metrics and the article surfaces the same percentages in `Key Findings` / `Evidence and Findings`
+2. assert `validate_article_write_body(...)` passes instead of raising `article_write_missing_empirical_specificity`
+3. rerun the previously blocked historical article and confirm it transitions based on true article quality, not regex failure
+
+Practical example from rollout:
+- `art-2026-03-21-013` initially failed replay despite surfacing benchmark-specific percentages
+- after patching the detector and adding a regression test, replay succeeded and the package moved to `current_law_compliant`
+
+### 15. Batch remediation reporting should include direct GitHub review links
 
 A user workflow correction changed the preferred reporting format for historical remediation batches:
 - do not only report statuses and local paths
