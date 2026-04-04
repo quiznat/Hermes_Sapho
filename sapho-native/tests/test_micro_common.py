@@ -32,6 +32,23 @@ class MicroCommonPathTests(unittest.TestCase):
                     daily_dir / "2026-03-31" / "micro-executive.md",
                 )
 
+    def test_parse_pass_block_accepts_conclave_dossier_frontmatter(self) -> None:
+        dossier = """---
+version: conclave-dossier.v1
+date: 2026-04-04
+verdict: pass
+reviewed_at_utc: 2026-04-04T01:00:00Z
+---
+# Conclave Dossier
+
+## Rationale
+
+Lawful to publish.
+"""
+        verdict, rationale = micro_common.parse_pass_block(dossier)
+        self.assertEqual(verdict, "pass")
+        self.assertIn("Lawful to publish", rationale)
+
 
 if __name__ == "__main__":
     unittest.main()

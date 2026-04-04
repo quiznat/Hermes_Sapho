@@ -26,6 +26,7 @@ from micro_common import (
     summary_section,
     summary_title,
 )
+from publication_authority import assert_daily_publication_authority
 
 DEFAULT_CLUSTER_SIZE = 4
 DEFAULT_CLUSTER_TIMEOUT_SECONDS = 300
@@ -217,6 +218,12 @@ def main() -> int:
         },
         publish_body,
         day_dir / "publish.md",
+    )
+
+    assert_daily_publication_authority(
+        replay_date=args.replay_date,
+        article_ids=[str(meta.get("article_id") or "") for meta, _body in items],
+        conclave_verdict=verdict,
     )
 
     if verdict != "pass":

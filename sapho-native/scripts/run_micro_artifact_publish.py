@@ -12,6 +12,7 @@ from email.utils import format_datetime
 from pathlib import Path
 
 from common import article_artifact_publication_current, article_file, read_markdown, slugify, utc_now, write_article_markdown
+from publication_authority import assert_article_publication_authority
 from render_site import (
     BASE_URL,
     PUBLIC_DIR,
@@ -277,6 +278,8 @@ def main() -> int:
     if not args.force and article_artifact_publication_current(meta):
         print(f'already_published {args.article_id}')
         return 0
+
+    assert_article_publication_authority(args.article_id)
 
     stage_live_artifact_surfaces()
     alias = str(meta.get('artifact_publication_alias') or '').strip()

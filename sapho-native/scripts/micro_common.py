@@ -102,10 +102,17 @@ def parse_pass_block(text: str) -> tuple[str, str]:
     if not lines:
         raise ValueError("empty_gate_output")
     for idx, line in enumerate(lines):
+        lowered = line.lower()
+        if lowered.startswith("verdict:"):
+            verdict = lowered.split(":", 1)[1].strip()
+            if verdict.startswith("pass"):
+                return "pass", "\n".join(lines[idx + 1 :]).strip()
+            if verdict.startswith("block") or verdict.startswith("withdraw"):
+                return "block", "\n".join(lines[idx + 1 :]).strip()
         head = line.upper()
         if head.startswith("PASS"):
             return "pass", "\n".join(lines[idx + 1 :]).strip()
-        if head.startswith("BLOCK"):
+        if head.startswith("BLOCK") or head.startswith("WITHDRAW"):
             return "block", "\n".join(lines[idx + 1 :]).strip()
     raise ValueError("missing_pass_or_block")
 
