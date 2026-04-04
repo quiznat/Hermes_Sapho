@@ -1,5 +1,15 @@
 KEEP
 
-This paper presents a novel infrastructure for AI agents in complex codebases, detailing a three-component system and reporting quantitative metrics and observational case studies. This qualifies as novel synthesis and potentially novel findings based on the described development and testing.
+This preprint reports quantitative results and observational evidence from a real multi-session AI-assisted software project.
 
-Limits: The excerpt is from an arXiv submission and may contain standard academic paper metadata rather than experimental results. The "quantitative metrics" and "observational case studies" mentioned in the abstract are not detailed in the provided excerpt.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-03-013
+ticket_id: ticket-import-art-2026-03-03-013
+decision: kept
+reason: This preprint reports quantitative results and observational evidence from a real multi-session AI-assisted software project.
+scope_class: preprint
+decided_at_utc: 2026-04-02T16:18:00Z
+---
+# Curator Receipt

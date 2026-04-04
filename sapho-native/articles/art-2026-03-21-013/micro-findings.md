@@ -1,3 +1,4 @@
-*   Claude Code demonstrates strong benchmark performance, with Claude Opus achieving 72.5% SWE-bench Verified.
-*   Coding agents like OpenAI Codex CLI, ChatGPT Codex, and Claude Code offer distinct capabilities, ranging from local code execution to full-repo reasoning and PR drafting.
-*   The presented comparative data relies on first-party metrics from company pages, blogs, and repositories.
+- Claude Code is the only agent in this source excerpt with multiple published benchmark figures across named coding evaluations and model variants.
+- The source describes OpenAI Codex CLI as a local terminal agent that can read, edit, and run code with user-approved shell commands, but it does not publish benchmark numbers for its cited internal SWE-task evaluation.
+- Claude Code’s reported performance varies materially by benchmark and model variant, with Opus 4 at 72.5% on SWE-bench Verified and 43.2% on Terminal-bench, and Sonnet 3.5 at 49% on SWE-bench Verified and 93.7% on HumanEval.
+- The source argues that coding-agent benchmark results should be matched to the intended workload before declaring any overall winner.

@@ -1,3 +1,4 @@
-*   Achieved #1 rank on SWE-bench benchmark with a 65.4% success rate.
-*   Combined Claude Sonnet 3.7 and OpenAI's o1 models for this achievement.
-*   Open-sourced the approach and pipeline for reproducible results.
+- Augment reports that its SWE-bench Verified submission achieved a 65.4% success rate using Claude Sonnet 3.7 as the core driver and OpenAI o1 as the ensembler.
+- Augment attributes its setup differences from Anthropic’s published SWE-bench configuration mainly to inferring the unpublished planning tool and adding OpenAI o1 for ensembling.
+- Augment reports that Claude Sonnet 3.7 thinking mode did not improve SWE-bench performance.
+- The source indicates that SWE-bench results are materially bounded by benchmark instability and task-domain specificity, limiting clean transfer to broader real-world coding work.

@@ -1,8 +1,16 @@
-*   SWE-bench measures how well a coding agent can submit a patch for a real-world GitHub issue and pass its unit tests.
-*   SWE-bench has variants including Full, Verified, Lite, Bash-only, and Multimodal.
-*   SWE-bench Verified is a cleaned, human-reviewed subset with 500 problems.
-*   Over 40% of SWE-bench Verified problems are from the Django source repository.
-*   Solutions in SWE-bench Verified are typically small, with a mean of 11 lines of code and a median of 4.
-*   77.6% of solutions in SWE-bench Verified touch only one function.
-*   All SWE-bench Verified issues are from 2023 or earlier, potentially benefiting from training set memorization.
-*   SWE-bench Pro is an improved version by Scale AI addressing some quirks of SWE-bench Verified.
+- SWE-bench measures whether a coding agent can submit a patch for a real GitHub issue that passes the issue’s unit tests.
+- SWE-bench Verified has 500 problems and all are in Python.
+- More than 40% of SWE-bench Verified issues come from the Django repository, and web applications are entirely missing.
+- SWE-bench Verified solutions are small, with mean solution size 11 lines of code and median solution size 4 lines.
+- Amazon found that more than 77.6% of SWE-bench Verified solutions touch only one function.
+- Because SWE-bench Verified issues are from 2023 and earlier, the author says the data was almost certainly in training sets and improvements are hard to separate from memorization.
+- SWE-bench Pro contains 1,865 problems from 41 repositories.
+- SWE-bench Pro uses Python, Go, JavaScript, and TypeScript repositories, but the source says their distribution is not uniform and does not disclose the exact mix.
+- SWE-bench Pro solutions have mean size 107 lines of code, median size 55 lines, and span an average of 4 files.
+- SWE-bench Pro uses human-rewritten problems grounded in issues, commits, and pull requests to reduce missing information.
+- SWE-bench Pro provides dockerized environments with dependencies already installed, so it does not test repository setup ability.
+- The source defines a 25% SWE-bench Pro score as 25% of well-defined benchmark issues producing solutions whose unit tests pass.
+- The source says SWE-bench results do not show whether code is maintainable, secure, provably correct, or well-crafted; they show only that unit tests pass.
+- Aider Polyglot measures whether Aider can solve hard Exercism problems and make file edits that pass unit tests after at most one round of feedback.
+- Aider Polyglot covers 225 problems across six languages: C++, Go, Java, JavaScript, Python, and Rust.
+- LiveCodeBench measures Python competitive-programming performance under hidden test suites using a rolling fresh problem set.

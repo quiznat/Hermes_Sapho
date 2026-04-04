@@ -1,8 +1,13 @@
-*   Achieved 65.4% success rate on SWE-bench verified.
-*   Open-sourced approach for hitting the top spot on the SWE-bench leaderboard.
-*   SWE-bench pipeline implemented end-to-end includes agent runs in Docker containers, ensembling, and evaluating candidate solutions.
-*   Augment's mission is to build the best AI platform for professional software engineers and their teams.
-*   Employs a mix of closed-source and fine-tuned open-source models.
-*   Models are tested, tuned, and optimized for every part of the coding experience.
-*   Article published on March 31, 2025.
-*   Authors: Tongfei Chen, Colin Flaherty.
+- Augment reports a 65.4% success rate on SWE-bench Verified.
+- The reported 65.4% SWE-bench Verified submission used Claude Sonnet 3.7 as the core driver and OpenAI o1 as the ensembler.
+- Augment says its main implementation differences from Anthropic’s published SWE-bench setup were inferring the unpublished planning tool and using OpenAI o1 for ensembling.
+- Augment reports that Claude Sonnet 3.7 thinking mode did not help on SWE-bench.
+- A separate “fix regressions” agent produced no net score improvement because it fixed some regressions but also introduced bugs into otherwise correct candidate solutions.
+- Augment estimates that ensembling can add 3% to 8% on SWE-bench Verified.
+- Augment says agent outcomes were unstable enough that any two rollouts sampled over 50 examples could differ in outcome.
+- For SWE-bench tasks, Augment found “grep” and “find” sufficient, and embedding-based retrieval was not the bottleneck.
+- Augment says the same “grep” and “find” navigation approach has limitations in real-world use because of ambiguous user inputs and large codebases.
+- The source cites OpenAI’s finding that only 8.4% of SWE-bench Verified problems take an experienced software engineer more than an hour to solve.
+- The source states that SWE-bench only includes Python projects.
+- The source argues that Python is easier for agents than Java or C++ because failed-test error messages tend to be more descriptive.
+- Augment reports that some changes that improved its production agents in qualitative customer feedback did not improve SWE-bench scores.

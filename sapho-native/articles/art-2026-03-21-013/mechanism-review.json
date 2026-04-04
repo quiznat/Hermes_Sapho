@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-013",
+  "reviewed_at_utc": "2026-04-04T04:38:16Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package supports workload-matched, benchmark-bounded comparison rather than any general causal claim about overall coding-agent superiority.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Claude Code is the only agent in this source excerpt with multiple published benchmark figures across named coding evaluations and model variants.",
+      "bounds": "This is a reporting comparison limited to what the source publishes; it does not establish that Claude Code is best overall."
+    },
+    {
+      "claim_text": "OpenAI Codex CLI is described as a local terminal agent, but the source does not publish benchmark numbers for its cited internal SWE-task evaluation.",
+      "bounds": "The package supports an operating description but not a performance judgment, because the benchmark is named without published results."
+    },
+    {
+      "claim_text": "Claude Code’s reported performance varies materially by benchmark and model variant.",
+      "bounds": "The source shows benchmark-specific score variation, but it does not provide a causal explanation for that variation, so the claim must remain descriptive rather than mechanistic."
+    }
+  ]
+}

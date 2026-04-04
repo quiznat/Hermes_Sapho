@@ -1,12 +1,14 @@
-- Only 466 of the scanned repositories, or 5%, had adopted at least one of the AI configuration file formats the study considered.
-- The adoption analysis covered four commercial tools and did not include other tools such as Cline or OpenCode.
-- Among repositories with AI configuration files, the language counts reported were 135 TypeScript, 58 Go, 58 Python, 56 C#, 36 Java, 34 JavaScript, 32 C++, 29 Rust, 19 PHP, and 9 C.
-- Copilot instruction files were the longest on average at 310 lines, while AGENTS.md files showed the highest length variation with mean 142 lines and standard deviation 231.
-- For the AGENTS.md heading analysis, the authors excluded 15 files created before January 1, 2025 and excluded 5 files with no heading structure.
-- The three most common level-1 or level-2 heading categories in AGENTS.md were conventions/best practices (50), contribution guidelines (48), and architecture/project structure (47).
+- Only 466 repositories, or 5% of the scanned repositories, had adopted at least one of the four AI configuration file formats considered.
+- The preliminary study selected 10,000 repositories from a final filtered sample of 49,311 repositories.
+- The repository scan looked for four AI configuration file types supported by the GitHub Copilot coding agent: Copilot instructions, CLAUDE.md, AGENTS.md, and GEMINI.md.
+- Among repositories with AI configuration files, the counts by main language were 135 TypeScript, 58 Go, 58 Python, 56 C#, 36 Java, 34 JavaScript, 32 C++, 29 Rust, 19 PHP, and 9 C.
+- Copilot instruction files had the highest average length at 310 lines (SD 127), while AGENTS.md files averaged 142 lines with the highest variation (SD 231).
+- AGENTS.md and CLAUDE.md were the most common co-occurring pair of AI configuration files, appearing together in 25 repositories.
+- The RQ2 heading analysis started from 155 AGENTS.md files, excluded 15 files created before January 1, 2025, and excluded 5 files without heading structure.
+- The initial heading analysis was restricted to level 1 and level 2 headings because prior README work found those levels most informative and consistent.
+- The three most frequent level 1 or 2 AGENTS.md heading categories were Conventions/best practices (50), Contribution guidelines (48), and Architecture and project structure (47).
 - The authors characterized AGENTS.md writing style along five dimensions: descriptive, prescriptive, prohibitive, explanatory, and conditional.
-- The source gives "Never commit directly to the main branch" as an example of a prohibitive instruction in AGENTS.md.
-- Among 155 AGENTS.md files, 77 had no changes after the initial commit, 36 changed once, and 32 changed between two and seven times.
-- The detailed evolution analysis focused on 10 files with at least 10 commits, producing a sample of 169 commits, or 37% of the 453 collected commits.
-- Most annotated commits, 111 out of 169 or 66%, represented only one change category.
-- The most frequent AGENTS.md change categories were add instruction(s) with 78 instances and modify instruction(s) with 59 instances.
+- The paper reports that AGENTS.md files vary widely in both information content and presentation, without a consistent structure.
+- Among 155 AGENTS.md files, 77 files (50%) were never changed after the initial commit, 36 (23%) changed once, and 32 (21%) changed between two and seven times.
+- For detailed RQ3 analysis, the authors focused on 10 files with at least 10 commits, producing a sample of 169 commits, which was 37% of 453 collected commits.
+- In the high-change AGENTS.md subset, the most frequent change categories were Add instruction(s) with 78 occurrences and Modify instruction(s) with 59 occurrences.

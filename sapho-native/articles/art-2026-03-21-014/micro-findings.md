@@ -1,3 +1,4 @@
-* Cursor excels in setup speed, Docker/Render deployment, and code quality.
-* Claude Code is optimal for rapid prototyping and offers a productive terminal UX.
-* Gemini CLI is superior for large-context refactoring, outperforming others in this area.
+- Cursor was the strongest performer in the benchmark’s blank-repo app-generation task, scoring 9/10 and uniquely delivering both the required Docker Compose setup and SQL migration script.
+- The source argues that Cursor may have had a codebase-context advantage in production work because it uses a local-filesystem RAG-like system, and Cursor completed the backend refactor on the first try while matching existing code patterns.
+- Gemini CLI’s very large context window did not translate into top performance in the blank-repo task, even though it later completed the backend refactor on the first try after loading broad codebase context.
+- The benchmark’s final cross-tool rankings should be treated cautiously because the production-code comparison used different tasks for different tools and was scored mainly by overall impression rather than identical execution.

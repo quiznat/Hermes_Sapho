@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-21-015",
+  "reviewed_at_utc": "2026-04-04T04:44:35Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Strong benchmark performance is visible, but the source itself shows unresolved tension between leaderboard gains and broader production usefulness.",
+  "review_confidence": "high",
+  "contradiction_count": 5,
+  "status": "disclosed"
+}

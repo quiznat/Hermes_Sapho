@@ -5,7 +5,7 @@ source_url: https://blog.cloudflare.com/moltworker-self-hosted-ai-agent/
 canonical_url: https://blog.cloudflare.com/moltworker-self-hosted-ai-agent
 source_channel: runtime-replay
 queued_at_utc: '2026-03-04T15:01:30Z'
-status: kept
+status: discarded
 article_id: art-2026-03-04-050
 operator_note: Imported from canonical OpenClaw runtime via article-checkin
 ---

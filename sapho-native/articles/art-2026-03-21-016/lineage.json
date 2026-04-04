@@ -11,16 +11,18 @@
     "key_findings": [
       "claim-001",
       "claim-002",
-      "claim-003"
+      "claim-003",
+      "claim-004"
     ],
     "limits": [
-      "claim-003"
+      "claim-004"
     ]
   },
   "claim_ids": [
     "claim-001",
     "claim-002",
-    "claim-003"
+    "claim-003",
+    "claim-004"
   ],
   "fact_ids": [
     "fact-001",
@@ -30,17 +32,33 @@
     "fact-005",
     "fact-006",
     "fact-007",
-    "fact-008"
+    "fact-008",
+    "fact-009",
+    "fact-010",
+    "fact-011",
+    "fact-012",
+    "fact-013",
+    "fact-014",
+    "fact-015",
+    "fact-016"
   ],
   "evidence_ids": [
-    "evidence-001",
-    "evidence-002",
-    "evidence-003",
-    "evidence-004",
-    "evidence-005",
-    "evidence-006",
-    "evidence-007",
-    "evidence-008"
+    "evidence-01",
+    "evidence-02",
+    "evidence-03",
+    "evidence-04",
+    "evidence-05",
+    "evidence-06",
+    "evidence-07",
+    "evidence-08",
+    "evidence-09",
+    "evidence-10",
+    "evidence-11",
+    "evidence-12",
+    "evidence-13",
+    "evidence-14",
+    "evidence-15",
+    "evidence-16"
   ],
   "unresolved_gaps": [
     "missing_explicit_mechanism_claim"

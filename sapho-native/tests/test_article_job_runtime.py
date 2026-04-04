@@ -408,6 +408,82 @@ Sapho needs to know whether context engineering actually helps in production wor
             article_job_runtime.validate_article_write_body(thin_but_sectioned_article, claims=claims, evidence_records=evidence_records)
         self.assertEqual(str(ctx.exception), "article_write_missing_empirical_specificity")
 
+    def test_article_write_accepts_percent_metrics_as_empirical_specificity(self) -> None:
+        article = """# Strong Article
+
+## Core Thesis
+
+Coding-agent rankings are benchmark-dependent rather than stable across tasks.
+
+## Why It Matters for Sapho
+
+Sapho should treat benchmark-fit as a first-class evaluation constraint.
+
+## Key Findings
+
+- Claude Code with Opus 4 is reported at 72.5% on SWE-bench Verified versus 49% for Claude Code with Sonnet 3.5.
+- The same guide reports Claude Code with Opus 4 at 43.2% on Terminal-bench.
+
+## Evidence and Findings
+
+- The guide reports Claude Code with Opus 4 at 72.5% on SWE-bench Verified and Claude Code with Sonnet 3.5 at 49%, so model choice changes the observed result within the same tool.
+- The guide separately reports Claude Code with Opus 4 at 43.2% on Terminal-bench, showing that benchmark selection materially changes the apparent standing of the tool.
+
+## Contradictions and Tensions
+
+- The same tool-model combination looks much stronger on SWE-bench Verified than on Terminal-bench, so benchmark choice creates a meaningful tension in apparent ranking.
+
+## Mechanism or Bounds
+
+The strongest supported explanation is bounded: the guide says different benchmarks measure different task types, so the score gap is better read as workload variation than as a single stable capability rank.
+
+## Limits
+
+- The guide relies on first-party reported numbers and uneven disclosure across tools.
+"""
+        claims = [
+            {
+                "claim_id": "claim-001",
+                "article_id": "art-test-106",
+                "claim_text": "Claude Code with Opus 4 is reported at 72.5% on SWE-bench Verified versus 49% for Claude Code with Sonnet 3.5.",
+                "claim_kind": "comparative_claim",
+                "supporting_fact_ids": [],
+                "supporting_evidence_ids": ["evidence-001", "evidence-002"],
+                "source_span_refs": ["articles/art-test-106/source.md#evidence-001"],
+                "caveats": [],
+                "confidence": "medium",
+                "mechanism_or_bounds": "The guide only supports a benchmark-specific comparison, not a deeper causal account.",
+                "contradiction_note": "The reported ranking changes across benchmarks.",
+            }
+        ]
+        evidence_records = [
+            {
+                "evidence_id": "evidence-001",
+                "article_id": "art-test-106",
+                "evidence_type": "metric",
+                "evidence_text": "Claude Code with Opus 4 is reported at 72.5% on SWE-bench Verified.",
+                "source_span_ref": "articles/art-test-106/source.md#evidence-001",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "medium",
+                "mechanism_relevance": "none",
+                "contradiction_relevance": "none",
+                "note": "The figure is benchmark-specific.",
+            },
+            {
+                "evidence_id": "evidence-002",
+                "article_id": "art-test-106",
+                "evidence_type": "metric",
+                "evidence_text": "Claude Code with Sonnet 3.5 is reported at 49% on SWE-bench Verified and Opus 4 is reported at 43.2% on Terminal-bench.",
+                "source_span_ref": "articles/art-test-106/source.md#evidence-002",
+                "supports_claim_ids": ["claim-001"],
+                "confidence": "medium",
+                "mechanism_relevance": "bounded",
+                "contradiction_relevance": "tension",
+                "note": "Benchmark choice changes the apparent result.",
+            },
+        ]
+        article_job_runtime.validate_article_write_body(article, claims=claims, evidence_records=evidence_records)
+
     def test_parse_extractor_receipt_deduplicates_repeated_receipt_output(self) -> None:
         duplicated = EXTRACTOR_RECEIPT + "\n\n" + EXTRACTOR_RECEIPT
         evidence_files = parse_evidence_receipt_files("art-test-101", duplicated)

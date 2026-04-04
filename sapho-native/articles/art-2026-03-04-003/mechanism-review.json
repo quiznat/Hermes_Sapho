@@ -1,29 +1,29 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-04-003",
-  "reviewed_at_utc": "2026-04-02T17:50:05Z",
+  "reviewed_at_utc": "2026-04-02T18:17:57Z",
   "reviewer_role": "Synthesist",
-  "summary": "The study supports bounded observations about sparse adoption, language concentration, file-size differences, and mostly light AGENTS.md maintenance, but it does not establish causal explanations for those patterns.",
+  "summary": "The article stays within the evidence by making bounded descriptive claims and not asserting unsupported causal explanations.",
   "review_confidence": "high",
   "mechanism_count": 0,
   "bounded_claim_count": 4,
   "status": "bounded",
   "bounded_claims": [
     {
-      "claim_text": "Only 466 scanned repositories, or 5%, had adopted at least one of the AI configuration file formats examined in the study.",
-      "bounds": "This is an observed adoption measurement within the study's defined tool set, not an explanation for why adoption is low; the result is explicitly bounded because the analysis covered four commercial tools and excluded other ecosystems such as Cline and OpenCode."
+      "claim_text": "Only 466 of the 10,000 scanned repositories, or 5%, contained at least one of the four AI configuration file formats examined.",
+      "bounds": "The evidence supports a prevalence result within a 10,000-repository sample and only for four scanned file types; it does not explain why adoption was low or establish prevalence for repository-native agent guidance more broadly."
     },
     {
-      "claim_text": "Within repositories that had AI configuration files, TypeScript appeared most often in the reported language counts, while Go, Python, and C# formed a second cluster at substantially lower but similar levels.",
-      "bounds": "The evidence supports only a comparative distribution inside the adopting subset; it does not show why TypeScript leads or whether the pattern would hold against the broader repository population."
+      "claim_text": "Among repositories that used an AI configuration file, TypeScript repositories were the largest language group, while adoption was spread across several other languages at lower counts.",
+      "bounds": "The evidence supports a distribution pattern across languages, not a causal account of why TypeScript leads or whether the pattern reflects the broader repository population."
     },
     {
-      "claim_text": "The studied AI configuration formats differed materially in document size characteristics, with Copilot instruction files longest on average and AGENTS.md showing the greatest length variability.",
-      "bounds": "The evidence supports a size comparison across formats, but not a causal account of why Copilot files are longer on average or why AGENTS.md varies more widely."
+      "claim_text": "AGENTS.md files did not converge on a consistent structure, even though conventions or best practices, contribution guidance, and architecture or project structure were the most common heading categories.",
+      "bounds": "The evidence supports a bounded structural claim for a filtered AGENTS.md subset and only from level 1 and level 2 heading analysis; it does not justify stronger claims about all agent-instruction documents or about the causes of structural variation."
     },
     {
-      "claim_text": "AGENTS.md files in the study were often stable after creation, but when change occurred in the detailed high-activity sample it was usually focused on adding or modifying instructions rather than broad multi-category revisions.",
-      "bounds": "The evidence shows an observed maintenance pattern rather than a governance mechanism; the stronger evolution detail is bounded to a 10-file high-activity subset, so it should not be generalized to all AGENTS.md files without caution."
+      "claim_text": "Most AGENTS.md files in the analyzed set were either never revised after creation or changed only once, while the high-change subset was dominated by added and modified instructions.",
+      "bounds": "The evidence supports an observed maintenance split within the studied files, but the detailed change-category pattern comes from a narrow high-change subset of 10 files and does not establish how all AGENTS.md files evolve over time."
     }
   ]
 }

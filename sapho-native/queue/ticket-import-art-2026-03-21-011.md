@@ -4,7 +4,7 @@ ticket_id: ticket-import-art-2026-03-21-011
 source_url: https://github.com/handrew/agentic_gpt
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: kept
+status: discarded
 article_id: art-2026-03-21-011
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-21-013",
+  "reviewed_at_utc": "2026-04-04T04:37:59Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article keeps the main tension visible: some agents are described with benchmark claims, but the evidence is uneven and not safely comparable across workloads.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

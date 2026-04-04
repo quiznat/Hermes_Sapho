@@ -1,10 +1,10 @@
 {
   "version": "contradiction-review.v1",
   "article_id": "art-2026-03-04-003",
-  "reviewed_at_utc": "2026-04-02T17:49:47Z",
+  "reviewed_at_utc": "2026-04-02T18:17:35Z",
   "reviewer_role": "Synthesist",
-  "summary": "The article keeps the main bounds visible: low measured adoption is real within the studied tool set, and AGENTS.md looks broadly stable overall but more instruction-active in the high-churn subset.",
+  "summary": "The draft keeps the main structural and maintenance tensions visible without inventing stronger contradictions than the evidence supports.",
   "review_confidence": "high",
-  "contradiction_count": 2,
+  "contradiction_count": 3,
   "status": "disclosed"
 }

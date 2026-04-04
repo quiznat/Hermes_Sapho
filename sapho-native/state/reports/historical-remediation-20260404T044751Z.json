@@ -1,0 +1,66 @@
+{
+  "generated_at_utc": "2026-04-04T04:47:51Z",
+  "replay_date": null,
+  "article_count": 3,
+  "articles": [
+    {
+      "article_id": "art-2026-03-21-014",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-014"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-014/article.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-015",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-015"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-015/article.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-016",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-016"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-016/article.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    }
+  ],
+  "status_counts": {
+    "ok": 3,
+    "error": 0
+  },
+  "report_path": "/home/hermes/sapho-native/state/reports/historical-remediation-20260404T044751Z.json"
+}

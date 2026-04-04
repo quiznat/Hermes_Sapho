@@ -1,0 +1,66 @@
+{
+  "generated_at_utc": "2026-04-04T04:32:39Z",
+  "replay_date": null,
+  "article_count": 3,
+  "articles": [
+    {
+      "article_id": "art-2026-03-04-060",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-04-060"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-04-060/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "discarded",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-011",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-011"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-011/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "published",
+      "after_publication_status": "discarded",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-013",
+      "status": "error",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-013"
+      ],
+      "return_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/home/hermes/sapho-native/scripts/run_micro_article_lane.py\", line 444, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/home/hermes/sapho-native/scripts/run_micro_article_lane.py\", line 380, in main\n    article_write = run_synthesist_article_write(\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hermes/sapho-native/scripts/article_job_runtime.py\", line 386, in run_synthesist_article_write\n    validate_article_write_body(body, claims=claims, evidence_records=evidence_records)\n  File \"/home/hermes/sapho-native/scripts/article_job_runtime.py\", line 341, in validate_article_write_body\n    raise JobContractError(\"article_write_missing_empirical_specificity\")\narticle_job_runtime.JobContractError: article_write_missing_empirical_specificity\n",
+      "before_publication_status": "published",
+      "after_publication_status": "published",
+      "before_policy_status": "legacy_quarantined",
+      "after_policy_status": "legacy_quarantined",
+      "published_artifact": false
+    }
+  ],
+  "status_counts": {
+    "ok": 2,
+    "error": 1
+  },
+  "report_path": "/home/hermes/sapho-native/state/reports/historical-remediation-20260404T043239Z.json"
+}

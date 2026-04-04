@@ -1,3 +1,4 @@
-*   AI coding benchmarks measure a narrower scope than their names suggest, often differing significantly from real-world software development.
-*   SWE-bench, a popular benchmark, primarily uses Python and is heavily weighted towards specific libraries like Django, with a notable absence of web applications.
-*   Scores on benchmarks like SWE-bench do not directly correlate to an AI's performance on diverse, real-world coding tasks.
+- SWE-bench Verified measures whether an agent can produce a patch for a real GitHub issue that makes the issue’s unit tests pass, not whether it produces broadly good software.
+- SWE-bench Verified is a narrow benchmark because it is entirely Python, heavily concentrated in Django, and omits web applications.
+- SWE-bench Verified tends to reward small, localized fixes rather than large multi-file engineering work.
+- Reported improvements on SWE-bench Verified are partly bounded by possible memorization because the benchmark draws from issues dated 2023 or earlier that were likely present in model training data.

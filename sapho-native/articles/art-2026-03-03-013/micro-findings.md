@@ -1,3 +1,4 @@
-*   Presents a novel infrastructure for AI agents in complex codebases.
-*   Details a three-component system.
-*   Reports quantitative metrics and observational case studies.
+- The reported infrastructure used a three-tier context design that separated always-loaded rules, task-invoked specialist agents, and on-demand retrieved documentation.
+- Task routing in the system was driven mainly by constitution trigger tables keyed to which files were being modified.
+- The paper’s retrieval layer remained operationally limited because its knowledge-base access used keyword substring matching rather than semantic retrieval.
+- The paper does not justify treating its context-to-code ratio or reported outcomes as general performance guidance beyond this single project.

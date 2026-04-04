@@ -1,8 +1,12 @@
-*   OpenAI Codex CLI is open-source on GitHub.
-*   OpenAI Codex CLI uses OpenAI chat models (o3, o4-mini, GPT-4) via API.
-*   OpenAI Codex CLI performs agentic diff-based refactors and test runs.
-*   ChatGPT Codex spins up sandbox VMs per task and drafts PRs.
-*   Claude Opus 4 achieved 72.5% SWE-bench Verified.
-*   Claude Sonnet 3.5 achieved 49% SWE-bench Verified and 93.7% HumanEval.
-*   Claude Code supports full-repo reasoning and git workflows.
-*   Devin (Cognition AI) offers a cloud AI software-engineer dashboard.
+- OpenAI Codex CLI is described as having an internal SWE-task benchmark, but the source says no benchmark numbers were published.
+- OpenAI Codex CLI is described as a local terminal CLI that reads, edits, and runs code locally with user-approved shell commands.
+- Claude Code is reported with SWE-bench Verified at 72.5% for Opus 4 and Terminal-bench at 43.2%.
+- Claude Code is also reported with Sonnet 3.5 at 49% SWE-bench Verified and 93.7% HumanEval.
+- Devin is reported at 13.86% end-to-end on a 25% SWE-bench Verified subset, with a prior state of the art listed as 1.96%.
+- Devin is described as planning and executing thousands of shell, editor, and browser steps and producing pull requests.
+- Replit Agent + Code Repair 7B is described as outperforming GPT-4-Turbo and Claude Opus on Replit-repair and DebugBench, but the source says exact percentages were not published.
+- GitHub Copilot is reported with a Microsoft WorkLab study saying users were 29% faster, 70% felt more productive, and 85% reached a first draft faster.
+- Supermaven is reported with 250 ms latency versus Copilot at 783 ms and a 300k-token context window.
+- Windsurf Cascade is reported with telemetry claiming 90% of user code is auto-generated and 57 million lines are produced per day.
+- Vercel v0 is reported with internal UI-task error-free generation scores of 93.87% for v0-1.5-md and 89.80% for v0-1.5-lg, compared with Claude 4 Opus at 78.43%.
+- The source says coding-agent benchmarks measure different task types and should be matched to the intended workload before declaring a winner.

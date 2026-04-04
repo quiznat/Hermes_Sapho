@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-015",
+  "reviewed_at_utc": "2026-04-04T04:44:53Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package supports one bounded mechanism around ensembling under unstable rollouts, while most other performance claims remain benchmark-specific and not causally decomposed.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The reported 65.4% SWE-bench Verified result belongs to a specific Claude Sonnet 3.7 plus OpenAI o1 system configuration.",
+      "bounds": "The evidence establishes the reported score and system composition, but it does not isolate the causal contribution of each component or justify transfer beyond this exact setup."
+    },
+    {
+      "claim_text": "Claude Sonnet 3.7 thinking mode did not improve SWE-bench performance.",
+      "bounds": "The negative result is supported on this benchmark, but the evidence does not show whether the failure came from task structure, prompt design, cost tradeoffs, or another constraint."
+    },
+    {
+      "claim_text": "SWE-bench results have limited external validity for broader coding work.",
+      "bounds": "The package supports this as a bound, not a full causal account: outcomes are unstable, the benchmark is Python-only, Python may be easier for agents than other languages, and methods or changes that work on SWE-bench do not cleanly map to production settings."
+    }
+  ]
+}

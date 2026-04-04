@@ -5,7 +5,7 @@ source_url: https://aws.amazon.com/blogs/opensource/introducing-strands-agent-so
 canonical_url: https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents
 source_channel: runtime-replay
 queued_at_utc: '2026-03-04T20:43:26Z'
-status: kept
+status: discarded
 article_id: art-2026-03-04-060
 operator_note: Imported from canonical OpenClaw runtime via article-checkin
 ---

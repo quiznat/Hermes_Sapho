@@ -1,4 +1,4 @@
-- Only 466 scanned repositories, or 5%, had adopted at least one of the AI configuration file formats examined in the study.
-- Within repositories that had AI configuration files, TypeScript appeared most often in the reported language counts, while Go, Python, and C# formed a second cluster at substantially lower but similar levels.
-- The studied AI configuration formats differed materially in document size characteristics, with Copilot instruction files longest on average and AGENTS.md showing the greatest length variability.
-- AGENTS.md files in the study were often stable after creation, but when change occurred in the detailed high-activity sample it was usually focused on adding or modifying instructions rather than broad multi-category revisions.
+- Only 466 of the 10,000 scanned repositories, or 5%, contained at least one of the four AI configuration file formats examined.
+- Among repositories that used an AI configuration file, TypeScript repositories were the largest language group, while adoption was spread across several other languages at lower counts.
+- AGENTS.md files did not converge on a consistent structure, even though conventions or best practices, contribution guidance, and architecture or project structure were the most common heading categories.
+- Most AGENTS.md files in the analyzed set were either never revised after creation or changed only once, while the high-change subset was dominated by added and modified instructions.

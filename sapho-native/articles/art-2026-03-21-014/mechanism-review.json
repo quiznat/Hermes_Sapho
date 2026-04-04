@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-014",
+  "reviewed_at_utc": "2026-04-04T04:41:56Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Cursor shows the strongest task-bounded wins here, but most causal explanations remain suggestive and the overall ranking is methodologically limited.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Cursor was the strongest performer in the blank-repo app-generation task.",
+      "bounds": "The result is well supported for this specific vibe-coding task, but the evidence does not establish the internal cause of Cursor’s stronger output and does not justify extending the result to all coding-agent settings."
+    },
+    {
+      "claim_text": "Gemini CLI’s very large context window did not translate into top performance in the blank-repo task, even though it later completed the backend refactor after loading broad codebase context.",
+      "bounds": "The evidence supports only a narrow conclusion: large context capacity did not by itself ensure strong blank-repo execution, while broad context loading may still help on repository-oriented work; the article does not isolate why performance differed across task types."
+    }
+  ]
+}

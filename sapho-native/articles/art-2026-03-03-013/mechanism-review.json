@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-03-013",
+  "reviewed_at_utc": "2026-04-02T16:20:57Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports a tiered context architecture with explicit routing as a concrete mechanism for managing agent context in one project, while keeping retrieval and generalization limits explicit.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The retrieval layer remained operationally limited because knowledge-base access used keyword substring matching rather than semantic retrieval.",
+      "bounds": "The system exposed retrieval tools, but retrieval depended on literal term overlap, so relevant context could be missed when task wording and stored documents did not share matching substrings; robust recall is not established."
+    },
+    {
+      "claim_text": "The paper does not justify treating its context-to-code ratio or reported outcomes as general performance guidance beyond this single project.",
+      "bounds": "The 24.2% ratio is explicitly described as non-normative, and the evaluation is limited to one developer on one project without controlled experiments, so external validity remains narrow."
+    }
+  ]
+}

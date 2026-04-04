@@ -1,5 +1,15 @@
-KEEP
+DISCARD
 
-This repository describes an architectural approach to LLM agents, focusing on modularity, reproducibility, and the ability for agents to act based on a corpus of information. It provides a concrete example of an agent (PlaywrightAgent) that automates browser actions, indicating experimental and potentially benchmark-worthy material.
+README-style project description with no concrete experimental or production evidence.
 
-The source is a Work In Progress (WIP) and the described agent registry is nascent. While it details installation and usage as a proof-of-concept, it may not yet represent fully validated or production-ready research.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-21-011
+ticket_id: ticket-import-art-2026-03-21-011
+decision: discarded
+reason: README-style project description with no concrete experimental or production evidence.
+scope_class: other
+decided_at_utc: 2026-04-04T04:30:00Z
+---
+# Curator Receipt

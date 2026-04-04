@@ -1,5 +1,15 @@
 KEEP
 
-The source provides a benchmark comparing four AI coding agents (Cursor, Claude Code, Gemini CLI, and OpenAI Codex) based on practical use cases like setup speed, deployment, code quality, rapid prototyping, and large-context refactors. It details the methodology by selecting specific tools and models for testing and describes the user's prior skepticism and evolving approach to AI coding tools, grounding the evaluation in real-world engineering experience.
+The source reports concrete comparative test results from hands-on evaluations of multiple AI coding agents.
 
-The article's limitations stem from its focus on a specific set of tools and a particular timeframe (mid-2025), which may quickly become outdated in the rapidly evolving AI landscape. The excerpt is truncated, so the full scope of findings, detailed experimental setup, and conclusive discussion on each agent's performance across all tested criteria are not fully available to assess.
+Limits: ---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-21-014
+ticket_id: ticket-import-art-2026-03-21-014
+decision: kept
+reason: The source reports concrete comparative test results from hands-on evaluations of multiple AI coding agents.
+scope_class: benchmark
+decided_at_utc: 2026-04-04T04:38:00Z
+---
+# Curator Receipt

@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-03-013",
+  "reviewed_at_utc": "2026-04-02T16:20:42Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article keeps its main architectural claims intact while showing two material tensions that must remain visible: limited retrieval strength and weak grounds for generalization.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

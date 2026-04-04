@@ -312,7 +312,11 @@ def _contains_numeric_payload(text: str) -> bool:
     cleaned = _clean(text)
     if not cleaned:
         return False
-    return bool(re.search(r"\b\d+(?:\.\d+)?\s*(?:%|x|k|m|ms|s|sec|seconds?|minutes?|hours?|turns?|instances?|repos?(?:itories)?)\b", cleaned, re.I) or re.search(r"\b(?:over|under|about|around|roughly|nearly|more than|less than)\s+\d", cleaned, re.I))
+    numeric_unit_pattern = re.compile(
+        r"\b\d+(?:\.\d+)?(?:\s*%(?!\w)|\s*(?:x|k|m|ms|s|sec|seconds?|minutes?|hours?|turns?|instances?|repos?(?:itories)?)\b)",
+        re.I,
+    )
+    return bool(numeric_unit_pattern.search(cleaned) or re.search(r"\b(?:over|under|about|around|roughly|nearly|more than|less than)\s+\d", cleaned, re.I))
 
 
 def validate_article_write_body(body: str, *, claims: list[dict[str, Any]], evidence_records: list[dict[str, Any]]) -> None:

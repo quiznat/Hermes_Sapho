@@ -2,13 +2,13 @@
   "version": "curator-decision.v1",
   "article_id": "art-2026-03-21-016",
   "decision": "kept",
-  "qualified_by": "experimental_blog",
+  "qualified_by": "comparative_survey",
   "evidence_basis": "mixed",
   "novelty_strength": "medium",
-  "excerpt_sufficiency": "sufficient",
-  "reason": "The source provides concrete analysis of AI coding benchmarks, specifically SWE-bench, detailing its limitations and characteristics. It discusses what the benchmark measures, its specific quirks (e.g., Python focus, small solutions, training data contamination), and introduces SWE-bench Pro as an improvement. This is valuable for understanding the practical applicability of AI coding agents.\nThe source focuses on the specifics of AI coding benchmarks, particularly SWE-bench, and its variants. It highlights limitations such as the focus on Python, the small size of typical solutions, and the potential for training data contamination. While it mentions other benchmarks like Aider Polyglot and LiveCodeBench, the excerpt focuses heavily on SWE-bench. The analysis is based on the structure and content of these benchmarks, not on external field reports or incidents.",
-  "limits": "",
+  "excerpt_sufficiency": "partial",
+  "reason": "It is a structured comparative benchmark analysis with concrete source-attributed metrics.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-21-016\nticket_id: ticket-import-art-2026-03-21-016\ndecision: kept\nreason: It is a structured comparative benchmark analysis with concrete source-attributed metrics.\nscope_class: benchmark\ndecided_at_utc: 2026-04-04T04:44:00Z\n---\n# Curator Receipt",
   "confidence": "medium",
-  "generated_at_utc": "2026-04-01T19:51:33Z",
+  "generated_at_utc": "2026-04-04T04:47:51Z",
   "mode": "agent"
 }
