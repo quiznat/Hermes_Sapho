@@ -660,6 +660,16 @@ Recommended pattern:
 - inspect the generated report under `state/reports/`
 - spot-check at least one regenerated `article.md` plus `validation.json` and `historical-policy.json`
 - commit and push each successful batch before moving on
+- when reporting the batch to the operator, include direct GitHub links for:
+  - the commit
+  - the remediation report under `state/reports/`
+  - each article package directory
+  - each article's `article.md`
+  - each article's `validation.json`
+  - each article's `historical-policy.json`
+  - for blocked/discarded outcomes, include `micro-worthiness.md` too
+
+This proved important in practice because the operator wanted to click straight into GitHub to review each regenerated artifact without asking for paths to be converted into links afterward.
 
 Good outcomes to expect in healthy batches:
 - historical `published` / `legacy_quarantined` packages become `ready-for-daily` / `current_law_compliant`
@@ -707,6 +717,40 @@ Prompt/contract hardening that worked:
 Recommended test pattern:
 - keep one negative-control article fixture in tests that contains adequate sections and some numeric payload but still uses the weak generic contradiction/mechanism voice
 - assert `validate_article_write_body(...)` fails with a dedicated error such as `article_write_weak_tension_or_mechanism`
+
+### 10.5. Empirical-specificity validation must recognize percentage metrics
+
+A later replay/debugging pass exposed a validator false-negative that can stall otherwise good historical remediation.
+
+Observed failure mode:
+- `validate_article_write_body(...)` is meant to fail thin descriptive artifacts when claims/evidence contain numeric payload but the visible article surface does not
+- a regenerated article for `art-2026-03-21-013` correctly surfaced concrete benchmark numbers like `72.5%`, `49%`, and `43.2%`
+- but the replay still failed closed with `article_write_missing_empirical_specificity`
+
+Root cause:
+- `_contains_numeric_payload(...)` used a regex that required a trailing word boundary after `%`
+- percentages such as `72.5%` do not satisfy `\b` after `%` because `%` and the following space/punctuation are both non-word characters
+- result: real percent-bearing evidence and article sections were misclassified as non-numeric
+
+Fix that worked:
+- broaden the detector so percent metrics are treated as numeric payload explicitly
+- a robust pattern is to match either:
+  - `\d+(?:\.\d+)?\s*%(?!\w)`
+  - or the existing unit-style numeric forms like `x`, `ms`, `seconds`, `minutes`, `hours`, `repos`, etc.
+- keep the soft-language numeric fallback such as `about 4`, `over 20`, `less than 3`
+
+Why this matters operationally:
+- otherwise replay can wrongly quarantine or fail an article that actually does surface concrete benchmark results
+- this is especially important for agent-eval and benchmark-comparison sources where `%` is the dominant empirical surface
+
+Verification to add:
+1. a regression test where claims/evidence/article sections contain percentage metrics like `72.5%`, `49%`, and `43.2%`
+2. assert `validate_article_write_body(...)` accepts the article when the dense sections clearly surface those numbers
+3. keep the existing negative-control test where thin sectioned prose still fails for missing empirical specificity
+
+Operational rule:
+- when `article_write_missing_empirical_specificity` appears on an article that visibly contains percentages, inspect the numeric detector before blaming the writer output
+- treat this as a validator bug class, not a content-quality failure, until the detector is confirmed correct
 
 ### 11. Verify identity before overreacting to regenerated wording changes
 

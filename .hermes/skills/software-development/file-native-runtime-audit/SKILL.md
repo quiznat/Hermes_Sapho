@@ -131,6 +131,22 @@ Usually preserve:
 - Ignoring incremental publication rails (e.g. artifact poller) because the daily rail gets more attention.
 - Treating article/item markdown as the full schema without reading adjacent stage files.
 - Letting prompt-only gates stand in for deterministic validation.
+- Treating an earlier roadmap or audit as current truth after implementation has continued. Re-verify the live code path, tests, and validator outputs before repeating old status claims.
+- Updating only one planning doc when drift exists across roadmap, audit, and policy text. Read back the edited docs and fix any stale sentence that still reflects the superseded state.
+
+## Reconciliation pass for drifted docs
+
+When the user asks for current status and the written plan may have drifted:
+1. search past sessions for the last declared status
+2. read the roadmap/audit docs currently on disk
+3. inspect the actual code path that should prove or disprove those docs
+4. run the strongest cheap verification available (typically tests plus a validator/report script)
+5. rewrite the docs so they describe:
+   - what is completed
+   - what is only partially complete
+   - what remains unstarted
+   - which historical artifacts still fail the new law
+6. read the docs back once to catch stale policy language left behind by the rewrite
 
 ## Deliverable shape
 

@@ -1,0 +1,19 @@
+{
+  "backend": "hermes_cli",
+  "clean_output": "",
+  "context": {
+    "adapter": "run_loose_agent"
+  },
+  "duration_seconds": 0.002,
+  "error": "[Errno 7] Argument list too long: 'hermes'",
+  "finished_at_utc": "2026-04-03T13:33:21.560375Z",
+  "model": "gpt-5.4",
+  "prompt_sha256": "fb756a26a490910169dbd7ea92bb1a1d6bca0da79cda969d31e960427c9d9633",
+  "raw_output": "",
+  "receipt_path": "/home/hermes/sapho-native/state/receipts/task-runs/20260403T133321.558229Z-extractor-fc1771e1ce.json",
+  "role": "extractor",
+  "started_at_utc": "2026-04-03T13:33:21.558229Z",
+  "status": "error",
+  "thinking": "off",
+  "timeout": 420
+}
