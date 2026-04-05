@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-03-30T19:38:50Z",
+  "generatedAtUtc": "2026-04-05T13:16:17Z",
   "ok": false,
   "checks": {
     "xml_parses": true,
@@ -11,19 +11,24 @@
     "stable_source_identity": false
   },
   "errors": [
+    "identity_drift:https://arxiv.org/abs/2506.12508:pubDate",
     "identity_drift:https://arxiv.org/abs/2602.08316:pubDate",
     "identity_drift:https://arxiv.org/abs/2310.06770:pubDate",
     "identity_drift:https://arxiv.org/abs/2512.10398:pubDate",
     "identity_drift:https://arxiv.org/abs/2601.15153:pubDate",
     "identity_drift:https://arxiv.org/abs/2511.09268:pubDate",
+    "identity_drift:https://arxiv.org/abs/2601.18341:pubDate",
     "identity_drift:https://arxiv.org/abs/2307.07924:pubDate",
+    "identity_drift:https://arxiv.org/abs/2507.13334:pubDate",
     "identity_drift:https://arxiv.org/abs/2510.10460:pubDate",
     "identity_drift:https://arxiv.org/abs/2512.18925:pubDate",
+    "identity_drift:https://arxiv.org/abs/2512.14012:pubDate",
     "identity_drift:https://arxiv.org/abs/2405.15793:pubDate",
     "identity_drift:https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents:pubDate",
     "identity_drift:https://blog.cloudflare.com/moltworker-self-hosted-ai-agent:pubDate",
     "identity_drift:https://arxiv.org/abs/2510.04618:pubDate",
-    "identity_drift:https://arxiv.org/abs/2308.08155:pubDate"
+    "identity_drift:https://arxiv.org/abs/2308.08155:pubDate",
+    "identity_drift:https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident:pubDate"
   ],
   "itemCount": 121
 }

@@ -1,0 +1,14 @@
+- NL2Repo-Bench evaluates agents that receive one natural-language requirements document and an empty workspace, then must produce a fully installable Python library.
+- The benchmark withholds project scaffolding, source code, and test cases during development and evaluates outputs with the upstream repository's pytest suite in a controlled environment.
+- The final NL2Repo-Bench dataset contains 104 tasks across nine categories of Python libraries.
+- The average input length of an NL2Repo-Bench task is about 18,800 tokens.
+- Target repositories were selected using four stated criteria: 300 to 120,000 LOC, at least 10 GitHub stars, passing pytest-based tests in the official version, and creation or update within the past three years.
+- Each specification document is organized into four sections: Project Description, Supports, API Usage Guide, and Implementation Nodes.
+- The benchmark relaxes non-functional build constraints, including README or license-file checks, so evaluation focuses on functional software generation rather than rigid packaging prerequisites.
+- The paper reports that long-horizon repository generation remains unsolved, with even the strongest agents staying below about 40.5% average test pass rate.
+- Claude-Sonnet-4.5 in the Claude Code framework achieved the highest reported overall pass rate at 40.2% with Pass@1 count 3.
+- For Claude-Sonnet-4.5 in Claude Code, pass rate decreases with task difficulty: 51.8% on easy tasks, 44.5% on medium tasks, and 25.1% on hard tasks.
+- Among commonly used tools, task_tracker has the strongest reported positive correlation with model performance at 0.711.
+- GPT-5 averaged 78.4 interaction turns and was described as frequently halting for user confirmation instead of completing the repository autonomously.
+- Qwen3-Thinking is reported to terminate early in 49.0% of tasks and to have a 46.2% non-finish rate.
+- Revealing all test cases increased Claude-Sonnet-4.5 in Claude Code from 40.2% to 59.4% overall pass rate and from Pass@1 3 to Pass@1 18.

@@ -1,0 +1,13 @@
+- The paper introduces a diagnostic framework that separately measures retrieval relevance, memory utilization, and failure modes in memory-augmented LLM agents.
+- The evaluation uses a 3 × 3 factorial design crossing three write strategies with three retrieval methods.
+- The study evaluates 1,540 non-adversarial questions from LoCoMo.
+- Average accuracy varies from 57.1% to 77.2% across retrieval methods.
+- Within a retrieval method, write strategy changes accuracy by only 3 to 8 percentage points.
+- Basic RAG stores raw 3-turn conversation chunks with speaker names and timestamps and requires zero LLM calls at write time.
+- Basic RAG achieved 77.9% accuracy with cosine retrieval and 81.1% with hybrid retrieval.
+- Under BM25, Summarized Episodes scored 62.7% accuracy versus 59.2% for Basic RAG.
+- Retrieval precision and downstream accuracy are reported as near-perfectly correlated, with r = 0.98.
+- Retrieval failure accounted for 11% to 46% of questions across configurations.
+- For Basic RAG, hybrid reranking reduced retrieval failure from 35.3% under BM25 to 11.4%.
+- Across configurations, utilization failures remained between 4% and 8%, and hallucinations remained between 0.4% and 1.4%.
+- The study states that its conclusions are limited by use of a single backbone model, one benchmark, fixed retrieval budget k = 5, prompt-based write strategies, and LLM judges for correctness and failure classification.

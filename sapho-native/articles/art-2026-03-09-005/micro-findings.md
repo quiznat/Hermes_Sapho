@@ -1,0 +1,4 @@
+- Agentic pull requests in the filtered analysis set differ from human pull requests across all reported structural metrics, with the largest separation in commit count.
+- Agentic pull requests have higher mean description-to-diff similarity than human pull requests under TF-IDF, CodeBERT, and GraphCodeBERT in this study.
+- The analyzed comparison is based on a filtered subset of the original AIDev corpus rather than the full raw dataset.
+- The human pull request side of the comparison required additional GitHub API retrieval and file-level reconstruction before analysis.

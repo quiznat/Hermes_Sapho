@@ -1,0 +1,20 @@
+{
+  "version": "article-lineage.v1",
+  "article_id": "art-2026-03-08-006",
+  "summary_sections": {
+    "core_thesis": [],
+    "why_it_matters": [],
+    "key_findings": [],
+    "limits": []
+  },
+  "claim_ids": [],
+  "fact_ids": [],
+  "evidence_ids": [],
+  "unresolved_gaps": [
+    "missing_core_thesis_section",
+    "missing_why_it_matters_section",
+    "missing_key_findings_section",
+    "missing_limits_section",
+    "missing_explicit_mechanism_claim"
+  ]
+}

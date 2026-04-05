@@ -5,7 +5,7 @@ source_url: https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex
 canonical_url: https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h
 source_channel: runtime-replay
 queued_at_utc: '2026-03-08T08:30:47Z'
-status: captured
+status: kept
 article_id: art-2026-03-08-016
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

@@ -1,0 +1,4 @@
+- The paper presents a diagnostic evaluation framework that separates retrieval relevance, memory utilization, and failure-mode analysis for memory-augmented LLM agents.
+- In this study, retrieval method explains more of the accuracy variation than write strategy does.
+- Retrieval failure is a major bottleneck in these memory agents, while utilization failures and hallucinations are comparatively smaller error sources.
+- Basic RAG can match or outperform more processed memory-writing approaches in several tested conditions, though not in every retrieval setting.

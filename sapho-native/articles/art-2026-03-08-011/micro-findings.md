@@ -1,0 +1,4 @@
+- NL2Repo-Bench evaluates coding agents in a long-horizon repository-generation setting where the agent starts from a natural-language requirements document and an empty workspace and must produce a fully installable Python library.
+- NL2Repo-Bench is a moderately sized evaluation set comprising 104 tasks across nine Python-library categories, with task inputs averaging about 18,800 tokens.
+- The reported results indicate that long-horizon repository generation remains unsolved on NL2Repo-Bench, with the strongest evaluated agent reaching 40.2% overall pass rate and performance falling as task difficulty increases.
+- The benchmark results suggest that both execution behavior and evaluation visibility matter: task_tracker usage is positively correlated with performance, while revealing all test cases substantially improves Claude-Sonnet-4.5's pass rate.

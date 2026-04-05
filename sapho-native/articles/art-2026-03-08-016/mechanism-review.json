@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-08-016",
+  "reviewed_at_utc": "2026-04-05T14:12:46Z",
+  "reviewer_role": "Synthesist",
+  "summary": "A reported orchestrator-plus-sub-agent coding workflow appears to have reduced main-thread context load in one rewrite task, but the success claim remains tightly bounded by thin verification.",
+  "review_confidence": "high",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The workflow used a main orchestrator dialogue that delegated tasks to sub-agents, then verified and integrated their outputs during a LiteLLM provider rewrite.",
+      "bounds": "The evidence supports the reported workflow structure and task scope in this case, but not any broader claim that this structure is generally superior."
+    },
+    {
+      "claim_text": "The experiment completed in about four hours of agent time with about half an hour of human effort, 16 sub-agent sessions, and a total spend of $13.86.",
+      "bounds": "These are reported case metrics for one run; they do not show which parts of the workflow caused the efficiency or whether similar results would repeat elsewhere."
+    },
+    {
+      "claim_text": "The app appears to have worked in this case, but verification coverage was limited.",
+      "bounds": "The source supports only a bounded functionality claim because observed operation and five green tests are too thin to establish broad correctness, robustness, or reliability."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+- The reported workflow used a main orchestrator dialogue that delegated tasks to sub-agents, then verified and integrated their outputs during a LiteLLM provider rewrite.
+- The author explicitly presents sub-agent delegation as a way to avoid main-thread context-window pressure while fitting roughly 2 million tokens of work into a 157K-token orchestrator thread.
+- The experiment is reported to have completed in about four hours of agent time with about half an hour of human effort, 16 sub-agent sessions, and a total spend of $13.86.
+- The reported success claim is bounded because the author says the app works and that five tests were green, but the small test count leaves limited verification coverage for the rewritten system.

@@ -5,7 +5,7 @@ source_url: https://github.com/boqiny/memory-probe
 canonical_url: https://github.com/boqiny/memory-probe
 source_channel: runtime-replay
 queued_at_utc: '2026-03-08T01:00:36Z'
-status: captured
+status: discarded
 article_id: art-2026-03-08-006
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

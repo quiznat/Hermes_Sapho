@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-08-011",
+  "reviewed_at_utc": "2026-04-05T14:09:55Z",
+  "reviewer_role": "Synthesist",
+  "summary": "art-2026-03-08-011 reviews as a bounded mechanism case: benchmark outcomes appear shaped by execution discipline and test visibility, but the evidence does not justify a single general causal account of repository-generation failure.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "NL2Repo-Bench evaluates long-horizon repository generation from a requirements document and an empty workspace.",
+      "bounds": "the evidence establishes task design, not a causal explanation for why agents succeed or fail in that setting."
+    },
+    {
+      "claim_text": "NL2Repo-Bench is a 104-task, nine-category benchmark with average inputs around 18,800 tokens.",
+      "bounds": "these figures bound scale and construction criteria, but they do not show how representative the benchmark is beyond the paper's stated repository-selection rules."
+    },
+    {
+      "claim_text": "Long-horizon repository generation remains unsolved on this benchmark, with the top reported system at 40.2% overall pass rate and lower performance on harder tasks.",
+      "bounds": "the evidence supports a low performance ceiling and a difficulty gradient, but it does not isolate a single shared causal bottleneck behind those outcomes."
+    }
+  ]
+}

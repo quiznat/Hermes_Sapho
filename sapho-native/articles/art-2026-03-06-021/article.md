@@ -26,6 +26,10 @@ extracted_at_utc: '2026-04-05T04:14:55Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
+artifact_publication_alias: '20260306021'
+artifact_publication_status: published
+artifact_publication_minted_at_utc: '2026-04-05T04:14:55Z'
+artifact_publication_published_at_utc: '2026-04-05T13:13:58Z'
 ---
 # On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub
 
