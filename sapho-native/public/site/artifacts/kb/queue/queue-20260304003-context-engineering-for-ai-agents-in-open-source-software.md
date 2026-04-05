@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/html/2510.21413" target="_blank" rel="noopener">https://arxiv.org/html/2510.21413</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T01:14:24Z</li>
+  <li><strong>Source captured:</strong> 2026-03-07T19:27:14Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T18:14:51Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T18:17:10Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-29T03:09:24Z</li>
+</ul>
+</div>
+</details>
+
 # Context Engineering for AI Agents in Open-Source Software
 
 ## Core Thesis

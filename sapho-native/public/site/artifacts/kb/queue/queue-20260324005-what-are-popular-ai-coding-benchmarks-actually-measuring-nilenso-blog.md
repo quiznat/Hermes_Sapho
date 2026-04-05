@@ -1,3 +1,16 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://blog.nilenso.com/blog/2025/09/25/swe-benchmarks/" target="_blank" rel="noopener">https://blog.nilenso.com/blog/2025/09/25/swe-benchmarks/</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-21T06:28:15Z</li>
+  <li><strong>Source captured:</strong> 2026-03-21T22:53:19Z</li>
+  <li><strong>Curated:</strong> 2026-04-04T04:45:09Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-04T04:47:18Z</li>
+</ul>
+</div>
+</details>
+
 # What are popular AI coding benchmarks actually measuring? - nilenso blog
 
 ## Core Thesis

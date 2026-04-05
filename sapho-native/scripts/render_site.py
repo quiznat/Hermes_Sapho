@@ -656,9 +656,40 @@ def extract_bullet_lines(section_text: str) -> list[str]:
 
 def build_public_artifact_markdown(public_id: str, title: str, meta: dict, body: str) -> str:
     canonical_body = strip_frontmatter(body).strip()
+    source_url = str(meta.get("source_url") or meta.get("canonical_url") or "").strip()
+    queued_at = str(meta.get("queued_at_utc") or "").strip()
+    captured_at = str(meta.get("captured_at_utc") or "").strip()
+    curated_at = str(meta.get("curated_at_utc") or "").strip()
+    finalized_at = str(meta.get("artifact_minted_at_utc") or "").strip()
+    published_at = str(meta.get("artifact_publication_published_at_utc") or meta.get("published_in_daily") or "").strip()
+    trace_rows = []
+    if source_url:
+        trace_rows.append(f'<li><strong>Source:</strong> <a href="{html.escape(source_url)}" target="_blank" rel="noopener">{html.escape(source_url)}</a></li>')
+    if queued_at:
+        trace_rows.append(f'<li><strong>Intake queued:</strong> {html.escape(queued_at)}</li>')
+    if captured_at:
+        trace_rows.append(f'<li><strong>Source captured:</strong> {html.escape(captured_at)}</li>')
+    if curated_at:
+        trace_rows.append(f'<li><strong>Curated:</strong> {html.escape(curated_at)}</li>')
+    if finalized_at:
+        trace_rows.append(f'<li><strong>Artifact finalized:</strong> {html.escape(finalized_at)}</li>')
+    if published_at:
+        trace_rows.append(f'<li><strong>Artifact published:</strong> {html.escape(published_at)}</li>')
+    traceability_block = ""
+    if trace_rows:
+        traceability_block = (
+            '<details class="traceability-panel">\n'
+            '<summary>Traceability</summary>\n'
+            '<div class="traceability-body">\n'
+            '<ul>\n'
+            + "\n".join(f"  {row}" for row in trace_rows)
+            + '\n</ul>\n'
+            '</div>\n'
+            '</details>\n\n'
+        )
     if canonical_body:
-        return canonical_body.rstrip() + "\n"
-    return f"# {title}\n\nArtifact body unavailable.\n"
+        return traceability_block + canonical_body.rstrip() + "\n"
+    return traceability_block + f"# {title}\n\nArtifact body unavailable.\n"
 
 
 def artifact_publication_is_current(meta: dict) -> bool:

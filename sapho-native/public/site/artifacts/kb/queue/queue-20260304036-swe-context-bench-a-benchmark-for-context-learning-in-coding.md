@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2602.08316" target="_blank" rel="noopener">https://arxiv.org/abs/2602.08316</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T04:07:37Z</li>
+  <li><strong>Source captured:</strong> 2026-03-30T18:19:39Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T23:42:05Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T23:44:11Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-30T18:30:02Z</li>
+</ul>
+</div>
+</details>
+
 # SWE Context Bench: A Benchmark for Context Learning in Coding
 
 ## Core Thesis

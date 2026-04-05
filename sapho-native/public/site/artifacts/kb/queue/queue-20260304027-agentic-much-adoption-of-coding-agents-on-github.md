@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2601.18341" target="_blank" rel="noopener">https://arxiv.org/abs/2601.18341</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T03:59:01Z</li>
+  <li><strong>Source captured:</strong> 2026-03-30T18:09:04Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T22:00:28Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T22:02:34Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-30T18:11:37Z</li>
+</ul>
+</div>
+</details>
+
 # Agentic Much? Adoption of Coding Agents on GitHub
 
 ## Core Thesis

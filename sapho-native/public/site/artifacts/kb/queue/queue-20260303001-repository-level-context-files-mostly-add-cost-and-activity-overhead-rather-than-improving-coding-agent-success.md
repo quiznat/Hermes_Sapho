@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2602.11988" target="_blank" rel="noopener">https://arxiv.org/abs/2602.11988</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-03T10:37:26Z</li>
+  <li><strong>Source captured:</strong> 2026-03-13T03:00:58Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T03:18:38Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T03:21:03Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-28T00:19:30Z</li>
+</ul>
+</div>
+</details>
+
 # Repository-level context files mostly add cost and activity overhead rather than improving coding-agent success
 
 ## Core Thesis

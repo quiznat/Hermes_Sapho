@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2503.13657" target="_blank" rel="noopener">https://arxiv.org/abs/2503.13657</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T03:59:01Z</li>
+  <li><strong>Source captured:</strong> 2026-04-02T16:24:13Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T17:50:21Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T17:52:41Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-29T03:09:30Z</li>
+</ul>
+</div>
+</details>
+
 # Why Do Multi-Agent LLM Systems Fail?
 
 ## Core Thesis

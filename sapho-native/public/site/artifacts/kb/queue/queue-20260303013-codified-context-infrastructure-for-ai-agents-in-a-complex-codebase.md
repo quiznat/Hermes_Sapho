@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/html/2602.20478v1" target="_blank" rel="noopener">https://arxiv.org/html/2602.20478v1</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-03T18:06:17Z</li>
+  <li><strong>Source captured:</strong> 2026-04-02T16:17:59Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T16:18:14Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T16:20:22Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-29T03:09:17Z</li>
+</ul>
+</div>
+</details>
+
 # Codified Context: Infrastructure for AI Agents in a Complex Codebase
 
 ## Core Thesis

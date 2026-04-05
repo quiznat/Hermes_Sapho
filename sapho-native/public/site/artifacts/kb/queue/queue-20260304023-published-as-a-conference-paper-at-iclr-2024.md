@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2310.06770" target="_blank" rel="noopener">https://arxiv.org/abs/2310.06770</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T03:59:01Z</li>
+  <li><strong>Source captured:</strong> 2026-03-30T18:23:24Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T21:10:38Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T21:12:52Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-30T18:26:29Z</li>
+</ul>
+</div>
+</details>
+
 # Published as a conference paper at ICLR 2024
 
 ## Core Thesis

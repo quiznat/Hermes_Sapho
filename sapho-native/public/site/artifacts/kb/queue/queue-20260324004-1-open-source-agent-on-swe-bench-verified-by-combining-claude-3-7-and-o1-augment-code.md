@@ -1,3 +1,16 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1" target="_blank" rel="noopener">https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-21T06:28:15Z</li>
+  <li><strong>Source captured:</strong> 2026-03-21T22:52:56Z</li>
+  <li><strong>Curated:</strong> 2026-04-04T04:42:09Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-04T04:44:13Z</li>
+</ul>
+</div>
+</details>
+
 # #1 open-source agent on SWE-Bench Verified by combining Claude 3.7 and O1 | Augment Code
 
 ## Core Thesis

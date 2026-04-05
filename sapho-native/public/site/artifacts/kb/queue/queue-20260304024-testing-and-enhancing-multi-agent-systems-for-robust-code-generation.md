@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2510.10460" target="_blank" rel="noopener">https://arxiv.org/abs/2510.10460</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T03:59:01Z</li>
+  <li><strong>Source captured:</strong> 2026-03-30T17:59:36Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T13:33:47Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T13:36:26Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-30T18:03:07Z</li>
+</ul>
+</div>
+</details>
+
 # Testing and Enhancing Multi-Agent Systems for Robust Code Generation
 
 ## Core Thesis

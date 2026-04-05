@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener">https://arxiv.org/abs/2405.15793</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T03:59:01Z</li>
+  <li><strong>Source captured:</strong> 2026-03-30T17:31:45Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T23:22:30Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T23:24:49Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-30T17:31:53Z</li>
+</ul>
+</div>
+</details>
+
 # SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering
 
 ## Core Thesis

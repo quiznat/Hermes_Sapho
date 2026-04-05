@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2512.08296" target="_blank" rel="noopener">https://arxiv.org/abs/2512.08296</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-02T17:24:54Z</li>
+  <li><strong>Source captured:</strong> 2026-03-07T19:27:13Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T04:03:36Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T04:05:42Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-28T00:19:28Z</li>
+</ul>
+</div>
+</details>
+
 # Towards a Science of Scaling Agent Systems
 
 ## Core Thesis

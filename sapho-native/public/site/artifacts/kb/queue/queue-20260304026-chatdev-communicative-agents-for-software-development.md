@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://arxiv.org/abs/2307.07924" target="_blank" rel="noopener">https://arxiv.org/abs/2307.07924</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-04T03:59:01Z</li>
+  <li><strong>Source captured:</strong> 2026-03-30T18:06:21Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T21:57:24Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T21:59:37Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-30T18:09:02Z</li>
+</ul>
+</div>
+</details>
+
 # ChatDev: Communicative Agents for Software Development
 
 ## Core Thesis

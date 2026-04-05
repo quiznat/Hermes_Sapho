@@ -1,3 +1,17 @@
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://notchrisgroves.com/when-agents-md-backfires/" target="_blank" rel="noopener">https://notchrisgroves.com/when-agents-md-backfires/</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-03T11:00:15Z</li>
+  <li><strong>Source captured:</strong> 2026-03-07T19:27:13Z</li>
+  <li><strong>Curated:</strong> 2026-04-02T15:34:53Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-02T15:37:05Z</li>
+  <li><strong>Artifact published:</strong> 2026-03-29T03:09:02Z</li>
+</ul>
+</div>
+</details>
+
 # When AGENTS.md Backfires: What a New Study Says About Context Files and Coding Agents
 
 ## Core Thesis
