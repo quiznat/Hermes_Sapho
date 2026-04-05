@@ -118,6 +118,23 @@ def ensure_custom_domain_file() -> None:
     write_text(PUBLIC_DIR / "CNAME", domain.rstrip() + "\n")
 
 
+def remove_path_if_exists(path: Path) -> None:
+    if path.exists():
+        path.unlink()
+
+
+def cleanup_disabled_feed_surfaces() -> None:
+    if site_feeds_enabled():
+        return
+    for rel in [
+        "rss.xml",
+        "artifacts.xml",
+        "daily.xml",
+        "data/artifacts-feed.json",
+    ]:
+        remove_path_if_exists(PUBLIC_DIR / rel)
+
+
 def build_website2_homepage(current_items: list[dict]) -> str:
     recent_items = list(reversed(current_items))[:8]
     kept_cards = []
@@ -1657,6 +1674,7 @@ def render_artifact_site(include_ready_ids: set[str] | None = None) -> list[dict
         write_text(PUBLIC_DIR / "data" / "artifacts-feed.json", json.dumps(artifacts_feed_meta, indent=2) + "\n")
     write_compat_alias_redirects()
     validate_public_alias_surfaces(current_items)
+    cleanup_disabled_feed_surfaces()
     render_site_inventory()
     refresh_agents_page()
     apply_website2_surface_overrides(current_items)
@@ -1672,6 +1690,7 @@ def render_daily_briefing_site() -> dict[str, str]:
     brief_rows = collect_public_brief_rows(current_brief)
     if site_feeds_enabled():
         write_text(PUBLIC_DIR / "daily.xml", build_daily_feed(brief_rows))
+    cleanup_disabled_feed_surfaces()
     render_site_inventory()
     refresh_agents_page()
     apply_website2_surface_overrides([])
@@ -1713,6 +1732,8 @@ def render_site() -> None:
             "validationPath": str(RSS_VALIDATION_PATH.relative_to(ROOT)),
         }
         write_text(PUBLIC_DIR / "data" / "artifacts-feed.json", json.dumps(artifacts_feed_meta, indent=2) + "\n")
+    else:
+        cleanup_disabled_feed_surfaces()
     write_compat_alias_redirects()
     validate_public_alias_surfaces(current_items)
     render_site_inventory()
