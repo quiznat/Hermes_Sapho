@@ -23,25 +23,9 @@ class RenderSiteWebsite2Tests(unittest.TestCase):
         with patch.dict(os.environ, {"SAPHO_SITE_BASE_URL": "https://research.quiznat.com"}, clear=False):
             self.assertEqual(render_site.site_custom_domain(), "research.quiznat.com")
 
-    def test_apply_website2_surface_overrides_removes_rss_and_writes_cname(self) -> None:
-        homepage = """<!doctype html>
-<html>
-<head>
-  <link rel=\"alternate\" type=\"application/rss+xml\" title=\"Artifacts RSS\" href=\"artifacts.xml\" />
-</head>
-<body>
-  <h2>Machine Entry</h2>
-  <article class=\"mentat-card report-card\">
-    <h3><a href=\"artifacts.xml\">Artifacts RSS</a></h3>
-    <p>Sequential artifact feed continuity for published research outputs.</p>
-    <p class=\"meta\"><a href=\"artifacts.xml\">Open RSS</a></p>
-  </article>
-</body>
-</html>
-"""
+    def test_apply_website2_surface_overrides_rebuilds_homepage_with_charter_and_kept_artifacts_only(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             public_dir = Path(tmpdir)
-            (public_dir / "index.html").write_text(homepage, encoding="utf-8")
             with patch.object(render_site, "PUBLIC_DIR", public_dir), patch.dict(
                 os.environ,
                 {
@@ -50,10 +34,23 @@ class RenderSiteWebsite2Tests(unittest.TestCase):
                 },
                 clear=False,
             ):
-                render_site.apply_website2_surface_overrides()
+                render_site.apply_website2_surface_overrides(
+                    [
+                        {
+                            "title": "Fresh Lawful Artifact",
+                            "summary": "Dense new artifact summary.",
+                            "artifact_rel": "artifacts/kb/queue/fresh-lawful-artifact.md",
+                            "url": "https://example.com/source",
+                        }
+                    ]
+                )
             updated = (public_dir / "index.html").read_text(encoding="utf-8")
-            self.assertNotIn("Artifacts RSS", updated)
-            self.assertIn("Machine Entry and Operations", updated)
+            self.assertIn("Institute Charter", updated)
+            self.assertIn("Kept Artifact Index", updated)
+            self.assertIn("Recent Kept Artifacts", updated)
+            self.assertIn("Fresh Lawful Artifact", updated)
+            self.assertNotIn("Latest Daily Briefing", updated)
+            self.assertNotIn("Longform Research", updated)
             self.assertEqual((public_dir / "CNAME").read_text(encoding="utf-8").strip(), "research.quiznat.com")
 
     def test_reset_public_dir_requires_baseline_in_github_pages_mode(self) -> None:

@@ -117,27 +117,81 @@ def ensure_custom_domain_file() -> None:
     write_text(PUBLIC_DIR / "CNAME", domain.rstrip() + "\n")
 
 
-def apply_website2_surface_overrides() -> None:
+def build_website2_homepage(current_items: list[dict]) -> str:
+    recent_items = list(reversed(current_items))[:8]
+    kept_cards = []
+    for item in recent_items:
+        title = html.escape(str(item.get("title") or "Untitled"))
+        summary = html.escape(str(item.get("summary") or "").strip())
+        artifact_rel = html.escape(str(item.get("artifact_rel") or ""))
+        source_url = html.escape(str(item.get("url") or ""))
+        kept_cards.append(
+            "        <article class=\"mentat-card report-card\">\n"
+            f"          <h3><a href=\"viewer.html?file={artifact_rel}\">{title}</a></h3>\n"
+            f"          <p>{summary}</p>\n"
+            f"          <p class=\"meta\"><a href=\"viewer.html?file={artifact_rel}\">Open Artifact</a>"
+            + (f" · <a href=\"{source_url}\" target=\"_blank\" rel=\"noopener\">Source</a>" if source_url else "")
+            + "</p>\n"
+            "        </article>"
+        )
+    kept_block = "\n".join(kept_cards) if kept_cards else (
+        "        <article class=\"mentat-card report-card\">\n"
+        "          <h3>Kept Artifacts</h3>\n"
+        "          <p>No published kept artifacts are available yet.</p>\n"
+        "        </article>"
+    )
+    return (
+        "<!doctype html>\n"
+        "<html>\n"
+        "<head>\n"
+        "  <meta charset=\"utf-8\" />\n"
+        "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n"
+        "  <title>Sapho Chapterhouse Institute</title>\n"
+        "  <link rel=\"stylesheet\" href=\"assets/style.css?v=scholarly-20260314d\" />\n"
+        "  <link rel=\"icon\" type=\"image/png\" href=\"/assets/sapho-seal.png?v=seal-20260315\" />\n"
+        "  <link rel=\"apple-touch-icon\" href=\"/assets/sapho-seal.png?v=seal-20260315\" />\n"
+        "</head>\n"
+        "<body>\n"
+        "  <main class=\"portal\">\n"
+        "    <section class=\"mentat-card scanlines charter-hero\">\n"
+        "      <div class=\"charter-hero-heading\">\n"
+        "        <img class=\"institute-seal\" src=\"assets/sapho-seal.png\" alt=\"Seal of the Sapho Chapterhouse Institute\" />\n"
+        "        <h1>Sapho Chapterhouse Institute</h1>\n"
+        "      </div>\n"
+        "      <p>Autonomous research publishing for Quiznat. The institute converts source signal into decision-grade insight with explicit evidence lineage, contradiction handling, and fail-closed publication controls.</p>\n"
+        "    </section>\n\n"
+        "    <section class=\"portal-section\">\n"
+        "      <h2>Primary Surfaces</h2>\n"
+        "      <div class=\"portal-grid two-up-grid\">\n"
+        "        <article class=\"mentat-card report-card\">\n"
+        "          <h3><a href=\"viewer.html?file=charter.md\">Institute Charter</a></h3>\n"
+        "          <p>The active public founding charter and operating law for Sapho Chapterhouse Institute.</p>\n"
+        "          <p class=\"meta\"><a href=\"viewer.html?file=charter.md\">Open Charter</a></p>\n"
+        "        </article>\n"
+        "        <article class=\"mentat-card report-card\">\n"
+        "          <h3><a href=\"kept-links.html\">Kept Artifact Index</a></h3>\n"
+        "          <p>Retained research artifacts with source links and styled artifact views.</p>\n"
+        "          <p class=\"meta\"><a href=\"kept-links.html\">Open Index</a></p>\n"
+        "        </article>\n"
+        "      </div>\n"
+        "    </section>\n\n"
+        "    <section class=\"portal-section\">\n"
+        "      <h2>Recent Kept Artifacts</h2>\n"
+        "      <div class=\"portal-grid two-up-grid\">\n"
+        f"{kept_block}\n"
+        "      </div>\n"
+        "    </section>\n\n"
+        "    <p class=\"footer\">Sapho Chapterhouse Institute Interface v2.0 · Charter and kept artifacts only</p>\n"
+        "  </main>\n"
+        "</body>\n"
+        "</html>\n"
+    )
+
+
+def apply_website2_surface_overrides(current_items: list[dict]) -> None:
     if site_mode() != "github-pages":
         return
-    index_path = PUBLIC_DIR / "index.html"
-    if index_path.exists():
-        homepage = read_text(index_path)
-        homepage = re.sub(
-            r'\n\s*<link rel="alternate" type="application/rss\+xml"[^>]+>\n?',
-            "\n",
-            homepage,
-            count=1,
-        )
-        homepage = re.sub(
-            r'\n\s*<article class="mentat-card report-card">\s*<h3><a href="artifacts\.xml">Artifacts RSS</a></h3>.*?</article>',
-            "",
-            homepage,
-            flags=re.S,
-            count=1,
-        )
-        homepage = homepage.replace("<h2>Machine Entry</h2>", "<h2>Machine Entry and Operations</h2>")
-        write_text(index_path, homepage)
+    write_text(PUBLIC_DIR / "index.html", build_website2_homepage(current_items))
     ensure_custom_domain_file()
 
 
@@ -1574,7 +1628,7 @@ def render_artifact_site(include_ready_ids: set[str] | None = None) -> list[dict
     validate_public_alias_surfaces(current_items)
     render_site_inventory()
     refresh_agents_page()
-    apply_website2_surface_overrides()
+    apply_website2_surface_overrides(current_items)
     validate_artifact_render(current_items)
     return current_items
 
@@ -1589,7 +1643,7 @@ def render_daily_briefing_site() -> dict[str, str]:
         write_text(PUBLIC_DIR / "daily.xml", build_daily_feed(brief_rows))
     render_site_inventory()
     refresh_agents_page()
-    apply_website2_surface_overrides()
+    apply_website2_surface_overrides([])
     validate_daily_briefing_render(current_brief, seed_dir)
     return current_brief
 
@@ -1632,7 +1686,7 @@ def render_site() -> None:
     validate_public_alias_surfaces(current_items)
     render_site_inventory()
     refresh_agents_page()
-    apply_website2_surface_overrides()
+    apply_website2_surface_overrides(current_items)
     validate_render(current_items, current_brief)
 
 
