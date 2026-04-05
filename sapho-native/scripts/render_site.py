@@ -655,52 +655,10 @@ def extract_bullet_lines(section_text: str) -> list[str]:
 
 
 def build_public_artifact_markdown(public_id: str, title: str, meta: dict, body: str) -> str:
-    sections = parse_sections(body)
-    core_thesis = sections.get("Core Thesis", "").strip()
-    why_it_matters = sections.get("Why It Matters", "").strip()
-    limits = sections.get("Limits", "").strip()
-    findings = extract_bullet_lines(sections.get("Key Findings", ""))
-    evidence = extract_bullet_lines(sections.get("Evidence Base", ""))
-
-    alternate_sources = [str(value).strip() for value in (meta.get('alternate_source_urls') or []) if str(value).strip()]
-    source_metadata_lines = [
-        f"- Title: {title}\n",
-        f"- URL: {meta.get('source_url', '')}\n",
-        "- Source type: Sapho Daily artifact\n",
-        f"- Curated at (UTC): {meta.get('captured_at_utc') or meta.get('queued_at_utc') or ''}\n",
-        f"- Finalized at (UTC): {meta.get('artifact_minted_at_utc') or ''}\n",
-    ]
-    for alt_url in alternate_sources:
-        source_metadata_lines.append(f"- Alternate surface: {alt_url}\n")
-
-    parts = [
-        f"# {title}\n\n",
-        "## Source metadata\n",
-        *source_metadata_lines,
-        "\n",
-        "## Core thesis\n",
-        f"{core_thesis}\n\n" if core_thesis else "\n",
-        "## Why it matters for Sapho\n",
-        f"{why_it_matters}\n\n" if why_it_matters else "\n",
-    ]
-
-    if findings:
-        parts.append("## Key findings\n")
-        for item in findings:
-            parts.append(f"{item}\n")
-        parts.append("\n")
-
-    if evidence:
-        parts.append("## Evidence base\n")
-        for item in evidence:
-            parts.append(f"{item}\n")
-        parts.append("\n")
-
-    if limits:
-        parts.append("## Limits\n")
-        parts.append(f"{limits}\n")
-
-    return "".join(parts).rstrip() + "\n"
+    canonical_body = strip_frontmatter(body).strip()
+    if canonical_body:
+        return canonical_body.rstrip() + "\n"
+    return f"# {title}\n\nArtifact body unavailable.\n"
 
 
 def artifact_publication_is_current(meta: dict) -> bool:
