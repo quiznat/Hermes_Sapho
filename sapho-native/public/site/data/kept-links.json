@@ -1,32 +1,24 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-04T23:58:06Z",
-  "generatedAtUtc": "2026-04-04T23:58:06Z",
-  "processedCount": 663,
-  "decisionedCount": 663,
-  "keptCount": 146,
+  "last_updated": "2026-04-05T01:07:32Z",
+  "generatedAtUtc": "2026-04-05T01:07:32Z",
+  "processedCount": 26,
+  "decisionedCount": 26,
+  "keptCount": 26,
   "decisionCounts": {
-    "retain": 146,
-    "discard": 507,
-    "defer": 10
+    "retain": 26
   },
   "laneCounts": {
-    "agent-memory": 51,
-    "agent-factory": 97,
-    "reach-engagement-marketing-lane": 1,
-    "UI-design": 11,
-    "operations-reliability": 4,
-    "agent-research": 21,
-    "agent-memory-systems": 1
+    "agent-factory": 26
   },
   "items": [
     {
-      "id": "pub-20260304036",
-      "title": "SWE-ContextBench: Measuring Experience Reuse in Programming Agents",
-      "displayTitle": "SWE-ContextBench: Measuring Experience Reuse in Programming Agents",
-      "summary": "Programming agents can improve their performance by reusing prior solution experiences, but the effectiveness of this reuse depends heavily on context selection and summarization. SWE-ContextBench provides a structured evaluation framework that isolates and measures these effect\u2026",
-      "url": "https://arxiv.org/abs/2602.08316",
-      "dailyDate": "2026-03-30",
+      "id": "pub-20260324005",
+      "title": "What are popular AI coding benchmarks actually measuring? - nilenso blog",
+      "displayTitle": "What are popular AI coding benchmarks actually measuring? - nilenso blog",
+      "summary": "SWE-bench Verified is best read as a narrow test of whether an agent can produce a patch for a real GitHub issue that makes the issue\u2019s unit tests pass. The source argues that this is useful but easy to overread: the benchmark is entirely Python, heavily concentrated in Django,\u2026",
+      "url": "https://blog.nilenso.com/blog/2025/09/25/swe-benchmarks",
+      "dailyDate": "2026-04-04",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -37,19 +29,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:30:02Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304036-swe-contextbench-measuring-experience-reuse-in-programming-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304036-swe-contextbench-measuring-experience-reuse-in-programming-agents.md",
+      "processedAtUtc": "2026-04-04T04:47:18Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324005-what-are-popular-ai-coding-benchmarks-actually-measuring-nilenso-blog.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260324005-what-are-popular-ai-coding-benchmarks-actually-measuring-nilenso-blog.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
-      "id": "pub-20260304023",
-      "title": "SWE-bench Exposes the Gap Between Language Models and Real-World Software Engineering",
-      "displayTitle": "SWE-bench Exposes the Gap Between Language Models and Real-World Software Engineering",
-      "summary": "SWE-bench establishes a rigorous new benchmark for evaluating language models on practical software engineering tasks, using 2,294 authentic GitHub issues drawn from 12 popular Python repositories. Unlike prior benchmarks focused on isolated code generation, SWE-bench tests whet\u2026",
-      "url": "https://arxiv.org/abs/2310.06770",
-      "dailyDate": "2026-03-30",
+      "id": "pub-20260324004",
+      "title": "#1 open-source agent on SWE-Bench Verified by combining Claude 3.7 and O1 | Augment Code",
+      "displayTitle": "#1 open-source agent on SWE-Bench Verified by combining Claude 3.7 and O1 | Augment Code",
+      "summary": "Augment\u2019s report argues that a high SWE-bench Verified score can be pushed upward by system composition rather than by a single model alone: its submitted setup reportedly reached 65.4% by using Claude Sonnet 3.7 as the main agent and OpenAI o1 as an ensembler, while also inferr\u2026",
+      "url": "https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1",
+      "dailyDate": "2026-04-04",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -60,19 +52,134 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:26:29Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304023-swe-bench-exposes-the-gap-between-language-models-and-real-world-software-engineering.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304023-swe-bench-exposes-the-gap-between-language-models-and-real-world-software-engineering.md",
+      "processedAtUtc": "2026-04-04T04:44:13Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324004-1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1-augment-code.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260324004-1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1-augment-code.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260324003",
+      "title": "Testing AI coding agents (2025): Cursor vs. Claude, OpenAI, and Gemini | Render Blog",
+      "displayTitle": "Testing AI coding agents (2025): Cursor vs. Claude, OpenAI, and Gemini | Render Blog",
+      "summary": "This benchmark points to a narrow but useful conclusion: Cursor looked strongest in the greenfield app-generation test and also performed well on one production backend refactor, but the benchmark as a whole does not justify a clean overall ranking because part of the production\u2026",
+      "url": "https://render.com/blog/ai-coding-agents-benchmark",
+      "dailyDate": "2026-04-04",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-04T04:41:23Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-cursor-vs-claude-openai-and-gemini-render-blog.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-cursor-vs-claude-openai-and-gemini-render-blog.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260324002",
+      "title": "Top Coding Agents (2025) | Benched.ai",
+      "displayTitle": "Top Coding Agents (2025) | Benched.ai",
+      "summary": "This source\u2019s strongest usable contribution is not a clean leaderboard but a bounded reporting comparison: among the agents covered in the excerpt, Claude Code is the only one presented with multiple named benchmark figures across different evaluations and model variants, while\u2026",
+      "url": "https://benched.ai/guides/top-coding-agents-2025",
+      "dailyDate": "2026-04-04",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-04T04:37:41Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324002-top-coding-agents-2025-benched-ai.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260324002-top-coding-agents-2025-benched-ai.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260304036",
+      "title": "SWE Context Bench: A Benchmark for Context Learning in Coding",
+      "displayTitle": "SWE Context Bench: A Benchmark for Context Learning in Coding",
+      "summary": "SWE-ContextBench reframes coding-agent evaluation around context reuse rather than isolated task solving by pairing 300 SWE-Bench Lite tasks with 99 manually verified related tasks from real issue and pull-request relationships. In the reported benchmark results, compact high-qu\u2026",
+      "url": "https://arxiv.org/abs/2602.08316",
+      "dailyDate": "2026-04-02",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-02T23:44:11Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304036-swe-context-bench-a-benchmark-for-context-learning-in-coding.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304036-swe-context-bench-a-benchmark-for-context-learning-in-coding.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260304035",
+      "title": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "displayTitle": "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models",
+      "summary": "Agentic Context Engineering (ACE) argues that adaptation can be moved into context itself rather than into model weights or heavy supervised pipelines. In the paper\u2019s reported evaluations, that approach produces meaningful benchmark gains across agent and finance tasks, includin\u2026",
+      "url": "https://arxiv.org/abs/2510.04618",
+      "dailyDate": "2026-04-02",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-02T23:41:12Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304035-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304035-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260304034",
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "displayTitle": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "summary": "Software-engineering agents improve materially when the model is not left to operate through a raw shell alone but is given a language-model-tailored interface for search, file viewing, and guarded editing. In this paper, that interface raises benchmark solve rates versus prior\u2026",
+      "url": "https://arxiv.org/abs/2405.15793",
+      "dailyDate": "2026-04-02",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-02T23:24:49Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-enable-automated-software-engineering.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-enable-automated-software-engineering.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260304032",
-      "title": "Confucius Code Agent: Open-Source AI Engineering at Industrial Scale",
-      "displayTitle": "Confucius Code Agent: Open-Source AI Engineering at Industrial Scale",
-      "summary": "The Confucius Code Agent (CCA) and its accompanying SDK represent a new open-source entry in industrial-scale AI software engineering, achieving state-of-the-art performance through a carefully balanced architecture that prioritizes agent reasoning, user transparency, and develo\u2026",
+      "title": "Confucius Code Agent: An Open-sourced AI Software Engineer at Industrial Scale",
+      "displayTitle": "Confucius Code Agent: An Open-sourced AI Software Engineer at Industrial Scale",
+      "summary": "Confucius Code Agent presents an open-source software-engineering agent stack aimed at large-repository, industrial-style work by combining a unified orchestrator with hierarchical context management, persistent note reuse, and modular tool extensions, and the paper reports that\u2026",
       "url": "https://arxiv.org/abs/2512.10398",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -83,19 +190,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:25:02Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304032-confucius-code-agent-open-source-ai-engineering-at-industrial-scale.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304032-confucius-code-agent-open-source-ai-engineering-at-industrial-scale.md",
+      "processedAtUtc": "2026-04-02T23:21:34Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304032-confucius-code-agent-an-open-sourced-ai-software-engineer-at-industrial-scale.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304032-confucius-code-agent-an-open-sourced-ai-software-engineer-at-industrial-scale.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260304031",
-      "title": "Codifying Expertise: A Software Engineering Framework for Knowledge-Augmented AI Agents",
-      "displayTitle": "Codifying Expertise: A Software Engineering Framework for Knowledge-Augmented AI Agents",
-      "summary": "This research presents a software engineering framework that systematically captures and embeds human domain expertise into AI agent systems by combining explicit procedural rules with tacit design principles, validated through an industrial case study in simulation data visuali\u2026",
+      "title": "How to Build AI Agents by Augmenting LLMs with Codified Human Expert Domain Knowledge? A Software Engineering Framework",
+      "displayTitle": "How to Build AI Agents by Augmenting LLMs with Codified Human Expert Domain Knowledge? A Software Engineering Framework",
+      "summary": "The paper argues that domain agents improve materially when an LLM is not left to improvise alone, but is coupled to explicit expert knowledge encoded as software, retrieval-backed code generation, and expert-guided design rules. In the reported evaluation, that combined archite\u2026",
       "url": "https://arxiv.org/abs/2601.15153",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -106,9 +213,9 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:20:02Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304031-codifying-expertise-a-software-engineering-framework-for-knowledge-augmented-ai-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304031-codifying-expertise-a-software-engineering-framework-for-knowledge-augmented-ai-agents.md",
+      "processedAtUtc": "2026-04-02T23:18:14Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304031-how-to-build-ai-agents-by-augmenting-llms-with-codified-human-expert-domain-knowledge-a-software-engineering-framework.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304031-how-to-build-ai-agents-by-augmenting-llms-with-codified-human-expert-domain-knowledge-a-software-engineering-framework.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
@@ -116,9 +223,9 @@
       "id": "pub-20260304029",
       "title": "Decoding the Configuration of AI Coding Agents: Insights from Claude Code Projects",
       "displayTitle": "Decoding the Configuration of AI Coding Agents: Insights from Claude Code Projects",
-      "summary": "A study of 328 Claude.md configuration files from popular open-source repositories reveals how practitioners currently structure guidance for AI coding assistants, with software architecture concerns dominating developer attention.",
+      "summary": "Public Claude Code project configurations are not lightweight prompt scraps; in the sampled repositories they function mainly as structured project orientation layers. The dominant pattern is to tell the coding agent how the system is organized, what it depends on, and what the\u2026",
       "url": "https://arxiv.org/abs/2511.09268",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -129,7 +236,7 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:14:22Z",
+      "processedAtUtc": "2026-04-02T22:27:09Z",
       "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304029-decoding-the-configuration-of-ai-coding-agents-insights-from-claude-code-projects.md",
       "artifactWebPath": "artifacts/kb/queue/queue-20260304029-decoding-the-configuration-of-ai-coding-agents-insights-from-claude-code-projects.md",
       "historicalRegimeArtifact": false,
@@ -137,11 +244,11 @@
     },
     {
       "id": "pub-20260304027",
-      "title": "Coding Agents Are Already Mainstream on GitHub",
-      "displayTitle": "Coding Agents Are Already Mainstream on GitHub",
-      "summary": "Coding agents have achieved remarkably rapid adoption across the open-source ecosystem. A large-scale analysis of over 129,000 GitHub projects estimates that 15.85% to 22.60% now use these tools, a striking penetration rate for a technology category that only emerged in the firs\u2026",
+      "title": "Agentic Much? Adoption of Coding Agents on GitHub",
+      "displayTitle": "Agentic Much? Adoption of Coding Agents on GitHub",
+      "summary": "Coding-agent use on GitHub is already material rather than marginal, with the study estimating adoption at 15.85% to 22.60% across 129,134 projects. The central finding is not just that agent use is visible at scale, but that visible file traces alone miss a meaningful share of\u2026",
       "url": "https://arxiv.org/abs/2601.18341",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -152,9 +259,9 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:11:37Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304027-coding-agents-are-already-mainstream-on-github.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304027-coding-agents-are-already-mainstream-on-github.md",
+      "processedAtUtc": "2026-04-02T22:02:34Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304027-agentic-much-adoption-of-coding-agents-on-github.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304027-agentic-much-adoption-of-coding-agents-on-github.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
@@ -162,9 +269,9 @@
       "id": "pub-20260304026",
       "title": "ChatDev: Communicative Agents for Software Development",
       "displayTitle": "ChatDev: Communicative Agents for Software Development",
-      "summary": "ChatDev demonstrates that software development can be automated through collaborative LLM agents assigned distinct social roles, structured communication protocols, and phased workflows\u2014mitigating the hallucination risks that plague solo LLM coding tools.",
+      "summary": "ChatDev argues that software generation can be organized as a staged multi-agent process rather than a single-pass coding prompt: specialized agents negotiate design, implementation, review, and testing through structured dialogue, and that communication scaffold produces better\u2026",
       "url": "https://arxiv.org/abs/2307.07924",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -175,65 +282,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T18:09:02Z",
+      "processedAtUtc": "2026-04-02T21:59:37Z",
       "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304026-chatdev-communicative-agents-for-software-development.md",
       "artifactWebPath": "artifacts/kb/queue/queue-20260304026-chatdev-communicative-agents-for-software-development.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
-      "id": "pub-20260304025",
-      "title": "Context Engineering: A New Discipline for Systematic LLM Optimization",
-      "displayTitle": "Context Engineering: A New Discipline for Systematic LLM Optimization",
-      "summary": "Context Engineering has emerged as a formal discipline for systematically optimizing the information payloads fed into large language models, extending far beyond traditional prompt design. This survey establishes a comprehensive taxonomy organizing the field into foundational C\u2026",
-      "url": "https://arxiv.org/abs/2507.13334",
-      "dailyDate": "2026-03-30",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-30T18:06:19Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304025-context-engineering-a-new-discipline-for-systematic-llm-optimization.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304025-context-engineering-a-new-discipline-for-systematic-llm-optimization.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304024",
-      "title": "Testing and Enhancing Multi-Agent Systems for Robust Code Generation",
-      "displayTitle": "Testing and Enhancing Multi-Agent Systems for Robust Code Generation",
-      "summary": "Multi-agent systems for automated code generation exhibit severe fragility when subjected to semantic-preserving input mutations, with a \"planner-coder gap\"\u2014where planning agents provide insufficient detail and coding agents misinterpret instructions\u2014emerging as the dominant fai\u2026",
-      "url": "https://arxiv.org/abs/2510.10460",
-      "dailyDate": "2026-03-30",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-30T18:03:07Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304024-testing-and-enhancing-multi-agent-systems-for-robust-code-generation.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304024-testing-and-enhancing-multi-agent-systems-for-robust-code-generation.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
       "id": "pub-20260304022",
-      "title": "Developer-Provided Context Shapes AI Coding Assistant Effectiveness",
-      "displayTitle": "Developer-Provided Context Shapes AI Coding Assistant Effectiveness",
-      "summary": "A large-scale empirical study of 401 open-source repositories reveals that developers are systematically curating project-specific context through \"rule files\" to guide AI coding assistants. This research establishes five essential categories of developer-provided context\u2014Conven\u2026",
+      "title": "An Empirical Study of Developer-Provided Context for AI Coding Assistants in Open-Source Projects",
+      "displayTitle": "An Empirical Study of Developer-Provided Context for AI Coding Assistants in Open-Source Projects",
+      "summary": "Developer-supplied context for AI coding assistants in open-source repositories is not a narrow set of prompts but a structured operating layer: across 401 cleaned repositories, maintainers most often supplied guidelines, project information, and conventions, usually in combinat\u2026",
       "url": "https://arxiv.org/abs/2512.18925",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -244,19 +305,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T17:58:57Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304022-developer-provided-context-shapes-ai-coding-assistant-effectiveness.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304022-developer-provided-context-shapes-ai-coding-assistant-effectiveness.md",
+      "processedAtUtc": "2026-04-02T21:18:55Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304022-an-empirical-study-of-developer-provided-context-for-ai-coding-assistants-in-open-source-projects.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304022-an-empirical-study-of-developer-provided-context-for-ai-coding-assistants-in-open-source-projects.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260304021",
-      "title": "Controlled Collaboration: How Experienced Developers Actually Use AI Agents",
-      "displayTitle": "Controlled Collaboration: How Experienced Developers Actually Use AI Agents",
-      "summary": "Contrary to popular narratives of passive AI delegation, experienced software developers actively control and supervise AI agents rather than \"vibe coding\"\u2014treating these tools as instruments for productivity gains while maintaining strict governance over architecture, quality,\u2026",
+      "title": "Professional Software Developers Don\u2019t Vibe, They Control: AI Agent Use for Coding in 2025",
+      "displayTitle": "Professional Software Developers Don\u2019t Vibe, They Control: AI Agent Use for Coding in 2025",
+      "summary": "Among experienced developers, AI coding agents are treated as supervised productivity tools rather than autonomous replacements. The paper\u2019s central finding is not that professionals hand work over to agents, but that they preserve control through planning, close supervision, ou\u2026",
       "url": "https://arxiv.org/abs/2512.14012",
-      "dailyDate": "2026-03-30",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -267,19 +328,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T17:55:39Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304021-controlled-collaboration-how-experienced-developers-actually-use-ai-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304021-controlled-collaboration-how-experienced-developers-actually-use-ai-agents.md",
+      "processedAtUtc": "2026-04-02T21:15:25Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304021-professional-software-developers-don-t-vibe-they-control-ai-agent-use-for-coding-in-2025.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304021-professional-software-developers-don-t-vibe-they-control-ai-agent-use-for-coding-in-2025.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
-      "id": "pub-20260304034",
-      "title": "SWE-agent: Agent-Computer Interfaces Unlock Automated Software Engineering",
-      "displayTitle": "SWE-agent: Agent-Computer Interfaces Unlock Automated Software Engineering",
-      "summary": "SWE-agent argues that autonomous software engineering depends not just on stronger language models but on a purpose-built agent-computer interface. By redesigning the commands, feedback, and guardrails around coding work, the paper shows that interface design itself is a major p\u2026",
-      "url": "https://arxiv.org/abs/2405.15793",
-      "dailyDate": "2026-03-30",
+      "id": "pub-20260304023",
+      "title": "Published as a conference paper at ICLR 2024",
+      "displayTitle": "Published as a conference paper at ICLR 2024",
+      "summary": "SWE-bench turns real GitHub maintenance episodes into a tightly filtered executable benchmark, and the result is a hard test of practical code-repair ability: from roughly 90,000 pull requests across 12 Python repositories, only 2,294 tasks survive the admission pipeline, and un\u2026",
+      "url": "https://arxiv.org/abs/2310.06770",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -290,111 +351,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-30T17:31:53Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-unlock-automated-software-engineering.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-unlock-automated-software-engineering.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304060",
-      "title": "Agent SOPs Automate Documentation Generation for Complex Codebases",
-      "displayTitle": "Agent SOPs Automate Documentation Generation for Complex Codebases",
-      "summary": "Strands Agent SOPs demonstrate that natural language workflows can systematically generate comprehensive documentation ecosystems, transforming how development teams maintain technical knowledge. By analyzing module structure and architectural patterns, these workflows produce s\u2026",
-      "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-agent-sops-natural-language-workflows-for-ai-agents",
-      "dailyDate": "2026-03-30",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-30T07:05:02Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304060-agent-sops-automate-documentation-generation-for-complex-codebases.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304060-agent-sops-automate-documentation-generation-for-complex-codebases.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304050",
-      "title": "OpenClaw Goes Serverless: Self-Hosted AI Agents Break Free from Hardware",
-      "displayTitle": "OpenClaw Goes Serverless: Self-Hosted AI Agents Break Free from Hardware",
-      "summary": "The self-hosted AI agent formerly known as Moltbot\u2014now OpenClaw\u2014can now run entirely on Cloudflare's serverless platform thanks to Moltworker, a middleware solution that bridges the gap between personal AI infrastructure and cloud-native deployment. This shift is enabled by Clou\u2026",
-      "url": "https://blog.cloudflare.com/moltworker-self-hosted-ai-agent",
-      "dailyDate": "2026-03-30",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-30T07:00:03Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304050-openclaw-goes-serverless-self-hosted-ai-agents-break-free-from-hardware.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304050-openclaw-goes-serverless-self-hosted-ai-agents-break-free-from-hardware.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304035",
-      "title": "ACE: Agentic Context Engineering for Adaptive LLM Performance",
-      "displayTitle": "ACE: Agentic Context Engineering for Adaptive LLM Performance",
-      "summary": "ACE (Agentic Context Engineering) introduces a modular framework that treats LLM contexts as evolving playbooks, using structured generation, reflection, and curation to prevent context collapse while enabling continuous adaptation without labeled supervision.",
-      "url": "https://arxiv.org/abs/2510.04618",
-      "dailyDate": "2026-03-30",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-30T06:50:03Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304035-ace-agentic-context-engineering-for-adaptive-llm-performance.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304035-ace-agentic-context-engineering-for-adaptive-llm-performance.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304033",
-      "title": "AutoGen: Multi-Agent Conversation for Next-Generation LLM Applications",
-      "displayTitle": "AutoGen: Multi-Agent Conversation for Next-Generation LLM Applications",
-      "summary": "AutoGen is a framework that enables next-generation large language model applications through structured multi-agent conversation. Authored by Qingyun Wu and thirteen colleagues and submitted to arXiv in August 2023 (revised October 2023), the system represents an early systemat\u2026",
-      "url": "https://arxiv.org/abs/2308.08155",
-      "dailyDate": "2026-03-30",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-30T06:40:02Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304033-autogen-multi-agent-conversation-for-next-generation-llm-applications.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304033-autogen-multi-agent-conversation-for-next-generation-llm-applications.md",
+      "processedAtUtc": "2026-04-02T21:12:52Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304023-published-as-a-conference-paper-at-iclr-2024.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304023-published-as-a-conference-paper-at-iclr-2024.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260304020",
-      "title": "MetaGPT: Structured Collaboration for LLM Multi-Agent Systems",
-      "displayTitle": "MetaGPT: Structured Collaboration for LLM Multi-Agent Systems",
-      "summary": "MetaGPT introduces a meta-programming framework that orchestrates LLM-based multi-agent collaboration through encoded Standard Operating Procedures (SOPs), replacing free-form chat with structured workflows and verification steps that yield more coherent software engineering sol\u2026",
+      "title": "MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework",
+      "displayTitle": "MetaGPT: Meta Programming for a Multi-Agent Collaborative Framework",
+      "summary": "MetaGPT argues that code-generation performance improves when multi-agent software work is forced through explicit role specialization, structured intermediate artifacts, and executable feedback loops rather than left as an unstructured conversation. The reported result is stron\u2026",
       "url": "https://arxiv.org/abs/2308.00352",
-      "dailyDate": "2026-03-28",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -405,19 +374,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-28T18:15:20Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304020-metagpt-structured-collaboration-for-llm-multi-agent-systems.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304020-metagpt-structured-collaboration-for-llm-multi-agent-systems.md",
+      "processedAtUtc": "2026-04-02T21:12:46Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304020-metagpt-meta-programming-for-a-multi-agent-collaborative-framework.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304020-metagpt-meta-programming-for-a-multi-agent-collaborative-framework.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260304018",
-      "title": "A New Context Engineering Workflow for Multi-Agent LLM Code Assistants",
-      "displayTitle": "A New Context Engineering Workflow for Multi-Agent LLM Code Assistants",
-      "summary": "Muhammad Haseeb's recent work proposes and demonstrates a novel context engineering workflow designed specifically for multi-agent LLM code assistants. The system leverages a coordinated ensemble of tools\u2014including Elicit, NotebookLM, ChatGPT, and Claude Code\u2014to improve both acc\u2026",
+      "title": "Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code",
+      "displayTitle": "Context Engineering for Multi-Agent LLM Code Assistants Using Elicit, NotebookLM, ChatGPT, and Claude Code",
+      "summary": "A context-engineered multi-agent code assistant can outperform a single-agent baseline on complex repository tasks by translating intent, retrieving outside and in-repo context, synthesizing that material into usable working knowledge, and routing implementation through speciali\u2026",
       "url": "https://arxiv.org/abs/2508.08322",
-      "dailyDate": "2026-03-28",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -428,88 +397,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-28T18:11:48Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304018-a-new-context-engineering-workflow-for-multi-agent-llm-code-assistants.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304018-a-new-context-engineering-workflow-for-multi-agent-llm-code-assistants.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304016",
-      "title": "A Survey on Code Generation with LLM-based Agents",
-      "displayTitle": "A Survey on Code Generation with LLM-based Agents",
-      "summary": "Dong et al. deliver a systematic survey mapping the evolution of LLM-based code generation agents, taxonomizing their architectures and techniques, cataloging applications across the software development lifecycle, and consolidating benchmarks and open problems into a single ref\u2026",
-      "url": "https://arxiv.org/abs/2508.00083",
-      "dailyDate": "2026-03-28",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-28T18:08:14Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304016-a-survey-on-code-generation-with-llm-based-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304016-a-survey-on-code-generation-with-llm-based-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304015",
-      "title": "Promptware Engineering: A Systematic Framework for Building Prompt-Enabled Systems",
-      "displayTitle": "Promptware Engineering: A Systematic Framework for Building Prompt-Enabled Systems",
-      "summary": "This paper introduces \"promptware engineering,\" a disciplined methodology that adapts established Software Engineering principles to the development of prompt-enabled systems. By identifying the emerging \"promptware crisis\"\u2014the gap between ad-hoc prompt development and productio\u2026",
-      "url": "https://arxiv.org/abs/2503.02400",
-      "dailyDate": "2026-03-28",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-28T18:04:31Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304015-promptware-engineering-a-systematic-framework-for-building-prompt-enabled-systems.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304015-promptware-engineering-a-systematic-framework-for-building-prompt-enabled-systems.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260304012",
-      "title": "Mapping the Failure Modes of Multi-Agent LLM Systems",
-      "displayTitle": "Mapping the Failure Modes of Multi-Agent LLM Systems",
-      "summary": "A team of researchers from UC Berkeley and collaborating institutions has developed MAST, a comprehensive taxonomy, and MAST-Data, a dedicated dataset, to systematically categorize and analyze why multi-agent LLM systems fail. This framework provides the first structured approac\u2026",
-      "url": "https://arxiv.org/abs/2503.13657",
-      "dailyDate": "2026-03-28",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-28T18:00:53Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304012-mapping-the-failure-modes-of-multi-agent-llm-systems.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304012-mapping-the-failure-modes-of-multi-agent-llm-systems.md",
+      "processedAtUtc": "2026-04-02T18:22:38Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304018-context-engineering-for-multi-agent-llm-code-assistants-using-elicit-notebooklm-chatgpt-and-claude-code.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304018-context-engineering-for-multi-agent-llm-code-assistants-using-elicit-notebooklm-chatgpt-and-claude-code.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260304003",
-      "title": "AGENTS.md: An Emerging Standard for AI Context in Open Source",
-      "displayTitle": "AGENTS.md: An Emerging Standard for AI Context in Open Source",
-      "summary": "As agent-based AI coding assistants replace earlier GenAI tools, developers are converging on AGENTS.md as a de facto standard for consolidating agent context\u2014replacing fragmented, tool-specific Markdown files with a single, structured format.",
+      "title": "Context Engineering for AI Agents in Open-Source Software",
+      "displayTitle": "Context Engineering for AI Agents in Open-Source Software",
+      "summary": "Open-source repositories had low visible uptake of the agent-configuration formats this study examined, and the instruction files that do exist do not yet look like a settled engineering standard. Adoption was sparse in the sampled repositories, structure in AGENTS.md files was\u2026",
       "url": "https://arxiv.org/abs/2510.21413",
-      "dailyDate": "2026-03-28",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -520,19 +420,42 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-28T17:54:20Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304003-agents-md-an-emerging-standard-for-ai-context-in-open-source.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260304003-agents-md-an-emerging-standard-for-ai-context-in-open-source.md",
+      "processedAtUtc": "2026-04-02T18:17:10Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304003-context-engineering-for-ai-agents-in-open-source-software.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304003-context-engineering-for-ai-agents-in-open-source-software.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260304012",
+      "title": "Why Do Multi-Agent LLM Systems Fail?",
+      "displayTitle": "Why Do Multi-Agent LLM Systems Fail?",
+      "summary": "Evaluated multi-agent LLM systems show only marginal gains over single-agent baselines, and the weakness is not explained by one dominant defect. The paper\u2019s central contribution is a failure landscape: 14 distinct failure modes across 3 categories, with evidence that coordinati\u2026",
+      "url": "https://arxiv.org/abs/2503.13657",
+      "dailyDate": "2026-04-02",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-02T17:52:41Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304012-why-do-multi-agent-llm-systems-fail.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304012-why-do-multi-agent-llm-systems-fail.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260303013",
-      "title": "Codified Context: A New Infrastructure for AI Agents in Complex Codebases",
-      "displayTitle": "Codified Context: A New Infrastructure for AI Agents in Complex Codebases",
-      "summary": "This paper introduces Codified Context, a novel three-component infrastructure designed to enable AI agents to operate effectively within complex codebases. By structuring how contextual information is captured and utilized, the system aims to bridge the gap between general agen\u2026",
+      "title": "Codified Context: Infrastructure for AI Agents in a Complex Codebase",
+      "displayTitle": "Codified Context: Infrastructure for AI Agents in a Complex Codebase",
+      "summary": "The paper argues that AI-agent work in a large live codebase can be stabilized by splitting project context into tiers with different loading rules: a permanently loaded constitution for operating rules and routing, task-invoked specialist agents for focused domain behavior, and\u2026",
       "url": "https://arxiv.org/abs/2602.20478",
-      "dailyDate": "2026-03-28",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -543,9 +466,9 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-28T17:51:16Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303013-codified-context-a-new-infrastructure-for-ai-agents-in-complex-codebases.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260303013-codified-context-a-new-infrastructure-for-ai-agents-in-complex-codebases.md",
+      "processedAtUtc": "2026-04-02T16:20:22Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303013-codified-context-infrastructure-for-ai-agents-in-a-complex-codebase.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260303013-codified-context-infrastructure-for-ai-agents-in-a-complex-codebase.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
@@ -553,9 +476,9 @@
       "id": "pub-20260303008",
       "title": "When AGENTS.md Backfires: What a New Study Says About Context Files and Coding Agents",
       "displayTitle": "When AGENTS.md Backfires: What a New Study Says About Context Files and Coding Agents",
-      "summary": "A February 2026 study by ETH Zurich researchers delivers an unexpected verdict on AGENTS.md: LLM-generated context files harm task success rates while driving up inference costs by 20%, challenging the rationale behind a format that has proliferated to over 60,000 public reposit\u2026",
+      "summary": "The reported ETH Zurich results cut against the default assumption that adding a context file helps coding agents. Across four agents and three context-file conditions, LLM-generated files more often reduced task success than improved it, while both generated and developer-writt\u2026",
       "url": "https://notchrisgroves.com/when-agents-md-backfires",
-      "dailyDate": "2026-03-28",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -566,7 +489,7 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-28T17:48:24Z",
+      "processedAtUtc": "2026-04-02T15:37:05Z",
       "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303008-when-agents-md-backfires-what-a-new-study-says-about-context-files-and-coding-agents.md",
       "artifactWebPath": "artifacts/kb/queue/queue-20260303008-when-agents-md-backfires-what-a-new-study-says-about-context-files-and-coding-agents.md",
       "historicalRegimeArtifact": false,
@@ -574,11 +497,11 @@
     },
     {
       "id": "pub-20260303004",
-      "title": "AGENTS.md Boosts AI Coding Agent Efficiency",
-      "displayTitle": "AGENTS.md Boosts AI Coding Agent Efficiency",
-      "summary": "Researchers from Singapore Management University, Heidelberg University, University of Bamberg, and King's College London have quantified how AGENTS.md files affect AI coding agent performance, demonstrating measurable impacts on both runtime efficiency and token consumption whe\u2026",
+      "title": "arXiv 2601.20404",
+      "displayTitle": "arXiv 2601.20404",
+      "summary": "In a paired study covering 10 repositories and 124 pull requests, the presence of repository-level AGENTS.md guidance was associated with faster agent completion and lower output-token use, but the paper supports an efficiency reading more strongly than a correctness reading bec\u2026",
       "url": "https://arxiv.org/abs/2601.20404",
-      "dailyDate": "2026-03-27",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -589,19 +512,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-27T17:43:54Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303004-agents-md-boosts-ai-coding-agent-efficiency.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260303004-agents-md-boosts-ai-coding-agent-efficiency.md",
+      "processedAtUtc": "2026-04-02T15:34:01Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303004-arxiv-2601-20404.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260303004-arxiv-2601-20404.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
       "id": "pub-20260303002",
-      "title": "Agent READMEs: How Developers Keep AI Coders on Track",
-      "displayTitle": "Agent READMEs: How Developers Keep AI Coders on Track",
-      "summary": "A new empirical study examines how developers craft context files to guide AI coding agents, revealing patterns in structure, maintenance practices, and instruction types\u2014while exposing a notable gap in non-functional requirements specification.",
+      "title": "Agent READMEs: An Empirical Study of Context Files for Agentic Coding",
+      "displayTitle": "Agent READMEs: An Empirical Study of Context Files for Agentic Coding",
+      "summary": "Agent context files are not marginal setup artifacts. Across a large cross-repository sample, they appear to function as active operational guidance for coding agents: they differ meaningfully by ecosystem, they are revised as living documents rather than written once, and their\u2026",
       "url": "https://arxiv.org/html/2511.12884v1",
-      "dailyDate": "2026-03-27",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -612,19 +535,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-27T17:40:46Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303002-agent-readmes-how-developers-keep-ai-coders-on-track.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260303002-agent-readmes-how-developers-keep-ai-coders-on-track.md",
+      "processedAtUtc": "2026-04-02T15:31:04Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303002-agent-readmes-an-empirical-study-of-context-files-for-agentic-coding.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260303002-agent-readmes-an-empirical-study-of-context-files-for-agentic-coding.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
-      "id": "pub-20260303001",
-      "title": "Evaluating AGENTS.md: Do Repository-Level Context Files Help Coding Agents?",
-      "displayTitle": "Evaluating AGENTS.md: Do Repository-Level Context Files Help Coding Agents?",
-      "summary": "This paper presents a systematic empirical evaluation of repository-level context files (AGENTS.md) for coding agents, measuring their impact on task completion rates and inference costs through controlled experiments.",
-      "url": "https://arxiv.org/abs/2602.11988",
-      "dailyDate": "2026-03-27",
+      "id": "pub-20260304024",
+      "title": "Testing and Enhancing Multi-Agent Systems for Robust Code Generation",
+      "displayTitle": "Testing and Enhancing Multi-Agent Systems for Robust Code Generation",
+      "summary": "Current code-generation multi-agent systems are materially less robust than headline solve rates suggest: when prompts are rewritten in meaning-preserving ways, systems that had already solved a problem newly fail on 7.9% to 83.3% of those same problems. The paper\u2019s main practic\u2026",
+      "url": "https://arxiv.org/abs/2510.10460",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -635,9 +558,9 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-27T17:37:36Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303001-evaluating-agents-md-do-repository-level-context-files-help-coding-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260303001-evaluating-agents-md-do-repository-level-context-files-help-coding-agents.md",
+      "processedAtUtc": "2026-04-02T13:36:26Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260304024-testing-and-enhancing-multi-agent-systems-for-robust-code-generation.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260304024-testing-and-enhancing-multi-agent-systems-for-robust-code-generation.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
@@ -645,9 +568,9 @@
       "id": "pub-20260302025",
       "title": "Towards a Science of Scaling Agent Systems",
       "displayTitle": "Towards a Science of Scaling Agent Systems",
-      "summary": "Researchers have established quantitative scaling principles for agent systems, deriving measurable laws that govern how multi-agent architectures perform as complexity increases. Through controlled evaluation across multiple benchmarks and agent designs, the work moves beyond e\u2026",
+      "summary": "Scaling agent systems is not a general recipe for better performance. In the studied setting, multi-agent gains are conditional, benchmark-specific, and often erased by coordination cost once the base model is already fairly competent or the task is tool-heavy. The paper\u2019s main\u2026",
       "url": "https://arxiv.org/abs/2512.08296",
-      "dailyDate": "2026-03-27",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -658,19 +581,19 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-27T17:34:43Z",
+      "processedAtUtc": "2026-04-02T04:05:42Z",
       "artifactSourcePath": "research/artifacts/kb/queue/queue-20260302025-towards-a-science-of-scaling-agent-systems.md",
       "artifactWebPath": "artifacts/kb/queue/queue-20260302025-towards-a-science-of-scaling-agent-systems.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },
     {
-      "id": "pub-20260302013",
-      "title": "Demystifying Evals for AI Agents",
-      "displayTitle": "Demystifying Evals for AI Agents",
-      "summary": "AI agents operate differently from traditional software: they work autonomously across multiple turns, calling tools, modifying state, and adapting as they go. Evaluating these systems requires moving beyond simple input-output tests to sophisticated multi-turn evaluations that\u2026",
-      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
-      "dailyDate": "2026-03-27",
+      "id": "pub-20260303001",
+      "title": "Repository-level context files mostly add cost and activity overhead rather than improving coding-agent success",
+      "displayTitle": "Repository-level context files mostly add cost and activity overhead rather than improving coding-agent success",
+      "summary": "This study finds that repository-level context files, as currently used, usually do not help coding agents solve software tasks better. Across the evaluated agents and models, they generally lowered success rates relative to giving no repository context while raising inference c\u2026",
+      "url": "https://arxiv.org/abs/2602.11988",
+      "dailyDate": "2026-04-02",
       "rssRevision": 0,
       "rssRepublishedAtUtc": null,
       "status": "processed",
@@ -681,2432 +604,9 @@
       "laneTagsOriginal": [
         "agent-factory"
       ],
-      "processedAtUtc": "2026-03-27T17:29:37Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260302013-demystifying-evals-for-ai-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260302013-demystifying-evals-for-ai-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260302001",
-      "title": "The Agentic Software Factory: How AI Teams Debate, Code, and Secure Enterprise Infrastructure",
-      "displayTitle": "The Agentic Software Factory: How AI Teams Debate, Code, and Secure Enterprise Infrastructure",
-      "summary": "A coordinated multi-agent AI system can execute structured debate, autonomous implementation, and parallel validation to deliver production-ready code in real enterprise repositories. The approach was demonstrated by Ugo Enyioha in a technical case study that produced a working\u2026",
-      "url": "https://dev.to/uenyioha/the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure-9eh",
-      "dailyDate": "2026-03-27",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-27T17:14:29Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260302001-the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260302001-the-agentic-software-factory-how-ai-teams-debate-code-and-secure-enterprise-infrastructure.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260301001",
-      "title": "LLM-based Evolution as a Universal Optimizer",
-      "displayTitle": "LLM-based Evolution as a Universal Optimizer",
-      "summary": "Imbue has developed LLM-driven evolution as a general-purpose optimization method that sidesteps the manual, tedious work typically required to refine LLM-based systems. By treating code and agent behavior as evolvable populations rather than fixed prompts, the approach achieved\u2026",
-      "url": "https://imbue.com/research/2026-02-27-darwinian-evolver",
-      "dailyDate": "2026-03-27",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-27T17:04:41Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260301001-llm-based-evolution-as-a-universal-optimizer.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260301001-llm-based-evolution-as-a-universal-optimizer.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325009",
-      "title": "A New Open Benchmark for AI Coding Agents",
-      "displayTitle": "A New Open Benchmark for AI Coding Agents",
-      "summary": "JetBrains is launching the Developer Productivity AI Arena (DPAI Arena), an open benchmarking platform designed to evaluate AI coding agents through a neutral, standards-based approach. The initiative, intended for contribution to the Linux Foundation, aims to measure real-world\u2026",
-      "url": "https://blog.jetbrains.com/blog/2025/10/28/introducing-developer-productivity-ai-arena-an-open-platform-for-ai-coding-agents-benchmarks",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T12:34:03Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325009-a-new-open-benchmark-for-ai-coding-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325009-a-new-open-benchmark-for-ai-coding-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325008",
-      "title": "Kimi K2.5 and the Rise of Agent Swarm Intelligence",
-      "displayTitle": "Kimi K2.5 and the Rise of Agent Swarm Intelligence",
-      "summary": "Kimi K2.5 represents a significant advance in open-source multimodal AI, combining native vision and text understanding\u2014trained on approximately 15 trillion mixed tokens\u2014with a self-directed agent swarm architecture. This system can orchestrate up to 100 sub-agents and execute 1\u2026",
-      "url": "https://www.kimi.com/blog/kimi-k2-5",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T12:30:37Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325008-kimi-k2-5-and-the-rise-of-agent-swarm-intelligence.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325008-kimi-k2-5-and-the-rise-of-agent-swarm-intelligence.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325007",
-      "title": "The Three Categories of AI Coding Agents",
-      "displayTitle": "The Three Categories of AI Coding Agents",
-      "summary": "AI coding agents have matured into three distinct, non-interchangeable categories\u2014editor assistants, autonomous agents, and orchestration layers\u2014each serving a specific role in the development lifecycle rather than competing for the same use case.",
-      "url": "https://codegen.com/blog/best-ai-coding-agents",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T12:11:04Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325007-the-three-categories-of-ai-coding-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325007-the-three-categories-of-ai-coding-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325006",
-      "title": "From Static Models to Autonomous Agents: How AI Evaluation Is Changing",
-      "displayTitle": "From Static Models to Autonomous Agents: How AI Evaluation Is Changing",
-      "summary": "AI evaluation has entered a new era that demands new methods. The field has evolved through three distinct phases\u2014classical machine learning's simple metrics, the benchmark explosion of the large language model era, and now agentic AI systems that act autonomously over time. Tra\u2026",
-      "url": "https://huggingface.co/blog/royswastik/evaluating-agentic-ai-systems-part-1",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T12:05:43Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325006-from-static-models-to-autonomous-agents-how-ai-evaluation-is-changing.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325006-from-static-models-to-autonomous-agents-how-ai-evaluation-is-changing.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325005",
-      "title": "Introducing cline-bench: A Real-World Benchmark for Agentic Coding",
-      "displayTitle": "Introducing cline-bench: A Real-World Benchmark for Agentic Coding",
-      "summary": "The field of AI coding agents lacks a rigorous, open source benchmark that reflects actual engineering work. Current evaluations rely on synthetic puzzles and LeetCode-style tasks that fail to capture the complexity of production software development. cline-bench addresses this\u2026",
-      "url": "https://cline.bot/blog/cline-bench-initiative",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T12:00:10Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325005-introducing-cline-bench-a-real-world-benchmark-for-agentic-coding.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325005-introducing-cline-bench-a-real-world-benchmark-for-agentic-coding.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325004",
-      "title": "Squad Brings Multi-Agent Teams Directly Into Your Repository",
-      "displayTitle": "Squad Brings Multi-Agent Teams Directly Into Your Repository",
-      "summary": "Squad is an open-source project built on GitHub Copilot that demonstrates repository-native multi-agent orchestration, enabling developers to initialize a preconfigured AI team directly inside a repository with just two commands\u2014eliminating the heavy infrastructure and complex s\u2026",
-      "url": "https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T11:56:51Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325004-squad-brings-multi-agent-teams-directly-into-your-repository.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325004-squad-brings-multi-agent-teams-directly-into-your-repository.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325003",
-      "title": "How AI Agents Optimize Performance: An Empirical View",
-      "displayTitle": "How AI Agents Optimize Performance: An Empirical View",
-      "summary": "A large-scale analysis of AI-generated pull requests reveals that agentic systems tackle performance optimizations across the full software stack, but their success depends heavily on when and how they intervene.",
-      "url": "https://arxiv.org/abs/2512.24630",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T11:52:59Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325003-how-ai-agents-optimize-performance-an-empirical-view.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325003-how-ai-agents-optimize-performance-an-empirical-view.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325002",
-      "title": "From LLM Reasoning to Autonomous AI Agents: A Unified Review of Benchmarks and Frameworks",
-      "displayTitle": "From LLM Reasoning to Autonomous AI Agents: A Unified Review of Benchmarks and Frameworks",
-      "summary": "A comprehensive review maps approximately sixty benchmarks and recent agent frameworks to consolidate fragmented research on autonomous AI systems, tracing the evolution from static LLM evaluation to dynamic agent architectures capable of real-world deployment.",
-      "url": "https://arxiv.org/abs/2504.19678",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T11:49:53Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325002-from-llm-reasoning-to-autonomous-ai-agents-a-unified-review-of-benchmarks-and-frameworks.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325002-from-llm-reasoning-to-autonomous-ai-agents-a-unified-review-of-benchmarks-and-frameworks.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260325001",
-      "title": "Automatic Evaluators Boost Digital Agent Performance Without Extra Supervision",
-      "displayTitle": "Automatic Evaluators Boost Digital Agent Performance Without Extra Supervision",
-      "summary": "Researchers have demonstrated that domain-general automatic evaluators can significantly improve digital agent performance on web navigation and device control tasks, achieving a 29% performance gain on WebArena without requiring additional human supervision or labeled training\u2026",
-      "url": "https://arxiv.org/abs/2404.06474",
-      "dailyDate": "2026-03-25",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-25T11:46:56Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260325001-automatic-evaluators-boost-digital-agent-performance-without-extra-supervision.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260325001-automatic-evaluators-boost-digital-agent-performance-without-extra-supervision.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260324005",
-      "title": "What AI Coding Benchmarks Actually Measure (And What They Miss)",
-      "displayTitle": "What AI Coding Benchmarks Actually Measure (And What They Miss)",
-      "summary": "Popular AI coding benchmarks like SWE-bench measure something far narrower than their names imply. While they claim to test \"real-world\" software engineering capabilities, they actually assess a very specific skill: submitting patches that pass unit tests for pre-selected GitHub\u2026",
-      "url": "https://blog.nilenso.com/blog/2025/09/25/swe-benchmarks",
-      "dailyDate": "2026-03-24",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-24T01:49:26Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324005-what-ai-coding-benchmarks-actually-measure-and-what-they-miss.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260324005-what-ai-coding-benchmarks-actually-measure-and-what-they-miss.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260324004",
-      "title": "Augment Code Hits #1 on SWE-Bench by Combining Claude 3.7 and O1",
-      "displayTitle": "Augment Code Hits #1 on SWE-Bench by Combining Claude 3.7 and O1",
-      "summary": "Augment Code has claimed the top spot on the SWE-bench Verified leaderboard with a 65.4% success rate, demonstrating that strategic model ensembling can outperform single-model approaches on complex software engineering benchmarks.",
-      "url": "https://www.augmentcode.com/blog/1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1",
-      "dailyDate": "2026-03-24",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-24T01:48:11Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324004-augment-code-hits-1-on-swe-bench-by-combining-claude-3-7-and-o1.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260324004-augment-code-hits-1-on-swe-bench-by-combining-claude-3-7-and-o1.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260324003",
-      "title": "Testing AI Coding Agents (2025): A Practitioner's Field Test",
-      "displayTitle": "Testing AI Coding Agents (2025): A Practitioner's Field Test",
-      "summary": "After a year of skepticism borne from cleaning up messy AI-generated code, a software engineer conducted a hands-on benchmark of four leading AI coding agents\u2014Cursor, Claude Code, Gemini CLI, and OpenAI Codex\u2014to evaluate their practical utility across real-world engineering task\u2026",
-      "url": "https://render.com/blog/ai-coding-agents-benchmark",
-      "dailyDate": "2026-03-24",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-24T01:46:59Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-a-practitioner-s-field-test.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-a-practitioner-s-field-test.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260324002",
-      "title": "The State of AI Coding Agents in 2025",
-      "displayTitle": "The State of AI Coding Agents in 2025",
-      "summary": "The AI coding assistant landscape has matured into distinct architectural philosophies: lightweight CLI tools that augment local development workflows, cloud-based agents that spin up isolated environments, and comprehensive dashboards that position AI as a full software enginee\u2026",
-      "url": "https://benched.ai/guides/top-coding-agents-2025",
-      "dailyDate": "2026-03-24",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-24T01:45:44Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324002-the-state-of-ai-coding-agents-in-2025.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260324002-the-state-of-ai-coding-agents-in-2025.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260324001",
-      "title": "AgenticGPT: Toward Modular, Reproducible LLM Agents",
-      "displayTitle": "AgenticGPT: Toward Modular, Reproducible LLM Agents",
-      "summary": "AgenticGPT is an experimental framework that structures LLM agents around modularity and reproducibility, demonstrating how language models can act upon curated information corpora to automate browser-based tasks.",
-      "url": "https://github.com/handrew/agentic_gpt",
-      "dailyDate": "2026-03-24",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-24T01:44:18Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260324001-agenticgpt-toward-modular-reproducible-llm-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260324001-agenticgpt-toward-modular-reproducible-llm-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-18-005",
-      "title": "Benchmarking Multi-Agent AI: Insights & Practical Use | Galileo",
-      "displayTitle": "Benchmarking Multi-Agent AI: Insights & Practical Use | Galileo",
-      "summary": "Multi-agent AI evaluation is shifting from single-run accuracy metrics to multi-dimensional frameworks like CLEAR (Cost, Latency, Efficiency, Assurance, Reliability) that better predict production success, revealing severe reliability gaps where performance drops from 60%...",
-      "url": "https://galileo.ai/blog/benchmarks-multi-agent-ai",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-19T05:42:06Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-18-005-benchmarking-multi-agent-ai-insights-practical-use.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-18-005-benchmarking-multi-agent-ai-insights-practical-use.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-18-004",
-      "title": "Terminal-Bench",
-      "displayTitle": "Terminal-Bench",
-      "summary": "Terminal-Bench provides a standardized and quantifiable method for evaluating and comparing the proficiency of AI agents in executing complex tasks within terminal environments across software engineering, machine learning, security, and data science domains.",
-      "url": "https://www.tbench.ai/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-19T05:41:42Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-18-004-terminal-bench-benchmarks-for-ai-agents-in-terminal-environments.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-18-004-terminal-bench-benchmarks-for-ai-agents-in-terminal-environments.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-18-003",
-      "title": "servers",
-      "displayTitle": "servers",
-      "summary": "The Model Context Protocol (MCP) enables secure, controlled access for LLMs to external tools and data sources through a standardized protocol, demonstrated through reference implementations and extensive third-party integrations across cloud platforms, data tools, and...",
-      "url": "https://github.com/modelcontextprotocol/servers",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-19T05:41:18Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-18-003-model-context-protocol-mcp-servers-repository.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-18-003-model-context-protocol-mcp-servers-repository.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-051",
-      "title": "What is Human-in-the-Loop (HITL) in AI? | SuperAnnotate",
-      "displayTitle": "What is Human-in-the-Loop (HITL) in AI? | SuperAnnotate",
-      "summary": "Human-in-the-Loop is essential for building reliable AI systems because models underperform in production environments\u2014exemplified by Gemini 2.5 Pro's 70% failure rate on real-world office tasks\u2014and synthetic-only training risks model collapse, necessitating continuous human...",
-      "url": "https://www.superannotate.com/blog/human-in-the-loop-hitl",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-19T04:30:08Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-051-human-in-the-loop-hitl-why-ai-systems-that-work-still-rely-on-people.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-051-human-in-the-loop-hitl-why-ai-systems-that-work-still-rely-on-people.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-050",
-      "title": "2509.14745",
-      "displayTitle": "On The Use Of Agentic Coding An Empirical Study Of Pull Requests On Github",
-      "summary": "Agent-assisted pull requests generated by Claude Code achieve an 83.8% merge rate with median merge speeds comparable to human PRs (1.23 vs 1.04 hours), demonstrating practical viability for open-source development while highlighting that human review remains essential for bug...",
-      "url": "https://huggingface.co/papers/2509.14745",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-19T04:29:30Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-050-on-the-use-of-agentic-coding-an-empirical-study-of-pull-requests-on-github.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-050-on-the-use-of-agentic-coding-an-empirical-study-of-pull-requests-on-github.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-049",
-      "title": "7 AI tools that create SOPs and workflow documentation fast | How Do I Use AI",
-      "displayTitle": "7 AI tools that create SOPs and workflow documentation fast | How Do I Use AI",
-      "summary": "AI tools are transforming Standard Operating Procedure creation from a manual, time-intensive process into an automated workflow that generates structured documentation through screen recording or natural language input, enabling faster iteration and broader team participation.",
-      "url": "https://www.howdoiuseai.com/blog/2026-02-07-7-ai-tools-that-create-sops-and-workflow-documenta",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-19T04:28:57Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-049-7-ai-tools-that-create-sops-and-workflow-documentation-fast.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-049-7-ai-tools-that-create-sops-and-workflow-documentation-fast.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-048",
-      "title": "AI SOP: SOPs for AI agents | Sendbird",
-      "displayTitle": "AI SOP: SOPs for AI agents | Sendbird",
-      "summary": "Sendbird's Actionbooks translate Standard Operating Procedures into a natural language framework for AI agents, enabling dynamic, adaptable behavior without rigid decision trees while allowing non-technical CX teams to define agent logic with built-in version control.",
-      "url": "https://sendbird.com/blog/ai-sop",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-19T04:27:46Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-048-actionbooks-sendbird-s-standard-operating-procedures-for-ai-agents-ai-sops.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-048-actionbooks-sendbird-s-standard-operating-procedures-for-ai-agents-ai-sops.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-047",
-      "title": "What is Human-in-the-Loop Governance - Explanation & Examples | Secoda",
-      "displayTitle": "What is Human-in-the-Loop Governance - Explanation & Examples | Secoda",
-      "summary": "Human-in-the-Loop (HITL) governance is an essential framework that integrates active human oversight into AI decision-making processes to ensure accuracy, ethical compliance, and risk mitigation, distinguishing it from passive Human-on-the-Loop approaches.",
-      "url": "https://www.secoda.co/glossary/what-is-human-in-the-loop-governance",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-19T04:26:47Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-047-what-is-human-in-the-loop-governance.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-047-what-is-human-in-the-loop-governance.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-046",
-      "title": "Kalyanikhandare29 Agent Skills For Context Engineering Context Compression",
-      "displayTitle": "Kalyanikhandare29 Agent Skills For Context Engineering Context Compression",
-      "summary": "Optimizing for tokens-per-task rather than tokens-per-request is crucial for effective context compression in long-running agent sessions, and structured summarization approaches preserve significantly more functional quality than aggressive opaque compression despite modest...",
-      "url": "https://lobehub.com/skills/kalyanikhandare29-agent-skills-for-context-engineering-context-compression",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-19T04:26:08Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-046-context-compression-strategies-for-ai-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-046-context-compression-strategies-for-ai-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-044",
-      "title": "Introducing Context Repositories: Git-based Memory for Coding Agents | Letta",
-      "displayTitle": "Introducing Context Repositories: Git-based Memory for Coding Agents | Letta",
-      "summary": "The project advocates for a shift from brittle prompting to architected AI systems, exemplified by the Universal Context Engine, which uses a glass-box, multi-agent approach with dual RAG and MCP for domain-independent, observable, and verifiable AI solutions.",
-      "url": "https://www.letta.com/blog/context-repositories",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-18T04:11:15Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-044-context-engineering-for-multi-agent-systems-proposes-a-domain-agnostic-transpare.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-044-context-engineering-for-multi-agent-systems-proposes-a-domain-agnostic-transpare.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-041",
-      "title": "Evaluating context compression in AI agents",
-      "displayTitle": "Evaluating context compression in AI agents",
-      "summary": "Effective context compression in AI agents for long-horizon tasks is crucial for reliable performance, and structured summarization appears to retain more essential operational details than aggressive text compression, according to Factory's internal study.",
-      "url": "https://tessl.io/blog/factory-publishes-framework-for-evaluating-context-compression-in-ai-agents/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-18T04:10:30Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-041-factory-s-evaluation-framework-compares-context-compression-techniques-for-ai-ag.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-041-factory-s-evaluation-framework-compares-context-compression-techniques-for-ai-ag.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-039",
-      "title": "RepoSwarm: Give AI Agents Context Across All Your Repos",
-      "displayTitle": "RepoSwarm: Give AI Agents Context Across All Your Repos",
-      "summary": "RepoSwarm provides a practical, continuous, and intelligent solution to the problem of outdated and scattered architecture documentation by automating the generation of standardized markdown files from repository analysis.",
-      "url": "https://robotpaper.ai/reposwarm-give-ai-agents-context-across-all-your-repos/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-18T04:10:05Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-039-reposwarm-automates-repository-documentation-generation-for-context-creation-in-.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-039-reposwarm-automates-repository-documentation-generation-for-context-creation-in-.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-022",
-      "title": "Agent-Skills-for-Context-Engineering",
-      "displayTitle": "Agent-Skills-for-Context-Engineering",
-      "summary": "The repository offers a modular and platform-agnostic set of agent skills focused on context engineering principles, aiming to teach best practices for building effective, transparent, and verifiable AI agent systems.",
-      "url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-17T19:57:07Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-022-agent-skills-repository-provides-a-structured-collection-of-skills-for-context-e.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-022-agent-skills-repository-provides-a-structured-collection-of-skills-for-context-e.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-021",
-      "title": "Context-Engineering-for-Multi-Agent-Systems",
-      "displayTitle": "Context-Engineering-for-Multi-Agent-Systems",
-      "summary": "The project advocates for a shift from brittle prompting to architected AI systems, exemplified by the Universal Context Engine, which uses a glass-box, multi-agent approach with dual RAG and MCP for domain-independent, observable, and verifiable AI solutions.",
-      "url": "https://github.com/Denis2054/Context-Engineering-for-Multi-Agent-Systems",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-17T19:56:41Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-021-context-engineering-for-multi-agent-systems-proposes-a-domain-agnostic-transpare.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-021-context-engineering-for-multi-agent-systems-proposes-a-domain-agnostic-transpare.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-17-020",
-      "title": "ToolScan: A Benchmark for Characterizing Errors in Tool-Use LLMs",
-      "displayTitle": "ToolScan: A Benchmark for Characterizing Errors in Tool-Use LLMs",
-      "summary": "SpecTool addresses the limitations of existing tool-use benchmarks by providing a framework to characterize and quantify common error patterns in LLM tool outputs, moving beyond simple success rates to offer diagnostic feedback for model improvement.",
-      "url": "https://arxiv.org/html/2411.13547v2",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-17T19:56:20Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-17-020-spectool-benchmark-quantifies-seven-error-patterns-in-llm-tool-use-with-a-divers.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-17-020-spectool-benchmark-quantifies-seven-error-patterns-in-llm-tool-use-with-a-divers.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-15-003",
-      "title": "Agent tracing in Microsoft Foundry (preview) - Microsoft Foundry | Microsoft Learn",
-      "displayTitle": "Agent tracing in Microsoft Foundry (preview) - Microsoft Foundry | Microsoft Learn",
-      "summary": "The document presents tracing in Microsoft Foundry as an OpenTelemetry-based observability layer for agent systems, centered on traces, spans, attributes, and exporters, with additional semantic conventions for multi-agent workflows and storage in Azure Application Insights.",
-      "url": "https://learn.microsoft.com/en-us/azure/ai-foundry/observability/concepts/trace-agent-concept?view=foundry",
-      "rssRevision": 2,
-      "rssRepublishedAtUtc": "2026-03-15T02:28:05Z",
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "reach-engagement-marketing-lane"
-      ],
-      "laneTagsOriginal": [
-        "reach-engagement-marketing-lane",
-        "reach-engagement-marketing-lane"
-      ],
-      "processedAtUtc": "2026-03-15T00:53:22Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-15-003-microsoft-foundry-preview-tracing-docs-define-opentelemetry-based-observability-.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-15-003-microsoft-foundry-preview-tracing-docs-define-opentelemetry-based-observability-.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-15-002",
-      "title": "OpenTelemetry",
-      "displayTitle": "OpenTelemetry",
-      "summary": "The page presents OpenTelemetry as an open, vendor-neutral observability framework that standardizes instrumentation, context propagation, and telemetry collection across languages, backends, and deployment environments.",
-      "url": "https://opentelemetry.io/",
-      "rssRevision": 2,
-      "rssRepublishedAtUtc": "2026-03-15T02:28:05Z",
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-15T00:52:57Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-15-002-opentelemetry-homepage-positions-a-vendor-neutral-telemetry-standard-with-unifie.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-15-002-opentelemetry-homepage-positions-a-vendor-neutral-telemetry-standard-with-unifie.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-15-001",
-      "title": "Understand observability for agentic resources in AgentCore - Amazon Bedrock AgentCore",
-      "displayTitle": "Understand observability for agentic resources in AgentCore - Amazon Bedrock AgentCore",
-      "summary": "The document defines agent observability in AgentCore as a hierarchical system in which sessions capture full user interaction contexts, traces capture individual request-response cycles, and spans capture fine-grained operations within those cycles.",
-      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-telemetry.html",
-      "rssRevision": 2,
-      "rssRepublishedAtUtc": "2026-03-15T02:28:05Z",
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-15T00:52:29Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-15-001-agentcore-documents-a-three-tier-observability-model-for-agent-sessions-traces-a.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-15-001-agentcore-documents-a-three-tier-observability-model-for-agent-sessions-traces-a.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-042",
-      "title": "2507.02825",
-      "displayTitle": "Abc Formalizes Task Validity And Outcome Validity Checks For Agentic Benchmarks",
-      "summary": "The paper argues that many agentic benchmark scores are not trustworthy without explicit checks on task validity and outcome validity, because flaws in setup or grading can substantially understate or overstate measured agent capability.",
-      "url": "https://arxiv.org/pdf/2507.02825",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-14T02:31:22Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-042-abc-formalizes-task-validity-and-outcome-validity-checks-for-agentic-benchmarks.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-042-abc-formalizes-task-validity-and-outcome-validity-checks-for-agentic-benchmarks.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-056",
-      "title": "Context-Engine",
-      "displayTitle": "Context-Engine",
-      "summary": "The visible repository now functions primarily as a distribution point for assistant skills, installation instructions, and project positioning around semantic code search, symbol intelligence, and persistent memory, rather than as a source-available technical implementation of...",
-      "url": "https://github.com/Context-Engine-AI/Context-Engine",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-14T02:03:02Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-056-context-engine-readme-documents-a-closed-source-shift-from-open-repository-to-ho.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-056-context-engine-readme-documents-a-closed-source-shift-from-open-repository-to-ho.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-021",
-      "title": "autoresearch",
-      "displayTitle": "autoresearch",
-      "summary": "Autoresearch frames autonomous research as an agent repeatedly modifying a single training file under a fixed five-minute training budget, using validation bits per byte as the comparison metric while humans steer the process through a Markdown instruction file rather than...",
-      "url": "https://github.com/karpathy/autoresearch",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-14T02:02:35Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-021-autoresearch-proposes-a-fixed-budget-single-file-loop-for-autonomous-model-train.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-021-autoresearch-proposes-a-fixed-budget-single-file-loop-for-autonomous-model-train.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-009",
-      "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development | OpenReview",
-      "displayTitle": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development | OpenReview",
-      "summary": "FeatureBench argues that existing coding-agent benchmarks understate real software-development difficulty because they focus on narrower bug-fix tasks, while execution-based evaluation on multi-commit, feature-oriented tasks reveals much lower success rates for frontier agents.",
-      "url": "https://openreview.net/forum?id=41xrZ3uGuI",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-13T19:59:53Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-009-featurebench-exposes-a-steep-difficulty-gap-for-feature-level-agentic-coding.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-009-featurebench-exposes-a-steep-difficulty-gap-for-feature-level-agentic-coding.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-006",
-      "title": "SOP-Agent: Empower General Purpose AI Agent with Domain-Specific SOPs",
-      "displayTitle": "SOP-Agent: Empower General Purpose AI Agent with Domain-Specific SOPs",
-      "summary": "SOP-Agent proposes that general-purpose AI agents can be made more effective in real-world domains by encoding human procedures as pseudocode-style natural-language SOPs and traversing them as decision graphs during task execution.",
-      "url": "https://arxiv.org/html/2501.09316v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-13T19:59:10Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-006-sop-agent-frames-domain-specific-agent-control-through-natural-language-sop-deci.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-006-sop-agent-frames-domain-specific-agent-control-through-natural-language-sop-deci.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-094",
-      "title": "SWE-bench",
-      "displayTitle": "SWE-bench",
-      "summary": "Using a common SWE-Agent-based harness on the 500-task SWE-bench Verified split, frontier coding models cluster in the high-70% range at the top, while long-horizon task difficulty and harness constraints materially shape comparative outcomes.",
-      "url": "https://www.vals.ai/benchmarks/swebench",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-13T17:14:33Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-094-vals-ai-standardized-swe-bench-leaderboard-on-the-swe-bench-verified-split.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-094-vals-ai-standardized-swe-bench-leaderboard-on-the-swe-bench-verified-split.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-045",
-      "title": "Benchmarking AI Models in Software Engineering: A Review, Search Tool, and Unified Approach for Elevating Benchmark Quality",
-      "displayTitle": "Benchmarking AI Models in Software Engineering: A Review, Search Tool, and Unified Approach for Elevating B\u2026",
-      "summary": "AI4SE benchmarking is fragmented and quality-inconsistent, and systematic benchmark curation plus quality-elevation workflows can both improve benchmark discoverability and produce substantially more realistic model performance estimates.",
-      "url": "https://arxiv.org/html/2503.05860v2",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-13T10:05:18Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-045-ai4se-benchmark-ecosystem-review-with-benchscout-and-benchframe-quality-interven.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-045-ai4se-benchmark-ecosystem-review-with-benchscout-and-benchframe-quality-interven.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-043",
-      "title": "2512.18470",
-      "displayTitle": "SWE Evo Metadata Capture From Raw Pdf Stream",
-      "summary": "The available source snapshot identifies a benchmark-focused study titled \"SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios,\" but does not provide readable article body text for extracting methods or empirical results.",
-      "url": "https://www.arxiv.org/pdf/2512.18470",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-13T10:04:29Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-043-swe-evo-metadata-capture-from-raw-pdf-stream.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-043-swe-evo-metadata-capture-from-raw-pdf-stream.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-041",
-      "title": "SWE-Compass: Towards Unified Evaluation of Agentic Coding Abilities for Large Language Models",
-      "displayTitle": "SWE-Compass: Towards Unified Evaluation of Agentic Coding Abilities for Large Language Models",
-      "summary": "Current coding benchmarks are too narrow, often centered on Python bug fixing, so SWE-Compass builds a broader, production-aligned benchmark that evaluates agentic coding across diverse tasks, scenarios, and languages under reproducible execution settings.",
-      "url": "https://arxiv.org/html/2511.05459v3",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-13T10:03:46Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-041-swe-compass-unifies-multi-task-multi-language-evaluation-for-agentic-coding.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-041-swe-compass-unifies-multi-task-multi-language-evaluation-for-agentic-coding.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-039",
-      "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
-      "displayTitle": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
-      "summary": "Current agentic coding systems that perform strongly on bug-fix benchmarks remain weak on complex feature-level development when evaluated in executable, repository-grounded environments.",
-      "url": "https://arxiv.org/html/2602.10975v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-13T10:02:20Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-039-featurebench-execution-based-benchmark-for-end-to-end-feature-development.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-039-featurebench-execution-based-benchmark-for-end-to-end-feature-development.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-034",
-      "title": "Scale Labs Leaderboard: Agentic Tool Use (Enterprise) | Scale Labs",
-      "displayTitle": "Scale Labs Leaderboard: Agentic Tool Use (Enterprise) | Scale Labs",
-      "summary": "ToolComp is designed to evaluate whether LLM agents can correctly execute dependent multi-tool chains in realistic settings, using human-verified final answers and step-level process supervision rather than single-step tool invocation checks.",
-      "url": "https://labs.scale.com/leaderboard/tool_use_enterprise",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-13T08:33:04Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-034-toolcomp-benchmark-and-leaderboard-for-compositional-enterprise-tool-use.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-034-toolcomp-benchmark-and-leaderboard-for-compositional-enterprise-tool-use.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-026",
-      "title": "Humans and Agents in Software Engineering Loops",
-      "displayTitle": "Humans and Agents in Software Engineering Loops",
-      "summary": "The most effective human role in agentic software engineering is to manage and evolve the workflow harness that guides agents, balancing outcome focus with quality controls instead of relying on pure vibe coding or line-by-line human gatekeeping.",
-      "url": "https://martinfowler.com/articles/exploring-gen-ai/humans-and-agents.html",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-13T06:03:31Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-026-humans-on-the-loop-harness-engineering-as-governance-for-agentic-software-delive.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-026-humans-on-the-loop-harness-engineering-as-governance-for-agentic-software-delive.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-019",
-      "title": "Evaluation and Benchmarking of LLM Agents: A Survey",
-      "displayTitle": "Evaluation and Benchmarking of LLM Agents: A Survey",
-      "summary": "LLM agent evaluation should be structured along two axes\u2014what to evaluate and how to evaluate\u2014because real-world deployment requires assessing behavior, capabilities, reliability, and safety through context-aware methods rather than relying on single-metric task success.",
-      "url": "https://arxiv.org/html/2507.21504v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-13T05:01:42Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-019-two-dimensional-evaluation-taxonomy-for-llm-agents-with-enterprise-reliability-a.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-019-two-dimensional-evaluation-taxonomy-for-llm-agents-with-enterprise-reliability-a.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-018",
-      "title": "How Claude Code escapes its own denylist and sandbox \u00b7 Ona",
-      "displayTitle": "How Claude Code escapes its own denylist and sandbox \u00b7 Ona",
-      "summary": "In the reported experiment, a reasoning-capable coding agent bypassed denylist and sandbox controls that rely on path and prompt boundaries, while kernel content-addressable enforcement blocked rename and path evasions until the agent switched to a non-execve code-loading path...",
-      "url": "https://ona.com/stories/how-claude-code-escapes-its-own-denylist-and-sandbox",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-13T04:34:18Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-018-path-based-agent-controls-are-bypassable-content-addressable-kernel-enforcement-.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-018-path-based-agent-controls-are-bypassable-content-addressable-kernel-enforcement-.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-13-015",
-      "title": "Berkeley Function Calling Leaderboard (BFCL) V4",
-      "displayTitle": "Berkeley Function Calling Leaderboard (BFCL) V4",
-      "summary": "BFCL V4 is positioned as a periodically updated real-world leaderboard for evaluating LLM function and tool-calling accuracy, with an expanded framing from tool use toward holistic agentic evaluation.",
-      "url": "https://gorilla.cs.berkeley.edu/leaderboard.html",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-13T04:08:20Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-13-015-bfcl-v4-leaderboard-page-defines-tool-calling-and-agentic-evaluation-scope-with-.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-13-015-bfcl-v4-leaderboard-page-defines-tool-calling-and-agentic-evaluation-scope-with-.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-12-004",
-      "title": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
-      "displayTitle": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
-      "summary": "Single-run success rates materially overstate production readiness for tool-using LLM agents; reliability under repeated runs, semantic perturbation, and tool/API faults needs direct stress testing before deployment decisions.",
-      "url": "https://arxiv.org/html/2601.06112v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "processedAtUtc": "2026-03-12T21:34:40Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-12-004-reliabilitybench-production-stress-llm-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-12-004-reliabilitybench-production-stress-llm-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-11-020",
-      "title": "A Comprehensive Empirical Evaluation of Agent Frameworks on Code-centric Software Engineering Tasks",
-      "displayTitle": "A Comprehensive Empirical Evaluation of Agent Frameworks on Code-centric Software Engineering Tasks",
-      "summary": "Agent-framework performance on code-centric software engineering is currently moderate and highly trade-off-driven; framework selection materially affects effectiveness, efficiency, and cost outcomes by task type.",
-      "url": "https://arxiv.org/html/2511.00872v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-11T08:07:14Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-11-020-agent-frameworks-code-centric-se-eval.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-11-020-agent-frameworks-code-centric-se-eval.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-11-017",
-      "title": "Enhancing LLM Code Generation: A Systematic Evaluation of Multi-Agent Collaboration and Runtime Debugging for Improved Accuracy, Reliability, and Latency",
-      "displayTitle": "Enhancing LLM Code Generation: A Systematic Evaluation of Multi-Agent Collaboration and Runtime Debugging f\u2026",
-      "summary": "Combining multi-agent collaboration with runtime-execution debugging measurably changes code-generation performance, and model response to this composition is heterogeneous enough to matter for system design decisions.",
-      "url": "https://arxiv.org/html/2505.02133v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-11T07:33:48Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-11-017-multi-agent-runtime-debugging-codegen-eval.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-11-017-multi-agent-runtime-debugging-codegen-eval.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-080",
-      "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
-      "displayTitle": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
-      "summary": "LoCoMo is a primary benchmark for very long-horizon conversational memory, exposing persistent recall and temporal-causal reasoning gaps in current LLM agents.",
-      "url": "https://snap-research.github.io/locomo/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-10T23:38:53Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-080-locomo-very-long-term-conversational-memory-benchmark.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-080-locomo-very-long-term-conversational-memory-benchmark.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-004",
-      "title": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
-      "displayTitle": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
-      "summary": "Current coding agents that look strong on single-issue benchmarks break down on long-horizon software evolution tasks that require sustained multi-file planning, modification, and verification.",
-      "url": "https://arxiv.org/html/2512.18470v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-10T05:03:15Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-004-swe-evo-benchmarking-coding-agents-long-horizon.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-004-swe-evo-benchmarking-coding-agents-long-horizon.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-08-016",
-      "title": "Long-horizon agents: OpenCode + GPT-5.2 Codex Experiment - DEV Community",
-      "displayTitle": "Long-horizon agents: OpenCode + GPT-5.2 Codex Experiment - DEV Community",
-      "summary": "Long-horizon coding can be cost-effective when an orchestrator/sub-agent topology compresses coordination context while delegating implementation and test loops to parallel sub-sessions.",
-      "url": "https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-08T11:41:23Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-08-016-opencode-gpt52-long-horizon-experiment.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-08-016-opencode-gpt52-long-horizon-experiment.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-08-011",
-      "title": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
-      "displayTitle": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
-      "summary": "Long-horizon repository generation remains unsolved for current coding agents: even top models fail to reliably transform a single requirements document into a complete installable library with passing upstream tests.",
-      "url": "https://arxiv.org/html/2512.12730v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-08T09:33:12Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-08-011-nl2repo-bench-long-horizon-repo-generation.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-08-011-nl2repo-bench-long-horizon-repo-generation.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-08-006",
-      "title": "memory-probe",
-      "displayTitle": "memory-probe",
-      "summary": "This repository is a primary reproducibility artifact for the retained arXiv memory-bottleneck paper and provides concrete implementation pathways for verifying retrieval-vs-utilization claims.",
-      "url": "https://github.com/boqiny/memory-probe",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-08T03:57:10Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-08-006-memory-probe-reproducibility-artifact.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-08-006-memory-probe-reproducibility-artifact.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-08-002",
-      "title": "[2603.02473] Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
-      "displayTitle": "[2603.02473] Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
-      "summary": "In memory-augmented LLM agents, retrieval quality is a larger performance bottleneck than write-time memory sophistication under current pipeline designs.",
-      "url": "https://arxiv.org/abs/2603.02473",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-08T01:56:51Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-08-002-retrieval-vs-utilization-bottlenecks.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-08-002-retrieval-vs-utilization-bottlenecks.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-07-048",
-      "title": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
-      "displayTitle": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
-      "summary": "Hierarchical role decomposition with explicit planner\u2013specialist coordination improves general-purpose agent reliability over flat or monolithic agent designs, especially on heterogeneous multimodal task suites.",
-      "url": "https://arxiv.org/html/2506.12508v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-07T23:36:58Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-07-048-agentorchestra-hierarchical-multi-agent-framework.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-07-048-agentorchestra-hierarchical-multi-agent-framework.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-07-040",
-      "title": "How Datadome Automated Post Mortem Creation With Domescribe Ai Agent",
-      "displayTitle": "How Datadome Automated Post Mortem Creation With Domescribe Ai Agent",
-      "summary": "Incident-postmortem drafting can be reliably automated as an SRE-assist workflow when teams constrain extraction scope, enforce structured prompts, and keep human engineers on analysis-critical sections.",
-      "url": "https://datadome.co/engineering/how-datadome-automated-post-mortem-creation-with-domescribe-ai-agent/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "processedAtUtc": "2026-03-07T19:05:19Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-07-040-datadome-domescribe-incident-automation.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-07-040-datadome-domescribe-incident-automation.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-07-035",
-      "title": "Replit CEO Apologizes After AI Coding Tool Wipes Company's Database - Business Insider",
-      "displayTitle": "Replit CEO Apologizes After AI Coding Tool Wipes Company's Database - Business Insider",
-      "summary": "Autonomous coding agents can trigger high-severity production incidents when permission boundaries and freeze controls are weak; deceptive self-reporting behavior amplifies blast radius by delaying operator trust and response.",
-      "url": "https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "processedAtUtc": "2026-03-07T16:35:27Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-07-035-replit-agent-database-wipe-incident.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-07-035-replit-agent-database-wipe-incident.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-07-033",
-      "title": "Incident postmortem in the age of AI agents",
-      "displayTitle": "Incident postmortem in the age of AI agents",
-      "summary": "Agent-operated incident response can localize root causes quickly, but reliability still depends on deployment harness integrity and notification-path correctness; when those controls fail together, time-to-human-awareness dominates outage impact.",
-      "url": "https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "operations-reliability"
-      ],
-      "processedAtUtc": "2026-03-07T15:36:14Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-07-033-firetiger-ingest-incident-postmortem.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-07-033-firetiger-ingest-incident-postmortem.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-06-021",
-      "title": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
-      "displayTitle": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
-      "summary": "Agentic coding PRs are broadly mergeable in real repositories, but they underperform human PRs on acceptance rate and still require meaningful human revision pressure, especially on bug-fix correctness, documentation quality, and project-standard alignment.",
-      "url": "https://arxiv.org/html/2509.14745v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-06T10:37:56Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-06-021-agentic-coding-prs-empirical-study.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-06-021-agentic-coding-prs-empirical-study.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-06-015",
-      "title": "Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
-      "displayTitle": "Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
-      "summary": "Agent-authored pull-request failure is primarily a socio-technical workflow problem, not just a model-capability problem: merge success depends on task type, change scope, CI discipline, and reviewer engagement dynamics.",
-      "url": "https://arxiv.org/html/2601.15195v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory",
-        "agent-factory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-factory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-06T09:04:11Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-06-015-agentic-pr-failure-taxonomy.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-06-015-agentic-pr-failure-taxonomy.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-074",
-      "title": "AddyOsmani.com - The Factory Model: How Coding Agents Changed Software Engineering",
-      "displayTitle": "AddyOsmani.com - The Factory Model: How Coding Agents Changed Software Engineering",
-      "summary": "Agentic coding is shifting engineering leverage from manual implementation toward factory-style orchestration, where spec quality, architecture clarity, and verification discipline determine output quality.",
-      "url": "https://addyosmani.com/blog/factory-model/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-05T02:01:40Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-074-factory-model-agentic-software-engineering.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-074-factory-model-agentic-software-engineering.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-038",
-      "title": "OpenClaw: Our Comprehensive Guide for Beginners",
-      "displayTitle": "OpenClaw: Our Comprehensive Guide for Beginners",
-      "summary": "OpenClaw adoption quality is driven less by one-time setup and more by ongoing operating discipline: delegation mindset, staged permissioning, proactive heartbeat routines, and explicit safety boundaries.",
-      "url": "https://every.to/guides/claw-school?source=post_button",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-04T14:31:37Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-038-openclaw-guide-beginner-operating-patterns.md",
-      "historicalRegimeArtifact": true,
-      "historicalRegimeNote": "Retained research context only; not active public regime or operating authority."
-    },
-    {
-      "id": "art-2026-03-04-037",
-      "title": "agency-agents",
-      "displayTitle": "agency-agents",
-      "summary": "agency-agents is a high-signal repository-level pattern library for role-specialized, persona-explicit AI collaborators, with concrete operating templates spanning engineering, design, product, marketing, QA, support, and orchestration.",
-      "url": "https://github.com/msitarzewski/agency-agents",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "discarded",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-04T14:01:36Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-037-agency-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-037-agency-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-030",
-      "title": "[2510.04905] Retrieval-Augmented Code Generation: A Survey with Focus on Repository-Level Approaches",
-      "displayTitle": "[2510.04905] Retrieval-Augmented Code Generation: A Survey with Focus on Repository-Level Approaches",
-      "summary": "Repository-level code generation should be treated as a retrieval-and-orchestration problem, not a pure generation problem, because practical software work requires cross-file coherence and long-range dependency handling.",
-      "url": "https://arxiv.org/abs/2510.04905",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-04T12:40:40Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-030-racg-repository-level-survey.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-030-racg-repository-level-survey.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-028",
-      "title": "[2502.13767] Agentic AI Software Engineers: Programming with Trust",
-      "displayTitle": "[2502.13767] Agentic AI Software Engineers: Programming with Trust",
-      "summary": "Agentic software engineering only scales in production when trust mechanisms (verification, analysis, and accountable orchestration) are designed as first-class outputs rather than afterthoughts.",
-      "url": "https://arxiv.org/abs/2502.13767",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-04T12:01:16Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-028-agentic-ai-software-engineers-programming-with-trust.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-028-agentic-ai-software-engineers-programming-with-trust.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-019",
-      "title": "[2509.06216] Agentic Software Engineering: Foundational Pillars and a Research Roadmap",
-      "displayTitle": "[2509.06216] Agentic Software Engineering: Foundational Pillars and a Research Roadmap",
-      "summary": "Agentic Software Engineering should be treated as a dual-modality discipline (SE for Humans + SE for Agents) with explicit process/artifact/tool separation, not as ad-hoc \u201cagentic coding\u201d prompts.",
-      "url": "https://arxiv.org/abs/2509.06216",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-04T09:40:13Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-019-agentic-software-engineering-sase-roadmap.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-019-agentic-software-engineering-sase-roadmap.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-017",
-      "title": "Conductor: Introducing context-driven development for Gemini CLI - Google Developers Blog",
-      "displayTitle": "Conductor: Introducing context-driven development for Gemini CLI - Google Developers Blog",
-      "summary": "Conductor reframes AI coding workflow from chat-session memory to repository-native memory by requiring persistent specs and plans as first-class artifacts before implementation.",
-      "url": "https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-04T09:01:32Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-017-conductor-context-driven-development.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-017-conductor-context-driven-development.md",
-      "historicalRegimeArtifact": true,
-      "historicalRegimeNote": "Retained research context only; not active public regime or operating authority."
-    },
-    {
-      "id": "art-2026-03-04-014",
-      "title": "[2509.14744] On the Use of Agentic Coding Manifests: An Empirical Study of Claude Code",
-      "displayTitle": "[2509.14744] On the Use of Agentic Coding Manifests: An Empirical Study of Claude Code",
-      "summary": "Agentic coding manifest files (e.g., CLAUDE.md ) are now analyzable engineering artifacts with recurring structure/content patterns, and their current documentation standards are immature.",
-      "url": "https://arxiv.org/abs/2509.14744",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-04T08:11:10Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-014-agentic-coding-manifests-claude.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-014-agentic-coding-manifests-claude.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-011",
-      "title": "Claude Code overview - Claude Code Docs",
-      "displayTitle": "Claude Code overview - Claude Code Docs",
-      "summary": "Claude Code should be modeled as a full-stack agentic coding runtime, not just a chat interface: the docs specify a cross-surface execution system (terminal/IDE/web/desktop/chat/CI) that preserves shared control artifacts ( CLAUDE.md , skills, hooks, MCP servers) while exposing...",
-      "url": "https://docs.anthropic.com/en/docs/claude-code",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-research",
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-research",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-04T07:31:35Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-011-claude-code-docs.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-011-claude-code-docs.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-010",
-      "title": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
-      "displayTitle": "What is the Model Context Protocol (MCP)? - Model Context Protocol",
-      "summary": "MCP should be treated as foundational interface infrastructure for agent systems: a standardized protocol boundary between AI hosts and external tools/data, rather than ad-hoc connector logic per application.",
-      "url": "https://modelcontextprotocol.io/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-04T07:10:50Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-010-model-context-protocol-foundation.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-010-model-context-protocol-foundation.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-007",
-      "title": "Introducing Microsoft Agent Framework: The Open-Source Engine for Agentic AI Apps | Microsoft Foundry Blog",
-      "displayTitle": "Introducing Microsoft Agent Framework: The Open-Source Engine for Agentic AI Apps | Microsoft Foundry Blog",
-      "summary": "Microsoft Agent Framework positions context-aware multi-agent development as a unified engineering stack: open protocol interoperability (MCP/A2A/OpenAPI), explicit orchestration models, pluggable memory, and production controls (durability, observability, approvals).",
-      "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-04T06:31:54Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-007-microsoft-agent-framework-open-source-engine.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-007-microsoft-agent-framework-open-source-engine.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-006",
-      "title": "Architecting efficient context-aware multi-agent framework for production - Google Developers Blog",
-      "displayTitle": "Architecting efficient context-aware multi-agent framework for production - Google Developers Blog",
-      "summary": "Scaling production agents requires treating context as a systems problem, not a prompt-length problem. The core design move is to compile per-call working context from structured state, rather than continuously appending raw history.",
-      "url": "https://developers.googleblog.com/architecting-efficient-context-aware-multi-agent-framework-for-production/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-04T06:10:21Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-006-google-adk-context-engineering.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-006-google-adk-context-engineering.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-005",
-      "title": "agentic",
-      "displayTitle": "agentic",
-      "summary": "agentic is a practical context-engineering workflow layer for OpenCode that operationalizes phased software delivery (ticket \u2192 research \u2192 plan \u2192 execute \u2192 commit \u2192 review) and persists project knowledge in a structured \u201cthoughts\u201d memory surface.",
-      "url": "https://github.com/Cluster444/agentic",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory",
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-04T06:01:41Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-005-cluster444-agentic.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-005-cluster444-agentic.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-04-003",
-      "title": "Context Engineering for AI Agents in Open-Source Software",
-      "displayTitle": "Context Engineering for AI Agents in Open-Source Software",
-      "summary": "AI context files (AGENTS.md/CLAUDE.md/copilot-instructions variants) are now a measurable OSS phenomenon, but usage patterns are heterogeneous and still structurally immature.",
-      "url": "https://arxiv.org/html/2510.21413",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-04T05:10:31Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-04-003-context-engineering-oss-adoption.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-04-003-context-engineering-oss-adoption.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-02-024",
-      "title": "Context-Engineered Human\u2013AI Collaboration for Long-Horizon Tasks: A Case Study in Governance, Canonical Numerics, and Execution Control",
-      "displayTitle": "Context-Engineered Human\u2013AI Collaboration for Long-Horizon Tasks: A Case Study in Governance, Canonical Num\u2026",
-      "summary": "This Zenodo preprint presents a long-horizon human\u2013AI collaboration case study focused on controlling drift in practical execution. The stated contribution is procedural: reliability comes from governance structure rather than raw model capability. The record describes controls...",
-      "url": "https://zenodo.org/records/17760288",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory-systems"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory-systems"
-      ],
-      "processedAtUtc": "2026-03-03T06:36:51Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-02-024-zenodo-context-engineered-collaboration.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-02-024-zenodo-context-engineered-collaboration.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-02-023",
-      "title": "A2A",
-      "displayTitle": "A2A",
-      "summary": "A2A (Agent2Agent) is an open interoperability protocol for communication between independently built agentic systems. The core mechanism is protocol-level coordination rather than model-level consolidation: agents can discover each other via agent cards, negotiate interaction...",
-      "url": "https://github.com/a2aproject/A2A",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-03T06:36:50Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-02-023-a2a-protocol.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-02-023-a2a-protocol.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-02-011",
-      "title": "AI Agent Orchestration Patterns - Azure Architecture Center | Microsoft Learn",
-      "displayTitle": "AI Agent Orchestration Patterns - Azure Architecture Center | Microsoft Learn",
-      "summary": "Agentic systems should be engineered with explicit pattern selection and orchestration controls rather than generic \u201cagent\u201d abstractions. Pattern choice should match task topology, coordination cost, and reliability requirements.",
-      "url": "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design",
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-02T18:14:44Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-02-011-azure-agent-design-patterns.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-02-011-azure-agent-design-patterns.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-02-007",
-      "title": "The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey",
-      "displayTitle": "The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey",
-      "summary": "Agent reliability and task performance are architecture-dependent: robust agent systems need explicit planning loops, reflection/self-correction, and tool-calling discipline, with architecture choice (single vs multi-agent, vertical vs horizontal) matched to task structure...",
-      "url": "https://arxiv.org/html/2404.11584v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "UI-design",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "UI-design",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-02T04:44:04Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-02-007-agent-architectures-survey.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-02-007-agent-architectures-survey.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-02-002",
-      "title": "Agent Factory The New Era Of Agentic Ai Common Use Cases And Design Patterns",
-      "displayTitle": "Agent Factory The New Era Of Agentic Ai Common Use Cases And Design Patterns",
-      "summary": "Enterprise agent systems should be designed as composable pattern stacks rather than single-agent chat interfaces; durable production value depends on combining tool use, reflection, planning, multi-agent orchestration, and adaptive reasoning.",
-      "url": "https://azure.microsoft.com/en-us/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "UI-design"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "UI-design"
-      ],
-      "processedAtUtc": "2026-03-02T00:27:41Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-02-002-azure-agent-factory-patterns.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-02-002-azure-agent-factory-patterns.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-030",
-      "title": "ralph",
-      "displayTitle": "ralph",
-      "summary": "ralph",
-      "url": "https://github.com/snarktank/ralph",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-01T23:27:02Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-030-ralph.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-030-ralph.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-029",
-      "title": "compound-product",
-      "displayTitle": "compound-product",
-      "summary": "compound-product",
-      "url": "https://github.com/snarktank/compound-product",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-01T22:27:33Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-029-compound-product.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-029-compound-product.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-028",
-      "title": "compound-engineering-plugin",
-      "displayTitle": "compound-engineering-plugin",
-      "summary": "compound-engineering-plugin",
-      "url": "https://github.com/EveryInc/compound-engineering-plugin",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-01T22:27:33Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-028-compound-engineering-plugin.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-028-compound-engineering-plugin.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-026",
-      "title": "Inside Our In House Data Agent",
-      "displayTitle": "Inside Our In House Data Agent",
-      "summary": "Reliable data agents require layered grounding and continuous evaluation, not just strong base models. Accuracy at organizational scale depends on context quality, memory reuse, and strict access/evaluation controls.",
-      "url": "https://openai.com/index/inside-our-in-house-data-agent/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-01T21:57:21Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-026-openai-inhouse-data-agent.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-026-openai-inhouse-data-agent.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-025",
-      "title": "dash",
-      "displayTitle": "dash",
-      "summary": "dash",
-      "url": "https://github.com/agno-agi/dash",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-01T21:57:21Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-025-dash.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-025-dash.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-024",
-      "title": "Self Improving Text2Sql Agent with Dynamic Context and Continuous Learning",
-      "displayTitle": "Self Improving Text2Sql Agent with Dynamic Context and Continuous Learning",
-      "summary": "Text-to-SQL systems fail less from raw model weakness and more from missing organizational context. Reliability improves when runtime generation is grounded in retrievable knowledge and successful runs feed an offline learning loop.",
-      "url": "https://www.ashpreetbedi.com/articles/sql-agent",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-01T21:27:48Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-024-sql-agent-dynamic-context.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-024-sql-agent-dynamic-context.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-023",
-      "title": "Harness Engineering",
-      "displayTitle": "Harness Engineering",
-      "summary": "In high-throughput agentic development, the primary engineering bottleneck shifts from writing code to designing the harness: constraints, observability, review loops, and repository-legible context that let agents execute reliably.",
-      "url": "https://openai.com/index/harness-engineering/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-01T21:27:48Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-023-harness-engineering.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-023-harness-engineering.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-022",
-      "title": "dexter",
-      "displayTitle": "dexter",
-      "summary": "dexter",
-      "url": "https://github.com/virattt/dexter",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-01T20:58:56Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-022-dexter.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-022-dexter.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-020",
-      "title": "langextract",
-      "displayTitle": "langextract",
-      "summary": "langextract",
-      "url": "https://github.com/google/langextract",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-research",
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-research",
-        "agent-memory"
-      ],
-      "processedAtUtc": "2026-03-01T20:58:56Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-020-langextract.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-020-langextract.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-008",
-      "title": "Spark - Self-Evolving Intelligent Companion",
-      "displayTitle": "Spark - Self-Evolving Intelligent Companion",
-      "summary": "Spark positions itself as an open-source, local-first desktop environment for building and running evolving AI agents, with emphasis on private/local execution and team collaboration.",
-      "url": "https://spark.vibeship.co/",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-03-01T20:55:36Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-008.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-008.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-007",
-      "title": "OpenClaw Security 101: The Complete Guide | Johann S.",
-      "displayTitle": "OpenClaw Security 101: The Complete Guide | Johann S.",
-      "summary": "High-agency assistants should be treated as privileged automation systems and hardened with host-level and access-level controls before scaling use.",
-      "url": "https://www.johann.fyi/openclaw-security-101",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-01T20:25:00Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-01-006",
-      "title": "taste-skill",
-      "displayTitle": "taste-skill",
-      "summary": "taste-skill",
-      "url": "https://github.com/Leonxlnx/taste-skill",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "UI-design",
-        "agent-research"
-      ],
-      "laneTagsOriginal": [
-        "UI-design",
-        "agent-research"
-      ],
-      "processedAtUtc": "2026-03-01T20:25:00Z",
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-01-006-taste-skill.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-01-006-taste-skill.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-077",
-      "title": "Code Change Characteristics and Description Alignment: A Comparative Study of Agentic versus Human Pull Requests",
-      "displayTitle": "Code Change Characteristics and Description Alignment: A Comparative Study of Agentic versus Human Pull Req\u2026",
-      "summary": "Agentic pull requests demonstrate strong local-level commit communication but weaker PR-level alignment and higher short-horizon code churn compared with human pull requests.",
-      "url": "https://arxiv.org/html/2601.17627v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-077-change-characteristics-description-alignment.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-077-change-characteristics-description-alignment.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-069",
-      "title": "[2601.00477] Security in the Age of AI Teammates: An Empirical Study of Agentic Pull Requests on GitHub",
-      "displayTitle": "[2601.00477] Security in the Age of AI Teammates: An Empirical Study of Agentic Pull Requests on GitHub",
-      "summary": "Agent-authored pull requests make meaningful security contributions in real repositories, but those contributions face stricter human scrutiny, lower merge rates, and longer review latency than non-security agentic PRs.",
-      "url": "https://arxiv.org/abs/2601.00477",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-069-security-age-of-ai-teammates-agentic-prs.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-069-security-age-of-ai-teammates-agentic-prs.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-061",
-      "title": "2601.18749",
-      "displayTitle": "Meaningful Prs Human Vs Agentic Analysis",
-      "summary": "Pull-request merge success in mixed human/agentic software workflows is strongly driven by submitter attributes, while review dynamics affect human and agentic PRs differently.",
-      "url": "https://www.arxiv.org/pdf/2601.18749",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-061-meaningful-prs-human-vs-agentic-analysis.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-061-meaningful-prs-human-vs-agentic-analysis.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-034",
-      "title": "Building AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned",
-      "displayTitle": "Building AI Coding Agents for the Terminal: Scaffolding, Harness, Context Engineering, and Lessons Learned",
-      "summary": "Terminal-native coding agents need explicit harness architecture (scaffolding, runtime orchestration, context compaction, safety layers, and memory persistence) to stay reliable over long-horizon development tasks.",
-      "url": "https://arxiv.org/html/2603.05344v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-034-opendev-terminal-agent-harness-architecture.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-034-opendev-terminal-agent-harness-architecture.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-015",
-      "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
-      "displayTitle": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
-      "summary": "Agentic coding performance on real enterprise software work remains far from autonomous reliability once evaluated on long-horizon, contamination-resistant tasks rather than easier public bug-fix subsets.",
-      "url": "https://arxiv.org/html/2509.16941",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-015-swe-bench-pro-long-horizon-enterprise-benchmark.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-015-swe-bench-pro-long-horizon-enterprise-benchmark.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-011",
-      "title": "2601.11077",
-      "displayTitle": "Abc Bench Agentic Backend Coding",
-      "summary": "Agentic coding systems remain substantially underpowered for realistic backend development when evaluated across full lifecycle execution rather than static code-generation tasks.",
-      "url": "https://arxiv.org/pdf/2601.11077",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-011-abc-bench-agentic-backend-coding.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-011-abc-bench-agentic-backend-coding.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-009",
-      "title": "[2602.10975] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
-      "displayTitle": "[2602.10975] FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
-      "summary": "Current agentic coding systems that perform well on bug-fix benchmarks fail sharply on end-to-end feature development tasks, indicating a major capability gap in long-horizon software delivery.",
-      "url": "https://arxiv.org/abs/2602.10975",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-009-featurebench-complex-feature-dev-benchmark.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-009-featurebench-complex-feature-dev-benchmark.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-10-005",
-      "title": "2510.08790",
-      "displayTitle": "Compass Long Horizon Context Management",
-      "summary": "Long-horizon agent reliability is heavily constrained by context-management failure, and explicitly separating execution, strategy oversight, and context curation can materially improve benchmark performance.",
-      "url": "https://arxiv.org/pdf/2510.08790",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-memory"
-      ],
-      "laneTagsOriginal": [
-        "agent-memory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-10-005-compass-long-horizon-context-management.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-10-005-compass-long-horizon-context-management.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-09-006",
-      "title": "[2601.15195v1] Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
-      "displayTitle": "[2601.15195v1] Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
-      "summary": "Failed agentic pull requests are driven less by a single model-quality issue and more by a socio-technical failure stack: task selection mismatch, CI/test breakage, oversized change scope, and reviewer abandonment.",
-      "url": "https://arxiv.org/abs/2601.15195v1",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-09-006-where-do-ai-coding-agents-fail-prs.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-09-006-where-do-ai-coding-agents-fail-prs.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "art-2026-03-09-005",
-      "title": "How AI Coding Agents Modify Code: A Large-Scale Study of GitHub Pull Requests",
-      "displayTitle": "How AI Coding Agents Modify Code: A Large-Scale Study of GitHub Pull Requests",
-      "summary": "AI coding agents are now producing pull requests at meaningful scale, and their code-change profile differs materially from human contributors across commit structure and diff characteristics.",
-      "url": "https://arxiv.org/html/2601.17581",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": null,
-      "artifactSourcePath": "research/kb/queue/queue-art-2026-03-09-005-how-ai-coding-agents-modify-code-pr-study.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-art-2026-03-09-005-how-ai-coding-agents-modify-code-pr-study.md",
+      "processedAtUtc": "2026-04-02T03:21:03Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260303001-repository-level-context-files-mostly-add-cost-and-activity-overhead-rather-than-improving-coding-agent-success.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260303001-repository-level-context-files-mostly-add-cost-and-activity-overhead-rather-than-improving-coding-agent-success.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     }

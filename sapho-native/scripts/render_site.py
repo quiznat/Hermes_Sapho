@@ -26,6 +26,7 @@ from common import (
     render_markdown,
     slugify,
 )
+from publication_authority import evaluate_article_publication_authority
 
 DEFAULT_BASE_URL = "https://research.quiznat.com"
 ROOT = Path(__file__).resolve().parents[1]
@@ -720,6 +721,14 @@ def collect_current_articles(registry: dict, include_ready_ids: set[str] | None 
         article_id = article_path.parent.name
         status = str(meta.get("publication_status") or "")
         record = build_article_record(meta, article_path=article_path)
+        if site_mode() == "github-pages":
+            if status != "ready-for-daily":
+                continue
+            authority = evaluate_article_publication_authority(article_id)
+            if authority.get("verdict") != "pass":
+                continue
+            published.append((article_id, meta, body, record))
+            continue
         if status == "published":
             published.append((article_id, meta, body, record))
             continue
@@ -1011,6 +1020,34 @@ def overlay_kept_links(current_items: list[dict]) -> list[dict]:
     page = read_text(page_path)
     data_path = PUBLIC_DIR / "data" / "kept-links.json"
     payload = json.loads(read_text(data_path))
+
+    if site_mode() == "github-pages":
+        ordered_items = sorted([current_item_to_payload_item(item) for item in current_items], key=payload_item_sort_key, reverse=True)
+        page = re.sub(
+            r"<div class=\"portal-grid\">.*?</div>",
+            "<div class=\"portal-grid\">\n" + build_kept_links_cards(ordered_items) + "\n      </div>",
+            page,
+            count=1,
+            flags=re.DOTALL,
+        )
+        page = re.sub(
+            r"<p class=\"meta\">\d+ kept · \d+ decisioned · updated [^<]+</p>",
+            f'<p class="meta">{len(ordered_items)} kept · {len(ordered_items)} decisioned · updated {html.escape(now_utc())}</p>',
+            page,
+            count=1,
+        )
+        write_text(page_path, page)
+        payload["last_updated"] = now_utc()
+        payload["generatedAtUtc"] = payload["last_updated"]
+        payload["processedCount"] = len(ordered_items)
+        payload["decisionedCount"] = len(ordered_items)
+        payload["keptCount"] = len(ordered_items)
+        payload["decisionCounts"] = {"retain": len(ordered_items)}
+        payload["laneCounts"] = {"agent-factory": len(ordered_items)}
+        payload["items"] = ordered_items
+        write_text(data_path, json.dumps(payload, indent=2) + "\n")
+        return payload["items"]
+
     items = [dict(item) for item in (payload.get("items") or [])]
 
     baseline_kept = int(payload.get("keptCount") or len(items))

@@ -1,6 +1,6 @@
 {
   "version": "machine-index-v1.1.0",
-  "last_updated": "2026-04-05T01:00:15Z",
+  "last_updated": "2026-04-05T01:07:32Z",
   "update_cadence": "publish-run",
   "site": "research.quiznat.com",
   "start_here": "/agents-start-here.html",
@@ -10,14 +10,14 @@
   "inventory": {
     "text": "/site-files.txt",
     "json": "/site-files.json",
-    "count": 763
+    "count": 782
   },
   "items": [
     {
       "title": "Sapho Chapterhouse Institute Charter",
       "url": "/charter.md",
       "absoluteUrl": "https://research.quiznat.com/charter.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "tags": [
         "canonical",
         "policy",
@@ -31,7 +31,7 @@
       "title": "Latest Executive Brief (raw markdown)",
       "url": "/briefs/latest/executive-brief.md",
       "absoluteUrl": "https://research.quiznat.com/briefs/latest/executive-brief.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "tags": [
         "canonical",
         "briefing",
@@ -44,7 +44,7 @@
       "title": "Latest Strategic Insight Report (raw markdown)",
       "url": "/briefs/latest/technical-executive-report.md",
       "absoluteUrl": "https://research.quiznat.com/briefs/latest/technical-executive-report.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "tags": [
         "canonical",
         "briefing",
@@ -58,7 +58,7 @@
     {
       "path": "CNAME",
       "absoluteUrl": "https://research.quiznat.com/CNAME",
-      "timestamp": "2026-04-05T00:46:06Z",
+      "timestamp": "2026-04-05T01:07:00Z",
       "suffix": ""
     },
     {
@@ -184,43 +184,43 @@
     {
       "path": "a/20260302025.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260302025.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260303001.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260303001.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260303002.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260303002.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260303004.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260303004.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260303008.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260303008.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260303013.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260303013.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304003.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304003.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -256,7 +256,7 @@
     {
       "path": "a/20260304012.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304012.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -286,7 +286,7 @@
     {
       "path": "a/20260304018.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304018.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -298,31 +298,31 @@
     {
       "path": "a/20260304020.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304020.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304021.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304021.html",
-      "timestamp": "2026-03-30T17:55:39Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304022.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304022.html",
-      "timestamp": "2026-03-30T17:58:57Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304023.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304023.html",
-      "timestamp": "2026-03-30T18:26:29Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304024.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304024.html",
-      "timestamp": "2026-03-30T18:03:07Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -334,13 +334,13 @@
     {
       "path": "a/20260304026.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304026.html",
-      "timestamp": "2026-03-30T18:09:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304027.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304027.html",
-      "timestamp": "2026-03-30T18:11:37Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -352,7 +352,7 @@
     {
       "path": "a/20260304029.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304029.html",
-      "timestamp": "2026-03-30T18:14:22Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -364,13 +364,13 @@
     {
       "path": "a/20260304031.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304031.html",
-      "timestamp": "2026-03-30T18:20:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304032.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304032.html",
-      "timestamp": "2026-03-30T18:25:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -382,19 +382,19 @@
     {
       "path": "a/20260304034.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304034.html",
-      "timestamp": "2026-03-30T17:31:53Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304035.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304035.html",
-      "timestamp": "2026-03-30T06:50:03Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260304036.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260304036.html",
-      "timestamp": "2026-03-30T18:30:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -886,25 +886,25 @@
     {
       "path": "a/20260324002.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260324002.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260324003.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260324003.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260324004.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260324004.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "a/20260324005.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260324005.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -964,13 +964,13 @@
     {
       "path": "a/20260327001.html",
       "absoluteUrl": "https://research.quiznat.com/a/20260327001.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "agents-start-here.html",
       "absoluteUrl": "https://research.quiznat.com/agents-start-here.html",
-      "timestamp": "2026-04-05T00:46:06Z",
+      "timestamp": "2026-04-05T01:07:00Z",
       "suffix": ".html"
     },
     {
@@ -1066,13 +1066,25 @@
     {
       "path": "artifacts/kb/queue/queue-20260302025-towards-a-science-of-scaling-agent-systems.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260302025-towards-a-science-of-scaling-agent-systems.md",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
       "path": "artifacts/kb/queue/queue-20260303001-evaluating-agents-md-do-repository-level-context-files-help-coding-agents.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260303001-evaluating-agents-md-do-repository-level-context-files-help-coding-agents.md",
       "timestamp": "2026-03-29T17:20:06Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260303001-repository-level-context-files-mostly-add-cost-and-activity-overhead-rather-than-improving-coding-agent-success.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260303001-repository-level-context-files-mostly-add-cost-and-activity-overhead-rather-than-improving-coding-agent-success.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260303002-agent-readmes-an-empirical-study-of-context-files-for-agentic-coding.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260303002-agent-readmes-an-empirical-study-of-context-files-for-agentic-coding.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1088,9 +1100,15 @@
       "suffix": ".md"
     },
     {
+      "path": "artifacts/kb/queue/queue-20260303004-arxiv-2601-20404.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260303004-arxiv-2601-20404.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
       "path": "artifacts/kb/queue/queue-20260303008-when-agents-md-backfires-what-a-new-study-says-about-context-files-and-coding-agents.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260303008-when-agents-md-backfires-what-a-new-study-says-about-context-files-and-coding-agents.md",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1100,15 +1118,33 @@
       "suffix": ".md"
     },
     {
+      "path": "artifacts/kb/queue/queue-20260303013-codified-context-infrastructure-for-ai-agents-in-a-complex-codebase.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260303013-codified-context-infrastructure-for-ai-agents-in-a-complex-codebase.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
       "path": "artifacts/kb/queue/queue-20260304003-agents-md-an-emerging-standard-for-ai-context-in-open-source.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304003-agents-md-an-emerging-standard-for-ai-context-in-open-source.md",
       "timestamp": "2026-03-29T17:20:06Z",
       "suffix": ".md"
     },
     {
+      "path": "artifacts/kb/queue/queue-20260304003-context-engineering-for-ai-agents-in-open-source-software.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304003-context-engineering-for-ai-agents-in-open-source-software.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
       "path": "artifacts/kb/queue/queue-20260304012-mapping-the-failure-modes-of-multi-agent-llm-systems.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304012-mapping-the-failure-modes-of-multi-agent-llm-systems.md",
       "timestamp": "2026-03-29T17:20:06Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304012-why-do-multi-agent-llm-systems-fail.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304012-why-do-multi-agent-llm-systems-fail.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1127,6 +1163,18 @@
       "path": "artifacts/kb/queue/queue-20260304018-a-new-context-engineering-workflow-for-multi-agent-llm-code-assistants.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304018-a-new-context-engineering-workflow-for-multi-agent-llm-code-assistants.md",
       "timestamp": "2026-03-29T17:20:06Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304018-context-engineering-for-multi-agent-llm-code-assistants-using-elicit-notebooklm-chatgpt-and-claude-code.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304018-context-engineering-for-multi-agent-llm-code-assistants-using-elicit-notebooklm-chatgpt-and-claude-code.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304020-metagpt-meta-programming-for-a-multi-agent-collaborative-framework.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304020-metagpt-meta-programming-for-a-multi-agent-collaborative-framework.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1150,7 +1198,13 @@
     {
       "path": "artifacts/kb/queue/queue-20260304021-professional-software-developers-don-t-vibe-they-control-ai-agent-use-for-coding-in-2025.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304021-professional-software-developers-don-t-vibe-they-control-ai-agent-use-for-coding-in-2025.md",
-      "timestamp": "2026-03-29T18:10:20Z",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304022-an-empirical-study-of-developer-provided-context-for-ai-coding-assistants-in-open-source-projects.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304022-an-empirical-study-of-developer-provided-context-for-ai-coding-assistants-in-open-source-projects.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1163,6 +1217,12 @@
       "path": "artifacts/kb/queue/queue-20260304022-developer-provided-context-shapes-ai-coding-assistant-effectiveness.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304022-developer-provided-context-shapes-ai-coding-assistant-effectiveness.md",
       "timestamp": "2026-03-30T17:58:57Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304023-published-as-a-conference-paper-at-iclr-2024.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304023-published-as-a-conference-paper-at-iclr-2024.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1180,7 +1240,7 @@
     {
       "path": "artifacts/kb/queue/queue-20260304024-testing-and-enhancing-multi-agent-systems-for-robust-code-generation.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304024-testing-and-enhancing-multi-agent-systems-for-robust-code-generation.md",
-      "timestamp": "2026-03-30T18:03:07Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1204,13 +1264,13 @@
     {
       "path": "artifacts/kb/queue/queue-20260304026-chatdev-communicative-agents-for-software-development.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304026-chatdev-communicative-agents-for-software-development.md",
-      "timestamp": "2026-03-30T18:09:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
       "path": "artifacts/kb/queue/queue-20260304027-agentic-much-adoption-of-coding-agents-on-github.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304027-agentic-much-adoption-of-coding-agents-on-github.md",
-      "timestamp": "2026-03-29T18:10:28Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1222,7 +1282,7 @@
     {
       "path": "artifacts/kb/queue/queue-20260304029-decoding-the-configuration-of-ai-coding-agents-insights-from-claude-code-projects.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304029-decoding-the-configuration-of-ai-coding-agents-insights-from-claude-code-projects.md",
-      "timestamp": "2026-03-30T18:14:22Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1244,6 +1304,18 @@
       "suffix": ".md"
     },
     {
+      "path": "artifacts/kb/queue/queue-20260304031-how-to-build-ai-agents-by-augmenting-llms-with-codified-human-expert-domain-knowledge-a-software-engineering-framework.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304031-how-to-build-ai-agents-by-augmenting-llms-with-codified-human-expert-domain-knowledge-a-software-engineering-framework.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304032-confucius-code-agent-an-open-sourced-ai-software-engineer-at-industrial-scale.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304032-confucius-code-agent-an-open-sourced-ai-software-engineer-at-industrial-scale.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
       "path": "artifacts/kb/queue/queue-20260304032-confucius-code-agent-open-source-ai-engineering-at-industrial-scale.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304032-confucius-code-agent-open-source-ai-engineering-at-industrial-scale.md",
       "timestamp": "2026-03-30T18:25:02Z",
@@ -1262,6 +1334,12 @@
       "suffix": ".md"
     },
     {
+      "path": "artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-enable-automated-software-engineering.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-enable-automated-software-engineering.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
       "path": "artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-unlock-automated-software-engineering.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304034-swe-agent-agent-computer-interfaces-unlock-automated-software-engineering.md",
       "timestamp": "2026-03-30T17:31:53Z",
@@ -1277,6 +1355,18 @@
       "path": "artifacts/kb/queue/queue-20260304035-ace-agentic-context-engineering-for-adaptive-llm-performance.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304035-ace-agentic-context-engineering-for-adaptive-llm-performance.md",
       "timestamp": "2026-03-30T06:50:03Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304035-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304035-agentic-context-engineering-evolving-contexts-for-self-improving-language-models.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260304036-swe-context-bench-a-benchmark-for-context-learning-in-coding.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260304036-swe-context-bench-a-benchmark-for-context-learning-in-coding.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1316,9 +1406,27 @@
       "suffix": ".md"
     },
     {
+      "path": "artifacts/kb/queue/queue-20260324002-top-coding-agents-2025-benched-ai.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260324002-top-coding-agents-2025-benched-ai.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
       "path": "artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-a-practitioner-s-field-test.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-a-practitioner-s-field-test.md",
       "timestamp": "2026-03-29T17:20:06Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-cursor-vs-claude-openai-and-gemini-render-blog.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260324003-testing-ai-coding-agents-2025-cursor-vs-claude-openai-and-gemini-render-blog.md",
+      "timestamp": "2026-04-05T01:07:32Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260324004-1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1-augment-code.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260324004-1-open-source-agent-on-swe-bench-verified-by-combining-claude-3-7-and-o1-augment-code.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -1331,6 +1439,12 @@
       "path": "artifacts/kb/queue/queue-20260324005-what-ai-coding-benchmarks-actually-measure-and-what-they-miss.md",
       "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260324005-what-ai-coding-benchmarks-actually-measure-and-what-they-miss.md",
       "timestamp": "2026-03-29T17:20:06Z",
+      "suffix": ".md"
+    },
+    {
+      "path": "artifacts/kb/queue/queue-20260324005-what-are-popular-ai-coding-benchmarks-actually-measuring-nilenso-blog.md",
+      "absoluteUrl": "https://research.quiznat.com/artifacts/kb/queue/queue-20260324005-what-are-popular-ai-coding-benchmarks-actually-measuring-nilenso-blog.md",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".md"
     },
     {
@@ -3556,25 +3670,25 @@
     {
       "path": "briefs/2026-03-30/executive-brief.html",
       "absoluteUrl": "https://research.quiznat.com/briefs/2026-03-30/executive-brief.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".html"
     },
     {
       "path": "briefs/2026-03-30/executive-brief.md",
       "absoluteUrl": "https://research.quiznat.com/briefs/2026-03-30/executive-brief.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".md"
     },
     {
       "path": "briefs/2026-03-30/technical-executive-report.html",
       "absoluteUrl": "https://research.quiznat.com/briefs/2026-03-30/technical-executive-report.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".html"
     },
     {
       "path": "briefs/2026-03-30/technical-executive-report.md",
       "absoluteUrl": "https://research.quiznat.com/briefs/2026-03-30/technical-executive-report.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".md"
     },
     {
@@ -3586,13 +3700,13 @@
     {
       "path": "briefs/latest/executive-brief.md",
       "absoluteUrl": "https://research.quiznat.com/briefs/latest/executive-brief.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".md"
     },
     {
       "path": "briefs/latest/meta.json",
       "absoluteUrl": "https://research.quiznat.com/briefs/latest/meta.json",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".json"
     },
     {
@@ -3604,7 +3718,7 @@
     {
       "path": "briefs/latest/technical-executive-report.md",
       "absoluteUrl": "https://research.quiznat.com/briefs/latest/technical-executive-report.md",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".md"
     },
     {
@@ -3652,19 +3766,19 @@
     {
       "path": "daily/2026-03-30.html",
       "absoluteUrl": "https://research.quiznat.com/daily/2026-03-30.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".html"
     },
     {
       "path": "daily/latest.html",
       "absoluteUrl": "https://research.quiznat.com/daily/latest.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:31Z",
       "suffix": ".html"
     },
     {
       "path": "daily-briefing-archive.html",
       "absoluteUrl": "https://research.quiznat.com/daily-briefing-archive.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -3712,7 +3826,7 @@
     {
       "path": "data/kept-links.json",
       "absoluteUrl": "https://research.quiznat.com/data/kept-links.json",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".json"
     },
     {
@@ -3790,19 +3904,19 @@
     {
       "path": "index.html",
       "absoluteUrl": "https://research.quiznat.com/index.html",
-      "timestamp": "2026-04-05T00:46:06Z",
+      "timestamp": "2026-04-05T01:07:00Z",
       "suffix": ".html"
     },
     {
       "path": "index.json",
       "absoluteUrl": "https://research.quiznat.com/index.json",
-      "timestamp": "2026-04-05T00:46:06Z",
+      "timestamp": "2026-04-05T01:07:00Z",
       "suffix": ".json"
     },
     {
       "path": "kept-links.html",
       "absoluteUrl": "https://research.quiznat.com/kept-links.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -3940,43 +4054,43 @@
     {
       "path": "s/20260302025.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260302025.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260303001.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260303001.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260303002.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260303002.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260303004.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260303004.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260303008.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260303008.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260303013.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260303013.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304003.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304003.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4012,7 +4126,7 @@
     {
       "path": "s/20260304012.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304012.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4042,7 +4156,7 @@
     {
       "path": "s/20260304018.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304018.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4054,31 +4168,31 @@
     {
       "path": "s/20260304020.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304020.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304021.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304021.html",
-      "timestamp": "2026-03-30T17:55:39Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304022.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304022.html",
-      "timestamp": "2026-03-30T17:58:57Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304023.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304023.html",
-      "timestamp": "2026-03-30T18:26:29Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304024.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304024.html",
-      "timestamp": "2026-03-30T18:03:07Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4090,13 +4204,13 @@
     {
       "path": "s/20260304026.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304026.html",
-      "timestamp": "2026-03-30T18:09:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304027.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304027.html",
-      "timestamp": "2026-03-30T18:11:37Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4108,7 +4222,7 @@
     {
       "path": "s/20260304029.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304029.html",
-      "timestamp": "2026-03-30T18:14:22Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4120,13 +4234,13 @@
     {
       "path": "s/20260304031.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304031.html",
-      "timestamp": "2026-03-30T18:20:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304032.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304032.html",
-      "timestamp": "2026-03-30T18:25:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4138,19 +4252,19 @@
     {
       "path": "s/20260304034.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304034.html",
-      "timestamp": "2026-03-30T17:31:53Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304035.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304035.html",
-      "timestamp": "2026-03-30T06:50:03Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260304036.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260304036.html",
-      "timestamp": "2026-03-30T18:30:02Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4534,25 +4648,25 @@
     {
       "path": "s/20260324002.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260324002.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260324003.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260324003.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260324004.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260324004.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "s/20260324005.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260324005.html",
-      "timestamp": "2026-03-29T17:20:06Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
@@ -4612,19 +4726,19 @@
     {
       "path": "s/20260327001.html",
       "absoluteUrl": "https://research.quiznat.com/s/20260327001.html",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".html"
     },
     {
       "path": "site-files.json",
       "absoluteUrl": "https://research.quiznat.com/site-files.json",
-      "timestamp": "2026-04-05T00:46:06Z",
+      "timestamp": "2026-04-05T01:07:00Z",
       "suffix": ".json"
     },
     {
       "path": "site-files.txt",
       "absoluteUrl": "https://research.quiznat.com/site-files.txt",
-      "timestamp": "2026-04-05T01:00:15Z",
+      "timestamp": "2026-04-05T01:07:32Z",
       "suffix": ".txt"
     },
     {
