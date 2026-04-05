@@ -1,0 +1,18 @@
+- The study dataset contains 33,596 agent-authored pull requests across five coding agents.
+- Across all agents, 24,014 of 33,596 PRs were merged, for a reported merge rate of 71.48%.
+- OpenAI Codex accounts for 21,799 PRs, the largest PR volume among the five agents in the dataset.
+- OpenAI Codex has the highest reported merge rate in the dataset at 82.59% (18,004 merged PRs).
+- Copilot has the lowest reported merge rate among the five agents at 43.04% (2,139 merged PRs).
+- Documentation tasks have a reported overall merge rate of 84%, one of the highest task-type success rates across agents.
+- CI tasks have a reported overall merge rate of 79%, placing them among the highest-success task types.
+- Build tasks have a reported overall merge rate of 74% across agents.
+- Performance tasks have the lowest reported overall merge rate across agents at 55%.
+- Fix tasks have a reported overall merge rate of 64%, placing them among the lowest-merge task types.
+- Not-merged PRs show larger total lines-of-code changes than merged PRs, with a reported Cliff’s delta difference of 17%.
+- Not-merged PRs touch more files than merged PRs, with a reported Cliff’s delta difference of 10%.
+- Not-merged PRs experience more CI failures than merged PRs, with a reported Cliff’s delta of 24%, described as a moderate effect size.
+- Each additional failed CI check is associated with about a 15% decrease in the odds of a PR being merged.
+- The qualitative rejection analysis began with 600 manually annotated rejected PRs, but 38 were inaccessible at analysis time, leaving 562 PRs for categorization.
+- Reviewer-level abandonment is the most frequent rejection pattern, affecting 228 PRs, or 38% of the manually analyzed rejected PRs.
+- Duplicate PRs are the most common pull-request-level rejection pattern, affecting 142 PRs, or 23% of the annotated rejected PRs.
+- CI/test failure is the most common code-level rejection pattern, affecting 99 PRs, or 17% of the annotated rejected PRs.

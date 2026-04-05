@@ -5,7 +5,7 @@ source_url: https://addyosmani.com/blog/factory-model/
 canonical_url: https://addyosmani.com/blog/factory-model
 source_channel: runtime-replay
 queued_at_utc: '2026-03-04T22:32:14Z'
-status: captured
+status: discarded
 article_id: art-2026-03-04-074
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

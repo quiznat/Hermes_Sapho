@@ -5,7 +5,7 @@ source_url: https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-inc
 canonical_url: https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident
 source_channel: runtime-replay
 queued_at_utc: '2026-03-07T15:30:40Z'
-status: captured
+status: kept
 article_id: art-2026-03-07-033
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

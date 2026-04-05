@@ -1,0 +1,4 @@
+- The study reports that 24,014 of 33,596 agent-authored pull requests across five coding agents were merged, for an overall merge rate of 71.48%.
+- OpenAI Codex had both the largest pull-request volume in the dataset at 21,799 PRs and the highest reported merge rate at 82.59%.
+- Merge success varies by task type, with documentation tasks reported at 84% and CI tasks at 79%, versus 64% for fix tasks and 55% for performance tasks.
+- Failed CI is a meaningful predictor of non-merge in this study: not-merged PRs had more CI failures, each additional failed CI check was associated with about a 15% decrease in merge odds, and CI/test failure was the most common code-level rejection pattern in the annotated rejected PRs.

@@ -1,0 +1,4 @@
+- In this matched dataset, 475 of 567 Claude Code-generated pull requests were merged, for an 83.77425% acceptance rate.
+- Claude Code-generated pull requests had a significantly lower acceptance rate than matched human pull requests, at 83.77425% versus 91.00529%.
+- Among pull requests that were merged, Claude Code-generated pull requests moved through revision with outcomes broadly similar to matched human pull requests, including no significant difference in merge-without-revision rates and a median of two revised commits when revisions were needed.
+- The study's agentic PR dataset is bounded to pull requests explicitly labeled "Generated with Claude Code" in GitHub descriptions, drawn from repositories with at least 10 stars between February 24, 2025 and April 30, 2025, with additional exclusions during comparison-set construction.

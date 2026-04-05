@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-07-048",
+  "reviewed_at_utc": "2026-04-05T04:21:50Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Strong benchmark wins are visible, but the article also shows clear unevenness and cost tradeoffs rather than uniform general-purpose gains.",
+  "review_confidence": "high",
+  "contradiction_count": 1,
+  "status": "disclosed"
+}

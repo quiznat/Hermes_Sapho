@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-06-021",
+  "decision": "kept",
+  "qualified_by": "experimental_blog",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This preprint reports a substantial empirical study of real GitHub pull requests with concrete acceptance and revision metrics.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-06-021\nticket_id: ticket-import-art-2026-03-06-021\ndecision: kept\nreason: This preprint reports a substantial empirical study of real GitHub pull requests with concrete acceptance and revision metrics.\nscope_class: preprint\ndecided_at_utc: 2026-04-05T04:12:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-05T04:15:35Z",
+  "mode": "agent"
+}

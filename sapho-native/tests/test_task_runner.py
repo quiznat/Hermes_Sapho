@@ -59,6 +59,11 @@ session_id: 20260331_032122_c6700d
         clean = task_runner.normalize_output(raw)
         self.assertEqual(task_runner.classify_status(raw, clean, None), "error")
 
+    def test_retry_noise_with_valid_clean_output_is_not_classified_as_error(self) -> None:
+        raw = "⚠️ API call failed (attempt 1/3): RemoteProtocolError\n⏳ Retrying in 2s...\n\n---\nversion: curator-receipt.v1\ndecision: discarded\n---"
+        clean = task_runner.normalize_output(raw)
+        self.assertEqual(task_runner.classify_status(raw, clean, None), "ok")
+
     def test_run_task_writes_receipt_and_returns_ok(self) -> None:
         completed = subprocess.CompletedProcess(
             args=["hermes"],

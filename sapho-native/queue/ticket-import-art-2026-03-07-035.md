@@ -5,7 +5,7 @@ source_url: https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool
 canonical_url: https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7
 source_channel: runtime-replay
 queued_at_utc: '2026-03-07T15:30:40Z'
-status: captured
+status: discarded
 article_id: art-2026-03-07-035
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

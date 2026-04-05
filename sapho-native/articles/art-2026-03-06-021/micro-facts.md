@@ -1,0 +1,16 @@
+- The study analyzes 567 Claude Code-generated pull requests across 157 diverse open-source projects.
+- Agentic PRs were identified by searching GitHub PR descriptions for the string “Generated with Claude Code.”
+- The initial Agentic-PR search covered PRs submitted between February 24, 2025 and April 30, 2025 in repositories with at least 10 GitHub stars, yielding 797 PRs before filtering.
+- After excluding 54 open PRs, the study retained 743 Agentic-PRs before constructing the matched comparison dataset.
+- The human comparison set was matched by author and repository, and 176 Agentic-PRs were excluded because a same-author human comparison set could not be obtained in a similar time frame.
+- 475 of 567 Agentic-PRs were merged, corresponding to an 83.77425% acceptance rate.
+- The acceptance rate for Agentic-PRs was lower than for Human-PRs: 83.77425% versus 91.00529%, and the paper reports this difference as statistically significant.
+- Median time to merge was 1.23 hours for Agentic-PRs and 1.04 hours for Human-PRs, with no significant difference reported.
+- Among rejected Agentic-PRs, 12.1% were rejected because another PR or developer implemented a different solution first.
+- Among rejected Agentic-PRs, 5.5% were PRs created only to trigger automated verification and were not intended for merging.
+- 63.7% of rejected Agentic-PRs were closed without explanatory comments or discussion.
+- Among merged PRs, 54.94737% of Agentic-PRs and 58.52713% of Human-PRs were merged without any revision, with no statistically significant difference reported.
+- When revisions were required, both Agentic-PRs and Human-PRs typically had a median of 2 revised commits before merge.
+- Refactoring was more common in Agentic-PRs than Human-PRs, at 24.9% versus 14.9% in the manually classified PR sample.
+- Test-related changes were more common in Agentic-PRs than Human-PRs, at 18.8% versus 4.5% in the manually classified PR sample.
+- Among revised Agentic-PRs, the most common revision categories were bug fixes (45.1%), documentation updates (27.4%), refactoring (25.7%), and style changes (22.1%).

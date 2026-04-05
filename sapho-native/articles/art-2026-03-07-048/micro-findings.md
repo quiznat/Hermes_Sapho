@@ -1,0 +1,4 @@
+- AgentOrchestra uses a two-tier hierarchical design in which a planning agent decomposes tasks, coordinates specialized sub-agents, and updates the plan as intermediate results arrive.
+- AgentOrchestra is designed to run across mixed model backends, including commercial and local open-source models, with model switching available during task execution.
+- The paper reports that AgentOrchestra outperforms the listed comparison systems on SimpleQA, reaching 95.3% accuracy versus 93.9% for Perplexity Deep Research, 50.8% for gemini-2.5-pro-preview-05-06, and 49.4% for o3 without tools.
+- AgentOrchestra shows uneven reported performance across benchmarks and difficulty levels, with strong GAIA results but only 25.9% on HLE, while the paper also notes that architectural complexity and inter-agent communication add latency and computational overhead.

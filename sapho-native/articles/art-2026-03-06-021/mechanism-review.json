@@ -1,0 +1,33 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-06-021",
+  "reviewed_at_utc": "2026-04-05T04:15:35Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The study shows that labeled Claude Code pull requests were often merged but were accepted less often than matched human pull requests, and it does not establish why that gap exists.",
+  "review_confidence": "medium",
+  "mechanism_count": 0,
+  "bounded_claim_count": 5,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "Claude Code-generated pull requests in the matched dataset were merged at an 83.77425% rate.",
+      "bounds": "This is a descriptive result for the analyzed matched sample of 567 labeled pull requests across 157 projects, not a causal explanation of why those pull requests were or were not merged."
+    },
+    {
+      "claim_text": "Claude Code-generated pull requests had a significantly lower acceptance rate than matched human pull requests.",
+      "bounds": "The matched comparison supports a statistically significant acceptance gap within this constructed dataset, but it does not identify the cause of that gap; matching by author and repository and excluding unmatched agentic PRs limits generalization."
+    },
+    {
+      "claim_text": "Among merged pull requests, agentic and human pull requests showed broadly similar visible revision outcomes.",
+      "bounds": "This supports only a bounded claim about merged PRs after acceptance, not an explanation for the earlier acceptance disparity; similar merge timing and revision counts do not reveal why more agentic PRs failed to merge."
+    },
+    {
+      "claim_text": "The dataset is limited to pull requests explicitly labeled \"Generated with Claude Code\" in GitHub descriptions and then narrowed by filtering and matching rules.",
+      "bounds": "The findings apply to explicitly labeled, time-bounded, star-filtered, and matchable Claude Code pull requests rather than to all agent-assisted coding activity on GitHub."
+    },
+    {
+      "claim_text": "The study does not support a causal explanation for the acceptance gap because most rejection causes remain unobserved.",
+      "bounds": "Some rejected PRs were closed for procedural reasons, and 63.7% were closed without explanatory discussion, so the available evidence is too incomplete to justify a mechanism claim about why agentic PR acceptance was lower."
+    }
+  ]
+}

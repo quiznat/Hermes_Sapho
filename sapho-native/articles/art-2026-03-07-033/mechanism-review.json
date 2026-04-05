@@ -1,0 +1,17 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-07-033",
+  "reviewed_at_utc": "2026-04-05T04:18:57Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Firetiger's outage followed a documented control-plane failure chain, while detection and recovery were limited more by broken escalation than by absent monitoring.",
+  "review_confidence": "high",
+  "mechanism_count": 3,
+  "bounded_claim_count": 1,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Once the issue was properly surfaced, Firetiger used an AI-assisted operational workflow to identify the bad deployment state and restore service.",
+      "bounds": "The evidence supports that automated triage identified the bad ECR version and that Claude Code with MCP, AWS access, and GitHub CLI access was used to locate the broken deployment, rebuild the image, rerun deploy scripts, and restore service. It does not support a stronger mechanism claim that AI tooling alone was sufficient without human operational control, or that AI response was superior to a non-AI alternative."
+    }
+  ]
+}

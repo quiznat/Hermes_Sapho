@@ -1,0 +1,4 @@
+- A CI race condition and a follow-on deploy attribution error pushed a non-existent container ID into Firetiger’s deployment state, creating the conditions for the ingest outage.
+- The ingest outage materialized when invalid ECS definitions prevented replacement tasks from starting, leading frontend ingest load balancers to return 503s.
+- Firetiger detected the incident quickly in machine terms but failed to reach human operators in time because alert notification paths were misconfigured.
+- Once the issue was properly surfaced, Firetiger used an AI-assisted operational workflow to identify the bad deployment state and restore service.

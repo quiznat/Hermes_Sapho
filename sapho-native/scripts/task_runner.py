@@ -147,7 +147,9 @@ def looks_like_backend_failure(text: str) -> bool:
 
 
 def classify_status(raw_output: str, clean_output: str, error: str | None) -> str:
-    if error or looks_like_backend_failure(raw_output) or looks_like_backend_failure(clean_output):
+    if error or looks_like_backend_failure(clean_output):
+        return "error"
+    if looks_like_backend_failure(raw_output) and not clean_output.strip():
         return "error"
     if not raw_output.strip() or not clean_output.strip():
         return "malformed"

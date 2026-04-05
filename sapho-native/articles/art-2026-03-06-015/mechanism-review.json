@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-06-015",
+  "reviewed_at_utc": "2026-04-05T04:12:16Z",
+  "reviewer_role": "Synthesist",
+  "summary": "CI failure is the clearest supported mechanism-level blocker to merge, while the other reported patterns are descriptive and remain causally bounded.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 4,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "24,014 of 33,596 agent-authored pull requests were merged, for an overall merge rate of 71.48%.",
+      "bounds": "This is a descriptive dataset-level outcome only; the evidence does not explain what caused the aggregate merge rate."
+    },
+    {
+      "claim_text": "OpenAI Codex had both the largest pull-request volume in the dataset and the highest reported merge rate.",
+      "bounds": "The evidence supports an observed cross-agent difference in this dataset, but it does not identify whether the gap comes from model capability, task mix, repository mix, or reviewer behavior."
+    },
+    {
+      "claim_text": "Merge success varies by task type, with documentation and CI higher than fix and performance tasks.",
+      "bounds": "The evidence supports task-type variation in merge outcomes, but it does not establish the causal reason for those differences or separate complexity, review burden, and repository norms."
+    },
+    {
+      "claim_text": "Not-merged pull requests tend to be larger and touch more files than merged pull requests.",
+      "bounds": "These are associative size and scope differences, not direct proof that larger changes themselves cause rejection."
+    }
+  ]
+}
