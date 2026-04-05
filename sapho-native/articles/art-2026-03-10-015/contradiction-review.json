@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-10-015",
+  "reviewed_at_utc": "2026-04-05T15:12:58Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article presents SWE-Bench Pro as a stronger long-horizon benchmark, but its private split design and limited language coverage leave important bounds and inspection gaps visible.",
+  "review_confidence": "high",
+  "contradiction_count": 4,
+  "status": "disclosed"
+}

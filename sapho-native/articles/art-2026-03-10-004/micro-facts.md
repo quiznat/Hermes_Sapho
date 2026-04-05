@@ -1,0 +1,13 @@
+- SWE-EVO contains 48 software-evolution tasks drawn from 7 mature open-source Python projects.
+- The mean SWE-EVO gold patch edits 610.5 lines across 20.9 files and 51.0 functions.
+- SWE-EVO task test suites average 81.4 FAIL_TO_PASS tests and 874.0 total tests per instance.
+- SWE-EVO retains only candidates with at least one FAIL_TO_PASS test and discards candidates with installation or runtime errors.
+- In SWE-EVO, the model receives a release-note item plus the complete pre-release codebase and must output a patch implementing the change.
+- Resolved Rate counts an instance as solved only if all FAIL_TO_PASS and PASS_TO_PASS tests pass under the model patch.
+- Fix Rate gives partial credit for fixed FAIL_TO_PASS tests, but assigns the entire instance a score of 0 if any PASS_TO_PASS test regresses.
+- With release-note plus PR/issue context, gpt-5-08-07 resolved 18.75% of SWE-EVO tasks in OpenHands and 20.83% in SWE-agent, versus 65.00% on SWE-bench Verified.
+- In the release-note-only setting, gpt-5-08-07 resolved 14.58% of SWE-EVO tasks in OpenHands and 16.67% in SWE-agent.
+- Adding PR/issue context improved SWE-EVO results only modestly, according to the authors.
+- For gpt-5, more than 60% of unresolved SWE-EVO trajectories were labeled as instruction-following failures.
+- Instances solved less often were associated with more pull requests, with mean PR counts of 14.84, 6.71, 3.57, and 1.67 across difficulty groups from hardest to easiest.
+- The authors state that SWE-EVO currently covers only Python projects, uses release notes as specifications, and has 48 instances, which they say limits statistical power for fine-grained comparisons.

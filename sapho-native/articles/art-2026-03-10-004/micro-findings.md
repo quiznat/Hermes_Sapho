@@ -1,0 +1,4 @@
+- SWE-EVO is designed to evaluate coding agents on long-horizon software-evolution tasks that are larger in scope than typical short bug-fix benchmarks.
+- On SWE-EVO, gpt-5-08-07 resolved far fewer tasks than on SWE-bench Verified, even when given release-note plus PR/issue context.
+- The paper presents instruction-following failure as a major observed contributor to gpt-5's unresolved SWE-EVO trajectories, while showing that extra PR/issue context yields only modest improvement.
+- SWE-EVO's scoring and dataset construction make its results deliberately strict and should be interpreted with benchmark-specific limits in mind.

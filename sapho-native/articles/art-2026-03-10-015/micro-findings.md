@@ -1,0 +1,4 @@
+- SWE-Bench Pro contains 1,865 problems drawn from 41 actively maintained repositories.
+- SWE-Bench Pro is partitioned into public, held-out, and proprietary commercial subsets, with only the public subset released and the private subsets retained to limit overfitting and enable external reporting on unreleased tasks.
+- SWE-Bench Pro is designed to test longer-horizon code-editing work than lightweight bugfix benchmarks, with tasks described as taking hours to days and requiring substantial multi-file changes on average.
+- Reported agent performance drops from the public subset to the commercial subset in SWE-Bench Pro, indicating weaker performance on the commercial portion of this benchmark.

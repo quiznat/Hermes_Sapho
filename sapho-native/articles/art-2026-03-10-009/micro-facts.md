@@ -1,0 +1,18 @@
+- The paper states that existing agentic coding benchmarks mainly cover limited task scopes such as bug fixing within a single pull request.
+- FeatureBench uses an execution-based evaluation protocol and a test-driven collection method that automatically derives tasks from repositories with minimal human effort.
+- The collection method traces unit tests along a dependency graph to identify feature-level tasks that can span multiple commits and pull requests.
+- The first version of FeatureBench contains 200 evaluation tasks and 3825 executable environments from 24 open-source repositories.
+- The paper reports that Claude 4.5 Opus achieves 74.4% resolved rate on SWE-bench but only 11.0% on FeatureBench.
+- Using the Codex agent scaffold, GPT-5.1-Codex with medium reasoning resolved 12.5% of task cases.
+- Each problem prompt explicitly provides interface definitions, import paths, expected behaviors, and requires a directly callable solution.
+- Repository environment setup is the only manual step, takes about three minutes per repository, and totals less than one hour across 24 repositories.
+- The full benchmark configuration uses five pass-to-pass test files per environment.
+- Tasks were filtered to include only cases with more than 100 lines of pending implementation, at least 10 fail-to-pass test points, and test files initially committed after May 2022.
+- The benchmark's first version contains tasks created from May 2022 through September 2025.
+- Average FeatureBench L1 problem texts are 4818.0 words long versus 195.1 words for SWE-bench.
+- Average gold solutions in FeatureBench L1 span 790.2 lines, 15.7 files, and 29.2 functions, versus 32.8 lines, 1.7 files, and 3 functions in SWE-bench.
+- On the shared-repository subset, Claude Opus 4.5 resolved 74.40% of SWE-bench Verified tasks but 5.2% of FeatureBench subset tasks.
+- Removing explicit interface information reduced Lite-set performance: Gemini-3-Pro-Preview fell from 10.0% to 3.3% resolved, and GPT-5.1-Codex fell from 20.0% to 16.7% resolved.
+- Providing visible unit tests sharply increased Lite-set performance: GPT-5.1-Codex reached 63.3% resolved and 80.9% passed, while Gemini-3-Pro-Preview reached 60.0% resolved and 80.6% passed.
+- The LLM classifier for identifying top-level tested objects achieved 81.03% precision, 89.24% recall, 84.94% F1, and 91.74% accuracy.
+- The authors interpret the dominance of NameError in Claude Opus 4.5 failures as evidence that models still struggle with cross-file dependency resolution.

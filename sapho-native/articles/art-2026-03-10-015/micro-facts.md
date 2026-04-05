@@ -1,0 +1,16 @@
+- SWE-Bench Pro contains 1,865 problems drawn from 41 actively maintained repositories.
+- The benchmark is partitioned into 11 public repositories, 12 held-out repositories, and 18 proprietary commercial repositories.
+- The public subset contains 731 released instances.
+- The commercial subset contains 276 problems and is kept private while results are reported publicly.
+- The held-out subset contains 858 problems and is kept private for future overfitting checks.
+- SWE-Bench Pro tasks are described as long-horizon tasks that may take professional software engineers hours to days.
+- Reference solutions average 107.4 lines of code across 4.1 files.
+- Every SWE-Bench Pro problem requires at least 10 lines of change, and more than 100 tasks require over 100 lines of modification.
+- Each task is evaluated in a containerized, language-specific environment, and the environments are to be released as pre-built Docker images.
+- The benchmark runs each test set three times and filters out tests that do not pass consistently to reduce dynamic or occasional test failures.
+- On the public set, GPT-5 achieved the highest reported resolve rate at 23.3%.
+- On the commercial set, Claude Opus 4.1 achieved the highest reported resolve rate at 17.8%.
+- The best reported commercial-set score is lower than the best reported public-set score, indicating a public-to-commercial performance gap in this benchmark.
+- For Claude Opus 4.1 failures, wrong solutions accounted for 35.9% and syntax errors for 24.2%.
+- For Claude Sonnet 4 failures, context overflow accounted for 35.6% and endless file reading for 17.0%.
+- The paper states that language coverage is limited and that Java, C++, and Rust are underrepresented.

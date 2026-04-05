@@ -1,0 +1,4 @@
+- ABC-Bench is a benchmark for agentic backend coding that evaluates agents in a realistic executable workflow rather than isolated coding subtasks.
+- ABC-Bench covers a broad backend task surface with 224 curated tasks spanning 8 programming languages and 19 frameworks, including tasks that require autonomous environment configuration.
+- In the paper's comparison set, ABC-Bench is presented as the only benchmark that covers the full five-stage backend development lifecycle.
+- ABC-Bench is challenging for current agents, with performance limited by environment configuration and deployment bottlenecks and showing strong variation across stacks.

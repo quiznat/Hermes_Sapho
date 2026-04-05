@@ -1,0 +1,11 @@
+- COMPASS is a hierarchical framework with three specialized components: a MainAgent, a Meta-Thinker, and a ContextManager.
+- The paper identifies context management as the central bottleneck in long-horizon agent reasoning.
+- Across GAIA, BrowseComp, and Humanity's Last Exam, the paper reports accuracy gains of up to 20% relative to single-agent and multi-agent baselines.
+- With Gemini 2.5 Pro on BrowseComp, COMPASS scores 35.4 Pass@1.
+- With Gemini 2.5 Pro on GAIA and HLE, COMPASS scores 67.8 and 31.7 Pass@1, respectively.
+- Adding test-time scaling raises COMPASS to 43.7 on BrowseComp, 72.1 on GAIA, and 35.2 on HLE with Gemini 2.5 Pro.
+- Removing the Meta-Thinker drops BrowseComp Pass@1 from 35.4 in the full system to 15.2.
+- Removing the ContextManager drops BrowseComp Pass@1 from 35.4 in the full system to 26.4.
+- The paper reports that Context-12B achieves performance comparable to Gemini 2.5 Flash on BrowseComp while using about 70% of the tokens.
+- In COMPASS-TTS, accuracy improves as the number of parallel samples increases, but token cost also rises, and gains plateau around n = 4.
+- The evaluation is limited to controlled settings centered on searching, text-based browsing, and code execution, and the study primarily uses proprietary frontier models.

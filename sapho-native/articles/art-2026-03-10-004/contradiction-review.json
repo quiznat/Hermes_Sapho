@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-10-004",
+  "reviewed_at_utc": "2026-04-05T14:59:49Z",
+  "reviewer_role": "Synthesist",
+  "summary": "SWE-EVO shows a large performance gap for gpt-5 on long-horizon software-evolution tasks, but the paper also makes clear that benchmark strictness and limited scope constrain how broadly that gap can be interpreted.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

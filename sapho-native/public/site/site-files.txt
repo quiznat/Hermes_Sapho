@@ -229,6 +229,11 @@ artifacts/kb/queue/queue-20260308002-diagnosing-retrieval-vs-utilization-bottlen
 artifacts/kb/queue/queue-20260308011-nl2repo-bench-towards-long-horizon-repository-generation-evaluation-of-coding-agents.md
 artifacts/kb/queue/queue-20260308016-long-horizon-agents-opencode-gpt-5-2-codex-experiment.md
 artifacts/kb/queue/queue-20260309005-how-ai-coding-agents-modify-code-a-large-scale-study-of-github-pull-requests.md
+artifacts/kb/queue/queue-20260310004-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution-scenarios.md
+artifacts/kb/queue/queue-20260310005-compass-enhancing-agent-long-horizon-reasoning-with-evolving-context.md
+artifacts/kb/queue/queue-20260310009-featurebench-benchmarking-agentic-coding-for-complex-feature-development.md
+artifacts/kb/queue/queue-20260310011-abc-bench-benchmarking-agentic-backend-coding-in-real-world-development.md
+artifacts/kb/queue/queue-20260310015-swe-bench-pro-can-ai-agents-solve-long-horizon-software-engineering-tasks.md
 artifacts/kb/queue/queue-20260324001-agenticgpt-toward-modular-reproducible-llm-agents.md
 artifacts/kb/queue/queue-20260324002-the-state-of-ai-coding-agents-in-2025.md
 artifacts/kb/queue/queue-20260324002-top-coding-agents-2025-benched-ai.md
@@ -409,7 +414,6 @@ artifacts/ops/heartbeat-latest.md
 artifacts/ops/index.json
 artifacts/ops/weekly-reflection-latest.json
 artifacts/ops/weekly-reflection-latest.md
-artifacts.xml
 assets/sapho-seal.png
 assets/style-legacy-mentat.css
 assets/style-publication.css
@@ -627,8 +631,6 @@ daily/2026-03-29.html
 daily/2026-03-30.html
 daily/latest.html
 daily-briefing-archive.html
-daily.xml
-data/artifacts-feed.json
 data/artifacts-replay-state.json
 data/briefs-blocked.json
 data/briefs-index.json
@@ -651,7 +653,6 @@ index.html
 index.json
 kept-links.html
 llms.txt
-rss.xml
 s/20260301001.html
 s/20260301006.html
 s/20260301007.html

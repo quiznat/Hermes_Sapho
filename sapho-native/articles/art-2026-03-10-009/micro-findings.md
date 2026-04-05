@@ -1,0 +1,4 @@
+- Existing agentic coding benchmarks are presented as being narrower in scope than FeatureBench, which is designed to evaluate feature-level development tasks that can extend across multiple commits and pull requests.
+- FeatureBench uses a mostly automated, execution-based, test-driven collection pipeline, with repository environment setup as the only reported manual step.
+- The first release of FeatureBench is a nontrivial benchmark artifact, comprising 200 evaluation tasks and 3825 executable environments drawn from 24 open-source repositories.
+- FeatureBench appears substantially harder for current coding agents than SWE-bench, with large drops in reported resolved rates despite prompts that include explicit interface information.

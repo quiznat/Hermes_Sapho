@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-10-015",
+  "reviewed_at_utc": "2026-04-05T15:13:21Z",
+  "reviewer_role": "Synthesist",
+  "summary": "SWE-Bench Pro supports bounded claims about a larger, longer-horizon software-engineering benchmark, with one clear design mechanism around split privacy and several other claims that remain non-mechanistic or only partially mechanized.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 4,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "SWE-Bench Pro contains 1,865 problems drawn from 41 actively maintained repositories.",
+      "bounds": "This is a composition claim about benchmark size and repository count, not a causal mechanism claim; it does not by itself justify broader claims about software-engineering coverage."
+    },
+    {
+      "claim_text": "SWE-Bench Pro is designed to test longer-horizon code-editing work than lightweight bugfix benchmarks, with tasks described as taking hours to days and requiring substantial multi-file changes on average.",
+      "bounds": "The evidence supports that tasks are materially extended in duration, patch size, and file scope, but it does not establish a causal mechanism beyond those task properties and does not provide a full head-to-head comparison against all alternative benchmark classes."
+    },
+    {
+      "claim_text": "Reported agent performance drops from the public subset to the commercial subset in SWE-Bench Pro, indicating weaker performance on the commercial portion of this benchmark.",
+      "bounds": "The cross-split gap is supported descriptively by the reported scores, but the cause of that gap is not identified; it may reflect task mix, repository type, private-set difficulty, or other distribution differences rather than one isolated mechanism."
+    },
+    {
+      "claim_text": "The benchmark’s evaluation pipeline actively bounds test instability by rerunning tests and filtering inconsistent cases.",
+      "bounds": "The evidence supports a procedural control for flakiness, not a broader mechanism about benchmark validity; it shows instability is being managed, not eliminated."
+    }
+  ]
+}

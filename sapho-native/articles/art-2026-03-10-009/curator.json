@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-10-009",
+  "decision": "kept",
+  "qualified_by": "experimental_blog",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "This preprint reports a new executable benchmark with concrete empirical results on 200 tasks across 24 repositories.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-10-009\nticket_id: ticket-import-art-2026-03-10-009\ndecision: kept\nreason: This preprint reports a new executable benchmark with concrete empirical results on 200 tasks across 24 repositories.\nscope_class: preprint\ndecided_at_utc: 2026-04-05T15:03:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-05T15:07:03Z",
+  "mode": "agent"
+}

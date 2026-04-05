@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-10-009",
+  "reviewed_at_utc": "2026-04-05T15:07:03Z",
+  "reviewer_role": "Synthesist",
+  "summary": "FeatureBench presents a larger, mostly automated benchmark for feature-level coding tasks and shows that current coding agents perform far worse on it than on SWE-bench, but the causal explanation for that gap remains only partly established.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The first release of FeatureBench is a nontrivial benchmark artifact with 200 tasks, 3825 executable environments, and 24 repositories.",
+      "bounds": "This is a descriptive size claim, not a causal mechanism, and it does not by itself establish representativeness beyond the included repositories."
+    },
+    {
+      "claim_text": "FeatureBench appears substantially harder for current coding agents than SWE-bench, even when prompts include explicit interface information.",
+      "bounds": "The evidence strongly supports a descriptive hardness gap and is consistent with cross-file scope, longer specifications, and larger multi-file implementations contributing to that gap, but it does not isolate a single dominant cause; benchmark design differences, prompt structure, and hidden test information may also contribute, and the NameError interpretation remains suggestive rather than conclusive."
+    }
+  ]
+}

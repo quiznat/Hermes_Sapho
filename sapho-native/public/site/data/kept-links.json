@@ -1,17 +1,132 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-05T14:21:39Z",
-  "generatedAtUtc": "2026-04-05T14:21:39Z",
-  "processedCount": 34,
-  "decisionedCount": 34,
-  "keptCount": 34,
+  "last_updated": "2026-04-05T15:15:07Z",
+  "generatedAtUtc": "2026-04-05T15:15:07Z",
+  "processedCount": 39,
+  "decisionedCount": 39,
+  "keptCount": 39,
   "decisionCounts": {
-    "retain": 34
+    "retain": 39
   },
   "laneCounts": {
-    "agent-factory": 34
+    "agent-factory": 39
   },
   "items": [
+    {
+      "id": "pub-20260310015",
+      "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+      "displayTitle": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+      "summary": "SWE-Bench Pro argues that current agent evaluation has been too concentrated on lighter bug-fix settings and introduces a larger benchmark aimed at materially longer-horizon software engineering work: 1,865 problems from 41 actively maintained repositories, with tasks that often\u2026",
+      "url": "https://arxiv.org/abs/2509.16941",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T15:12:34Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310015-swe-bench-pro-can-ai-agents-solve-long-horizon-software-engineering-tasks.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310015-swe-bench-pro-can-ai-agents-solve-long-horizon-software-engineering-tasks.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310011",
+      "title": "ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development",
+      "displayTitle": "ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development",
+      "summary": "ABC-Bench argues that backend coding agents should be judged on executable end-to-end work rather than isolated code edits. The benchmark is built around a full backend workflow, from repository exploration through deployment and external API-level validation, and the reported r\u2026",
+      "url": "https://arxiv.org/abs/2601.11077",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T15:09:18Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310011-abc-bench-benchmarking-agentic-backend-coding-in-real-world-development.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310011-abc-bench-benchmarking-agentic-backend-coding-in-real-world-development.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310009",
+      "title": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+      "displayTitle": "FeatureBench: Benchmarking Agentic Coding for Complex Feature Development",
+      "summary": "FeatureBench argues that current coding-agent evaluation is materially easier than real feature development and introduces a larger execution-based benchmark aimed at feature-level work that spans broader repository context, longer specifications, and multi-file implementation d\u2026",
+      "url": "https://arxiv.org/abs/2602.10975",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T15:06:28Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310009-featurebench-benchmarking-agentic-coding-for-complex-feature-development.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310009-featurebench-benchmarking-agentic-coding-for-complex-feature-development.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310005",
+      "title": "COMPASS: Enhancing Agent Long-Horizon Reasoning with Evolving Context",
+      "displayTitle": "COMPASS: Enhancing Agent Long-Horizon Reasoning with Evolving Context",
+      "summary": "COMPASS argues that long-horizon agent performance is bottlenecked less by raw model capability than by context handling over extended tasks. Its answer is a hierarchical design that splits execution, planning, and context evolution across a MainAgent, a Meta-Thinker, and a Cont\u2026",
+      "url": "https://arxiv.org/abs/2510.08790",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T15:02:39Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310005-compass-enhancing-agent-long-horizon-reasoning-with-evolving-context.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310005-compass-enhancing-agent-long-horizon-reasoning-with-evolving-context.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310004",
+      "title": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
+      "displayTitle": "SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios",
+      "summary": "SWE-EVO is a deliberately harder benchmark for coding agents: instead of short bug-fix tasks, it asks models to implement release-note changes inside full pre-release codebases, then grades them under strict no-regression rules. On that setup, strong agents that score well on SW\u2026",
+      "url": "https://arxiv.org/abs/2512.18470",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T14:59:27Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310004-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution-scenarios.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310004-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution-scenarios.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260309005",
       "title": "How AI Coding Agents Modify Code: A Large-Scale Study of GitHub Pull Requests",
