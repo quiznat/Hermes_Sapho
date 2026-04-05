@@ -39,7 +39,7 @@ def run_cmd(parts: list[str]) -> str:
 
 
 def _can_read_runtime_directly() -> bool:
-    return os.geteuid() == 0 or os.geteuid() == 1000
+    return os.geteuid() in {0, 1000, 1002}
 
 
 def sudo_read_text(path: Path) -> str:

@@ -1,0 +1,228 @@
+{
+  "generated_at_utc": "2026-04-05T03:55:04Z",
+  "source_checkin_path": "/home/openclaw/.openclaw/workspace/research/factory/checkins/article-checkin-latest.json",
+  "selection_basis": "old_runtime_stalled_pending_not_present_in_sapho_native",
+  "count": 44,
+  "items": [
+    {
+      "article_id": "art-2026-03-04-074",
+      "source_url": "https://addyosmani.com/blog/factory-model",
+      "discovered_at_utc": "2026-03-04T22:32:14Z"
+    },
+    {
+      "article_id": "art-2026-03-06-015",
+      "source_url": "https://arxiv.org/abs/2601.15195",
+      "discovered_at_utc": "2026-03-06T07:10:23Z"
+    },
+    {
+      "article_id": "art-2026-03-06-021",
+      "source_url": "https://arxiv.org/abs/2509.14745",
+      "discovered_at_utc": "2026-03-06T09:32:11Z"
+    },
+    {
+      "article_id": "art-2026-03-07-033",
+      "source_url": "https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident/",
+      "discovered_at_utc": "2026-03-07T15:30:40Z"
+    },
+    {
+      "article_id": "art-2026-03-07-035",
+      "source_url": "https://www.businessinsider.com/replit-ceo-apologizes-ai-coding-tool-delete-company-database-2025-7",
+      "discovered_at_utc": "2026-03-07T15:30:40Z"
+    },
+    {
+      "article_id": "art-2026-03-07-048",
+      "source_url": "https://arxiv.org/abs/2506.12508",
+      "discovered_at_utc": "2026-03-07T21:00:24Z"
+    },
+    {
+      "article_id": "art-2026-03-08-002",
+      "source_url": "https://arxiv.org/abs/2603.02473",
+      "discovered_at_utc": "2026-03-08T01:00:36Z"
+    },
+    {
+      "article_id": "art-2026-03-08-006",
+      "source_url": "https://github.com/boqiny/memory-probe",
+      "discovered_at_utc": "2026-03-08T01:00:36Z"
+    },
+    {
+      "article_id": "art-2026-03-08-011",
+      "source_url": "https://arxiv.org/abs/2512.12730",
+      "discovered_at_utc": "2026-03-08T08:30:47Z"
+    },
+    {
+      "article_id": "art-2026-03-08-016",
+      "source_url": "https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h",
+      "discovered_at_utc": "2026-03-08T08:30:47Z"
+    },
+    {
+      "article_id": "art-2026-03-09-002",
+      "source_url": "https://arxiv.org/html/2601.15195v1",
+      "discovered_at_utc": "2026-03-09T10:00:08Z"
+    },
+    {
+      "article_id": "art-2026-03-09-005",
+      "source_url": "https://arxiv.org/abs/2601.17581",
+      "discovered_at_utc": "2026-03-09T10:00:08Z"
+    },
+    {
+      "article_id": "art-2026-03-09-006",
+      "source_url": "https://arxiv.org/abs/2601.15195",
+      "discovered_at_utc": "2026-03-09T10:00:08Z"
+    },
+    {
+      "article_id": "art-2026-03-10-004",
+      "source_url": "https://arxiv.org/abs/2512.18470",
+      "discovered_at_utc": "2026-03-10T04:03:59Z"
+    },
+    {
+      "article_id": "art-2026-03-10-005",
+      "source_url": "https://arxiv.org/abs/2510.08790",
+      "discovered_at_utc": "2026-03-10T04:03:59Z"
+    },
+    {
+      "article_id": "art-2026-03-10-009",
+      "source_url": "https://arxiv.org/abs/2602.10975",
+      "discovered_at_utc": "2026-03-10T06:02:29Z"
+    },
+    {
+      "article_id": "art-2026-03-10-011",
+      "source_url": "https://arxiv.org/abs/2601.11077",
+      "discovered_at_utc": "2026-03-10T06:02:29Z"
+    },
+    {
+      "article_id": "art-2026-03-10-015",
+      "source_url": "https://arxiv.org/abs/2509.16941",
+      "discovered_at_utc": "2026-03-10T06:02:29Z"
+    },
+    {
+      "article_id": "art-2026-03-10-034",
+      "source_url": "https://arxiv.org/abs/2603.05344",
+      "discovered_at_utc": "2026-03-10T12:07:52Z"
+    },
+    {
+      "article_id": "art-2026-03-10-061",
+      "source_url": "https://arxiv.org/abs/2601.18749",
+      "discovered_at_utc": "2026-03-10T18:36:28Z"
+    },
+    {
+      "article_id": "art-2026-03-10-065",
+      "source_url": "https://arxiv.org/abs/2601.15195",
+      "discovered_at_utc": "2026-03-10T20:39:42Z"
+    },
+    {
+      "article_id": "art-2026-03-10-069",
+      "source_url": "https://arxiv.org/abs/2601.00477",
+      "discovered_at_utc": "2026-03-10T20:39:42Z"
+    },
+    {
+      "article_id": "art-2026-03-10-077",
+      "source_url": "https://arxiv.org/abs/2601.17627",
+      "discovered_at_utc": "2026-03-10T22:35:54Z"
+    },
+    {
+      "article_id": "art-2026-03-10-080",
+      "source_url": "https://arxiv.org/abs/2402.17753",
+      "discovered_at_utc": "2026-03-10T22:35:55Z"
+    },
+    {
+      "article_id": "art-2026-03-11-017",
+      "source_url": "https://arxiv.org/abs/2505.02133",
+      "discovered_at_utc": "2026-03-11T07:31:08Z"
+    },
+    {
+      "article_id": "art-2026-03-11-020",
+      "source_url": "https://arxiv.org/abs/2511.00872",
+      "discovered_at_utc": "2026-03-11T07:31:08Z"
+    },
+    {
+      "article_id": "art-2026-03-12-004",
+      "source_url": "https://arxiv.org/abs/2601.06112",
+      "discovered_at_utc": "2026-03-12T20:35:02Z"
+    },
+    {
+      "article_id": "art-2026-03-21-003",
+      "source_url": "https://arxiv.org/abs/2404.06474",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-004",
+      "source_url": "https://arxiv.org/abs/2504.19678",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-005",
+      "source_url": "https://arxiv.org/abs/2512.24630",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-006",
+      "source_url": "https://github.com/HKUDS/AI-Researcher",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-007",
+      "source_url": "https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-008",
+      "source_url": "https://cline.bot/blog/cline-bench-initiative",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-010",
+      "source_url": "https://github.com/orgs/community/discussions/186451",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-012",
+      "source_url": "https://github.com/githubnext/agentics",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-018",
+      "source_url": "https://huggingface.co/blog/royswastik/evaluating-agentic-ai-systems-part-1",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-019",
+      "source_url": "https://www.kimi.com/blog/kimi-k2-5",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-020",
+      "source_url": "https://thenewstack.io/github-agentic-workflows-overview",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-021",
+      "source_url": "https://blog.jetbrains.com/blog/2025/10/28/introducing-developer-productivity-ai-arena-an-open-platform-for-ai-coding-agents-benchmarks",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-022",
+      "source_url": "https://codegen.com/blog/best-ai-coding-agents",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-023",
+      "source_url": "https://www.alphaxiv.org/overview/2404.06474v3",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-024",
+      "source_url": "https://github.github.com/gh-aw/introduction/overview",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-025",
+      "source_url": "https://news.ycombinator.com/item?id=46934107",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    },
+    {
+      "article_id": "art-2026-03-21-026",
+      "source_url": "https://github.github.com/gh-aw/setup/quick-start",
+      "discovered_at_utc": "2026-03-21T06:28:15Z"
+    }
+  ]
+}
