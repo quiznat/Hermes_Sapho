@@ -1423,8 +1423,10 @@ def validate_render(current_items: list[dict], current_brief: dict[str, str]) ->
 
     kept_links = read_text(PUBLIC_DIR / "kept-links.html")
     validate_kept_links_surface(kept_links)
-    legacy_payload = json.loads(read_text(seed_dir / "data" / "kept-links.json"))
-    seed_kept = int(legacy_payload.get("keptCount") or 0)
+    seed_kept = 0
+    if site_mode() == "legacy":
+        legacy_payload = json.loads(read_text(seed_dir / "data" / "kept-links.json"))
+        seed_kept = int(legacy_payload.get("keptCount") or 0)
     for item in current_items:
         if f"viewer.html?file={item['artifact_rel']}" not in kept_links:
             raise RuntimeError("new_artifact_missing_from_kept_links")
@@ -1443,7 +1445,7 @@ def validate_render(current_items: list[dict], current_brief: dict[str, str]) ->
     dated_daily = read_text(PUBLIC_DIR / "daily" / f"{current_brief['date']}.html")
     if f"viewer.html?file=briefs/{current_brief['date']}/technical-executive-report.md" not in dated_daily:
         raise RuntimeError("dated_daily_missing_technical_link")
-    if not (PUBLIC_DIR / "daily.xml").exists():
+    if site_feeds_enabled() and not (PUBLIC_DIR / "daily.xml").exists():
         raise RuntimeError("daily_feed_missing")
 
 
