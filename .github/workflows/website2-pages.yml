@@ -1,0 +1,66 @@
+name: Website 2.0 Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'sapho-native/scripts/render_site.py'
+      - 'sapho-native/scripts/common.py'
+      - 'sapho-native/public/site/**'
+      - 'sapho-native/articles/**'
+      - 'sapho-native/daily/**'
+      - 'sapho-native/state/rss-registry.json'
+      - 'sapho-native/state/rss-validation-latest.json'
+      - '.github/workflows/website2-pages.yml'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: website2-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install minimal render dependencies
+        run: python -m pip install --upgrade pip pyyaml
+
+      - name: Render Website 2.0
+        working-directory: sapho-native
+        env:
+          SAPHO_SITE_MODE: github-pages
+          SAPHO_SITE_CUSTOM_DOMAIN: research.quiznat.com
+          SAPHO_SITE_BASE_URL: https://research.quiznat.com
+        run: python scripts/render_site.py
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: sapho-native/public/site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
