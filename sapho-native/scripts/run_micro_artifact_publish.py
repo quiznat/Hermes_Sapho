@@ -28,7 +28,9 @@ from render_site import (
     payload_item_identity,
     public_article_url,
     read_text,
+    render_artifact_site,
     rss_description,
+    site_mode,
     truncate_text,
     validate_kept_links_surface,
     visible_markdown_text,
@@ -281,7 +283,8 @@ def main() -> int:
 
     assert_article_publication_authority(args.article_id)
 
-    stage_live_artifact_surfaces()
+    if site_mode() != 'github-pages':
+        stage_live_artifact_surfaces()
     alias = str(meta.get('artifact_publication_alias') or '').strip()
     if not alias:
         alias = existing_alias_for_source(str(meta.get('canonical_url') or meta.get('source_url') or ''))
@@ -299,20 +302,27 @@ def main() -> int:
         print(f'publish_candidate {args.article_id} alias={alias} minted={minted_at}')
         return 0
 
-    write_artifact_surfaces(meta, body, item)
-    kept_items = overlay_kept_links([item])
-    validate_kept_links_surface(read_text(PUBLIC_DIR / 'kept-links.html'))
-    rss_count = update_rss_feed(item, published_at)
-    if not args.skip_deploy:
-        deploy_artifact_surfaces()
-
     updated_meta, article_body = read_markdown(path)
     updated_meta['artifact_publication_alias'] = alias
     updated_meta['artifact_publication_status'] = 'published'
     updated_meta['artifact_publication_minted_at_utc'] = minted_at
     updated_meta['artifact_publication_published_at_utc'] = published_at
     write_article_markdown(path, updated_meta, article_body)
-    print(f'published_artifact {args.article_id} alias={alias} kept={len(kept_items)} rss={rss_count}')
+
+    if site_mode() == 'github-pages':
+        current_items = render_artifact_site()
+        kept_count = len(current_items)
+        rss_count = 0
+    else:
+        write_artifact_surfaces(meta, body, item)
+        kept_items = overlay_kept_links([item])
+        validate_kept_links_surface(read_text(PUBLIC_DIR / 'kept-links.html'))
+        rss_count = update_rss_feed(item, published_at)
+        if not args.skip_deploy:
+            deploy_artifact_surfaces()
+        kept_count = len(kept_items)
+
+    print(f'published_artifact {args.article_id} alias={alias} kept={kept_count} rss={rss_count}')
     return 0
 
 

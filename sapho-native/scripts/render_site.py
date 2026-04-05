@@ -744,12 +744,17 @@ def collect_current_articles(registry: dict, include_ready_ids: set[str] | None 
     for _article_key, meta, body, record in published:
         date = str(meta.get("published_in_daily") or str(meta.get("artifact_minted_at_utc") or "")[:10] or now_utc()[:10])
         source_url = normalize_url(str(record.get("canonical_url") or meta.get("source_url") or ""))
-        existing = registry_by_identity.get(payload_item_identity({"url": source_url}))
+        existing = registry_by_identity.get(payload_item_identity({'url': source_url}))
+        configured_alias = str(meta.get('artifact_publication_alias') or '').strip()
         if existing:
-            alias = str(existing.get("alias") or "")
-        else:
-            alias = next_alias_for_date({"items": [{"alias": value} for value in sorted(assigned_aliases)]}, date)
+            alias = str(existing.get('alias') or '')
+        elif configured_alias:
+            alias = configured_alias
             assigned_aliases.add(alias)
+        else:
+            alias = next_alias_for_date({'items': [{'alias': value} for value in sorted(assigned_aliases)]}, date)
+            assigned_aliases.add(alias)
+
         public_id = f"pub-{alias}"
         title = first_heading(body, str(meta.get("source_title") or public_id))
         title = re.sub(r"^\[[^\]]+\]\s*", "", title).strip() or public_id
