@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-10-080",
+  "reviewed_at_utc": "2026-04-05T16:18:08Z",
+  "reviewer_role": "Synthesist",
+  "summary": "LoCoMo supports bounded claims about long-horizon memory stress testing, with a clearer mechanism for selective retrieval than for the broader model performance gap.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "LoCoMo is a long-horizon conversational benchmark built around 50 dialogues that average about 305 turns, 19.3 sessions, and 9.2K tokens across months.",
+      "bounds": "This is a descriptive benchmark-scale claim, not a causal explanation; the evidence shows scope and duration but does not establish why those properties alone determine task difficulty."
+    },
+    {
+      "claim_text": "Reported models remain far below human performance on LoCoMo QA, indicating that very long-term conversational memory and reasoning remain unsolved on this benchmark.",
+      "bounds": "The evidence supports a large performance gap and strong adversarial brittleness, but it does not justify a single mechanism; the shortfall may reflect a combination of retrieval weakness, temporal reasoning limits, hallucination under distractors, and long-context handling failures."
+    }
+  ]
+}

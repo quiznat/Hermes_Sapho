@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-10-077",
+  "reviewed_at_utc": "2026-04-05T16:14:01Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Agentic PRs show a clear split between stronger local commit-description alignment and weaker PR-level alignment, with quality proxies further limiting confidence in any broad claim that their descriptions are better overall.",
+  "review_confidence": "high",
+  "contradiction_count": 1,
+  "status": "disclosed"
+}

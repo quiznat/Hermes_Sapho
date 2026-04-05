@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-10-077",
+  "reviewed_at_utc": "2026-04-05T16:14:24Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports one bounded mechanism on measured description alignment, while the merge gap, PR-shape gap, and higher downstream churn remain mechanistically unresolved.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 4,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Agentic pull requests merged at a lower rate than human pull requests.",
+      "bounds": "The evidence establishes a merge-rate gap but does not identify a causal reason why agentic pull requests merged less often."
+    },
+    {
+      "claim_text": "Agentic pull requests had smaller median change footprints in commits, files changed, and directories changed, but not in lines changed.",
+      "bounds": "The evidence supports a bounded structural difference in PR shape, not a universal claim that agentic pull requests are smaller on every size metric."
+    },
+    {
+      "claim_text": "Agentic pull requests outperformed human pull requests on commit-level description alignment but scored slightly worse on PR-level alignment.",
+      "bounds": "The evidence supports a tension between stronger local commit-to-patch alignment and slightly weaker PR-level summarization, but it does not justify a broader causal explanation for the cross-level gap, and the quality measures are proxy metrics that may miss factual correctness."
+    },
+    {
+      "claim_text": "Files and symbols introduced by agentic pull requests were revised or removed sooner and at higher rates than those introduced by human pull requests.",
+      "bounds": "The evidence supports higher downstream churn for agent-introduced artifacts, but it does not establish whether that churn reflects lower initial quality, faster iteration, task-mix differences, or another cause."
+    }
+  ]
+}

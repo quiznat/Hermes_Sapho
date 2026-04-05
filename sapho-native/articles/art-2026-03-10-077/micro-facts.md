@@ -1,0 +1,14 @@
+- The study analyzes 33,596 agentic pull requests from five coding agents and 6,618 human pull requests.
+- The APR data spans 2024-12 to 2025-07, while the HPR data spans 2025-01 to 2025-06.
+- Agentic PRs had a lower merge rate than human PRs, at 76.80% versus 82.82%.
+- Agentic PRs had smaller median change footprints than human PRs in commits, files changed, and directories changed, but not in lines changed.
+- In logistic regression, each additional commit was associated with about a 5% reduction in merge odds.
+- Agentic PRs had documentation and test tasks as their third and fourth most common categories, while human PRs had chore and build tasks in those positions.
+- Files added by agentic PRs were modified later at a higher rate and much sooner than files added by human PRs.
+- Symbols introduced by agentic PRs had a higher churn rate and were removed much sooner than symbols introduced by human PRs.
+- The description-alignment analysis filtered PR text to English and evaluated 647 agentic PRs and 571 human PRs.
+- Agentic PRs outperformed human PRs on commit-level message alignment by both patch-message semantic similarity and LLM-based consistency score.
+- Agentic PRs scored lower than human PRs on PR-level PR-commit similarity, with medians of 0.86 versus 0.88.
+- Commit message length was the strongest predictor of a good agentic PR description, with maximum SHAP value 0.57.
+- Higher-quality agentic PR descriptions were associated with commit messages of at least 13 words, PR titles of at least 7 words, and PR bodies of at least 80 words.
+- The study states that its quality measures are proxy metrics that may miss factual correctness, and its classifier recalled only 31.9% of good descriptions.

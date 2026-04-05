@@ -5,7 +5,7 @@ source_url: https://snap-research.github.io/locomo/
 canonical_url: https://arxiv.org/abs/2402.17753
 source_channel: runtime-replay
 queued_at_utc: '2026-03-10T22:35:55Z'
-status: captured
+status: kept
 article_id: art-2026-03-10-080
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

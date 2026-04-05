@@ -1,0 +1,4 @@
+- The study's all-agentic logistic regression model predicted PR merge status more accurately than its human-PR model within this dataset.
+- Submitter attributes were the dominant feature family in both human and agentic merge models, and contributor-integrator identity alignment was associated with especially large increases in merge odds, particularly for agentic PRs.
+- Review-discussion signals pointed in opposite directions for human and agentic PRs, with more reviewer comments associated with slightly higher merge odds for human PRs but slightly lower merge odds for agentic PRs.
+- Agent-specific merge patterns were not uniform: commit count was positively associated with merge likelihood for Copilot and Codex PRs but negatively associated with merge odds for Devin PRs, and some agents could not be compared in RQ3 because sample-size limits broke the modeling budget.

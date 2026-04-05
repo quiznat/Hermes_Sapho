@@ -1,0 +1,4 @@
+- In the curated AIDev dataset, 1,293 of 33,596 agent-authored pull requests were classified as security-related, or 3.85%.
+- Agent-authored security PRs in this study more often reflected supportive security hardening work such as refactoring, testing, and documentation than only narrow vulnerability-fix activity.
+- Security-related agent-authored PRs were reviewed more cautiously than non-security PRs, with a lower merge rate and much longer median review latency.
+- Early rejection of security-related agent PRs was more strongly associated with textual signals of complexity and verbosity than with explicit security keywords.

@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-10-069",
+  "reviewed_at_utc": "2026-04-05T16:11:16Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Agent-authored security pull requests are a real but minority part of the dataset, skew toward supportive hardening work, and face slower, less merge-friendly review under bounds that remain descriptive rather than causal.",
+  "review_confidence": "medium",
+  "mechanism_count": 0,
+  "bounded_claim_count": 4,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "In the curated AIDev dataset, 1,293 of 33,596 agent-authored pull requests were classified as security-related, or 3.85%.",
+      "bounds": "This is a descriptive prevalence result, not a causal finding. It is bounded by a two-stage identification pipeline that began with keyword filtering and then manual vetting, and PRs without keyword matches were not manually reviewed."
+    },
+    {
+      "claim_text": "Agent-authored security PRs in this study more often reflected supportive security hardening work such as refactoring, testing, and documentation than only narrow vulnerability-fix activity.",
+      "bounds": "The evidence supports a coded descriptive pattern in actions and intents, but it does not establish why agents or repositories produced more supportive hardening work. Vulnerability mitigation remains substantial, so the pattern is mixed rather than exclusive."
+    },
+    {
+      "claim_text": "Security-related agent-authored PRs were reviewed more cautiously than non-security PRs, with a lower merge rate and much longer median review latency.",
+      "bounds": "Lower merge rate and longer review latency support a bounded cautious-review interpretation, but the study does not prove reviewer intent or a single causal reason for the gap. Review latency is used as a proxy for scrutiny, and outcomes vary across tools and languages."
+    },
+    {
+      "claim_text": "Early rejection of security-related agent PRs was more strongly associated with textual signals of complexity and verbosity than with explicit security keywords.",
+      "bounds": "This is a predictive association, not a proven causal account of reviewer behavior. The result supports that rejection tracks textual complexity and verbosity signals more strongly than explicit security labeling in this dataset, but it does not show why reviewers acted that way."
+    }
+  ]
+}

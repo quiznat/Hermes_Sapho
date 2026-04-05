@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-10-077",
+  "decision": "kept",
+  "qualified_by": "comparative_survey",
+  "evidence_basis": "benchmark",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "Formal empirical software engineering paper with large-sample comparative results on agentic versus human pull requests.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-10-077\nticket_id: ticket-import-art-2026-03-10-077\ndecision: kept\nreason: Formal empirical software engineering paper with large-sample comparative results on agentic versus human pull requests.\nscope_class: paper\ndecided_at_utc: 2026-04-05T16:11:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-05T16:14:24Z",
+  "mode": "agent"
+}

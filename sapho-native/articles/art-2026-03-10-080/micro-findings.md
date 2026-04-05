@@ -1,0 +1,4 @@
+- LoCoMo is a long-horizon conversational benchmark built around 50 dialogues that average about 305 turns, 19.3 sessions, and 9.2K tokens per conversation across a span of months.
+- LoCoMo is not a purely naturalistic corpus, because its conversations are generated through an LLM-based pipeline and then materially revised by human annotators to repair inconsistencies.
+- Reported models remain far below human performance on LoCoMo QA, indicating that very long-term conversational memory and reasoning are still a substantial unsolved problem on this benchmark.
+- Retrieval helps on LoCoMo when it is selective and observation-focused, but more retrieved context or longer history does not reliably improve performance and can coincide with degradation.

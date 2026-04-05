@@ -1,0 +1,4 @@
+- Agentic pull requests in this study merged at a lower rate than human pull requests, with merge rates of 76.80% versus 82.82%.
+- Agentic pull requests had smaller median change footprints than human pull requests in commits, files changed, and directories changed, but not in lines changed.
+- Agentic pull requests outperformed human pull requests on commit-level description alignment, but scored slightly worse on PR-level alignment between the PR description and its commits.
+- Files and symbols introduced by agentic pull requests were revised or removed sooner and at higher rates than those introduced by human pull requests.

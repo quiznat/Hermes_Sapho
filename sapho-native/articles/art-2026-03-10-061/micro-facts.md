@@ -1,0 +1,15 @@
+- The study analyzes 40,214 pull requests: 6,618 human-authored PRs and 33,596 agentic PRs from the AIDev dataset.
+- The authors extracted 64 features across six feature families, and one-hot encoding expanded the dataset to 106 model terms.
+- Variance Inflation Factor filtering removed 10 model terms, reducing the regression input from 106 to 96 terms.
+- The study fit two main logistic regression models on all human PRs and all agentic PRs, plus five agent-specific models for OpenAI Codex, GitHub Copilot, Cursor, Devin, and Claude Code.
+- The human-PR logistic regression model achieved AUC 0.878, precision 0.859, recall 0.911, F1 0.884, and Brier score 0.119.
+- The all-agentic logistic regression model achieved AUC 0.960, precision 0.939, recall 0.909, F1 0.923, and Brier score 0.073.
+- Submitter attributes were the most important feature family in both the human-PR and all-agentic-PR models, accounting for 69.00% and 76.15% of total LR chi-square, respectively.
+- When the contributor was also the integrator of the PR, the odds of merge increased by about 219 times for human PRs and 5,419 times for agentic PRs relative to cases with different contributor and integrator.
+- Among merged PRs, 57.63% of human PRs and 77.51% of agentic PRs had same_user = 1, and the difference was significant in a two-proportion z-test (z = -29.38, p < 0.001).
+- Each additional reviewer comment was associated with a 2.7% increase in merge odds for human PRs but a 2.8% decrease in merge odds for agentic PRs.
+- For agentic PRs, 3.7% of merged PRs had more than three reviewers, compared with 5.8% of unmerged PRs.
+- Across agent-specific models, OpenAI Codex PRs were most strongly associated with submitter features, Copilot PRs with PR change size and commit features, and Devin PRs with review and discussion features.
+- A one-unit increase in number of commits linked to a PR was associated with 2.11 times higher merge likelihood for Copilot, 1.57 times higher merge likelihood for OpenAI Codex, and about a 7% decrease in merge odds for Devin.
+- The study excluded Cursor and Claude Code from the RQ3 agent-comparison analysis because their models exceeded the degrees-of-freedom budget, with sample sizes of 1,541 and 459 PRs.
+- The authors state three validity limits: PRs with NULL merged_at include both closed and open PRs, the models identify correlations rather than causal relationships, and the AIDev dataset excludes repositories that prohibit AI-generated PRs.

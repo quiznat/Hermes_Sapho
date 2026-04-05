@@ -1,0 +1,15 @@
+- The study analyzes a curated AIDev subset of 33,596 agent-authored pull requests from popular GitHub repositories.
+- Security-related PR candidates were first identified by keyword filtering on PR titles and descriptions, yielding 2,598 candidate PRs.
+- Manual vetting reduced 2,598 keyword-matched candidates to 1,293 security-related PRs.
+- The study found 1,293 security-related PRs, equal to 3.85% of 33,596 agent-authored PRs in the curated dataset.
+- Claude Code had the highest reported proportion of security-relevant PRs at 14.6%.
+- The source says agents most often perform supportive security hardening work such as testing, documentation, configuration, and improved error handling rather than only narrow vulnerability fixes.
+- Among coded security actions, Code Refactoring appeared 957 times, Testing 755 times, and Documentation 692 times.
+- Among coded security intents, Functionality Improvement appeared 890 times and Vulnerability Mitigation 741 times.
+- OpenAI Codex had the highest reported merge rate for security-related PRs at 86.59%, while Copilot had the lowest at 49.60%.
+- TypeScript had the largest number of security PRs in the top-language table with 447 PRs and a 56.51% merge rate.
+- Rust security PRs had the lowest merge rate in the top-language table at 51.16%.
+- Security Feature PRs were the largest security-change category with 554 PRs and a 64.61% merge rate.
+- Security-related PRs had a lower merge rate than non-security PRs: 61.50% versus 77.33%.
+- Security-related PRs had a median review latency of 3.92 hours versus 0.11 hours for non-security PRs, and the difference was reported as statistically significant.
+- Early rejection of security-related PRs was more strongly associated with complexity and verbosity signals than with explicit security keywords, and text-based models outperformed structured-feature models for rejection prediction.

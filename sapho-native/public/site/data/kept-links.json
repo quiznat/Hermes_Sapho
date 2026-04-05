@@ -1,17 +1,109 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-05T15:15:07Z",
-  "generatedAtUtc": "2026-04-05T15:15:07Z",
-  "processedCount": 39,
-  "decisionedCount": 39,
-  "keptCount": 39,
+  "last_updated": "2026-04-05T16:19:55Z",
+  "generatedAtUtc": "2026-04-05T16:19:55Z",
+  "processedCount": 43,
+  "decisionedCount": 43,
+  "keptCount": 43,
   "decisionCounts": {
-    "retain": 39
+    "retain": 43
   },
   "laneCounts": {
-    "agent-factory": 39
+    "agent-factory": 43
   },
   "items": [
+    {
+      "id": "pub-20260405001",
+      "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+      "displayTitle": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
+      "summary": "LoCoMo is a deliberately constructed benchmark for testing long-horizon conversational memory across months of interaction, and the reported results show that current language models remain far from human performance on this problem. The benchmark is useful because it forces ret\u2026",
+      "url": "https://arxiv.org/abs/2402.17753",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T16:17:25Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260405001-evaluating-very-long-term-conversational-memory-of-llm-agents.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260405001-evaluating-very-long-term-conversational-memory-of-llm-agents.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310077",
+      "title": "Code Change Characteristics and Description Alignment: A Comparative Study of Agentic versus Human Pull Requests",
+      "displayTitle": "Code Change Characteristics and Description Alignment: A Comparative Study of Agentic versus Human Pull Requests",
+      "summary": "Across 33,596 agentic pull requests and 6,618 human pull requests, agentic software change work in this study looks structurally narrower and locally better described at the commit level, but it merges less often and the code it introduces is revised or removed sooner. The resul\u2026",
+      "url": "https://arxiv.org/abs/2601.17627",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T16:13:46Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310077-code-change-characteristics-and-description-alignment-a-comparative-study-of-agentic-versus-human-pull-requests.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310077-code-change-characteristics-and-description-alignment-a-comparative-study-of-agentic-versus-human-pull-requests.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310069",
+      "title": "Security in the Age of AI Teammates: An Empirical Study of Agentic Pull Requests on GitHub",
+      "displayTitle": "Security in the Age of AI Teammates: An Empirical Study of Agentic Pull Requests on GitHub",
+      "summary": "Security-relevant work is already a visible slice of agent-authored software change on GitHub, but the dominant pattern is not just direct bug repair. In this dataset, agents are frequently contributing broader security hardening work such as refactoring, testing, documentation,\u2026",
+      "url": "https://arxiv.org/abs/2601.00477",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T16:10:33Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310069-security-in-the-age-of-ai-teammates-an-empirical-study-of-agentic-pull-requests-on-github.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310069-security-in-the-age-of-ai-teammates-an-empirical-study-of-agentic-pull-requests-on-github.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260310061",
+      "title": "Let\u2019s Make Every Pull Request Meaningful: An Empirical Analysis of Developer and Agentic Pull Requests",
+      "displayTitle": "Let\u2019s Make Every Pull Request Meaningful: An Empirical Analysis of Developer and Agentic Pull Requests",
+      "summary": "Within this dataset, agentic pull requests were more predictable at merge time than human pull requests, and the strongest merge signal in both cases was not code shape but submitter position in the workflow. The paper\u2019s central value is not a claim that agents are intrinsically\u2026",
+      "url": "https://arxiv.org/abs/2601.18749",
+      "dailyDate": "2026-04-05",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-05T16:07:11Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260310061-let-s-make-every-pull-request-meaningful-an-empirical-analysis-of-developer-and-agentic-pull-requests.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260310061-let-s-make-every-pull-request-meaningful-an-empirical-analysis-of-developer-and-agentic-pull-requests.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260310015",
       "title": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",

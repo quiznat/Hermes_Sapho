@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-10-061",
+  "reviewed_at_utc": "2026-04-05T16:07:48Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports bounded claims about merge-pattern differences in this dataset, but it does not establish causal mechanisms behind them.",
+  "review_confidence": "medium",
+  "mechanism_count": 0,
+  "bounded_claim_count": 4,
+  "status": "bounded",
+  "bounded_claims": [
+    {
+      "claim_text": "The all-agentic model predicted merge status more accurately than the human-PR model within this dataset.",
+      "bounds": "This is a predictive performance comparison only; it shows stronger discrimination and calibration for agentic PR outcomes in the sampled data, not the causal reason for that difference."
+    },
+    {
+      "claim_text": "Submitter attributes dominated both merge models, and contributor-integrator identity alignment was associated with especially large increases in merge odds, particularly for agentic PRs.",
+      "bounds": "The evidence shows strong association, not causation; the result may reflect repository governance structure, ownership, or approval control, and the paper does not demonstrate a causal pathway from same-user alignment to merge."
+    },
+    {
+      "claim_text": "Review-discussion signals pointed in opposite directions for human and agentic PRs.",
+      "bounds": "The evidence supports only a bounded reading that heavier review is associated with slightly better merge odds for human PRs and slightly worse merge odds for agentic PRs; the mechanism behind this directional split remains unknown."
+    },
+    {
+      "claim_text": "Agent-specific merge patterns were heterogeneous, with commit count aligning positively with merge likelihood for Copilot and Codex PRs but negatively for Devin PRs, and some agents could not be compared in RQ3.",
+      "bounds": "The evidence supports non-uniformity across agent ecosystems, but mechanism is unresolved and interpretation is limited by excluded Cursor and Claude Code models, correlational regressions, ambiguous NULL merged_at cases, and dataset coverage that omits repositories banning AI-generated PRs."
+    }
+  ]
+}

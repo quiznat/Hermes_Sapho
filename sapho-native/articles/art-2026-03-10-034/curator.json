@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-10-034",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "experiment",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The excerpt presents a system design preprint but does not show concrete experimental or field results from the source itself.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-10-034\nticket_id: ticket-import-art-2026-03-10-034\ndecision: discarded\nreason: The excerpt presents a system design preprint but does not show concrete experimental or field results from the source itself.\nscope_class: preprint\ndecided_at_utc: 2026-04-05T16:04:00Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-05T16:04:21Z",
+  "mode": "agent"
+}

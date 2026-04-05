@@ -1,0 +1,16 @@
+- LoCoMo contains 50 very long-term dialogues, each averaging 300 turns and 9K tokens, over up to 35 sessions.
+- In Table 1, LoCoMo averages 304.9 turns, 19.3 sessions, and 9,209.2 tokens per conversation, spans a few months, and is multimodal.
+- The data pipeline first generates conversations with LLM-based agents and then has human annotators fix long-term inconsistencies.
+- Each agent’s full persona is expanded with gpt-3.5-turbo from an initial 4 to 5 sentence persona statement selected from MSC.
+- Each agent’s temporal event graph contains up to 25 dated events over 6 to 12 months, generated iteratively in batches of 3 with causal links between events.
+- The reflect-and-respond mechanism stores session summaries in short-term memory and turn-level observations in long-term memory for later response generation.
+- Image sharing is implemented as caption generation, keyword generation, web image search, and image sharing; image reaction captions the received image with BLIP-2 and then generates a response.
+- Human annotators edited nearly 15% of dialogue turns and removed or substituted about 19% of images in the LLM-generated dataset.
+- The QA benchmark contains 7,512 questions: 2,705 single-hop, 1,104 multi-hop, 1,547 temporal, 285 open-domain, and 1,871 adversarial.
+- Human overall QA F1 is 87.9, while the best reported long-context model in Table 2, gpt-3.5-turbo-16K at 16K context, reaches 37.8 overall.
+- For adversarial QA, gpt-3.5-turbo-16K drops to 2.1 F1 at 16K context, compared with 70.2 for GPT-4-turbo in the 4K base setting.
+- In RAG QA, using top-5 observations yields 41.4 overall F1, higher than top-5 dialog retrieval at 31.7 and top-5 summary retrieval at 32.5.
+- Observation-based RAG declines from 41.4 overall F1 at top-5 retrieval to 37.8 at top-50 retrieval.
+- For event summarization, gpt-3.5-turbo with 4,096 context has the highest reported FactScore F1 at 45.9, while gpt-3.5-turbo-16K scores 39.9.
+- Manual analysis identifies five broad event-summarization error categories: missing information, hallucinations, misunderstanding dialog cues, inaccurate speaker attributions, and saliency errors.
+- In multimodal dialogue generation, MiniGPT-5 with top-5 retrieved observations achieves the highest reported MM-Relevance score of 57.8, above the base model’s 56.1, and the paper reports MM-Relevance drops as dialogue history grows.
