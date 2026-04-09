@@ -1,12 +1,15 @@
-- The workflow used a main dialogue as an orchestrator agent that explicitly delegated individual tasks to sub-agents, then verified and integrated their results.
-- The stated reason for delegating to sub-agents was to avoid hitting the model context window limit.
-- The task in the experiment was to rewrite a previously vibe-coded LiteLLM provider that cascades requests across several LLMs before returning a final response.
-- The reported agent work time was about 4 hours.
-- The orchestrator session was reported as costing $4.13 and reaching 157k tokens of dialogue length by the end of the task.
-- The experiment used 16 sub-agent sessions with a reported total cost of $9.73.
+- The experiment used OpenCode with GPT-5.2 Codex, mostly at high reasoning level and sometimes at medium or xhigh.
+- The main session was used as an orchestrator agent that delegated tasks to sub-agents, verified them, and integrated their results.
+- The author says the orchestrator-subagent structure was chosen to avoid hitting the model context window limit.
+- The task was to rewrite a previously vibe-coded LiteLLM provider that cascades requests to several LLMs before returning a final response.
+- The provider strategies named in the source include Mixture-of-Agents and LLM Council.
+- The experiment used about 4 hours of pure agent work time.
+- The orchestrator session cost $4.13 and reached 157k tokens by the end of the task.
+- The run used 16 sub-agent sessions at a reported cost of $9.73.
 - The reported total spend was $13.86 for about 2 million tokens.
-- The work reportedly changed 26 files in Git.
-- The author reports that only 5 tests were written and that all of them were green.
-- The author claims the app works, with the provider executing multiple LLM queries and the Streamlit dashboard showing recorded traces.
-- For about 4 hours of agent time, the author reports about half an hour of human effort and about 10 user messages.
-- The author states that the orchestrator/sub-agent approach fit about 2 million tokens of work into a 157K-token main thread and says GPT-5.2 Codex still had room within a 400K context window.
+- The Git change set covered 26 files.
+- The author says only 5 tests were written.
+- The author reports that all written tests were green.
+- The author says the rewritten provider executes multiple LLM queries and aggregates a final response.
+- The author says the Streamlit dashboard shows recorded traces.
+- The author says the orchestrator-subagent approach fit about 2 million tokens of work into a 157k-token main thread.

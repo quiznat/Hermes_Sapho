@@ -1,4 +1,4 @@
-- SWE-EVO is designed to evaluate coding agents on long-horizon software-evolution tasks that are larger in scope than typical short bug-fix benchmarks.
-- On SWE-EVO, gpt-5-08-07 resolved far fewer tasks than on SWE-bench Verified, even when given release-note plus PR/issue context.
-- The paper presents instruction-following failure as a major observed contributor to gpt-5's unresolved SWE-EVO trajectories, while showing that extra PR/issue context yields only modest improvement.
-- SWE-EVO's scoring and dataset construction make its results deliberately strict and should be interpreted with benchmark-specific limits in mind.
+- SWE-EVO is a benchmark of 48 tasks derived from release-note-defined changes across seven mature open-source Python projects.
+- SWE-EVO instances are structurally long-horizon tasks, with gold patches averaging about 21 files, 51 functions, and 610.5 edited lines.
+- SWE-EVO evaluates candidate fixes under heavy executable validation, with instances averaging 874 total tests and scoring an instance as failed if a patch breaks any PASS_TO_PASS test.
+- In the paper's reported experiments, GPT-5 with OpenHands performed far worse on SWE-EVO than on SWE-Bench Verified, indicating SWE-EVO is materially more difficult for current coding-agent setups.

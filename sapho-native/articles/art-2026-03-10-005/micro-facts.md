@@ -1,11 +1,14 @@
-- COMPASS is a hierarchical framework with three specialized components: a MainAgent, a Meta-Thinker, and a ContextManager.
-- The paper identifies context management as the central bottleneck in long-horizon agent reasoning.
-- Across GAIA, BrowseComp, and Humanity's Last Exam, the paper reports accuracy gains of up to 20% relative to single-agent and multi-agent baselines.
-- With Gemini 2.5 Pro on BrowseComp, COMPASS scores 35.4 Pass@1.
-- With Gemini 2.5 Pro on GAIA and HLE, COMPASS scores 67.8 and 31.7 Pass@1, respectively.
-- Adding test-time scaling raises COMPASS to 43.7 on BrowseComp, 72.1 on GAIA, and 35.2 on HLE with Gemini 2.5 Pro.
-- Removing the Meta-Thinker drops BrowseComp Pass@1 from 35.4 in the full system to 15.2.
-- Removing the ContextManager drops BrowseComp Pass@1 from 35.4 in the full system to 26.4.
-- The paper reports that Context-12B achieves performance comparable to Gemini 2.5 Flash on BrowseComp while using about 70% of the tokens.
-- In COMPASS-TTS, accuracy improves as the number of parallel samples increases, but token cost also rises, and gains plateau around n = 4.
-- The evaluation is limited to controlled settings centered on searching, text-based browsing, and code execution, and the study primarily uses proprietary frontier models.
+- The paper identifies context management as the central bottleneck in long-horizon LLM-agent tasks.
+- COMPASS separates tactical execution, strategic oversight, and context organization into three components: MainAgent, Meta-Thinker, and ContextManager.
+- Across GAIA, BrowseComp, and Humanity's Last Exam, COMPASS improves accuracy by up to 20% relative to both single-agent and multi-agent baselines.
+- The paper claims its test-time scaling extension can raise performance to match established Deep Research agents.
+- The paper defines a long-horizon task as requiring a substantial sequence of interdependent reasoning and action steps, often more than 10.
+- The paper states that dynamic execution context grows roughly linearly with time and can exceed the model's finite context window.
+- The Meta-Thinker runs asynchronously, monitors for anomalies or completion signals, and can issue reflection, termination, or verification signals without blocking the MainAgent.
+- The ContextManager builds each refreshed context from persistent notes, the current reasoning trajectory, and the Meta-Thinker's strategic signal.
+- BrowseComp evaluation used 1,266 web-navigation tasks, and Humanity's Last Exam evaluation used 2,158 questions after excluding image-based items.
+- With Gemini 2.5 Pro, COMPASS achieved Pass@1 scores of 35.4 on BrowseComp, 67.8 on GAIA, and 31.7 on HLE.
+- On BrowseComp, removing the Meta-Thinker reduced Pass@1 from 35.4 in the full system to 15.2.
+- The paper reports that Context-12B achieved performance comparable to larger models such as Gemini 2.5 Flash while using 70% of their tokens on BrowseComp.
+- In COMPASS-TTS experiments, accuracy increased monotonically from n=1 to n=8 samples, and the paper states performance plateaued around n=4.
+- The paper limits its evaluation to controlled settings using search, text-based browsing, and code execution tools, and says it primarily studies proprietary frontier models.

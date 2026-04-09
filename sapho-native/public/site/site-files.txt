@@ -228,6 +228,7 @@ artifacts/kb/queue/queue-20260307033-incident-postmortem-in-the-age-of-ai-agents
 artifacts/kb/queue/queue-20260307048-agentorchestra-a-hierarchical-multi-agent-framework-for-general-purpose-task-solving.md
 artifacts/kb/queue/queue-20260308002-diagnosing-retrieval-vs-utilization-bottlenecks-in-llm-agent-memory.md
 artifacts/kb/queue/queue-20260308011-nl2repo-bench-towards-long-horizon-repository-generation-evaluation-of-coding-agents.md
+artifacts/kb/queue/queue-20260308016-long-horizon-agents-opencode-gpt-5-2-codex-experiment-dev-community.md
 artifacts/kb/queue/queue-20260308016-long-horizon-agents-opencode-gpt-5-2-codex-experiment.md
 artifacts/kb/queue/queue-20260309005-how-ai-coding-agents-modify-code-a-large-scale-study-of-github-pull-requests.md
 artifacts/kb/queue/queue-20260310004-swe-evo-benchmarking-coding-agents-in-long-horizon-software-evolution-scenarios.md

@@ -8,8 +8,8 @@ queued_at_utc: '2026-03-10T06:02:29Z'
 captured_at_utc: '2026-04-05T15:03:32Z'
 canonical_url: https://arxiv.org/abs/2602.10975
 curator_decision: kept
-artifact_minted_at_utc: '2026-04-05T15:06:28Z'
-evidence_count: 18
+artifact_minted_at_utc: '2026-04-09T12:00:37Z'
+evidence_count: 16
 claim_count: 4
 publication_status: ready-for-daily
 imported_from_runtime_article_id: art-2026-03-10-009
@@ -17,66 +17,67 @@ imported_from_runtime_last_stage: facts
 imported_from_runtime_filter_state: pending
 source_remediation_status: completed
 source_remediated_at_utc: '2026-04-05T15:03:32Z'
-curator_reason: This preprint reports a new executable benchmark with concrete empirical
-  results on 200 tasks across 24 repositories.
-curated_at_utc: '2026-04-05T15:03:47Z'
+curator_reason: It is a preprint presenting a new executable benchmark with concrete
+  empirical results.
+curated_at_utc: '2026-04-09T11:57:47Z'
 curator_mode: agent
-extracted_at_utc: '2026-04-05T15:06:28Z'
+extracted_at_utc: '2026-04-09T12:00:37Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
 artifact_publication_alias: '20260310009'
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-04-05T15:06:28Z'
-artifact_publication_published_at_utc: '2026-04-05T15:14:35Z'
+artifact_publication_minted_at_utc: '2026-04-09T12:00:37Z'
+artifact_publication_published_at_utc: '2026-04-09T12:05:37Z'
 ---
 # FeatureBench: Benchmarking Agentic Coding for Complex Feature Development
 
 ## Core Thesis
 
-FeatureBench argues that current coding-agent evaluation is materially easier than real feature development and introduces a larger execution-based benchmark aimed at feature-level work that spans broader repository context, longer specifications, and multi-file implementation demands. On the reported results, present-day agents that score strongly on SWE-bench degrade sharply on this benchmark, indicating that feature construction remains a much weaker capability than bug-fix-style benchmark performance suggests.
+FeatureBench argues that current coding agents look much weaker once evaluation moves from relatively narrow bug-fix settings to executable feature-development tasks that span larger code surfaces, more files, more functions, and more tests. The benchmark is built to measure that harder regime directly, and the first reported results show a sharp drop in solved-task rates relative to SWE-bench.
 
 ## Why It Matters for Sapho
 
-This matters because benchmark wins on narrow software tasks can overstate actual engineering autonomy. If a benchmark better approximates feature construction rather than localized repair, then the field needs a stricter read on what “agentic coding” currently means in production terms. For Sapho, the paper supports a doctrine of separating patch-level competence from sustained feature-building competence, and of treating benchmark design details, prompt scaffolding, and repository structure as part of the evaluation claim rather than as background noise.
+This matters because it cuts against the easy narrative that strong bug-fix benchmark performance means agents are close to dependable software-development autonomy. The paper suggests that feature-level work remains a different and harder operating domain, and that evaluation doctrine should stress test access to tests, interface visibility, and cross-file reasoning rather than treating code execution alone as the main bottleneck. For Sapho, the practical implication is clear: benchmark wins in narrow repair settings should not be read as field-wide proof of robust multi-file feature construction.
 
 ## Key Findings
 
-- FeatureBench is positioned as a benchmark for feature-level software work rather than single-pull-request bug repair, using traced unit tests and repository dependency structure to recover tasks tied to larger implementations.
-- The collection pipeline is mostly automated and test-driven: tasks are derived execution-first from repositories, while the only reported manual step is environment setup at about 3 minutes per repository, totaling under 1 hour across 24 repositories.
-- The first release is substantial in size: 200 evaluation tasks, 3,825 executable environments, and 24 open-source repositories.
-- Reported difficulty is far above SWE-bench. Claude 4.5 Opus is reported at 74.4% resolved on SWE-bench versus 11.0% on FeatureBench.
-- The gap persists even under a tighter comparison. On a shared-repository subset, Claude Opus 4.5 resolves 74.40% of SWE-bench Verified tasks but only 5.2% of the FeatureBench subset.
-- FeatureBench tasks are much larger than SWE-bench tasks: average problem text is 4,818.0 words versus 195.1 words, and average gold solutions span 790.2 lines, 15.7 files, and 29.2 functions versus 32.8 lines, 1.7 files, and 3 functions.
-- The benchmark prompt is not withholding basic structure. Prompts explicitly provide interface definitions, import paths, expected behaviors, and require directly callable solutions.
-- In the reported baseline, GPT-5.1-Codex with medium reasoning resolves 12.5% of task cases using the Codex agent scaffold.
+- FeatureBench is explicitly designed to benchmark feature-level coding work rather than only single-PR bug fixing, using execution-based evaluation and a test-driven collection pipeline that traces unit tests through dependency graphs to isolate separable feature tasks.
+- The first release is large enough to matter operationally: 200 evaluation tasks and 3825 executable or verifiable environments drawn from 24 open-source repositories, with tasks spanning changes from May 2022 through September 2025.
+- Reported performance drops steeply when agents are tested on this benchmark: Claude Opus 4.5 falls from 74.4% resolved on SWE-bench to 11.0% on the full FeatureBench set.
+- The difficulty gap is not just a repository-selection artifact. On repositories shared with SWE-bench, Claude Opus 4.5 is still reported at 74.40% on SWE-bench Verified versus 5.2% on the aligned FeatureBench subset.
+- FeatureBench tasks are materially larger than the compared SWE-bench tasks: 4818.0 versus 195.1 words of problem text, 790.2 versus 32.8 gold-solution lines, 15.7 versus 1.7 files, 29.2 versus 3 functions, and 62.7 versus 9.1 fail-to-pass test points.
+- The reported ablations suggest that access to tests and interface information is a major constraint on performance. On the lite set, showing unit tests raised Gemini-3-Pro-Preview from 10.0% to 60.0% and GPT-5.1-Codex from 20.0% to 63.3%, while removing explicit interface information pushed them down to 3.3% and 16.7%.
 
 ## Evidence and Findings
 
-- The benchmark is built to target broader software work than prior agentic coding benchmarks by tracing unit tests through dependency relationships to recover tasks linked to feature implementation across a repository. That supports the paper’s central claim that feature development needs a different evaluation surface than localized bug repair, and it matters because benchmark scope shapes what competence claims are even being tested.
-- The construction pipeline is heavily automated and execution-based rather than annotation-heavy. The source reports automatic task derivation with repository setup as the only manual step, at roughly 3 minutes per repository and less than 1 hour total over 24 repositories. That supports the claim that benchmark collection can scale without large human labeling burdens, which matters if the field wants harder, fresher evaluation sets rather than small handcrafted suites.
-- The released artifact is not a toy slice. The first version contains 200 tasks and 3,825 executable environments drawn from 24 open-source repositories. That supports the claim that the benchmark is already large enough to function as a serious evaluation object, while still leaving open whether those repositories are broadly representative of real software work.
-- The measured performance collapse against SWE-bench is large. Claude 4.5 Opus is reported at 74.4% resolved on SWE-bench but 11.0% on FeatureBench, and on a shared-repository comparison the same model drops from 74.40% on SWE-bench Verified to 5.2% on the FeatureBench subset. That supports the claim that current agents do not transfer cleanly from benchmarked repair tasks to harder feature-level development, which matters because public benchmark strength may otherwise be misread as general engineering strength.
-- The difficulty gap is backed by concrete task-scale differences, not just by headline solve rates. FeatureBench L1 problems average 4,818.0 words versus 195.1 words for SWE-bench, while gold solutions average 790.2 lines, 15.7 files, and 29.2 functions versus 32.8 lines, 1.7 files, and 3 functions. This supports the bounded explanation that cross-file scope and implementation size are part of what makes the benchmark harder, which matters because “agent failure” here is plausibly tied to software structure rather than to arbitrary scoring harshness alone.
-- The benchmark does give agents useful interface guidance. Prompts include interface definitions, import paths, and expected behaviors, yet performance remains weak; meanwhile, removing explicit interface information reduces Lite-set results, and giving visible unit tests raises performance sharply, with GPT-5.1-Codex reaching 63.3% resolved and 80.9% passed and Gemini-3-Pro-Preview reaching 60.0% resolved and 80.6% passed. That shows the benchmark outcome is sensitive to how much ground-truth structure is exposed, which matters because benchmark design choices meaningfully affect what failure should be interpreted as reasoning failure versus information-access failure.
+- The benchmark is structured to target feature development rather than narrow patch repair: it uses execution-based evaluation and a collection pipeline that follows unit tests through dependency graphs to carve out feature tasks that can span multiple commits and pull requests. That supports the paper's core claim that it is measuring a broader work unit than many earlier agentic coding benchmarks, which matters because benchmark scope changes what “agent coding ability” actually means.
+- The release footprint is substantial: 200 evaluation tasks, 3825 executable or verifiable environments, 24 open-source repositories, and a source change window from May 2022 to September 2025. That scale supports treating the benchmark as a real executable testbed rather than a toy sample, while still leaving open the question of how representative those repositories are of the wider software ecosystem.
+- The headline performance gap is large enough to force a re-rating of present capability. Claude Opus 4.5 is reported at 74.4% resolved on SWE-bench but 11.0% on the full FeatureBench benchmark, and the shared-repository comparison remains stark at 74.40% versus 5.2%. That supports the conclusion that feature-level coding remains far less solved than leading bug-fix scores imply.
+- The paper also shows why the tasks are harder in practical terms. Compared with SWE-bench, the reported FeatureBench L1 tasks involve far longer problem statements, much larger gold solutions, many more files and functions, and roughly seven times as many fail-to-pass test points. This supports a bounded mechanism: the benchmark is harder in ways that compound planning, interface tracking, and cross-file coordination demands.
+- The ablation results tie a large share of misses to missing tests and interface knowledge rather than mere inability to run code. When unit tests are exposed, performance jumps sharply; when explicit interfaces are removed, it collapses. That matters because it suggests the frontier weakness is not just generation quality in the abstract but disciplined navigation of code structure and expected behavior.
+- Failure analysis sharpens that interpretation. NameError is reported as the dominant failure mode for Claude Opus 4.5, the paper links many TypeError and AttributeError failures to guessed or hallucinated interfaces across files, and AssertionError remains common among non-crash failures. Together these results support the view that many attempts execute far enough to be checked, but break on cross-file dependency resolution and interface understanding.
 
 ## Contradictions and Tensions
 
-- The most important tension is between strong SWE-bench results and weak FeatureBench results for the same frontier systems. That supports the paper’s claim of higher difficulty, but it also warns that “coding-agent performance” is not a single stable quantity; it changes sharply with task form, scope, and prompt structure.
-- The benchmark is presented as a test of feature development, but some of the performance gap may come from benchmark design differences rather than feature work alone. FeatureBench tasks are far longer and structurally larger, so the comparison mixes feature-level ambition with much heavier context and implementation load.
-- Prompts already include explicit interfaces, yet removing those interfaces still hurts performance, and exposing full unit tests drives performance far upward. That creates an interpretive tension: poor results may reflect real weakness in planning and cross-file execution, but they also reflect how much hidden structure the benchmark requires agents to reconstruct.
-- The paper interprets NameError-heavy failures as evidence of cross-file dependency resolution problems. That is plausible and decision-relevant, but it remains an interpretation rather than a fully isolated causal proof.
-- The benchmark is large and low-touch to collect, but representativeness remains unsettled. A benchmark can be nontrivial in scale without yet establishing that it captures the full distribution of real-world feature development.
+- The most important tension is between strong public benchmark optics and weak feature-development performance. A model can look highly capable at 74.4% on SWE-bench and still fall to 11.0% on the full FeatureBench set, so “state-of-the-art coding” depends heavily on which coding regime is being measured.
+- The shared-repository result matters because it weakens the easy counterargument that FeatureBench is only harder because it samples different projects. Even when repository choice is partially aligned, the gap remains severe at 74.40% versus 5.2%, suggesting the task formulation itself carries much of the difficulty.
+- Test visibility creates another tension. If showing unit tests can move GPT-5.1-Codex from 20.0% to 63.3% and Gemini-3-Pro-Preview from 10.0% to 60.0% on the lite set, then headline agent performance is highly sensitive to what the benchmark exposes. That is useful diagnostically, but it also means “ability” is entangled with how much scaffolding the evaluation provides.
+- The paper points to cross-file reasoning failures, but the failure picture is not singular. NameError, TypeError, AttributeError, and AssertionError all matter, which suggests overlapping weaknesses: interface hallucination, dependency-resolution failure, and incomplete semantic correctness after code runs.
+- The benchmark-construction pipeline is partly automated and supported by an LLM-based classifier with 81.03% precision, 89.24% recall, 84.94% F1, and 91.74% accuracy against expert annotations. That is strong enough to support the pipeline, but not perfect, so scale is gained with some residual extraction risk.
 
 ## Mechanism or Bounds
 
-The strongest supported mechanism is that FeatureBench derives harder tasks by following tested objects and dependency relations outward from unit tests into larger implementation surfaces, then evaluates them in executable environments. On the performance side, the bounded explanation is that current agents struggle when they must coordinate much longer specifications with multi-file, multi-function, cross-file implementation demands. The evidence is consistent with that explanation: problem statements are far longer, gold solutions are much larger, and the authors observe NameError-heavy failures that fit dependency-resolution trouble. But the mechanism is only partial. The evidence does not cleanly separate cross-file reasoning failure from other contributors such as benchmark construction choices, prompt format, or the amount of hidden structure agents must infer without seeing tests.
+The strongest supported mechanism is that FeatureBench stresses capabilities that narrow bug-fix benchmarks underweight: cross-file dependency resolution, interface discovery, and coordination across larger feature surfaces. The paper supports this with concrete task-size differences, sharp gains when unit tests are visible, sharp losses when interface information is removed, and failure patterns dominated by unresolved names and incorrect cross-file interface assumptions.
+
+That mechanism is still bounded. The evidence shows association and diagnostic pressure, not a clean causal decomposition of exactly how much of the performance gap comes from task length, file count, function count, interface ambiguity, or test structure. Some evidence is experimental ablation, but parts of the mechanism claim still rest on failure analysis and behavioral interpretation rather than fully isolated causal tests.
 
 ## Limits
 
-- The claim that prior benchmarks are narrower depends on the paper’s own characterization of the benchmark landscape.
-- The benchmark statistics establish size and construction approach, not representativeness across all software domains or engineering workflows.
-- The hardness claim is well supported descriptively by large solve-rate drops and larger task footprints, but the causal reason for the drop is not fully isolated.
-- Interface exposure and test visibility materially change outcomes, so benchmark results should be read with care as measurements of performance under a specific information regime.
-- The cross-file dependency explanation is plausible but not conclusively demonstrated as the dominant failure source.
-- The benchmark filters for substantial tasks, including cases with more than 100 lines of pending implementation and at least 10 fail-to-pass test points, which helps target harder work but also narrows what kind of “feature development” is being measured.
+The benchmark is large and executable, but the paper does not establish that its 24 repositories are broadly representative of all feature-development settings.
+
+The comparison to earlier benchmarks relies partly on the paper's own characterization of those benchmarks as narrower and often bug-fix centered, rather than on an independent audit of the whole benchmark landscape.
+
+The strongest failure-mechanism claim is inferential rather than complete. The ablations and error categories point toward cross-file reasoning and interface access as major constraints, but they do not rule out other interacting causes.
+
+Some reported trends remain only qualitatively specified in the captured evidence, including the negative relationship between pass rate and required code length, so not every interpretive claim is equally quantified in the excerpted record.

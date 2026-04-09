@@ -1,7 +1,7 @@
 {
   "version": "article-validation.v1",
   "article_id": "art-2026-03-10-009",
-  "validated_at_utc": "2026-04-05T15:07:03Z",
+  "validated_at_utc": "2026-04-09T12:01:25Z",
   "checks": {
     "completeness": {
       "status": "pass",
@@ -23,14 +23,14 @@
     "contradiction_baseline": {
       "status": "pass",
       "detail": "contradiction review artifact present",
-      "contradiction_count": 3,
+      "contradiction_count": 2,
       "review_status": "disclosed"
     },
     "mechanism_baseline": {
       "status": "pass",
       "detail": "mechanism review artifact present",
-      "mechanism_count": 2,
-      "bounded_claim_count": 2,
+      "mechanism_count": 3,
+      "bounded_claim_count": 1,
       "review_status": "explained"
     }
   },

@@ -36,11 +36,7 @@
     "fact-009",
     "fact-010",
     "fact-011",
-    "fact-012",
-    "fact-013",
-    "fact-014",
-    "fact-015",
-    "fact-016"
+    "fact-012"
   ],
   "evidence_ids": [
     "evidence-01",
@@ -54,11 +50,9 @@
     "evidence-09",
     "evidence-10",
     "evidence-11",
-    "evidence-12",
-    "evidence-13",
-    "evidence-14",
-    "evidence-15",
-    "evidence-16"
+    "evidence-12"
   ],
-  "unresolved_gaps": []
+  "unresolved_gaps": [
+    "missing_explicit_mechanism_claim"
+  ]
 }

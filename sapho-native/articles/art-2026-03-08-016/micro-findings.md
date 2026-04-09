@@ -1,4 +1,4 @@
-- The reported workflow used a main orchestrator dialogue that delegated tasks to sub-agents, then verified and integrated their outputs during a LiteLLM provider rewrite.
-- The author explicitly presents sub-agent delegation as a way to avoid main-thread context-window pressure while fitting roughly 2 million tokens of work into a 157K-token orchestrator thread.
-- The experiment is reported to have completed in about four hours of agent time with about half an hour of human effort, 16 sub-agent sessions, and a total spend of $13.86.
-- The reported success claim is bounded because the author says the app works and that five tests were green, but the small test count leaves limited verification coverage for the rewritten system.
+- The experiment used an orchestrator-sub-agent structure in which a main OpenCode session delegated work, verified sub-agent outputs, and integrated the results.
+- The author reports that the orchestrator-sub-agent structure was used to avoid context-window limits and fit about 2 million tokens of work into a 157k-token main thread.
+- The run produced a rewrite of a LiteLLM provider that executes multiple LLM queries and aggregates a final response, covering 26 changed files over about 4 hours at a reported total cost of $13.86.
+- The reported validation was narrow relative to the rewrite scope, because the author says only five tests were written even though those tests were green and traces were recorded in a Streamlit dashboard.

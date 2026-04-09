@@ -1,10 +1,10 @@
 - ABC-Bench is introduced as a benchmark for agentic backend coding in a realistic executable workflow.
 - The benchmark contains 224 curated tasks spanning 8 programming languages and 19 frameworks.
-- ABC-Bench requires agents to complete the full backend lifecycle from repository exploration through deployment and external API-level validation.
-- The paper claims ABC-Bench is the only benchmark in its comparison that covers the full five-stage backend development lifecycle.
-- The task-generation pipeline initially produced 600 candidate tasks, which were filtered down to 224 final tasks; 92 of the final tasks additionally require autonomous environment configuration.
-- Even the top-performing model reported in the paper achieves only a 63.2% Pass@1 score on the benchmark.
-- The paper identifies environment configuration and deployment as persistent or predominant bottlenecks in benchmark performance.
-- Performance varies strongly by language stack, and the paper reports that most models score 0.0% on Rust tasks.
-- Smaller models are reported to fail disproportionately on basic path-missing errors, with Qwen3-8B showing 76 such instances versus 19 for GPT-5.
-- The paper reports a strong positive correlation between agent interaction depth and task success, with r = 0.87.
+- ABC-Bench requires agents to handle the full backend lifecycle from repository exploration through deployment and external API-level testing.
+- The task-construction pipeline was applied to 2,000 open-source repositories and produced a final set of 224 curated tasks.
+- Ninety-two benchmark tasks require autonomous environment configuration.
+- The main evaluation protocol uses OpenHands as the default agent framework and runs each model-task pairing three times.
+- Claude Sonnet 4.5 is reported as the top overall model with about 63.2% average Pass@1 on ABC-Bench.
+- Environment configuration and deployment are reported as the main bottlenecks for current models on this benchmark.
+- For the 92 environment-related tasks, the paper separates evaluation into S1 environment build and S2 functional execution.
+- The paper reports a strong positive correlation between average agent turns and task success, with r = 0.87.

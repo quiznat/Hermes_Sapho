@@ -48,5 +48,7 @@
     "evidence-09",
     "evidence-10"
   ],
-  "unresolved_gaps": []
+  "unresolved_gaps": [
+    "missing_explicit_mechanism_claim"
+  ]
 }

@@ -1,9 +1,9 @@
 {
   "version": "contradiction-review.v1",
   "article_id": "art-2026-03-10-011",
-  "reviewed_at_utc": "2026-04-05T15:09:43Z",
+  "reviewed_at_utc": "2026-04-09T12:04:43Z",
   "reviewer_role": "Synthesist",
-  "summary": "ABC-Bench makes a strong full-lifecycle evaluation case, but the same evidence shows current agents still fail unevenly and often on execution-critical backend work.",
+  "summary": "ABC-Bench shows meaningful end-to-end backend agent success, but environment setup and deployment remain the clearest visible bottlenecks.",
   "review_confidence": "high",
   "contradiction_count": 3,
   "status": "disclosed"

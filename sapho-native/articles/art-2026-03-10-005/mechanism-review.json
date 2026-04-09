@@ -1,25 +1,21 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-10-005",
-  "reviewed_at_utc": "2026-04-05T15:03:31Z",
+  "reviewed_at_utc": "2026-04-09T11:57:27Z",
   "reviewer_role": "Synthesist",
-  "summary": "COMPASS shows benchmark-bounded gains from a hierarchical agent design, but the clearest supported mechanism is role specialization with explicit limits on how far that explanation generalizes.",
+  "summary": "COMPASS presents a concrete context-management mechanism for long-horizon agents, but its stronger performance and scaling claims remain benchmark-bounded rather than fully causally isolated.",
   "review_confidence": "medium",
   "mechanism_count": 2,
-  "bounded_claim_count": 3,
+  "bounded_claim_count": 2,
   "status": "explained",
   "bounded_claims": [
     {
       "claim_text": "COMPASS improves accuracy by up to 20 percent over single-agent and multi-agent baselines across GAIA, BrowseComp, and Humanity's Last Exam.",
-      "bounds": "The evidence supports a comparative performance claim in controlled evaluations centered on search, text browsing, and code execution, but it does not directly prove which internal mechanism causes the gains or how far they transfer beyond mainly proprietary frontier-model settings."
+      "bounds": "This is supported as an empirical result in the reported benchmark settings, but the mechanism behind the gains is not fully isolated from model choice, tooling, and benchmark structure, and the evaluation is limited to controlled search, text-browsing, and code-execution environments using mainly proprietary frontier models."
     },
     {
-      "claim_text": "COMPASS-TTS raises benchmark scores through parallel test-time scaling.",
-      "bounds": "The evidence supports only the bounded pattern that more parallel samples increase scores while increasing token cost and showing diminishing returns near n = 4; a specific causal explanation beyond broader inference-time search is not established here."
-    },
-    {
-      "claim_text": "Context-12B achieves BrowseComp performance comparable to Gemini 2.5 Flash while using about 70 percent of the tokens.",
-      "bounds": "This supports a narrow efficiency comparison for the specialized context component on BrowseComp, not a general mechanism claim about global efficiency for the full COMPASS system."
+      "claim_text": "Context-focused scaling can narrow performance gaps, with gains plateauing around four samples and a smaller Context-12B setup matching larger models on BrowseComp with lower token use.",
+      "bounds": "The evidence supports bounded performance and efficiency improvements in the reported controlled evaluations, but it does not fully establish how much of the gain comes from context management itself versus other system factors, and the stronger framing about matching Deep Research agents is weaker than the specific reported benchmark and token-use results."
     }
   ]
 }

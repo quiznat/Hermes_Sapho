@@ -1,33 +1,17 @@
----
-version: article.v1
-article_id: art-2026-03-08-016
-ticket_id: ticket-import-art-2026-03-08-016
-source_url: https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h
-source_title: 'Long-horizon agents: OpenCode + GPT-5.2 Codex Experiment - DEV Community'
-queued_at_utc: '2026-03-08T08:30:47Z'
-captured_at_utc: '2026-03-08T12:31:03Z'
-canonical_url: https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h
-curator_decision: kept
-artifact_minted_at_utc: '2026-04-09T11:46:38Z'
-evidence_count: 15
-claim_count: 4
-publication_status: ready-for-daily
-imported_from_runtime_article_id: art-2026-03-08-016
-imported_from_runtime_last_stage: facts
-imported_from_runtime_filter_state: pending
-curator_reason: It reports a concrete agentic coding experiment with measured cost,
-  token use, workflow scale, and test outcomes.
-curated_at_utc: '2026-04-09T11:44:15Z'
-curator_mode: agent
-extracted_at_utc: '2026-04-09T11:46:38Z'
-extractor_mode: agent
-findings_mode: agent
-summary_mode: agent
-artifact_publication_alias: '20260308016'
-artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-04-09T11:46:38Z'
-artifact_publication_published_at_utc: '2026-04-09T12:05:33Z'
----
+<details class="traceability-panel">
+<summary>Traceability</summary>
+<div class="traceability-body">
+<ul>
+  <li><strong>Source:</strong> <a href="https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h" target="_blank" rel="noopener">https://dev.to/maximsaplin/long-horizon-agents-opencode-gpt-52-codex-experiment-1f4h</a></li>
+  <li><strong>Intake queued:</strong> 2026-03-08T08:30:47Z</li>
+  <li><strong>Source captured:</strong> 2026-03-08T12:31:03Z</li>
+  <li><strong>Curated:</strong> 2026-04-09T11:44:15Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-09T11:46:38Z</li>
+  <li><strong>Artifact published:</strong> 2026-04-09T12:05:33Z</li>
+</ul>
+</div>
+</details>
+
 # Long-horizon agents: OpenCode + GPT-5.2 Codex Experiment - DEV Community
 
 ## Core Thesis

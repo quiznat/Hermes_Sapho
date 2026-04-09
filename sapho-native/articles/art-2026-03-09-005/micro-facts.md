@@ -1,16 +1,12 @@
-- The AIDev dataset used in this study contains 932,791 agentic PRs and 6,618 human PRs across 116,211 repositories.
-- The human PRs in the AIDev dataset lacked commit-level information, so the authors retrieved commit metadata and file-level patches for all human PRs using the GitHub REST API.
-- Files touched were computed as unique file paths modified across all commits in a PR, and GitHub-reported file renames were treated as single-file modifications.
-- After filtering, the analysis set contains 24,014 agentic PRs with 440,295 commits with valid patches and 5,081 human PRs with 23,242 commits with valid patches.
-- The distributions for all structural metrics violated normality assumptions, so the study used the Mann-Whitney U test and quantified effect sizes with Cliff's delta.
-- Commit count showed the largest reported effect size between agentic and human PRs, with Cliff's delta = 0.5429, labeled large.
-- Files touched differed between agentic and human PRs with Cliff's delta = 0.4487, labeled medium.
-- Deletions differed between agentic and human PRs with Cliff's delta = 0.4462, labeled medium.
-- Additions differed between agentic and human PRs with Cliff's delta = 0.2836, labeled small.
-- Total line changes, defined as additions plus deletions, differed between agentic and human PRs with Cliff's delta = 0.3158, labeled small.
-- The Mann-Whitney U test found statistically significant differences between agentic and human PRs across the structural metrics at p ≤ 0.001.
-- The mean TF-IDF description-to-diff similarity was 0.1245 for agentic PRs and 0.1007 for human PRs.
-- The mean CodeBERT similarity was 0.9356 for agentic PRs and 0.9285 for human PRs.
-- The mean GraphCodeBERT similarity was 0.8254 for agentic PRs and 0.7815 for human PRs.
-- Okapi BM25 is unbounded, can produce large positive or negative values on long token-heavy diffs, and should be interpreted only as a relative lexical signal rather than a calibrated similarity measure.
-- The authors state that missing or truncated patches and GitHub API retrieval gaps may bias distributions, and very large diff truncation may affect similarity metrics.
+- After filtering, the analysis used 24,014 Agentic PRs with 440,295 commits with valid patches and 5,081 Human PRs with 23,242 commits with valid patches.
+- Human PR commit metadata and file-level patches were reconstructed from the GitHub REST API because the AIDev Human PR set lacked commit-level information.
+- Files touched were counted as unique modified file paths across all commits in a PR, and GitHub-reported file renames were treated as single-file modifications.
+- The largest reported practical difference between Agentic and Human PRs was commit count, with Cliff's delta = 0.5429, labeled a large effect.
+- Files touched differed between Agentic and Human PRs with Cliff's delta = 0.4487, labeled a medium effect.
+- Deleted lines differed between Agentic and Human PRs with Cliff's delta = 0.4462, labeled a medium effect.
+- Added lines differed between Agentic and Human PRs with Cliff's delta = 0.2836, labeled a small effect.
+- Total line changes (additions plus deletions) differed between Agentic and Human PRs with Cliff's delta = 0.3158, labeled a small effect.
+- The Mann-Whitney U tests reported statistically significant differences between Agentic and Human PRs across the examined structural metrics at p ≤ 0.001.
+- Agentic PRs had slightly higher central tendency than Human PRs across all four description-to-diff alignment metrics reported in Table 2.
+- Median semantic similarity was higher for Agentic PRs than Human PRs for both models: CodeBERT 0.9375 vs 0.9347 and GraphCodeBERT 0.8302 vs 0.8067.
+- Okapi BM25 scores in this study are unbounded, showed extremely high variance, and the authors state they should be treated only as a relative lexical signal rather than a calibrated similarity measure.

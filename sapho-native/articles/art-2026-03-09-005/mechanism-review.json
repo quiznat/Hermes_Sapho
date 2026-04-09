@@ -1,29 +1,29 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-09-005",
-  "reviewed_at_utc": "2026-04-05T14:16:23Z",
+  "reviewed_at_utc": "2026-04-09T11:50:37Z",
   "reviewer_role": "Synthesist",
-  "summary": "The article supports bounded distributional differences between agentic and human pull requests, but does not establish a causal mechanism for those differences.",
-  "review_confidence": "high",
+  "summary": "The article’s comparative claims are mostly supportable as bounded observational findings, but no causal mechanism is established.",
+  "review_confidence": "medium",
   "mechanism_count": 0,
   "bounded_claim_count": 4,
   "status": "bounded",
   "bounded_claims": [
     {
-      "claim_text": "Agentic pull requests in the filtered analysis set differ from human pull requests across all reported structural metrics, with the largest separation in commit count.",
-      "bounds": "The evidence shows distributional separation under Mann-Whitney U and Cliff's delta, not why agentic pull requests differ; the magnitude is uneven across metrics, with commit count large but additions and total line changes only small."
+      "claim_text": "Agentic pull requests differed from human pull requests across the study’s examined structural metrics, with the largest reported practical difference in commit count.",
+      "bounds": "The evidence supports distributional structural differences across the measured PR metrics, but it does not establish why those differences occurred; mechanism remains uncertain and the effect sizes vary from large for commit count to small for some line-change measures."
     },
     {
-      "claim_text": "Agentic pull requests have higher mean description-to-diff similarity than human pull requests under TF-IDF, CodeBERT, and GraphCodeBERT in this study.",
-      "bounds": "The evidence supports higher relative similarity scores within this study, but not a settled mechanism explaining the gap; lexical signals are explicitly uncalibrated and patch truncation or retrieval gaps may affect similarity estimates."
+      "claim_text": "Commit count was the strongest reported separator between agentic and human pull requests, with a large effect size of Cliff's delta = 0.5429.",
+      "bounds": "This supports a strong comparative difference in commit-count distributions, not a causal explanation; the result does not show whether the pattern comes from agent workflow design, review practice, task mix, or dataset construction."
     },
     {
-      "claim_text": "The analyzed comparison is based on a filtered subset of the original AIDev corpus rather than the full raw dataset.",
-      "bounds": "The reported differences apply to the retained subset with valid patches, not the full raw corpus, so scope is narrower than the headline dataset size suggests."
+      "claim_text": "Agentic pull requests showed slightly higher description-to-diff alignment than human pull requests on all four reported alignment metrics, including higher median semantic similarity on both CodeBERT and GraphCodeBERT.",
+      "bounds": "The evidence supports only a modest measured alignment advantage, not a demonstrated causal account or a broad quality claim; BM25 is explicitly bounded as an uncalibrated relative lexical signal with extremely high variance."
     },
     {
-      "claim_text": "The human pull request side of the comparison required additional GitHub API retrieval and file-level reconstruction before analysis.",
-      "bounds": "This supports a methodological asymmetry in how the comparison set was assembled, but not a causal explanation of behavioral difference; incomplete retrieval or reconstruction choices may influence measured distributions."
+      "claim_text": "The study’s agentic-versus-human comparison rests on a large filtered sample, but the human PR side required reconstruction of commit metadata and file-level patches from the GitHub REST API.",
+      "bounds": "This is a methodological bound, not a mechanism; the comparison is large and operationalized, but part of the human baseline depends on reconstructed commit-level data rather than originally complete source records."
     }
   ]
 }

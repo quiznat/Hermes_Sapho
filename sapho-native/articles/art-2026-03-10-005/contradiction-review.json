@@ -1,10 +1,10 @@
 {
   "version": "contradiction-review.v1",
   "article_id": "art-2026-03-10-005",
-  "reviewed_at_utc": "2026-04-05T15:03:09Z",
+  "reviewed_at_utc": "2026-04-09T11:57:04Z",
   "reviewer_role": "Synthesist",
-  "summary": "The draft keeps the main performance and mechanism claims visible, but it also contains real unresolved tensions around what actually drives the gains and whether higher scores come with acceptable efficiency and scope.",
-  "review_confidence": "high",
-  "contradiction_count": 4,
+  "summary": "Strong benchmark gains are visible, but the broad architectural story is better supported on BrowseComp than across every evaluated setting.",
+  "review_confidence": "medium",
+  "contradiction_count": 2,
   "status": "disclosed"
 }

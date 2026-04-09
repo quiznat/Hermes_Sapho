@@ -1,10 +1,10 @@
 {
   "version": "contradiction-review.v1",
   "article_id": "art-2026-03-08-016",
-  "reviewed_at_utc": "2026-04-05T14:12:31Z",
+  "reviewed_at_utc": "2026-04-09T11:46:56Z",
   "reviewer_role": "Synthesist",
-  "summary": "The article’s main visible tension is that it reports functional success, but the verification base is too thin to support a strong reliability reading.",
-  "review_confidence": "medium",
-  "contradiction_count": 1,
+  "summary": "The article shows a credible orchestrator-sub-agent coding pattern, but its strongest unresolved tension is that a large reported rewrite is backed by thin visible validation.",
+  "review_confidence": "high",
+  "contradiction_count": 2,
   "status": "disclosed"
 }

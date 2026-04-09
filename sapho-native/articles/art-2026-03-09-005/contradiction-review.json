@@ -1,10 +1,10 @@
 {
   "version": "contradiction-review.v1",
   "article_id": "art-2026-03-09-005",
-  "reviewed_at_utc": "2026-04-05T14:16:04Z",
+  "reviewed_at_utc": "2026-04-09T11:50:16Z",
   "reviewer_role": "Synthesist",
-  "summary": "The article shows real distributional differences between agentic and human pull requests, but the comparison carries visible scope and comparability tensions.",
+  "summary": "The article keeps the main tensions visible: structural differences are strong but uneven, and alignment gains are positive but measurement-bounded.",
   "review_confidence": "high",
-  "contradiction_count": 4,
+  "contradiction_count": 3,
   "status": "disclosed"
 }

@@ -1,21 +1,21 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-10-004",
-  "reviewed_at_utc": "2026-04-05T15:00:12Z",
+  "reviewed_at_utc": "2026-04-09T11:53:50Z",
   "reviewer_role": "Synthesist",
-  "summary": "SWE-EVO is a strict long-horizon coding-agent benchmark where low gpt-5 resolution rates appear tied more to bounded instruction-following and benchmark demands than to missing PR or issue context alone.",
+  "summary": "SWE-EVO frames release-scoped Python maintenance as larger-surface, regression-sensitive work, but the evidence only supports an operational mechanism and leaves the main causal driver unsettled.",
   "review_confidence": "medium",
   "mechanism_count": 2,
   "bounded_claim_count": 2,
   "status": "explained",
   "bounded_claims": [
     {
-      "claim_text": "SWE-EVO evaluates longer-horizon software-evolution work that is broader in scope than typical short bug-fix benchmarks.",
-      "bounds": "The benchmark design supports a broader-scope characterization because tasks use release-note specifications over full pre-release repositories and large multi-file gold patches, but this is a scope description rather than a causal explanation of agent failure or a definitive cross-benchmark equivalence claim."
+      "claim_text": "SWE-EVO is a benchmark of 48 tasks derived from release-note-defined changes across seven mature open-source Python projects.",
+      "bounds": "The benchmark construction is directly supported, but the claim is bounded to this Python-only 48-instance design and does not establish broader coverage beyond the sampled projects."
     },
     {
-      "claim_text": "gpt-5-08-07 resolved far fewer SWE-EVO tasks than SWE-bench Verified tasks even with release-note plus PR/issue context.",
-      "bounds": "The reported rates establish a large performance gap and show that added context helped only modestly on SWE-EVO, but they do not isolate a single mechanism for the gap or prove which benchmark differences are causally responsible."
+      "claim_text": "GPT-5 with OpenHands performed far worse on SWE-EVO than on SWE-Bench Verified, indicating SWE-EVO is materially more difficult for current coding-agent setups.",
+      "bounds": "The performance gap is real in the reported experiments, but the evidence does not isolate a single causal explanation, and the benchmark's Python-only scope and small size limit stronger generalization."
     }
   ]
 }

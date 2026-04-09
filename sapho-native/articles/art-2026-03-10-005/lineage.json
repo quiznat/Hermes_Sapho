@@ -35,7 +35,10 @@
     "fact-008",
     "fact-009",
     "fact-010",
-    "fact-011"
+    "fact-011",
+    "fact-012",
+    "fact-013",
+    "fact-014"
   ],
   "evidence_ids": [
     "evidence-01",
@@ -48,7 +51,10 @@
     "evidence-08",
     "evidence-09",
     "evidence-10",
-    "evidence-11"
+    "evidence-11",
+    "evidence-12",
+    "evidence-13",
+    "evidence-14"
   ],
   "unresolved_gaps": []
 }

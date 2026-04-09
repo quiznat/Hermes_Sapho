@@ -1,4 +1,4 @@
-- ABC-Bench is a benchmark for agentic backend coding that evaluates agents in a realistic executable workflow rather than isolated coding subtasks.
-- ABC-Bench covers a broad backend task surface with 224 curated tasks spanning 8 programming languages and 19 frameworks, including tasks that require autonomous environment configuration.
-- In the paper's comparison set, ABC-Bench is presented as the only benchmark that covers the full five-stage backend development lifecycle.
-- ABC-Bench is challenging for current agents, with performance limited by environment configuration and deployment bottlenecks and showing strong variation across stacks.
+- ABC-Bench is designed to evaluate agentic backend coding in a realistic executable workflow that spans repository exploration, implementation, deployment, and external API-level testing.
+- ABC-Bench covers 224 curated tasks across 8 programming languages and 19 frameworks, drawn from a larger pipeline applied to 2,000 open-source repositories.
+- Environment configuration and deployment are major failure points for current models on ABC-Bench.
+- On the reported evaluation setup, Claude Sonnet 4.5 achieved the best overall result at about 63.2% average Pass@1, and task success was strongly positively correlated with average agent turns.

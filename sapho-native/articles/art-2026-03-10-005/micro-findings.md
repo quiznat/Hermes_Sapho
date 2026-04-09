@@ -1,4 +1,4 @@
-- COMPASS is a hierarchical agent framework that targets long-horizon reasoning by combining a MainAgent, a Meta-Thinker, and a ContextManager around the paper's identified context-management bottleneck.
-- The paper reports that COMPASS improves accuracy by up to 20% over single-agent and multi-agent baselines across GAIA, BrowseComp, and Humanity's Last Exam.
-- On BrowseComp with Gemini 2.5 Pro, removing the Meta-Thinker hurts COMPASS more than removing the ContextManager, indicating the Meta-Thinker is the larger contributor to full-system Pass@1 on that benchmark.
-- COMPASS-TTS can raise benchmark scores further through parallel test-time scaling, but the gains come with higher token cost and appear to level off around four samples.
+- In long-horizon LLM-agent tasks, context management is a central bottleneck because the active execution context grows with task length and can exceed the model's finite context window.
+- COMPASS addresses that bottleneck by separating tactical execution, strategic oversight, and context organization into MainAgent, Meta-Thinker, and ContextManager, with the Meta-Thinker contributing materially on at least BrowseComp.
+- Across GAIA, BrowseComp, and Humanity's Last Exam, the paper reports that COMPASS improves accuracy by up to 20% over single-agent and multi-agent baselines.
+- The paper presents bounded evidence that context-focused scaling can narrow performance gaps, reporting both a test-time scaling gain that plateaus around four samples and a smaller Context-12B setup performing comparably to larger models on BrowseComp with lower token use.
