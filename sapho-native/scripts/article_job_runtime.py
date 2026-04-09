@@ -15,7 +15,7 @@ class JobContractError(ValueError):
 
 
 _CODE_BLOCK_RE = re.compile(
-    r"^###\s+file:\s+(?P<filename>[^\n]+)\n```markdown\n(?P<content>.*?)\n```\s*$",
+    r"^###\s+file:\s+(?P<filename>[^\n]+)\n```markdown\n(?P<content>.*?)(?:\n```(?=\n###\s+file:|\Z)|(?=\n###\s+file:)|\Z)",
     re.MULTILINE | re.DOTALL,
 )
 

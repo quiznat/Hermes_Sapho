@@ -329,6 +329,90 @@ The appendix is absent, so the reported gain remains bounded and should not be o
                 self.assertEqual(contradiction_review["status"], "disclosed")
                 self.assertEqual(mechanism_review["status"], "explained")
 
+    def test_duplicate_rejected_path_refreshes_blocked_policy_surface(self) -> None:
+        article_id = "art-test-dup-001"
+        ticket_id = "ticket-test-dup-001"
+
+        def fake_curator(**_: object) -> dict:
+            return {
+                "raw": "",
+                "meta": {
+                    "role": "Curator",
+                    "article_id": article_id,
+                    "ticket_id": ticket_id,
+                    "decision": "kept",
+                    "reason": "Institute-worthy but duplicate of an existing kept package.",
+                },
+                "body": "# Curator Receipt\n\n## Decision\n\nKept.\n",
+            }
+
+        conflict = {
+            "existing_article": {"article_id": "art-existing-001"},
+            "matched_signature": "arxiv:2601.15195",
+        }
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            articles_dir = Path(tmpdir) / "articles"
+            queue_dir = Path(tmpdir) / "queue"
+            with patch.object(common, "ARTICLES_DIR", articles_dir), patch.object(common, "QUEUE_DIR", queue_dir), patch.object(run_micro_article_lane, "run_curator_admission", side_effect=fake_curator), patch.object(run_micro_article_lane, "find_kept_canonical_conflict", return_value=conflict):
+                common.write_markdown(
+                    common.article_file(article_id),
+                    {
+                        "version": "article.v1",
+                        "article_id": article_id,
+                        "ticket_id": ticket_id,
+                        "source_url": "https://arxiv.org/html/2601.15195v1",
+                        "canonical_url": "https://arxiv.org/abs/2601.15195",
+                        "queued_at_utc": "2026-03-31T00:00:00Z",
+                        "publication_status": "ready-for-daily",
+                        "imported_from_runtime_article_id": article_id,
+                    },
+                    "# Existing Article\n\nThis content should be replaced by the duplicate-rejected terminal surface.\n",
+                )
+                common.write_markdown(
+                    common.source_file(article_id),
+                    {
+                        "version": "source-capture.v1",
+                        "article_id": article_id,
+                        "ticket_id": ticket_id,
+                        "source_url": "https://arxiv.org/html/2601.15195v1",
+                        "canonical_url": "https://arxiv.org/abs/2601.15195",
+                        "source_title": "Where Do AI Coding Agents Fail?",
+                        "capture_kind": "html",
+                        "content_type": "text/html",
+                        "captured_at_utc": "2026-03-31T00:05:00Z",
+                    },
+                    "# Source Capture\n\n## Title\n\nWhere Do AI Coding Agents Fail?\n\n## Body\n\nEmpirical study of failed agentic pull requests.\n",
+                )
+                common.write_markdown(
+                    common.ticket_path(ticket_id),
+                    {
+                        "version": "ticket.v1",
+                        "ticket_id": ticket_id,
+                        "status": "queued",
+                    },
+                    "# Ticket\n\nQueue item for duplicate-path testing.\n",
+                )
+
+                with patch.object(sys, "argv", ["run_micro_article_lane.py", "--article-id", article_id]):
+                    result = run_micro_article_lane.main()
+                self.assertEqual(result, 0)
+
+                article_root = articles_dir / article_id
+                article_meta, article_body = common.read_markdown(article_root / "article.md")
+                historical_policy = self.read_json(article_root / "historical-policy.json")
+                validation = self.read_json(article_root / "validation.json")
+
+                self.assertEqual(article_meta["publication_status"], "duplicate-rejected")
+                self.assertEqual(article_meta["duplicate_of_article_id"], "art-existing-001")
+                self.assertEqual(article_meta["evidence_count"], 0)
+                self.assertEqual(article_meta["claim_count"], 0)
+                self.assertIn("# Duplicate Rejected", article_body)
+                self.assertEqual(historical_policy["policy_status"], "blocked_not_publishable")
+                self.assertFalse(historical_policy["current_law_eligible"])
+                self.assertEqual(validation["overall_status"], "pass")
+                self.assertEqual(validation["checks"]["duplicate_conflict"]["status"], "pass")
+
 
 if __name__ == "__main__":
     unittest.main()

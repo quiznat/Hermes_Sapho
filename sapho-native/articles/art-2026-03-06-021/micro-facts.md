@@ -1,16 +1,18 @@
-- The study analyzes 567 Claude Code-generated pull requests across 157 diverse open-source projects.
-- Agentic PRs were identified by searching GitHub PR descriptions for the string “Generated with Claude Code.”
-- The initial Agentic-PR search covered PRs submitted between February 24, 2025 and April 30, 2025 in repositories with at least 10 GitHub stars, yielding 797 PRs before filtering.
-- After excluding 54 open PRs, the study retained 743 Agentic-PRs before constructing the matched comparison dataset.
-- The human comparison set was matched by author and repository, and 176 Agentic-PRs were excluded because a same-author human comparison set could not be obtained in a similar time frame.
-- 475 of 567 Agentic-PRs were merged, corresponding to an 83.77425% acceptance rate.
-- The acceptance rate for Agentic-PRs was lower than for Human-PRs: 83.77425% versus 91.00529%, and the paper reports this difference as statistically significant.
-- Median time to merge was 1.23 hours for Agentic-PRs and 1.04 hours for Human-PRs, with no significant difference reported.
-- Among rejected Agentic-PRs, 12.1% were rejected because another PR or developer implemented a different solution first.
-- Among rejected Agentic-PRs, 5.5% were PRs created only to trigger automated verification and were not intended for merging.
+- The study analyzes 567 pull requests generated using Claude Code across 157 open-source projects.
+- Agentic PRs were identified by searching GitHub PR descriptions for the string “Generated with Claude Code” and restricting the search to repositories with at least 10 stars.
+- The search window for Agentic-PRs covered PRs submitted from February 24, 2025 to April 30, 2025.
+- 83.77425% of Agentic-PRs were accepted and merged, corresponding to 475 merged PRs out of 567.
+- Agentic-PRs had a lower acceptance rate than Human-PRs: 83.77425% versus 91.00529%.
+- Median time to merge was 1.23 hours for Agentic-PRs and 1.04 hours for Human-PRs, with no significant difference in merge times.
+- 54.94737% of merged Agentic-PRs were accepted without revision, corresponding to 261 PRs merged as a single-commit submission.
+- The share of merged PRs accepted without revision was similar for Agentic-PRs and Human-PRs: 54.94737% versus 58.52713%, with no statistically significant difference.
+- When revisions were required, the study found no statistically significant difference between Agentic-PRs and Human-PRs in revision frequency or measured revision cost.
+- Refactoring appeared more often in Agentic-PRs than in Human-PRs: 24.9% versus 14.9%.
+- Documentation-related PRs were more common in Agentic-PRs than Human-PRs: 22.1% versus 14.0%.
+- Test-related PRs were more common in Agentic-PRs than Human-PRs: 18.8% versus 4.5%.
+- Multi-purpose PRs were more common in Agentic-PRs than Human-PRs: 40.0% versus 12.2%.
+- Initial Agentic-PR submissions added more lines and had longer descriptions than Human-PRs, with medians of 48 versus 24 added lines and 355 versus 56 words in PR descriptions.
+- Among rejected Agentic-PRs, the most frequently identified explicit rejection categories were alternative solutions by others or the team (12.1%), submission for verification only (5.5%), oversized PRs (3.3%), and obsolete PRs (3.3%).
 - 63.7% of rejected Agentic-PRs were closed without explanatory comments or discussion.
-- Among merged PRs, 54.94737% of Agentic-PRs and 58.52713% of Human-PRs were merged without any revision, with no statistically significant difference reported.
-- When revisions were required, both Agentic-PRs and Human-PRs typically had a median of 2 revised commits before merge.
-- Refactoring was more common in Agentic-PRs than Human-PRs, at 24.9% versus 14.9% in the manually classified PR sample.
-- Test-related changes were more common in Agentic-PRs than Human-PRs, at 18.8% versus 4.5% in the manually classified PR sample.
-- Among revised Agentic-PRs, the most common revision categories were bug fixes (45.1%), documentation updates (27.4%), refactoring (25.7%), and style changes (22.1%).
+- Among revised merged Agentic-PRs, the most common revision categories were bug fixes (45.1%), documentation updates (27.4%), refactoring (25.7%), and style changes (22.1%).
+- 41.1% of revised Agentic-PRs were co-authored with Claude during revision, but the paper also states that the sample is limited to 567 explicitly labeled Claude Code PRs and may not generalize to other agentic coding tools.

@@ -1,33 +1,29 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-06-021",
-  "reviewed_at_utc": "2026-04-05T04:15:35Z",
+  "reviewed_at_utc": "2026-04-09T04:37:35Z",
   "reviewer_role": "Synthesist",
-  "summary": "The study shows that labeled Claude Code pull requests were often merged but were accepted less often than matched human pull requests, and it does not establish why that gap exists.",
-  "review_confidence": "medium",
+  "summary": "The article stays within the evidence by treating the acceptance gap and review-pattern similarity as bounded observational findings rather than proven causal explanations.",
+  "review_confidence": "high",
   "mechanism_count": 0,
-  "bounded_claim_count": 5,
+  "bounded_claim_count": 4,
   "status": "bounded",
   "bounded_claims": [
     {
-      "claim_text": "Claude Code-generated pull requests in the matched dataset were merged at an 83.77425% rate.",
-      "bounds": "This is a descriptive result for the analyzed matched sample of 567 labeled pull requests across 157 projects, not a causal explanation of why those pull requests were or were not merged."
+      "claim_text": "In this study's sample, 475 of 567 Claude Code pull requests across 157 open-source projects were accepted and merged, for an 83.77425% merge rate.",
+      "bounds": "This is a descriptive merge-rate result only; the evidence does not establish why these pull requests were merged, and the finding is limited to explicitly labeled Claude Code PRs in the sampled repositories and time window."
     },
     {
-      "claim_text": "Claude Code-generated pull requests had a significantly lower acceptance rate than matched human pull requests.",
-      "bounds": "The matched comparison supports a statistically significant acceptance gap within this constructed dataset, but it does not identify the cause of that gap; matching by author and repository and excluding unmatched agentic PRs limits generalization."
+      "claim_text": "Claude Code pull requests had a lower acceptance rate than human pull requests in the study, at 83.77425% versus 91.00529%.",
+      "bounds": "The evidence supports a between-group difference in this sample, but not a causal explanation for that gap; the comparison is bounded by the explicit-label identification method, repository filter, and short post-release observation window."
     },
     {
-      "claim_text": "Among merged pull requests, agentic and human pull requests showed broadly similar visible revision outcomes.",
-      "bounds": "This supports only a bounded claim about merged PRs after acceptance, not an explanation for the earlier acceptance disparity; similar merge timing and revision counts do not reveal why more agentic PRs failed to merge."
+      "claim_text": "Among merged pull requests, Claude Code submissions were accepted without revision at a rate similar to human pull requests, and the study found no statistically significant difference in revision frequency or measured revision cost when revisions were needed.",
+      "bounds": "The evidence supports similarity on these measured review-process outcomes only; it does not explain why the outcomes were similar, and it does not remove the separate finding that overall acceptance was lower for agentic PRs."
     },
     {
-      "claim_text": "The dataset is limited to pull requests explicitly labeled \"Generated with Claude Code\" in GitHub descriptions and then narrowed by filtering and matching rules.",
-      "bounds": "The findings apply to explicitly labeled, time-bounded, star-filtered, and matchable Claude Code pull requests rather than to all agent-assisted coding activity on GitHub."
-    },
-    {
-      "claim_text": "The study does not support a causal explanation for the acceptance gap because most rejection causes remain unobserved.",
-      "bounds": "Some rejected PRs were closed for procedural reasons, and 63.7% were closed without explanatory discussion, so the available evidence is too incomplete to justify a mechanism claim about why agentic PR acceptance was lower."
+      "claim_text": "Compared with human pull requests, Claude Code pull requests in the sample were more often multi-purpose and more concentrated in refactoring, documentation, and test-related work.",
+      "bounds": "The evidence shows a different task mix in the sampled Claude Code PRs, not the mechanism producing that mix and not proof that task mix itself explains the acceptance gap; the pattern is bounded to explicitly labeled Claude Code PRs rather than agentic coding in general."
     }
   ]
 }

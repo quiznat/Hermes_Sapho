@@ -1,7 +1,7 @@
 {
   "version": "article-validation.v1",
   "article_id": "art-2026-03-06-015",
-  "validated_at_utc": "2026-04-05T04:12:16Z",
+  "validated_at_utc": "2026-04-09T04:33:37Z",
   "checks": {
     "completeness": {
       "status": "pass",
@@ -10,7 +10,8 @@
     },
     "duplicate_conflict": {
       "status": "pass",
-      "detail": "no duplicate conflict recorded"
+      "detail": "duplicate conflict explicitly recorded and package blocked from publication",
+      "duplicate_of_article_id": "art-2026-03-09-002"
     },
     "citation_linkage": {
       "status": "pass",
@@ -22,16 +23,11 @@
     },
     "contradiction_baseline": {
       "status": "pass",
-      "detail": "contradiction review artifact present",
-      "contradiction_count": 3,
-      "review_status": "disclosed"
+      "detail": "not applicable for blocked/discarded package"
     },
     "mechanism_baseline": {
       "status": "pass",
-      "detail": "mechanism review artifact present",
-      "mechanism_count": 1,
-      "bounded_claim_count": 4,
-      "review_status": "explained"
+      "detail": "not applicable for blocked/discarded package"
     }
   },
   "overall_status": "pass"

@@ -14,6 +14,7 @@ Make the units atomic but not fragmented.
 If one sentence contains two distinct evidence-bearing facts, split them.
 If one statement is only one fact, keep it as one evidence file.
 Every embedded markdown file block must end with a closing ``` line.
+The final evidence file in the receipt must also end with a closing ``` line before you stop; do not leave the last block open at end-of-response.
 
 Return one markdown receipt only.
 Do not wrap it in code fences except for the required embedded markdown file blocks.

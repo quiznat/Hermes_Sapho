@@ -1,12 +1,14 @@
-- AgentOrchestra uses a two-tier hierarchical architecture with a top-level planning agent that decomposes tasks and coordinates specialized sub-agents.
-- The planning agent maintains global progress awareness and updates plans dynamically using feedback from sub-agents and intermediate results.
-- The framework includes a unified LLM abstraction layer that supports both commercial and local open-source models and allows model switching during task execution.
-- Operations with potential side effects are executed inside a docker-based sandbox such as an isolated Linux container or virtual machine.
-- The instantiated system includes three specialized sub-agents: Deep Researcher, Browser Use, and Deep Analyzer, and each sub-agent also has a Python interpreter tool.
-- The SimpleQA benchmark used in evaluation contains 4,326 adversarially constructed fact-seeking questions.
-- The GAIA benchmark used in evaluation contains 450 questions across three difficulty levels and includes web browsing, document analysis, and interactive reasoning scenarios.
-- The HLE benchmark used in evaluation contains 2,500 multimodal questions spanning a wide range of subjects.
-- The reported implementation uses claude-3.7-sonnet for the Planning Agent and Deep Researcher Agent, gpt-4.1 for the Browser Use Agent, and gemini-2.5-pro-preview-05-06 plus o3 for the Deep Analyzer Agent, with explicit step caps for each.
-- On SimpleQA, the paper reports 95.3% accuracy for AgentOrchestra, compared with 93.9% for Perplexity Deep Research, 50.8% for gemini-2.5-pro-preview-05-06, and 49.4% for o3 without tools.
-- On GAIA, the paper reports AgentOrchestra accuracies of 92.45% on Level 1, 83.72% on Level 2, 57.69% on Level 3, and 82.42% average.
-- On HLE, the paper reports 25.9% for AgentOrchestra, but the source also states that added architectural complexity and inter-agent communication can increase latency and computational overhead.
+- AgentOrchestra uses a two-tier hierarchical architecture in which a top-level planning agent decomposes tasks and coordinates modular specialized sub-agents.
+- The planning agent does not directly execute low-level actions; it performs high-level reasoning, task decomposition, and adaptive plan updates using feedback from sub-agents.
+- The planning tool supports plan creation, modification, status marking, progress monitoring, and tracking of step states such as not started, in progress, completed, and blocked.
+- The framework instantiates three named specialized sub-agents: Deep Researcher Agent, Browser Use Agent, and Deep Analyzer Agent.
+- The Deep Researcher Tool breadth-first searches multiple engines including Google, Bing, and Baidu, generates follow-up queries, and tracks visited URLs, insights, and queries in a structured research context.
+- The Auto Browser Use Tool defines browser operations as parameterized actions and supports search, URL navigation, DOM interaction, content extraction, scrolling, PDF and video control, and tab/session management.
+- All operations with potential side effects are executed inside a docker-based sandbox such as an isolated Linux container or virtual machine.
+- The SimpleQA benchmark used in the paper contains 4,326 adversarially constructed fact-seeking questions.
+- The GAIA benchmark used in the paper comprises 450 questions across three difficulty levels.
+- The HLE benchmark used in the paper contains 2,500 multimodal questions.
+- In the reported implementation, the Planning Agent and Deep Researcher Agent use claude-3.7-sonnet with thinking mode; the Browser Use Agent uses gpt-4.1; and the Deep Analyzer Agent uses gemini-2.5-pro-preview-05-06 and o3.
+- Table 1 reports AgentOrchestra at 95.3 on SimpleQA, compared with 93.9 for Perplexity Deep Research, 50.8 for gemini-2.5-pro-preview-05-06, and 49.4 for o3 without tools.
+- Table 1 reports AgentOrchestra at 92.45 on GAIA Level 1, 83.72 on Level 2, 57.69 on Level 3, and 82.42 average.
+- The paper states that the framework's added architectural complexity and inter-agent communication can increase latency and computational overhead, and that reliance on external tools and web resources can reduce robustness.

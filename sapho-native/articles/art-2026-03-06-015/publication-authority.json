@@ -1,0 +1,14 @@
+{
+  "version": "publication-authority.v1",
+  "scope": "article",
+  "article_id": "art-2026-03-06-015",
+  "evaluated_at_utc": "2026-04-09T04:52:33Z",
+  "publication_status": "duplicate-rejected",
+  "validation_status": "pass",
+  "historical_policy_status": "blocked_not_publishable",
+  "verdict": "block",
+  "reasons": [
+    "publication_status_not_publishable:duplicate-rejected",
+    "historical_policy_ineligible"
+  ]
+}

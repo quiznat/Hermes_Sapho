@@ -1,17 +1,21 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-07-033",
-  "reviewed_at_utc": "2026-04-05T04:18:57Z",
+  "reviewed_at_utc": "2026-04-09T04:41:13Z",
   "reviewer_role": "Synthesist",
-  "summary": "Firetiger's outage followed a documented control-plane failure chain, while detection and recovery were limited more by broken escalation than by absent monitoring.",
+  "summary": "Firetiger’s outage came from a supported multi-step deployment failure chain, with fast machine detection but delayed human escalation.",
   "review_confidence": "high",
-  "mechanism_count": 3,
-  "bounded_claim_count": 1,
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
   "status": "explained",
   "bounded_claims": [
     {
-      "claim_text": "Once the issue was properly surfaced, Firetiger used an AI-assisted operational workflow to identify the bad deployment state and restore service.",
-      "bounds": "The evidence supports that automated triage identified the bad ECR version and that Claude Code with MCP, AWS access, and GitHub CLI access was used to locate the broken deployment, rebuild the image, rerun deploy scripts, and restore service. It does not support a stronger mechanism claim that AI tooling alone was sufficient without human operational control, or that AI response was superior to a non-AI alternative."
+      "claim_text": "Firetiger’s ingest system for most customers was degraded for about eight hours on March 1, 2026 and failed to accept OpenTelemetry data and GitHub webhooks.",
+      "bounds": "The impact and duration are directly supported, but these facts alone do not establish the full outage mechanism beyond showing that delayed human notification helped extend the incident."
+    },
+    {
+      "claim_text": "Firetiger detected signs of the incident quickly in automated systems, but mis-scoped machine diagnosis and a hidden notification policy delayed correct human escalation for roughly eight hours.",
+      "bounds": "The evidence supports early automated detection, initially narrow diagnosis, later root-cause identification, and suppressed human notification, but it does not cleanly apportion how much of the delay came from mis-scoping versus hidden alert-routing state."
     }
   ]
 }

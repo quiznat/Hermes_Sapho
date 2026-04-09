@@ -10,64 +10,24 @@ captured_at_utc: '2026-03-07T19:27:22Z'
 canonical_url: https://arxiv.org/abs/2601.15195
 curator_decision: kept
 artifact_minted_at_utc: '2026-04-05T04:11:31Z'
-evidence_count: 18
-claim_count: 4
-publication_status: ready-for-daily
+evidence_count: 0
+claim_count: 0
+publication_status: duplicate-rejected
 imported_from_runtime_article_id: art-2026-03-06-015
 imported_from_runtime_last_stage: facts
 imported_from_runtime_filter_state: pending
-curator_reason: Formal empirical research paper reporting large-scale real-world PR
-  outcome data and rejection analysis.
-curated_at_utc: '2026-04-05T04:08:58Z'
+curator_reason: This source is a preprint reporting large-scale empirical results
+  on 33k agent-authored PRs plus a manual analysis of 600 failures.
+curated_at_utc: '2026-04-09T04:33:35Z'
 curator_mode: agent
 extracted_at_utc: '2026-04-05T04:11:31Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
-artifact_publication_alias: '20260306015'
-artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-04-05T04:11:31Z'
-artifact_publication_published_at_utc: '2026-04-05T13:13:58Z'
+duplicate_of_article_id: art-2026-03-09-002
+duplicate_match_signature: arxiv:2601.15195
+duplicate_rejected_at_utc: '2026-04-09T04:33:37Z'
 ---
-# Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub
+# Duplicate Rejected
 
-## Core Thesis
-
-AI coding agents are already capable of landing a large share of pull requests in public GitHub workflows, but success is uneven across agents and task types, and non-merge risk rises sharply when changes hit hard quality gates, especially CI. In this dataset, agentic coding works best on narrower, lower-friction maintenance work and becomes less reliable on tasks that carry greater breakage risk or higher review burden.
-
-## Why It Matters for Sapho
-
-This matters because the field narrative cannot be reduced to either “agents mostly work” or “agents mostly fail.” The stronger reading is operational: agentic coding is viable at scale under bounded conditions, and those bounds are visible in repository workflow. For Sapho, that shifts evaluation away from demo competence and toward merge outcomes, task mix, review friction, and gate interaction. It also argues against treating raw acceptance rates as pure model quality, because repository mix, task selection, and reviewer behavior remain entangled with the observed results.
-
-## Key Findings
-
-- The study analyzes 33,596 agent-authored pull requests across five coding agents, with 24,014 merged, for an overall merge rate of 71.48%.
-- OpenAI Codex dominates the observed volume with 21,799 pull requests and also posts the highest reported merge rate at 82.59% with 18,004 merged pull requests.
-- Performance is not uniform across agents: the same dataset reports Copilot at 43.04% merged with 2,139 merged pull requests, showing a wide cross-agent spread rather than a single shared agent baseline.
-- Task type matters materially: documentation work reaches 84% merged and CI work 79%, while fix tasks fall to 64% and performance tasks to 55%, the lowest reported rate in the task table cited here.
-- Failed CI is a strong non-merge signal. Not-merged pull requests show more CI failures with a Cliff’s delta of 24%, and each additional failed CI check is associated with about a 15% drop in merge odds.
-- Rejection is not only about code breakage. In the manually analyzed rejected set, reviewer abandonment affects 228 pull requests, or 38%, while CI/test failure is the largest code-level rejection pattern at 99 pull requests, or 17%.
-
-## Evidence and Findings
-
-- The paper’s central empirical result is scale plus nontrivial success: 24,014 of 33,596 agent-authored pull requests were merged, yielding a 71.48% merge rate. That supports the conclusion that agentic pull-request generation is already workable in real repository settings rather than only in benchmark sandboxes, which matters because it grounds evaluation in actual merge outcomes.
-- The cross-agent distribution is highly uneven. Codex contributes 21,799 pull requests and records the highest merge rate at 82.59%, while Copilot is reported at 43.04%. That supports the conclusion that “AI coding agent” is not a single performance category; observed deployment value depends heavily on which agent is used and under what repository/task distribution.
-- The task-type pattern is similarly uneven. Documentation work is reported at 84% merged and CI work at 79%, versus 64% for fix tasks and 55% for performance tasks. This supports the conclusion that mergeability is much higher for narrower maintenance-oriented work than for tasks that plausibly require deeper system understanding, stricter correctness, or more consequential optimization tradeoffs.
-- Non-merged pull requests are not just rejected randomly; they are measurably different. They contain larger code changes with a 17% Cliff’s delta difference, touch more files with a 10% difference, and show more CI failures with a 24% difference. That supports the conclusion that merge risk rises with change complexity and especially with formal gate failure, which matters because it identifies where agent workflows most predictably break down.
-- The regression result sharpens that point: each additional failed CI check is associated with about a 15% decrease in merge odds. This supports the conclusion that CI failure is not a minor accompaniment but a meaningful predictor of downstream rejection, making test and integration reliability a central operational choke point for agentic coding systems.
-- The rejection annotation shows that not all failures are code-quality failures. Of 600 manually sampled rejected pull requests, 38 were inaccessible, leaving 562 for categorization; reviewer abandonment is the largest pattern at 228 cases, or 38%, while duplicate pull requests account for 142 cases, or 23%, and CI/test failure leads code-level rejection at 99 cases, or 17%. That matters because non-merge reflects workflow, attention, and coordination failure as well as technical defect.
-
-## Contradictions and Tensions
-
-- The headline merge rate is strong at 71.48%, but it coexists with major heterogeneity across agents and tasks. Any simple claim that coding agents are broadly “good” or “bad” obscures the fact that observed success ranges from 82.59% for one agent to 43.04% for another, and from 84% for documentation to 55% for performance work.
-- CI failure is a meaningful predictor of rejection, but it is not the whole story. In the annotated rejected set, reviewer abandonment at 38% is more common than any single code-level rejection reason, which means many failures reflect workflow attrition or lack of reviewer engagement rather than direct proof of bad code alone.
-- Larger pull requests, more touched files, and more CI failures all track with non-merge, but the evidence does not cleanly separate whether the core issue is technical defect, task difficulty, review burden, or repository norms. The pattern is real; the dominant causal pathway remains mixed.
-- Codex leads both in volume and merge rate, but the reported evidence does not isolate whether that advantage comes from stronger model behavior, easier task mix, more favorable repository exposure, or some combination. The observed lead is important, but causal interpretation remains open.
-
-## Mechanism or Bounds
-
-The strongest supported operational mechanism is gate-mediated failure: when agent-authored pull requests trip CI and test checks, their path to merge degrades substantially, with each additional failed CI check associated with about a 15% reduction in merge odds. A broader bounded explanation is that agent success is highest when the work is narrow, legible, and low-risk to repository integrity, as seen in documentation and CI-oriented tasks, and lower when the change surface is larger or the task demands harder correctness or optimization judgment, as seen in larger pull requests, multi-file changes, fix work, and especially performance work. These results are descriptive and partly associative rather than fully causal; they show where the system fails in practice, not a complete causal decomposition of why.
-
-## Limits
-
-The evidence is strong on observed merge patterns but limited on causal attribution. It does not establish why one agent outperforms another, why certain task types merge more easily, or how much repository selection and reviewer norms shape the results. The qualitative rejection analysis is also bounded: 600 rejected pull requests were sampled, 38 were inaccessible, and the coded analysis rests on the remaining 562 cases rather than the entire rejected corpus. Finally, merge is an operational outcome, not a full quality measure: a merged pull request may still be narrow or low-impact, and a rejected one may reflect abandonment, duplication, or process friction rather than a clean test of coding competence.
+This source passed worthiness but was blocked at the keep gate because the same work already exists in the institute.

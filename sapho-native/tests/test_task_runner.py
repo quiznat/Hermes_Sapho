@@ -39,6 +39,31 @@ session_id: 20260331_032122_c6700d
         raw = f"\n╭─ ⚕ Hermes ──╮\n{payload}{payload}\nsession_id: abc\n"
         self.assertEqual(task_runner.normalize_output(raw), payload.strip())
 
+    def test_normalize_output_strips_activity_feed_shell_echo(self) -> None:
+        raw = """
+  ┊ 💻 $         date -u +\"%Y-%m-%dT%H:%M:%SZ\"  0.6s
+
+---
+version: curator-receipt.v1
+role: Curator
+article_id: art-2026-03-08-011
+ticket_id: ticket-import-art-2026-03-08-011
+decision: kept
+reason: Benchmark evidence.
+scope_class: preprint
+decided_at_utc: 2026-04-09T03:28:56Z
+---
+# Curator Receipt
+"""
+        clean = task_runner.normalize_output(raw)
+        self.assertTrue(clean.startswith("---\nversion: curator-receipt.v1"))
+        self.assertNotIn("💻 $", clean)
+
+    def test_normalize_output_collapses_duplicate_receipt_with_trailing_code_fence(self) -> None:
+        payload = "---\nversion: extractor-receipt.v1\nrole: Extractor\narticle_id: art-1\nevidence_count: 1\n---\n# Extractor Receipt\n\n## Evidence Files\n\n### file: evidence-01.md\n```markdown\n---\nversion: evidence.v1\narticle_id: art-1\nevidence_id: evidence-01\nmechanism_relevance: none\ncontradiction_relevance: none\n---\nA fact.\n\n## Source Excerpt\n\nQuoted.\n\n## Note\n\nA note.\n```"
+        raw = payload + "\n" + payload + "\n```"
+        self.assertEqual(task_runner.normalize_output(raw), payload)
+
     def test_load_frontmatter_repairs_bracket_prefixed_scalar(self) -> None:
         text = "version: article.v1\nsource_title: [2512.08296] Towards a Science of Scaling Agent Systems\n"
         meta = common.load_frontmatter(text)

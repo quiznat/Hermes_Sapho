@@ -1,25 +1,25 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-08-011",
-  "reviewed_at_utc": "2026-04-05T14:09:55Z",
+  "reviewed_at_utc": "2026-04-09T04:51:53Z",
   "reviewer_role": "Synthesist",
-  "summary": "art-2026-03-08-011 reviews as a bounded mechanism case: benchmark outcomes appear shaped by execution discipline and test visibility, but the evidence does not justify a single general causal account of repository-generation failure.",
-  "review_confidence": "high",
-  "mechanism_count": 2,
+  "summary": "NL2Repo-Bench shows that from-scratch Python repository generation remains hard, and the paper supports only a bounded mechanism that execution management and feedback visibility materially shape outcomes.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
   "bounded_claim_count": 3,
   "status": "explained",
   "bounded_claims": [
     {
-      "claim_text": "NL2Repo-Bench evaluates long-horizon repository generation from a requirements document and an empty workspace.",
-      "bounds": "the evidence establishes task design, not a causal explanation for why agents succeed or fail in that setting."
+      "claim_text": "NL2Repo-Bench evaluates coding agents on from-scratch Python library generation from a requirements document and empty workspace, with hidden scaffolding, source, and tests during development and final grading against the upstream pytest suite.",
+      "bounds": "The evidence establishes the benchmark setup, but it does not justify a specific causal explanation for which hidden artifact or development constraint contributes most to failure."
     },
     {
-      "claim_text": "NL2Repo-Bench is a 104-task, nine-category benchmark with average inputs around 18,800 tokens.",
-      "bounds": "these figures bound scale and construction criteria, but they do not show how representative the benchmark is beyond the paper's stated repository-selection rules."
+      "claim_text": "The benchmark is a bounded but nontrivial Python-repository set with 104 tasks across nine categories, long requirements documents, and eligibility filters favoring recent, maintained, pytest-valid repositories.",
+      "bounds": "The evidence supports that the benchmark is substantial and selectively constructed, but any claim that these filters make it broadly representative of software repositories must remain limited because older, unstarred, non-pytest, and out-of-range projects are excluded."
     },
     {
-      "claim_text": "Long-horizon repository generation remains unsolved on this benchmark, with the top reported system at 40.2% overall pass rate and lower performance on harder tasks.",
-      "bounds": "the evidence supports a low performance ceiling and a difficulty gradient, but it does not isolate a single shared causal bottleneck behind those outcomes."
+      "claim_text": "Reported end-to-end performance remains limited in this setting, with Claude-Sonnet-4.5 at 40.2% overall pass rate and GPT-5 at 21.7%.",
+      "bounds": "The evidence supports limited top-line performance, but it does not justify reading these scores as pure model-capability rankings because execution behavior, tooling, and stopping dynamics may materially affect the results."
     }
   ]
 }

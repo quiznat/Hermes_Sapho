@@ -1,12 +1,12 @@
-- Firetiger's ingest system for most customers was degraded for about 8 hours on March 1, 2026 and failed to accept OpenTelemetry data and GitHub webhooks.
-- A CI race condition with overly aggressive concurrency control caused a build job to be erroneously canceled during PR merge on February 27, 2026.
-- A second CI attribution error made a later deploy job treat the canceled build as complete and update AWS Lambda and ECS service definitions to a non-existent container ID.
-- Terraform rejected the Lambda change as invalid and aborted the deployment, but ECS service definitions had already been mutated.
-- After ECS definitions became invalid, new tasks could not be put into production and any exited task could not be restarted.
-- Around 5:48 UTC on March 1, restarted ECS tasks failed to come up and frontend ingest load balancers began returning 503s for all ingest events.
-- Firetiger's separate self-monitoring deployment detected the issue at 6:00, 12 minutes after the problem materialized.
-- A detection agent flagged the abnormality but initially believed the problem was isolated to GitHub webhook ingest and only attempted to notify human operators.
-- At 7:47, Firetiger's issue triage system coalesced multiple ingestion detections and traffic-drop findings into one issue and identified the bad ECR version as the root cause.
-- Human operators were notified about 8 hours late because an internal notification-system misconfiguration hid alerts from normal incident management channels.
-- The notification misconfiguration was introduced late Friday while an engineer repeatedly deleted and recreated a policy document during testing of a deployment-attribution feature.
-- After the issue report surfaced, Firetiger used Claude Code with MCP, AWS access, and GitHub CLI access to locate the broken deployment, rebuild the image, rerun deploy scripts, and restore service.
+- For approximately 8 hours on March 1, 2026, Firetiger's ingest system for most customers was degraded and failed to accept OpenTelemetry data and GitHub webhooks.
+- The postmortem attributes the outage to three overlapping issues.
+- A race condition in Firetiger's CI system, combined with aggressive concurrency control, caused a build job to be erroneously canceled during PR merge on February 27, 2026.
+- A later deploy proceeded because the CI system falsely attributed build artifacts as complete and updated AWS Lambda and ECS service definitions to a non-existent container ID.
+- Terraform rejected the Lambda change as invalid and aborted the deployment after ECS service definitions had already been mutated.
+- The invalid ECS definitions prevented new tasks from entering production, and any exiting task could not be restarted.
+- Around 5:48 UTC on March 1, restarted ECS tasks failed to come up and the frontend ingest load balancers began returning 503s for all ingest events.
+- Firetiger's self-monitoring deployment detected the issue at 6:00, 12 minutes after the problem materialized.
+- An integration-checking agent detected the ingest problem but initially believed it was isolated to GitHub webhook ingest.
+- At 7:47, Firetiger's issue triaging subsystem coalesced multiple ingest-related detections and identified the bad version in ECR as the root cause.
+- Human operators were not notified for about 8 hours because an internal notification policy state hid alerts from normal incident management channels.
+- After the issue was identified, Firetiger used Claude Code with MCP, AWS CLI, and GitHub CLI access to find the broken deployment, rebuild the image, rerun deploy scripts, and restore service health.

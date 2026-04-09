@@ -329,18 +329,23 @@ def main() -> int:
         article_meta["duplicate_of_article_id"] = existing["article_id"]
         article_meta["duplicate_match_signature"] = conflict["matched_signature"]
         article_meta["duplicate_rejected_at_utc"] = timestamp_for_date(args.replay_date)
+        article_meta["evidence_count"] = 0
+        article_meta["claim_count"] = 0
         ticket_meta["status"] = DUPLICATE_REJECTED_STATUS
         ticket_meta["canonical_url"] = article_meta["canonical_url"]
         ticket_meta["duplicate_of_article_id"] = existing["article_id"]
         ticket_meta["duplicate_match_signature"] = conflict["matched_signature"]
-        write_article_markdown(
-            article_file(args.article_id),
-            article_meta,
-            (
-                "# Duplicate Rejected\n\n"
-                "This source passed worthiness but was blocked at the keep gate because the same work already exists in the institute.\n"
-            ),
+        duplicate_body = (
+            "# Duplicate Rejected\n\n"
+            "This source passed worthiness but was blocked at the keep gate because the same work already exists in the institute.\n"
         )
+        materialize_article_structured_bundle(
+            article_id=args.article_id,
+            article_meta=article_meta,
+            article_body=duplicate_body,
+            worthiness_text=worthiness_text,
+        )
+        write_article_markdown(article_file(args.article_id), article_meta, duplicate_body)
         write_markdown(ticket_path(article_meta["ticket_id"]), ticket_meta, ticket_body)
         print(article_file(args.article_id))
         return 0

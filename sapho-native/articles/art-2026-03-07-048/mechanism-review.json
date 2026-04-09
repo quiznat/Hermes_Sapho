@@ -1,21 +1,17 @@
 {
   "version": "mechanism-review.v1",
   "article_id": "art-2026-03-07-048",
-  "reviewed_at_utc": "2026-04-05T04:22:10Z",
+  "reviewed_at_utc": "2026-04-09T04:44:30Z",
   "reviewer_role": "Synthesist",
-  "summary": "AgentOrchestra has a clearly described planning-and-routing mechanism, but its reported gains remain benchmark-specific and not cleanly causally isolated.",
+  "summary": "AgentOrchestra presents a clear architectural mechanism for hierarchical task decomposition and workflow control, while its reported performance gains remain only partially mechanistically identified and explicitly bounded by latency, compute, and robustness costs.",
   "review_confidence": "high",
-  "mechanism_count": 2,
-  "bounded_claim_count": 2,
+  "mechanism_count": 3,
+  "bounded_claim_count": 1,
   "status": "explained",
   "bounded_claims": [
     {
-      "claim_text": "AgentOrchestra outperforms the listed comparison systems on SimpleQA.",
-      "bounds": "The result is empirically reported for SimpleQA, but the provided evidence does not isolate which components of the system caused the performance gap."
-    },
-    {
-      "claim_text": "AgentOrchestra shows uneven performance across benchmarks and difficulty levels, with strong GAIA results but 25.9% on HLE, while added coordination also increases latency and computational overhead.",
-      "bounds": "The evidence supports a real tradeoff between strong performance on some tasks and added coordination cost, but it does not fully explain why HLE is much weaker or establish a single causal account for the benchmark spread."
+      "claim_text": "In the reported evaluation, AgentOrchestra scored 95.3 on SimpleQA, above Perplexity Deep Research at 93.9 and well above the listed untuned single-model baselines.",
+      "bounds": "The result is a reported benchmark comparison for the full system, but the evidence does not isolate which architectural component caused the advantage, so performance mechanism remains only partially specified."
     }
   ]
 }

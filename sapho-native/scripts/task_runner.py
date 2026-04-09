@@ -19,7 +19,7 @@ DEFAULT_CONFIG_PATH = ROOT / "micro" / "task_runner.json"
 DEFAULT_RECEIPTS_DIR = ROOT / "state" / "receipts" / "task-runs"
 ANSI_PATTERN = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
 SESSION_PATTERN = re.compile(r"^session_id:\s+", re.IGNORECASE)
-BOX_DRAWING_PREFIXES = ("╭", "╰", "│", "├", "└", "┌", "┐", "┘", "┤", "┬", "┴", "─")
+BOX_DRAWING_PREFIXES = ("╭", "╰", "│", "├", "└", "┌", "┐", "┘", "┤", "┬", "┴", "─", "┊")
 CLI_NOISE_PREFIXES = ("⚠️", "⏳", "❌", "🔌", "🌐", "📝", "📋", "💀")
 CLI_FAILURE_PATTERNS = [
     re.compile(r"api call failed", re.IGNORECASE),
@@ -160,7 +160,24 @@ def _collapse_exact_duplicate_payload(text: str) -> str:
     cleaned = text.strip()
     if not cleaned:
         return cleaned
-    first_line = cleaned.splitlines()[0].strip() if cleaned.splitlines() else ""
+
+    lines = cleaned.splitlines()
+    receipt_signature = ""
+    if len(lines) >= 4 and lines[0].strip() == "---" and lines[1].startswith("version:"):
+        receipt_signature = "\n".join(lines[:4]).strip()
+    if receipt_signature:
+        duplicate_start = cleaned.find(f"\n{receipt_signature}", 1)
+        if duplicate_start != -1:
+            head = cleaned[:duplicate_start].strip()
+            tail = cleaned[duplicate_start + 1 :].strip()
+            if head == tail:
+                return head
+            if tail.startswith(head):
+                suffix = tail[len(head):].strip()
+                if suffix in {"", "```"}:
+                    return head
+
+    first_line = lines[0].strip() if lines else ""
     if first_line:
         duplicate_start = cleaned.find(f"\n{first_line}", 1)
         if duplicate_start != -1:
@@ -168,6 +185,10 @@ def _collapse_exact_duplicate_payload(text: str) -> str:
             tail = cleaned[duplicate_start + 1 :].strip()
             if head == tail:
                 return head
+            if tail.startswith(head):
+                suffix = tail[len(head):].strip()
+                if suffix in {"", "```"}:
+                    return head
     midpoint = len(cleaned) // 2
     if len(cleaned) % 2 == 0 and cleaned[:midpoint] == cleaned[midpoint:]:
         return cleaned[:midpoint].strip()

@@ -1,4 +1,4 @@
-- A CI race condition and a follow-on deploy attribution error pushed a non-existent container ID into Firetiger’s deployment state, creating the conditions for the ingest outage.
-- The ingest outage materialized when invalid ECS definitions prevented replacement tasks from starting, leading frontend ingest load balancers to return 503s.
-- Firetiger detected the incident quickly in machine terms but failed to reach human operators in time because alert notification paths were misconfigured.
-- Once the issue was properly surfaced, Firetiger used an AI-assisted operational workflow to identify the bad deployment state and restore service.
+- Firetiger’s ingest system for most customers was degraded for about eight hours on March 1, 2026 and failed to accept OpenTelemetry data and GitHub webhooks.
+- The outage mechanism began with a CI race condition and aggressive concurrency control that canceled a build, after which a later deploy treated artifacts as complete and pushed Lambda and ECS definitions pointing to a non-existent container ID.
+- Terraform’s rejection of the invalid Lambda update after ECS service definitions had already been mutated left ECS unable to start replacement tasks, leading restarted tasks to fail and ingest load balancers to return 503s.
+- Firetiger detected signs of the incident quickly in automated systems, but mis-scoped machine diagnosis and a hidden notification policy delayed correct human escalation for roughly eight hours.

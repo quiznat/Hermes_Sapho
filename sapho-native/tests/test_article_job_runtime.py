@@ -490,6 +490,12 @@ The strongest supported explanation is bounded: the guide says different benchma
         self.assertEqual(len(evidence_files), 2)
         self.assertEqual([row["meta"]["evidence_id"] for row in evidence_files], ["evidence-001", "evidence-002"])
 
+    def test_parse_extractor_receipt_accepts_final_block_without_closing_fence(self) -> None:
+        missing_final_fence = EXTRACTOR_RECEIPT.rsplit("\n```", 1)[0]
+        evidence_files = parse_evidence_receipt_files("art-test-101", missing_final_fence)
+        self.assertEqual(len(evidence_files), 2)
+        self.assertEqual([row["meta"]["evidence_id"] for row in evidence_files], ["evidence-001", "evidence-002"])
+
     def test_article_write_rejects_weak_tension_and_mechanism_voice(self) -> None:
         weak_article = """# Weak Article
 
