@@ -5,9 +5,9 @@
   <li><strong>Source:</strong> <a href="https://arxiv.org/html/2506.12508v1" target="_blank" rel="noopener">https://arxiv.org/html/2506.12508v1</a></li>
   <li><strong>Intake queued:</strong> 2026-03-07T21:00:24Z</li>
   <li><strong>Source captured:</strong> 2026-04-05T04:19:13Z</li>
-  <li><strong>Curated:</strong> 2026-04-05T04:19:27Z</li>
-  <li><strong>Artifact finalized:</strong> 2026-04-05T04:21:33Z</li>
-  <li><strong>Artifact published:</strong> 2026-04-05T13:13:59Z</li>
+  <li><strong>Curated:</strong> 2026-04-09T04:41:32Z</li>
+  <li><strong>Artifact finalized:</strong> 2026-04-09T04:43:54Z</li>
+  <li><strong>Artifact published:</strong> 2026-04-09T10:25:37Z</li>
 </ul>
 </div>
 </details>
@@ -16,47 +16,43 @@
 
 ## Core Thesis
 
-AgentOrchestra argues that a hierarchical multi-agent system can improve general-purpose task execution by splitting work across a planning layer and specialized execution agents, then revising the plan as intermediate results arrive. The paper supports that this design can produce strong benchmark results in some settings, but it also shows that the same coordination structure carries real latency and compute costs and does not yield uniformly strong performance across all evaluations.
+AgentOrchestra argues that general-purpose task solving improves when a planning layer decomposes work, tracks execution state, and coordinates specialized agents instead of forcing one model to handle planning, browsing, research, and analysis in a single loop.
 
 ## Why It Matters for Sapho
 
-This matters because it sharpens a live question in agent evaluation: whether orchestration architecture adds durable capability or mainly repackages strong models and tools into a better-controlled workflow. The paper supports the practical value of planner-subagent coordination and mixed-model routing, but it also reinforces Sapho’s need to treat benchmark wins as conditional. Strong results on interactive task suites do not erase uneven performance on broader or harder evaluations, and architectural sophistication should be read alongside overhead, benchmark dependence, and unresolved causal attribution.
+This matters because it strengthens a concrete architectural doctrine: orchestration can beat stronger-looking single-model baselines on demanding retrieval-heavy question answering, but the gain is not free. For Sapho, the paper supports treating planning, state tracking, and role separation as first-class design choices while keeping cost, latency, and robustness penalties visible as real operating constraints rather than afterthoughts.
 
 ## Key Findings
 
-- The system uses a two-tier hierarchy: a planning agent decomposes tasks, coordinates specialized sub-agents, tracks global progress, and updates the plan as new intermediate results come back.
-- The implementation is explicitly multi-backend: it includes a unified abstraction layer for both commercial and local open-source models and allows model switching during execution.
-- The reported sub-agent stack is specialized rather than generic, with Deep Researcher, Browser Use, and Deep Analyzer agents, and each sub-agent also has access to a Python interpreter.
-- On SimpleQA, a benchmark of 4,326 adversarially constructed fact-seeking questions, the paper reports 95.3% accuracy for AgentOrchestra versus 93.9% for Perplexity Deep Research, 50.8% for gemini-2.5-pro-preview-05-06, and 49.4% for o3 without tools.
-- On GAIA, which contains 450 questions across three difficulty levels and requires web browsing, document analysis, and interactive reasoning, the paper reports 92.45% on Level 1, 83.72% on Level 2, 57.69% on Level 3, and 82.42% on average.
-- The gains are not uniform: on HLE, a 2,500-question multimodal benchmark, the reported score is 25.9%, while the paper also acknowledges that inter-agent communication and architectural complexity increase latency and computational overhead.
+- The framework uses a two-tier design: a top-level planning agent handles high-level reasoning, decomposes the task, revises plans from agent feedback, and delegates execution to specialized sub-agents rather than performing low-level actions itself.
+- The planning layer includes explicit workflow control: it can create and modify plans, mark steps as not started, in progress, completed, or blocked, and monitor progress across the task.
+- The paper describes three concrete specialized agents: a Deep Researcher Agent, a Browser Use Agent, and a Deep Analyzer Agent, giving the hierarchy an operational division of labor rather than a vague multi-agent label.
+- On SimpleQA, the framework reports 95.3, beating Perplexity Deep Research at 93.9 and far exceeding the listed untuned no-tool baselines of 50.8 for gemini-2.5-pro-preview-05-06 and 49.4 for o3.
+- The paper explicitly bounds the result: added architectural complexity and inter-agent communication raise latency and computational overhead, while dependence on external tools and web resources creates additional robustness risk.
 
 ## Evidence and Findings
 
-- The source shows a planner-centered hierarchy in which one top-level agent decomposes tasks, maintains global progress awareness, and revises plans using sub-agent feedback. This supports the conclusion that AgentOrchestra is not just a pool of parallel agents but a coordinated control structure, which matters because the claimed advantage depends on plan management rather than mere model multiplicity.
-- The system includes named specialist roles—Deep Researcher, Browser Use, and Deep Analyzer—and equips each with a Python interpreter, while potentially side-effecting operations run inside a docker-based sandbox such as an isolated Linux container or virtual machine. This supports the conclusion that the framework is built as a tool-using, operational agent stack rather than a pure text-only reasoning scaffold, which matters because benchmark performance here likely reflects orchestration plus tool access together.
-- The paper describes a unified model abstraction layer that supports commercial and local open-source models and permits model switching during execution. The reported implementation mixes claude-3.7-sonnet, gpt-4.1, gemini-2.5-pro-preview-05-06, and o3 across different roles with explicit step caps. This supports the conclusion that the framework is architected for heterogeneous model assignment, which matters because it separates orchestration policy from any single provider and suggests a practical route to capability routing.
-- On SimpleQA, the reported score is 95.3% on 4,326 adversarial fact-seeking questions, ahead of Perplexity Deep Research at 93.9% and far above the listed single-model baselines of 50.8% and 49.4%. This supports the conclusion that the assembled system can outperform the named comparison systems on fact-seeking QA, which matters because the margin is large enough to justify taking the orchestration setup seriously as a performance-bearing design choice.
-- On GAIA, the system posts 92.45% at Level 1, 83.72% at Level 2, 57.69% at Level 3, and 82.42% overall across 450 interactive questions. This supports the conclusion that the framework remains strong as task complexity rises, but with visible degradation at the hardest tier, which matters because it shows both capability and a clear difficulty-bound failure slope.
-- On HLE, the reported result falls to 25.9%, and the paper explicitly states that architectural complexity and inter-agent communication can increase latency and computational overhead. This supports the conclusion that the same coordination machinery that may help on interactive tasks can also impose costs and weaker outcomes on other benchmarks, which matters because the architecture should be evaluated as a tradeoff, not a free capability multiplier.
+- The source shows a strict separation between planning and execution: the planner performs task decomposition, high-level reasoning, and adaptive updates from feedback, while named specialist agents carry out research, browsing, and analysis. That supports the conclusion that the framework is built around hierarchical coordination rather than a monolithic agent loop, which matters because it makes the claimed gains architecturally legible.
+- The source shows the planner is not just a prompt convention but a workflow manager with plan creation, modification, status marking, progress monitoring, and explicit step states including blocked. That supports the conclusion that the system externalizes task state in a structured way, which matters because controllable state is a plausible operational advantage in long or branching tasks.
+- The source details concrete tool-backed execution paths: the research component breadth-first searches Google, Bing, and Baidu, generates follow-up queries, and tracks URLs, queries, and insights in structured context; the browser component supports navigation, DOM interaction, extraction, scrolling, PDF and video control, and tab/session management. That supports the conclusion that the framework’s competence depends on broad tool mediation, which matters because performance here is tied to orchestration over capabilities, not just model weights.
+- The benchmark payload is substantial rather than anecdotal: SimpleQA contains 4,326 adversarially constructed fact-seeking questions, and the reported score of 95.3 exceeds Perplexity Deep Research’s 93.9 while sitting dramatically above the listed no-tool single-model baselines at 50.8 and 49.4. That supports the conclusion that the framework is competitive on a large retrieval-heavy benchmark, which matters because it suggests orchestration can materially shift outcomes on difficult factual tasks.
+- The paper also reports GAIA results of 92.45 on Level 1, 83.72 on Level 2, 57.69 on Level 3, and 82.42 average. That supports the conclusion that performance remains strong but degrades with task difficulty, which matters because it argues against reading the system as uniformly dominant across harder multi-step settings.
+- The source states that side-effectful operations run inside docker-based sandboxes such as isolated Linux containers or virtual machines. That supports the conclusion that the framework treats external action as a safety and containment problem, which matters because real-world agent systems need execution control in addition to reasoning quality.
 
 ## Contradictions and Tensions
 
-- The central tension is benchmark unevenness: the paper reports very strong GAIA and SimpleQA results, yet only 25.9% on HLE. That cuts against any simple reading that hierarchical orchestration reliably lifts general-purpose reasoning across task types.
-- There is also a cost-performance tension inside the paper’s own framing. The architecture is presented as a capability enhancer, but the source explicitly concedes that inter-agent communication and added complexity increase latency and computational overhead.
-- The implementation mixes several frontier models across roles, which strengthens the system operationally but weakens clean attribution. The reported gains may reflect orchestration quality, model specialization, tool access, or all three at once rather than a single architectural cause.
-- GAIA performance declines materially with difficulty, from 92.45% at Level 1 to 57.69% at Level 3. That does not negate the result, but it shows that the framework’s advantage does not scale cleanly with harder interactive tasks.
+- The central tension is that the same hierarchy that appears to drive stronger benchmark performance also adds latency and computational overhead. The paper presents orchestration as a capability gain, but also admits that more components and more coordination make the system slower and more expensive.
+- The framework depends heavily on external tools and web resources, which expands capability but also increases failure surface. Better task reach and lower robustness come from the same design choice.
+- Benchmark strength is uneven across difficulty. GAIA drops from 92.45 at Level 1 to 57.69 at Level 3, which cuts against any easy claim that hierarchical coordination solves hard general-purpose tasks cleanly.
+- The implementation is heterogeneous across models and tools, with different agents assigned to different frontier systems. That makes the performance result harder to attribute cleanly to hierarchy alone rather than to the combined effect of model selection, tool access, and orchestration.
 
 ## Mechanism or Bounds
 
-The strongest supported mechanism is hierarchical task control: a planner decomposes work, tracks global state, routes subtasks to specialists, and updates the plan from intermediate feedback. A second supported mechanism is backend heterogeneity through a unified abstraction layer, which lets the system assign different models to different roles and switch models during execution. Together, these design choices plausibly help on tasks that benefit from decomposition, tool use, and specialized handling.
-
-The bounds are equally important. The evidence does not isolate how much of the reported performance comes from hierarchy itself versus access to strong models, role specialization, Python tooling, browsing capability, or benchmark fit. The empirical support is benchmark-specific rather than causal. The architecture is therefore best read as a bounded systems pattern that appears effective on some interactive and fact-seeking tasks, not as proof that multi-agent hierarchy is intrinsically superior across general-purpose evaluation.
+The strongest supported mechanism is hierarchical decomposition with explicit stateful coordination. A planning agent maintains a structured plan, tracks step status, updates execution from feedback, and routes subtasks to specialized agents with distinct tool affordances. That gives the system a bounded operational advantage on tasks that benefit from decomposition, retrieval breadth, browser control, and iterative analysis. But the evidence does not isolate which part of the stack causes the benchmark gains. The reported results are benchmark outcomes for a full system, not a causal ablation of planner logic versus specialist tooling versus model mix. The bounds are therefore clear: the mechanism is explicit at the architecture level, but only partially identified at the performance level.
 
 ## Limits
 
-The evidence does not cleanly disentangle architecture effects from model selection and tool access.
-The strongest performance claims are benchmark-reported rather than mechanism-isolated.
-The paper shows clear unevenness across evaluations, especially between strong GAIA results and the much lower HLE score.
-The source itself acknowledges latency and computational overhead from coordination, so the framework’s gains should be treated as conditional on task type and cost tolerance.
-The current evidence supports practical promise, but not a general law that more agent hierarchy yields better reasoning.
+The paper does not show which architectural component is most responsible for the reported gains.
+The strongest headline comparison is benchmark-bound and should not be read as a general proof of superiority across all task classes.
+The system’s dependence on external web and tool infrastructure introduces robustness risk that can erase practical gains in noisier real deployments.
+The evidence supports a credible orchestration architecture, not a claim that complexity is free or that multi-agent hierarchy reliably dominates under harder conditions.

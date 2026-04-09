@@ -1,17 +1,132 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-05T16:19:55Z",
-  "generatedAtUtc": "2026-04-05T16:19:55Z",
-  "processedCount": 43,
-  "decisionedCount": 43,
-  "keptCount": 43,
+  "last_updated": "2026-04-09T10:25:40Z",
+  "generatedAtUtc": "2026-04-09T10:25:40Z",
+  "processedCount": 42,
+  "decisionedCount": 42,
+  "keptCount": 42,
   "decisionCounts": {
-    "retain": 43
+    "retain": 42
   },
   "laneCounts": {
-    "agent-factory": 43
+    "agent-factory": 42
   },
   "items": [
+    {
+      "id": "pub-20260308011",
+      "title": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
+      "displayTitle": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
+      "summary": "NL2Repo-Bench tests whether coding agents can build an installable Python library from nothing but a requirements document, with no scaffold, source, or tests shown during development, and the reported results say they still fail often. The benchmark therefore shifts the questio\u2026",
+      "url": "https://arxiv.org/abs/2512.12730",
+      "dailyDate": "2026-04-09",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-09T04:51:11Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260308011-nl2repo-bench-towards-long-horizon-repository-generation-evaluation-of-coding-agents.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260308011-nl2repo-bench-towards-long-horizon-repository-generation-evaluation-of-coding-agents.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260308002",
+      "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
+      "displayTitle": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
+      "summary": "In this evaluation of memory-equipped LLM agents, retrieval quality matters far more than memory write strategy. The strongest reported gains come from getting the right memory back at inference time, especially through hybrid reranking, while downstream use of retrieved memory\u2026",
+      "url": "https://arxiv.org/abs/2603.02473",
+      "dailyDate": "2026-04-09",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-09T04:47:19Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260308002-diagnosing-retrieval-vs-utilization-bottlenecks-in-llm-agent-memory.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260308002-diagnosing-retrieval-vs-utilization-bottlenecks-in-llm-agent-memory.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260307048",
+      "title": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
+      "displayTitle": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
+      "summary": "AgentOrchestra argues that general-purpose task solving improves when a planning layer decomposes work, tracks execution state, and coordinates specialized agents instead of forcing one model to handle planning, browsing, research, and analysis in a single loop.",
+      "url": "https://arxiv.org/abs/2506.12508",
+      "dailyDate": "2026-04-09",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-09T04:43:54Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260307048-agentorchestra-a-hierarchical-multi-agent-framework-for-general-purpose-task-solving.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260307048-agentorchestra-a-hierarchical-multi-agent-framework-for-general-purpose-task-solving.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260307033",
+      "title": "Incident postmortem in the age of AI agents",
+      "displayTitle": "Incident postmortem in the age of AI agents",
+      "summary": "Firetiger\u2019s March 1 ingest outage was not a generic cloud failure but a layered control failure: a CI race condition canceled a build, a later deploy treated missing artifacts as complete and pointed Lambda and ECS at a non-existent container image, Terraform then rejected part\u2026",
+      "url": "https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident",
+      "dailyDate": "2026-04-09",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-09T04:40:29Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260307033-incident-postmortem-in-the-age-of-ai-agents.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260307033-incident-postmortem-in-the-age-of-ai-agents.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260306021",
+      "title": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
+      "displayTitle": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
+      "summary": "Explicitly labeled Claude Code pull requests were merged often in this sample of open-source repositories, but still less often than human pull requests. Once an agentic pull request cleared the acceptance threshold, its downstream revision pattern looked broadly similar to huma\u2026",
+      "url": "https://arxiv.org/abs/2509.14745",
+      "dailyDate": "2026-04-09",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-09T04:36:53Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260306021-on-the-use-of-agentic-coding-an-empirical-study-of-pull-requests-on-github.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260306021-on-the-use-of-agentic-coding-an-empirical-study-of-pull-requests-on-github.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260405001",
       "title": "Evaluating Very Long-Term Conversational Memory of LLM Agents",
@@ -262,144 +377,6 @@
       "processedAtUtc": "2026-04-05T14:12:17Z",
       "artifactSourcePath": "research/artifacts/kb/queue/queue-20260308016-long-horizon-agents-opencode-gpt-5-2-codex-experiment.md",
       "artifactWebPath": "artifacts/kb/queue/queue-20260308016-long-horizon-agents-opencode-gpt-5-2-codex-experiment.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260308011",
-      "title": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
-      "displayTitle": "NL2Repo-Bench: Towards Long-Horizon Repository Generation Evaluation of Coding Agents",
-      "summary": "NL2Repo-Bench tests a harder coding-agent problem than patch-level benchmarks: given only a natural-language requirements document and an empty workspace, the agent must build a fully installable Python library. On this setup, long-horizon repository generation is still not solv\u2026",
-      "url": "https://arxiv.org/abs/2512.12730",
-      "dailyDate": "2026-04-05",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-04-05T14:09:07Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260308011-nl2repo-bench-towards-long-horizon-repository-generation-evaluation-of-coding-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260308011-nl2repo-bench-towards-long-horizon-repository-generation-evaluation-of-coding-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260308002",
-      "title": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
-      "displayTitle": "Diagnosing Retrieval vs. Utilization Bottlenecks in LLM Agent Memory",
-      "summary": "The paper argues that memory-augmented LLM agents are constrained more by getting the right memory back than by sophisticated memory writing or downstream use of already retrieved material. Its main contribution is a diagnostic evaluation that separates retrieval quality, utiliz\u2026",
-      "url": "https://arxiv.org/abs/2603.02473",
-      "dailyDate": "2026-04-05",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-04-05T14:05:42Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260308002-diagnosing-retrieval-vs-utilization-bottlenecks-in-llm-agent-memory.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260308002-diagnosing-retrieval-vs-utilization-bottlenecks-in-llm-agent-memory.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260307048",
-      "title": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
-      "displayTitle": "AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving",
-      "summary": "AgentOrchestra argues that a hierarchical multi-agent system can improve general-purpose task execution by splitting work across a planning layer and specialized execution agents, then revising the plan as intermediate results arrive. The paper supports that this design can prod\u2026",
-      "url": "https://arxiv.org/abs/2506.12508",
-      "dailyDate": "2026-04-05",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-04-05T04:21:33Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260307048-agentorchestra-a-hierarchical-multi-agent-framework-for-general-purpose-task-solving.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260307048-agentorchestra-a-hierarchical-multi-agent-framework-for-general-purpose-task-solving.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260307033",
-      "title": "Incident postmortem in the age of AI agents",
-      "displayTitle": "Incident postmortem in the age of AI agents",
-      "summary": "Firetiger\u2019s ingest outage was not a single-point failure but a chained operational failure: a CI race condition and deploy attribution error wrote a non-existent container ID into deployment state, partial deploy behavior left infrastructure inconsistently mutated instead of saf\u2026",
-      "url": "https://blog.firetiger.com/postmortem-on-the-march-1-2026-ingest-incident",
-      "dailyDate": "2026-04-05",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-04-05T04:18:11Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260307033-incident-postmortem-in-the-age-of-ai-agents.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260307033-incident-postmortem-in-the-age-of-ai-agents.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260306021",
-      "title": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
-      "displayTitle": "On the Use of Agentic Coding: An Empirical Study of Pull Requests on GitHub",
-      "summary": "In this matched study of GitHub pull requests explicitly labeled as generated with Claude Code, agentic coding produced a high merge rate but still underperformed matched human pull requests on acceptance: 475 of 567 agentic pull requests were merged, an 83.77425% acceptance rat\u2026",
-      "url": "https://arxiv.org/abs/2509.14745",
-      "dailyDate": "2026-04-05",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-04-05T04:14:55Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260306021-on-the-use-of-agentic-coding-an-empirical-study-of-pull-requests-on-github.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260306021-on-the-use-of-agentic-coding-an-empirical-study-of-pull-requests-on-github.md",
-      "historicalRegimeArtifact": false,
-      "historicalRegimeNote": ""
-    },
-    {
-      "id": "pub-20260306015",
-      "title": "Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
-      "displayTitle": "Where Do AI Coding Agents Fail? An Empirical Study of Failed Agentic Pull Requests in GitHub",
-      "summary": "AI coding agents are already capable of landing a large share of pull requests in public GitHub workflows, but success is uneven across agents and task types, and non-merge risk rises sharply when changes hit hard quality gates, especially CI. In this dataset, agentic coding wor\u2026",
-      "url": "https://arxiv.org/abs/2601.15195",
-      "dailyDate": "2026-04-05",
-      "rssRevision": 0,
-      "rssRepublishedAtUtc": null,
-      "status": "processed",
-      "decision": "retain",
-      "laneTags": [
-        "agent-factory"
-      ],
-      "laneTagsOriginal": [
-        "agent-factory"
-      ],
-      "processedAtUtc": "2026-04-05T04:11:31Z",
-      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260306015-where-do-ai-coding-agents-fail-an-empirical-study-of-failed-agentic-pull-requests-in-github.md",
-      "artifactWebPath": "artifacts/kb/queue/queue-20260306015-where-do-ai-coding-agents-fail-an-empirical-study-of-failed-agentic-pull-requests-in-github.md",
       "historicalRegimeArtifact": false,
       "historicalRegimeNote": ""
     },

@@ -28,8 +28,8 @@ findings_mode: agent
 summary_mode: agent
 artifact_publication_alias: '20260307048'
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-04-05T04:21:33Z'
-artifact_publication_published_at_utc: '2026-04-05T13:13:59Z'
+artifact_publication_minted_at_utc: '2026-04-09T04:43:54Z'
+artifact_publication_published_at_utc: '2026-04-09T10:25:37Z'
 ---
 # AgentOrchestra: A Hierarchical Multi-Agent Framework for General-Purpose Task Solving
 
