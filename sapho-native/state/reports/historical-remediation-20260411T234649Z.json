@@ -1,0 +1,48 @@
+{
+  "generated_at_utc": "2026-04-11T23:46:49Z",
+  "replay_date": null,
+  "article_count": 2,
+  "articles": [
+    {
+      "article_id": "art-2026-03-21-025",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-025"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-025/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "discarded",
+      "before_policy_status": "missing",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-026",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-026"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-026/micro-worthiness.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "discarded",
+      "before_policy_status": "missing",
+      "after_policy_status": "blocked_not_publishable",
+      "published_artifact": false
+    }
+  ],
+  "status_counts": {
+    "ok": 2,
+    "error": 0
+  },
+  "report_path": "/home/hermes/sapho-native/state/reports/historical-remediation-20260411T234649Z.json"
+}
