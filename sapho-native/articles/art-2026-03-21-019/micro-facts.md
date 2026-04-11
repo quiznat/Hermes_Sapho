@@ -1,0 +1,12 @@
+- Kimi K2.5 was continued-pretrained on approximately 15 trillion mixed visual and text tokens and is described as a native multimodal model.
+- For complex tasks, Kimi K2.5 is described as self-directing an agent swarm with up to 100 sub-agents and up to 1,500 tool calls.
+- The source claims the agent swarm reduces execution time by up to 4.5× versus a single-agent setup.
+- K2.5 Agent Swarm is described as beta on Kimi.com, with free credits available to high-tier paid users.
+- The source says Kimi Code is open-sourced, runs in the terminal, integrates with IDEs including VSCode, Cursor, and Zed, and accepts image and video inputs.
+- The source describes Parallel-Agent Reinforcement Learning as using a trainable orchestrator to decompose tasks into parallel subtasks executed by dynamically instantiated frozen subagents.
+- The source identifies serial collapse as a failure mode in parallel orchestration and says PARL uses staged reward shaping to encourage parallelism early and shift toward task success later.
+- The source says evaluation uses a latency-oriented Critical Steps metric that adds orchestration overhead to the slowest subagent at each stage.
+- In internal evaluations, the source says K2.5 Agent Swarm produced an 80% reduction in end-to-end runtime and reduced minimum critical steps by 3× to 4.5× versus single-agent execution in wide-search scenarios.
+- The source says K2.5 improved over K2 Thinking by 59.3% on the AI Office benchmark and 24.3% on the General Agent benchmark.
+- The source says K2.5 Agent supports adding annotations in Word, building financial models with Pivot Tables, writing LaTeX equations in PDFs, and scaling to outputs such as 10,000-word papers or 100-page documents.
+- Unless otherwise specified, the source says Kimi K2.5 experiments used temperature 1.0, top-p 0.95, and a 256k-token context length.

@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-023",
+  "reviewed_at_utc": "2026-04-11T23:28:57Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package supports one bounded mechanism claim about Reflexion error asymmetry, while the other main claims are supported only as benchmark-bound outcomes without established causal explanation.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Automatic evaluators matched oracle metrics or human judgments at rates ranging from 74.4% to 92.9% across the reported benchmarks.",
+      "bounds": "The evidence establishes the agreement range as an empirical result only. It does not establish a causal explanation for why agreement varies across settings, and the claim is bounded to the reported benchmarks and evaluator-model combinations."
+    },
+    {
+      "claim_text": "On WebArena, the modular Captioner + GPT-4 evaluator slightly outperformed the end-to-end GPT-4V evaluator, while Captioner + Mixtral performed worse than both.",
+      "bounds": "The evidence supports only the comparative ranking on WebArena. It does not justify a causal explanation for why the modular GPT-4 setup outperformed GPT-4V there, and the ranking is bounded by the reported benchmark because other evidence shows rankings change across domains."
+    },
+    {
+      "claim_text": "Using the evaluator as the reward signal in Reflexion improved the best-performing GPT-4 WebArena agent by up to 29% relative, with a 16% relative gain for the Captioner + Mixtral evaluator.",
+      "bounds": "The evidence supports operational improvement in the reported WebArena Reflexion setup, but it does not establish a fully proven causal account beyond bounded usefulness of evaluator-guided refinement. The result remains limited by evaluator error patterns and should not be generalized beyond the tested setup."
+    }
+  ]
+}

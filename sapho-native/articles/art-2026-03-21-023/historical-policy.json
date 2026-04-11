@@ -1,0 +1,13 @@
+{
+  "version": "historical-policy.v1",
+  "article_id": "art-2026-03-21-023",
+  "applies": true,
+  "source_regime": "runtime-import",
+  "publication_status": "ready-for-daily",
+  "validation_status": "pass",
+  "policy_status": "current_law_compliant",
+  "current_law_eligible": true,
+  "missing_law_checks": [],
+  "disposition": "eligible_under_current_law",
+  "reviewed_at_utc": "2026-04-11T23:28:57Z"
+}

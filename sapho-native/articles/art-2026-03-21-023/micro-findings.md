@@ -1,0 +1,4 @@
+- Across the benchmarks reported in the paper, the automatic evaluators matched oracle metrics or human judgments at rates ranging from 74.4% to 92.9%.
+- On WebArena, the modular Captioner plus GPT-4 evaluator slightly outperformed the end-to-end GPT-4V evaluator against the oracle evaluator, while the Captioner plus Mixtral variant performed worse than both.
+- Using the evaluator as the reward signal in Reflexion improved the best-performing GPT-4 WebArena agent by up to 29% relative, with a 16% relative gain reported for the Captioner plus Mixtral evaluator.
+- The paper suggests evaluator errors are more damaging when they falsely reject successful actions than when they falsely accept failures, because false negatives trigger unnecessary retries of already successful executions.

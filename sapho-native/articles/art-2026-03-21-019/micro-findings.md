@@ -1,0 +1,4 @@
+- Kimi K2.5 is described as a native multimodal model continued-pretrained on approximately 15 trillion mixed visual and text tokens.
+- For complex tasks, the source says Kimi K2.5 can self-direct an agent swarm with up to 100 sub-agents and up to 1,500 tool calls.
+- In internal wide-search evaluations, the source claims K2.5 Agent Swarm reduced runtime versus single-agent execution, including reported gains up to 4.5x.
+- K2.5 Agent Swarm is not described as a fully general public release; the source says it is in beta on Kimi.com with free credits available to high-tier paid users.

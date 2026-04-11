@@ -1,0 +1,16 @@
+- Across their evaluated benchmarks, the automatic evaluators achieved 74.4% to 92.9% agreement with oracle evaluation metrics or human judgments.
+- On WebArena, the end-to-end GPT-4V evaluator reached 80.6% accuracy against the oracle evaluator.
+- On WebArena, the modular Captioner + GPT-4 evaluator reached 82.1% accuracy against the oracle evaluator.
+- On WebArena, the modular Captioner + Mixtral evaluator matched the oracle evaluator on 74.4% of tasks.
+- On Android-in-the-Wild, the Captioner + Mixtral evaluator achieved 92.9% accuracy against human judgments.
+- On Android-in-the-Wild, the end-to-end GPT-4V evaluator achieved 90.6% accuracy against human judgments.
+- On Android-in-the-Wild, the Captioner + GPT-4 evaluator achieved 89.8% accuracy against human judgments.
+- Using the evaluator as the reward function in Reflexion improved the best-performing GPT-4 WebArena agent’s success rate by up to 29% relative.
+- In WebArena Reflexion experiments, the Captioner + Mixtral evaluator improved the agent’s relative success rate by 16%.
+- The authors’ preliminary study suggests false negatives hurt Reflexion performance more than false positives.
+- The paper explains the asymmetry in Reflexion noise by stating that a false negative forces a retry of a successful execution, while a false positive mainly removes a retry opportunity.
+- In the iOS domain-transfer setting, filtered behavior cloning with the evaluator improved CogAgent from 8 successful tasks to 14 out of 52, a 75% relative improvement.
+- In the same iOS experiment, self-training improved CogAgent from 8 successful tasks to 11 out of 52.
+- About 36% of the human demonstrations annotated for the sampled Android-in-the-Wild tasks were judged unsuccessful.
+- On sampled Android-in-the-Wild policies, all three evaluators had 100% Kendall correlation with human judges, while action matching had 66.7%.
+- The error analysis reports that reasoning-process errors accounted for about 50% of sampled failures for GPT-4V/GPT-4-based methods and about 70% for Mixtral-Captioner.

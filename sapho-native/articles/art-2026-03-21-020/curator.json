@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-21-020",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "none",
+  "novelty_strength": "low",
+  "excerpt_sufficiency": "partial",
+  "reason": "The source appears to be news commentary without visible empirical or operational results.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-21-020\nticket_id: ticket-import-art-2026-03-21-020\ndecision: discarded\nreason: The source appears to be news commentary without visible empirical or operational results.\nscope_class: other\ndecided_at_utc: 2026-04-11T23:24:33Z\n---\n# Curator Receipt",
+  "confidence": "low",
+  "generated_at_utc": "2026-04-11T23:24:43Z",
+  "mode": "agent"
+}

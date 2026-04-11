@@ -154,6 +154,8 @@ a/20260405001.html
 a/20260411001.html
 a/20260411002.html
 a/20260411003.html
+a/20260411004.html
+a/20260411005.html
 agents-start-here.html
 artifacts/data/index.json
 artifacts/data/lane-a-diy-prosumer-agentic-research-2026-03-01.jsonl
@@ -267,6 +269,8 @@ artifacts/kb/queue/queue-20260405001-evaluating-very-long-term-conversational-me
 artifacts/kb/queue/queue-20260411001-autonomous-evaluation-and-refinement-of-digital-agents.md
 artifacts/kb/queue/queue-20260411002-from-llm-reasoning-to-autonomous-ai-agents-a-comprehensive-review.md
 artifacts/kb/queue/queue-20260411003-how-do-agentic-ai-systems-address-performance-optimizations-a-bertopic-based-analysis-of-pull-requests.md
+artifacts/kb/queue/queue-20260411004-kimi-k2-5-tech-blog-visual-agentic-intelligence.md
+artifacts/kb/queue/queue-20260411005-autonomous-evaluation-and-refinement-of-digital-agents.md
 artifacts/kb/queue/queue-art-2026-03-01-001-darwinian-evolver.md
 artifacts/kb/queue/queue-art-2026-03-01-006-taste-skill.md
 artifacts/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md
@@ -805,6 +809,8 @@ s/20260405001.html
 s/20260411001.html
 s/20260411002.html
 s/20260411003.html
+s/20260411004.html
+s/20260411005.html
 site-files.json
 site-files.txt
 viewer.html

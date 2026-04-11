@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-019",
+  "reviewed_at_utc": "2026-04-11T23:24:22Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package supports a real but bounded orchestration mechanism claim, while training-scale and availability claims remain non-mechanistic and should stay explicitly limited.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Kimi K2.5 is a native multimodal model continued-pretrained on approximately 15 trillion mixed visual and text tokens.",
+      "bounds": "The evidence supports a training-scale and modality description only; it does not justify a causal claim that this pretraining mix caused the downstream agent performance reported elsewhere in the package."
+    },
+    {
+      "claim_text": "K2.5 Agent Swarm is beta on Kimi.com with free credits available to high-tier paid users.",
+      "bounds": "This is an access and availability bound, not a causal mechanism; it supports only a limited beta-release claim and should not be read as evidence of broad public readiness or mature deployment."
+    }
+  ]
+}

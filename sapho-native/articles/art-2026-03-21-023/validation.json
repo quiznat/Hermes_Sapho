@@ -1,0 +1,38 @@
+{
+  "version": "article-validation.v1",
+  "article_id": "art-2026-03-21-023",
+  "validated_at_utc": "2026-04-11T23:28:57Z",
+  "checks": {
+    "completeness": {
+      "status": "pass",
+      "detail": "required structured bundle outputs present",
+      "missing_sections": []
+    },
+    "duplicate_conflict": {
+      "status": "pass",
+      "detail": "no duplicate conflict recorded"
+    },
+    "citation_linkage": {
+      "status": "pass",
+      "detail": "claim and evidence references resolve"
+    },
+    "lineage_baseline": {
+      "status": "pass",
+      "detail": "lineage summary resolves to known claim ids"
+    },
+    "contradiction_baseline": {
+      "status": "pass",
+      "detail": "contradiction review artifact present",
+      "contradiction_count": 3,
+      "review_status": "disclosed"
+    },
+    "mechanism_baseline": {
+      "status": "pass",
+      "detail": "mechanism review artifact present",
+      "mechanism_count": 1,
+      "bounded_claim_count": 3,
+      "review_status": "explained"
+    }
+  },
+  "overall_status": "pass"
+}

@@ -1,17 +1,63 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-11T13:38:44Z",
-  "generatedAtUtc": "2026-04-11T13:38:44Z",
-  "processedCount": 48,
-  "decisionedCount": 48,
-  "keptCount": 48,
+  "last_updated": "2026-04-11T23:29:55Z",
+  "generatedAtUtc": "2026-04-11T23:29:55Z",
+  "processedCount": 50,
+  "decisionedCount": 50,
+  "keptCount": 50,
   "decisionCounts": {
-    "retain": 48
+    "retain": 50
   },
   "laneCounts": {
-    "agent-factory": 48
+    "agent-factory": 50
   },
   "items": [
+    {
+      "id": "pub-20260411005",
+      "title": "Autonomous Evaluation and Refinement of Digital Agents",
+      "displayTitle": "Autonomous Evaluation and Refinement of Digital Agents",
+      "summary": "This paper argues that digital agents can be evaluated automatically with useful, though clearly imperfect, fidelity to oracle metrics or human judgment, and that those evaluator signals can do more than score behavior: they can materially improve agent performance when used as\u2026",
+      "url": "https://www.alphaxiv.org/overview/2404.06474v3",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T23:28:07Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260411005-autonomous-evaluation-and-refinement-of-digital-agents.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260411005-autonomous-evaluation-and-refinement-of-digital-agents.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260411004",
+      "title": "Kimi K2.5 Tech Blog: Visual Agentic Intelligence",
+      "displayTitle": "Kimi K2.5 Tech Blog: Visual Agentic Intelligence",
+      "summary": "Kimi presents K2.5 as a native multimodal model trained on approximately 15 trillion mixed visual and text tokens and positioned not just as a single model but as an orchestrator for parallel agentic work. The strongest supported public takeaway is not general intelligence or br\u2026",
+      "url": "https://www.kimi.com/blog/kimi-k2-5",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T23:23:32Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260411004-kimi-k2-5-tech-blog-visual-agentic-intelligence.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260411004-kimi-k2-5-tech-blog-visual-agentic-intelligence.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260411003",
       "title": "How Do Agentic AI Systems Address Performance Optimizations? A BERTopic-Based Analysis of Pull Requests",
