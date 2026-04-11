@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-21-007",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "mixed",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "The excerpt shows an architectural blog post without concrete experimental or production results.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-21-007\nticket_id: ticket-import-art-2026-03-21-007\ndecision: discarded\nreason: The excerpt shows an architectural blog post without concrete experimental or production results.\nscope_class: other\ndecided_at_utc: 2026-04-11T22:55:31Z\n---\n# Curator Receipt",
+  "confidence": "high",
+  "generated_at_utc": "2026-04-11T22:55:38Z",
+  "mode": "agent"
+}
