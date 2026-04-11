@@ -1,0 +1,14 @@
+- The paper claims domain-general automatic evaluators can significantly improve digital agents for web navigation and device control.
+- Across benchmarks, the evaluators matched oracle metrics or human judgments at 74.4% to 92.9% accuracy.
+- On WebArena, evaluator accuracy was 80.6% for GPT-4V, 82.1% for Captioner + GPT-4, and 74.4% for Captioner + Mixtral.
+- On Android-in-the-Wild, evaluator accuracy against human judgment was 90.6% for GPT-4V, 89.8% for Captioner + GPT-4, and 92.9% for Captioner + Mixtral.
+- The GPT-4-based WebArena agent used as the baseline achieved a 14.4% end-to-end task success rate under the oracle evaluator.
+- Using the evaluator as Reflexion reward improved the best-performing WebArena agent by up to 29% relative success rate.
+- In WebArena Reflexion experiments, the low-cost Captioner + Mixtral evaluator improved the agent's relative success rate by 16%.
+- The paper reports that false negatives in evaluator judgments hurt Reflexion more than false positives because they trigger unnecessary retries of already successful executions.
+- The Android-in-the-Wild evaluation used 120 randomly sampled test tasks, with 40 each from the General, WebShopping, and GoogleApps subsets.
+- About 36% of annotated human demonstrations in the sampled Android-in-the-Wild set were unsuccessful.
+- On sampled Android-in-the-Wild policies, all three evaluators had 100% Kendall correlation with human judges, while action matching had 66.7%.
+- The iOS experiments used 132 designed tasks, with 80 for training/data collection and 52 held out for testing.
+- For iOS filtered behavior cloning, the authors sampled 737 CogAgent trajectories from the 80 training tasks and kept state-action pairs with rewards at or above p.
+- On the 52-task iOS test set, CogAgent completed 8 tasks at baseline, 11 after self-training, and 14 after filtered behavior cloning, which the paper describes as a 75% relative improvement over baseline.

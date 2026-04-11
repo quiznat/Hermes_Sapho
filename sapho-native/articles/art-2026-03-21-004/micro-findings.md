@@ -1,0 +1,4 @@
+- The paper frames autonomous AI agent evaluation as a broad domain by presenting a taxonomy of about 60 benchmarks spanning both LLM and agent assessment.
+- The review characterizes recent AI-agent frameworks as LLM-centered systems that add modular tools to support autonomous decision-making and multi-step reasoning.
+- The survey’s benchmark results indicate that current frontier systems still perform poorly on several demanding reasoning and real-world agent tasks.
+- The paper presents agent communication protocols as capability-enabling infrastructure whose design choices also introduce meaningful security and state-management risks.

@@ -1,0 +1,4 @@
+- Naive keyword filtering was not reliable for identifying performance-related agentic pull requests in this corpus, so the study relied on LLM-based classification and manual recovery to construct the final performance dataset.
+- The final performance-related pull request set was distributed across many repositories, agents, and software-stack areas rather than concentrated in a narrow optimization niche.
+- Performance-related pull requests were rejected more often than non-performance pull requests in the studied agentic development data.
+- Among accepted performance-related pull requests, merge times varied by category, with UI, AI, and Analytics taking longest and Low-level work merging fastest, while change size showed only weak association with merge time.

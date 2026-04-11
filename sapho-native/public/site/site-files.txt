@@ -151,6 +151,9 @@ a/20260325008.html
 a/20260325009.html
 a/20260327001.html
 a/20260405001.html
+a/20260411001.html
+a/20260411002.html
+a/20260411003.html
 agents-start-here.html
 artifacts/data/index.json
 artifacts/data/lane-a-diy-prosumer-agentic-research-2026-03-01.jsonl
@@ -239,6 +242,9 @@ artifacts/kb/queue/queue-20260310015-swe-bench-pro-can-ai-agents-solve-long-hori
 artifacts/kb/queue/queue-20260310061-let-s-make-every-pull-request-meaningful-an-empirical-analysis-of-developer-and-agentic-pull-requests.md
 artifacts/kb/queue/queue-20260310069-security-in-the-age-of-ai-teammates-an-empirical-study-of-agentic-pull-requests-on-github.md
 artifacts/kb/queue/queue-20260310077-code-change-characteristics-and-description-alignment-a-comparative-study-of-agentic-versus-human-pull-requests.md
+artifacts/kb/queue/queue-20260311017-enhancing-llm-code-generation-a-systematic-evaluation-of-multi-agent-collaboration-and-runtime-debugging-for-improved-accuracy-reliability-and-latency.md
+artifacts/kb/queue/queue-20260311020-agent-frameworks-do-not-yield-a-stable-winner-across-code-centric-software-engineering-tasks.md
+artifacts/kb/queue/queue-20260312004-reliabilitybench-evaluating-llm-agent-reliability-under-production-like-stress-conditions.md
 artifacts/kb/queue/queue-20260324001-agenticgpt-toward-modular-reproducible-llm-agents.md
 artifacts/kb/queue/queue-20260324002-the-state-of-ai-coding-agents-in-2025.md
 artifacts/kb/queue/queue-20260324002-top-coding-agents-2025-benched-ai.md
@@ -258,6 +264,9 @@ artifacts/kb/queue/queue-20260325007-the-three-categories-of-ai-coding-agents.md
 artifacts/kb/queue/queue-20260325008-kimi-k2-5-and-the-rise-of-agent-swarm-intelligence.md
 artifacts/kb/queue/queue-20260325009-a-new-open-benchmark-for-ai-coding-agents.md
 artifacts/kb/queue/queue-20260405001-evaluating-very-long-term-conversational-memory-of-llm-agents.md
+artifacts/kb/queue/queue-20260411001-autonomous-evaluation-and-refinement-of-digital-agents.md
+artifacts/kb/queue/queue-20260411002-from-llm-reasoning-to-autonomous-ai-agents-a-comprehensive-review.md
+artifacts/kb/queue/queue-20260411003-how-do-agentic-ai-systems-address-performance-optimizations-a-bertopic-based-analysis-of-pull-requests.md
 artifacts/kb/queue/queue-art-2026-03-01-001-darwinian-evolver.md
 artifacts/kb/queue/queue-art-2026-03-01-006-taste-skill.md
 artifacts/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md
@@ -793,6 +802,9 @@ s/20260325008.html
 s/20260325009.html
 s/20260327001.html
 s/20260405001.html
+s/20260411001.html
+s/20260411002.html
+s/20260411003.html
 site-files.json
 site-files.txt
 viewer.html

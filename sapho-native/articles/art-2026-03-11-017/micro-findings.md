@@ -1,0 +1,4 @@
+- On HumanEval, ACT+Debug achieved higher mean functional accuracy than ACT alone across the evaluated models.
+- On HumanEval, ACT+Debug did not show a statistically significant accuracy advantage over Debug alone despite a small mean improvement.
+- A simple Analyst-Coder plus debugging workflow produced a small average accuracy improvement over debugging alone across 19 LLMs and two datasets.
+- More complex multi-agent orchestration did not reliably improve results, because adding a three-agent Analyst-Coder-Tester workflow reduced accuracy for most models and ACT+Debug underperformed AC+Debug on the stricter HumanEval+ benchmark.

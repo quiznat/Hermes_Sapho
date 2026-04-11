@@ -1,0 +1,14 @@
+- The study used the AIDev-POP subset of AIDev v3, containing 33,596 agentic pull requests.
+- Keyword filtering returned 10,894 pull requests, and a manual check of 100 sampled cases found a 92% false-positive rate.
+- The authors reframed detection as binary classification and used zero-shot gpt-oss-20B to label pull requests as performance-related only when performance was expressed as a concern.
+- The LLM-based detection step identified 1,160 performance-related pull requests across 447 repositories and five agents.
+- In a manual inspection of 200 sampled pull requests, the reported false-positive rate was 7.5%, observed agreement was 97.5%, Cohen's kappa was 0.79, and Gwet's AC1 was 0.97.
+- The authors added 61 missed pull requests from the 340 perf-labeled AIDev cases, producing a final dataset of 1,221 performance pull requests.
+- The selected BERTopic configuration had a coherence score of 0.47 and a silhouette score of 0.57.
+- The final BERTopic configuration produced 52 topics and 101 outliers.
+- Independent topic labeling by the first two authors achieved a Cohen's kappa of 0.92, and four disagreements were resolved through discussion.
+- The study grouped 52 performance-related topics into 10 higher-level categories spanning multiple layers of the software stack.
+- Performance-related pull requests had a 36.5% rejection rate, compared with 22.7% for non-performance pull requests.
+- Among 625 accepted pull requests, UI, AI, and Analytics categories had the longest median merge times, while Low-level pull requests were merged fastest.
+- The paper reports that change size showed only weak association with merge time, with the highest Kendall's tau reaching 0.38 in the Hardware category.
+- Except for Hardware, most observed performance optimizations were associated with feature implementation, and the paper states that performance work was comparatively less focused on testing and maintenance.

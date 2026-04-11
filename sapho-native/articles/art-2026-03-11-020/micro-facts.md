@@ -1,0 +1,15 @@
+- The study evaluates seven general-purpose agent frameworks on three code-centric tasks: software development, vulnerability detection, and program repair.
+- The benchmark suite uses SRDD with 1,200 software-development prompts, LLM-SmartAudit with 115 vulnerability instances, and SWE-bench Lite with 300 program-repair instances.
+- All frameworks were run with a maximum step limit of 100 and the same backend LLM, DeepSeek-v3.1.
+- OpenHands has the highest overall software-development quality score in SRDD at 0.47.
+- AgentOrchestra records the highest average completeness in software development at 0.86.
+- OpenHands records average executability of 1.00 in software development.
+- GPTswarm records the highest average consistency in software development at 0.85.
+- GPTswarm achieves the highest overall vulnerability-detection result at 80 detected cases out of 115, reported as 78%.
+- Gas Limitation (GL) vulnerabilities are rarely detected by the evaluated agents.
+- SE-Agent (Iter-3) attains the highest overall program-repair result at 161 repaired issues out of 300, reported as 54%.
+- No evaluated agent repairs any of the 3 Flask issues in SWE-bench Lite.
+- AgentOrchestra, OWL, and GPTswarm show poor program-repair effectiveness because they do not use patch tooling and fail to generate correct diff-format patches.
+- AgentOrchestra has the highest total monetary cost across the three tasks at $370.19.
+- GPTswarm has the lowest total monetary cost across the three tasks at $16.29.
+- OpenHands consumes the most tokens across all three tasks, but its cost does not scale proportionally because cached input tokens are cheaper.

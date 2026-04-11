@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-12-004",
+  "reviewed_at_utc": "2026-04-11T13:26:04Z",
+  "reviewer_role": "Synthesist",
+  "summary": "ReliabilityBench gives a broader measurement frame for agent reliability, but the reported performance differences are mostly descriptive and benchmark-bounded rather than causally explained.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "In the reported Gemini 2.0 Flash results, robustness degrades under prompt perturbation and degrades further when perturbation and infrastructure faults are combined.",
+      "bounds": "The evidence establishes the direction and size of degradation under higher stress, but it does not justify a specific causal explanation beyond sensitivity to perturbation and combined stress exposure in this benchmark."
+    },
+    {
+      "claim_text": "For Gemini 2.0 Flash in this benchmark, ReAct outperforms Reflexion on both stress-surface metrics and fault recovery under the reported settings.",
+      "bounds": "The evidence supports a comparative performance difference in the reported setup, but it does not establish why ReAct performs better or show that the advantage generalizes beyond these benchmark conditions."
+    },
+    {
+      "claim_text": "The benchmark's reported reliability findings are useful but bounded, because performance differs by task and fault condition and the episode count may be too small to tightly estimate rare failure modes.",
+      "bounds": "The evidence shows heterogeneity across domains and fault conditions and includes an explicit sample-size limitation for rare failures, so the findings should be treated as informative but not as tightly estimated general reliability law."
+    }
+  ]
+}

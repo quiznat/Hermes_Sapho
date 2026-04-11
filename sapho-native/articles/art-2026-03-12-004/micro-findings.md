@@ -1,0 +1,4 @@
+- ReliabilityBench measures agent reliability along repeated-execution consistency, perturbation robustness, and infrastructure-failure fault tolerance rather than treating single-run success as sufficient.
+- In the reported Gemini 2.0 Flash results, robustness degrades under prompt perturbation and degrades further when perturbation and infrastructure faults are combined.
+- For Gemini 2.0 Flash in this benchmark, ReAct outperforms Reflexion on both stress-surface metrics and fault recovery under the reported settings.
+- The benchmark's reported reliability findings are useful but bounded, because performance differs by task and fault condition and the episode count may be too small to tightly estimate rare failure modes.

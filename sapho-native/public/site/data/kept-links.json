@@ -1,17 +1,155 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-09T12:05:39Z",
-  "generatedAtUtc": "2026-04-09T12:05:39Z",
-  "processedCount": 42,
-  "decisionedCount": 42,
-  "keptCount": 42,
+  "last_updated": "2026-04-11T13:38:44Z",
+  "generatedAtUtc": "2026-04-11T13:38:44Z",
+  "processedCount": 48,
+  "decisionedCount": 48,
+  "keptCount": 48,
   "decisionCounts": {
-    "retain": 42
+    "retain": 48
   },
   "laneCounts": {
-    "agent-factory": 42
+    "agent-factory": 48
   },
   "items": [
+    {
+      "id": "pub-20260411003",
+      "title": "How Do Agentic AI Systems Address Performance Optimizations? A BERTopic-Based Analysis of Pull Requests",
+      "displayTitle": "How Do Agentic AI Systems Address Performance Optimizations? A BERTopic-Based Analysis of Pull Requests",
+      "summary": "Performance work in agentic software development is real, broad, and operationally costly, but it is not easy to identify with naive filters and it does not behave like a narrow low-level tuning niche. In this corpus, reliable detection required LLM-based classification plus man\u2026",
+      "url": "https://arxiv.org/abs/2512.24630",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T13:36:01Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260411003-how-do-agentic-ai-systems-address-performance-optimizations-a-bertopic-based-analysis-of-pull-requests.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260411003-how-do-agentic-ai-systems-address-performance-optimizations-a-bertopic-based-analysis-of-pull-requests.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260411002",
+      "title": "From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review",
+      "displayTitle": "From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review",
+      "summary": "This review argues that autonomous AI agents are no longer a narrow extension of language models but a broad systems domain: the field now spans roughly 60 benchmarks, a growing set of tool-using agent frameworks, and emerging coordination protocols, yet the benchmark record sti\u2026",
+      "url": "https://arxiv.org/abs/2504.19678",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T13:32:20Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260411002-from-llm-reasoning-to-autonomous-ai-agents-a-comprehensive-review.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260411002-from-llm-reasoning-to-autonomous-ai-agents-a-comprehensive-review.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260411001",
+      "title": "Autonomous Evaluation and Refinement of Digital Agents",
+      "displayTitle": "Autonomous Evaluation and Refinement of Digital Agents",
+      "summary": "Automatic evaluators can do more than score digital agents after the fact: in the paper\u2019s web and device-control settings, they are accurate enough to function as a usable reward signal for refinement and data filtering, which in turn improves agent performance. The result is op\u2026",
+      "url": "https://arxiv.org/abs/2404.06474",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T13:28:52Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260411001-autonomous-evaluation-and-refinement-of-digital-agents.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260411001-autonomous-evaluation-and-refinement-of-digital-agents.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260312004",
+      "title": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
+      "displayTitle": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
+      "summary": "ReliabilityBench argues that agent quality cannot be read off a single clean run. It measures reliability as a stress surface across repeated-execution consistency, prompt perturbation robustness, and infrastructure-failure tolerance, then shows that even a strong reported confi\u2026",
+      "url": "https://arxiv.org/abs/2601.06112",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T13:25:17Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260312004-reliabilitybench-evaluating-llm-agent-reliability-under-production-like-stress-conditions.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260312004-reliabilitybench-evaluating-llm-agent-reliability-under-production-like-stress-conditions.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260311020",
+      "title": "Agent frameworks do not yield a stable winner across code-centric software engineering tasks",
+      "displayTitle": "Agent frameworks do not yield a stable winner across code-centric software engineering tasks",
+      "summary": "This evaluation shows that agent-framework performance in code-centric software engineering is task-dependent rather than unified under a single best system. Across software development, vulnerability detection, and program repair, the leading result shifts by task: OpenHands le\u2026",
+      "url": "https://arxiv.org/abs/2511.00872",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T13:21:36Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260311020-agent-frameworks-do-not-yield-a-stable-winner-across-code-centric-software-engineering-tasks.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260311020-agent-frameworks-do-not-yield-a-stable-winner-across-code-centric-software-engineering-tasks.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260311017",
+      "title": "Enhancing LLM Code Generation: A Systematic Evaluation of Multi-Agent Collaboration and Runtime Debugging for Improved Accuracy, Reliability, and Latency",
+      "displayTitle": "Enhancing LLM Code Generation: A Systematic Evaluation of Multi-Agent Collaboration and Runtime Debugging for Improved Accuracy, Reliability, and Latency",
+      "summary": "Adding runtime debugging to a simple multi-agent code-generation workflow improves results relative to the same workflow without debugging, but the gains are modest, not clearly superior to debugging alone on HumanEval, and do not support the broader story that more agentic comp\u2026",
+      "url": "https://arxiv.org/abs/2505.02133",
+      "dailyDate": "2026-04-11",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-11T13:17:53Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260311017-enhancing-llm-code-generation-a-systematic-evaluation-of-multi-agent-collaboration-and-runtime-debugging-for-improved-accuracy-reliability-and-latency.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260311017-enhancing-llm-code-generation-a-systematic-evaluation-of-multi-agent-collaboration-and-runtime-debugging-for-improved-accuracy-reliability-and-latency.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260310011",
       "title": "ABC-Bench: Benchmarking Agentic Backend Coding in Real-World Development",

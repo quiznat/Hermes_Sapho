@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-21-003",
+  "reviewed_at_utc": "2026-04-11T13:29:16Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The draft keeps the main operational tension visible: strong evaluator accuracy and improvement results coexist with error patterns and reference mismatches that limit how far the paper’s claims can travel.",
+  "review_confidence": "high",
+  "contradiction_count": 4,
+  "status": "disclosed"
+}

@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-11-020",
+  "reviewed_at_utc": "2026-04-11T13:22:25Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Program-repair results support one bounded mechanism around patch tooling, while the other article claims remain comparative and benchmark-bound rather than causal.",
+  "review_confidence": "high",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "No single agent framework leads across all three code-centric tasks.",
+      "bounds": "The evidence supports only a cross-task comparison of outcomes under the shared benchmark setup; it does not establish why task leadership changes across frameworks."
+    },
+    {
+      "claim_text": "OpenHands leads software-development quality, but the strongest submetrics are split across frameworks.",
+      "bounds": "The evidence shows separation across quality, completeness, executability, and consistency, but it does not justify a causal explanation for why those submetrics split across systems."
+    },
+    {
+      "claim_text": "GPTswarm leads overall vulnerability detection, but Gas Limitation vulnerabilities remain rarely detected across agents.",
+      "bounds": "The evidence supports a bounded performance claim that overall detection strength does not reliably extend to Gas Limitation cases; the reason for that weakness is not established here."
+    }
+  ]
+}

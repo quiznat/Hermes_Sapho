@@ -1,0 +1,120 @@
+{
+  "generated_at_utc": "2026-04-11T13:36:52Z",
+  "replay_date": null,
+  "article_count": 6,
+  "articles": [
+    {
+      "article_id": "art-2026-03-11-017",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-11-017"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-11-017/article.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "missing",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-11-020",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-11-020"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-11-020/article.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "missing",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-12-004",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-12-004"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-12-004/article.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "missing",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-003",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-003"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-003/article.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "missing",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-004",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-004"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-004/article.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "missing",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    },
+    {
+      "article_id": "art-2026-03-21-005",
+      "status": "ok",
+      "command": [
+        "/home/hermes/.hermes/hermes-agent/venv/bin/python",
+        "/home/hermes/sapho-native/scripts/run_micro_article_lane.py",
+        "--article-id",
+        "art-2026-03-21-005"
+      ],
+      "return_code": 0,
+      "stdout": "/home/hermes/sapho-native/articles/art-2026-03-21-005/article.md\n",
+      "stderr": "",
+      "before_publication_status": "pending",
+      "after_publication_status": "ready-for-daily",
+      "before_policy_status": "missing",
+      "after_policy_status": "current_law_compliant",
+      "published_artifact": false
+    }
+  ],
+  "status_counts": {
+    "ok": 6,
+    "error": 0
+  },
+  "report_path": "/home/hermes/sapho-native/state/reports/historical-remediation-20260411T133652Z.json"
+}

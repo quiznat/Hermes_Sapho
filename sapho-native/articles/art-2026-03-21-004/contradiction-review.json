@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-03-21-004",
+  "reviewed_at_utc": "2026-04-11T13:32:44Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The review shows a fast-expanding agent field whose bounded gains coexist with major failures and protocol risk.",
+  "review_confidence": "high",
+  "contradiction_count": 2,
+  "status": "disclosed"
+}

@@ -1,0 +1,4 @@
+- The evaluation finds no single agent framework that leads across all three code-centric tasks, because different frameworks post the top reported results in software development, vulnerability detection, and program repair.
+- In the software-development benchmark, OpenHands leads the overall quality score at 0.47, but the strongest submetrics are split across frameworks rather than concentrated in one system.
+- GPTswarm posts the strongest reported vulnerability-detection result at 80 of 115 cases, but Gas Limitation vulnerabilities remain rarely detected across the evaluated agents.
+- In program repair, patch-tooling capability appears to matter materially, because frameworks reported as lacking patch tooling and correct diff-format patch generation perform poorly while SE-Agent (Iter-3) leads with 161 of 300 repairs.

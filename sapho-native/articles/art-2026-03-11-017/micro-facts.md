@@ -1,0 +1,10 @@
+- The study evaluates 19 LLMs on two code-generation benchmark datasets.
+- Mean HumanEval functional accuracy was 64.82% for ACT+Debug, 57.16% for ACT alone, and 63.86% for Debug alone.
+- The chained ACT+Debug approach showed a statistically significant functional-accuracy improvement over ACT alone at alpha = 0.15.
+- ACT+Debug improved mean accuracy over Debug alone by 0.96%, but the paper reports that this difference was not statistically significant at alpha = 0.15.
+- A simple Analyst-Coder plus debugging workflow increased mean accuracy by 0.68% over debugging alone across 19 LLMs and two datasets.
+- Adding a more complex three-agent Analyst-Coder-Tester workflow to debugging reduced accuracy for most models.
+- The source reports that combining agentic and debugging methods tends to help more when the performance gap between them is small.
+- HumanEval+ extends HumanEval with 80 times more tests.
+- The ACT phase relies on visible test cases that may miss edge cases, leaving some errors undetected.
+- On the stricter HumanEval+ benchmark, AC+Debug achieved the highest mean accuracy, while ACT+Debug performed 1.22% worse and ACT+Debug also had the largest reported robustness drop.

@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-004",
+  "reviewed_at_utc": "2026-04-11T13:33:02Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The review supports bounded system-level mechanism claims about tool-augmented agent design and protocol architecture, while keeping major capability and security limits explicit.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The paper frames autonomous AI agent evaluation as a broad domain through a taxonomy of about 60 benchmarks.",
+      "bounds": "This is a scope claim about survey coverage, not a causal claim, and it does not establish that the taxonomy is complete or definitive."
+    },
+    {
+      "claim_text": "Current frontier systems still perform poorly on several demanding reasoning and real-world agent tasks.",
+      "bounds": "The evidence shows low performance on ENIGMAEVAL, Humanity’s Last Exam, and SWE-Lancer, but it does not isolate one shared failure mechanism; the limits may arise from different causes across multimodal reasoning, calibration, and real-world task execution."
+    }
+  ]
+}

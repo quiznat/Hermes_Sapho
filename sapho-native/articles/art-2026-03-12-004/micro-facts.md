@@ -1,0 +1,14 @@
+- Existing tool-using LLM benchmarks are described as measuring single-run success rates rather than production-relevant reliability characteristics.
+- ReliabilityBench evaluates agent reliability across three dimensions: repeated-execution consistency, perturbation robustness, and infrastructure-failure fault tolerance.
+- The benchmark introduces a unified reliability surface R(k, ε, λ) intended to capture interactions among consistency, robustness, and fault tolerance.
+- The benchmark uses Action Metamorphic Relations in which perturbed task descriptions are judged by equivalent end state rather than text similarity.
+- The fault-injection framework includes transient timeouts, rate limits, partial responses, and schema drift as simulated production failure modes.
+- The reported evaluation covers Gemini 2.0 Flash and GPT-4o, ReAct and Reflexion architectures, four domains, and 1,280 total episodes.
+- For Gemini 2.0 Flash, pass rate falls from 96.88% at ε=0.0 to 88.12% at ε=0.2.
+- GPT-4o shows slightly lower overall pass² than Gemini 2.0 Flash while costing 82× more in the reported experiments.
+- In Gemini 2.0 Flash runs, ReAct scores higher than Reflexion on both surface volume (0.900 vs 0.875) and ε=0.2 pass rate (90.0% vs 86.3%).
+- At λ=0.0 with ReAct, scheduling achieves 100% pass@1 and 100% pass², while travel achieves 87.5% pass@1 and 75.0% pass².
+- In the λ=0.2 ablation, the rate-limit-only condition has the lowest pass rate at 93.75%, which is 2.50% below the mixed-fault baseline of 96.25%.
+- For Gemini 2.0 Flash at k=2, the measured pass rate drops from 96.88% at baseline (ε=0, λ=0) to 84.0% under combined perturbation and fault stress.
+- At λ=0.2, ReAct records 38 successful recoveries out of 47 encountered faults (80.9%), while Reflexion records 35 successful recoveries out of 52 encountered faults (67.3%).
+- The paper states that 1,280 episodes provide reasonable statistical power but may be insufficient for tight confidence intervals on rare failure modes, for which 10,000+ episodes may be needed.

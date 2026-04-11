@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-21-003",
+  "decision": "kept",
+  "qualified_by": "experimental_blog",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "It is a preprint reporting concrete benchmark and refinement results for digital agents.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-21-003\nticket_id: ticket-import-art-2026-03-21-003\ndecision: kept\nreason: It is a preprint reporting concrete benchmark and refinement results for digital agents.\nscope_class: preprint\ndecided_at_utc: 2026-04-11T13:26:18Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-11T13:29:39Z",
+  "mode": "agent"
+}

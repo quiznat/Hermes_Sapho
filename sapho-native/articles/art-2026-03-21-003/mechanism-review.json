@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-003",
+  "reviewed_at_utc": "2026-04-11T13:29:39Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package supports bounded claims that automatic evaluators can aid refinement in the reported settings, with one direct mechanism for false-negative harm and a narrower workflow mechanism for reward-filtered cloning.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "claim-001",
+      "bounds": "The evidence supports benchmark-level agreement with oracle or human judgment in WebArena and Android-in-the-Wild, but it does not provide a causal mechanism for evaluator reliability or establish general reliability across agent environments; the reference standard also changes across domains."
+    },
+    {
+      "claim_text": "claim-002",
+      "bounds": "The evidence shows improved WebArena outcomes when evaluator feedback is used inside Reflexion, but it does not isolate which part of the refinement loop causes the gain beyond the presence of evaluator-based reward, so the claim should remain bounded to the reported WebArena setups and relative improvements."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-11-017",
+  "reviewed_at_utc": "2026-04-11T13:18:35Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Adding debugging to a simple multi-agent coding workflow improves results over that workflow alone, but the evidence does not justify broad causal claims that more agent structure reliably improves code quality.",
+  "review_confidence": "medium",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "On HumanEval, ACT+Debug achieved higher mean functional accuracy than ACT alone across the evaluated models.",
+      "bounds": "The evidence shows an observed benchmark improvement and reported statistical significance in the paper's test setup, but it does not establish a causal mechanism beyond the improvement seen when debugging is added after ACT."
+    },
+    {
+      "claim_text": "On HumanEval, ACT+Debug did not show a statistically significant accuracy advantage over Debug alone despite a small mean improvement.",
+      "bounds": "The reported mean gain over Debug alone was only 0.96% and was not statistically significant at alpha = 0.15, so any claim that ACT+Debug is truly superior to Debug alone remains unproven here."
+    },
+    {
+      "claim_text": "A simple Analyst-Coder plus debugging workflow produced a small average accuracy improvement over debugging alone across 19 LLMs and two datasets.",
+      "bounds": "The evidence supports only a modest aggregate gain and does not isolate a clear causal mechanism or show that the effect is large or universal across models and settings."
+    }
+  ]
+}

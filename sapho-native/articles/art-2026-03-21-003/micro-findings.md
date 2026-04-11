@@ -1,0 +1,4 @@
+- Across the paper's web and device-control benchmarks, the automatic evaluators matched oracle metrics or human judgments with reported accuracy ranging from 74.4% to 92.9%.
+- In WebArena, using the evaluator as a Reflexion reward improved the best-performing agent by up to 29% relative success rate, and the low-cost Captioner plus Mixtral evaluator still produced a 16% relative improvement.
+- The paper identifies false-negative evaluator judgments as more damaging to Reflexion than false positives because they cause unnecessary retries of trajectories that were already successful.
+- On the paper's iOS test set, reward-filtered behavior cloning improved CogAgent from 8 completed tasks at baseline to 14 on 52 held-out tasks, which the authors describe as a 75% relative improvement.

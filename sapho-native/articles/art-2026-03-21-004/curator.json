@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-03-21-004",
+  "decision": "kept",
+  "qualified_by": "comparative_survey",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "It is a preprint survey that compiles source-attributed benchmark results and comparative empirical artifacts.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-03-21-004\nticket_id: ticket-import-art-2026-03-21-004\ndecision: kept\nreason: It is a preprint survey that compiles source-attributed benchmark results and comparative empirical artifacts.\nscope_class: preprint\ndecided_at_utc: 2026-04-11T13:29:57Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-11T13:33:02Z",
+  "mode": "agent"
+}

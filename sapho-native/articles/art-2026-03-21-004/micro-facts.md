@@ -1,0 +1,12 @@
+- The paper says it presents a taxonomy of approximately 60 benchmarks covering LLM and autonomous AI agent evaluation domains.
+- The paper says it reviews AI-agent frameworks introduced between 2023 and 2025 that combine LLMs with modular toolkits for autonomous decision-making and multi-step reasoning.
+- The paper says it surveys three named agent collaboration protocols: ACP, MCP, and A2A.
+- The survey reports that ENIGMAEVAL contains 1,184 multimodal puzzles and that state-of-the-art systems achieve only about 7% accuracy on standard puzzles.
+- The survey reports that Humanity’s Last Exam contains 3,000 questions across more than 100 subjects, and current frontier LLMs score under 10% accuracy with high calibration errors.
+- The survey reports that FACTS Grounding includes 1,719 examples split into 860 public and 859 private cases, with Gemini 2.0 Flash shown at 83.6% accuracy on the leaderboard.
+- The survey reports that Agent-as-a-Judge reaches 90% alignment with human judgments and reduces evaluation cost to about 2.29% of human evaluation cost.
+- The survey reports that in FRAMES, Gemini-Pro-1.5-0514 improves from 40% accuracy without retrieval to 66% with a multi-step retrieval pipeline.
+- The survey reports that Claude 3.5 Sonnet achieves a 26.2% pass rate on independent SWE-Lancer tasks and 44.9% on managerial tasks.
+- The survey describes MCP as a client-server protocol where host applications connect to multiple lightweight servers to access local data sources and remote web services.
+- The survey states that ACP messages use custom JSON objects with a top-level role field and a parts array, and that session_id reuse prepends full turn history for stateful sessions.
+- The survey states that MCP’s decentralized design creates security risks, including uneven defenses, lack of standardized authentication, weak logging/debugging, and state inconsistency in distributed workflows.

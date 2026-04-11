@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-03-21-005",
+  "reviewed_at_utc": "2026-04-11T13:36:52Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports one procedural mechanism for why keyword filtering failed, while the main outcome claims remain descriptive and must stay explicitly bounded.",
+  "review_confidence": "high",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The final performance-related pull request set was distributed across many repositories, agents, and software-stack areas rather than concentrated in a narrow optimization niche.",
+      "bounds": "The evidence supports breadth of distribution in this dataset, but not the mechanism behind that spread; it does not show whether the breadth reflects underlying optimization demand, agent behavior, repository composition, or topic-model grouping choices."
+    },
+    {
+      "claim_text": "Performance-related pull requests were rejected more often than non-performance pull requests in the studied agentic development data.",
+      "bounds": "The evidence establishes an outcome difference only; it does not identify whether the higher rejection rate comes from technical difficulty, stricter review standards, deployment risk, or repository-specific governance."
+    },
+    {
+      "claim_text": "Among accepted performance-related pull requests, merge times varied by category, with UI, AI, and Analytics taking longest and Low-level work merging fastest, while change size showed only weak association with merge time.",
+      "bounds": "The evidence supports category-level merge-time differences and weak size association in this dataset, but it does not justify a causal account of why some categories merged slower; domain complexity, review burden, and risk remain unresolved possibilities."
+    }
+  ]
+}
