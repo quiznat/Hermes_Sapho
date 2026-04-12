@@ -7,11 +7,11 @@ import sys
 from pathlib import Path
 
 from common import ARTICLES_DIR, article_published_for_daily_on_date, article_ready_for_pm_on_date, read_markdown, utc_date
-from render_site import PUBLIC_SEED_ENV_VAR, render_daily_briefing_site
+from render_site import PUBLIC_SEED_ENV_VAR, render_daily_briefing_site, site_mode
 from runtime_ops import refresh_live_intake_ops_mirror
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PUBLIC_SEED_DIR = "/home/openclaw/.openclaw/workspace/website"
+DEFAULT_PUBLIC_SEED_DIR = str(ROOT / "public" / "site")
 
 
 def article_counts_for_date(date: str) -> tuple[int, int]:
@@ -93,9 +93,10 @@ def main() -> int:
 
     refresh_live_intake_ops_mirror()
     current_brief = render_daily_briefing_site()
-    deploy_rc = deploy_daily_surfaces(current_brief["date"])
-    if deploy_rc != 0:
-        raise SystemExit(deploy_rc)
+    if site_mode() != "github-pages":
+        deploy_rc = deploy_daily_surfaces(current_brief["date"])
+        if deploy_rc != 0:
+            raise SystemExit(deploy_rc)
     if ready_count > 0:
         print(f"published {target_date}")
     else:

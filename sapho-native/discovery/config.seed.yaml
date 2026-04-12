@@ -5,7 +5,7 @@ run:
   recency_days: 7
 
 article_pipeline:
-  maxPendingNonXBeforePause: 12
+  maxPendingNonXBeforePause: 32
   processablePolicy: non_x_first
 
 discovery:

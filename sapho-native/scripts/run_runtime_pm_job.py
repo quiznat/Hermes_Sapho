@@ -8,7 +8,7 @@ import sys
 
 from runtime_job_common import ROOT, now_utc, sync_runtime_ops, write_receipt
 
-DEFAULT_PUBLIC_SEED_DIR = "/home/openclaw/.openclaw/workspace/website"
+DEFAULT_PUBLIC_SEED_DIR = str(ROOT / "public" / "site")
 
 
 def main() -> int:

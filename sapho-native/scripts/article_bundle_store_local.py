@@ -10,14 +10,15 @@ from typing import Any
 
 import yaml
 
+from runtime_paths import RUNTIME_ARTICLES_ROOT, RUNTIME_DAILY_ROOT, RUNTIME_RESEARCH_ROOT, RUNTIME_SOURCE_ROOT, RUNTIME_ROOT
 from url_utils_local import canonicalize_url
 
-ROOT = Path('/home/openclaw/.openclaw/workspace')
-ARTICLES_ROOT = ROOT / 'research/articles'
-FACTS_ROOT = ROOT / 'research/facts'
-SOURCE_ROOT = ROOT / 'research/source-material'
-OLD_SOURCE_ROOT = ROOT / 'research/evidence/source-material'
-DAILY_ROOT = ROOT / 'research/publication/daily'
+ROOT = RUNTIME_ROOT
+ARTICLES_ROOT = RUNTIME_ARTICLES_ROOT
+FACTS_ROOT = RUNTIME_RESEARCH_ROOT / 'facts'
+SOURCE_ROOT = RUNTIME_SOURCE_ROOT
+OLD_SOURCE_ROOT = RUNTIME_RESEARCH_ROOT / 'evidence/source-material'
+DAILY_ROOT = RUNTIME_DAILY_ROOT
 
 ARTICLE_VERSION = 'article-bundle.v1'
 FACT_VERSION = 'research-fact.v1'

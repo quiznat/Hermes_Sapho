@@ -11,22 +11,31 @@ import sys
 from pathlib import Path
 
 from common import parse_markdown
+from runtime_paths import (
+    PROJECT_ROOT_PATH,
+    RUNTIME_ARTICLES_ROOT,
+    RUNTIME_FACTORY_CHECKIN_DIR,
+    RUNTIME_FACTORY_CHECKIN_LATEST,
+    RUNTIME_REPORTS_SHIFTS,
+    RUNTIME_ROOT,
+    RUNTIME_WEBSITE_ROOT,
+)
 
-ROOT = Path(__file__).resolve().parents[1]
-LIVE_RUNTIME_ROOT = Path('/home/openclaw/.openclaw/workspace')
-LIVE_RUNTIME_ARTICLES = LIVE_RUNTIME_ROOT / 'research' / 'articles'
-LIVE_FACTORY_CHECKIN_DIR = LIVE_RUNTIME_ROOT / 'research' / 'factory' / 'checkins'
-LIVE_FACTORY_CHECKIN_LATEST = LIVE_FACTORY_CHECKIN_DIR / 'article-checkin-latest.json'
+ROOT = PROJECT_ROOT_PATH
+LIVE_RUNTIME_ROOT = RUNTIME_ROOT
+LIVE_RUNTIME_ARTICLES = RUNTIME_ARTICLES_ROOT
+LIVE_FACTORY_CHECKIN_DIR = RUNTIME_FACTORY_CHECKIN_DIR
+LIVE_FACTORY_CHECKIN_LATEST = RUNTIME_FACTORY_CHECKIN_LATEST
 LIVE_ASSIGNMENT_STATUS = LIVE_RUNTIME_ROOT / 'research' / 'assignment-status.md'
-LIVE_REPORTS_SHIFTS = LIVE_RUNTIME_ROOT / 'research' / 'reports' / 'shifts'
-LIVE_WEBSITE = LIVE_RUNTIME_ROOT / 'website'
+LIVE_REPORTS_SHIFTS = RUNTIME_REPORTS_SHIFTS
+LIVE_WEBSITE = RUNTIME_WEBSITE_ROOT
 LIVE_WEBSITE_OPS = LIVE_WEBSITE / 'artifacts' / 'ops'
 LIVE_WEBSITE_DATA = LIVE_WEBSITE / 'data'
 
 
 def running_as_openclaw() -> bool:
     try:
-        return pwd.getpwuid(os.geteuid()).pw_name == 'openclaw'
+        return pwd.getpwuid(os.geteuid()).pw_name in {'openclaw', 'hermes'}
     except KeyError:
         return False
 
@@ -35,7 +44,7 @@ def openclaw_python_cmd(*parts: str) -> list[str]:
     cmd = [sys.executable, *parts]
     if running_as_openclaw():
         return cmd
-    return ['sudo', '-n', '-H', '-u', 'openclaw', *cmd]
+    return cmd
 
 
 def run_live_python(*parts: str, capture_output: bool = True) -> subprocess.CompletedProcess[str]:
@@ -88,6 +97,7 @@ def build_runtime_checkin_payload(stale_minutes: int = 120) -> dict[str, object]
     counts: dict[str, int] = {}
     processable_non_x = 0
     pending_x = 0
+    processable_pending_ids: list[str] = []
     stalled: list[dict[str, str]] = []
     missing_source_custody: list[str] = []
     cutoff = dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=stale_minutes)
@@ -109,6 +119,7 @@ def build_runtime_checkin_payload(stale_minutes: int = 120) -> dict[str, object]
             pending_x += 1
         if state == 'pending' and not is_x_url(source_url):
             processable_non_x += 1
+            processable_pending_ids.append(article_id)
             if discovered_at and discovered_at < cutoff:
                 stalled.append(
                     {
@@ -136,6 +147,7 @@ def build_runtime_checkin_payload(stale_minutes: int = 120) -> dict[str, object]
         'articleRoot': 'research/articles',
         'statusCounts': counts,
         'processableNonXPending': processable_non_x,
+        'processablePendingArticleIds': processable_pending_ids[:500],
         'pendingX': pending_x,
         'stalledPendingArticles': stalled,
         'missingSourceCustodyArticleIds': missing_source_custody[:50],
@@ -198,6 +210,21 @@ def refresh_live_intake_ops_mirror() -> None:
 
 
 def publish_runtime_ops_surfaces(reason: str) -> None:
+    if LIVE_RUNTIME_ROOT == ROOT / 'runtime':
+        local_public = ROOT / 'public' / 'site'
+        local_ops = local_public / 'artifacts' / 'ops'
+        local_data = local_public / 'data'
+        local_ops.mkdir(parents=True, exist_ok=True)
+        local_data.mkdir(parents=True, exist_ok=True)
+        if (LIVE_WEBSITE_OPS / 'index.json').exists():
+            shutil.copy2(LIVE_WEBSITE_OPS / 'index.json', local_ops / 'index.json')
+        if (LIVE_WEBSITE_OPS / 'factory-checkin-latest.json').exists():
+            shutil.copy2(LIVE_WEBSITE_OPS / 'factory-checkin-latest.json', local_ops / 'factory-checkin-latest.json')
+        if (LIVE_WEBSITE_OPS / 'assignment-status.md').exists():
+            shutil.copy2(LIVE_WEBSITE_OPS / 'assignment-status.md', local_ops / 'assignment-status.md')
+        if (LIVE_WEBSITE_DATA / 'ops-latest.json').exists():
+            shutil.copy2(LIVE_WEBSITE_DATA / 'ops-latest.json', local_data / 'ops-latest.json')
+        return
     proc = run_live_python(
         str(ROOT / 'scripts' / 'deploy_live_site.py'),
         '--skip-render',

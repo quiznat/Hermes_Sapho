@@ -30,7 +30,7 @@ from publication_authority import evaluate_article_publication_authority
 
 DEFAULT_BASE_URL = "https://research.quiznat.com"
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PUBLIC_SEED_DIR = Path("/home/openclaw/.openclaw/workspace/website")
+DEFAULT_PUBLIC_SEED_DIR = ROOT / "public" / "site"
 PUBLIC_SEED_ENV_VAR = "SAPHO_PUBLIC_SEED_DIR"
 SITE_MODE_ENV_VAR = "SAPHO_SITE_MODE"
 SITE_BASE_URL_ENV_VAR = "SAPHO_SITE_BASE_URL"

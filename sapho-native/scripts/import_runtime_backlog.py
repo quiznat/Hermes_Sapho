@@ -20,14 +20,14 @@ from common import (
     write_article_markdown,
     write_markdown,
 )
+from runtime_paths import RUNTIME_ARTICLES_ROOT, RUNTIME_FACTORY_CHECKIN_LATEST, RUNTIME_REPORTS_SHIFTS, RUNTIME_ROOT, RUNTIME_SOURCE_ROOT
 
 ROOT = Path(__file__).resolve().parents[1]
-RUNTIME_ROOT = Path("/home/openclaw/.openclaw/workspace")
 RUNTIME_RESEARCH = RUNTIME_ROOT / "research"
-RUNTIME_ARTICLES = RUNTIME_RESEARCH / "articles"
-RUNTIME_SOURCE = RUNTIME_RESEARCH / "source-material"
-RUNTIME_SHIFTS = RUNTIME_RESEARCH / "reports" / "shifts"
-RUNTIME_CHECKIN = RUNTIME_RESEARCH / "factory" / "checkins" / "article-checkin-latest.json"
+RUNTIME_ARTICLES = RUNTIME_ARTICLES_ROOT
+RUNTIME_SOURCE = RUNTIME_SOURCE_ROOT
+RUNTIME_SHIFTS = RUNTIME_REPORTS_SHIFTS
+RUNTIME_CHECKIN = RUNTIME_FACTORY_CHECKIN_LATEST
 
 
 def run_cmd(parts: list[str]) -> str:
@@ -116,12 +116,14 @@ def discover_front_half_order() -> tuple[list[str], dict[str, Any]]:
 
 def discover_checkin_order() -> tuple[list[str], dict[str, Any]]:
     payload = sudo_load_json(RUNTIME_CHECKIN)
-    items = payload.get("stalledPendingArticles") or []
-    ordered = []
-    for item in items:
-        article_id = str((item or {}).get("articleId") or "").strip()
-        if article_id:
-            ordered.append(article_id)
+    direct_ids = payload.get("processablePendingArticleIds") or []
+    ordered = [str(item).strip() for item in direct_ids if str(item).strip()]
+    if not ordered:
+        items = payload.get("stalledPendingArticles") or []
+        for item in items:
+            article_id = str((item or {}).get("articleId") or "").strip()
+            if article_id:
+                ordered.append(article_id)
     return dedupe_ordered(ordered), {
         "kind": "article-checkin",
         "path": str(RUNTIME_CHECKIN),
@@ -188,9 +190,9 @@ def build_source_body(
 def build_ticket_body(source_url: str, selection_source: str) -> str:
     return (
         "# Intake Ticket\n\n"
-        "This ticket was imported from canonical OpenClaw source custody for manual Daily proving.\n\n"
+        "This ticket was imported from the Hermes-native Sapho discovery runtime for compact Daily proving.\n\n"
         f"- URL: {source_url}\n"
-        "- Channel: runtime-replay\n"
+        "- Channel: native-runtime-replay\n"
         f"- Selection: {selection_source}\n"
     )
 
@@ -198,7 +200,7 @@ def build_ticket_body(source_url: str, selection_source: str) -> str:
 def build_article_body() -> str:
     return (
         "# Pending Article\n\n"
-        "This article was imported from canonical OpenClaw source custody and is waiting for Curator.\n"
+        "This article was imported from the Hermes-native Sapho discovery runtime and is waiting for Curator.\n"
     )
 
 
@@ -268,24 +270,23 @@ def build_import_item(article_id: str, selection_rank: int, selection_source: st
         item["action"] = "missing-runtime-article"
         item["error"] = str(exc)
         return item
+    source_meta: dict[str, Any] = {}
+    source_text = ""
+    has_runtime_source = True
     try:
         source_meta = sudo_load_json(runtime_source_json)
-    except Exception as exc:
-        item["action"] = "missing-runtime-source-json"
-        item["error"] = str(exc)
-        return item
+    except Exception:
+        has_runtime_source = False
     try:
         source_text = sudo_read_text(runtime_source_txt)
-    except Exception as exc:
-        item["action"] = "missing-runtime-source-txt"
-        item["error"] = str(exc)
-        return item
+    except Exception:
+        has_runtime_source = False
 
     source_url = str(article_meta.get("source_url") or source_meta.get("sourceUrl") or "").strip()
     canonical_url = canonicalize_article_url(
         str(article_meta.get("canonical_url") or source_meta.get("canonicalUrl") or source_url)
     )
-    title = str(source_meta.get("title") or source_url or article_id).strip()
+    title = str(source_meta.get("title") or article_meta.get("artifact_title") or source_url or article_id).strip()
     queued_at = str(article_meta.get("discovered_at_utc") or source_meta.get("generatedAtUtc") or utc_now())
     captured_at = str(source_meta.get("generatedAtUtc") or article_meta.get("updated_at_utc") or queued_at)
     capture_kind = "runtime-import"
@@ -322,8 +323,8 @@ def build_import_item(article_id: str, selection_rank: int, selection_source: st
         item["action"] = "skip-existing"
         return item
 
-    item["action"] = "would-import"
-    ticket_status = "captured"
+    item["action"] = "would-import" if has_runtime_source else "would-import-ticket-only"
+    ticket_status = "captured" if has_runtime_source else "queued"
     article_status = "pending"
     article_body = build_article_body()
     duplicate_fields = {}
@@ -334,53 +335,56 @@ def build_import_item(article_id: str, selection_rank: int, selection_source: st
                 "ticket_id": ticket_id,
                 "source_url": source_url,
                 "canonical_url": canonical_url,
-                "source_channel": "runtime-replay",
+                "source_channel": "native-runtime-replay",
                 "queued_at_utc": queued_at,
                 "status": ticket_status,
                 "article_id": article_id,
-                "operator_note": f"Imported from canonical OpenClaw runtime via {selection_source}",
+                "operator_note": f"Imported from Hermes-native runtime via {selection_source}",
                 **duplicate_fields,
             },
             build_ticket_body(source_url, selection_source),
         ),
-        "article": (
-            {
-                "version": "article.v1",
-                "article_id": article_id,
-                "ticket_id": ticket_id,
-                "source_url": source_url,
-                "source_title": title,
-                "queued_at_utc": queued_at,
-                "captured_at_utc": captured_at,
-                "canonical_url": canonical_url,
-                "curator_decision": "pending",
-                "artifact_minted_at_utc": "",
-                "evidence_count": 0,
-                "claim_count": 0,
-                "publication_status": article_status,
-                "imported_from_runtime_article_id": article_id,
-                "imported_from_runtime_last_stage": str(article_meta.get("last_stage") or ""),
-                "imported_from_runtime_filter_state": str(article_meta.get("filter_state") or ""),
-                **duplicate_fields,
-            },
-            article_body,
-        ),
-        "source": (
-            {
-                "version": "source-capture.v1",
-                "article_id": article_id,
-                "ticket_id": ticket_id,
-                "source_url": source_url,
-                "canonical_url": canonical_url,
-                "source_title": title,
-                "capture_kind": capture_kind,
-                "http_status": http_status,
-                "content_type": content_type,
-                "captured_at_utc": captured_at,
-            },
-            build_source_body(title, source_text, article_meta, source_meta, refreshed_live_source=refreshed),
-        ),
     }
+    if has_runtime_source:
+        item["_write"].update({
+            "article": (
+                {
+                    "version": "article.v1",
+                    "article_id": article_id,
+                    "ticket_id": ticket_id,
+                    "source_url": source_url,
+                    "source_title": title,
+                    "queued_at_utc": queued_at,
+                    "captured_at_utc": captured_at,
+                    "canonical_url": canonical_url,
+                    "curator_decision": "pending",
+                    "artifact_minted_at_utc": "",
+                    "evidence_count": 0,
+                    "claim_count": 0,
+                    "publication_status": article_status,
+                    "imported_from_runtime_article_id": article_id,
+                    "imported_from_runtime_last_stage": str(article_meta.get("last_stage") or ""),
+                    "imported_from_runtime_filter_state": str(article_meta.get("filter_state") or ""),
+                    **duplicate_fields,
+                },
+                article_body,
+            ),
+            "source": (
+                {
+                    "version": "source-capture.v1",
+                    "article_id": article_id,
+                    "ticket_id": ticket_id,
+                    "source_url": source_url,
+                    "canonical_url": canonical_url,
+                    "source_title": title,
+                    "capture_kind": capture_kind,
+                    "http_status": http_status,
+                    "content_type": content_type,
+                    "captured_at_utc": captured_at,
+                },
+                build_source_body(title, source_text, article_meta, source_meta, refreshed_live_source=refreshed),
+            ),
+        })
     return item
 
 
@@ -388,12 +392,14 @@ def write_import_item(item: dict[str, Any]) -> None:
     paths = local_paths(item["articleId"])
     payload = item.pop("_write")
     ticket_meta, ticket_body = payload["ticket"]
-    article_meta, article_body = payload["article"]
-    source_meta, source_body = payload["source"]
     write_markdown(paths["ticket"], ticket_meta, ticket_body)
-    write_article_markdown(paths["article"], article_meta, article_body)
-    write_markdown(paths["source"], source_meta, source_body)
-    item["action"] = "imported"
+    if "article" in payload:
+        article_meta, article_body = payload["article"]
+        write_article_markdown(paths["article"], article_meta, article_body)
+    if "source" in payload:
+        source_meta, source_body = payload["source"]
+        write_markdown(paths["source"], source_meta, source_body)
+    item["action"] = "imported" if "article" in payload else "imported-ticket-only"
 
 
 def summarize_actions(items: list[dict[str, Any]]) -> dict[str, int]:

@@ -27,6 +27,7 @@ from schema_guard_local import validate_payload
 
 from url_utils_local import canonicalize_url, domain_from_url, is_blocked_domain, sha256_text, source_signatures
 from article_bundle_store_local import ensure_article_bundle_for_discovery, list_article_bundle_paths, load_article_bundle
+from runtime_paths import RUNTIME_ARTICLES_ROOT
 
 ROOT = Path(__file__).resolve().parents[1]
 DISCOVERY_DIR = ROOT / "discovery"
@@ -168,7 +169,7 @@ def load_seed_config(path: Path) -> dict[str, Any]:
         "per_query_limit": 15,
         "recency_filter": "week",
         "recency_days": DEFAULT_RECENCY_DAYS,
-        "maxPendingNonXBeforePause": 12,
+        "maxPendingNonXBeforePause": 32,
         "blocklist_domains": ["x.com", "twitter.com"],
         "allowlist_patterns": ["/research/", "/blog/", "/papers/", "/publications/", "/posts/"],
         "rss_feeds": [],
@@ -516,14 +517,23 @@ def load_brave_api_key() -> str:
     if key:
         return key
 
-    cfg_path = Path.home() / ".openclaw" / "openclaw.json"
-    try:
-        data = json.loads(cfg_path.read_text(encoding="utf-8"))
-        key2 = data.get("tools", {}).get("web", {}).get("search", {}).get("apiKey", "")
-        if isinstance(key2, str):
-            return key2.strip()
-    except Exception:
-        pass
+    for cfg_path in [Path.home() / ".openclaw" / "openclaw.json", Path.home() / ".hermes" / ".env"]:
+        try:
+            if cfg_path.name == ".env":
+                for raw in cfg_path.read_text(encoding="utf-8").splitlines():
+                    line = raw.strip()
+                    if not line or line.startswith('#') or '=' not in line:
+                        continue
+                    name, value = line.split('=', 1)
+                    if name.strip() == 'BRAVE_API_KEY' and value.strip():
+                        return value.strip().strip("'").strip('\"')
+                continue
+            data = json.loads(cfg_path.read_text(encoding="utf-8"))
+            key2 = data.get("tools", {}).get("web", {}).get("search", {}).get("apiKey", "")
+            if isinstance(key2, str) and key2.strip():
+                return key2.strip()
+        except Exception:
+            pass
     return ""
 
 
@@ -892,7 +902,7 @@ def main() -> int:
             if domain
         ],
         'eventsPath': str(events_path),
-        'articlesRoot': '/home/openclaw/.openclaw/workspace/research/articles',
+        'articlesRoot': str(RUNTIME_ARTICLES_ROOT),
         'scoreboardPath': str(Path(args.scoreboard)),
         'scoreboardRowsWritten': scoreboard_rows_written,
     }

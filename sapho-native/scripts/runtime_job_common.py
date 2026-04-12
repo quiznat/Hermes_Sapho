@@ -7,9 +7,10 @@ from pathlib import Path
 from typing import Any
 
 from runtime_ops import refresh_live_intake_ops_mirror
+from runtime_paths import PROJECT_ROOT_PATH, RUNTIME_WEBSITE_ROOT
 
-ROOT = Path('/home/openclaw/.openclaw/workspace/parallel-sapho')
-LIVE_WEBSITE_ROOT = Path('/home/openclaw/.openclaw/workspace/website')
+ROOT = PROJECT_ROOT_PATH
+LIVE_WEBSITE_ROOT = RUNTIME_WEBSITE_ROOT
 LOCAL_PUBLIC_DIR = ROOT / 'public' / 'site'
 RECEIPTS_DIR = ROOT / 'state' / 'receipts'
 
