@@ -5,7 +5,7 @@ source_url: https://github.com/orgs/community/discussions/186451
 canonical_url: https://github.com/orgs/community/discussions/186451
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: discarded
 article_id: art-2026-03-21-010
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

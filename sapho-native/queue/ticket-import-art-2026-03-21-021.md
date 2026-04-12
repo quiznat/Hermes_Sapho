@@ -5,7 +5,7 @@ source_url: https://blog.jetbrains.com/blog/2025/10/28/introducing-developer-pro
 canonical_url: https://blog.jetbrains.com/blog/2025/10/28/introducing-developer-productivity-ai-arena-an-open-platform-for-ai-coding-agents-benchmarks
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: discarded
 article_id: art-2026-03-21-021
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

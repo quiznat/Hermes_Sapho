@@ -5,7 +5,7 @@ source_url: https://arxiv.org/abs/2504.19678
 canonical_url: https://arxiv.org/abs/2504.19678
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: kept
 article_id: art-2026-03-21-004
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

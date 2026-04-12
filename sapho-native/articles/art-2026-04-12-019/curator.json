@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-12-019",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "none",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The source was not accessible and no empirical substance was visible in the captured material.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-12-019\nticket_id: ticket-import-art-2026-04-12-019\ndecision: discarded\nreason: The source was not accessible and no empirical substance was visible in the captured material.\nscope_class: other\ndecided_at_utc: 2026-04-12T12:29:43Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-12T12:29:49Z",
+  "mode": "agent"
+}

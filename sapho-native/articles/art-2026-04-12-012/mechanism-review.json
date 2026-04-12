@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-12-012",
+  "reviewed_at_utc": "2026-04-12T12:23:57Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub’s article supports a bounded mechanism claim that cross-family review is inserted as an independent critique step, but it does not isolate which review checkpoint drives the reported benchmark gains.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "GitHub introduced Rubber Duck as an experimental feature in GitHub Copilot CLI.",
+      "bounds": "This establishes feature introduction in experimental mode only; it does not support broader claims about general availability or performance effects."
+    },
+    {
+      "claim_text": "Claude Sonnet 4.6 paired with Rubber Duck running GPT-5.4 closed 74.7% of the performance gap between Sonnet and Opus in GitHub’s SWE-Bench Pro evaluation.",
+      "bounds": "This is a vendor-reported benchmark result bounded to GitHub’s SWE-Bench Pro evaluation and does not by itself establish general performance gains outside that setting."
+    },
+    {
+      "claim_text": "GitHub reports larger gains from Rubber Duck on harder tasks, including +3.8% on problems spanning 3 or more files and 70 or more steps and +4.8% on the hardest problems identified across three trials.",
+      "bounds": "These results support a scoped harder-task tendency claim, but they do not establish a universal benefit across task types and do not fully specify the hardest-problem selection method in the captured material."
+    }
+  ]
+}

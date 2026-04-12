@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-04-12-012",
+  "reviewed_at_utc": "2026-04-12T12:23:37Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub presents a plausible cross-family review mechanism with benchmark gains, but the main tensions are between strong product-performance framing and evidence that remains vendor-reported, benchmark-bounded, and causally under-isolated.",
+  "review_confidence": "high",
+  "contradiction_count": 4,
+  "status": "disclosed"
+}

@@ -5,7 +5,7 @@ source_url: https://www.alphaxiv.org/overview/2404.06474v3
 canonical_url: https://www.alphaxiv.org/overview/2404.06474v3
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: kept
 article_id: art-2026-03-21-023
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

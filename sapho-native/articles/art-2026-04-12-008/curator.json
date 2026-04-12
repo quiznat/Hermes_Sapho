@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-12-008",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "none",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "The captured source shows no accessible empirical or operational content to evaluate.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-12-008\nticket_id: ticket-import-art-2026-04-12-008\ndecision: discarded\nreason: The captured source shows no accessible empirical or operational content to evaluate.\nscope_class: other\ndecided_at_utc: 2026-04-12T12:12:20Z\n---\n# Curator Receipt",
+  "confidence": "high",
+  "generated_at_utc": "2026-04-12T12:12:27Z",
+  "mode": "agent"
+}

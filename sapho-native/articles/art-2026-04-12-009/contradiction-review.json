@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-04-12-009",
+  "reviewed_at_utc": "2026-04-12T12:19:51Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package shows several explicit tensions, strongest around uneven outage severity, resiliency work causing failure, and Copilot recurrence after incomplete remediation.",
+  "review_confidence": "high",
+  "contradiction_count": 4,
+  "status": "disclosed"
+}

@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-12-002",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "none",
+  "novelty_strength": "high",
+  "excerpt_sufficiency": "partial",
+  "reason": "Source could not be accessed and shows no visible evidentiary substance.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-12-002\nticket_id: ticket-import-art-2026-04-12-002\ndecision: discarded\nreason: Source could not be accessed and shows no visible evidentiary substance.\nscope_class: other\ndecided_at_utc: 2026-04-12T12:05:45Z\n---\n# Curator Receipt",
+  "confidence": "high",
+  "generated_at_utc": "2026-04-12T12:05:59Z",
+  "mode": "agent"
+}

@@ -1,0 +1,85 @@
+---
+version: source-capture.v1
+article_id: art-2026-04-12-009
+ticket_id: ticket-import-art-2026-04-12-009
+source_url: https://github.blog/news-insights/company-news/github-availability-report-march-2026/
+canonical_url: https://github.blog/news-insights/company-news/github-availability-report-march-2026
+source_title: 'GitHub availability report: March 2026 - The GitHub Blog'
+capture_kind: html
+http_status: 200
+content_type: text/html
+captured_at_utc: '2026-04-12T12:12:28Z'
+linked_paper_urls: []
+---
+# Source Capture
+
+## Title
+
+GitHub availability report: March 2026 - The GitHub Blog
+
+## Body
+
+Home / News & insights / Company news
+
+GitHub availability report: March 2026
+
+In March, we experienced four incidents that resulted in degraded performance across GitHub services.
+
+Jakub Oleksy · @jakuboleksy
+
+April 8, 2026
+| 4 minutes
+
+Share:
+
+In March, we experienced four incidents that resulted in degraded performance across GitHub services.
+
+March 03 18:59 UTC (lasting 1 hour and 10 minutes)
+
+On March 3, 2026, between 18:46 and 20:09 UTC, GitHub experienced a period of degraded availability impacting github.com, the GitHub API, GitHub Actions, Git operations, GitHub Copilot, and other dependent services. At the peak of the incident, github.com request failures reached approximately 40%. During the same period, approximately 43% of GitHub API requests failed. Git operations over HTTP had an error rate of approximately 6%, while SSH was not impacted. GitHub Copilot requests had an error rate of approximately 21%. GitHub Actions experienced less than 1% impact.
+
+This incident shared the same underlying cause as an incident in early February, where we saw a large volume of writes to the user settings caching mechanism. While deploying a change to reduce the burden of these writes, a bug caused every user’s cache to expire, get recalculated, and get rewritten. The increased load caused replication delays that cascaded down to all affected services. We mitigated this issue by immediately rolling back the faulty deployment.
+
+We understand these incidents disrupted the workflows of developers. While we have made (and are making) substantial, long-term investments in how GitHub is built and operated to improve resilience, we acknowledge we have more work to do. Getting there requires deep architectural work that is already underway, as well as urgent, targeted improvements. We are taking the following immediate steps:
+
+We have added a killswitch and improved monitoring to the caching mechanism to ensure we are notified before there is user impact and can respond swiftly.
+
+We are moving the cache mechanism to a dedicated host, ensuring that any future issues will solely affect services that rely on it.
+
+March 05 16:35 UTC (lasting 2 hours and 55 minutes)
+
+On March 5, 2026, between 16:24 and 19:30 UTC, GitHub Actions was degraded. During this time, 95% of workflow runs failed to start within 5 minutes with an average delay of 30 minutes, and 10% of workflow runs failed with an infrastructure error. This was due to Redis infrastructure updates that were being rolled out to production to improve our resiliency. These updates introduced a set of incorrect configuration changes into our Redis load balancer, causing internal traffic to be routed to an incorrect host leading to two incidents.
+
+We mitigated this incident by correcting the misconfigured load balancer. Actions jobs were running successfully starting at 17:24 UTC. The remaining time until we closed the incident was spent burning through the queue of jobs.
+
+We immediately rolled back the updates that were a contributing factor and have frozen all changes in this area until we complete follow-up work. We are working to improve our automation to ensure incorrect configuration changes cannot propagate through our infrastructure. We are also working on improved alerting to catch misconfigured load balancers before it becomes an incident. Additionally, we are updating the Redis client configuration in Actions to improve resiliency to brief cache interruptions.
+
+March 19 13:44 UTC (lasting 48 minutes)
+
+On March 19, 2026, between 01:05 and 02:52 UTC, and again on March 20, 2026, between 00:42 and 01:58 UTC, the Copilot Coding Agent service was degraded and users were unable to start new Copilot Agent sessions or view existing ones. During the first incident, the average error rate was ~53% and peaked at ~93% of requests to the service. During the second incident, the average error rate was ~99% and peaked at ~100% of requests with significant retry amplification. Both incidents were caused by the same underlying system authentication issue that prevented the service from connecting to its backing datastore.
+
+We mitigated each incident by rotating the affected credentials, which restored connectivity and returned error rates to normal. The mitigation time was 01:24. The second occurrence was due to an incomplete remediation of the first.
+
+We have implemented automated monitoring for credential lifecycle events and are improving operational processes to reduce our time to detection and mitigation of issues like this one in the future.
+
+March 24 16:59 UTC (lasting 2 hours and 52 minutes)
+
+On March 24, 2026, between 15:57 and 19:51 UTC, the Microsoft Teams Integration and Teams Copilot Integration services were degraded and unable to deliver GitHub event notifications to Microsoft Teams. On average, the error rate was 37.4% and peaked at 90.1% of requests to the service—approximately 19% of all integration installs failed to receive GitHub-to-Teams notifications in this time period.
+
+This was due to an outage at one of our upstream dependencies, which caused HTTP 500 errors and connection resets for our Teams integration.
+
+We coordinated with the relevant service teams, and the issue was resolved at 19:51 UTC when the upstream incident was mitigated.
+
+We are working to update observability and runbooks to reduce time to mitigation for issues like this in the future.
+
+Follow our status page for real-time updates on status changes and post-incident recaps. To learn more about what we’re working on, check out the engineering section on the GitHub Blog .
+
+Tags:
+
+GitHub Availability Report
+
+Written by
+
+Jakub Oleksy
+
+@jakuboleksy

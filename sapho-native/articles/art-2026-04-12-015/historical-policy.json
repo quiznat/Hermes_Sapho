@@ -1,0 +1,13 @@
+{
+  "version": "historical-policy.v1",
+  "article_id": "art-2026-04-12-015",
+  "applies": false,
+  "source_regime": "native",
+  "publication_status": "discarded",
+  "validation_status": "pass",
+  "policy_status": "not_applicable",
+  "current_law_eligible": false,
+  "missing_law_checks": [],
+  "disposition": "native_package_outside_historical_policy_scope",
+  "reviewed_at_utc": "2026-04-12T12:25:01Z"
+}

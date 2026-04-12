@@ -1,0 +1,58 @@
+{
+  "version": "article-lineage.v1",
+  "article_id": "art-2026-04-12-012",
+  "summary_sections": {
+    "core_thesis": [
+      "claim-001"
+    ],
+    "why_it_matters": [
+      "claim-001"
+    ],
+    "key_findings": [
+      "claim-001",
+      "claim-002",
+      "claim-003",
+      "claim-004"
+    ],
+    "limits": [
+      "claim-004"
+    ]
+  },
+  "claim_ids": [
+    "claim-001",
+    "claim-002",
+    "claim-003",
+    "claim-004"
+  ],
+  "fact_ids": [
+    "fact-001",
+    "fact-002",
+    "fact-003",
+    "fact-004",
+    "fact-005",
+    "fact-006",
+    "fact-007",
+    "fact-008",
+    "fact-009",
+    "fact-010",
+    "fact-011",
+    "fact-012",
+    "fact-013"
+  ],
+  "evidence_ids": [
+    "evidence-01",
+    "evidence-02",
+    "evidence-03",
+    "evidence-04",
+    "evidence-05",
+    "evidence-06",
+    "evidence-07",
+    "evidence-08",
+    "evidence-09",
+    "evidence-10",
+    "evidence-11",
+    "evidence-12",
+    "evidence-13"
+  ],
+  "unresolved_gaps": []
+}

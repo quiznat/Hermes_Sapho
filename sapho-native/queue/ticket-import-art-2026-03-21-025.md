@@ -5,7 +5,7 @@ source_url: https://news.ycombinator.com/item?id=46934107
 canonical_url: https://news.ycombinator.com/item?id=46934107
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: discarded
 article_id: art-2026-03-21-025
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

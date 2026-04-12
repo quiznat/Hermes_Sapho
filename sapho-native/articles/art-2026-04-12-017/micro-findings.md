@@ -1,0 +1,4 @@
+- The paper's "observed exposure" measure is designed to estimate occupational AI exposure by combining theoretical task feasibility with real-world work-related Claude usage and weighting automation more heavily than augmentation.
+- Observed Claude usage is concentrated mostly in tasks that prior theory had already rated as LLM-feasible, especially fully automatable tasks.
+- In computer-related work, theoretical LLM scope substantially exceeds current observed coverage, indicating a gap between possible and realized adoption.
+- The paper finds that observed exposure, but not theoretical exposure alone, is associated with weaker projected employment growth, while near-term realized labor-market effects are limited overall and more negative for younger workers entering exposed occupations.

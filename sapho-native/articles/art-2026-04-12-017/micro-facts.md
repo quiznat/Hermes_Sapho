@@ -1,0 +1,14 @@
+- The paper defines "observed exposure" by combining theoretical LLM task capability with real-world Claude usage, giving more weight to automated and work-related uses.
+- Task-level observed exposure is built by counting theoretically capable tasks as covered when they show sufficient work-related Claude usage, weighting full automation more than augmentation, and then averaging to occupations by task time share.
+- Ninety-seven percent of tasks observed across the previous four Economic Index reports fell into task categories rated theoretically feasible by Eloundou et al. (β=0.5 or β=1.0).
+- Tasks rated β=1 account for 68% of observed Claude usage.
+- Tasks rated β=0 account for 3% of observed Claude usage.
+- In Computer & Math occupations, the Eloundou β measure indicates theoretical scope for LLM penetration in 94% of tasks.
+- Claude currently covers 33% of all tasks in the Computer & Math category.
+- Computer Programmers are the most exposed occupation under the paper's measure, with 75% coverage.
+- Data Entry Keyers have 67% coverage under the paper's measure.
+- Thirty percent of workers have zero coverage because their tasks appeared too infrequently in the data to meet the minimum threshold.
+- At the occupation level, each 10 percentage point increase in observed exposure is associated with a 0.6 percentage point lower BLS projected employment growth rate from 2024 to 2034.
+- The paper reports no correlation between BLS projected employment growth and the Eloundou et al. theoretical exposure measure alone.
+- Since the release of ChatGPT, the average change in the unemployment gap between workers in the top quartile of exposure and unexposed workers is small and statistically insignificant.
+- For workers aged 22 to 25, the paper estimates a 14% drop in the post-ChatGPT job-finding rate into exposed occupations relative to 2022, and says the estimate is barely statistically significant.

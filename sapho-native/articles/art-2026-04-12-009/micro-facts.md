@@ -1,0 +1,20 @@
+- GitHub reported four incidents in March 2026 that caused degraded performance across GitHub services.
+- On March 3, 2026, GitHub had degraded availability affecting github.com, the GitHub API, GitHub Actions, Git operations, GitHub Copilot, and other dependent services.
+- At the March 3 incident peak, github.com request failures were approximately 40% and GitHub API request failures were approximately 43%.
+- During the March 3 incident, Git operations over HTTP had an error rate of about 6%, SSH was not impacted, and GitHub Copilot requests had an error rate of about 21%.
+- GitHub Actions experienced less than 1% impact during the March 3 incident.
+- GitHub said the March 3 incident had the same underlying cause as an early-February incident involving a large volume of writes to the user settings caching mechanism.
+- A deployment intended to reduce write burden instead triggered every user's cache to expire, be recalculated, and be rewritten.
+- GitHub attributed the March 3 service impact to increased load that caused replication delays which then cascaded to affected services.
+- GitHub mitigated the March 3 incident by rolling back the faulty deployment, then said it added a killswitch and improved monitoring for the caching mechanism and planned to move that mechanism to a dedicated host.
+- On March 5, 2026, GitHub Actions was degraded between 16:24 and 19:30 UTC.
+- During the March 5 incident, 95% of workflow runs failed to start within 5 minutes and the average delay was 30 minutes.
+- During the March 5 incident, 10% of workflow runs failed with an infrastructure error.
+- GitHub attributed the March 5 Actions incident to Redis resiliency updates that introduced incorrect configuration changes in a Redis load balancer, routing internal traffic to an incorrect host.
+- GitHub said it mitigated the March 5 incident by correcting the misconfigured load balancer; Actions jobs were running successfully starting at 17:24 UTC, and the remaining incident time was spent draining the queued jobs.
+- After the March 5 incident, GitHub said it rolled back the contributing updates, froze further changes in that area, and planned automation, alerting, and Redis client configuration improvements to prevent recurrence and improve resiliency.
+- The Copilot Coding Agent service was degraded in two incidents on March 19 and March 20, 2026, during which users could not start new Copilot Agent sessions or view existing ones.
+- In the first Copilot Coding Agent incident, the average error rate was about 53% and peaked at about 93%; in the second, the average error rate was about 99% and peaked at about 100%, with significant retry amplification.
+- GitHub said both Copilot Coding Agent incidents were caused by a system authentication issue that prevented the service from connecting to its backing datastore.
+- GitHub said it mitigated each Copilot Coding Agent incident by rotating affected credentials, and it stated the second incident happened because remediation after the first incident was incomplete.
+- On March 24, 2026, GitHub's Microsoft Teams Integration and Teams Copilot Integration were unable to reliably deliver GitHub event notifications to Microsoft Teams; the average error rate was 37.4%, the peak was 90.1%, about 19% of installs failed to receive notifications during the period, and GitHub attributed the incident to an upstream dependency outage causing HTTP 500 errors and connection resets.

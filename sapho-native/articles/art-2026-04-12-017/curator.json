@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-12-017",
+  "decision": "kept",
+  "qualified_by": "vendor_technical_results",
+  "evidence_basis": "mixed",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "It presents an original empirical framework with early labor-market evidence.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-12-017\nticket_id: ticket-import-art-2026-04-12-017\ndecision: kept\nreason: It presents an original empirical framework with early labor-market evidence.\nscope_class: blog-with-data\ndecided_at_utc: 2026-04-12T12:25:55Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-12T12:29:12Z",
+  "mode": "agent"
+}

@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-12-009",
+  "reviewed_at_utc": "2026-04-12T12:20:14Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub's March 2026 incidents show distinct bounded failure mechanisms rather than one shared platform-wide cause.",
+  "review_confidence": "high",
+  "mechanism_count": 3,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "GitHub reported four incidents in March 2026 that degraded availability across different parts of its platform.",
+      "bounds": "This is a count-and-scope claim only. The evidence does not support a single mechanism across all four incidents; the reported failures span different services and failure modes."
+    },
+    {
+      "claim_text": "The March 3 incident was a broad cross-service degradation, with peak failures around 40% for github.com and 43% for the GitHub API, while impact was materially lower for Git over HTTP, Copilot, and GitHub Actions.",
+      "bounds": "The evidence supports uneven severity across services, but not a complete causal account for why some surfaces degraded far more than others."
+    },
+    {
+      "claim_text": "The March 24 Microsoft Teams integration incident reflected upstream dependency exposure rather than a fully specified internal GitHub mechanism.",
+      "bounds": "The source attributes failures to an upstream dependency outage causing HTTP 500 errors and connection resets, but does not provide a deeper causal explanation of that upstream failure."
+    }
+  ]
+}

@@ -5,7 +5,7 @@ source_url: https://huggingface.co/blog/royswastik/evaluating-agentic-ai-systems
 canonical_url: https://huggingface.co/blog/royswastik/evaluating-agentic-ai-systems-part-1
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: discarded
 article_id: art-2026-03-21-018
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

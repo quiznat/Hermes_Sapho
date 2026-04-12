@@ -1,0 +1,13 @@
+- GitHub introduced Rubber Duck in GitHub Copilot CLI in experimental mode.
+- Rubber Duck uses a second model from a different AI family to independently review the primary agent’s plans and work.
+- When the orchestrator is a Claude model, Rubber Duck is GPT-5.4.
+- In GitHub’s SWE-Bench Pro evaluation, Claude Sonnet 4.6 plus Rubber Duck running GPT-5.4 closed 74.7% of the performance gap between Sonnet and Opus.
+- GitHub says Rubber Duck tends to help more on difficult problems spanning 3 or more files and normally taking 70 or more steps.
+- On problems spanning 3 or more files and 70 or more steps, Sonnet plus Rubber Duck scored 3.8% higher than the Sonnet baseline.
+- On the hardest problems identified across three trials, Sonnet plus Rubber Duck scored 4.8% higher than the Sonnet baseline.
+- GitHub Copilot may automatically seek a Rubber Duck critique after drafting a plan.
+- GitHub Copilot may automatically seek a Rubber Duck critique after a complex implementation.
+- GitHub Copilot may automatically seek a Rubber Duck critique after writing tests and before executing them.
+- The agent may seek a Rubber Duck critique reactively when it is stuck in a loop or cannot make progress.
+- Users can request a Rubber Duck critique at any point.
+- Rubber Duck is invoked through Copilot’s existing task tool infrastructure.

@@ -1,0 +1,4 @@
+- GitHub reported four incidents in March 2026 that degraded availability across different parts of its platform.
+- The March 3 incident was a broad cross-service degradation, with peak failures around 40% for github.com and 43% for the GitHub API, while impact was materially lower for Git over HTTP, Copilot, and GitHub Actions.
+- GitHub attributed the March 3 degradation to a deployment that forced widespread cache expiry and rewrites, increasing load, causing replication delays, and cascading into multiple services.
+- Later March incidents were severe but service-specific: GitHub Actions delays on March 5 were tied to a Redis load-balancer misconfiguration, while the March 19-20 Copilot Coding Agent failures were tied to authentication problems, and the second Copilot incident followed incomplete remediation of the first.

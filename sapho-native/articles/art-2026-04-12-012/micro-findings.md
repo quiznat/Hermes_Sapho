@@ -1,0 +1,4 @@
+- GitHub introduced Rubber Duck as an experimental feature in GitHub Copilot CLI.
+- Rubber Duck works by having a second model from a different AI family independently review the primary agent's plans and work, and when the orchestrator is Claude the reviewer is GPT-5.4.
+- In GitHub's SWE-Bench Pro evaluation, Claude Sonnet 4.6 paired with Rubber Duck running GPT-5.4 closed 74.7% of the performance gap between Sonnet and Opus.
+- GitHub's reported results indicate Rubber Duck helps more on harder tasks, with Sonnet plus Rubber Duck scoring 3.8% above the Sonnet baseline on problems spanning 3 or more files and 70 or more steps, and 4.8% above baseline on the hardest problems identified across three trials.

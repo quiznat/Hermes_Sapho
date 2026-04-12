@@ -1,0 +1,25 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-12-017",
+  "reviewed_at_utc": "2026-04-12T12:29:12Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The article supports a bounded measurement claim: observed AI exposure tracks real work-related model use more closely than theory alone, but labor-market mechanism remains unproven and near-term effects are mixed.",
+  "review_confidence": "high",
+  "mechanism_count": 1,
+  "bounded_claim_count": 3,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Observed Claude usage is concentrated mostly in tasks that prior theory had already rated as LLM-feasible, especially fully automatable tasks.",
+      "bounds": "The evidence supports concentration, not a full causal explanation of why those tasks dominate; it also carries visible tension because 3% of observed usage appears in tasks rated β=0, so theoretical infeasibility does not cleanly bound real-world use."
+    },
+    {
+      "claim_text": "In computer-related work, theoretical LLM scope substantially exceeds current observed coverage, indicating a gap between possible and realized adoption.",
+      "bounds": "The evidence supports a bounded adoption claim only: theoretical scope is 94% for Computer & Math tasks while observed coverage is 33%, with some occupations reaching 75% and 67%, but the material does not justify a causal explanation for why adoption remains incomplete or uneven."
+    },
+    {
+      "claim_text": "Observed exposure, but not theoretical exposure alone, is associated with weaker projected employment growth, while near-term realized labor-market effects are limited overall and more negative for younger workers entering exposed occupations.",
+      "bounds": "The evidence supports association rather than causation; projected employment growth is weaker where observed exposure is higher, but aggregate unemployment-gap effects are small and statistically insignificant, and the youth job-finding result is only barely statistically significant."
+    }
+  ]
+}

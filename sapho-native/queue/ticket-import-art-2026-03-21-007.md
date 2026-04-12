@@ -5,7 +5,7 @@ source_url: https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordina
 canonical_url: https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository
 source_channel: runtime-replay
 queued_at_utc: '2026-03-21T06:28:15Z'
-status: captured
+status: discarded
 article_id: art-2026-03-21-007
 operator_note: Imported from canonical OpenClaw runtime via explicit-list
 ---

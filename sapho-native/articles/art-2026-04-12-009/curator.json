@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-12-009",
+  "decision": "kept",
+  "qualified_by": "novel_synthesis",
+  "evidence_basis": "benchmark",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "It reports concrete operational incidents with quantified service impact and mitigations.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-12-009\nticket_id: ticket-import-art-2026-04-12-009\ndecision: kept\nreason: It reports concrete operational incidents with quantified service impact and mitigations.\nscope_class: incident\ndecided_at_utc: 2026-04-12T12:16:02Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-12T12:20:14Z",
+  "mode": "agent"
+}
