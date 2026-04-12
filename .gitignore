@@ -54,7 +54,18 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
-# Sapho content is tracked; keep only true temp files/secrets ignored
+# Sapho content is tracked; keep only permanent code and durable article artifacts.
+# Ignore transient runtime mirrors, receipts, discovery logs, and ops/checkin surfaces.
+
+# Sapho transient state
+sapho-native/state/receipts/
+sapho-native/state/discovery/logs/
+sapho-native/state/discovery/query-yield-scoreboard.jsonl
+sapho-native/public/site/artifacts/ops/
+sapho-native/public/site/data/ops-latest.json
+sapho-native/runtime/research/factory/checkins/
+sapho-native/runtime/website/artifacts/ops/
+sapho-native/runtime/website/data/ops-latest.json
 
 # Temp files
 tmp/
