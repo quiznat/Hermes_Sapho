@@ -28,8 +28,7 @@
 .hermes/image_cache/
 .hermes/images/
 .hermes/cache/
-.hermes/cron/output/
-.hermes/cron/.tick.lock
+.hermes/cron/
 .hermes/sandboxes/
 .hermes/pairing/
 .hermes/whatsapp/
@@ -39,6 +38,9 @@
 .hermes/state.db
 .hermes/state.db-shm
 .hermes/state.db-wal
+.hermes/processes.json
+.hermes/.skills_prompt_snapshot.json
+.codex/
 
 # Hermes upstream source tree already has its own git history
 .hermes/hermes-agent/
