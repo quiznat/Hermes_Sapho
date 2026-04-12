@@ -72,6 +72,21 @@ sudo hermes gateway status --system                         # Check system servi
 
 For headless Linux servers, prefer the `--system` service over the default user service. User services often fail under `su hermes` / SSH sessions with DBus errors like `Failed to connect to bus: Permission denied`. The system service should still run as the non-root user via `--run-as-user <user>`.
 
+Another common VPS pitfall: both the user gateway service and the system gateway service may be installed at the same time. Hermes will warn that this makes gateway start/stop/status behavior ambiguous, because plain gateway commands default to the user service unless `--system` is passed. If that happens, verify the real service with:
+
+```bash
+/home/hermes/.local/bin/hermes gateway status --system
+systemctl status hermes-gateway --no-pager -l
+```
+
+If the system service is the intended one, remove the duplicate user service from the Hermes account:
+
+```bash
+/home/hermes/.local/bin/hermes gateway uninstall
+```
+
+Then continue managing only the system service with `systemctl` or `hermes gateway ... --system`.
+
 ### Linux server / VPS note
 
 On headless servers, prefer a system service over a user service:

@@ -158,6 +158,50 @@ A good audit should end with:
 5. preserve/replace recommendations
 6. phased plan that starts with the narrow seam, not a full rewrite
 
+## Important Sapho/OpenClaw scanner finding from rollout
+
+When the user asks what remains in the old scanned-but-not-curated backlog, do not inspect only the local `queue/` directory in the replacement workspace.
+That can be misleading because the replacement workspace may contain only already-imported ticket records.
+
+For the old live runtime, the real scanner/check-in path was:
+- `/home/openclaw/.openclaw/workspace/research/factory/scripts/factory_article_checkin.py`
+
+Its canonical output was:
+- `/home/openclaw/.openclaw/workspace/research/factory/checkins/article-checkin-latest.json`
+
+Important fields in that check-in payload:
+- `statusCounts`
+- `processableNonXPending`
+- `pendingX`
+- `stalledPendingArticles`
+- `missingSourceCustodyArticleIds`
+- `recommendedAction`
+
+Important implementation detail discovered in practice:
+- the replacement importer fallback uses `stalledPendingArticles`, not the full pending set, when loading from the check-in path
+- see the old/new `import_runtime_backlog.py` logic that falls back from front-half reports to `article-checkin-latest.json`
+
+Good recovery pattern when auditing leftover intake candidates:
+1. Read `article-checkin-latest.json`
+2. Extract `stalledPendingArticles`
+3. Compare those article ids against the replacement workspace:
+   - `articles/<article_id>/article.md`
+   - `queue/ticket-import-<article_id>.md`
+4. Split the result into:
+   - already imported/resolved locally
+   - unseen / not yet imported locally
+5. Report only the unseen set as the real leftover ingestion candidates
+
+Practical warning from rollout:
+- the old runtime may report a very large pending count (for example 100+), while the replacement workspace has already resolved many of them
+- do not mistake the old global pending count for the actual remaining import set
+- the right answer is the set difference between old `stalledPendingArticles` and locally imported article/ticket ids
+
+Additional implementation finding from rollout:
+- if the importer decides whether it can read old-runtime files directly by uid, verify the actual service user uid on the box
+- a too-narrow allowlist can wrongly force `sudo` and fail with `sudo: a password is required` even though the current user already has direct access
+- in Sapho this mattered when `import_runtime_backlog.py` only allowed `{0,1000}` and needed to include the real `hermes` uid too
+
 ## Example outcome pattern
 
 For a live research-publishing rail, a strong conclusion often looks like:

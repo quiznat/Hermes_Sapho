@@ -669,6 +669,13 @@ Recommended pattern:
   - each article's `historical-policy.json`
   - for blocked/discarded outcomes, include `micro-worthiness.md` too
 
+A useful backlog-selection pattern discovered in later imported-batch processing:
+- when the queue contains a mix of already-remediated articles and untouched imported leftovers, identify the next explicit batch by finding imported articles whose latest `git log --follow -- articles/<id>/article.md` entry is still only the import commit (for example `424902b sapho: import 44 leftover stalled runtime items`)
+- this gives a reliable list of untouched backlog items even when many other imported articles already have later replay commits or website-publication commits
+- then take the next 6 such untouched ids in sorted order as the next backlog batch
+
+This worked well for the later 6-item batches because it avoided accidentally reprocessing already-remediated articles that still looked imported at a metadata level.
+
 This proved important in practice because the operator wanted to click straight into GitHub to review each regenerated artifact without asking for paths to be converted into links afterward.
 
 Good outcomes to expect in healthy batches:
@@ -862,7 +869,126 @@ Practical batch-handling guidance:
 - record the failed article id explicitly as a replay transport blocker
 - fix the transport bug before widening to the next set of similarly large historical packages
 
-### 13. Historical replay can hit OS argv limits on large one-shot assignments
+### 13. Task-runner retry noise can falsely fail otherwise valid persona outputs
+
+A later backlog-processing slice exposed a task-runner classification bug in the Hermes seam.
+
+### 13.5. Hermes activity-feed shell echo can leak into cleaned receipts and break frontmatter parsing
+
+A later remediation batch exposed a new Hermes CLI chrome leak in the task-runner seam.
+
+Observed failure mode:
+- `normalize_output(...)` already stripped banner box-drawing lines and common emoji noise lines
+- but Hermes activity-feed shell echo lines like:
+  - `┊ 💻 $ date -u ...`
+- were still surviving in `clean_output`
+- Curator receipts then began with that shell-echo line instead of `---`
+- downstream parsers failed closed with errors like:
+  - `ValueError: missing_frontmatter`
+
+Why this matters:
+- the underlying Curator output can be perfectly valid
+- but one leaked activity-feed line at the top makes the whole receipt unusable
+- this failure can suddenly appear after CLI display changes even when Sapho prompts/jobs are unchanged
+
+Fix that worked:
+- broaden task-runner chrome stripping so the activity-feed prefix is treated as display noise too
+- in practice, extending the box-drawing/noise prefix filtering to drop lines beginning with `┊` fixed the replay path
+- keep a regression test with a raw payload that starts with:
+  - `┊ 💻 $ ...`
+  - followed by valid frontmatter
+- assert normalized output starts directly at the receipt frontmatter
+
+Operational rule:
+- if Curator/Extractor/Synthesist suddenly fail with `missing_frontmatter`, inspect the latest task-runner receipt JSON before changing prompts
+- treat leading shell/activity-feed text as a transport/display bug class first
+
+### 13.6. Duplicate extractor receipts can survive deduping when the second copy ends with a stray closing fence
+
+Another remediation slice exposed a subtler Extractor replay failure.
+
+Observed failure mode:
+- Extractor sometimes returned the same receipt twice in one response
+- the second copy could end with an extra trailing closing fence like:
+  - ````` ``` `````
+- or the final evidence block could arrive without its closing fence at end-of-response
+- `normalize_output(...)` and the evidence parser could then fail to collapse or fully parse the duplicate payload
+- downstream result looked like:
+  - `extractor_evidence_count_mismatch`
+  - or, in some cases, a false `bounded_or_tension_evidence_missing_note`
+  because the parser accidentally consumed the start of the duplicate receipt inside the final evidence block
+
+Fixes that worked:
+- harden `_collapse_exact_duplicate_payload(...)` so it recognizes duplicated receipts by receipt-signature, not only by first-line heuristics
+- allow the duplicate-tail case where the second copy is identical except for a trailing stray closing fence
+- harden `article_job_runtime._CODE_BLOCK_RE` so the final evidence block can still be parsed when the closing fence is missing at end-of-response, or when the next receipt starts immediately after it
+- add regression tests for both:
+  1. duplicate extractor receipt + stray trailing fence
+  2. final evidence block with no closing fence
+
+Prompt hardening that also helped:
+- strengthen `jobs/extractor/evidence.md` to explicitly say the final evidence file must end with a closing fence before stopping
+
+Operational rule:
+- if replay fails with `extractor_evidence_count_mismatch` on an otherwise plausible receipt, inspect the stored extractor task-run receipt before editing article logic
+- first check for duplicated receipts, trailing stray fences, or an unclosed final evidence block
+
+### 13.7. Duplicate-rejected replay paths must refresh structured policy and publication-authority surfaces
+
+A later batch exposed a policy-surface drift bug in the duplicate path.
+
+Observed failure mode:
+- an article could be replayed into `publication_status: duplicate-rejected`
+- but if the duplicate branch returned early after writing only `article.md`, the older structured outputs could remain in place
+- this left stale artifacts such as:
+  - `historical-policy.json` still saying `current_law_compliant`
+  - `publication-authority.json` still saying `verdict: pass`
+- the visible article body looked correctly blocked, but the canonical machine-readable legality surfaces were stale and wrong
+
+Fix that worked:
+- in the duplicate-rejected branch of `run_micro_article_lane.py`, materialize the structured bundle before returning, just like the discarded path
+- set terminal-state metadata first (`publication_status`, duplicate fields, zero counts as appropriate), then call `materialize_article_structured_bundle(...)`
+- add a lane-level regression test asserting that a duplicate-rejected replay refreshes:
+  - `historical-policy.json -> blocked_not_publishable`
+  - `validation.json` remains structurally pass for the resolved duplicate surface
+  - `publication-authority.json` blocks publication
+
+Operational rule:
+- any terminal blocked path (`discarded`, `capture-blocked`, `duplicate-rejected`) must rewrite the canonical structured/policy/authority surfaces before returning
+- otherwise the visible article and the legal machine surfaces can drift apart
+
+Observed failure mode:
+- the provider could emit transient retry noise like:
+  - `API call failed (attempt 1/3): RemoteProtocolError`
+  - `Retrying in 2s...`
+- then still return a valid final Curator/Extractor/Synthesist payload in the same raw output
+- `normalize_output(...)` would correctly recover the valid payload
+- but `classify_status(...)` still marked the run as `error` because it inspected the raw output for failure text
+- the lane then failed closed with `backend_output_error` even though the final cleaned payload was usable
+
+Fix that worked:
+- treat the cleaned payload as authoritative for success/failure classification
+- keep `looks_like_backend_failure(clean_output)` as a hard failure
+- but do not mark the run `error` just because `raw_output` contains retry noise if `clean_output` is non-empty and valid
+- preserve the hard failure case when raw output contains backend failure text and the cleaned output is empty
+
+Practical implementation shape:
+- in `task_runner.classify_status(...)`:
+  - fail on explicit `error`
+  - fail if `clean_output` itself still looks like backend failure text
+  - fail if raw output looks like backend failure text and `clean_output` is empty
+  - otherwise allow success classification to proceed
+
+Verification to add:
+1. a regression test where raw output contains retry/failure lines plus a valid final receipt payload and status becomes `ok`
+2. keep the existing regression where pure backend failure text with no valid payload still becomes `error`
+
+Why this matters operationally:
+- once the rail is stable enough to run larger 6-item batches, transient upstream retry noise is more likely to appear
+- if the runner treats every noisy-but-recovered output as fatal, batch throughput drops for the wrong reason
+- the fix preserves fail-closed behavior for real failures while allowing successful recovered runs to count
+
+### 14. Historical replay can hit OS argv limits on large one-shot assignments
 
 A later remediation batch exposed another replay-path failure class:
 - historical packages with large captured sources can build very large one-shot assignments for Curator / Extractor / Synthesist
@@ -938,7 +1064,57 @@ Practical example from rollout:
 - `art-2026-03-21-013` initially failed replay despite surfacing benchmark-specific percentages
 - after patching the detector and adding a regression test, replay succeeded and the package moved to `current_law_compliant`
 
-### 15. Batch remediation reporting should include direct GitHub review links
+### 15. Formal publication authority should be a canonical gate layer, not scattered status checks
+
+A later roadmap slice clarified an important architectural gap:
+- `validation.json` existing is not the same thing as having a formal publication-authority layer
+- artifact publication and Daily publication can still rely on scattered checks such as `publication_status`, artifact-current checks, or Conclave output parsing in individual scripts
+- this leaves Hermes/Piter and downstream site/render flows operating over an implicit state machine instead of one explicit authority surface
+
+What the formal gate should do:
+- evaluate article-level publication authority from canonical package surfaces
+- evaluate Daily-level publication authority from article authority + Conclave verdict + artifact-current checks
+- write durable decision objects such as `publication-authority.json`
+- fail closed before publication-state mutation when authority does not pass
+
+A good implementation pattern that worked:
+- add a dedicated module such as `scripts/publication_authority.py`
+- for article scope, require at minimum:
+  - `publication_status` is in a publishable state like `ready-for-daily` or `published`
+  - `validation.json.overall_status == pass`
+  - if `historical-policy.json` applies, `current_law_eligible` must be true
+- for Daily scope, require at minimum:
+  - every included article passes article authority
+  - every included article has current artifact publication state
+  - Conclave verdict is `pass`
+- write the authority decision to:
+  - `articles/<article_id>/publication-authority.json`
+  - `daily/<date>/publication-authority.json`
+
+Important wiring rule:
+- `run_micro_artifact_publish.py` should assert article publication authority before publishing artifact surfaces
+- `run_micro_daily.py` should assert daily publication authority after Conclave verdict is produced and before mutating articles to `published`
+- this turns authority into a true gate instead of a descriptive afterthought
+
+Important parser hardening discovered in the same slice:
+- if the Conclave prompt requires dossier frontmatter like:
+  - `verdict: pass|block|withdraw`
+- then the runtime parser must accept frontmatter-style verdict lines, not only plain leading `PASS` / `BLOCK` text
+- otherwise the prompt contract and runtime parser drift apart in a brittle way
+
+Recommended tests to add:
+1. article authority blocks on failed `validation.json`
+2. article authority blocks on `historical-policy.json.current_law_eligible == false`
+3. Daily authority blocks when an included article's artifact publication is not current
+4. Daily authority passes only when article authority passes and Conclave verdict is `pass`
+5. gate parser accepts dossier frontmatter lines like `verdict: pass`
+
+Why this matters:
+- it gives Hermes/Piter a canonical legal/control surface to watch and explain
+- it makes Website 2.0 and later publication surfaces render from explicit authority rather than inferred status
+- it closes the gap between "validators exist" and "Conclave/publication authority is truly formalized"
+
+### 16. Batch remediation reporting should include direct GitHub review links
 
 A user workflow correction changed the preferred reporting format for historical remediation batches:
 - do not only report statuses and local paths
@@ -959,6 +1135,79 @@ Recommended response pattern after each committed batch:
 - attach the clickable GitHub links under each article so the user can browse immediately
 
 This is not just presentation polish; it materially improves operator review speed for GitHub-visible artifact packages.
+
+### 17. Hermes task-runner output can regress by leaking activity-feed shell echoes into receipts
+
+A later remediation batch exposed a Hermes-seam parser failure that is worth checking immediately if Curator or Extractor suddenly starts failing on `missing_frontmatter` despite apparently successful runs.
+
+Observed failure mode:
+- task receipts contained a leading activity-feed shell line such as:
+  - `┊ 💻 $         date -u +"%Y-%m-%dT%H:%M:%SZ"  0.6s`
+- the actual Curator/Extractor receipt followed underneath and was otherwise valid
+- `normalize_output(...)` did not strip the line because it only knew classic box-drawing chrome and not the activity-feed prefix
+- downstream `parse_markdown(...)` then failed with:
+  - `missing_frontmatter`
+
+Practical fix that worked:
+- treat the activity-feed prefix `┊` as Hermes CLI chrome in `task_runner.normalize_output(...)`
+- keep the cleaned payload starting at the first real frontmatter line, not at the shell echo
+- add a regression test with a leading `┊ 💻 $ ...` line before a valid receipt and assert the normalized output starts with the receipt frontmatter
+
+Operational rule:
+- when a replay suddenly fails at Curator with `missing_frontmatter`, inspect the latest task-run receipt before blaming the persona contract
+- if the receipt body is present but preceded by Hermes activity-feed noise, patch normalization first
+
+### 18. Duplicate-rejected replay paths must refresh structured policy and authority surfaces
+
+A later batch exposed an important terminal-state drift bug.
+
+Observed failure mode:
+- an imported article replayed into `duplicate-rejected`
+- `article.md` was updated to the duplicate-rejected terminal surface
+- but `historical-policy.json` and `publication-authority.json` were left stale from the previous lawful run
+- this incorrectly left the package looking `current_law_compliant` even though it was now blocked from publication
+
+Practical fix that worked:
+- in the duplicate-conflict branch of `run_micro_article_lane.py`, do not only rewrite `article.md`
+- also:
+  - set terminal metadata such as `publication_status`, `duplicate_of_article_id`, and duplicate timestamp
+  - zero `evidence_count` / `claim_count` for the blocked terminal surface
+  - call `materialize_article_structured_bundle(...)` with the duplicate-rejected body before returning
+- this refreshes:
+  - `validation.json`
+  - `historical-policy.json`
+  - downstream `publication-authority.json` when reevaluated
+
+Expected terminal outcome after the fix:
+- `publication_status: duplicate-rejected`
+- `historical-policy.json.policy_status: blocked_not_publishable`
+- article publication authority verdict: `block`
+
+Recommended verification:
+- add a lane-level regression test where Curator keeps but `find_kept_canonical_conflict(...)` returns a duplicate
+- assert the article becomes `duplicate-rejected`
+- assert `historical-policy.json` changes to `blocked_not_publishable`
+- assert validation still passes the duplicate check as a correctly blocked package
+
+### 19. Extractor receipt parsing should tolerate a missing closing fence on the final evidence block
+
+A later batch exposed another replay-path fragility in Extractor receipt parsing.
+
+Observed failure mode:
+- the final evidence block in an Extractor receipt could be otherwise complete but omit the closing triple-backtick at end-of-response
+- `_CODE_BLOCK_RE` expected every block to end with an explicit closing fence
+- result:
+  - the last evidence unit was silently dropped during parsing
+  - `parse_evidence_receipt_files(...)` returned one fewer evidence item than the declared count
+  - the lane failed closed with `extractor_evidence_count_mismatch`
+
+Practical fixes that worked:
+- tighten the Extractor prompt to explicitly say the final evidence block must also close before stopping
+- harden `_CODE_BLOCK_RE` / receipt parsing so the final block can still be parsed when it reaches end-of-string without the closing fence
+- add a regression test where the last block lacks the final closing fence and parsing still returns the full evidence list
+
+Operational rule:
+- when Extractor fails with `extractor_evidence_count_mismatch` and the receipt visually looks almost correct, inspect whether the last block was dropped due to a missing final fence before assuming the evidence count itself is wrong
 
 ### 13. When replay surfaces a clear contract bug, fix it proactively before continuing the batch
 
