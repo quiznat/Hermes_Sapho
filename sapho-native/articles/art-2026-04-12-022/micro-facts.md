@@ -1,0 +1,14 @@
+- The method scores incoming knowledge objects using source reputation, novelty, and source reliability, without oracle access to ground-truth quality labels.
+- Objects below the salience threshold are archived in cold storage rather than deleted.
+- When new content updates a concept, the system links old and new objects through supersession links instead of overwriting.
+- The main synthetic benchmark used 50 knowledge objects: 10 correct facts and 40 distractors.
+- In the ungated condition on the synthetic benchmark, accuracy was 13.3% ± 4.7%.
+- With write gating on the synthetic benchmark, 12–14 objects were admitted and accuracy reached 100% ± 0%.
+- In the temporal-query experiment, the archive-with-lineage system achieved 100% accuracy and the overwrite system achieved 0% accuracy on prior-state queries.
+- On the synthetic read-time filtering comparison, write gating reached 100.0% ± 0.0%, Self-RAG reached 93.8% ± 6.3%, and combining write gating with Self-RAG also yielded 93.8% ± 6.3%.
+- At an 8:1 distractor ratio in the synthetic scaling experiment, ungated retrieval scored 0%, Self-RAG scored 0%, and write gating scored 100%.
+- On Wikipedia facts at a 4:1 distractor ratio, write gating achieved 98.1% ± 1.1% accuracy versus 85.2% ± 2.0% for ungated retrieval.
+- On Wikipedia at 4:1, removing the source label signal reduced write-gated accuracy from 97.8% ± 1.1% to 96.4% ± 1.4%.
+- On procedural pharmacology data at 8:1, ungated retrieval scored 32.0% ± 4.0%, write gating scored 96.6% ± 1.6%, and Self-RAG scored 80.2% ± 2.1%.
+- On 2026 arXiv papers at 8:1, ungated retrieval scored 45.2% ± 2.0%, write gating scored 93.6% ± 3.2%, and Self-RAG scored 83.2% ± 1.6%.
+- The paper states that with k=8 retrieved passages, Self-RAG uses 9 LLM calls per query versus 1 for write gating, and it also states that its evaluation uses limited sample sizes and a Self-RAG-style prompted critic rather than the trained Self-RAG model.

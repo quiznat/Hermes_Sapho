@@ -156,6 +156,10 @@ a/20260411002.html
 a/20260411003.html
 a/20260411004.html
 a/20260411005.html
+a/20260412001.html
+a/20260412002.html
+a/20260412003.html
+a/20260413001.html
 agents-start-here.html
 artifacts/data/index.json
 artifacts/data/lane-a-diy-prosumer-agentic-research-2026-03-01.jsonl
@@ -271,6 +275,10 @@ artifacts/kb/queue/queue-20260411002-from-llm-reasoning-to-autonomous-ai-agents-
 artifacts/kb/queue/queue-20260411003-how-do-agentic-ai-systems-address-performance-optimizations-a-bertopic-based-analysis-of-pull-requests.md
 artifacts/kb/queue/queue-20260411004-kimi-k2-5-tech-blog-visual-agentic-intelligence.md
 artifacts/kb/queue/queue-20260411005-autonomous-evaluation-and-refinement-of-digital-agents.md
+artifacts/kb/queue/queue-20260412001-github-availability-report-march-2026-the-github-blog.md
+artifacts/kb/queue/queue-20260412002-github-copilot-cli-combines-model-families-for-a-second-opinion.md
+artifacts/kb/queue/queue-20260412003-labor-market-impacts-of-ai-a-new-measure-and-early-evidence.md
+artifacts/kb/queue/queue-20260413001-selective-memory-for-artificial-intelligence-write-time-gating-with-hierarchical-archiving.md
 artifacts/kb/queue/queue-art-2026-03-01-001-darwinian-evolver.md
 artifacts/kb/queue/queue-art-2026-03-01-006-taste-skill.md
 artifacts/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md
@@ -811,6 +819,10 @@ s/20260411002.html
 s/20260411003.html
 s/20260411004.html
 s/20260411005.html
+s/20260412001.html
+s/20260412002.html
+s/20260412003.html
+s/20260413001.html
 site-files.json
 site-files.txt
 viewer.html

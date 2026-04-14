@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-13-008",
+  "decision": "discarded",
+  "qualified_by": "none",
+  "evidence_basis": "none",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "The source capture failed and no empirical or operational evidence is visible.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-13-008\nticket_id: ticket-import-art-2026-04-13-008\ndecision: discarded\nreason: The source capture failed and no empirical or operational evidence is visible.\nscope_class: other\ndecided_at_utc: 2026-04-13T13:09:14Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-13T13:09:28Z",
+  "mode": "agent"
+}

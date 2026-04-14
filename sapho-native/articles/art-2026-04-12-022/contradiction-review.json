@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-04-12-022",
+  "reviewed_at_utc": "2026-04-13T13:05:41Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Write gating shows strong gains, but its comparison to Self-RAG remains bounded by a weaker evaluation setup and by cases where extra read-time filtering made results worse.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

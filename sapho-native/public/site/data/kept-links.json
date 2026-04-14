@@ -1,17 +1,109 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-11T23:29:55Z",
-  "generatedAtUtc": "2026-04-11T23:29:55Z",
-  "processedCount": 50,
-  "decisionedCount": 50,
-  "keptCount": 50,
+  "last_updated": "2026-04-14T23:38:15Z",
+  "generatedAtUtc": "2026-04-14T23:38:15Z",
+  "processedCount": 54,
+  "decisionedCount": 54,
+  "keptCount": 54,
   "decisionCounts": {
-    "retain": 50
+    "retain": 54
   },
   "laneCounts": {
-    "agent-factory": 50
+    "agent-factory": 54
   },
   "items": [
+    {
+      "id": "pub-20260413001",
+      "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving",
+      "displayTitle": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving",
+      "summary": "The paper argues that memory quality can be improved upstream, at write time, rather than mainly at retrieval time. By scoring incoming knowledge for salience and admitting only a small subset into the active store while archiving lower-salience and superseded material with line\u2026",
+      "url": "https://arxiv.org/abs/2603.15994",
+      "dailyDate": "2026-04-13",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-13T13:05:18Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260413001-selective-memory-for-artificial-intelligence-write-time-gating-with-hierarchical-archiving.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260413001-selective-memory-for-artificial-intelligence-write-time-gating-with-hierarchical-archiving.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260412003",
+      "title": "Labor market impacts of AI: A new measure and early evidence",
+      "displayTitle": "Labor market impacts of AI: A new measure and early evidence",
+      "summary": "This paper argues that labor-market analysis improves when AI exposure is measured through realized, work-related model use rather than theoretical capability alone. Its central move is to build an \"observed exposure\" metric that counts tasks as exposed when they are both LLM-fe\u2026",
+      "url": "https://www.anthropic.com/research/labor-market-impacts",
+      "dailyDate": "2026-04-12",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-12T12:28:28Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260412003-labor-market-impacts-of-ai-a-new-measure-and-early-evidence.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260412003-labor-market-impacts-of-ai-a-new-measure-and-early-evidence.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260412002",
+      "title": "GitHub Copilot CLI combines model families for a second opinion",
+      "displayTitle": "GitHub Copilot CLI combines model families for a second opinion",
+      "summary": "GitHub is testing an explicit cross-family review layer inside Copilot CLI: a primary coding agent can hand its plan or work to a second model from a different model family for independent critique, and GitHub reports that this setup materially narrows the performance gap on a h\u2026",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion",
+      "dailyDate": "2026-04-12",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-12T12:23:06Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260412002-github-copilot-cli-combines-model-families-for-a-second-opinion.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260412002-github-copilot-cli-combines-model-families-for-a-second-opinion.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
+    {
+      "id": "pub-20260412001",
+      "title": "GitHub availability report: March 2026 - The GitHub Blog",
+      "displayTitle": "GitHub availability report: March 2026 - The GitHub Blog",
+      "summary": "GitHub reported four separate availability incidents in March 2026, with one broad platform degradation on March 3 and later incidents that were narrower but still severe. The report supports a specific operating lesson: platform instability did not come from one repeating globa\u2026",
+      "url": "https://github.blog/news-insights/company-news/github-availability-report-march-2026",
+      "dailyDate": "2026-04-12",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-12T12:19:22Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260412001-github-availability-report-march-2026-the-github-blog.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260412001-github-availability-report-march-2026-the-github-blog.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260411005",
       "title": "Autonomous Evaluation and Refinement of Digital Agents",

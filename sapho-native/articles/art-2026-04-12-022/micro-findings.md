@@ -1,0 +1,4 @@
+- On the main synthetic benchmark, write gating admitted 12-14 of 50 knowledge objects and reached 100.0% ± 0.0% accuracy, versus 13.3% ± 4.7% for ungated retrieval.
+- Preserving low-salience and updated knowledge through cold storage plus supersession links enabled 100% accuracy on prior-state temporal queries, while an overwrite design scored 0%.
+- In distractor-heavy evaluations, write gating outperformed ungated retrieval and usually outperformed the paper's Self-RAG comparison across synthetic scaling, Wikipedia, procedural pharmacology, and 2026 arXiv datasets.
+- The source-label signal contributed only a modest accuracy gain on Wikipedia at 4:1 distractors, reducing write-gated accuracy from 97.8% ± 1.1% to 96.4% ± 1.4% when removed.

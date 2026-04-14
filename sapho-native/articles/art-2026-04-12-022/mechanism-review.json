@@ -1,0 +1,17 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-12-022",
+  "reviewed_at_utc": "2026-04-13T13:06:04Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Write-time gating appears to improve distractor-heavy memory retrieval, while archive-plus-lineage preserves prior-state access, but the mechanism claims remain bounded to the paper's evaluated settings.",
+  "review_confidence": "medium",
+  "mechanism_count": 3,
+  "bounded_claim_count": 1,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "The source-label signal contributed only a modest gain on Wikipedia at 4:1 distractors.",
+      "bounds": "The evidence shows source reputation and reliability are part of scoring and that removing source labels reduced accuracy only modestly in one Wikipedia setting; this supports only the bounded claim that source labels were helpful but not the sole driver there, not a stronger claim about the full scoring function across domains."
+    }
+  ]
+}

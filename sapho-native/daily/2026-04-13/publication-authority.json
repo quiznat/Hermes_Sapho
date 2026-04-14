@@ -1,0 +1,21 @@
+{
+  "version": "publication-authority.v1",
+  "scope": "daily",
+  "date": "2026-04-13",
+  "evaluated_at_utc": "2026-04-13T23:39:16Z",
+  "conclave_verdict": "block",
+  "article_ids": [
+    "art-2026-04-12-022"
+  ],
+  "article_decisions": [
+    {
+      "article_id": "art-2026-04-12-022",
+      "verdict": "pass",
+      "reasons": []
+    }
+  ],
+  "verdict": "block",
+  "reasons": [
+    "conclave_verdict:block"
+  ]
+}

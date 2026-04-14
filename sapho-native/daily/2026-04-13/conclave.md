@@ -1,0 +1,20 @@
+---
+version: conclave.v1
+date: '2026-04-13'
+generated_at_utc: '2026-04-13T23:39:16Z'
+verdict: block
+mode: agent
+---
+BLOCK
+
+The package is directionally coherent, but not publication-ready from the provided dossier because it shows visible assembly defects and an overly thin evidentiary base for its strength of recommendation. The duplicated Technical Executive Report and duplicated Executive Brief materially weaken trust and editorial coherence, and the package rests on a single article while making system-design implications that, though bounded, still read more confidently than the dossier fully earns.
+
+- Visible duplication makes the package look insufficiently checked.
+- One-article support is too narrow for a strong architectural takeaway without more explicit caveating.
+BLOCK
+
+The package is directionally coherent, but not publication-ready from the provided dossier because it shows visible assembly defects and an overly thin evidentiary base for its strength of recommendation. The duplicated Technical Executive Report and duplicated Executive Brief materially weaken trust and editorial coherence, and the package rests on a single article while making system-design implications that, though bounded, still read more confidently than the dossier fully earns.
+
+- Visible duplication makes the package look insufficiently checked.
+- One-article support is too narrow for a strong architectural takeaway without more explicit caveating.
+- Publication trust is harmed more by coherence defects than by the underlying signal quality.
