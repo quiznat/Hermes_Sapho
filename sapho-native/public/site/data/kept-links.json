@@ -1,17 +1,40 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-14T23:38:15Z",
-  "generatedAtUtc": "2026-04-14T23:38:15Z",
-  "processedCount": 54,
-  "decisionedCount": 54,
-  "keptCount": 54,
+  "last_updated": "2026-04-25T22:31:26Z",
+  "generatedAtUtc": "2026-04-25T22:31:26Z",
+  "processedCount": 55,
+  "decisionedCount": 55,
+  "keptCount": 55,
   "decisionCounts": {
-    "retain": 54
+    "retain": 55
   },
   "laneCounts": {
-    "agent-factory": 54
+    "agent-factory": 55
   },
   "items": [
+    {
+      "id": "pub-20260415001",
+      "title": "How exposed is your code? Find out in minutes\u2014for free - The GitHub Blog",
+      "displayTitle": "How exposed is your code? Find out in minutes\u2014for free - The GitHub Blog",
+      "summary": "GitHub is positioning Code Security Risk Assessment as a fast, free entry-point security scan for organizations: a one-click, CodeQL-based pass over up to 20 of the most active repositories that produces an exposure dashboard rather than a full organizational audit. The practica\u2026",
+      "url": "https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free",
+      "dailyDate": "2026-04-15",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-15T13:04:59Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260415001-how-exposed-is-your-code-find-out-in-minutes-for-free-the-github-blog.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260415001-how-exposed-is-your-code-find-out-in-minutes-for-free-the-github-blog.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260413001",
       "title": "Selective Memory for Artificial Intelligence: Write-Time Gating with Hierarchical Archiving",

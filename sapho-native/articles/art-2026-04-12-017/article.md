@@ -20,6 +20,10 @@ extracted_at_utc: '2026-04-12T12:28:28Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
+artifact_publication_alias: '20260412003'
+artifact_publication_status: published
+artifact_publication_minted_at_utc: '2026-04-12T12:28:28Z'
+artifact_publication_published_at_utc: '2026-04-25T22:31:22Z'
 ---
 # Labor market impacts of AI: A new measure and early evidence
 
