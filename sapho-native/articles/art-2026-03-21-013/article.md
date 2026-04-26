@@ -23,6 +23,10 @@ extracted_at_utc: '2026-04-04T04:37:41Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
+artifact_publication_alias: '20260324002'
+artifact_publication_status: published
+artifact_publication_minted_at_utc: '2026-04-04T04:37:41Z'
+artifact_publication_published_at_utc: '2026-04-26T01:00:29Z'
 ---
 # Top Coding Agents (2025) | Benched.ai
 

@@ -21,6 +21,10 @@ extracted_at_utc: '2026-04-12T12:23:06Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
+artifact_publication_alias: '20260412002'
+artifact_publication_status: published
+artifact_publication_minted_at_utc: '2026-04-12T12:23:06Z'
+artifact_publication_published_at_utc: '2026-04-26T01:00:22Z'
 ---
 # GitHub Copilot CLI combines model families for a second opinion
 

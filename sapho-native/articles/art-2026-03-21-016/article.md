@@ -24,6 +24,10 @@ extracted_at_utc: '2026-04-04T04:47:18Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
+artifact_publication_alias: '20260324005'
+artifact_publication_status: published
+artifact_publication_minted_at_utc: '2026-04-04T04:47:18Z'
+artifact_publication_published_at_utc: '2026-04-26T01:00:24Z'
 ---
 # What are popular AI coding benchmarks actually measuring? - nilenso blog
 

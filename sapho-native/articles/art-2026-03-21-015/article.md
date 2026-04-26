@@ -24,6 +24,10 @@ extracted_at_utc: '2026-04-04T04:44:13Z'
 extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
+artifact_publication_alias: '20260324004'
+artifact_publication_status: published
+artifact_publication_minted_at_utc: '2026-04-04T04:44:13Z'
+artifact_publication_published_at_utc: '2026-04-26T01:00:26Z'
 ---
 # #1 open-source agent on SWE-Bench Verified by combining Claude 3.7 and O1 | Augment Code
 

@@ -7,7 +7,7 @@
   <li><strong>Source captured:</strong> 2026-03-07T19:27:21Z</li>
   <li><strong>Curated:</strong> 2026-04-02T23:38:47Z</li>
   <li><strong>Artifact finalized:</strong> 2026-04-02T23:41:12Z</li>
-  <li><strong>Artifact published:</strong> 2026-03-30T06:50:03Z</li>
+  <li><strong>Artifact published:</strong> 2026-04-26T01:00:31Z</li>
 </ul>
 </div>
 </details>

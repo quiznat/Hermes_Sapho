@@ -26,8 +26,8 @@ findings_mode: agent
 summary_mode: agent
 artifact_publication_alias: '20260304035'
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-30T06:17:33Z'
-artifact_publication_published_at_utc: '2026-03-30T06:50:03Z'
+artifact_publication_minted_at_utc: '2026-04-02T23:41:12Z'
+artifact_publication_published_at_utc: '2026-04-26T01:00:31Z'
 ---
 # Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 
