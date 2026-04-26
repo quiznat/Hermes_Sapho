@@ -25,8 +25,8 @@ extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-28T17:48:24Z'
-artifact_publication_published_at_utc: '2026-03-29T03:09:02Z'
+artifact_publication_minted_at_utc: '2026-04-02T15:37:05Z'
+artifact_publication_published_at_utc: '2026-04-26T02:22:10Z'
 artifact_publication_alias: '20260303008'
 ---
 # When AGENTS.md Backfires: What a New Study Says About Context Files and Coding Agents
