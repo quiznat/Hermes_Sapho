@@ -24,8 +24,8 @@ extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-27T17:40:46Z'
-artifact_publication_published_at_utc: '2026-03-28T00:19:32Z'
+artifact_publication_minted_at_utc: '2026-04-02T15:31:04Z'
+artifact_publication_published_at_utc: '2026-04-26T02:55:07Z'
 artifact_publication_alias: '20260303002'
 ---
 # Agent READMEs: An Empirical Study of Context Files for Agentic Coding

@@ -25,8 +25,8 @@ extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-27T17:37:36Z'
-artifact_publication_published_at_utc: '2026-03-28T00:19:30Z'
+artifact_publication_minted_at_utc: '2026-04-02T03:21:03Z'
+artifact_publication_published_at_utc: '2026-04-26T02:55:11Z'
 artifact_publication_alias: '20260303001'
 ---
 # Repository-level context files mostly add cost and activity overhead rather than improving coding-agent success

@@ -24,8 +24,8 @@ extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-27T17:34:43Z'
-artifact_publication_published_at_utc: '2026-03-28T00:19:28Z'
+artifact_publication_minted_at_utc: '2026-04-02T04:05:42Z'
+artifact_publication_published_at_utc: '2026-04-26T02:55:10Z'
 alternate_source_urls:
 - https://research.google/blog/towards-a-science-of-scaling-agent-systems-when-and-why-agent-systems-work
 work_identity: work:scaling-agent-systems-2512.08296
