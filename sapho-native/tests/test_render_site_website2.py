@@ -64,6 +64,12 @@ class RenderSiteWebsite2Tests(unittest.TestCase):
             with patch.object(render_site, "PUBLIC_DIR", public_dir), patch.dict(os.environ, {"SAPHO_SITE_MODE": "github-pages"}, clear=False):
                 render_site.reset_public_dir()
 
+    def test_validate_public_ops_surfaces_allows_missing_ops_files_in_github_pages_mode(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            public_dir = Path(tmpdir)
+            with patch.object(render_site, "PUBLIC_DIR", public_dir), patch.dict(os.environ, {"SAPHO_SITE_MODE": "github-pages"}, clear=False):
+                render_site.validate_public_ops_surfaces()
+
 
 if __name__ == "__main__":
     unittest.main()

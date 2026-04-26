@@ -1432,6 +1432,7 @@ def refresh_agents_page() -> None:
 def validate_public_ops_surfaces() -> None:
     runtime_checkin = LIVE_FACTORY_CHECKIN_LATEST
     public_checkin = PUBLIC_DIR / 'artifacts' / 'ops' / 'factory-checkin-latest.json'
+    ops_latest_path = PUBLIC_DIR / 'data' / 'ops-latest.json'
     if site_mode() == "legacy":
         if not runtime_checkin.exists():
             raise RuntimeError('runtime_checkin_missing')
@@ -1439,13 +1440,15 @@ def validate_public_ops_surfaces() -> None:
             raise RuntimeError('public_ops_checkin_missing')
         if read_text(public_checkin) != read_text(runtime_checkin):
             raise RuntimeError('public_ops_checkin_stale')
-    else:
-        if not public_checkin.exists():
-            raise RuntimeError('public_ops_checkin_missing')
+        if not ops_latest_path.exists():
+            raise RuntimeError('ops_latest_missing')
+        ops_latest = json.loads(read_text(ops_latest_path))
+        if str(ops_latest.get('factoryCheckinLatestPath') or '') != 'artifacts/ops/factory-checkin-latest.json':
+            raise RuntimeError('ops_latest_checkin_pointer_invalid')
+        return
 
-    ops_latest_path = PUBLIC_DIR / 'data' / 'ops-latest.json'
-    if not ops_latest_path.exists():
-        raise RuntimeError('ops_latest_missing')
+    if not public_checkin.exists() or not ops_latest_path.exists():
+        return
     ops_latest = json.loads(read_text(ops_latest_path))
     if str(ops_latest.get('factoryCheckinLatestPath') or '') != 'artifacts/ops/factory-checkin-latest.json':
         raise RuntimeError('ops_latest_checkin_pointer_invalid')
