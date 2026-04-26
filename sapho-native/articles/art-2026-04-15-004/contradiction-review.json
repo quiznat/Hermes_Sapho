@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-04-15-004",
+  "reviewed_at_utc": "2026-04-15T13:05:22Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub presents the assessment as fast visibility into code exposure, but the evidence shows that visibility is materially bounded by plan, role, and repository-scope limits.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

@@ -1,0 +1,17 @@
+- GitHub states that it previously had a circular dependency in which deploying GitHub required GitHub itself.
+- GitHub says it mitigates that circular dependency by maintaining a code mirror for fixing forward and built assets for rollback.
+- GitHub says many deployment-script dependencies were only discovered during incidents, which could delay recovery.
+- GitHub says it could not validate deploy safety by blocking github.com entirely because the relevant hosts are stateful and continue serving customer traffic during rolling deploys, drains, or restarts.
+- GitHub selected the eBPF program type BPF_PROG_TYPE_CGROUP_SKB because it can hook network egress from a specific cGroup.
+- The source states that a Linux cGroup can be created, configured, and have processes moved into it without requiring Docker.
+- GitHub says CGROUP_SKB works on IP addresses, and that maintaining a current blocklist of IPs would be difficult given the scale and rate of change of its systems.
+- GitHub used BPF_PROG_TYPE_CGROUP_SOCK_ADDR to intercept socket creation and rewrote DNS connect4 calls targeting port 53 to localhost:53.
+- GitHub routed DNS queries from the deployment-script cGroup through a userspace DNS proxy that checked each requested domain against a blocklist and used eBPF Maps to allow or deny the request.
+- GitHub recorded DNS transaction ID to PID mappings in an eBPF Map and then used the transaction ID plus /proc/{PID}/cmdline to identify the command that triggered a DNS request.
+- GitHub says the resulting system can conditionally block domains that would create circular dependencies for deployment scripts.
+- GitHub says the system can tell the owning team which command triggered a blocked request.
+- GitHub says the system can produce an audit list of all domains contacted during a deployment.
+- GitHub says it can use cGroups to enforce CPU and memory limits on deployment scripts.
+- GitHub says its new circular-dependency detection process is live after a six-month rollout.
+- GitHub says the tooling now detects and flags both newly introduced problematic dependencies and new dependencies added by existing binary tools.
+- GitHub claims the overall result is improved platform stability and faster mean time to recovery because circular dependencies were removed.

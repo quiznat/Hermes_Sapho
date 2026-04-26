@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-15-004",
+  "reviewed_at_utc": "2026-04-15T13:05:46Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub’s assessment appears to be a bounded CodeQL triage tool that can surface concentrated vulnerability patterns in a limited repository set, but it does not support organization-wide exposure claims.",
+  "review_confidence": "medium",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "GitHub says its Code Security Risk Assessment is a free, one-click scan for finding vulnerabilities in an organization's code.",
+      "bounds": "This is a vendor product-description claim bounded by plan availability; the evidence supports stated pricing and access terms, not independent proof of detection effectiveness."
+    },
+    {
+      "claim_text": "The assessment dashboard reports aggregate vulnerability totals, severity breakdowns, language views, affected rule classes, and the most vulnerable repositories.",
+      "bounds": "The evidence supports the dashboard outputs for scanned repositories only; it does not show that these views capture risk outside the scanned subset."
+    }
+  ]
+}

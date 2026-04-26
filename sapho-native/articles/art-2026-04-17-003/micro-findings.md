@@ -1,0 +1,4 @@
+- GitHub reports that its deployment process previously contained a circular dependency in which deploying GitHub required GitHub itself.
+- GitHub says incident response was hindered because important deployment-script dependencies were often only discovered during incidents, and simple blocking of github.com could not safely validate deploy isolation on live stateful hosts.
+- GitHub says it implemented cGroup-scoped eBPF hooks that redirected deployment-script DNS traffic through a local proxy so domain requests could be checked and conditionally blocked.
+- GitHub says the resulting system can identify which command triggered blocked DNS requests, audit domains contacted during deployment, and detect newly introduced problematic dependencies after rollout.

@@ -1,0 +1,13 @@
+- GitHub says the Code Security Risk Assessment is a free, one-click scan intended to reveal vulnerabilities in an organization’s code.
+- The Code Security Risk Assessment is available to GitHub organization admins and security managers.
+- The assessment scans up to 20 of an organization’s most active repositories using CodeQL.
+- The assessment dashboard reports total vulnerabilities found across scanned repositories, broken down by critical, high, medium, and low severity.
+- The assessment reports vulnerabilities by language.
+- The assessment reports detected security-rule classes, how many repositories each rule affects, and rule severity.
+- The assessment identifies the most vulnerable repositories.
+- The assessment reports how many detected vulnerabilities are eligible for Copilot Autofix.
+- GitHub says the assessment is free on GitHub Enterprise Cloud and GitHub Team plans, and the GitHub Actions minutes used for scanning do not count against quota.
+- GitHub says that in 2025, customers using Secret Protection scanned nearly 2 billion pushes and blocked 19 million secret exposures.
+- GitHub says 460,258 security alerts were fixed using Copilot Autofix across GitHub in 2025.
+- GitHub says 50% of vulnerability alerts were resolved directly in pull requests in 2025.
+- GitHub says mean time to remediation was 0.66 hours with Copilot Autofix versus 1.29 hours for manual fixes, which it describes as nearly twice as fast.

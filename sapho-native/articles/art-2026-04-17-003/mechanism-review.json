@@ -1,0 +1,29 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-17-003",
+  "reviewed_at_utc": "2026-04-17T13:05:35Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub’s strongest supported contribution is a cGroup-scoped eBPF and DNS-proxy control path that can observe, attribute, and selectively block deployment-time domain dependencies, while broader outcome claims remain bounded.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 4,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "GitHub previously had a circular dependency in which deploying GitHub required GitHub itself.",
+      "bounds": "The source supports the existence of the circular dependency and a mitigation path through code mirroring and built rollback assets, but it does not quantify incident frequency or fully enumerate all dependency paths involved."
+    },
+    {
+      "claim_text": "Incident response was hindered because important deployment-script dependencies were often only discovered during incidents, and blocking github.com entirely could not safely validate deploy isolation on live stateful hosts.",
+      "bounds": "This is a bounded operational claim tied to GitHub’s live stateful deployment environment; it supports a real constraint on coarse validation, not a universal rule for all systems."
+    },
+    {
+      "claim_text": "The system can audit domains contacted during deployment and detect newly introduced problematic dependencies after rollout.",
+      "bounds": "The source supports that these capabilities are live and reported as current behavior, but it does not provide a full example audit output or quantified detection performance."
+    },
+    {
+      "claim_text": "The overall result was improved platform stability and faster mean time to recovery because circular dependencies were removed.",
+      "bounds": "This outcome remains self-reported and non-mechanistic in the provided evidence because no comparative stability or MTTR metrics are supplied here."
+    }
+  ]
+}

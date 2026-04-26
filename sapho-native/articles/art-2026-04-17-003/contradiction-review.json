@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-04-17-003",
+  "reviewed_at_utc": "2026-04-17T13:05:10Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub presents a concrete host-level control for deployment-time DNS dependencies, but the article leaves key operational tensions and outcome claims only partly resolved.",
+  "review_confidence": "high",
+  "contradiction_count": 4,
+  "status": "disclosed"
+}
