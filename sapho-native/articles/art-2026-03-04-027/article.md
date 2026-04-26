@@ -24,8 +24,8 @@ extractor_mode: agent
 findings_mode: agent
 summary_mode: agent
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-30T18:11:37Z'
-artifact_publication_published_at_utc: '2026-03-30T18:11:37Z'
+artifact_publication_minted_at_utc: '2026-04-02T22:02:34Z'
+artifact_publication_published_at_utc: '2026-04-26T01:37:50Z'
 artifact_publication_alias: '20260304027'
 source_remediation_status: completed
 source_remediated_at_utc: '2026-03-30T18:09:04Z'

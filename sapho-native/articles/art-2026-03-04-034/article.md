@@ -25,8 +25,8 @@ findings_mode: agent
 summary_mode: agent
 artifact_publication_alias: '20260304034'
 artifact_publication_status: published
-artifact_publication_minted_at_utc: '2026-03-30T17:31:45Z'
-artifact_publication_published_at_utc: '2026-03-30T17:31:53Z'
+artifact_publication_minted_at_utc: '2026-04-02T23:24:49Z'
+artifact_publication_published_at_utc: '2026-04-26T01:37:44Z'
 ---
 # SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering
 
