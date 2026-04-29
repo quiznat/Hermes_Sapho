@@ -1,17 +1,40 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-26T02:55:12Z",
-  "generatedAtUtc": "2026-04-26T02:55:12Z",
-  "processedCount": 55,
-  "decisionedCount": 55,
-  "keptCount": 55,
+  "last_updated": "2026-04-29T13:12:41Z",
+  "generatedAtUtc": "2026-04-29T13:12:41Z",
+  "processedCount": 56,
+  "decisionedCount": 56,
+  "keptCount": 56,
   "decisionCounts": {
-    "retain": 55
+    "retain": 56
   },
   "laneCounts": {
-    "agent-factory": 55
+    "agent-factory": 56
   },
   "items": [
+    {
+      "id": "pub-20260429001",
+      "title": "Securing the git push pipeline: Responding to a critical remote code execution vulnerability",
+      "displayTitle": "Securing the git push pipeline: Responding to a critical remote code execution vulnerability",
+      "summary": "GitHub reports a critical git push pipeline vulnerability whose severity came from a very small attacker action surface and a very large downstream consequence: one crafted push, carrying a malicious push option, could turn unsanitized user input into trusted internal metadata,\u2026",
+      "url": "https://github.blog/security/securing-the-git-push-pipeline-responding-to-a-critical-remote-code-execution-vulnerability",
+      "dailyDate": "2026-04-29",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-04-29T13:08:54Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260429001-securing-the-git-push-pipeline-responding-to-a-critical-remote-code-execution-vulnerability.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260429001-securing-the-git-push-pipeline-responding-to-a-critical-remote-code-execution-vulnerability.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260415001",
       "title": "How exposed is your code? Find out in minutes\u2014for free - The GitHub Blog",

@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-04-29-004",
+  "reviewed_at_utc": "2026-04-29T13:09:23Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The package shows bounded tensions around how a severe exploit coexisted with narrow observed use and product-specific exposure conditions.",
+  "review_confidence": "high",
+  "contradiction_count": 3,
+  "status": "disclosed"
+}

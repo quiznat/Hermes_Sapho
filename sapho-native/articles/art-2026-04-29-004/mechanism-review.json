@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-04-29-004",
+  "reviewed_at_utc": "2026-04-29T13:09:44Z",
+  "reviewer_role": "Synthesist",
+  "summary": "GitHub describes a critical git push flaw where unsanitized push option input could become trusted internal metadata and reach server-side command execution, but its no-observed-abuse conclusion remains bounded by GitHub’s own telemetry and an anomalous code-path condition.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "GitHub says this vulnerability affected github.com, multiple GitHub Enterprise Cloud variants, and GitHub Enterprise Server.",
+      "bounds": "This is a scope claim, not a causal mechanism claim. The evidence supports affected product coverage, but not product-by-product exploit prevalence, impact severity, or identical exposure conditions across offerings."
+    },
+    {
+      "claim_text": "GitHub says the exploit path was bounded by an anomalous server code path not used in normal github.com operations, and its logs linked observed use of that path only to Wiz testing rather than to customer-data access or other user activity.",
+      "bounds": "The bound rests on GitHub’s account that exploitation depended in part on a leftover code path remaining on disk after a deployment-model change, and on GitHub’s telemetry linking logged use only to Wiz testing. For GHES, the source further narrows exposure by requiring an authenticated user with push access. This remains a bounded observational conclusion, not proof that exploitation was impossible outside what GitHub observed."
+    }
+  ]
+}

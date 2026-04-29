@@ -1,0 +1,15 @@
+- GitHub received a bug bounty report about this vulnerability from Wiz researchers on March 4, 2026.
+- GitHub says the vulnerability affected github.com, GitHub Enterprise Cloud, GitHub Enterprise Cloud with Data Residency, GitHub Enterprise Cloud with Enterprise Managed Users, and GitHub Enterprise Server.
+- The reported attack required only a single git push command with a crafted push option using an unsanitized character.
+- GitHub says it reproduced the vulnerability internally within 40 minutes and confirmed it was critical.
+- User-supplied git push option values were inserted into internal metadata without sufficient sanitization.
+- Because the internal metadata format used a delimiter character that could also appear in user input, an attacker could inject additional fields that downstream services treated as trusted internal values.
+- The researchers demonstrated that chained injected values could override the push-processing environment, bypass sandboxing protections, and execute arbitrary commands on the server.
+- GitHub says it identified the root cause at 5:45 p.m. UTC on March 4, 2026, and deployed a fix to github.com at 7:00 p.m. UTC the same day.
+- GitHub says the fix prevents user-supplied push option values from influencing internal metadata fields by sanitizing them properly.
+- GitHub says GHES patches were prepared across supported releases and the vulnerability was assigned CVE-2026-3854.
+- GitHub says the exploit necessarily triggered an anomalous server code path that is never used during normal github.com operations.
+- GitHub says every logged occurrence of the anomalous code path mapped to Wiz testing activity and no other users or accounts triggered it.
+- GitHub says no customer data was accessed, modified, or exfiltrated as a result of this vulnerability.
+- The exploit worked in part because a code path not intended for that environment still existed on disk in the server container image after a deployment-model change failed to preserve an older exclusion.
+- For GHES, the source says exploitation requires an authenticated user with push access, and administrators are advised to review /var/log/github-audit.log for push operations containing a semicolon in push options.

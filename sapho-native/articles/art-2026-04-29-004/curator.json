@@ -1,0 +1,14 @@
+{
+  "version": "curator-decision.v1",
+  "article_id": "art-2026-04-29-004",
+  "decision": "kept",
+  "qualified_by": "novel_synthesis",
+  "evidence_basis": "none",
+  "novelty_strength": "medium",
+  "excerpt_sufficiency": "partial",
+  "reason": "It reports a concrete security incident response with specific validation, remediation, and forensic results.",
+  "limits": "---\nversion: curator-receipt.v1\nrole: Curator\narticle_id: art-2026-04-29-004\nticket_id: ticket-import-art-2026-04-29-004\ndecision: kept\nreason: It reports a concrete security incident response with specific validation, remediation, and forensic results.\nscope_class: incident\ndecided_at_utc: 2026-04-29T13:06:07Z\n---\n# Curator Receipt",
+  "confidence": "medium",
+  "generated_at_utc": "2026-04-29T13:09:44Z",
+  "mode": "agent"
+}
