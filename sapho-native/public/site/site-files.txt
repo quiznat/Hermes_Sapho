@@ -163,6 +163,7 @@ a/20260413001.html
 a/20260415001.html
 a/20260417001.html
 a/20260429001.html
+a/20260508001.html
 agents-start-here.html
 artifacts/data/index.json
 artifacts/data/lane-a-diy-prosumer-agentic-research-2026-03-01.jsonl
@@ -285,6 +286,7 @@ artifacts/kb/queue/queue-20260413001-selective-memory-for-artificial-intelligenc
 artifacts/kb/queue/queue-20260415001-how-exposed-is-your-code-find-out-in-minutes-for-free-the-github-blog.md
 artifacts/kb/queue/queue-20260417001-github-used-ebpf-scoped-dns-interception-to-break-a-dangerous-self-deployment-dependency.md
 artifacts/kb/queue/queue-20260429001-securing-the-git-push-pipeline-responding-to-a-critical-remote-code-execution-vulnerability.md
+artifacts/kb/queue/queue-20260508001-agent-pull-requests-are-everywhere-here-039-s-how-to-review-them.md
 artifacts/kb/queue/queue-art-2026-03-01-001-darwinian-evolver.md
 artifacts/kb/queue/queue-art-2026-03-01-006-taste-skill.md
 artifacts/kb/queue/queue-art-2026-03-01-007-openclaw-security-101.md
@@ -837,6 +839,7 @@ s/20260413001.html
 s/20260415001.html
 s/20260417001.html
 s/20260429001.html
+s/20260508001.html
 site-files.json
 site-files.txt
 viewer.html

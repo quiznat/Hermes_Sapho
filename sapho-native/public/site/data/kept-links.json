@@ -1,17 +1,40 @@
 {
   "version": "kept-links-v1.1.0",
-  "last_updated": "2026-04-29T13:12:41Z",
-  "generatedAtUtc": "2026-04-29T13:12:41Z",
-  "processedCount": 56,
-  "decisionedCount": 56,
-  "keptCount": 56,
+  "last_updated": "2026-05-08T13:33:16Z",
+  "generatedAtUtc": "2026-05-08T13:33:16Z",
+  "processedCount": 57,
+  "decisionedCount": 57,
+  "keptCount": 57,
   "decisionCounts": {
-    "retain": 56
+    "retain": 57
   },
   "laneCounts": {
-    "agent-factory": 56
+    "agent-factory": 57
   },
   "items": [
+    {
+      "id": "pub-20260508001",
+      "title": "Agent pull requests are everywhere. Here&#039;s how to review them.",
+      "displayTitle": "Agent pull requests are everywhere. Here&#039;s how to review them.",
+      "summary": "Agent pull requests have already become a large operational surface in software development, but scale and reviewer comfort do not make them safe by default. The article argues that agent-written changes can raise maintenance burden, hide correctness failures behind green CI, an\u2026",
+      "url": "https://github.blog/ai-and-ml/generative-ai/agent-pull-requests-are-everywhere-heres-how-to-review-them",
+      "dailyDate": "2026-05-08",
+      "rssRevision": 0,
+      "rssRepublishedAtUtc": null,
+      "status": "processed",
+      "decision": "retain",
+      "laneTags": [
+        "agent-factory"
+      ],
+      "laneTagsOriginal": [
+        "agent-factory"
+      ],
+      "processedAtUtc": "2026-05-08T13:11:32Z",
+      "artifactSourcePath": "research/artifacts/kb/queue/queue-20260508001-agent-pull-requests-are-everywhere-here-039-s-how-to-review-them.md",
+      "artifactWebPath": "artifacts/kb/queue/queue-20260508001-agent-pull-requests-are-everywhere-here-039-s-how-to-review-them.md",
+      "historicalRegimeArtifact": false,
+      "historicalRegimeNote": ""
+    },
     {
       "id": "pub-20260429001",
       "title": "Securing the git push pipeline: Responding to a critical remote code execution vulnerability",
