@@ -1,0 +1,4 @@
+- Agent-generated code can impose higher maintenance cost per change than human-written code, even when reviewers are more comfortable approving it.
+- Agent-assisted code review is already operating at substantial scale on GitHub, indicating that review practices for agent pull requests now matter operationally rather than hypothetically.
+- The article presents agent pull requests as a bounded correctness risk because code may pass compilation and tests while still containing substantive logic or security defects.
+- LLM-calling CI workflows create a direct prompt-injection and privilege-escalation risk when untrusted text can influence prompts and model output is allowed to drive shell execution under repository credentials.

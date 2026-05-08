@@ -1,0 +1,21 @@
+{
+  "version": "mechanism-review.v1",
+  "article_id": "art-2026-05-08-007",
+  "reviewed_at_utc": "2026-05-08T13:12:08Z",
+  "reviewer_role": "Synthesist",
+  "summary": "Agent pull requests are a real operating surface, but the strongest mechanism support in this package is for workflow-security risk and for how wrong code can survive green CI rather than for why agent-written code raises maintenance cost.",
+  "review_confidence": "high",
+  "mechanism_count": 2,
+  "bounded_claim_count": 2,
+  "status": "explained",
+  "bounded_claims": [
+    {
+      "claim_text": "Agent-generated code can impose higher maintenance cost per change than human-written code, even when reviewers are more comfortable approving it.",
+      "bounds": "The evidence supports the coexistence of higher reported redundancy and technical debt with higher reviewer approval comfort, but it does not establish a causal mechanism for why reviewer sentiment and maintainability diverge."
+    },
+    {
+      "claim_text": "Agent-assisted code review is already operating at substantial scale on GitHub, so review practices now matter operationally rather than hypothetically.",
+      "bounds": "The evidence supports scale and growth through reported volume, growth rate, and share of reviews, but it does not explain the causal drivers of adoption or expose the underlying measurement rules in detail."
+    }
+  ]
+}

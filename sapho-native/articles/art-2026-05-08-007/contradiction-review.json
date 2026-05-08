@@ -1,0 +1,10 @@
+{
+  "version": "contradiction-review.v1",
+  "article_id": "art-2026-05-08-007",
+  "reviewed_at_utc": "2026-05-08T13:11:49Z",
+  "reviewer_role": "Synthesist",
+  "summary": "The review surfaces two real tensions: reviewer confidence can rise while maintainability worsens, and green CI can coexist with wrong behavior.",
+  "review_confidence": "high",
+  "contradiction_count": 2,
+  "status": "disclosed"
+}
